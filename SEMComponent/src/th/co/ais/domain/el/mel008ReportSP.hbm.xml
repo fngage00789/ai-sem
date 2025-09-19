@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.Mel008ReportSP" entity-name="mel008ExpChqObj">
+		<id name="rowId" type="java.lang.String"/>
+			<property name="contractNo" type="java.lang.String"/>
+			<property name="oldContractNo" type="java.lang.String"/>
+			<property name="siteName" type="java.lang.String"/>
+			<property name="reqType" type="java.lang.String"/>
+			<property name="reqOfficer" type="java.lang.String"/>
+			<property name="expenseTypeDesc" type="java.lang.String"/>
+			<property name="chqNo" type="java.lang.String"/>
+			<property name="chqDt" type="java.util.Date"/>
+			<property name="chqName" type="java.lang.String"/>
+			<property name="remark" type="java.lang.String"/>
+			<property name="company" type="java.lang.String"/>
+	 </class>
+ 
+	<sql-query name="spMel008ExpChq" callable="true" >
+	 	<return class="th.co.ais.domain.el.Mel008ReportSP" entity-name="mel008ExpChqObj">
+			<return-property name="rowId" column="PAYMENT_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="reqType" column="REQ_TYPE" />
+			<return-property name="reqOfficer" column="REQ_OFFICER" />
+			<return-property name="expenseTypeDesc" column="EXPENSE_TYPE_DESC" />
+			<return-property name="chqNo" column="CHQ_NO" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqName" column="CHQ_NAME" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="company" column="COMPANY" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL008_EX_CHQ(?, :rowId) ]]>
+	 </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.ManagementSP">
+		<id name="electricId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="oldContractNo" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="locationStatus" type="java.lang.String"/>
+		<property name="siteCode" type="java.lang.String"/>
+		<property name="firstEffectiveDt" type="java.sql.Date"/>
+		<property name="effectiveDt" type="java.sql.Date"/>
+		<property name="expireDt" type="java.sql.Date"/>
+		<property name="noExpireFlag" type="java.lang.String"/>
+		<property name="siteStatus" type="java.lang.String"/>
+		<property name="siteStatusName" type="java.lang.String"/>
+		<property name="networkstatusName" type="java.lang.String"/>
+		<property name="processStatusCode" type="java.lang.String"/>
+		<property name="processStatusName" type="java.lang.String"/>
+		<property name="electricUseType" type="java.lang.String"/>
+		<property name="transferFlag" type="java.lang.String"/>
+		<property name="newReceivedDt" type="java.sql.Date"/>
+		<property name="terminateReceivedDt" type="java.sql.Date"/>
+					
+	</class>
+	<sql-query name="queryElSearchRecDtl2" callable="true">
+		<return class="th.co.ais.domain.el.ManagementSP">
+			<return-property name="electricId" column="ELECTRIC_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="region" column="REGION" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="locationStatus" column="LOCATION_STATUS" />
+			<return-property name="siteCode" column="SITE_CODE" />
+			<return-property name="firstEffectiveDt" column="FIRST_EFFECTIVE_DT" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="noExpireFlag" column="NO_EXPIRE_FLAG" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="siteStatusName" column="SITE_STATUS_NAME" />
+			<return-property name="networkstatusName" column="NETWORK_STATUS_NAME" />
+			<return-property name="processStatusCode" column="PROCESS_STATUS_CODE" />
+			<return-property name="processStatusName" column="PROCESS_STATUS_NAME" />
+			<return-property name="electricUseType" column="ELECTRIC_USE_TYPE" />
+			<return-property name="transferFlag" column="TRANSFER_FLAG" />
+			<return-property name="newReceivedDt" column="NEW_RECEIVED_DT" />
+			<return-property name="terminateReceivedDt" column="TERMINATE_RECEIVED_DT" />
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_SRCH_REC_DTL(? ,:electricId) ]]>
+	</sql-query>
+</hibernate-mapping>

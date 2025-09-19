@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+  <class name="th.co.ais.domain.el.UploadPermissionFile" >
+ 	<id name="rowId" type="java.lang.String" />
+ 	<property name="fileName" type="java.lang.String" ></property>
+ 	<property name="totalNo" type="java.lang.String" ></property>
+ 	<property name="successNo" type="java.lang.String" ></property>
+ 	<property name="failedNo" type="java.lang.String" ></property>
+ </class>
+ 
+ <sql-query name="mel002SearchDetailUploadFile" callable="true" >
+ 	<return class="th.co.ais.domain.el.UploadPermissionFile" >
+ 		<return-property name="rowId" column="EL_IMPORT_PERMISSION_LOG_ID"></return-property>
+ 		<return-property name="fileName" column="FILE_NAME"></return-property>
+ 		<return-property name="totalNo" column="TOTAL_RECORD"></return-property>
+ 		<return-property name="successNo" column="SUCCESS_RECORD"></return-property>
+ 		<return-property name="failedNo" column="FAILED_RECORD"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[ call SEM.SEM_SP_MEL002_EL_PERM_LOG_LIST(?, :rowId) ]]>
+ </sql-query>
+ 
+ 
+ </hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+
+	<class name="th.co.ais.domain.si.QuerySiteManagementSearchSP">
+	
+		<id name="rowId" type="java.lang.String"/>
+		<property name="taskName" type="java.lang.String"/>
+		<property name="recordStatus" type="java.lang.String"/>
+		<property name="recordStatusDt" type="java.sql.Date"/>
+	
+		
+	</class>
+	
+	<sql-query name="querySearchQuerySiteManagement" callable="true">
+	<return class="th.co.ais.domain.si.QuerySiteManagementSearchSP">
+		<return-property name="rowId" column="ROWNUM" />
+		<return-property name="taskName" column="TASK_NAME" />
+		<return-property name="recordStatus" column="RECORD_STATUS" />
+		<return-property name="recordStatusDt" column="RECORD_STATUS_DT" />
+	 </return>
+		<![CDATA[ call SEM.SEM_SP_QSI003_SRCH(?,:contractNo) ]]>
+	</sql-query>
+</hibernate-mapping>

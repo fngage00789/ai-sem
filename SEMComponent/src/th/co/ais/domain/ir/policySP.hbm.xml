@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR007">
+		<id name="rowId" type="java.lang.String" />
+		<property name="draftNo" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="tfType" type="java.lang.String" />
+		<property name="tfTypeDesc" type="java.lang.String" />
+		<property name="ptType" type="java.lang.String" />
+		<property name="ptTypeDesc" type="java.lang.String" />
+		<property name="locationId" type="java.lang.String" />
+		<property name="locationCode" type="java.lang.String" />
+		<property name="locationName" type="java.lang.String" />
+		<property name="locationStatus" type="java.lang.String" />
+		<property name="draftStatus" type="java.lang.String" />
+		<property name="draftStatusDesc" type="java.lang.String" />
+		<property name="insuredAmtOld" type="java.lang.Double" />
+		<property name="insuredAmt" type="java.lang.Double" />
+		<property name="insuredAmtDiff" type="java.lang.Double" />
+		<property name="deductAmt" type="java.lang.Double" />
+		<property name="premiumAmtOld" type="java.lang.Double" />
+		<property name="premiumAmt" type="java.lang.Double" />
+		<property name="policyNo" type="java.lang.String" />
+		<property name="expDt" type="java.sql.Date" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+	</class>
+	
+	<class name="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR007Popup">
+		<id name="draftNo" type="java.lang.String"/>
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="tfTypeDesc" type="java.lang.String" />
+		<property name="ptTypeDesc" type="java.lang.String" />
+		<property name="policyNo" type="java.lang.String" />
+		<property name="effDt" type="java.sql.Date" />
+		<property name="expDt" type="java.sql.Date" />
+
+	</class>
+	
+	<class name="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR008">
+		<id name="rowId" type="java.lang.String" />
+		<property name="draftNo" type="java.lang.String"/>
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String"/>
+		<property name="company" type="java.lang.String" />
+		<property name="tfType" type="java.lang.String" />
+		<property name="tfTypeDesc" type="java.lang.String"/>
+		<property name="ptType" type="java.lang.String" />
+		<property name="ptTypeDesc" type="java.lang.String"/>
+		<property name="totalLocation" type="java.lang.Integer"/>
+		<property name="insuredAmt" type="java.lang.Double" />
+		<property name="deductAmt" type="java.lang.Double" />
+		<property name="premiumAmt" type="java.lang.Double" />
+		<property name="draftStatus" type="java.lang.String"/>
+		<property name="draftStatusDesc" type="java.lang.String" />
+		<property name="policyNo" type="java.lang.String" />	
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+		
+	</class>
+	
+	<class name="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR009">
+		<id name="rowId" type="java.lang.String" />
+		<property name="draftNo" type="java.lang.String" />
+		<property name="docType" type="java.lang.String" />
+		<property name="docTypeDesc" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="tfType" type="java.lang.String" />
+		<property name="tfTypeDesc" type="java.lang.String" />
+		<property name="ptType" type="java.lang.String" />
+		<property name="ptTypeDesc" type="java.lang.String" />
+		<property name="totalLocation" type="java.lang.Integer" />
+		<property name="locationId" type="java.lang.String" />
+		<property name="policyNo" type="java.lang.String" />
+		<property name="insuredAmt" type="java.lang.Double" />
+		<property name="deductAmt" type="java.lang.Double" />
+		<property name="premiumAmtEst" type="java.lang.Double" />
+		<property name="premiumAmt" type="java.lang.Double" />
+		<property name="premiumAmtDiff" type="java.lang.Double" />
+		<property name="effDt" type="java.sql.Date" />
+		<property name="expDt" type="java.sql.Date" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+	</class>
+	
+	<class name="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR010">
+		<id name="rowId" type="java.lang.String" />
+		<property name="paymentDocNo" type="java.lang.String" />
+		<property name="paymentGroupNo" type="java.lang.String" />
+		<property name="docType" type="java.lang.String" />
+		<property name="docTypeDesc" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="transferType" type="java.lang.String" />
+		<property name="transferTypeDesc" type="java.lang.String" />
+		<property name="policyType" type="java.lang.String" />
+		<property name="policyTypeDesc" type="java.lang.String" />
+		<property name="policyNo" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="dueDtFrom" type="java.sql.Date" />
+		<property name="excAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="whtAmt" type="java.lang.Double" />
+		<property name="dutyAmt" type="java.lang.Double" />
+		<property name="totalPayAmt" type="java.lang.Double" />
+		<property name="totalAmt" type="java.lang.Double" />
+		<property name="diffAmt" type="java.lang.Double" />
+		<property name="invoiceNo" type="java.lang.String" />
+		<property name="paymentDt" type="java.sql.Date" />
+		<property name="paymentStatus" type="java.lang.String" />
+		<property name="paymentStatusDesc" type="java.lang.String" />
+		<property name="paymentType" type="java.lang.String" />
+		<property name="paymentTypeDesc" type="java.lang.String" />
+		<property name="paymentMethod" type="java.lang.String" />
+		<property name="paymentMethodDesc" type="java.lang.String" />
+		<property name="chqDt" type="java.sql.Date" />
+		<property name="chqReceiveDt" type="java.sql.Date" />
+		<property name="transferDt" type="java.sql.Date" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+		<property name="batchNo" type="java.lang.String" />
+		<property name="rcptPayCutAmount" type="java.lang.Double" />
+		<property name="doc92" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="sendInfoStatus" type="java.lang.String"/>
+		<property name="serviceName" type="java.lang.String"/>
+	</class>	
+	
+	<class name="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR010Popup">
+		<id name="paymentId" type="java.lang.String" />
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="payeeMasterId" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="totalAmt" type="java.lang.Double" />
+		<property name="invoiceNo" type="java.lang.String" />
+		<property name="excAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="whtAmt" type="java.lang.Double" />
+		<property name="dutyAmt" type="java.lang.Double" />
+		<property name="totalPayAmt" type="java.lang.Double" />
+		<property name="paymentType" type="java.lang.String" />
+		<property name="paymentTypeDesc" type="java.lang.String" />
+		<property name="paymentMethod" type="java.lang.String" />
+		<property name="paymentMethodDesc" type="java.lang.String" />
+		<property name="chqDt" type="java.sql.Date" />
+		<property name="chqReceiveDt" type="java.sql.Date" />
+		<property name="transferDt" type="java.sql.Date" />
+		<property name="contractNo" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR013MapP">
+		<id name="draftNo" type="java.lang.String"/>
+		<property name="policyNo" type="java.lang.String" />
+		<property name="effDt" type="java.sql.Date" />
+		<property name="expDt" type="java.sql.Date" />
+	</class>
+	
+	<sql-query name="queryPolicySP" callable="true" >
+		<return class="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR007">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="draftNo" column="DRAFT_NO" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="tfType" column="TRANSFER_TYPE" />
+			<return-property name="tfTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="ptType" column="POLICY_TYPE" />
+			<return-property name="ptTypeDesc" column="POLICY_TYPE_DESC" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="locationStatus" column="LOCATION_STATUS" />
+			<return-property name="draftStatus" column="DRAFT_STATUS" />
+			<return-property name="draftStatusDesc" column="DRAFT_STATUS_DESC" />
+			<return-property name="insuredAmtOld" column="INSURED_AMT_OLD" />
+			<return-property name="insuredAmt" column="INSURED_AMT" />
+			<return-property name="insuredAmtDiff" column="INSURED_AMT_DIFF" />
+			<return-property name="deductAmt" column="DEDUCT_AMT" />
+			<return-property name="premiumAmtOld" column="PREMIUM_AMT_OLD" />
+			<return-property name="premiumAmt" column="PREMIUM_AMT" />
+			<return-property name="policyNo" column="POLICY_NO" />
+			<return-property name="expDt" column="EXP_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR007_SRCH(?, :genType, :company, :networkType, :tfType, :ptType, :draftNo, 
+		 							   :draftStatus, :contractNo, :locationCode, :locationId, :locationName, 
+		 							   :deductType, :insuredFlg, cast(:insuredAmt as numeric)) ]]>
+	</sql-query>
+	<sql-query name="mir007SchD" callable="true" >
+		<return class="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR007Popup">  
+			<return-property name="draftNo" column="DRAFT_NO" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="tfTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="ptTypeDesc" column="POLICY_TYPE_DESC" />
+			<return-property name="policyNo" column="POLICY_NO" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expDt" column="EXPIRE_DT" />
+
+		</return>
+		  <![CDATA[ call SEM.SEM_SP_MIR007_SRCH_D(?, :company, :networkType, :TransferType, :policyType) ]]>
+	</sql-query>
+	
+	<sql-query name="mir008Sch" callable="true" >
+		<return class="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR008">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="draftNo" column="DRAFT_NO"/>
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC"/>
+			<return-property name="company" column="COMPANY" />
+			<return-property name="tfType" column="TRANSFER_TYPE" />
+			<return-property name="tfTypeDesc" column="TRANSFER_TYPE_DESC"/>
+			<return-property name="ptType" column="POLICY_TYPE" />
+			<return-property name="ptTypeDesc" column="POLICY_TYPE_DESC"/>
+			<return-property name="totalLocation" column="TOTAL_LOCATION"/>
+			<return-property name="insuredAmt" column="INSURED_AMT" />
+			<return-property name="deductAmt" column="DEDUCT_AMT" />
+			<return-property name="premiumAmt" column="PREMIUM_AMT" />
+			<return-property name="draftStatus" column="DRAFT_STATUS"/>
+			<return-property name="draftStatusDesc" column="DRAFT_STATUS_DESC"/>
+			<return-property name="policyNo" column="POLICY_NO" />	
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR008_SRCH(?, :company, :networkType, :tfType, :ptType, :draftNo,
+		 								:draftStatus, :policyNo) ]]>
+	</sql-query>
+	
+	<sql-query name="mir009Sch" callable="true" >
+		<return class="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR009">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="draftNo" column="DRAFT_NO" />
+			<return-property name="docType" column="DOC_TYPE" />
+			<return-property name="docTypeDesc" column="DOC_TYPE_DESC" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="tfType" column="TRANSFER_TYPE" />
+			<return-property name="tfTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="ptType" column="POLICY_TYPE" />
+			<return-property name="ptTypeDesc" column="POLICY_TYPE_DESC" />
+			<return-property name="totalLocation" column="TOTAL_LOCATION" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="policyNo" column="POLICY_NO" />
+			<return-property name="insuredAmt" column="INSURED_AMT" />
+			<return-property name="deductAmt" column="DEDUCT_AMT" />
+			<return-property name="premiumAmtEst" column="PREMIUM_AMT_EST" />
+			<return-property name="premiumAmt" column="PREMIUM_AMT" />
+			<return-property name="premiumAmtDiff" column="PREMIUM_AMT_DIFF" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expDt" column="EXPIRE_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR009_SRCH(?, :company, :docType, :networkType, :tfType, :ptType,
+		 								:policyId, cast(:effFromDt as date) , cast(:effToDt as date), cast(:expFromDt as date), cast(:expToDt as date),
+		 								:region, :zone, :contractNo, :locationCode, :locationId,
+		 								:locationName, :viewType, cast(:diffAmt as numeric)) ]]>
+	</sql-query>
+	
+	<sql-query name="mir010Sch" callable="true" >
+		<return class="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR010">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="paymentDocNo" column="PAYMENT_DOC_NO" />
+			<return-property name="paymentGroupNo" column="PAYMENT_GROUP_NO" />
+			<return-property name="docType" column="DOC_TYPE" />
+			<return-property name="docTypeDesc" column="DOC_TYPE_DESC" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="transferType" column="TRANSFER_TYPE" />
+			<return-property name="transferTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="policyType" column="POLICY_TYPE" />
+			<return-property name="policyTypeDesc" column="POLICY_TYPE_DESC" />
+			<return-property name="policyNo" column="POLICY_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="dueDtFrom" column="DUE_DT" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="dutyAmt" column="DUTY_AMT" />
+			<return-property name="totalPayAmt" column="TOTAL_PAY_AMT" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="diffAmt" column="DIFF_AMT" />
+			<return-property name="invoiceNo" column="INVOICE_NO" />
+			<return-property name="paymentDt" column="PAYMENT_DT" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="paymentMethodDesc" column="PAYMENT_METHOD_DESC" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_REVEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="batchNo" column="PAYMENT_BATCH_NO" />
+			<return-property name="rcptPayCutAmount" column="RECEIPT_PAYCUT_AMOUNT" />
+			<return-property name="doc92" column="DOC_92"/>
+			<return-property name="remark" column="REMARK"/>
+			<return-property name="sendInfoStatus" column="SEND_FLAG" />
+			<return-property name="serviceName" column="SERVICE_NAME" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR010_SRCH(?, :company, :docType, :networkType, :transferType, :policyType, :policyNo, 
+		 							   :paymentStatus, :batchNo, :dueDtFrom, :dueDtTo, :payType, 
+		 							   :vendorCode, :contractNo, :locationCode, :locationId, :locationName, :rcptPayFlag, :strParam,
+		 							   :payFlag ,:userId) ]]>
+	</sql-query>
+	
+	<sql-query name="mir010SchD" callable="true" >
+		<return class="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR010Popup">  
+			<return-property name="paymentId" column="IR_PAYMENT_ID" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeMasterId" column="PAYEE_MASTER_ID" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="invoiceNo" column="INVOICE_NO" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="dutyAmt" column="DUTY_AMT" />
+			<return-property name="totalPayAmt" column="TOTAL_PAY_AMT" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="paymentMethodDesc" column="PAYMENT_METHOD_DESC" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_REVEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR010_SRCH_D(?, :rowId) ]]>
+	</sql-query>
+	
+	<sql-query name="mir007MapP" callable="true" >
+		<return class="th.co.ais.domain.ir.PolicySP" entity-name="searchMIR013MapP">  
+			<return-property name="draftNo" column="DRAFT_NO" />
+			<return-property name="policyNo" column="POLICY_NO" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expDt" column="EXPIRE_DT" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR013_MAP_P(?, :claimId) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

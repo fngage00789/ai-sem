@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SiteApproveDisplaySP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="docNo" type="java.lang.String"/>
+		<property name="docDate" type="java.sql.Date"/>
+		<property name="reqOfficer" type="java.lang.String"/>
+		<property name="reqTypeName" type="java.lang.String"/>
+		<property name="title" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="siteApproveStatus" type="java.lang.String"/>
+		<property name="siteApproveStatusName" type="java.lang.String"/>
+		<property name="outDt" type="java.sql.Date"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationName" type="java.lang.String"/>
+		<property name="regionName" type="java.lang.String"/>
+		<property name="flowStatus" type="java.lang.String"/>
+		<property name="editFlag" type="java.lang.String"/>
+		<property name="deleteFlag" type="java.lang.String"/>
+		<property name="cancelFlag" type="java.lang.String"/>
+		<property name="closeFlag" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="siteStatusName" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="inDt" type="java.sql.Date"/>
+		<property name="cancelDt" type="java.sql.Date"/>
+		<property name="siteInfoApproveDt" type="java.sql.Date"/>
+		<property name="siteInfoStatus" type="java.lang.String"/>
+		<property name="batchNo" type="java.lang.String"/>
+	</class>
+	<sql-query name="querySearchSiteApproveDisplay" callable="true">
+		<return class="th.co.ais.domain.si.SiteApproveDisplaySP">
+			<return-property name="rowId" column="SITE_APPROVE_ID" />
+			<return-property name="docNo" column="DOC_NO" />
+			<return-property name="docDate" column="DOC_DT" />
+			<return-property name="reqOfficer" column="REQ_OFFICER" />
+			<return-property name="reqTypeName" column="REQ_TYPE_NAME" />
+			<return-property name="title" column="TITLE" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteApproveStatus" column="SITE_APPROVE_STATUS" />
+			<return-property name="siteApproveStatusName" column="SITE_APPROVE_STATUS_NAME" />
+			<return-property name="outDt" column="OUT_DT" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="regionName" column="REGION" />
+			<return-property name="flowStatus" column="FLOW_STATUS"/>
+			<return-property name="editFlag" column="EDIT_FLAG"/>
+			<return-property name="deleteFlag" column="DELETE_FLAG"/>
+			<return-property name="cancelFlag" column="CANCEL_FLAG"/>
+			<return-property name="closeFlag" column="CLOSE_FLAG"/>
+			<return-property name="company" column="COMPANY"/>
+			<return-property name="siteStatusName" column="SITE_STATUS_NAME"/>
+			<return-property name="siteInfoId" column="SITE_INFO_ID"/>
+			<return-property name="inDt" column="IN_DT"/>
+			<return-property name="cancelDt" column="CANCEL_DT"/>
+			<return-property name="siteInfoApproveDt" column="SITE_INFO_APPROVE_DT"/>
+			<return-property name="siteInfoStatus" column="SITE_INFO_STATUS"/>
+			<return-property name="batchNo" column="BATCH_NO"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI001_SRCH(?, :docNo, :docDateFrom, :docDateTo, :reqOfficer, :company, :reqType, :title, :contractNo, :siteApproveStatus, :locationId, :locationName, :region, :currentFlag, :batchNo) ]]>
+	</sql-query>
+</hibernate-mapping>

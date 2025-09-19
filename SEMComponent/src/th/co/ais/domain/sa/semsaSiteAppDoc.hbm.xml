@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 ?.?. 2557, 19:13:22 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="th.co.ais.domain.sa.SemSaSiteAppDoc" table="SEMSASITEAPPDOC">
+        <id name="siteAppId" type="java.lang.String">
+            <column name="SITEAPPID" />
+            <generator class="assigned" />
+        </id>
+        <property name="siteAppDocId" type="java.lang.String">
+            <column name="SITEAPPDOCID" />
+        </property>
+        <property name="version" type="java.math.BigDecimal">
+            <column name="VERSION" />
+        </property>
+        <property name="docCode" type="java.lang.String">
+            <column name="DOCCODE" />
+        </property>
+        <property name="docFlag" type="java.lang.String">
+            <column name="DOCFLAG" />
+        </property>
+        <property name="recordStatus" type="java.lang.String">
+            <column name="RECORDSTATUS" />
+        </property>
+        <property name="createDt" type="java.util.Date">
+            <column name="CREATEDT" />
+        </property>
+        <property name="createBy" type="java.lang.String">
+            <column name="CREATEBY" />
+        </property>
+        <property name="updateDt" type="java.util.Date">
+            <column name="UPDATEDT" />
+        </property>
+        <property name="updateBy" type="java.lang.String">
+            <column name="UPDATEBY" />
+        </property>
+    </class>
+</hibernate-mapping>

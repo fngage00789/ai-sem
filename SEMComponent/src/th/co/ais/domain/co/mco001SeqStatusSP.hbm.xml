@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco001SeqStatusSP">
+		<id name="seqNo" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="mco001SeqStatus" callable="true">
+		<return class="th.co.ais.domain.co.Mco001SeqStatusSP">
+			<return-property name="seqNo" column="RUN_SEQ_NO" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO001_SEQ_STATUS (?, :rowId)]]>
+	</sql-query>
+</hibernate-mapping>

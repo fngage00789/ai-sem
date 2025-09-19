@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class entity-name="querySearchElMeterManagement" name="th.co.ais.domain.el.ManagementSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="oldContractNo" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="firstEffectiveDt" type="java.sql.Date"/>
+		<property name="effectiveDt" type="java.sql.Date"/>
+		<property name="expireDt" type="java.sql.Date"/>
+		<property name="reqTypeDesc" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="province" type="java.lang.String"/>
+		<property name="zone" type="java.lang.String"/>
+		<property name="electricUseType" type="java.lang.String"/>
+		<property name="processStatusCode" type="java.lang.String"/>
+		<property name="processStatusName" type="java.lang.String"/>
+		<property name="actionDt" type="java.sql.Date"/>
+		<property name="changeTypeFlag" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String"/>
+		<property name="expandFlag" type="java.lang.String"/>
+		<property name="privateSpecailType" type="java.lang.String"/>
+		<property name="siteStatus" type="java.lang.String"/>
+		<property name="siteStatusDisplay" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="expireStatus" type="java.lang.String"/>
+		<property name="renewNo" type="java.math.BigDecimal"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="zoneDesc" type="java.lang.String"/>
+		<property name="remarkChange" type="java.lang.String"/>
+		<property name="electricId" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="siteAddressNo" type="java.lang.String"/>
+		<property name="siteTumbon" type="java.lang.String"/>
+		<property name="siteAmphur" type="java.lang.String"/>
+		<property name="createDt" type="java.sql.Date"/>
+		<property name="feeFlag" type="java.lang.String"/>
+		<property name="depositTypeFlag" type="java.lang.String"/>
+		<property name="receiveJobFlag" type="java.lang.String"/>
+		<property name="updateMeterFlag" type="java.lang.String"/>
+		<property name="verifyFlag" type="java.lang.String"/>
+		<property name="warrantDetailFlag" type="java.lang.String"/>
+		<property name="warrantPrintFlag" type="java.lang.String"/>
+		<property name="warrantReprintFlag" type="java.lang.String"/>
+		<property name="contractStartDt" type="java.sql.Date"/>
+		<property name="newReceivedDt" type="java.sql.Date"/>
+		<property name="showRecord" type="java.lang.String"/>
+		<property name="reVerifyFlag" type="java.lang.String"/>
+		<property name="contractStatus" type="java.lang.String"/>
+		<property name="privateSpecailTypeBoolean" type="java.lang.String"/>
+		<property name="expandFlagBoolean" type="java.lang.String"/>
+		<property name="transferMeterDt" type="java.sql.Date"/>
+		<property name="electricCloseDt" type="java.sql.Date"/>
+		<property name="electricStatus" type="java.lang.String"/>
+		<property name="siteElectricalId" type="java.lang.String"/>
+		<property name="pChangUnitPriceFlag" type="java.lang.String"/>
+		<property name="pElectricPayType" type="java.lang.String"/>
+		<property name="pVatType" type="java.lang.String"/>
+		<property name="paymentEffectiveEndDt" type="java.sql.Date"/>
+		<property name="paymentEffectiveStartDt" type="java.sql.Date"/>
+		<property name="pTakeAllAmount" type="java.lang.Double"/>
+		<property name="pTakeAllPeriodType" type="java.lang.String"/>
+		<property name="pPayPeriodType" type="java.lang.String"/>
+		<property name="pPayPeriod" type="java.lang.Long"/>
+		<property name="newPrintDt" type="java.sql.Date"/>
+		<property name="terminateCutoffDt" type="java.sql.Date"/>
+		<property name="expandReceivedDt" type="java.sql.Date"/>
+		<property name="expandPrintDt" type="java.sql.Date"/>
+		<property name="expandOldCutoffDt" type="java.sql.Date"/>
+		<property name="expandNewOnmeterDt" type="java.sql.Date"/>
+		<property name="transferReceivedDt" type="java.sql.Date"/>
+		<property name="transferPrintDt" type="java.sql.Date"/>
+		<property name="lastTermOfPaymentDt" type="java.sql.Date"/>
+		<property name="siteType" type="java.lang.String"/>
+		<property name="terminateBySM" type="java.lang.String"/>
+	</class>
+	
+	<class entity-name="queryElSearchRecDtl" name="th.co.ais.domain.el.ManagementSP">
+		<id name="electricId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="oldContractNo" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="locationStatus" type="java.lang.String"/>
+		<property name="siteCode" type="java.lang.String"/>
+		<property name="firstEffectiveDt" type="java.sql.Date"/>
+		<property name="effectiveDt" type="java.sql.Date"/>
+		<property name="expireDt" type="java.sql.Date"/>
+		<property name="noExpireFlag" type="java.lang.String"/>
+		<property name="siteStatus" type="java.lang.String"/>
+		<property name="siteStatusName" type="java.lang.String"/>
+		<property name="networkstatusName" type="java.lang.String"/>
+		<property name="processStatusCode" type="java.lang.String"/>
+		<property name="processStatusName" type="java.lang.String"/>
+		<property name="electricUseType" type="java.lang.String"/>
+		<property name="transferFlag" type="java.lang.String"/>
+		<property name="newReceivedDt" type="java.sql.Date"/>
+		<property name="terminateReceivedDt" type="java.sql.Date"/>
+		<property name="createBy" type="java.lang.String"/>
+		<property name="createDt" type="java.sql.Date"/>
+		<property name="updateBy" type="java.lang.String"/>
+		<property name="updateDt" type="java.sql.Date"/>
+		<property name="receiveDt" type="java.sql.Date" />
+		<property name="contractStatus" type="java.lang.String"/>
+		<property name="eAreaCode" type="java.lang.String" />
+		<property name="contractAddress" type="java.lang.String" />
+		<property name="terminateBySM" type="java.lang.String"/>
+		
+					
+	</class>
+	
+	<sql-query name="querySearchElMeterManagement" callable="true">
+		<return class="th.co.ais.domain.el.ManagementSP" entity-name="querySearchElMeterManagement">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="firstEffectiveDt" column="FIRST_EFFECTIVE_DT" />
+			<return-property name="region" column="REGION" />
+			<return-property name="reqTypeDesc" column="REQ_TYPE_DESC" />
+			<return-property name="province" column="PROVINCE" />
+			<return-property name="zone" column="ZONE" />
+			<return-property name="electricUseType" column="ELECTRIC_USE_TYPE" />
+			<return-property name="processStatusCode" column="PROCESS_STATUS_CODE" />
+			<return-property name="processStatusName" column="PROCESS_STATUS_NAME" />
+			<return-property name="actionDt" column="ACTION_DT" />
+			<return-property name="changeTypeFlag" column="CHANGE_TYPE_FLAG" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="expandFlag" column="EXPAND_FLAG" />
+			<return-property name="privateSpecailType" column="PRIVATE_SPECIAL_FLAG" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="siteStatusDisplay" column="SITE_STATUS_NAME" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="expireStatus" column="EXPIRE_STATUS" />
+			<return-property name="renewNo" column="RENEW_NO" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="zoneDesc" column="ZONE_DESC" />
+			<return-property name="remarkChange" column="CHANGE_REMARK" />
+			<return-property name="electricId" column="ELECTRIC_ID" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="siteAddressNo" column="SITE_ADDRESS_NO" />
+			<return-property name="siteTumbon" column="SITE_TUMBON" />
+			<return-property name="siteAmphur" column="SITE_AMPHUR" />
+			<return-property name="createDt" column="CREATE_DT" />
+			<return-property name="feeFlag" column="FEE_FLAG" />
+			<return-property name="depositTypeFlag" column="DEPOSIT_TYPE_FLAG" />
+			<return-property name="receiveJobFlag" column="RECEIVE_JOB_FLAG" />
+			<return-property name="updateMeterFlag" column="UPDATE_METER_FLAG" />
+			<return-property name="verifyFlag" column="VERIFY_FLAG" />
+			<return-property name="warrantDetailFlag" column="WARRANT_DETAIL_FLAG" />
+			<return-property name="warrantPrintFlag" column="WARRANT_PRINT_FLAG" />
+			<return-property name="warrantReprintFlag" column="WARRANT_REPRINT_FLAG" />
+			<return-property name="contractStartDt" column="CONTRACT_START_DT"/>
+			<return-property name="newReceivedDt" column="NEW_RECEIVED_DT"/>
+			<return-property name="showRecord" column="SHOWRECORD"/>
+			<return-property name="reVerifyFlag" column="RE_VERIFY_FLAG"/>
+			<return-property name="contractStatus" column="CONTRACT_STATUS"/>
+			<return-property name="privateSpecailTypeBoolean" column="PRIVATE_SPECIAL_TYPE_BOOLEAN"/>
+			<return-property name="expandFlagBoolean" column="EXPAND_FLAG_BOOLEAN"/>
+			
+			<return-property name="transferMeterDt" column="TRANSFER_METER_DT"/>
+			<return-property name="electricCloseDt" column="ELECTRIC_CLOSE_DT"/>
+			<return-property name="electricStatus" column="ELECTRIC_STATUS"/>
+			<return-property name="siteElectricalId" column="SITE_ELECTRICAL_ID"/>
+			<return-property name="pChangUnitPriceFlag" column="P_CHANG_UNIT_PRICE_FLAG"/>
+			<return-property name="pElectricPayType" column="P_ELECTRIC_PAY_TYPE"/>
+			<return-property name="pVatType" column="P_VAT_TYPE"/>
+			<return-property name="paymentEffectiveEndDt" column="PAYMENT_END_DT"/>
+			<return-property name="paymentEffectiveStartDt" column="PAYMENT_START_DT"/>
+			<return-property name="pTakeAllAmount" column="P_TAKE_ALL_AMOUNT"/>
+			<return-property name="pTakeAllPeriodType" column="P_TAKE_ALL_PERIOD_TYPE"/>
+			<return-property name="pPayPeriodType" column="P_PAY_PERIOD_TYPE"/>
+			<return-property name="pPayPeriod" column="P_PAY_PERIOD"/>
+			<return-property name="newPrintDt" column="NEW_PRINT_DT"/>
+			<return-property name="terminateCutoffDt" column="TERMINATE_CUTOFF_DT"/>
+			<return-property name="expandReceivedDt" column="EXPAND_RECEIVED_DT"/>
+			<return-property name="expandPrintDt" column="EXPAND_PRINT_DT"/>
+			<return-property name="expandOldCutoffDt" column="EXPAND_OLD_CUTOFF_DT"/>
+			<return-property name="expandNewOnmeterDt" column="EXPAND_NEW_ONMETER_DT"/>
+			<return-property name="transferReceivedDt" column="TRANSFER_RECEIVED_DT"/>
+			<return-property name="transferPrintDt" column="TRANSFER_PRINT_DT"/>
+			<return-property name="lastTermOfPaymentDt" column="LAST_TERM_OF_PAYMENT_DT"/>
+			<return-property name="siteType" column="SITE_TYPE"/>
+			<return-property name="terminateBySM" column="TERMINATE_BY_SM" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_SRCH(? ,:company ,:contractNo ,:region ,:province ,:siteName ,:siteStatus ,:electricUseType 
+		,:locationId ,:locationCode ,:siteCode ,:elAction ,:processStatusCode ,:ownerName ,:lessorName ,:meterId ,:newReceivedDtFrom 
+		,:newReceivedDtTo ,:terminateReceivedDtFrom ,:terminateReceivedDtTo ,:terminateCutoffDtFrom ,:terminateCutoffDtTo ,:transferReceivedDtFrom 
+		,:transferReceivedDtTo ,:transferCutoffDtFrom ,:transferCutoffDtTo ,:expandOldCutoffDtFrom ,:expandOldCutoffDtTo ,:contractStartDtFrom 
+		,:contractStartDtTo ,:printDT ,:siteHouseNo ,:siteBuilding ,:siteStreet ,:siteTumbon ,:siteAmphur ,:zone ,:historyFlag, :strParam) ]]>
+	</sql-query>
+	
+	<sql-query name="queryElSearchRecDtl" callable="true">
+		<return class="th.co.ais.domain.el.ManagementSP" entity-name="queryElSearchRecDtl">
+			<return-property name="electricId" column="ELECTRIC_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="region" column="REGION" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="locationStatus" column="LOCATION_STATUS" />
+			<return-property name="siteCode" column="SITE_CODE" />
+			<return-property name="firstEffectiveDt" column="FIRST_EFFECTIVE_DT" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="noExpireFlag" column="NO_EXPIRE_FLAG" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="siteStatusName" column="SITE_STATUS_NAME" />
+			<return-property name="networkstatusName" column="NETWORK_STATUS_NAME" />
+			<return-property name="processStatusCode" column="PROCESS_STATUS_CODE" />
+			<return-property name="processStatusName" column="PROCESS_STATUS_NAME" />
+			<return-property name="electricUseType" column="ELECTRIC_USE_TYPE" />
+			<return-property name="transferFlag" column="TRANSFER_FLAG" />
+			<return-property name="newReceivedDt" column="NEW_RECEIVED_DT" />
+			<return-property name="terminateReceivedDt" column="TERMINATE_RECEIVED_DT" />
+			<return-property name="createBy" column="CREATE_BY" />
+			<return-property name="createDt" column="CREATE_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="receiveDt" column="RECEIVE_DT" />
+			<return-property name="contractStatus" column="CONTRACT_STATUS" />
+			<return-property name="eAreaCode" column="E_AREA_CODE" />
+			<return-property name="contractAddress" column="CONTRACT_ADDRESS" />
+			<return-property name="terminateBySM" column="TERMINATE_BY_SM" />
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_SRCH_REC_DTL(? ,:electricId) ]]>
+	</sql-query>
+</hibernate-mapping>

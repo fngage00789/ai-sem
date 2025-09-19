@@ -1,0 +1,522 @@
+ 18-09-2567 14:50:33:682 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:50:33:682 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 18-09-2567 14:50:33:682 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:50:33:682 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 18-09-2567 14:51:33:668 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:51:33:668 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:52:06:116 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 14:52:06:116 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 14:52:06:117 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 14:52:06:117 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 14:52:06:503 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : BP2ForR8VCKz1lp-9-gRYcl774kgv0lfStDsdkCD at Wed Sep 18 14:52:06 ICT 2024
+ 18-09-2567 14:52:06:503 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : BP2ForR8VCKz1lp-9-gRYcl774kgv0lfStDsdkCD at Wed Sep 18 14:52:06 ICT 2024
+ 18-09-2567 14:52:10:417 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 14:52:10:417 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 14:52:10:422 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 14:52:10:422 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 14:52:10:428 ERROR stderr.write(71) - java.io.FileNotFoundException: D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 14:52:10:428 ERROR stderr.write(71) - 	at java.io.FileInputStream.open0(Native Method)
+ 18-09-2567 14:52:10:429 ERROR stderr.write(71) - 	at java.io.FileInputStream.open(Unknown Source)
+ 18-09-2567 14:52:10:429 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 14:52:10:429 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 14:52:10:429 ERROR stderr.write(71) - 	at th.co.ais.web.util.SerializeManager.read(SerializeManager.java:71)
+ 18-09-2567 14:52:10:429 ERROR stderr.write(71) - 	at th.co.ais.web.servlet.SSOLoginServlet.doPost(SSOLoginServlet.java:130)
+ 18-09-2567 14:52:10:429 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:523)
+ 18-09-2567 14:52:10:429 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ 18-09-2567 14:52:10:430 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+ 18-09-2567 14:52:10:430 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+ 18-09-2567 14:52:10:430 ERROR stderr.write(71) - 	at io.opentracing.contrib.jaxrs2.server.SpanFinishingFilter.doFilter(SpanFinishingFilter.java:52)
+ 18-09-2567 14:52:10:430 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 14:52:10:430 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 14:52:10:430 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:239)
+ 18-09-2567 14:52:10:430 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:215)
+ 18-09-2567 14:52:10:431 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 14:52:10:431 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 14:52:10:431 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+ 18-09-2567 14:52:10:431 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+ 18-09-2567 14:52:10:431 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+ 18-09-2567 14:52:10:431 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+ 18-09-2567 14:52:10:432 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+ 18-09-2567 14:52:10:432 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 14:52:10:432 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+ 18-09-2567 14:52:10:432 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+ 18-09-2567 14:52:10:432 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+ 18-09-2567 14:52:10:432 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 14:52:10:433 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+ 18-09-2567 14:52:10:433 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+ 18-09-2567 14:52:10:433 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+ 18-09-2567 14:52:10:433 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+ 18-09-2567 14:52:10:433 ERROR stderr.write(71) - 	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+ 18-09-2567 14:52:10:433 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+ 18-09-2567 14:52:10:433 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 14:52:10:434 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+ 18-09-2567 14:52:10:434 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 14:52:10:434 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+ 18-09-2567 14:52:10:434 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 14:52:10:434 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+ 18-09-2567 14:52:10:434 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+ 18-09-2567 14:52:10:434 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+ 18-09-2567 14:52:10:434 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+ 18-09-2567 14:52:10:435 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+ 18-09-2567 14:52:10:435 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+ 18-09-2567 14:52:10:435 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+ 18-09-2567 14:52:10:435 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 14:52:10:435 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 14:52:10:436 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 14:52:10:436 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 14:52:10:436 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+ 18-09-2567 14:52:10:436 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+ 18-09-2567 14:52:10:436 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+ 18-09-2567 14:52:10:436 ERROR stderr.write(71) - 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+ 18-09-2567 14:52:10:437 ERROR stderr.write(71) - 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+ 18-09-2567 14:52:10:437 ERROR stderr.write(71) - 	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+ 18-09-2567 14:52:10:438 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+ 18-09-2567 14:52:10:438 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+ 18-09-2567 14:52:10:438 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+ 18-09-2567 14:52:10:438 ERROR stderr.write(71) - 	at java.lang.Thread.run(Unknown Source)
+ 18-09-2567 14:52:10:438 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 14:52:10:438 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 14:52:10:539 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 14:52:10:539 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 14:52:19:406 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 14:52:19:406 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 14:52:19:406 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 14:52:19:406 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 14:52:19:406 ERROR stderr.write(71) - java.io.FileNotFoundException: D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\panidawi_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 14:52:19:406 ERROR stderr.write(71) - 	at java.io.FileInputStream.open0(Native Method)
+ 18-09-2567 14:52:19:406 ERROR stderr.write(71) - 	at java.io.FileInputStream.open(Unknown Source)
+ 18-09-2567 14:52:19:406 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 14:52:19:406 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 14:52:19:406 ERROR stderr.write(71) - 	at th.co.ais.web.util.SerializeManager.read(SerializeManager.java:71)
+ 18-09-2567 14:52:19:406 ERROR stderr.write(71) - 	at th.co.ais.web.servlet.SSOLoginServlet.doPost(SSOLoginServlet.java:130)
+ 18-09-2567 14:52:19:418 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:523)
+ 18-09-2567 14:52:19:418 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ 18-09-2567 14:52:19:418 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+ 18-09-2567 14:52:19:418 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+ 18-09-2567 14:52:19:418 ERROR stderr.write(71) - 	at io.opentracing.contrib.jaxrs2.server.SpanFinishingFilter.doFilter(SpanFinishingFilter.java:52)
+ 18-09-2567 14:52:19:419 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 14:52:19:419 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 14:52:19:419 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:239)
+ 18-09-2567 14:52:19:419 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:215)
+ 18-09-2567 14:52:19:419 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 14:52:19:419 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 14:52:19:420 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+ 18-09-2567 14:52:19:420 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+ 18-09-2567 14:52:19:420 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+ 18-09-2567 14:52:19:420 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+ 18-09-2567 14:52:19:420 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+ 18-09-2567 14:52:19:420 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 14:52:19:421 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+ 18-09-2567 14:52:19:421 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+ 18-09-2567 14:52:19:422 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+ 18-09-2567 14:52:19:422 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 14:52:19:422 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+ 18-09-2567 14:52:19:422 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+ 18-09-2567 14:52:19:422 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+ 18-09-2567 14:52:19:422 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+ 18-09-2567 14:52:19:422 ERROR stderr.write(71) - 	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+ 18-09-2567 14:52:19:423 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+ 18-09-2567 14:52:19:423 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 14:52:19:423 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+ 18-09-2567 14:52:19:423 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 14:52:19:423 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+ 18-09-2567 14:52:19:423 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 14:52:19:423 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+ 18-09-2567 14:52:19:423 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+ 18-09-2567 14:52:19:423 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+ 18-09-2567 14:52:19:424 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+ 18-09-2567 14:52:19:424 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+ 18-09-2567 14:52:19:424 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+ 18-09-2567 14:52:19:424 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+ 18-09-2567 14:52:19:424 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 14:52:19:424 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 14:52:19:424 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 14:52:19:424 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 14:52:19:425 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+ 18-09-2567 14:52:19:425 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+ 18-09-2567 14:52:19:425 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+ 18-09-2567 14:52:19:425 ERROR stderr.write(71) - 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+ 18-09-2567 14:52:19:425 ERROR stderr.write(71) - 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+ 18-09-2567 14:52:19:425 ERROR stderr.write(71) - 	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+ 18-09-2567 14:52:19:425 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+ 18-09-2567 14:52:19:425 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+ 18-09-2567 14:52:19:425 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+ 18-09-2567 14:52:19:426 ERROR stderr.write(71) - 	at java.lang.Thread.run(Unknown Source)
+ 18-09-2567 14:52:19:426 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\panidawi_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 14:52:19:426 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\panidawi_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 14:52:19:427 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : tWHzu-HnaQiMk8CKle_0SaBB6vOjWo9d5McR0Moi at Wed Sep 18 14:52:19 ICT 2024
+ 18-09-2567 14:52:19:427 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : tWHzu-HnaQiMk8CKle_0SaBB6vOjWo9d5McR0Moi at Wed Sep 18 14:52:19 ICT 2024
+ 18-09-2567 14:52:19:427 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 14:52:19:427 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 14:52:33:663 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:52:33:663 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:53:33:669 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:53:33:669 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:54:33:672 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:54:33:672 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:55:33:665 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:55:33:665 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:56:33:672 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:56:33:672 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:57:33:676 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:57:33:676 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:58:33:674 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:58:33:674 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:59:33:664 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 14:59:33:664 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:00:33:677 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:00:33:677 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:01:33:674 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:01:33:674 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:02:33:674 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:02:33:674 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 18-09-2567 15:02:33:674 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:02:33:674 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 18-09-2567 15:03:33:671 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:03:33:671 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:04:33:677 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:04:33:677 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:05:08:211 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 15:05:08:211 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 15:05:08:211 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 15:05:08:211 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 15:05:08:212 ERROR stderr.write(71) - java.io.FileNotFoundException: D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\siripc88_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 15:05:08:212 ERROR stderr.write(71) - 	at java.io.FileInputStream.open0(Native Method)
+ 18-09-2567 15:05:08:212 ERROR stderr.write(71) - 	at java.io.FileInputStream.open(Unknown Source)
+ 18-09-2567 15:05:08:212 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 15:05:08:212 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 15:05:08:212 ERROR stderr.write(71) - 	at th.co.ais.web.util.SerializeManager.read(SerializeManager.java:71)
+ 18-09-2567 15:05:08:212 ERROR stderr.write(71) - 	at th.co.ais.web.servlet.SSOLoginServlet.doPost(SSOLoginServlet.java:130)
+ 18-09-2567 15:05:08:213 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:523)
+ 18-09-2567 15:05:08:213 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ 18-09-2567 15:05:08:213 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+ 18-09-2567 15:05:08:213 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+ 18-09-2567 15:05:08:213 ERROR stderr.write(71) - 	at io.opentracing.contrib.jaxrs2.server.SpanFinishingFilter.doFilter(SpanFinishingFilter.java:52)
+ 18-09-2567 15:05:08:213 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 15:05:08:213 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 15:05:08:213 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:239)
+ 18-09-2567 15:05:08:213 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:215)
+ 18-09-2567 15:05:08:214 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 15:05:08:214 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 15:05:08:214 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+ 18-09-2567 15:05:08:214 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+ 18-09-2567 15:05:08:214 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+ 18-09-2567 15:05:08:214 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+ 18-09-2567 15:05:08:215 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+ 18-09-2567 15:05:08:215 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 15:05:08:215 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+ 18-09-2567 15:05:08:215 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+ 18-09-2567 15:05:08:215 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+ 18-09-2567 15:05:08:215 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 15:05:08:226 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+ 18-09-2567 15:05:08:226 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+ 18-09-2567 15:05:08:226 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+ 18-09-2567 15:05:08:227 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+ 18-09-2567 15:05:08:227 ERROR stderr.write(71) - 	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+ 18-09-2567 15:05:08:227 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+ 18-09-2567 15:05:08:227 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 15:05:08:227 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+ 18-09-2567 15:05:08:227 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 15:05:08:227 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+ 18-09-2567 15:05:08:227 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 15:05:08:228 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+ 18-09-2567 15:05:08:228 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+ 18-09-2567 15:05:08:228 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+ 18-09-2567 15:05:08:228 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+ 18-09-2567 15:05:08:228 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+ 18-09-2567 15:05:08:228 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+ 18-09-2567 15:05:08:228 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+ 18-09-2567 15:05:08:228 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 15:05:08:228 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 15:05:08:229 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 15:05:08:229 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 15:05:08:229 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+ 18-09-2567 15:05:08:229 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+ 18-09-2567 15:05:08:229 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+ 18-09-2567 15:05:08:229 ERROR stderr.write(71) - 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+ 18-09-2567 15:05:08:229 ERROR stderr.write(71) - 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+ 18-09-2567 15:05:08:229 ERROR stderr.write(71) - 	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+ 18-09-2567 15:05:08:230 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+ 18-09-2567 15:05:08:230 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+ 18-09-2567 15:05:08:230 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+ 18-09-2567 15:05:08:230 ERROR stderr.write(71) - 	at java.lang.Thread.run(Unknown Source)
+ 18-09-2567 15:05:08:230 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\siripc88_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 15:05:08:230 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\siripc88_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 15:05:08:231 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : 1sxohmspz0r2spDnwz3qR-1uBjg8t-GzYK5sgYkr at Wed Sep 18 15:05:08 ICT 2024
+ 18-09-2567 15:05:08:231 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : 1sxohmspz0r2spDnwz3qR-1uBjg8t-GzYK5sgYkr at Wed Sep 18 15:05:08 ICT 2024
+ 18-09-2567 15:05:08:232 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 15:05:08:232 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 15:05:11:259 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 15:05:11:259 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 15:05:11:260 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 15:05:11:260 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 15:05:11:260 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : y1FoKT0Dupy5YawbDAUIvjTFIC-kg7SsXTseFD0E at Wed Sep 18 15:05:11 ICT 2024
+ 18-09-2567 15:05:11:260 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : y1FoKT0Dupy5YawbDAUIvjTFIC-kg7SsXTseFD0E at Wed Sep 18 15:05:11 ICT 2024
+ 18-09-2567 15:05:34:009 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 15:05:34:009 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:22:08:730 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:22:08:730 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 18-09-2567 16:22:08:730 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:22:08:730 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 18-09-2567 16:22:09:860 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : xj9rEDrgdSkLeudLPS_WPN839gQ-PVybXMhXU-An at Wed Sep 18 16:22:09 ICT 2024
+ 18-09-2567 16:22:09:860 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : xj9rEDrgdSkLeudLPS_WPN839gQ-PVybXMhXU-An at Wed Sep 18 16:22:09 ICT 2024
+ 18-09-2567 16:22:34:457 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:22:34:457 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:22:34:457 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:22:34:457 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:22:36:842 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 16:22:36:842 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 16:22:36:842 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 16:22:36:842 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - java.io.FileNotFoundException: D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - 	at java.io.FileInputStream.open0(Native Method)
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - 	at java.io.FileInputStream.open(Unknown Source)
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - 	at th.co.ais.web.util.SerializeManager.read(SerializeManager.java:71)
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - 	at th.co.ais.web.servlet.SSOLoginServlet.doPost(SSOLoginServlet.java:130)
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:523)
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+ 18-09-2567 16:22:36:842 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.opentracing.contrib.jaxrs2.server.SpanFinishingFilter.doFilter(SpanFinishingFilter.java:52)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:239)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:215)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+ 18-09-2567 16:22:36:856 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+ 18-09-2567 16:22:36:858 ERROR stderr.write(71) - 	at java.lang.Thread.run(Unknown Source)
+ 18-09-2567 16:22:36:858 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 16:22:36:858 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 16:22:36:921 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:22:36:921 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:22:40:366 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:22:40:366 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:22:40:366 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:22:40:366 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:22:40:366 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : mzYBQrfkFXSBff_wiI4Vp5iBlmR3mZLEKH94sBu- at Wed Sep 18 16:22:40 ICT 2024
+ 18-09-2567 16:22:40:366 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : mzYBQrfkFXSBff_wiI4Vp5iBlmR3mZLEKH94sBu- at Wed Sep 18 16:22:40 ICT 2024
+ 18-09-2567 16:23:08:717 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:23:08:717 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:24:08:727 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:24:08:727 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:25:08:725 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:25:08:725 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:25:33:870 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : 6oBKhj8KSsnqs6XaWoV5Fikc2ozythVw8JSWlH5q at Wed Sep 18 16:25:33 ICT 2024
+ 18-09-2567 16:25:33:870 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : 6oBKhj8KSsnqs6XaWoV5Fikc2ozythVw8JSWlH5q at Wed Sep 18 16:25:33 ICT 2024
+ 18-09-2567 16:25:48:922 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 16:25:48:922 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 16:25:48:923 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 16:25:48:923 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 16:25:48:924 ERROR stderr.write(71) - java.io.FileNotFoundException: D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 16:25:48:925 ERROR stderr.write(71) - 	at java.io.FileInputStream.open0(Native Method)
+ 18-09-2567 16:25:48:925 ERROR stderr.write(71) - 	at java.io.FileInputStream.open(Unknown Source)
+ 18-09-2567 16:25:48:925 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 16:25:48:925 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 16:25:48:925 ERROR stderr.write(71) - 	at th.co.ais.web.util.SerializeManager.read(SerializeManager.java:71)
+ 18-09-2567 16:25:48:925 ERROR stderr.write(71) - 	at th.co.ais.web.servlet.SSOLoginServlet.doPost(SSOLoginServlet.java:130)
+ 18-09-2567 16:25:48:925 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:523)
+ 18-09-2567 16:25:48:926 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ 18-09-2567 16:25:48:926 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+ 18-09-2567 16:25:48:926 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+ 18-09-2567 16:25:48:926 ERROR stderr.write(71) - 	at io.opentracing.contrib.jaxrs2.server.SpanFinishingFilter.doFilter(SpanFinishingFilter.java:52)
+ 18-09-2567 16:25:48:926 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 16:25:48:927 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 16:25:48:927 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:239)
+ 18-09-2567 16:25:48:927 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:215)
+ 18-09-2567 16:25:48:927 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 16:25:48:927 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 16:25:48:927 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+ 18-09-2567 16:25:48:928 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+ 18-09-2567 16:25:48:928 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+ 18-09-2567 16:25:48:928 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+ 18-09-2567 16:25:48:928 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+ 18-09-2567 16:25:48:928 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:25:48:928 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+ 18-09-2567 16:25:48:928 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+ 18-09-2567 16:25:48:929 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+ 18-09-2567 16:25:48:929 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:25:48:934 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+ 18-09-2567 16:25:48:935 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+ 18-09-2567 16:25:48:935 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+ 18-09-2567 16:25:48:935 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+ 18-09-2567 16:25:48:935 ERROR stderr.write(71) - 	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+ 18-09-2567 16:25:48:935 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+ 18-09-2567 16:25:48:935 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:25:48:936 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+ 18-09-2567 16:25:48:936 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:25:48:936 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+ 18-09-2567 16:25:48:936 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:25:48:936 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+ 18-09-2567 16:25:48:936 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+ 18-09-2567 16:25:48:936 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+ 18-09-2567 16:25:48:937 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+ 18-09-2567 16:25:48:937 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+ 18-09-2567 16:25:48:937 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+ 18-09-2567 16:25:48:937 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+ 18-09-2567 16:25:48:937 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:25:48:937 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:25:48:937 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:25:48:937 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:25:48:937 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+ 18-09-2567 16:25:48:937 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+ 18-09-2567 16:25:48:938 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+ 18-09-2567 16:25:48:938 ERROR stderr.write(71) - 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+ 18-09-2567 16:25:48:938 ERROR stderr.write(71) - 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+ 18-09-2567 16:25:48:938 ERROR stderr.write(71) - 	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+ 18-09-2567 16:25:48:938 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+ 18-09-2567 16:25:48:938 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+ 18-09-2567 16:25:48:938 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+ 18-09-2567 16:25:48:938 ERROR stderr.write(71) - 	at java.lang.Thread.run(Unknown Source)
+ 18-09-2567 16:25:48:939 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 16:25:48:939 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 16:25:48:939 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:25:48:939 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:25:52:012 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:25:52:012 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:25:52:012 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:25:52:012 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:25:52:013 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : AUL_mjIaj9xIVVVrf1-2cFkatlihvZgDdLSoSF3t at Wed Sep 18 16:25:52 ICT 2024
+ 18-09-2567 16:25:52:013 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : AUL_mjIaj9xIVVVrf1-2cFkatlihvZgDdLSoSF3t at Wed Sep 18 16:25:52 ICT 2024
+ 18-09-2567 16:26:08:726 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:26:08:726 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:27:08:721 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:27:08:721 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:27:23:411 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:27:23:411 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:27:23:412 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:27:23:412 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:28:03:198 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 18-09-2567 16:28:03:198 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:28:03:198 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 18-09-2567 16:28:03:198 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:28:05:453 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:28:05:453 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:28:05:454 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:28:05:454 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:28:06:146 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : R9vWTs1887AMaaBlKqlbc6385uGssTEZwHSAP_oG at Wed Sep 18 16:28:06 ICT 2024
+ 18-09-2567 16:28:06:146 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : R9vWTs1887AMaaBlKqlbc6385uGssTEZwHSAP_oG at Wed Sep 18 16:28:06 ICT 2024
+ 18-09-2567 16:28:07:289 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:28:07:289 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:28:07:289 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:28:07:289 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:28:08:775 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 16:28:08:775 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key useSerialize
+ 18-09-2567 16:28:08:779 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 16:28:08:779 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 18-09-2567 16:28:08:784 ERROR stderr.write(71) - java.io.FileNotFoundException: D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 16:28:08:785 ERROR stderr.write(71) - 	at java.io.FileInputStream.open0(Native Method)
+ 18-09-2567 16:28:08:786 ERROR stderr.write(71) - 	at java.io.FileInputStream.open(Unknown Source)
+ 18-09-2567 16:28:08:786 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 16:28:08:786 ERROR stderr.write(71) - 	at java.io.FileInputStream.<init>(Unknown Source)
+ 18-09-2567 16:28:08:786 ERROR stderr.write(71) - 	at th.co.ais.web.util.SerializeManager.read(SerializeManager.java:71)
+ 18-09-2567 16:28:08:786 ERROR stderr.write(71) - 	at th.co.ais.web.servlet.SSOLoginServlet.doPost(SSOLoginServlet.java:130)
+ 18-09-2567 16:28:08:786 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:523)
+ 18-09-2567 16:28:08:787 ERROR stderr.write(71) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:590)
+ 18-09-2567 16:28:08:787 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+ 18-09-2567 16:28:08:787 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+ 18-09-2567 16:28:08:787 ERROR stderr.write(71) - 	at io.opentracing.contrib.jaxrs2.server.SpanFinishingFilter.doFilter(SpanFinishingFilter.java:52)
+ 18-09-2567 16:28:08:787 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 16:28:08:787 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 16:28:08:787 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:239)
+ 18-09-2567 16:28:08:787 ERROR stderr.write(71) - 	at net.bull.javamelody.MonitoringFilter.doFilter(MonitoringFilter.java:215)
+ 18-09-2567 16:28:08:787 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+ 18-09-2567 16:28:08:787 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+ 18-09-2567 16:28:08:788 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+ 18-09-2567 16:28:08:788 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+ 18-09-2567 16:28:08:788 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+ 18-09-2567 16:28:08:788 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+ 18-09-2567 16:28:08:788 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+ 18-09-2567 16:28:08:788 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:28:08:788 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+ 18-09-2567 16:28:08:788 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+ 18-09-2567 16:28:08:789 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+ 18-09-2567 16:28:08:789 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:28:08:789 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+ 18-09-2567 16:28:08:789 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+ 18-09-2567 16:28:08:789 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+ 18-09-2567 16:28:08:789 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+ 18-09-2567 16:28:08:789 ERROR stderr.write(71) - 	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+ 18-09-2567 16:28:08:789 ERROR stderr.write(71) - 	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+ 18-09-2567 16:28:08:790 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:28:08:790 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+ 18-09-2567 16:28:08:790 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:28:08:790 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+ 18-09-2567 16:28:08:790 ERROR stderr.write(71) - 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+ 18-09-2567 16:28:08:790 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+ 18-09-2567 16:28:08:790 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+ 18-09-2567 16:28:08:790 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+ 18-09-2567 16:28:08:790 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+ 18-09-2567 16:28:08:791 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+ 18-09-2567 16:28:08:791 ERROR stderr.write(71) - 	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+ 18-09-2567 16:28:08:791 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+ 18-09-2567 16:28:08:791 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:28:08:791 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:28:08:791 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:28:08:791 ERROR stderr.write(71) - 	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+ 18-09-2567 16:28:08:791 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+ 18-09-2567 16:28:08:791 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+ 18-09-2567 16:28:08:792 ERROR stderr.write(71) - 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+ 18-09-2567 16:28:08:792 ERROR stderr.write(71) - 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+ 18-09-2567 16:28:08:792 ERROR stderr.write(71) - 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+ 18-09-2567 16:28:08:792 ERROR stderr.write(71) - 	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+ 18-09-2567 16:28:08:792 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+ 18-09-2567 16:28:08:793 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+ 18-09-2567 16:28:08:793 ERROR stderr.write(71) - 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+ 18-09-2567 16:28:08:793 ERROR stderr.write(71) - 	at java.lang.Thread.run(Unknown Source)
+ 18-09-2567 16:28:08:793 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 16:28:08:793 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - D:\SEMCODE\SEM-Migration\data\SEM\resources\SEMConfig\rapeesuw_SM001.xml (The system cannot find the file specified)
+ 18-09-2567 16:28:08:895 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:28:08:895 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:28:12:129 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:28:12:129 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 18-09-2567 16:28:12:129 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:28:12:129 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 18-09-2567 16:28:12:131 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : DQ75LoK4x9DYXc9b3upo1Xupwc0UKvD6bsGUWStl at Wed Sep 18 16:28:12 ICT 2024
+ 18-09-2567 16:28:12:131 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : DQ75LoK4x9DYXc9b3upo1Xupwc0UKvD6bsGUWStl at Wed Sep 18 16:28:12 ICT 2024
+ 18-09-2567 16:29:03:194 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:29:03:194 INFO  th.co.ais.web.servlet.QuartzJobGC.execute(15) - Executing Quartz Job to System Clear GC
+ 18-09-2567 16:29:14:844 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 18-09-2567 16:29:14:844 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.gm">
+	<class name="th.co.ais.domain.gm.BgMasterSP" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="siteName" type="java.lang.String" />
+		<property name="expenseType" type="java.lang.String" />
+		<property name="expenseName" type="java.lang.String" />
+		<property name="bgNo" type="java.lang.String" />
+		<property name="bgBank" type="java.lang.String" />
+		<property name="bgBankName" type="java.lang.String" />
+		<property name="bgStartDt" type="java.util.Date" />
+		<property name="bgEndDt" type="java.util.Date" />
+		<property name="bgAmt" type="java.lang.Double" />
+		<property name="bgStatus" type="java.lang.String" />
+		<property name="bgStatusName" type="java.lang.String" />
+		<property name="rejectReason" type="java.lang.String" />
+		<property name="renewFlag" type="java.lang.String" />
+		<property name="newFlag" type="java.lang.String" />
+		<property name="ctrStartDt" type="java.util.Date" />
+		<property name="ctrEndDt" type="java.util.Date" />
+		<property name="company" type="java.lang.String"/>
+		<property name="vendorId" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="querySearchBGMaster" callable="true">
+		<return class="th.co.ais.domain.gm.BgMasterSP">  
+			<return-property name="rowId" column="BG_MASTER_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="expenseName" column="EXPENSE_NAME" />
+			<return-property name="bgNo" column="BG_NO" />
+			<return-property name="bgBank" column="BG_BANK" />
+			<return-property name="bgBankName" column="BG_BANK_NAME" />
+			<return-property name="bgStartDt" column="BG_START_DT" />
+			<return-property name="bgEndDt" column="BG_END_DT" />
+			<return-property name="bgAmt" column="BG_AMT" />
+			<return-property name="bgStatus" column="BG_STATUS" />
+			<return-property name="bgStatusName" column="BG_STATUS_NAME" />
+			<return-property name="rejectReason" column="REJECT_REASON" />
+			<return-property name="renewFlag" column="RENEW_FALG" />
+			<return-property name="newFlag" column="NEW_FALG" />
+			<return-property name="ctrStartDt" column="CTR_START_DT" />
+			<return-property name="ctrEndDt" column="CTR_END_DT" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="vendorId" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MCT002_SRCH(?, :contractNo, :siteName, :vendorId, :vendorName, :company, :bgNo, :bgBank, :bgStartDt, :bgEndDt, :bgStatus, :ctrStartDt, :ctrEndDt, :expenseType ) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

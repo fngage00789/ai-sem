@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco003SearchPSI002SP"  entity-name="mco003SearchContract">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="cycleNo" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="effectiveDt" type="java.util.Date"/>
+		<property name="expireDt" type="java.util.Date"/>
+		<property name="statusBorrow" type="java.lang.String"/>
+		<property name="statusBorrowDesc" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="spMco003SearchContract" callable="true">
+		<return class="th.co.ais.domain.co.Mco003SearchPSI002SP"  entity-name="mco003SearchContract">  
+			<return-property name="rowId" column="SITE_INFO_ID" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="cycleNo" column="CYCLE_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="statusBorrow" column="STATUS_BORROW" />
+			<return-property name="statusBorrowDesc" column="STATUS_BORROW_DESC" />
+		</return>
+		 <![CDATA[ call SEM_SP_MCO003_SRCH_CONTRACT(?, :contractNo, :siteName, :location) ]]>
+	</sql-query>
+</hibernate-mapping>

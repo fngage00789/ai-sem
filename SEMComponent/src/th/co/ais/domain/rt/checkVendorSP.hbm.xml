@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.CheckVendor">
+		<id name="msgWarning" type="java.lang.String"/>
+	</class>
+	<sql-query name="spCheckVendor" callable="true">
+		<return class="th.co.ais.domain.rt.CheckVendor">
+			<return-property name="msgWarning" column="warning" />
+		</return>
+		<![CDATA[ call SEM_SP_CHK_VENDOR(?, :vendorMasterId, :payeeMasterId, :expenseType, :contractNo) ]]>
+	</sql-query>
+</hibernate-mapping>

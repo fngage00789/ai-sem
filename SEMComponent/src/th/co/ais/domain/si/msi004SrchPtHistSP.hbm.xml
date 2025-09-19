@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004SrchPtHistSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="ptYear" type="java.lang.String"/>
+		<property name="ptAmt" type="java.lang.Double"/>
+		<property name="ptPayTypeName" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="msi004SearchPropertyTaxHistory" callable="true">
+		<return class="th.co.ais.domain.si.Msi004SrchPtHistSP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="ptYear" column="PT_YEAR" />
+			<return-property name="ptAmt" column="PT_AMT" />
+			<return-property name="ptPayTypeName" column="PT_PAY_TYPE_NAME" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_PT_HIST (?, :siteInfoId) ]]>
+	</sql-query>
+</hibernate-mapping>

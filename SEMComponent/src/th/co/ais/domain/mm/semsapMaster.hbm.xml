@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.mm">
+	<class name="ItemMasterSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" name="value" type="java.lang.String"/>
+		<property generated="never" lazy="false" name="label" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="semsapRegionCheckList" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemMasterSP">
+			<return-property column="REGION_CODE" name="rowId"/>
+			<return-property column="REGION_CODE" name="value"/>
+			<return-property column="REGION_DESC" name="label"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_MT_REGION (?) ]]>
+	</sql-query>
+	
+	
+</hibernate-mapping>

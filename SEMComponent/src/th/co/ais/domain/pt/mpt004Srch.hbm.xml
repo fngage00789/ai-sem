@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+	<class name="th.co.ais.domain.pt.Mpt004Srch">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="paymentGroupNo" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="pTaxYear" type="java.lang.Integer" />
+		<property name="paymentStatus" type="java.lang.String"/>
+		<property name="periodNo" type="java.lang.Integer" />
+		<property name="expenseType" type="java.lang.String" />
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="payeeId" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="excAmt" type="java.lang.Double" />
+		<property name="whtAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="chqAmt" type="java.lang.Double" />
+		<property name="diffAmt" type="java.lang.Double" />
+		<property name="paymentType" type="java.lang.String" />
+		<property name="bankName" type="java.lang.String" />
+		<property name="bankAccNo" type="java.lang.String" />
+		<property name="chqDt" type="java.sql.Date" />
+		<property name="chqReceiveDt" type="java.sql.Date" />
+		<property name="transferDt" type="java.sql.Date" />
+		<property name="remark" type="java.lang.String" />
+		<property name="exportFlag" type="java.lang.String" />
+		<property name="exportDt" type="java.sql.Date" />
+		<property name="docType" type="java.lang.String" />
+		<property name="doc68" type="java.lang.String" />
+		<property name="doc92" type="java.lang.String" />
+		<property name="paymentDocNo" type="java.lang.String" />
+		<property name="siteName" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="siteInfoId" type="java.lang.String" />
+		<property name="docTypeDesc" type="java.lang.String" />
+		<property name="docNo" type="java.lang.String" />
+		<property name="docDt" type="java.sql.Date" />
+		<property name="paymentTypeDesc" type="java.lang.String" />
+		<property name="paymentMethod" type="java.lang.String" />
+		<property name="batchNo" type="java.lang.String" />
+		<property name="rcptPayCutAmount" type="java.lang.Double" />
+		<property name="sendInfoStatus" type="java.lang.String" />
+		<property name="paymentStatusId" type="java.lang.String" />
+		<property name="diffRemark" type="java.lang.String" />
+		<property name="doc69" type="java.lang.String" />
+		<property name="serviceName" type="java.lang.String" />
+	</class>
+	<sql-query name="spMpt004Srch" callable="true">
+		<return class="th.co.ais.domain.pt.Mpt004Srch">
+			<return-property name="rowId" column="PTAX_PAYMENT_ID" />
+			<return-property name="paymentGroupNo" column="PAYMENT_GROUP_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="pTaxYear" column="PTAX_YEAR" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="periodNo" column="PERIOD_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeId" column="PAYEE_ID" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="chqAmt" column="CHQ_AMT" />
+			<return-property name="diffAmt" column="DIFF_AMT" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="bankAccNo" column="PAYEE_BANK_ACC_NO" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="exportFlag" column="EXPORT_FLAG" />
+			<return-property name="exportDt" column="EXPORT_DATE" />
+			<return-property name="docType" column="DOC_TYPE" />
+			<return-property name="doc68" column="DOC_68" />
+			<return-property name="doc92" column="DOC_92" />
+			<return-property name="paymentDocNo" column="PAYMENT_DOC_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="region" column="REGION" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="docTypeDesc" column="DOC_TYPE_DESC" />
+			<return-property name="docNo" column="DOC_NO" />
+			<return-property name="docDt" column="DOC_DT" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="batchNo" column="PAYMENT_BATCH_NO" />
+			<return-property name="rcptPayCutAmount" column="RECEIPT_PAYCUT_AMOUNT" />
+			<return-property name="sendInfoStatus" column="SEND_FLAG" />
+			<return-property name="paymentStatusId" column="PAYMENT_STATUS_ID" />
+			<return-property name="diffRemark" column="DIFF_REMARK" />
+			<return-property name="doc69" column="DOC_69" />
+			<return-property name="serviceName" column="SERVICE_NAME" />
+		</return>
+		<![CDATA[ call SEM_SP_MPT004_SRCH(?, :company, :pTaxYearFrom, :pTaxYearTo, :periodNoFrom, :periodNoTo, :contractNo, :picoFlag, :pTaxPayType, :expenseType, :region, :province, :amphur, :govtName, :payGovtFlag, :vendorCode, :vendorName, :payeeName,
+		                          :estimateFlag, :paymentStatus, :paymentType, :chqDtFrom, :chqDtTo, :transferDtFrom, :transferDtTo, :paymentBy, :paymentDtFrom, :paymentDtTo, :estimateBy, 
+		                          :estimateDtFrom, :estimateDtTo, :rcptPayFlag, :strParam) ]]>
+	</sql-query>
+</hibernate-mapping>

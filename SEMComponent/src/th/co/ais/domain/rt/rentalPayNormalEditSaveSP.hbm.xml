@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.RentalPayNormalEditSaveSP">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMrt003Edt" callable="true">
+		<return class="th.co.ais.domain.rt.RentalPayNormalEditSaveSP">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT003_EDT(?, :rentalPaymentId, cast(:calYear as varchar), cast(:calMonth as varchar), :vatType , cast(:excAmt as numeric), 
+										cast(:vatRate as numeric), cast(:vatAmt as numeric), cast(:incAmt as numeric), cast(:whtRate as numeric), cast(:whtAmt as numeric), 
+										:userId, cast(:discountRate as numeric), cast(:discountAmt as numeric), :fineFlag, :extraFlag,
+										:deleteFlag, :expenseType, cast(:dueDt as date), :payPeriodType, :whtType,:discountFlag, :discountCond) ]]>
+	</sql-query>
+</hibernate-mapping>

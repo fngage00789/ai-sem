@@ -1,0 +1,528 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 ?.?. 2557, 19:13:22 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="th.co.ais.domain.sa.SemSaSiteApp" table="SEMSASITEAPP">
+        <id name="siteAppId" type="java.lang.String">
+            <column name="SITEAPPID" />
+            <generator class="assigned" />
+        </id>
+        <property name="version" type="java.math.BigDecimal">
+            <column name="VERSION" />
+        </property>
+        <property name="contractId" type="java.lang.String">
+            <column name="CONTRACTID" />
+        </property>
+        <property name="contractTime" type="java.math.BigDecimal">
+            <column name="CONTRACTTIME" />
+        </property>
+        <property name="contractTimeSeq" type="java.math.BigDecimal">
+            <column name="CONTRACTTIMESEQ" />
+        </property>
+        <property name="contractNo" type="java.lang.String">
+            <column name="CONTRACTNO" />
+        </property>
+        <property name="reqType" type="java.lang.String">
+            <column name="REQTYPE" />
+        </property>
+        <property name="reqDocType" type="java.lang.String">
+            <column name="REQDOCTYPE" />
+        </property>
+        <property name="title" type="java.lang.String">
+            <column name="TITLE" />
+        </property>
+        <property name="reqOfficer" type="java.lang.String">
+            <column name="REQOFFICER" />
+        </property>
+        <property name="reqOfficerManual" type="java.lang.String">
+            <column name="REQOFFICERMANUAL" />
+        </property>
+        <property name="company" type="java.lang.String">
+            <column name="COMPANY" />
+        </property>
+        <property name="region" type="java.lang.String">
+            <column name="REGION" />
+        </property>
+        <property name="docNo" type="java.lang.String">
+            <column name="DOCNO" />
+        </property>
+        <property name="docDt" type="java.util.Date">
+            <column name="DOCDT" />
+        </property>
+        <property name="docStatus" type="java.lang.String">
+            <column name="DOCSTATUS" />
+        </property>
+        <property name="needLegalApprove" type="java.lang.String">
+            <column name="NEEDLEGALAPPROVE" />
+        </property>
+        <property name="needAvpApprove" type="java.lang.String">
+            <column name="NEEDAVPAPPROVE" />
+        </property>
+        <property name="locationId" type="java.lang.String">
+            <column name="LOCATIONID" />
+        </property>
+        <property name="locationZone" type="java.lang.String">
+            <column name="LOCATIONZONE" />
+        </property>
+        <property name="isCoLocate" type="java.lang.String">
+            <column name="ISCOLOCATE" />
+        </property>
+        <property name="coContractNo" type="java.lang.String">
+            <column name="COCONTRACTNO" />
+        </property>
+        <property name="terminateReason" type="java.lang.String">
+            <column name="TERMINATEREASON" />
+        </property>
+        <property name="terminateRemoveFlag" type="java.lang.String">
+            <column name="TERMINATEREMOVEFLAG" />
+        </property>
+        <property name="terminateRemoveDt" type="java.util.Date">
+            <column name="TERMINATEREMOVEDT" />
+        </property>
+        <property name="terminateCancelRelateData" type="java.lang.String">
+            <column name="TERMINATECANCELRELATEDATA" />
+        </property>
+        <property name="terminateNote" type="java.lang.String">
+            <column name="TERMINATENOTE" />
+        </property>
+        <property name="locationType" type="java.lang.String">
+            <column name="LOCATIONTYPE" />
+        </property>
+        <property name="locationAddressNo" type="java.lang.String">
+            <column name="LOCATIONADDRESSNO" />
+        </property>
+        <property name="locationBuilding" type="java.lang.String">
+            <column name="LOCATIONBUILDING" />
+        </property>
+        <property name="locationFloor" type="java.lang.String">
+            <column name="LOCATIONFLOOR" />
+        </property>
+        <property name="locationRoomNo" type="java.lang.String">
+            <column name="LOCATIONROOMNO" />
+        </property>
+        <property name="locationStreet" type="java.lang.String">
+            <column name="LOCATIONSTREET" />
+        </property>
+        <property name="locationTambon" type="java.lang.String">
+            <column name="LOCATIONTAMBON" />
+        </property>
+        <property name="locationAmphurId" type="java.lang.String">
+            <column name="LOCATIONAMPHURID" />
+        </property>
+        <property name="locationProvinceId" type="java.lang.String">
+            <column name="LOCATIONPROVINCEID" />
+        </property>
+        <property name="locationPostcode" type="java.lang.String">
+            <column name="LOCATIONPOSTCODE" />
+        </property>
+        <property name="landArea" type="java.math.BigDecimal">
+            <column name="LANDAREA" />
+        </property>
+        <property name="landAreaType" type="java.lang.String">
+            <column name="LANDAREATYPE" />
+        </property>
+        <property name="deckArea" type="java.math.BigDecimal">
+            <column name="DECKAREA" />
+        </property>
+        <property name="buildingArea" type="java.math.BigDecimal">
+            <column name="BUILDINGAREA" />
+        </property>
+        <property name="roomArea" type="java.math.BigDecimal">
+            <column name="ROOMAREA" />
+        </property>
+        <property name="areaRemark" type="java.lang.String">
+            <column name="AREAREMARK" />
+        </property>
+        <property name="effectiveDt" type="java.util.Date">
+            <column name="EFFECTIVEDT" />
+        </property>
+        <property name="expireDt" type="java.util.Date">
+            <column name="EXPIREDT" />
+        </property>
+        <property name="ageYear" type="java.math.BigDecimal">
+            <column name="AGEYEAR" />
+        </property>
+        <property name="ageMonth" type="java.math.BigDecimal">
+            <column name="AGEMONTH" />
+        </property>
+        <property name="ageDay" type="java.math.BigDecimal">
+            <column name="AGEDAY" />
+        </property>
+        <property name="contractWanted" type="java.lang.String">
+            <column name="CONTRACTWANTED" />
+        </property>
+        <property name="promiseRenewTime" type="java.math.BigDecimal">
+            <column name="PROMISERENEWTIME" />
+        </property>
+        <property name="promiseRenewPeriod" type="java.math.BigDecimal">
+            <column name="PROMISERENEWPERIOD" />
+        </property>
+        <property name="promiseRenewPeriodType" type="java.lang.String">
+            <column name="PROMISERENEWPERIODTYPE" />
+        </property>
+        <property name="lessorName" type="java.lang.String">
+            <column name="LESSORNAME" />
+        </property>
+        <property name="lessorHouseNo" type="java.lang.String">
+            <column name="LESSORHOUSENO" />
+        </property>
+        <property name="lessorBuilding" type="java.lang.String">
+            <column name="LESSORBUILDING" />
+        </property>
+        <property name="lessorFloor" type="java.lang.String">
+            <column name="LESSORFLOOR" />
+        </property>
+        <property name="lessorRoomNo" type="java.lang.String">
+            <column name="LESSORROOMNO" />
+        </property>
+        <property name="lessorStreet" type="java.lang.String">
+            <column name="LESSORSTREET" />
+        </property>
+        <property name="lessorTambon" type="java.lang.String">
+            <column name="LESSORTAMBON" />
+        </property>
+        <property name="lessorAmphurId" type="java.lang.String">
+            <column name="LESSORAMPHURID" />
+        </property>
+        <property name="lessorProvinceId" type="java.lang.String">
+            <column name="LESSORPROVINCEID" />
+        </property>
+        <property name="lessorPostcode" type="java.lang.String">
+            <column name="LESSORPOSTCODE" />
+        </property>
+        <property name="contactName" type="java.lang.String">
+            <column name="CONTACTNAME" />
+        </property>
+        <property name="contactTel" type="java.lang.String">
+            <column name="CONTACTTEL" />
+        </property>
+        <property name="contactMobile" type="java.lang.String">
+            <column name="CONTACTMOBILE" />
+        </property>
+        <property name="contactFax" type="java.lang.String">
+            <column name="CONTACTFAX" />
+        </property>
+        <property name="contactEmail" type="java.lang.String">
+            <column name="CONTACTEMAIL" />
+        </property>
+        <property name="rentAmt" type="java.math.BigDecimal">
+            <column name="RENTAMT" />
+        </property>
+        <property name="rentPeriodType" type="java.lang.String">
+            <column name="RENTPERIODTYPE" />
+        </property>
+        <property name="rentDetail" type="java.lang.String">
+            <column name="RENTDETAIL" />
+        </property>
+        <property name="rentWhtType" type="java.lang.String">
+            <column name="RENTWHTTYPE" />
+        </property>
+        <property name="rentWhtRate" type="java.math.BigDecimal">
+            <column name="RENTWHTRATE" />
+        </property>
+        <property name="rentWhtRateMod" type="java.lang.String">
+            <column name="RENTWHTRATEMOD" />
+        </property>
+        <property name="rentServiceAmt" type="java.math.BigDecimal">
+            <column name="RENTSERVICEAMT" />
+        </property>
+        <property name="rentServicePeriodType" type="java.lang.String">
+            <column name="RENTSERVICEPERIODTYPE" />
+        </property>
+        <property name="rentServiceDetail" type="java.lang.String">
+            <column name="RENTSERVICEDETAIL" />
+        </property>
+        <property name="rentServiceVatType" type="java.lang.String">
+            <column name="RENTSERVICEVATTYPE" />
+        </property>
+        <property name="rentServiceWhtType" type="java.lang.String">
+            <column name="RENTSERVICEWHTTYPE" />
+        </property>
+        <property name="rentServiceWhtRate" type="java.math.BigDecimal">
+            <column name="RENTSERVICEWHTRATE" />
+        </property>
+        <property name="rentServiceWhtRateMod" type="java.lang.String">
+            <column name="RENTSERVICEWHTRATEMOD" />
+        </property>
+        <property name="rentAreaAmtMemo" type="java.lang.String">
+            <column name="RENTAREAAMTMEMO" />
+        </property>
+        <property name="rentServiceAmtMemo" type="java.lang.String">
+            <column name="RENTSERVICEAMTMEMO" />
+        </property>
+        <property name="rentSetupAmtMemo" type="java.lang.String">
+            <column name="RENTSETUPAMTMEMO" />
+        </property>
+        <property name="rentOtherAmtMemo" type="java.lang.String">
+            <column name="RENTOTHERAMTMEMO" />
+        </property>
+        <property name="rentSpecialAmtMemo" type="java.lang.String">
+            <column name="RENTSPECIALAMTMEMO" />
+        </property>
+        <property name="totalRentService" type="java.math.BigDecimal">
+            <column name="TOTALRENTSERVICE" />
+        </property>
+        <property name="rentPaymentPeriod" type="java.lang.String">
+            <column name="RENTPAYMENTPERIOD" />
+        </property>
+        <property name="rentPaymentPeriodOth" type="java.lang.String">
+            <column name="RENTPAYMENTPERIODOTH" />
+        </property>
+        <property name="rentDepositFlag" type="java.lang.String">
+            <column name="RENTDEPOSITFLAG" />
+        </property>
+        <property name="rentDepositBgAmt" type="java.math.BigDecimal">
+            <column name="RENTDEPOSITBGAMT" />
+        </property>
+        <property name="rentDepositBgVat" type="java.lang.String">
+            <column name="RENTDEPOSITBGVAT" />
+        </property>
+        <property name="rentDepositCashAmt" type="java.math.BigDecimal">
+            <column name="RENTDEPOSITCASHAMT" />
+        </property>
+        <property name="rentDepositCashVat" type="java.lang.String">
+            <column name="RENTDEPOSITCASHVAT" />
+        </property>
+        <property name="rentRemark" type="java.lang.String">
+            <column name="RENTREMARK" />
+        </property>
+        <property name="elUseMultiResourse" type="java.lang.String">
+            <column name="ELUSEMULTIRESOURSE" />
+        </property>
+        <property name="elUseNewMeter" type="java.lang.String">
+            <column name="ELUSENEWMETER" />
+        </property>
+        <property name="elUseOldMeter" type="java.lang.String">
+            <column name="ELUSEOLDMETER" />
+        </property>
+        <property name="elUseOwner" type="java.lang.String">
+            <column name="ELUSEOWNER" />
+        </property>
+        <property name="elOwnerType" type="java.lang.String">
+            <column name="ELOWNERTYPE" />
+        </property>
+        <property name="elPayOnPackage" type="java.lang.String">
+            <column name="ELPAYONPACKAGE" />
+        </property>
+        <property name="elPackagePeriodType" type="java.lang.String">
+            <column name="ELPACKAGEPERIODTYPE" />
+        </property>
+        <property name="elPayOnUsed" type="java.lang.String">
+            <column name="ELPAYONUSED" />
+        </property>
+        <property name="elUnitPrice" type="java.math.BigDecimal">
+            <column name="ELUNITPRICE" />
+        </property>
+        <property name="elVatType" type="java.lang.String">
+            <column name="ELVATTYPE" />
+        </property>
+        <property name="elRemark" type="java.lang.String">
+            <column name="ELREMARK" />
+        </property>
+        <property name="elDepositFlag" type="java.lang.String">
+            <column name="ELDEPOSITFLAG" />
+        </property>
+        <property name="elBgDeposit" type="java.math.BigDecimal">
+            <column name="ELBGDEPOSIT" />
+        </property>
+        <property name="elBgDepositVatType" type="java.lang.String">
+            <column name="ELBGDEPOSITVATTYPE" />
+        </property>
+        <property name="elCashDeposit" type="java.math.BigDecimal">
+            <column name="ELCASHDEPOSIT" />
+        </property>
+        <property name="elCashDepositVatType" type="java.lang.String">
+            <column name="ELCASHDEPOSITVATTYPE" />
+        </property>
+        <property name="elDepositRemark" type="java.lang.String">
+            <column name="ELDEPOSITREMARK" />
+        </property>
+        <property name="remarkSpecial" type="java.lang.String">
+            <column name="REMARKSPECIAL" />
+        </property>
+        <property name="remarkDocuments" type="java.lang.String">
+            <column name="REMARKDOCUMENTS" />
+        </property>
+        <property name="remarkContract" type="java.lang.String">
+            <column name="REMARKCONTRACT" />
+        </property>
+        <property name="remarkAqm" type="java.lang.String">
+            <column name="REMARKAQM" />
+        </property>
+        <property name="remarkRisk" type="java.lang.String">
+            <column name="REMARKRISK" />
+        </property>
+        <property name="remarkLegal" type="java.lang.String">
+            <column name="REMARKLEGAL" />
+        </property>
+        <property name="remarkOther" type="java.lang.String">
+            <column name="REMARKOTHER" />
+        </property>
+        <property name="ptTaxPayType" type="java.lang.String">
+            <column name="PTTAXPAYTYPE" />
+        </property>
+        <property name="ptRemark" type="java.lang.String">
+            <column name="PTREMARK" />
+        </property>
+        <property name="insFlag" type="java.lang.String">
+            <column name="INSFLAG" />
+        </property>
+        <property name="insSumInsured" type="java.math.BigDecimal">
+            <column name="INSSUMINSURED" />
+        </property>
+        <property name="insEffectiveDt" type="java.util.Date">
+            <column name="INSEFFECTIVEDT" />
+        </property>
+        <property name="insExpireDt" type="java.util.Date">
+            <column name="INSEXPIREDT" />
+        </property>
+        <property name="insBeneficiary" type="java.lang.String">
+            <column name="INSBENEFICIARY" />
+        </property>
+        <property name="mailName" type="java.lang.String">
+            <column name="MAILNAME" />
+        </property>
+        <property name="mailHouseNo" type="java.lang.String">
+            <column name="MAILHOUSENO" />
+        </property>
+        <property name="mailBuilding" type="java.lang.String">
+            <column name="MAILBUILDING" />
+        </property>
+        <property name="mailFloor" type="java.lang.String">
+            <column name="MAILFLOOR" />
+        </property>
+        <property name="mailRoomNo" type="java.lang.String">
+            <column name="MAILROOMNO" />
+        </property>
+        <property name="mailStreet" type="java.lang.String">
+            <column name="MAILSTREET" />
+        </property>
+        <property name="mailTambon" type="java.lang.String">
+            <column name="MAILTAMBON" />
+        </property>
+        <property name="mailAmphurId" type="java.lang.String">
+            <column name="MAILAMPHURID" />
+        </property>
+        <property name="mailProvinceId" type="java.lang.String">
+            <column name="MAILPROVINCEID" />
+        </property>
+        <property name="mailPostcode" type="java.lang.String">
+            <column name="MAILPOSTCODE" />
+        </property>
+        <property name="assignDt" type="java.util.Date">
+            <column name="ASSIGNDT" />
+        </property>
+        <property name="assignBy" type="java.lang.String">
+            <column name="ASSIGNBY" />
+        </property>
+        <property name="assignToUser" type="java.lang.String">
+            <column name="ASSIGNTOUSER" />
+        </property>
+        <property name="leaderApproveDt" type="java.util.Date">
+            <column name="LEADERAPPROVEDT" />
+        </property>
+        <property name="leaderApproveBy" type="java.lang.String">
+            <column name="LEADERAPPROVEBY" />
+        </property>
+        <property name="leaderApproveRemark" type="java.lang.String">
+            <column name="LEADERAPPROVEREMARK" />
+        </property>
+        <property name="managerApproveDt" type="java.util.Date">
+            <column name="MANAGERAPPROVEDT" />
+        </property>
+        <property name="managerApproveBy" type="java.lang.String">
+            <column name="MANAGERAPPROVEBY" />
+        </property>
+        <property name="managerApproveRemark" type="java.lang.String">
+            <column name="MANAGERAPPROVEREMARK" />
+        </property>
+        <property name="legalApproveDt" type="java.util.Date">
+            <column name="LEGALAPPROVEDT" />
+        </property>
+        <property name="legalApproveBy" type="java.lang.String">
+            <column name="LEGALAPPROVEBY" />
+        </property>
+        <property name="legalApproveRemark" type="java.lang.String">
+            <column name="LEGALAPPROVEREMARK" />
+        </property>
+        <property name="avpApproveDt" type="java.util.Date">
+            <column name="AVPAPPROVEDT" />
+        </property>
+        <property name="avpApproveBy" type="java.lang.String">
+            <column name="AVPAPPROVEBY" />
+        </property>
+        <property name="avpApproveRemark" type="java.lang.String">
+            <column name="AVPAPPROVEREMARK" />
+        </property>
+        <property name="flowStatus" type="java.lang.String">
+            <column name="FLOWSTATUS" />
+        </property>
+        <property name="recordStatus" type="java.lang.String">
+            <column name="RECORDSTATUS" />
+        </property>
+        <property name="batchNo" type="java.lang.String">
+            <column name="BATCHNO" />
+        </property>
+        <property name="batchDt" type="java.util.Date">
+            <column name="BATCHDT" />
+        </property>
+        <property name="locationEditFlag" type="java.lang.String">
+            <column name="LOCATIONEDITFLAG" />
+        </property>
+        <property name="contractEditFlag" type="java.lang.String">
+            <column name="CONTRACTEDITFLAG" />
+        </property>
+        <property name="rentEditFlag" type="java.lang.String">
+            <column name="RENTEDITFLAG" />
+        </property>
+        <property name="rentDepositEditFlag" type="java.lang.String">
+            <column name="RENTDEPOSITEDITFLAG" />
+        </property>
+        <property name="elEditFlag" type="java.lang.String">
+            <column name="ELEDITFLAG" />
+        </property>
+        <property name="elDepositEditFlag" type="java.lang.String">
+            <column name="ELDEPOSITEDITFLAG" />
+        </property>
+        <property name="propertyTaxEditFlag" type="java.lang.String">
+            <column name="PROPERTYTAXEDITFLAG" />
+        </property>
+        <property name="insuranceEditFlag" type="java.lang.String">
+            <column name="INSURANCEEDITFLAG" />
+        </property>
+        <property name="mailEditFlag" type="java.lang.String">
+            <column name="MAILEDITFLAG" />
+        </property>
+        <property name="createDt" type="java.util.Date">
+            <column name="CREATEDT" />
+        </property>
+        <property name="createBy" type="java.lang.String">
+            <column name="CREATEBY" />
+        </property>
+        <property name="updateDt" type="java.util.Date">
+            <column name="UPDATEDT" />
+        </property>
+        <property name="updateBy" type="java.lang.String">
+            <column name="UPDATEBY" />
+        </property>
+        <property name="coLocateCompany" type="java.lang.String">
+            <column name="COLOCATECOMPANY" />
+        </property>
+        <property name="flowBy" type="java.lang.String">
+            <column name="FLOWBY" />
+        </property>
+        <property name="flowRemark" type="java.lang.String">
+            <column name="FLOWREMARK" />
+        </property>
+        <property name="flowDt" type="java.util.Date">
+            <column name="FLOWDT" />
+        </property>
+        <property name="updateLog" type="java.lang.String">
+            <column name="UPDATELOG" />
+        </property>
+        <property name="assignToTeam" type="java.lang.String">
+            <column name="ASSIGNTOTEAM" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001UpdRentPay" entity-name="updRentPay">
+		<id name="result" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.rt.Mrt001UpdRentPay" entity-name="listService">
+		<id name="siteInfoId" type="java.lang.String"/>
+		<property name="serviceName" type="java.lang.String"/>
+		<property name="serviceId" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="spMrt001UpdRentPay" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001UpdRentPay" entity-name="updRentPay">
+			<return-property name="result" column="P_RESULT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_UPD_RENT_PAY(?, :expenseType, :rentCondType, :rentalDetailId, :mode, :currentUser) ]]>
+	</sql-query>
+	<sql-query name="mrt001ListService" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001UpdRentPay" entity-name="listService">
+			<return-property name="siteInfoId" column="SITE_INFO_SERVICES_ID" />
+			<return-property name="serviceName" column="SERVICE_NAME" />
+			<return-property name="serviceId" column="SERVICES_ID" />
+		</return>
+		<![CDATA[ call SEM_PG_MSA002_SEM_SI_SITE_INFO_SERVICES(?, :mode, :siteInfoId ) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

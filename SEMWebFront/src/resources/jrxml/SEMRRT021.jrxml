@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SEMRRT021" pageWidth="1010" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="950" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="692"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<template><![CDATA[$V{ReportUtil}.getJasperPath()+"SEMStyleTemplate.jrtx"]]></template>
+	<parameter name="PARAM_HEADER_NAME" class="java.lang.String"/>
+	<parameter name="PARAM_COMPANY" class="java.lang.String"/>
+	<parameter name="PARAM_MONTH_YEAR" class="java.lang.String"/>
+	<parameter name="PARAM_REGION" class="java.lang.String"/>
+	<parameter name="PARAM_CONTRACT_NO" class="java.lang.String"/>
+	<parameter name="PARAM_CONTRACT_STATUS" class="java.lang.String"/>
+	<parameter name="PARAM_DIFF_TYPE_1" class="java.lang.String"/>
+	<parameter name="PARAM_DIFF_TYPE_2" class="java.lang.String"/>
+	<parameter name="PARAM_USERNAME" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_MONTH_YEAR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM TABLE (SEM_PG_RRT021.GET_DATA(
+	$P{PARAM_COMPANY},
+	$P{PARAM_MONTH_YEAR},
+	$P{PARAM_REGION},
+	$P{PARAM_CONTRACT_NO},
+	$P{PARAM_CONTRACT_STATUS},
+	$P{PARAM_DIFF_TYPE_1},
+	$P{PARAM_DIFF_TYPE_2}
+))]]>
+	</queryString>
+	<field name="REGION" class="java.lang.String"/>
+	<field name="CONTRACT_NO" class="java.lang.String"/>
+	<field name="CONTRACT_START_DT" class="java.sql.Timestamp"/>
+	<field name="CONTRACT_END_DT" class="java.sql.Timestamp"/>
+	<field name="RENT_AMT" class="java.math.BigDecimal"/>
+	<field name="EXC_AMT" class="java.math.BigDecimal"/>
+	<field name="PAID_AMT" class="java.math.BigDecimal"/>
+	<field name="EXPENSE_ACTUAL" class="java.math.BigDecimal"/>
+	<field name="EXPENSE_ACCURE" class="java.math.BigDecimal"/>
+	<field name="EXPENSE_PREPAID" class="java.math.BigDecimal"/>
+	<field name="DIFF1_AMT" class="java.math.BigDecimal"/>
+	<field name="DIFF2_AMT" class="java.math.BigDecimal"/>
+	<variable name="Total_Expense" class="java.lang.Double">
+		<variableExpression><![CDATA[]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{EXPENSE_ACTUAL}.doubleValue()]]></initialValueExpression>
+	</variable>
+	<variable name="total" class="java.lang.Double">
+		<variableExpression><![CDATA[$F{EXPENSE_ACTUAL}.doubleValue()+$F{EXPENSE_ACCURE}.doubleValue()+$F{EXPENSE_PREPAID}.doubleValue()]]></variableExpression>
+	</variable>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<group name="groupHeader">
+		<groupExpression><![CDATA[new Integer($V{COLUMN_COUNT}.intValue() / 49996)]]></groupExpression>
+		<groupHeader>
+			<band height="125" splitType="Stretch">
+				<textField isBlankWhenNull="false">
+					<reportElement key="textField-18" style="Header Style" x="0" y="0" width="950" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{PARAM_HEADER_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-23" style="Header Style" x="0" y="20" width="950" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[SEMRRT021 : Summary Rental Expense]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement key="textField-23" style="Criteria Style" x="0" y="80" width="950" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Criteria : "+
+"  Company : " + new String($P{PARAM_COMPANY} != null && !$P{PARAM_COMPANY}.equals("") ? $P{PARAM_COMPANY} : "-")+
+"  Month/Year : " + new String($P{PARAM_DISPLAY_MONTH_YEAR} != null && !$P{PARAM_DISPLAY_MONTH_YEAR}.equals("") ? $P{PARAM_DISPLAY_MONTH_YEAR} : "-")+
+"  Region : " + new String($P{PARAM_REGION} != null && !$P{PARAM_REGION}.equals("") ? $P{PARAM_REGION} : "-")+
+"  Contract No. : " + new String($P{PARAM_CONTRACT_NO}!= null && !$P{PARAM_CONTRACT_NO}.equals("") ? $P{PARAM_CONTRACT_NO}: "-")+
+"  Contract Status : " + new String($P{PARAM_CONTRACT_STATUS}!= null && !$P{PARAM_CONTRACT_STATUS}.equals("") ? $P{PARAM_CONTRACT_STATUS}: "-")+
+"  Diff Type1 : " + new String($P{PARAM_DIFF_TYPE_1}!= null && !$P{PARAM_DIFF_TYPE_1}.equals("") ? $P{PARAM_DIFF_TYPE_1}: "-")+
+"  Diff Type2 : " + new String($P{PARAM_DIFF_TYPE_2}!= null && !$P{PARAM_DIFF_TYPE_2}.equals("") ? $P{PARAM_DIFF_TYPE_2}: "-")]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-41" style="Column Header Style" mode="Opaque" x="0" y="100" width="41" height="13" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Region]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-32" style="Column Header Style" mode="Opaque" x="41" y="100" width="75" height="13" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Contract No.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-33" style="Column Header Style" mode="Opaque" x="116" y="113" width="80" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Start]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-47" style="Column Header Style" mode="Opaque" x="116" y="100" width="160" height="13" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Contract Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-66" style="Column Header Style" mode="Opaque" x="596" y="113" width="80" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[PrePaid]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-112" style="Column Header Style" mode="Opaque" x="276" y="100" width="80" height="13" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-114" style="Column Header Style" mode="Opaque" x="196" y="113" width="80" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[End]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-115" style="Column Header Style" mode="Opaque" x="356" y="100" width="80" height="13" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Amount Paid]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-117" style="Column Header Style" mode="Opaque" x="516" y="113" width="80" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Accru.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-118" style="Column Header Style" mode="Opaque" x="436" y="113" width="80" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Actual]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-122" style="Column Header Style" mode="Opaque" x="788" y="113" width="162" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[(Total Expons = Amount Paid)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-99" x="0" y="40" width="950" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-118" style="Column Header Style" mode="Opaque" x="436" y="100" width="352" height="13" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Expense]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-122" style="Column Header Style" mode="Opaque" x="788" y="100" width="162" height="13" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Diff.1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-66" style="Column Header Style" mode="Opaque" x="676" y="113" width="112" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement key="textField-23" style="Criteria Style" x="0" y="60" width="950" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Print By : " + new String($P{PARAM_USERNAME} != null && !"".equals($P{PARAM_USERNAME}) ? $P{PARAM_USERNAME}: "-")+
+"     Print Date :" + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date())]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-47" style="Column Header Style" mode="Opaque" x="41" y="113" width="75" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-47" style="Column Header Style" mode="Opaque" x="0" y="113" width="41" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-47" style="Column Header Style" mode="Opaque" x="276" y="113" width="80" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Contract]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-47" style="Column Header Style" mode="Opaque" x="356" y="113" width="80" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="region">
+		<groupExpression><![CDATA[$F{REGION}]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-65" style="Detail Style" stretchType="RelativeToTallestObject" x="676" y="0" width="112" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-61" style="Detail Style" stretchType="RelativeToTallestObject" x="788" y="0" width="162" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{DIFF1_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-57" style="Detail Style" stretchType="RelativeToTallestObject" x="356" y="0" width="80" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{PAID_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-65" style="Detail Style" stretchType="RelativeToTallestObject" x="436" y="0" width="80" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EXPENSE_ACTUAL}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-64" style="Detail Style" stretchType="RelativeToTallestObject" x="516" y="0" width="80" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EXPENSE_ACCURE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-51" style="Detail Style" stretchType="RelativeToTallestObject" x="116" y="0" width="80" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{CONTRACT_START_DT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-1" style="Detail Style" stretchType="RelativeToTallestObject" x="0" y="0" width="41" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{REGION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-63" style="Detail Style" stretchType="RelativeToTallestObject" x="596" y="0" width="80" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EXPENSE_PREPAID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-31" style="Detail Style" stretchType="RelativeToTallestObject" x="41" y="0" width="75" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTRACT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-55" style="Detail Style" stretchType="RelativeToTallestObject" x="276" y="0" width="80" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{RENT_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-54" style="Detail Style" stretchType="RelativeToTallestObject" x="196" y="0" width="80" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{CONTRACT_END_DT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

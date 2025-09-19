@@ -1,0 +1,28 @@
+HELP.md
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/test/**
+
+### STS ###
+.metadata
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+*.class
+
+### VS Code ###
+.vscode/
+
+src/test/java/playground/
+/.run/

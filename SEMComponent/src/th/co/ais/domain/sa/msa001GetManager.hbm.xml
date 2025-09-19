@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="th.co.ais.domain.sa">
+	
+	<class name="th.co.ais.domain.sa.Msa001ManagerName" entity-name="getManagerName">
+		<id name="rowId" type="java.lang.String" />
+		<property name="managerName" type="java.lang.String" update="false"></property>
+		<property name="selectDefault" type="java.lang.String" update="false"></property>
+	</class>
+	
+	<sql-query name="msa001GetManagerName" callable="true" >
+		 <return class="th.co.ais.domain.sa.Msa001ManagerName" entity-name="getManagerName">
+		 	<return-property name="rowId" column="LEADER_ID"></return-property>
+		 	<return-property name="managerName" column="LEADER_NAME"></return-property>
+		 	<return-property name="selectDefault" column="LEADER_DEFAULT"></return-property>
+		 </return>
+		  <![CDATA[call SEM.SEM_PG_CT_SA_GET_LEADER(?, :userId, :siteAppId)]]>
+	</sql-query>
+	
+</hibernate-mapping>

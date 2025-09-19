@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt006Srch">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="depType" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="depositDetailId" type="java.lang.String" />
+		<property name="returnDepositId" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="siteInfoId" type="java.lang.String" />
+		<property name="siteName" type="java.lang.String" />
+		<property name="reqType" type="java.lang.String" />
+		<property name="reqTypeName" type="java.lang.String" />
+		<property name="expenseType" type="java.lang.String" />
+		<property name="expenseTypeName" type="java.lang.String" />
+		<property name="depositType" type="java.lang.String" />
+		<property name="depositTypeName" type="java.lang.String" />
+		<property name="bgNo" type="java.lang.String" />
+		<property name="bgBank" type="java.lang.String" />
+		<property name="bgBankName" type="java.lang.String" />
+		<property name="vendorMasterId" type="java.lang.String" />
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="depositAmt" type="java.lang.Double" />
+		<property name="vatType" type="java.lang.String" />
+		<property name="vatTypeName" type="java.lang.String" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="depositExcAmt" type="java.lang.Double" />
+		<property name="depositIncAmt" type="java.lang.Double" />
+		<property name="depositRentAmt" type="java.lang.Double" />
+		<property name="depositBalanceAmt" type="java.lang.Double" />
+		<property name="depositReturnAmt" type="java.lang.Double" />
+		<property name="returnBalanceAmt" type="java.lang.Double" />
+		<property name="remark" type="java.lang.String" />
+		<property name="returnDepositStatus" type="java.lang.String" />
+		<property name="returnDpsStatusName" type="java.lang.String" />
+		<property name="reason" type="java.lang.String" />
+		<property name="receiptNo" type="java.lang.String" />
+		<property name="taxInvoiceNo" type="java.lang.String" />
+		<property name="bgStartDt" type="java.sql.Date" />
+		<property name="bgEndDt" type="java.sql.Date" />
+		<property name="bgReturnDt" type="java.sql.Date" />
+		<property name="siteStatus" type="java.lang.String" />
+	</class>
+	<sql-query name="spMrt006Srch" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt006Srch">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="depType" column="DEP_TYPE" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="region" column="REGION" />
+			<return-property name="depositDetailId" column="DEPOSIT_DETAIL_ID" />
+			<return-property name="returnDepositId" column="RETURN_DEPOSIT_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="reqType" column="REQ_TYPE" />
+			<return-property name="reqTypeName" column="REQ_TYPE_NAME" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="expenseTypeName" column="EXPENSE_TYPE_NAME" />
+			<return-property name="depositType" column="DEPOSIT_TYPE" />
+			<return-property name="depositTypeName" column="DEPOSIT_TYPE_NAME" />
+			<return-property name="bgNo" column="BG_NO" />
+			<return-property name="bgBank" column="BG_BANK" />
+			<return-property name="bgBankName" column="BG_BANK_NAME" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="depositAmt" column="DEPOSIT_AMT" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatTypeName" column="VAT_TYPE_NAME" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="depositExcAmt" column="DEPOSIT_EXC_AMT" />
+			<return-property name="depositIncAmt" column="DEPOSIT_INC_AMT" />
+			<return-property name="depositRentAmt" column="DEPOSIT_RENT_AMT" />
+			<return-property name="depositBalanceAmt" column="DEPOSIT_BALANCE_AMT" />
+			<return-property name="depositReturnAmt" column="DEPOSIT_RETURN_AMT" />
+			<return-property name="returnBalanceAmt" column="RETURN_BALANCE_AMT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="returnDepositStatus" column="RETURN_DEPOSIT_STATUS" />
+			<return-property name="returnDpsStatusName" column="RETURN_DPS_STATUS_NAME" />
+			<return-property name="reason" column="REASON" />
+			<return-property name="receiptNo" column="RECEIPT_NO" />
+			<return-property name="taxInvoiceNo" column="TAX_INVOICE_NO" />
+			<return-property name="bgStartDt" column="BG_START_DT" />
+			<return-property name="bgEndDt" column="BG_END_DT" />
+			<return-property name="bgReturnDt" column="BG_RETURN_DT" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT006_SRCH(?, :company, :contractNo, :siteName, :region, :siteType, 
+											:depositType, :bgNo, :bgBank, :reqType, :expenseType, 
+											:returnDepositStatus, :picoFlag, :bgExpireFrom, :bgExpireTo, :strParam) ]]>
+	</sql-query>
+</hibernate-mapping>

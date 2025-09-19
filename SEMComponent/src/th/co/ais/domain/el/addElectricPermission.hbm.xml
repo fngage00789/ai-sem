@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+<class name="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="PermissionFile">
+	<id name="rowId" type="java.lang.String"/>
+	<property name="lineNo" type="java.lang.String"></property>
+ 	<property name="contractNo" type="java.lang.String" ></property>
+ 	<property name="company" type="java.lang.String" ></property>
+ 	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="locationId" type="java.lang.String" ></property>
+ 	<property name="locationCode" type="java.lang.String" ></property>
+ 	<property name="siteCode" type="java.lang.String" ></property>
+ 	<property name="province" type="java.lang.String" ></property>
+ 	<property name="docType" type="java.lang.String" ></property>
+ 	<property name="docDtStr" type="java.lang.String" ></property>
+ 	<property name="printDtStr" type="java.lang.String" ></property>
+ 	<property name="printSeq" type="java.lang.String" ></property>
+ 	<property name="reqDtStr" type="java.lang.String" ></property>
+ 	<property name="responeDtStr" type="java.lang.String" ></property>
+ 	<property name="sentDocDtStr" type="java.lang.String" ></property>
+ 	<property name="contractCopyDtStr" type="java.lang.String" ></property>
+ 	<property name="sentSamDtStr" type="java.lang.String" ></property>
+ 	<property name="sentSamUser" type="java.lang.String" ></property>
+ 	<property name="sentSamTel" type="java.lang.String" ></property>
+ 	<property name="updateBy" type="java.lang.String" ></property>
+ 	<property name="updateDtStr" type="java.lang.String" ></property>
+ 	<property name="logId" type="java.lang.String" ></property>
+ 	<property name="status" type="java.lang.String" ></property>
+ 	<property name="errMsg" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+ <class name="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="PermissionFileDtl">
+	<id name="rowId" type="java.lang.String"/>
+ 	<property name="contractNo" type="java.lang.String" ></property>
+ 	<property name="company" type="java.lang.String" ></property>
+ 	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="docType" type="java.lang.String" ></property>
+ 	<property name="sentDocDt" type="java.util.Date" ></property>
+ 	<property name="reqDt" type="java.util.Date" ></property>
+ 	<property name="responeDt" type="java.util.Date" ></property>
+ 	<property name="contractCopyDt" type="java.util.Date" ></property>
+ 	<property name="sentSamDt" type="java.util.Date" ></property>
+ 	<property name="sentSamUser" type="java.lang.String" ></property>
+ 	<property name="sentSamTel" type="java.lang.String" ></property>
+ 	<property name="remark" type="java.lang.String" ></property>
+ </class>
+ 
+ <class name="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="AddElPermissionFile">
+ 	
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+  
+ <class name="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="AddFileName">
+ 	
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ <class name="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="DeleteByRowPermissionFile">
+ 	
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+ 
+ <class name="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="UpdatePermissionFile">
+	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+ <sql-query name="mel002AddElPermissionFile" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="AddElPermissionFile">
+ 	
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[call SEM_SP_MEL002_EL_PERM_IMP(?, :lineNo, :contractNo, :company, :siteName,:locationId, :locationCode, :siteCode, :province
+ 	, :docType, :docDtStr, :printDtStr, :printSeq, :reqDtStr, :responeDtStr, :sentDocDtStr, :contractCopyDtStr, :sentSamDtStr, :sentSamUser, :sentSamTel, :user, :fileName)]]>
+ </sql-query>
+ 
+ 
+  <sql-query name="mel002AddFileName" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="AddFileName">
+ 	
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL002_EL_PERM_IMP_LOG(?, :company, :user, :fileName) ]]>
+ </sql-query>
+ 
+  	<sql-query name="mel002SearchElPermissionWarrantCaseSuccess" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="PermissionFile">
+ 		<return-property name="rowId" column="EL_IMPORT_PERMISSION_DTL_ID"></return-property>
+ 		<return-property name="lineNo" column="LINE_NO"></return-property>
+ 		<return-property name="contractNo" column="CONTRACT_NO"></return-property>
+ 		<return-property name="company" column="COMPANY"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="locationId" column="LOCATION_ID"></return-property>
+ 		<return-property name="locationCode" column="LOCATION_CODE"></return-property>
+ 		<return-property name="siteCode" column="SITE_CODE"></return-property>
+ 		<return-property name="province" column="PROVINCE"></return-property>
+ 		<return-property name="docType" column="DOC_TYPE"></return-property>
+ 		<return-property name="docDtStr" column="DOC_DT"></return-property>
+ 		<return-property name="printDtStr" column="PRINT_DT"></return-property>
+ 		<return-property name="printSeq" column="PRINT_SEQ"></return-property>
+ 		<return-property name="reqDtStr" column="REQ_DT"></return-property>
+ 		<return-property name="responeDtStr" column="RESPONSE_DT"></return-property>
+ 		<return-property name="sentDocDtStr" column="SENT_DOC_DT"></return-property>
+ 		<return-property name="contractCopyDtStr" column="CONTRACT_COPY_DT"></return-property>
+ 		<return-property name="sentSamDtStr" column="SENT_SAM_DT"></return-property>
+ 		<return-property name="sentSamUser" column="SENT_SAM_USER"></return-property>
+ 		<return-property name="sentSamTel" column="SENT_SAM_TEL"></return-property>
+ 		<return-property name="updateBy" column="UPDATE_BY"></return-property>
+ 		<return-property name="updateDtStr" column="UPDATE_DT"></return-property>
+ 		<return-property name="logId" column="EL_IMPORT_PERMISSION_LOG_ID"></return-property>
+ 		<return-property name="errMsg" column="ERROR_MSG"></return-property>
+ 		<return-property name="status" column="IMPORT_STATUS"></return-property>
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL002_EL_PERM_LIST(?, :logId, :status) ]]>
+ 	</sql-query>
+ 	
+ 	<sql-query name="mel002SearchForEdit" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="PermissionFileDtl">
+ 	<return-property name="rowId" column="EL_IMPORT_PERMISSION_DTL_ID"></return-property>
+ 		<return-property name="contractNo" column="CONTRACT_NO"></return-property>
+ 		<return-property name="company" column="COMPANY"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="docType" column="DOC_TYPE"></return-property>
+ 		<return-property name="sentDocDt" column="SENT_DOC_DT"></return-property>
+ 		<return-property name="reqDt" column="REQ_DT"></return-property>
+ 		<return-property name="responeDt" column="RESPONSE_DT"></return-property>
+ 		<return-property name="contractCopyDt" column="CONTRACT_COPY_DT"></return-property>
+ 		<return-property name="sentSamDt" column="SENT_SAM_DT"></return-property>
+ 		<return-property name="sentSamUser" column="SENT_SAM_USER"></return-property>
+ 		<return-property name="sentSamTel" column="SENT_SAM_TEL"></return-property>
+ 		<return-property name="remark" column="ERROR_MSG"></return-property>
+ 	
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL002_EL_PERM_LIST_DTL(?, :rowId) ]]>
+ 	</sql-query>
+ 	
+ 	<sql-query name="mel002UpdateElPermissionWarrant" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="UpdatePermissionFile">
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL002_EL_PERM_DTL_UPD(?, :rowId, :reqDt, :responeDt, :sentDocDt, :contractCopyDt, :sentSamDt, :sentSamUser, :sentSamTel, :remark, :user) ]]>
+ 	</sql-query>
+ 	
+ 	<sql-query name="mel002DeleteByRowUploadFile" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadElPermistionWarrant" entity-name="DeleteByRowPermissionFile">
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[ call SEM.SEM_SP_MEL002_EL_PERM_DTL_DEL(?, :rowId ,:user) ]]>
+ 	</sql-query>
+ </hibernate-mapping>

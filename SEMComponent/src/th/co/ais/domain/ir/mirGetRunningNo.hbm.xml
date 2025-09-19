@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.MirGetRunningNo">
+		<id name="runningNo" type="java.lang.String"/>
+	</class>
+	<sql-query name="mirGetRunningNo" callable="true">
+		<return class="th.co.ais.domain.ir.MirGetRunningNo">
+			<return-property name="runningNo" column="RUNNING_NO" />
+		</return>
+		<![CDATA[ call SEM_SP_GET_RUNNING_NO(?, :runningType, :company, :locationCode) ]]>
+	</sql-query>
+</hibernate-mapping>

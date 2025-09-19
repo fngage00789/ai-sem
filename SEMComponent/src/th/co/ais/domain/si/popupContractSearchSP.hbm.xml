@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.PopupContractSearchSP" entity-name="popupContractSearch">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="company" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="region" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteInfoId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="effDate" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="expDate" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="vendorEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="contractType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="networkStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNoOld" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.si.PopupContractSearchSP" entity-name="getContractAddress" >
+		<id name="siteInfoId" type="java.lang.String" />
+		<property name="lessorAddress" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.si.PopupContractSearchSP" entity-name="getSiteAddress" >
+		<id name="siteInfoId" type="java.lang.String" />
+		<property name="siteAddress" type="java.lang.String" />
+	</class>
+	
+		<class name="th.co.ais.domain.si.PopupContractSearchSP" entity-name="SearchRollBackDummy">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="company" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="region" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteInfoId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="effDate" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="expDate" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="vendorEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="contractType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="networkStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNoOld" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.si.PopupContractSearchSP" entity-name="rollBackContractDummy" >
+		<id name="pResult" type="java.lang.String" />
+		<property name="pRemark" type="java.lang.String" />
+	</class>
+	
+	
+	<sql-query name="queryPopupContractSearch" callable="true">
+		<return class="th.co.ais.domain.si.PopupContractSearchSP" entity-name="popupContractSearch">
+			<return-property name="rowId" column="CONTRACT_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="region" column="REGION" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="effDate" column="EFFECTIVE_DT" />
+			<return-property name="expDate" column="EXPIRE_DT" />
+			   
+			<return-property column="VENDOR_EFFECTIVE_DT" name="vendorEffectiveDt"/>
+			
+			<return-property column="CONTRACT_TYPE" name="contractType"/>
+			<return-property column="CONTRACT_STATUS" name="contractStatus"/>
+			<return-property column="NETWORK_STATUS" name="networkStatus"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="LOCATION_CODE" name="locationCode"/>
+			<return-property column="LOCATION_NAME" name="locationName"/>
+			<return-property column="CONTRACT_NAME" name="contractName"/>
+			<return-property column="CONTRACT_NO_OLD" name="contractNoOld"/>
+			<return-property column="REMARK" name="remark"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_PSI002_SRCH (?, :contractNo, :siteName, :company, :currentFlag) ]]>
+	</sql-query>
+	
+	<sql-query name="queryLessorAddress" callable="true">
+		<return class="th.co.ais.domain.si.PopupContractSearchSP" entity-name="getContractAddress">
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="lessorAddress" column="LESSOR_ADDRESS" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_LESSOR_ADDR (?, :siteInfoId) ]]>
+	</sql-query>
+	
+	<sql-query name="querySiteAddress" callable="true">
+		<return class="th.co.ais.domain.si.PopupContractSearchSP" entity-name="getSiteAddress">
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="siteAddress" column="SITE_ADDRESS" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_SITE_ADDR (?, :siteInfoId) ]]>
+	</sql-query>
+	
+	<sql-query name="msi004SearchRollBackDummy" callable="true">
+		<return class="th.co.ais.domain.si.PopupContractSearchSP" entity-name="SearchRollBackDummy">
+			<return-property name="rowId" column="CONTRACT_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="region" column="REGION" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="effDate" column="EFFECTIVE_DT" />
+			<return-property name="expDate" column="EXPIRE_DT" />
+			   
+			<return-property column="VENDOR_EFFECTIVE_DT" name="vendorEffectiveDt"/>
+			
+			<return-property column="CONTRACT_TYPE" name="contractType"/>
+			<return-property column="CONTRACT_STATUS" name="contractStatus"/>
+			<return-property column="NETWORK_STATUS" name="networkStatus"/>
+			<return-property column="CONTRACT_NAME" name="contractName"/>
+			<return-property column="CONTRACT_NO_OLD" name="contractNoOld"/>
+			<return-property column="REMARK" name="remark"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL011_ROLLBACK_SRCH (?, :contractNo, :siteInfoId) ]]>
+	</sql-query>
+	
+	<sql-query name="mcp001SearchRollBackDummy" callable="true">
+		<return class="th.co.ais.domain.si.PopupContractSearchSP" entity-name="SearchRollBackDummy">
+			<return-property name="rowId" column="CONTRACT_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="region" column="REGION" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="effDate" column="EFFECTIVE_DT" />
+			<return-property name="expDate" column="EXPIRE_DT" />
+			   
+			<return-property column="VENDOR_EFFECTIVE_DT" name="vendorEffectiveDt"/>
+			
+			<return-property column="CONTRACT_TYPE" name="contractType"/>
+			<return-property column="CONTRACT_STATUS" name="contractStatus"/>
+			<return-property column="NETWORK_STATUS" name="networkStatus"/>
+			<return-property column="CONTRACT_NAME" name="contractName"/>
+			<return-property column="CONTRACT_NO_OLD" name="contractNoOld"/>
+			<return-property column="REMARK" name="remark"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCP001_ROLLBACK_SRCH (?, :contractNo, :siteInfoId) ]]>
+	</sql-query>
+	
+	<sql-query name="mel011RollBackDummy" callable="true">
+		<return class="th.co.ais.domain.si.PopupContractSearchSP" entity-name="rollBackContractDummy">
+			<return-property name="pResult" column="P_RESULT" />
+			<return-property column="P_REMARK" name="pRemark"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL011_ROLLBACK (?, :siteInfoId, :contractNo, :userLogin ) ]]>
+	</sql-query>
+	
+	<sql-query name="mcp001RollBackDummy" callable="true">
+		<return class="th.co.ais.domain.si.PopupContractSearchSP" entity-name="rollBackContractDummy">
+			<return-property name="pResult" column="P_RESULT" />
+			<return-property column="P_REMARK" name="pRemark"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCP001_ROLLBACK (?, :siteInfoId, :contractNo, :userLogin ) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

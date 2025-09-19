@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.cp">
+
+	<class name="th.co.ais.domain.cp.PopupVendorSupplierSearchSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="vendorMasterId" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="contactName" type="java.lang.String"/>
+		<property name="addresss" type="java.lang.String"/>
+		<property name="district" type="java.lang.String"/>
+		<property name="amphur" type="java.lang.String"/>
+		<property name="province" type="java.lang.String"/>
+		<property name="postCode" type="java.lang.String"/>
+		<property name="telephone" type="java.lang.String"/>
+		<property name="mobileNo" type="java.lang.String"/>
+		<property name="fax" type="java.lang.String"/>
+		<property name="vendorFullName" type="java.lang.String"/>
+		<property name="fullAddresss" type="java.lang.String"/>	
+		<property name="identityId" type="java.lang.String"/>
+		<property name="taxId" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="address1" type="java.lang.String"/>
+		<property name="address2" type="java.lang.String"/>
+		<property name="city" type="java.lang.String"/>
+		
+			 
+	</class>
+	
+	<sql-query name="querySearchVendorSupplier" callable="true">
+	<return class="th.co.ais.domain.cp.PopupVendorSupplierSearchSP">
+		<return-property name="rowId" column="VENDOR_MASTER_ID" />		
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="contactName" column="CONTACT_NAME" />
+			<return-property name="addresss" column="ADDRESS" />
+			<return-property name="district" column="DISTRICT" />
+			<return-property name="amphur" column="AMPHUR" />
+			<return-property name="province" column="PROVINCE" />
+			<return-property name="postCode" column="POST_CODE" />
+			<return-property name="telephone" column="TELEPHONE" />
+			<return-property name="mobileNo" column="MOBILE_NO" />
+			<return-property name="fax" column="FAX" />
+			<return-property name="vendorFullName" column="VENDOR_FULL_NAME" />
+			<return-property name="fullAddresss" column="FULL_ADDRESS" />
+			<return-property name="identityId" column="ID_CARD" />
+			<return-property name="taxId" column="TAX_ID" /> 
+			<return-property name="vendorCode" column="VENDOR_CODE" />  
+			<return-property name="address1" column="ADDRESS1" /> 
+			<return-property name="address2" column="ADDRESS2" /> 
+			<return-property name="city" column="CITY" /> 
+	 </return>
+		<![CDATA[call SEM.SEM_SP_PCT001_SRCH(?, :vendorCodeCri, :nameCri, :identityIdCri, :taxIdCri, :vendorSupplierType,:provinceCri)]]>
+	</sql-query>
+</hibernate-mapping>

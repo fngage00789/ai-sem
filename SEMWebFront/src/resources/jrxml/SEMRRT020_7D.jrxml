@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SEMRRT020_7D" pageWidth="710" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="710" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<template><![CDATA[$V{ReportUtil}.getJasperPath() + "SEMStyleTemplate.jrtx"]]></template>
+	<parameter name="PARAM_COMPANY" class="java.lang.String"/>
+	<parameter name="PARAM_MONTH_YEAR" class="java.lang.String"/>
+	<parameter name="PARAM_HEADER_NAME" class="java.lang.String"/>
+	<parameter name="PARAM_USERNAME" class="java.lang.String"/>
+	<parameter name="PARAM_PRINT_DATE" class="java.lang.String"/>
+	<parameter name="PARAM_MASTER_GROUP" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_MONTH_YEAR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM TABLE (SEM_PG_RRT020.GET_DATA_PAYMENT(
+       $P{PARAM_COMPANY},
+       $P{PARAM_MONTH_YEAR},
+       $P{PARAM_MASTER_GROUP}
+))]]>
+	</queryString>
+	<field name="CONTRACT_NO" class="java.lang.String"/>
+	<field name="EXPENSE_TYPE" class="java.lang.String"/>
+	<field name="PERIOD_START_DT" class="java.sql.Timestamp"/>
+	<field name="PERIOD_NO_START" class="java.math.BigDecimal"/>
+	<field name="PERIOD_AMT" class="java.math.BigDecimal"/>
+	<field name="DOC_NO" class="java.lang.String"/>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-1" style="Header Style" x="0" y="0" width="710" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PARAM_HEADER_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-1" style="Header Style" x="0" y="20" width="710" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Duplicate Master Data Report]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-2" style="Criteria Style" x="45" y="75" width="665" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Company : " + new String($P{PARAM_COMPANY} != null && !"".equals($P{PARAM_COMPANY}) ? $P{PARAM_COMPANY} : "-") +
+"     เดือน/ปี : " + new String($P{PARAM_DISPLAY_MONTH_YEAR} != null && !"".equals($P{PARAM_DISPLAY_MONTH_YEAR}) ? $P{PARAM_DISPLAY_MONTH_YEAR} : "-") +
+"     Master Group : Payment"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-8" style="Criteria Style" x="0" y="75" width="45" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Criteria :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-9" style="Criteria Style" x="0" y="60" width="710" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Print By : " + new String($P{PARAM_USERNAME} != null && !"".equals($P{PARAM_USERNAME}) ? $P{PARAM_USERNAME}: "-")+
+"     Print Date :" + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-1" style="Header Style" x="0" y="40" width="710" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-2" style="Column Header Style" mode="Opaque" x="0" y="0" width="100" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[เลขที่สัญญา]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-3" style="Column Header Style" mode="Opaque" x="100" y="0" width="200" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ค่าใช้จ่าย]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" style="Column Header Style" mode="Opaque" x="300" y="0" width="120" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[วันที่ครบกำหนด]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-5" style="Column Header Style" mode="Opaque" x="420" y="0" width="80" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[งวดการชำระ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-6" style="Column Header Style" mode="Opaque" x="500" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[จำนวนเงิน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-7" style="Column Header Style" mode="Opaque" x="590" y="0" width="120" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Doc No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-3" style="Detail Style" x="0" y="0" width="100" height="15"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTRACT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-4" style="Detail Style" x="100" y="0" width="200" height="15"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EXPENSE_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-5" style="Detail Style" x="300" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{PERIOD_START_DT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-6" style="Detail Style" x="420" y="0" width="80" height="15"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{PERIOD_NO_START}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-7" style="Detail Style" x="500" y="0" width="90" height="15"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{PERIOD_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-8" style="Detail Style" x="590" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DOC_NO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

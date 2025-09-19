@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt006DepositStatusDDL">
+		<id name="lovCode" type="java.lang.String"/>
+		<property name="lovName" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMrt006getDepositDDL" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt006DepositStatusDDL">
+			<return-property name="lovCode" column="LOV_CODE" />
+			<return-property name="lovName" column="LOV_NAME" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT006_SRCH_DDL_STATUS(?, :role, :depositType, :returnDpsStatus) ]]>
+	</sql-query>
+</hibernate-mapping>

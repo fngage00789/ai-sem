@@ -1,0 +1,1928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SEMESI001" pageWidth="8052" pageHeight="2147483647" whenNoDataType="AllSectionsNoDetail" columnWidth="7992" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="9096"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<template><![CDATA[ $V{ReportUtil}.getJasperPath()+"SEMStyleTemplate.jrtx"  ]]></template>
+	<parameter name="PARAM_DOC_NO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_COMPANY" class="java.lang.String"/>
+	<parameter name="PARAM_REGION" class="java.lang.String"/>
+	<parameter name="PARAM_REQ_TYPE" class="java.lang.String"/>
+	<parameter name="PARAM_TITLE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_ASSIGN_CONTRACT_NO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_LEGAL_APPROVE_STATUS" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_LOCATION_ID" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_LOCATION_CODE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_SITE_NAME" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_SITE_TYPE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_SITE_INFO_STATUS" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_SITE_STATUS" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_CONTRACT_NO" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_PENDING_STATUS" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_EXPIRE_STATUS" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_EFFECTIVE_DT_FROM" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="PARAM_EFFECTIVE_DT_TO" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="PARAM_EXPIRE_DT_FROM" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="PARAM_EXPIRE_DT_TO" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="PARAM_NO_EXPIRE_FLAG" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_LESSOR_NAME" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_CURRENT_FLAG" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT * FROM TABLE (SEM_PG_ESI001.GET_DATA(
+	$P{PARAM_DOC_NO},
+	$P{PARAM_COMPANY},
+	$P{PARAM_REGION},
+	$P{PARAM_REQ_TYPE},
+	$P{PARAM_TITLE},
+	$P{PARAM_ASSIGN_CONTRACT_NO},
+	$P{PARAM_LEGAL_APPROVE_STATUS},
+	$P{PARAM_LOCATION_ID},
+	$P{PARAM_LOCATION_CODE},
+	$P{PARAM_SITE_NAME},
+	$P{PARAM_SITE_TYPE},
+	$P{PARAM_SITE_INFO_STATUS},
+	$P{PARAM_SITE_STATUS},
+	$P{PARAM_CONTRACT_NO},
+	$P{PARAM_PENDING_STATUS},
+	$P{PARAM_EXPIRE_STATUS},
+	$P{PARAM_EFFECTIVE_DT_FROM},
+	$P{PARAM_EFFECTIVE_DT_TO},
+	$P{PARAM_EXPIRE_DT_FROM},
+	$P{PARAM_EXPIRE_DT_TO},
+	$P{PARAM_NO_EXPIRE_FLAG},
+	$P{PARAM_LESSOR_NAME},
+	$P{PARAM_CURRENT_FLAG}
+))]]>
+	</queryString>
+	<field name="ROW_ID" class="java.math.BigDecimal"/>
+	<field name="SITE_INFO_ID" class="java.lang.String"/>
+	<field name="COMPANY" class="java.lang.String"/>
+	<field name="REGION" class="java.lang.String"/>
+	<field name="REQ_TYPE_NAME" class="java.lang.String"/>
+	<field name="DOC_NO" class="java.lang.String"/>
+	<field name="REQ_OFFICER" class="java.lang.String"/>
+	<field name="CONTRACT_NO" class="java.lang.String"/>
+	<field name="OLD_NEXT_CONTRACT_NO" class="java.lang.String"/>
+	<field name="SITE_NAME" class="java.lang.String"/>
+	<field name="LOCATION_ID" class="java.lang.String"/>
+	<field name="LOCATION_CODE" class="java.lang.String"/>
+	<field name="FIRST_EFFECTIVE_DT" class="java.sql.Timestamp"/>
+	<field name="EFFECTIVE_DT" class="java.sql.Timestamp"/>
+	<field name="EXPIRE_DT" class="java.sql.Timestamp"/>
+	<field name="AGE_YEAR" class="java.math.BigDecimal"/>
+	<field name="AGE_MONTH" class="java.math.BigDecimal"/>
+	<field name="AGE_DAY" class="java.math.BigDecimal"/>
+	<field name="SITE_TYPE_NAME" class="java.lang.String"/>
+	<field name="PLACE_TYPE_NAME" class="java.lang.String"/>
+	<field name="SITE_HOUSE_NO" class="java.lang.String"/>
+	<field name="SITE_STREET" class="java.lang.String"/>
+	<field name="SITE_TAMBON" class="java.lang.String"/>
+	<field name="SITE_AMPHUR" class="java.lang.String"/>
+	<field name="SITE_PROVINCE" class="java.lang.String"/>
+	<field name="SITE_POSTCODE" class="java.lang.String"/>
+	<field name="RIGHT_HOUSE_NO" class="java.lang.String"/>
+	<field name="RIGHT_STREET" class="java.lang.String"/>
+	<field name="RIGHT_TAMBON" class="java.lang.String"/>
+	<field name="RIGHT_AMPHUR" class="java.lang.String"/>
+	<field name="RIGHT_PROVINCE" class="java.lang.String"/>
+	<field name="RIGHT_POSTCODE" class="java.lang.String"/>
+	<field name="SITE_BUILDING" class="java.lang.String"/>
+	<field name="SITE_FLOOR" class="java.lang.String"/>
+	<field name="SITE_ROOM_NO" class="java.lang.String"/>
+	<field name="DECK_AREA" class="java.lang.String"/>
+	<field name="BUILDING_AREA" class="java.lang.String"/>
+	<field name="ROOM_AREA" class="java.lang.String"/>
+	<field name="LAND_AREA" class="java.lang.String"/>
+	<field name="OWNER_NAME" class="java.lang.String"/>
+	<field name="LESSOR_NAME" class="java.lang.String"/>
+	<field name="LESSOR_HOUSE_NO" class="java.lang.String"/>
+	<field name="LESSOR_STREET" class="java.lang.String"/>
+	<field name="LESSOR_TAMBON" class="java.lang.String"/>
+	<field name="LESSOR_AMPHUR" class="java.lang.String"/>
+	<field name="LESSOR_PROVINCE" class="java.lang.String"/>
+	<field name="LESSOR_POSTCODE" class="java.lang.String"/>
+	<field name="LESSOR_TEL" class="java.lang.String"/>
+	<field name="LESSOR_FAX" class="java.lang.String"/>
+	<field name="CONTACT_NAME" class="java.lang.String"/>
+	<field name="CONTACT_HOUSE_NO" class="java.lang.String"/>
+	<field name="CONTACT_STREET" class="java.lang.String"/>
+	<field name="CONTACT_TAMBON" class="java.lang.String"/>
+	<field name="CONTACT_AMPHUR" class="java.lang.String"/>
+	<field name="CONTACT_PROVINCE" class="java.lang.String"/>
+	<field name="CONTACT_POSTCODE" class="java.lang.String"/>
+	<field name="CONTACT_TEL" class="java.lang.String"/>
+	<field name="RENT_AMT" class="java.math.BigDecimal"/>
+	<field name="RENT_PERIOD_TYPE" class="java.lang.String"/>
+	<field name="RENT_WHT_TYPE" class="java.lang.String"/>
+	<field name="RENT_PAY_PERIOD_TYPE" class="java.lang.String"/>
+	<field name="RENT_ADD_AMT" class="java.math.BigDecimal"/>
+	<field name="RENT_DETAIL" class="java.lang.String"/>
+	<field name="SERVICE_AMT" class="java.math.BigDecimal"/>
+	<field name="SERVICE_PERIOD_TYPE" class="java.lang.String"/>
+	<field name="SERVICE_WHT_TYPE" class="java.lang.String"/>
+	<field name="SERVICE_VAT_TYPE" class="java.lang.String"/>
+	<field name="SERVICE_PAY_PERIOD_TYPE" class="java.lang.String"/>
+	<field name="SERVICE_ADD_AMT" class="java.math.BigDecimal"/>
+	<field name="SERVICE_DETAIL" class="java.lang.String"/>
+	<field name="TOTAL_RENT_AMT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_RENT_PERIOD_TYPE" class="java.lang.String"/>
+	<field name="TOTAL_AGE_RENT_AMT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_SERVICE_AMT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_SERVICE_PERIOD_TYPE" class="java.lang.String"/>
+	<field name="TOTAL_AGE_SERVICE_AMT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_AGE_RETN_SERVICE_AMT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_DEPOSIT_BG_AMT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_DEPOSIT_CASH_AMT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_DEPOSIT_VAT" class="java.lang.String"/>
+	<field name="PROPERTY_TAX_PAY_TYPE" class="java.lang.String"/>
+	<field name="ELECTRIC_TYPE" class="java.lang.String"/>
+	<field name="EL_UNIT_PRICE_AMT" class="java.math.BigDecimal"/>
+	<field name="EL_TAKE_ALL_AMT" class="java.math.BigDecimal"/>
+	<field name="EL_TAKE_ALL_PERIOD_TYPE" class="java.lang.String"/>
+	<field name="EL_VAT_TYPE" class="java.lang.String"/>
+	<field name="EL_PAY_PERIOD_TYPE" class="java.lang.String"/>
+	<field name="EL_FROM_CONTRACT_NO" class="java.lang.String"/>
+	<field name="EL_TOTAL_DEPOSIT_BG_AMT" class="java.math.BigDecimal"/>
+	<field name="EL_TOTAL_DEPOSIT_CASH_AMT" class="java.math.BigDecimal"/>
+	<field name="EL_TOTAL_DEPOSIT_VAT" class="java.lang.String"/>
+	<field name="INSURANCE_TYPE" class="java.lang.String"/>
+	<field name="PLX_AMT" class="java.math.BigDecimal"/>
+	<field name="PLX_EFFECTIVE_DT" class="java.sql.Timestamp"/>
+	<field name="PLX_EXPIRE_DT" class="java.sql.Timestamp"/>
+	<field name="IN_OWNER_AMT" class="java.math.BigDecimal"/>
+	<field name="IN_OWNER_PERIOD_TYPE" class="java.lang.String"/>
+	<field name="IN_OWNER_VAT_TYPE" class="java.lang.String"/>
+	<field name="IN_OWNER_PAY_PERIOD_TYPE" class="java.lang.String"/>
+	<field name="SITE_STATUS_NAME" class="java.lang.String"/>
+	<field name="WT_DATE" class="java.sql.Timestamp"/>
+	<field name="TERMINATE_DATE" class="java.sql.Timestamp"/>
+	<field name="PENDING_DATE" class="java.sql.Timestamp"/>
+	<field name="REMARK" class="java.lang.String"/>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="0" y="0" width="30" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[บริษัท]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="30" y="0" width="36" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ภูมิภาค]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="66" y="0" width="96" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ประเภทขออนุมัติ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="162" y="0" width="102" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[เลขที่ใบอนุมัติ/ยกเลิก]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="264" y="0" width="102" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ผู้ขออนุมัติ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="366" y="0" width="78" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[เลขที่สัญญา]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="444" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[สัญญาเดิม/ใหม่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="516" y="0" width="102" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ชื่อสถานีฐาน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="618" y="0" width="66" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Top"/>
+				<text><![CDATA[Location ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="684" y="0" width="78" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Location Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="762" y="0" width="84" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[วันที่เริ่มครั้งแรก]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="846" y="0" width="66" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[วันที่เริ่ม]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="912" y="0" width="66" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[วันที่สิ้นสุด]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="978" y="0" width="24" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ปี]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1002" y="0" width="30" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[เดือน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1032" y="0" width="24" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[วัน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1056" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ประเภทสถานีฐาน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1146" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ประเภทสถานที่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1236" y="0" width="96" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ที่ตั้ง เลขที่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1332" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ถนน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1422" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ตำบล/เขต]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1512" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[อำเภอ/เขต]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1602" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[จังหวัด]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1662" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รหัสไปรษณีย์]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1734" y="0" width="120" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ที่อยู่เอกสารสิทธิ์ เลขที่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1854" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ถนน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="1944" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ตำบล/เขต]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="2034" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[อำเภอ/เขต]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="2124" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[จังหวัด]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="2184" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รหัสไปรษณีย์]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-1" style="Column Header Style" x="2256" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ชื่ออาคาร]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" style="Column Header Style" x="2316" y="0" width="24" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ชั้น]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-3" style="Column Header Style" x="2340" y="0" width="48" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[เลขที่ห้อง]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" style="Column Header Style" x="2388" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[พื้นที่ดาดฟ้า]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-5" style="Column Header Style" x="2478" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[พื้นที่อาคาร]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-6" style="Column Header Style" x="2538" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[พื้นที่ห้อง]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-7" style="Column Header Style" x="2598" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[พื้นที่ที่ดิน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-8" style="Column Header Style" x="2658" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[เจ้าของ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-9" style="Column Header Style" x="2718" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ผู้ทำสัญญา]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-10" style="Column Header Style" x="2778" y="0" width="108" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ที่อยู่เจ้าของ เลขที่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-11" style="Column Header Style" x="2886" y="0" width="48" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ถนน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-12" style="Column Header Style" x="2934" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ตำบล/เขต]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-13" style="Column Header Style" x="2994" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[อำเภอ/เขต]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-14" style="Column Header Style" x="3054" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[จังหวัด]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-15" style="Column Header Style" x="3114" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รหัสไปรษณีย์]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" style="Column Header Style" x="3186" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[โทรศัพท์]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-17" style="Column Header Style" x="3246" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[FAX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-18" style="Column Header Style" x="3306" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ผู้ติดต่อ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-19" style="Column Header Style" x="3366" y="0" width="108" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ที่อยู่ผู้ติดต่อ เลขที่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-20" style="Column Header Style" x="3474" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ถนน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-21" style="Column Header Style" x="3564" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ตำบล/เขต]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-22" style="Column Header Style" x="3654" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[อำเภอ/เขต]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-23" style="Column Header Style" x="3744" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[จังหวัด]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-24" style="Column Header Style" x="3804" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รหัสไปรษณีย์]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-25" style="Column Header Style" x="3876" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[โทรศัพท์]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-26" style="Column Header Style" x="3936" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ค่าเช่า]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-27" style="Column Header Style" x="3996" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ต่อเดือน/ปี]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-28" style="Column Header Style" x="4056" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ภาษีหัก ณ ที่จ่าย]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-29" style="Column Header Style" x="4128" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[งวดชำระ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-30" style="Column Header Style" x="4188" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ค่าเช่าที่เพิ่ม]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-31" style="Column Header Style" x="4278" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รายละเอียดค่าเช่า]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-32" style="Column Header Style" x="4368" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รวมค่าเช่า]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-33" style="Column Header Style" x="4428" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ต่อเดือน/ปี]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-34" style="Column Header Style" x="4488" y="0" width="120" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รวมค่าเช่าตลอดอายุสัญญา]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-35" style="Column Header Style" x="4608" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ค่าบริการ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-36" style="Column Header Style" x="4668" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ต่อเดือน/ปี]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-37" style="Column Header Style" x="4728" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ภาษีหัก ณ ที่จ่าย]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-71" style="Column Header Style" x="4818" y="0" width="24" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[VAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-38" style="Column Header Style" x="4842" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[งวดการชำระ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-39" style="Column Header Style" x="4902" y="0" width="78" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ค่าบริการที่เพิ่ม]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-40" style="Column Header Style" x="4980" y="0" width="108" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รายละเอียดค่าบริการ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-41" style="Column Header Style" x="5088" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รวมค่าบริการ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-42" style="Column Header Style" x="5148" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ต่อเดือน/ปี]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-43" style="Column Header Style" x="5208" y="0" width="120" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รวมค่าบริการตลอดอายุ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-44" style="Column Header Style" x="5328" y="0" width="156" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[รวมค่าเช่าและค่าบริการตลอดอายุ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-45" style="Column Header Style" x="5484" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[เงินประกัน BG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-46" style="Column Header Style" x="5556" y="0" width="84" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[เงินประกัน Cash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-47" style="Column Header Style" x="5640" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[VAT เงินประกัน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-48" style="Column Header Style" x="5712" y="0" width="126" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ประเภทภาษีโรงเรือน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-49" style="Column Header Style" x="5838" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ประเภทการใช้ไฟฟ้า]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" style="Column Header Style" x="5928" y="0" width="84" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ไฟเจ้าของ ยูนิตละ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-51" style="Column Header Style" x="6012" y="0" width="108" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ไฟเจ้าของ เหมาจ่าย]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-52" style="Column Header Style" x="6120" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ต่อเดือน/ปี]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-53" style="Column Header Style" x="6180" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ไฟเจ้าของ VAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-54" style="Column Header Style" x="6252" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ไฟเจ้าของ งวดชำระ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-55" style="Column Header Style" x="6342" y="0" width="150" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[สถานีที่ใช้ไฟ (กรณีจาก Site อื่น)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-56" style="Column Header Style" x="6492" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[เงินประกันค่าไฟ BG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-57" style="Column Header Style" x="6582" y="0" width="120" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[เงินประกันค่าไฟ Cash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-58" style="Column Header Style" x="6702" y="0" width="84" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[VAT เงินประกันไฟ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-59" style="Column Header Style" x="6786" y="0" width="96" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ประเภททำประกันภัย]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-60" style="Column Header Style" x="6882" y="0" width="96" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[PLX วงเงินทำประกัน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-61" style="Column Header Style" x="6978" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[PLX วันที่เริ่ม]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-62" style="Column Header Style" x="7050" y="0" width="72" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[PLX วันที่สิ้นสุด]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-63" style="Column Header Style" x="7122" y="0" width="126" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ประกันเจ้าของ ค่าประกัน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-64" style="Column Header Style" x="7308" y="0" width="90" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ประกันเจ้าของ VAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-65" style="Column Header Style" x="7398" y="0" width="120" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[ประกันเจ้าของ งวดชำระ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-66" style="Column Header Style" x="7518" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[สถานะ Site]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-67" style="Column Header Style" x="7578" y="0" width="78" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[วันที่ W/T]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-68" style="Column Header Style" x="7656" y="0" width="78" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[วันที่ Terminate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-69" style="Column Header Style" x="7734" y="0" width="78" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[วันที่ Pending]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-70" style="Column Header Style" x="7812" y="0" width="180" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Remark]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column Header Style" x="7248" y="0" width="60" height="20"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ต่อเดือน/ปี]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" style="Detail Style" x="0" y="0" width="30" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{COMPANY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-1" style="Detail Style" x="30" y="0" width="36" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{REGION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-2" style="Detail Style" x="66" y="0" width="96" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{REQ_TYPE_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-3" style="Detail Style" x="162" y="0" width="102" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DOC_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-4" style="Detail Style" x="264" y="0" width="102" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{REQ_OFFICER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-5" style="Detail Style" x="366" y="0" width="78" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTRACT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-6" style="Detail Style" x="444" y="0" width="72" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{OLD_NEXT_CONTRACT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-7" style="Detail Style" x="516" y="0" width="102" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-8" style="Detail Style" x="618" y="0" width="66" height="15"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LOCATION_ID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-9" style="Detail Style" x="684" y="0" width="78" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LOCATION_CODE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-10" style="Detail Style" x="762" y="0" width="84" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{FIRST_EFFECTIVE_DT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-11" style="Detail Style" x="846" y="0" width="66" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{EFFECTIVE_DT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-12" style="Detail Style" x="912" y="0" width="66" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{EXPIRE_DT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0" isBlankWhenNull="true">
+				<reportElement key="textField-13" style="Detail Style" x="978" y="0" width="24" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{AGE_YEAR}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0" isBlankWhenNull="true">
+				<reportElement key="textField-14" style="Detail Style" x="1002" y="0" width="30" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{AGE_MONTH}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="###0" isBlankWhenNull="true">
+				<reportElement key="textField-15" style="Detail Style" x="1032" y="0" width="24" height="15"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{AGE_DAY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-16" style="Detail Style" x="1056" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_TYPE_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-17" style="Detail Style" x="1146" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{PLACE_TYPE_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-18" style="Detail Style" x="1236" y="0" width="96" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_HOUSE_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-19" style="Detail Style" x="1332" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_STREET}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-20" style="Detail Style" x="1422" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_TAMBON}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-21" style="Detail Style" x="1512" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_AMPHUR}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-22" style="Detail Style" x="1602" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_PROVINCE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-23" style="Detail Style" x="1662" y="0" width="72" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_POSTCODE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-24" style="Detail Style" x="1734" y="0" width="120" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RIGHT_HOUSE_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-25" style="Detail Style" x="1854" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RIGHT_STREET}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-26" style="Detail Style" x="1944" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_TAMBON}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-27" style="Detail Style" x="2034" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RIGHT_AMPHUR}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-28" style="Detail Style" x="2124" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RIGHT_PROVINCE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-29" style="Detail Style" x="2184" y="0" width="72" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RIGHT_POSTCODE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-30" style="Detail Style" x="2256" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_BUILDING}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-31" style="Detail Style" x="2316" y="0" width="24" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_FLOOR}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-32" style="Detail Style" x="2340" y="0" width="48" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_ROOM_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-33" style="Detail Style" x="2388" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DECK_AREA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-34" style="Detail Style" x="2478" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BUILDING_AREA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-35" style="Detail Style" x="2538" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ROOM_AREA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-36" style="Detail Style" x="2598" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LAND_AREA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-37" style="Detail Style" x="2658" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{OWNER_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-38" style="Detail Style" x="2718" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LESSOR_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-39" style="Detail Style" x="2778" y="0" width="108" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LESSOR_HOUSE_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-40" style="Detail Style" x="2886" y="0" width="48" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LESSOR_STREET}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-41" style="Detail Style" x="2934" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LESSOR_TAMBON}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-42" style="Detail Style" x="2994" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LESSOR_AMPHUR}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-43" style="Detail Style" x="3054" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LESSOR_PROVINCE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-44" style="Detail Style" x="3114" y="0" width="72" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LESSOR_POSTCODE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-45" style="Detail Style" x="3186" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LESSOR_TEL}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-46" style="Detail Style" x="3246" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LESSOR_FAX}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-47" style="Detail Style" x="3306" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTACT_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-48" style="Detail Style" x="3366" y="0" width="108" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTACT_HOUSE_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-49" style="Detail Style" x="3474" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTACT_STREET}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-50" style="Detail Style" x="3564" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTACT_TAMBON}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-51" style="Detail Style" x="3654" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTACT_AMPHUR}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-52" style="Detail Style" x="3744" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTACT_PROVINCE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-53" style="Detail Style" x="3804" y="0" width="72" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTACT_POSTCODE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-54" style="Detail Style" x="3876" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTACT_TEL}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-55" style="Detail Style" x="3936" y="0" width="60" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{RENT_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-56" style="Detail Style" x="3996" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RENT_PERIOD_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-57" style="Detail Style" x="4056" y="0" width="72" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RENT_WHT_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-58" style="Detail Style" x="4128" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RENT_PAY_PERIOD_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-59" style="Detail Style" x="4188" y="0" width="90" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{RENT_ADD_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-60" style="Detail Style" x="4278" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RENT_DETAIL}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-61" style="Detail Style" x="4368" y="0" width="60" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_RENT_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-62" style="Detail Style" x="4428" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TOTAL_RENT_PERIOD_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-63" style="Detail Style" x="4488" y="0" width="120" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_AGE_RENT_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-64" style="Detail Style" x="4608" y="0" width="60" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{SERVICE_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-65" style="Detail Style" x="4668" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SERVICE_PERIOD_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-66" style="Detail Style" x="4728" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SERVICE_WHT_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-100" style="Detail Style" x="4818" y="0" width="24" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SERVICE_VAT_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-67" style="Detail Style" x="4842" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SERVICE_PAY_PERIOD_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-68" style="Detail Style" x="4902" y="0" width="78" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{SERVICE_ADD_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-69" style="Detail Style" x="4980" y="0" width="108" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SERVICE_DETAIL}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-70" style="Detail Style" x="5088" y="0" width="60" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_SERVICE_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-71" style="Detail Style" x="5148" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TOTAL_SERVICE_PERIOD_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-72" style="Detail Style" x="5208" y="0" width="120" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_AGE_SERVICE_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-73" style="Detail Style" x="5328" y="0" width="156" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_AGE_RETN_SERVICE_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-74" style="Detail Style" x="5484" y="0" width="72" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_DEPOSIT_BG_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-75" style="Detail Style" x="5556" y="0" width="84" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TOTAL_DEPOSIT_CASH_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-76" style="Detail Style" x="5640" y="0" width="72" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TOTAL_DEPOSIT_VAT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-77" style="Detail Style" x="5712" y="0" width="126" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{PROPERTY_TAX_PAY_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-78" style="Detail Style" x="5838" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ELECTRIC_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-79" style="Detail Style" x="5928" y="0" width="84" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EL_UNIT_PRICE_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-80" style="Detail Style" x="6012" y="0" width="108" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EL_TAKE_ALL_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-81" style="Detail Style" x="6120" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EL_TAKE_ALL_PERIOD_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-82" style="Detail Style" x="6180" y="0" width="72" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EL_VAT_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-83" style="Detail Style" x="6252" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EL_PAY_PERIOD_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-84" style="Detail Style" x="6342" y="0" width="150" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EL_FROM_CONTRACT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-85" style="Detail Style" x="6492" y="0" width="90" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EL_TOTAL_DEPOSIT_BG_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-86" style="Detail Style" x="6582" y="0" width="120" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EL_TOTAL_DEPOSIT_CASH_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-87" style="Detail Style" x="6702" y="0" width="84" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EL_TOTAL_DEPOSIT_VAT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-88" style="Detail Style" x="6786" y="0" width="96" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{INSURANCE_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-89" style="Detail Style" x="6882" y="0" width="96" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{PLX_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-90" style="Detail Style" x="6978" y="0" width="72" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{PLX_EFFECTIVE_DT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-91" style="Detail Style" x="7050" y="0" width="72" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{PLX_EXPIRE_DT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-92" style="Detail Style" x="7122" y="0" width="126" height="15"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{IN_OWNER_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-93" style="Detail Style" x="7308" y="0" width="90" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{IN_OWNER_VAT_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-94" style="Detail Style" x="7398" y="0" width="120" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{IN_OWNER_PAY_PERIOD_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-95" style="Detail Style" x="7518" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_STATUS_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-96" style="Detail Style" x="7578" y="0" width="78" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{WT_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-97" style="Detail Style" x="7656" y="0" width="78" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{TERMINATE_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-98" style="Detail Style" x="7734" y="0" width="78" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{PENDING_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-99" style="Detail Style" x="7812" y="0" width="180" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{REMARK}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail Style" x="7248" y="0" width="60" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{IN_OWNER_PERIOD_TYPE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

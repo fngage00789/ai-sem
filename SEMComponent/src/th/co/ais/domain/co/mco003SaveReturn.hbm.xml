@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.co.Mco003SaveReturn">
+		<id name="result" type="java.lang.String" />
+	</class>
+	<sql-query name="spMco003SaveReturn" callable="true">
+		<return class="th.co.ais.domain.co.Mco003SaveReturn">
+			<return-property name="result" column="P_RESULT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO003_SAVE_RETURN(?, :borrowContractId, :returnName, :returnDt, :returnOfficer, :returnNotAllFlag, :returnNotAllDt, :docApproveFlag, :docContractFlag, :docContractDetail, :docOtherFlag, :remarkDocOther, :docOtherAddFlag, :rentType, :rentTypeOtherRemark, :doc1, :doc2, :doc3, :doc4, :doc5, :doc6, :doc7, :doc8, :doc9, :doc10, :docOther, :docOtherRemark, :currentUser, :docRemark)]]>
+	</sql-query>
+</hibernate-mapping>

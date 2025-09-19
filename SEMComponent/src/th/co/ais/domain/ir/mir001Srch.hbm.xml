@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.Mir001Srch" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="transferType" type="java.lang.String" />
+		<property name="transferTypeDesc" type="java.lang.String" />
+		<property name="totalLocation" type="java.lang.Integer" />
+		<property name="totalAcq" type="java.lang.Double" />
+		<property name="asOfMonth" type="java.lang.String" />
+	</class>
+	<sql-query name="queryAcquisitionCost" callable="true">
+		<return class="th.co.ais.domain.ir.Mir001Srch">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="transferType" column="TRANSFER_TYPE" />
+			<return-property name="transferTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="totalLocation" column="TOT_LOCATION" />
+			<return-property name="totalAcq" column="TOTAL_ACQ_AMT" />
+			<return-property name="asOfMonth" column="AS_OF_MONTH" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR001_SRCH(?, :company, :networkType, :transferType, :effMonth, :effYear) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

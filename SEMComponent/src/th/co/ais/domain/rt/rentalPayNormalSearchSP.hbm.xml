@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.RentalPayNormalSearchSP" entity-name="querySearchRentalPayNormal">
+		<id name="rowId" type="java.lang.String"/>
+			<property name="paymentGroupNo" type="java.lang.String"/>
+			<property name="contractNo" type="java.lang.String"/>
+			<property name="siteName" type="java.lang.String"/>
+			<property name="effDt" type="java.sql.Date"/>
+			<property name="expDt" type="java.sql.Date"/>
+			<property name="dueDt" type="java.sql.Date"/>
+			<property name="periodNo" type="java.lang.Integer"/>
+			<property name="expenseType" type="java.lang.String"/>
+			<property name="expenseTypeDesc" type="java.lang.String"/>
+			<property name="vendorCode" type="java.lang.String" />
+			<property name="vendorName" type="java.lang.String" />
+			<property name="payeeId" type="java.lang.String" />
+			<property name="payeeName" type="java.lang.String" />
+			<property name="payPeriodType" type="java.lang.String"/>
+			<property name="periodY" type="java.lang.Integer"/>
+			<property name="periodM" type="java.lang.Integer"/>
+			<property name="periodD" type="java.lang.Integer"/>
+			<property name="dueAmt" type="java.lang.Double"/>
+			<property name="vatAmt" type="java.lang.Double"/>
+			<property name="whtRate" type="java.lang.Double"/>
+			<property name="whtAmt" type="java.lang.Double"/>
+			<property name="chqAmt" type="java.lang.Double"/>
+			<property name="siteStatus" type="java.lang.String"/>
+			<property name="networkStatus" type="java.lang.String"/>
+			<property name="expStatus" type="java.lang.String"/>
+			<property name="expApprove" type="java.lang.String"/>
+			<property name="paymentRequestDt" type="java.sql.Date"/>
+			<property name="paymentStatus" type="java.lang.String"/>
+			<property name="paymentType" type="java.lang.String"/>
+			<property name="bankName" type="java.lang.String"/>
+			<property name="chqDt" type="java.sql.Date"/>
+			<property name="chqReceiveDt" type="java.sql.Date"/>
+			<property name="transferDt" type="java.sql.Date"/>
+			<property name="depositAmt" type="java.lang.Double"/>
+			<property name="pettyAmt" type="java.lang.Double"/>
+			<property name="totalAmt" type="java.lang.Double"/>
+			<property name="bankAccNo" type="java.lang.String"/>
+			<property name="remark" type="java.lang.String"/>
+			<property name="paymentDocno" type="java.lang.String"/>
+			<property name="whtType" type="java.lang.String"/>
+			<property name="paymentTypeDesc" type="java.lang.String"/>
+			<property name="paymentStatusDesc" type="java.lang.String"/>
+			<property name="vendorMasterId" type="java.lang.String"/>
+			<property name="paymentMethod" type="java.lang.String"/>
+			<property name="whtTypeDesc" type="java.lang.String"/>
+			<property name="siteInfoId" type="java.lang.String"/>
+			<property name="excAmt" type="java.lang.Double"/>
+			<property name="paymentBatchNo" type="java.lang.String"/>
+			<property name="oldContractNo" type="java.lang.String"/>
+			<property name="oldSiteInfoId" type="java.lang.String"/>
+			<property name="statusPay" type="java.lang.String"/>
+			<property name="docSettingDebt" type="java.lang.String"/>
+			<property name="docCuttingDebt" type="java.lang.String"/>
+			<property name="docCancel" type="java.lang.String"/>
+			<property name="payPeriod" type="java.lang.String"/>
+			<property name="remarkVerify" type="java.lang.String"/>
+			<property name="remarkPending" type="java.lang.String"/>
+			<property name="remarkOther" type="java.lang.String"/>
+			<property name="reqType" type="java.lang.String"/>
+			<property name="rentalDetailId" type="java.lang.String"/>
+			<property name="rcptPayCutAmount" type="java.lang.Double" />
+			<property name="sendInfoStatus" type="java.lang.String"/>
+			<property name="pmsStatus" type="java.lang.String"/>
+			<property name="serviceName" type="java.lang.String"/>
+			<property name="receiptNo" type="java.lang.String"/>
+			<property name="contFlowStatus" type="java.lang.String"/>
+			<property name="expenseDesc" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.rt.RentalPayNormalSearchSP" entity-name="querySearchRentalPayNormalLP">
+        <id name="rowId" type="java.lang.String"/>
+        <property name="company" type="java.lang.String"/>
+        <property name="region" type="java.lang.String"/>
+        <property name="totalRec" type="java.lang.Integer"/>
+        <property name="extraRec" type="java.lang.Integer"/>
+        <property name="pendingRec" type="java.lang.Integer"/>
+        <property name="networkRec" type="java.lang.Integer"/>
+        <property name="paymentStatusDesc" type="java.lang.String"/>
+        <property name="paymentTypeDesc" type="java.lang.String"/>
+        <property name="paymentMethod" type="java.lang.String"/>
+        <property name="chqDt" type="java.sql.Date" />
+        <property name="chqReceiveDt" type="java.sql.Date" />
+        <property name="transferDt" type="java.sql.Date" />
+    </class>
+	
+	<class name="th.co.ais.domain.rt.RentalPayNormalSearchSP" entity-name="querySearchRentalPayS2">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="jobType" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="regionName" type="java.lang.String"/>
+		<property name="payExportTotal" type="java.lang.Integer"/>
+		<property name="payNoExportTotal" type="java.lang.Integer"/>
+		<property name="payTotal" type="java.lang.Integer"/>
+		<property name="noPayTotal" type="java.lang.Integer"/>
+		<property name="grandTotal" type="java.lang.Integer" />
+		
+	</class>
+	
+	<class name="th.co.ais.domain.rt.RentalPayNormalSearchSP" entity-name="mrt003ExpBatch">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="paymentDocno" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="dueDt" type="java.sql.Date"/>
+		<property name="periodNo" type="java.lang.Integer"/>
+		<property name="payPeriodType" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="whtTypeDesc" type="java.lang.String"/>
+		<property name="excAmt" type="java.lang.Double"/>
+		<property name="vatAmt" type="java.lang.Double"/>
+		<property name="whtAmt" type="java.lang.Double"/>
+		<property name="chqAmt" type="java.lang.Double"/>
+		<property name="totalExcAmt" type="java.lang.Double"/>
+		<property name="totalVatAmt" type="java.lang.Double"/>
+		<property name="totalWhtAmt" type="java.lang.Double"/>
+		<property name="totalChqAmt" type="java.lang.Double"/>
+		<property name="paymentTypeDesc" type="java.lang.String"/>
+		<property name="bankName" type="java.lang.String"/>
+		<property name="chqDt" type="java.sql.Date"/>
+		<property name="chqReceiveDt" type="java.sql.Date"/>
+		<property name="transferDt" type="java.sql.Date"/>
+		<property name="batchNo" type="java.lang.String"/>
+		<property name="sheetName" type="java.lang.String"/>
+		<property name="paymentType" type="java.lang.String"/>
+		<property name="remarkVerify" type="java.lang.String"/>
+		<property name="remarkPending" type="java.lang.String"/>
+		<property name="remarkOther" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		
+	</class>
+	
+	<sql-query name="querySearchRentalPayNormal" callable="true" >
+		<return class="th.co.ais.domain.rt.RentalPayNormalSearchSP" entity-name="querySearchRentalPayNormal">
+			<return-property name="rowId" column="RENTAL_PAYMENT_ID" />
+			<return-property name="paymentGroupNo" column="PAYMENT_GROUP_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expDt" column="EXPIRE_DT" />
+			<return-property name="dueDt" column="DUE_DT" />
+			<return-property name="periodNo" column="PERIOD_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeId" column="PAYEE_ID" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="payPeriodType" column="PAY_PERIOD_TYPE" />
+			<return-property name="periodY" column="PAY_PERIOD_Y" />
+			<return-property name="periodM" column="PAY_PERIOD_M" />
+			<return-property name="periodD" column="PAY_PERIOD_D" />
+			<return-property name="dueAmt" column="DUE_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="chqAmt" column="CHQ_AMT" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="expStatus" column="EXPIRE_STATUS" />
+			<return-property name="expApprove" column="EXPIRE_APPROVE" />
+			<return-property name="paymentRequestDt" column="PAYMENT_REQUEST_DT" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="depositAmt" column="DEPOSIT_AMT" />
+			<return-property name="pettyAmt" column="PETTY_AMT" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="bankAccNo" column="BANK_ACC_NO" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="paymentDocno" column="PAYMENT_DOC_NO" />
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="expenseTypeDesc" column="EXPENSE_TYPE_DESC" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="whtTypeDesc" column="WHT_TYPE_DESC" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="paymentBatchNo" column="PAYMENT_BATCH_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="oldSiteInfoId" column="OLD_SITE_INFO_ID" />
+			<return-property name="statusPay" column="STATUS_PAY" />
+			<return-property name="docSettingDebt" column="DOC_SETTING_DEBT" />
+			<return-property name="docCuttingDebt" column="DOC_CUTTING_DEBT" />
+			<return-property name="docCancel" column="DOC_CANCEL" />
+			<return-property name="payPeriod" column="PAY_PERIOD" />
+			<return-property name="remarkVerify" column="REMARK_VERIFY" />
+			<return-property name="remarkPending" column="REMARK_PENDING" />
+			<return-property name="remarkOther" column="REMARK_OTH" />
+			<return-property name="reqType" column="REQ_TYPE" />
+			<return-property name="rentalDetailId" column="RENTAL_DETAIL_ID" />
+			<return-property name="rcptPayCutAmount" column="RECEIPT_PAYCUT_AMOUNT" />
+			<return-property name="sendInfoStatus" column="SEND_FLAG" />
+			<return-property name="pmsStatus" column="PMS_STATUS" />
+			<return-property name="serviceName" column="SERVICE_NAME" />
+			<return-property name="receiptNo" column="RECEIPT_NO" />
+			<return-property name="contFlowStatus" column="CONTRACT_FLOW_STATUS" />
+			<return-property name="expenseDesc" column="EXPENSE_DESC" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT003_SRCH(?, :jobType, :paymentStatus, :company, :region, :paymentType, :dueDtFrom, 
+									:dueDtTo, :contractNo, :siteName, :siteType, :picoFlag, :batchNo, :pAction, :exportChqFlag,
+									:paymentRequestDtSch, :paymentRequestToDtSch, :expenseTypeSch, :pendingFlag, :expireFlag, :vendorId, 
+									:vendorNameSch, :bank, :paymentDt, :paymentToDt, :chqReceiveDtSch, 
+									:chqReceiveToDtSch, :siteStatusSch, :networkStatusSch, :historyFlg, :docNo, :noPay, :rcptPayFlag, :strParam,
+									:locationId, :locationCode, :siteCode, :createBy) ]]>
+	</sql-query>
+	
+	<sql-query name="querySearchRentalPayNormalLP" callable="true" >
+        <return class="th.co.ais.domain.rt.RentalPayNormalSearchSP" entity-name="querySearchRentalPayNormalLP">
+            <return-property name="rowId" column="PAYMENT_BATCH_NO" />
+            <return-property name="company" column="COMPANY" />
+            <return-property name="region" column="REGION" />
+            <return-property name="totalRec" column="TOTAL_REC" />
+            <return-property name="extraRec" column="EXTRA_REC" />
+            <return-property name="pendingRec" column="PENDING_REC" />
+            <return-property name="networkRec" column="NETWORK_REC" />
+            <return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+            <return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+            <return-property name="paymentMethod" column="PAYMENT_METHOD_DESC" />
+            <return-property name="chqDt" column="CHQ_DT" />
+            <return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+            <return-property name="transferDt" column="TRANSFER_DT" />
+        </return>
+        <![CDATA[ call SEM.SEM_SP_MRT009_SRCH(?, :company, :region, :paymentType, :batchNo, :strParam) ]]>
+    </sql-query>
+	
+	<sql-query name="querySearchRentalPayS2" callable="true">
+		<return class="th.co.ais.domain.rt.RentalPayNormalSearchSP" entity-name="querySearchRentalPayS2">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="jobType" column="JOB_TYPE" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="regionName" column="REGION_NAME" />
+			<return-property name="payExportTotal" column="PAY_EXPORT_TOTAL" />
+			<return-property name="payNoExportTotal" column="PAY_NONEXPORT_TOTAL" />
+			<return-property name="payTotal" column="GRAND_TOTAL" />
+			<return-property name="noPayTotal" column="NONPAY_TOTAL" />
+			<return-property name="grandTotal" column="PAY_TOTAL" />
+
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT002_SRCH_S(?, :contractNo, :company, :siteName, :region, :siteType, cast(:dueDtFrom as date), 
+									cast(:dueDtTo as date), cast(:periodNo as varchar), :expenseType, :vendorId, :vendorName, :paymentMethod,
+								    :paymentType, cast(:paymentDt as varchar), cast(:chqReceiveDt as varchar), :siteStatus, :networkStatus, cast(:paymentRequestDt as varchar), :paymentStatus, :jobType, :picoFlag) ]]>
+	</sql-query>
+	
+	<sql-query name="mrt003ExpBatch" callable="true" >
+		<return class="th.co.ais.domain.rt.RentalPayNormalSearchSP" entity-name="mrt003ExpBatch">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="paymentDocno" column="PAYMENT_DOC_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="dueDt" column="DUE_DT" />
+			<return-property name="periodNo" column="PERIOD_NO" />
+			<return-property name="payPeriodType" column="PAY_PERIOD_TYPE" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="whtTypeDesc" column="WHT_TYPE_DESC" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="chqAmt" column="CHQ_AMT" />
+			<return-property name="totalExcAmt" column="TOTAL_EXC_AMT" />
+			<return-property name="totalVatAmt" column="TOTAL_VAT_AMT" />
+			<return-property name="totalWhtAmt" column="TOTAL_WHT_AMT" />
+			<return-property name="totalChqAmt" column="TOTAL_CHQ_AMT" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="batchNo" column="BATCH_NO" />
+			<return-property name="sheetName" column="SHEET_NAME" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="remarkVerify" column="REMARK_VERIFY" />
+			<return-property name="remarkPending" column="REMARK_PENDING" />
+			<return-property name="remarkOther" column="REMARK_OTH" />
+			<return-property name="remark" column="REMARK" />
+		</return>
+		<![CDATA[ call SEM.sem_sp_mrt003_exp_batch(?, :rowId) ]]>
+	</sql-query>
+</hibernate-mapping>

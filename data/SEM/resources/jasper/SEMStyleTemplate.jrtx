@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperTemplate PUBLIC "-//JasperReports//DTD Template//EN" "http://jasperreports.sourceforge.net/dtds/jaspertemplate.dtd">
+
+<jasperTemplate>
+	<style name="Header Style" isBlankWhenNull="true" fontName="Tahoma" fontSize="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="tahomabd.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="Column Header Style" mode="Opaque" forecolor="#000000" backcolor="#CFDCEF" hAlign="Center" isBlankWhenNull="true" fontName="Tahoma" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="tahoma.ttf" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="Detail Style" isDefault="true" isBlankWhenNull="true" fontName="Tahoma" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="tahoma.tff" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="Total Style" backcolor="#CCCCCC" isBlankWhenNull="true" fontName="Tahoma" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="tahoma.tff" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+	<style name="Criteria Style" isBlankWhenNull="true" fontName="Tahoma" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="tahoma.tff" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+</jasperTemplate>

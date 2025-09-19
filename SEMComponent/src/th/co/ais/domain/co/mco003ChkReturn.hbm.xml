@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.co.Mco003ChkReturn">
+		<id name="contractNo" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMco003ChkReturn" callable="true">
+		<return class="th.co.ais.domain.co.Mco003ChkReturn">
+			<return-property name="contractNo" column="CONTRACT_NO" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO003_CHK_RETURN(?, :borrowContractId)]]>
+	</sql-query>
+</hibernate-mapping>

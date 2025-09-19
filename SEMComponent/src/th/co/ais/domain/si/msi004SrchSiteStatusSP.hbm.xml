@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004SrchSiteStatusSP">
+		<id name="siteStatus" type="java.lang.String"/>
+	</class>
+	<sql-query name="msi004SrchSiteStatus" callable="true">
+		<return class="th.co.ais.domain.si.Msi004SrchSiteStatusSP">
+			<return-property name="siteStatus" column="SITE_STATUS_NAME" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_SITE_STATUS (?, :siteInfoId) ]]>
+	</sql-query>
+</hibernate-mapping>

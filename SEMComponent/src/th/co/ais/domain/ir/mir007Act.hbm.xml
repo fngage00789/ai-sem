@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.Mir007Act" entity-name="mir007Act">
+		<id name="result" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+		
+	</class>
+	
+	<class name="th.co.ais.domain.ir.Mir007Act" entity-name="mir007Add">
+		<id name="result" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+		
+	</class>
+	
+	<sql-query name="mir007Act" callable="true">
+		<return class="th.co.ais.domain.ir.Mir007Act" entity-name="mir007Act">  
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR007_ACT(?, :genType, :actionType, :company, :networkType, :transferType, :policyType, 
+		 							   :locationID, :draftNo, :userID) ]]>
+	</sql-query>
+	
+	<sql-query name="mir007Add" callable="true">
+		<return class="th.co.ais.domain.ir.Mir007Act" entity-name="mir007Add">  
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR007_ADD(?, :genType, :company, :networkType, :transferType, :policyType, 
+		 							   :refPolicyNo, :newEffDt, :newExpDt, :asMonth, :asYear, :contractNo, :premiumId, :userID) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

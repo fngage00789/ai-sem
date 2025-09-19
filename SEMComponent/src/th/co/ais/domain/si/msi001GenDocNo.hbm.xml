@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi001GenDocNo">
+		<id name="result" type="java.lang.String"/>
+		<property name="genDocNo" type="java.lang.String"/>
+		<property name="message" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMsi001GenDocNo" callable="true"> 
+		<return class="th.co.ais.domain.si.Msi001GenDocNo">
+			<return-property name="genDocNo" column="GEN_DOC_NO" />
+			<return-property name="result" column="V_RESULT" />
+			<return-property name="message" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI001_GEN_DOC_NO(?, :reqType, :reqDocType, :company, :locationId, :contractNo) ]]>
+	</sql-query>
+</hibernate-mapping>

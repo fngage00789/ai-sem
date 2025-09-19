@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.co" >
+	<class name="th.co.ais.domain.co.Mco003InsertBorrowSP" entity-name="insertBorrowObj">
+		<id name="pResult" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="spMco003InsertBorrow" callable="true">
+		<return class="th.co.ais.domain.co.Mco003InsertBorrowSP" entity-name="insertBorrowObj">  
+			<return-property name="pResult" column="P_RESULT" />
+		</return>
+		 <![CDATA[ call SEM_SP_MCO003_INSERT(?,:docNo, :contractNo, :mode, :company, cast(:recievDt as date ), cast(:samSendDt as date), cast(:samAssignSend as date), :remark, :user, :pOption,
+		  :borrowRequestId, cast(:siteNum as numeric), :siteInfoId, :fileType, :approveFlag, :status) ]]>
+	</sql-query>
+	
+	<sql-query name="spMco003InsertBorrowNew" callable="true">
+		<return class="th.co.ais.domain.co.Mco003InsertBorrowSP" entity-name="insertBorrowObj">  
+			<return-property name="pResult" column="P_RESULT" />
+		</return>
+		 <![CDATA[ call SEM_SP_MCO003_INSERT_NEW(?,:docNo
+		 , :contractNo, :mode, :company
+		 , cast(:recievDt as date)
+		 , cast(:samSendDt as date)
+		 , cast(:samAssignSend as date)
+		 , :remark, :user, :pOption, :borrowRequestId
+		 , cast(:siteNum as numeric), :siteInfoId
+		 , :fileType, :approveFlag, :status) ]]>
+	</sql-query>
+</hibernate-mapping>

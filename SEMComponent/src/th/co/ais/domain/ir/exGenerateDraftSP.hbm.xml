@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	
+	<class name="th.co.ais.domain.ir.ExGenerateDraftSP" entity-name="mir008Export1" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="draftNo" type="java.lang.String" />
+		<property name="policyNo" type="java.lang.String" />
+		<property name="policyStartDt" type="java.util.Date" />
+		<property name="policyStartTm" type="java.lang.String" />
+		<property name="policyEndDt" type="java.util.Date" />
+		<property name="policyEndTm" type="java.lang.String" />
+		<property name="docDt" type="java.util.Date" />
+		<property name="policyDt" type="java.util.Date" />
+		<property name="remark" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.ir.ExGenerateDraftSP" entity-name="mir008Export2" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="tranferType" type="java.lang.String" />
+		<property name="tranferTypeDesc" type="java.lang.String" />
+		<property name="totalLocation" type="java.lang.String" />
+		<property name="insuredAmt" type="java.lang.Double" />
+		<property name="premiumAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="dutyAmt" type="java.lang.Double" />
+	</class>
+			
+	<class name="th.co.ais.domain.ir.ExGenerateDraftSP" entity-name="mir008Export3" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="province" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="locationId" type="java.lang.String" />
+		<property name="locationCode" type="java.lang.String" />
+		<property name="locationName" type="java.lang.String" />
+		<property name="tranferType" type="java.lang.String" />
+		<property name="tranferTypeDesc" type="java.lang.String" />
+		<property name="insuredAmt" type="java.lang.Double" />
+		<property name="premiumAmt" type="java.lang.Double" />
+		<property name="remark" type="java.lang.String" />
+		<property name="oldInsuredAmt" type="java.lang.Double" />
+	</class>
+	
+	<sql-query name="queryMIR008Export1" callable="true" >
+		<return class="th.co.ais.domain.ir.ExGenerateDraftSP" entity-name="mir008Export1">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="draftNo" column="DRAFT_NO" />
+			<return-property name="policyNo" column="POLICY_NO" />
+			<return-property name="policyStartDt" column="POLICY_START_DT" />
+			<return-property name="policyStartTm" column="POLICY_START_TM" />
+			<return-property name="policyEndDt" column="POLICY_END_DT" />
+			<return-property name="policyEndTm" column="POLICY_END_TM" />
+			<return-property name="docDt" column="DOC_DT" />
+			<return-property name="policyDt" column="POLICY_DT" />
+			<return-property name="remark" column="REMARK" />
+		</return>
+	<![CDATA[ call SEM.SEM_SP_MIR008_EX1(?, :draftNo) ]]>
+	</sql-query>
+          
+	<sql-query name="queryMIR008Export2" callable="true" >
+		<return class="th.co.ais.domain.ir.ExGenerateDraftSP" entity-name="mir008Export2">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="region" column="REGION" />
+			<return-property name="tranferType" column="TRANSFER_TYPE" />
+			<return-property name="tranferTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="totalLocation" column="TOTAL_LOCATION" />
+			<return-property name="insuredAmt" column="INSURED_AMT" />
+			<return-property name="premiumAmt" column="PREMIUM_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="dutyAmt" column="DUTY_AMT" />
+			
+		</return>
+	<![CDATA[ call SEM.SEM_SP_MIR008_EX2(?, :draftNo) ]]>
+	</sql-query>
+	
+	<sql-query name="queryMIR008Export3" callable="true" >
+		<return class="th.co.ais.domain.ir.ExGenerateDraftSP" entity-name="mir008Export3">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="region" column="REGION" />
+			<return-property name="province" column="PROVINCE" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="tranferType" column="TRANSFER_TYPE" />
+			<return-property name="tranferTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="insuredAmt" column="INSURED_AMT" />
+			<return-property name="premiumAmt" column="PREMIUM_AMT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="oldInsuredAmt" column="OLD_INSURED_AMT" />
+		</return>
+	<![CDATA[ call SEM.SEM_SP_MIR008_EX3(?, :draftNo) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 10, 2014 1:06:10 PM by Hibernate Tools 3.3.0.GA -->
+
+<hibernate-mapping package="th.co.ais.domain.gm">
+
+	<class name="th.co.ais.domain.gm.BankMasterSP" entity-name="bankMasterSearch">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="bankGroupCode" type="java.lang.String" update="false" />
+		<property name="bankCode" type="java.lang.String" update="false" />
+		<property name="bankName" type="java.lang.String" update="false" />
+		<property name="bankBranchCode" type="java.lang.String" update="false" />
+		<property name="bankBranch" type="java.lang.String" update="false" />
+		<property name="provinceId" type="java.lang.String" update="false" />
+		<property name="provinceTh" type="java.lang.String" update="false" />
+		<property name="createBy" type="java.lang.String" update="false" />
+		<property name="createDt" type="java.sql.Date" update="false" />
+		<property name="updateBy" type="java.lang.String" update="false" />
+		<property name="updateDt" type="java.sql.Date" update="false" />
+	</class>
+	 
+	<class name="th.co.ais.domain.gm.BankMasterSP" entity-name="bankMasterSave">
+		<id name="retResult" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.gm.BankMasterSP" entity-name="bankMasterSearchDdlBank">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="bankGroupCode" type="java.lang.String" update="false" />
+		<property name="bankName" type="java.lang.String" update="false" />
+	</class>
+	 
+	<sql-query callable="true" name="mct009BankMasterSearch">
+		<return alias="" class="th.co.ais.domain.gm.BankMasterSP" entity-name="bankMasterSearch">
+			<return-property column="BANK_ID" name="rowId"/>
+			<return-property column="BANK_GROUP_CODE" name="bankGroupCode"/>
+			<return-property column="BANK_CODE" name="bankCode"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH_CODE" name="bankBranchCode"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="PROVINCE_ID" name="provinceId"/>
+			<return-property column="PROVINCE_THAI" name="provinceTh"/>
+			<return-property column="CREATE_DT" name="createDt"/>
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="UPDATE_DT" name="updateDt"/>
+			<return-property column="UPDATE_BY" name="updateBy"/>
+		</return>
+		<![CDATA[  call SEM.SEM_SP_MCT009_SRCH(?, :bankGroupCode , :bankName, :bankBranchCode, :bankBranch) ]]>
+	</sql-query>
+	 
+	<sql-query callable="true" name="mct009BankMasterSave">
+		<return alias="" class="th.co.ais.domain.gm.BankMasterSP" entity-name="bankMasterSave">
+			<return-property column="P_RESULT" name="retResult"/>
+		</return>
+		<![CDATA[   call SEM.SEM_SP_MCT009_SAVE(?, :actionType , :bankGroupCode , :bankName, :bankBranchCode, :bankBranch, :provinceId, :currentUser, :rowId) ]]>
+	</sql-query>
+	
+	<sql-query callable="true" name="mct009BankMasterSearchDdlBank">
+		<return alias="" class="th.co.ais.domain.gm.BankMasterSP" entity-name="bankMasterSearchDdlBank">
+			<return-property column="ROWNUM" name="rowId"/>
+			<return-property column="BANK_GROUP_CODE" name="bankGroupCode"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+		</return>
+		<![CDATA[   call SEM.SEM_SP_MCT009_SRCH_DDL_BANK(? ) ]]>
+	</sql-query>
+	 
+</hibernate-mapping>

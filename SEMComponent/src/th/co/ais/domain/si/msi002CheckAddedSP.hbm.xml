@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi002Editable">
+		<id name="addTableFlag" type="java.lang.String"/>
+	</class>
+	<sql-query name="msi002CheckAdded" callable="true">
+		<return class="th.co.ais.domain.si.Msi002Editable">
+			<return-property name="addTableFlag" column="ADDABLE_FLAG" />
+		</return>
+		<![CDATA[ call SEM_SP_MSI002_CHK_ADDED(?, :rowId) ]]>
+	</sql-query>
+</hibernate-mapping>

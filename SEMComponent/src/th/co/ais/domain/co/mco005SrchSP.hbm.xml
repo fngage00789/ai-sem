@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco005SrchSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="docNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="reqType" type="java.lang.String"/>
+		<property name="reqTypeName" type="java.lang.String"/>
+		<property name="title" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="effDate" type="java.util.Date"/>
+		<property name="expDate" type="java.util.Date"/>
+		<property name="lessorName" type="java.lang.String"/>
+		<property name="outDate" type="java.util.Date"/>
+		<property name="contractStatusName" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="dutyPayStatusName" type="java.lang.String"/>
+		<property name="totSendStatusName" type="java.lang.String"/>
+		<property name="legalPassOutDate" type="java.util.Date"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="flowStatus" type="java.lang.String"/>
+		<property name="siteStatusName" type="java.lang.String"/>
+		<property name="region" type="java.lang.String" />
+		<property name="oldContractNo" type="java.lang.String" />
+		<property name="oldSiteInfoId" type="java.lang.String" />
+		<property name="groupNo" type="java.lang.String" />
+		<property name="borrowStatus" type="java.lang.String"/>
+		</class>
+	<sql-query name="mco005Srch" callable="true">
+		<return class="th.co.ais.domain.co.Mco005SrchSP">
+			<return-property name="rowId" column="CONTRACT_ID"/>
+			<return-property name="siteInfoId" column="SITE_INFO_ID"/>
+			<return-property name="docNo" column="DOC_NO"/>
+			<return-property name="siteName" column="SITE_NAME"/>
+			<return-property name="reqType" column="REQ_TYPE"/>
+			<return-property name="reqTypeName" column="REQ_TYPE_NAME"/>
+			<return-property name="title" column="TITLE"/>
+			<return-property name="contractNo" column="CONTRACT_NO"/>
+			<return-property name="effDate" column="EFFECTIVE_DT"/>
+			<return-property name="expDate" column="EXPIRE_DT"/>
+			<return-property name="lessorName" column="LESSOR_NAME"/>
+			<return-property name="outDate" column="OUT_DT"/>
+			<return-property name="contractStatusName" column="CONTRACT_STATUS_NAME"/>
+			<return-property name="remark" column="REMARK"/>
+			<return-property name="dutyPayStatusName" column="DUTY_PAY_STATUS_NAME"/>
+			<return-property name="totSendStatusName" column="TOT_SEND_STATUS_NAME"/>
+			<return-property name="legalPassOutDate" column="LEGAL_PASS_OUT_DT"/>
+			<return-property name="company" column="COMPANY"/>
+			<return-property name="flowStatus" column="FLOW_STATUS" />
+			<return-property name="siteStatusName" column="SITE_STATUS_NAME" />	
+			<return-property name="region" column="REGION"/>
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO"/>
+			<return-property name="oldSiteInfoId" column="OLD_SITE_INFO_ID"/>
+			<return-property name="groupNo" column="GROUP_NO"/>
+			<return-property name="borrowStatus" column="BORROW_STATUS" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO005_SRCH (?, :company, :region, :docNo, :reqType, :title, :contractNo,
+		:siteName, :effDateFrom, :effDateTo, :expDateFrom, :expDateTo, :noExpireFlag, :lessorName, :locationId,
+		:contractStatus, :dutyPayStatus, :totSendStatus, :currentFlag, :groupNo)]]>
+	</sql-query>
+</hibernate-mapping>

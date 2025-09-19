@@ -1,0 +1,156 @@
+ 04-07-2565 15:24:02:448 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 15:25:01:316 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 04-07-2565 15:25:01:318 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 04-07-2565 15:25:02:398 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : pk_b5fTLwFvISypSEkkOXYq6AwYj6_WRpOXY2k-b at Mon Jul 04 15:25:02 ICT 2022
+ 04-07-2565 15:25:07:099 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 04-07-2565 15:25:07:112 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(139) - C:\Users\007034\Desktop\SEM\data\SEM\resources\serialize\rapeesuw_SM001.xml (The system cannot find the path specified)
+ 04-07-2565 15:25:07:382 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 04-07-2565 15:25:11:262 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 04-07-2565 15:25:11:263 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 04-07-2565 15:25:11:267 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : 8D2A62IDUDsfw8w22cSyPfAz-5IG1PJbipmpWhVS at Mon Jul 04 15:25:11 ICT 2022
+ 04-07-2565 15:31:58:933 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 04-07-2565 15:32:55:287 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 15:33:01:771 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 04-07-2565 15:33:01:773 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 04-07-2565 15:33:02:304 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : -UEStmn7wZRWM3Cm42WgaCzI7o2DBCAbUWOr1KK1 at Mon Jul 04 15:33:02 ICT 2022
+ 04-07-2565 15:33:06:899 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 04-07-2565 15:33:06:900 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 04-07-2565 15:33:13:117 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 04-07-2565 15:33:13:491 DEBUG th.co.ais.web.bean.ReActivateSsoStored.addItem(99) - Application put new session id : -UEStmn7wZRWM3Cm42WgaCzI7o2DBCAbUWOr1KK1, and user name : rapeesuw
+ 04-07-2565 15:33:25:920 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:33:25:921 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMMSA001-0
+ 04-07-2565 15:33:25:922 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : null
+ 04-07-2565 15:33:25:922 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : null
+ 04-07-2565 15:33:25:922 INFO  th.co.ais.web.util.WebUtil.clearAllSessionNotUsed(58) - ### clear All Session ###
+ 04-07-2565 15:33:25:923 DEBUG th.co.ais.web.action.NavAction.navi(130) - nav programe :SEMMSA001-0
+ 04-07-2565 15:33:25:924 INFO  th.co.ais.web.sa.action.SEMMSA001Action.init(152) - ::: SEMMSA001Action :: init >> BEGIN :::
+ 04-07-2565 15:33:28:244 INFO  th.co.ais.web.action.AbstractBaseAction.getUserLogIn(76) - username :rapeesuw
+ 04-07-2565 15:36:27:985 INFO  th.co.ais.web.action.AbstractBaseAction.getUserLogIn(76) - username :rapeesuw
+ 04-07-2565 15:39:28:524 DEBUG th.co.ais.web.sa.action.SEMMSA001Action.loadTree(3222) - th.co.ais.service.exception.ServiceException: th.co.ais.dao.exception.DAOException: org.hibernate.QueryTimeoutException: could not execute query
+ 04-07-2565 15:39:28:537 ERROR th.co.ais.web.sa.action.SEMMSA001Action.init(181) - javax.faces.FacesException: th.co.ais.dao.exception.DAOException: org.hibernate.QueryTimeoutException: could not execute query
+ 04-07-2565 15:39:28:538 DEBUG th.co.ais.web.sa.action.SEMMSA001Action.init(182) - javax.faces.FacesException: th.co.ais.dao.exception.DAOException: org.hibernate.QueryTimeoutException: could not execute query
+ 04-07-2565 15:39:28:544 INFO  th.co.ais.web.sa.action.SEMMSA001Action.init(189) - ::: SEMMSA001Action :: init >> END :::
+ 04-07-2565 15:40:50:049 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:40:50:050 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMMSA003-1
+ 04-07-2565 15:40:50:050 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : null
+ 04-07-2565 15:40:50:050 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : null
+ 04-07-2565 15:40:50:051 INFO  th.co.ais.web.util.WebUtil.clearAllSessionNotUsed(58) - ### clear All Session ###
+ 04-07-2565 15:40:50:051 DEBUG th.co.ais.web.action.NavAction.navi(130) - nav programe :SEMMSA003-1
+ 04-07-2565 15:40:50:055 INFO  th.co.ais.web.util.CompanyCacheUtil.getCompanySelItemsALL(101) - -- getCompanySelItemsALL --
+ 04-07-2565 15:42:25:895 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:42:25:897 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMMSI001-1
+ 04-07-2565 15:42:25:897 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : null
+ 04-07-2565 15:42:25:897 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : null
+ 04-07-2565 15:42:25:898 INFO  th.co.ais.web.util.WebUtil.clearAllSessionNotUsed(58) - ### clear All Session ###
+ 04-07-2565 15:42:25:898 DEBUG th.co.ais.web.action.NavAction.navi(130) - nav programe :SEMMSI001-1
+ 04-07-2565 15:43:34:398 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:43:34:398 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMMSI001-1
+ 04-07-2565 15:43:34:398 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : null
+ 04-07-2565 15:43:34:398 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : null
+ 04-07-2565 15:43:34:399 INFO  th.co.ais.web.util.WebUtil.clearAllSessionNotUsed(58) - ### clear All Session ###
+ 04-07-2565 15:43:34:399 DEBUG th.co.ais.web.action.NavAction.navi(130) - nav programe :SEMMSI001-1
+ 04-07-2565 15:43:41:200 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:43:41:201 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMMSI001-2
+ 04-07-2565 15:43:41:201 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : SEMMSI001
+ 04-07-2565 15:43:41:201 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : pageLoad
+ 04-07-2565 15:44:04:404 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:44:04:405 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMQSI001-1
+ 04-07-2565 15:44:04:405 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : null
+ 04-07-2565 15:44:04:405 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : null
+ 04-07-2565 15:44:04:405 INFO  th.co.ais.web.util.WebUtil.clearAllSessionNotUsed(58) - ### clear All Session ###
+ 04-07-2565 15:44:04:405 DEBUG th.co.ais.web.action.NavAction.navi(130) - nav programe :SEMQSI001-1
+ 04-07-2565 15:44:10:856 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:44:10:857 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMQSI001-1
+ 04-07-2565 15:44:10:857 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : SEMQSI001
+ 04-07-2565 15:44:10:857 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : doSearch
+ 04-07-2565 15:44:10:858 DEBUG th.co.ais.web.si.action.SEMQSI001Action.doSearch(116) - semqsi001Bean.getQueryRenewSAMSearchSP() = 
+ 04-07-2565 15:44:15:644 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:44:15:645 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMQSI001-1
+ 04-07-2565 15:44:15:645 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : SEMQSI001
+ 04-07-2565 15:44:15:645 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : doSearch
+ 04-07-2565 15:44:15:645 DEBUG th.co.ais.web.si.action.SEMQSI001Action.doSearch(116) - semqsi001Bean.getQueryRenewSAMSearchSP() = 
+ 04-07-2565 15:44:19:532 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:44:19:533 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMQSI001-1
+ 04-07-2565 15:44:19:533 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : SEMQSI001
+ 04-07-2565 15:44:19:534 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : doSearch
+ 04-07-2565 15:44:19:534 DEBUG th.co.ais.web.si.action.SEMQSI001Action.doSearch(116) - semqsi001Bean.getQueryRenewSAMSearchSP() = 
+ 04-07-2565 15:44:23:216 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:44:23:217 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMQSI001-1
+ 04-07-2565 15:44:23:217 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : SEMQSI001
+ 04-07-2565 15:44:23:217 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : doSearch
+ 04-07-2565 15:44:23:217 DEBUG th.co.ais.web.si.action.SEMQSI001Action.doSearch(116) - semqsi001Bean.getQueryRenewSAMSearchSP() = 
+ 04-07-2565 15:44:29:777 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 04-07-2565 15:44:29:778 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMQSI001-1
+ 04-07-2565 15:44:29:778 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : SEMQSI001
+ 04-07-2565 15:44:29:778 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : doSearch
+ 04-07-2565 15:44:29:779 DEBUG th.co.ais.web.si.action.SEMQSI001Action.doSearch(116) - semqsi001Bean.getQueryRenewSAMSearchSP() = 
+ 04-07-2565 15:47:55:197 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 15:47:55:198 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key wsEmployeeURL
+ 04-07-2565 15:47:55:465 ERROR th.co.ais.web.servlet.QuartzJob.execute(78) - no protocol: 
+ 04-07-2565 15:47:55:465 DEBUG th.co.ais.web.bean.ReActivateSsoStored.removeItem(129) - Application remove session id : -UEStmn7wZRWM3Cm42WgaCzI7o2DBCAbUWOr1KK1
+ 04-07-2565 15:51:49:067 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 04-07-2565 15:51:49:068 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 04-07-2565 16:02:55:201 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 16:17:55:201 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 16:32:55:196 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 16:47:55:195 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 17:02:55:205 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 17:17:55:206 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 17:32:55:201 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 17:47:55:201 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 17:51:49:095 DEBUG th.co.ais.web.servlet.SessionListener.sessionDestroyed(52) - Current Session destroyed :-UEStmn7wZRWM3Cm42WgaCzI7o2DBCAbUWOr1KK1 Logging out user!
+ 04-07-2565 17:51:49:118 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key wsEmployeeURL
+ 04-07-2565 17:51:49:258 ERROR th.co.ais.web.servlet.SessionListener.sessionDestroyed(61) - An error occour while logout from servlet!
+javax.xml.rpc.JAXRPCException: no protocol: 
+	at org.apache.axis.client.Stub._setProperty(Stub.java:126)
+	at com.ais.websrv.EmployeeServiceWebServiceProxy.setEndpoint(EmployeeServiceWebServiceProxy.java:37)
+	at com.ais.web.authenticate.AuthenticateServiceImpl.getEmployeeServiceWebServiceProxy(AuthenticateServiceImpl.java:157)
+	at com.ais.web.authenticate.AuthenticateServiceImpl.logout(AuthenticateServiceImpl.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:318)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:183)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:150)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:110)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:90)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:202)
+	at com.sun.proxy.$Proxy173.logout(Unknown Source)
+	at th.co.ais.web.servlet.SessionListener.sessionDestroyed(SessionListener.java:59)
+	at io.undertow.servlet.core.ApplicationListeners.sessionDestroyed(ApplicationListeners.java:328)
+	at io.undertow.servlet.core.SessionListenerBridge.doDestroy(SessionListenerBridge.java:98)
+	at io.undertow.servlet.core.SessionListenerBridge.access$000(SessionListenerBridge.java:41)
+	at io.undertow.servlet.core.SessionListenerBridge$1.call(SessionListenerBridge.java:54)
+	at io.undertow.servlet.core.SessionListenerBridge$1.call(SessionListenerBridge.java:51)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at io.undertow.servlet.core.SessionListenerBridge.sessionDestroyed(SessionListenerBridge.java:73)
+	at io.undertow.server.session.SessionListeners.sessionDestroyed(SessionListeners.java:61)
+	at io.undertow.server.session.InMemorySessionManager$SessionImpl.invalidate(InMemorySessionManager.java:586)
+	at io.undertow.server.session.InMemorySessionManager$SessionImpl$2$1.run(InMemorySessionManager.java:393)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.lang.Thread.run(Unknown Source)
+ 04-07-2565 18:02:55:207 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 18:17:55:197 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 18:32:55:196 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 18:47:55:207 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 19:02:55:197 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 19:17:55:210 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 19:32:55:200 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 19:47:55:204 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 20:02:55:206 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 20:17:55:197 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 20:32:55:194 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 20:47:55:196 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 04-07-2565 21:02:55:204 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token

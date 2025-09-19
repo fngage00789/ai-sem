@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.sa">
+    <class name="th.co.ais.domain.sa.SiteAcqSP" entity-name="searchSiteAcq">
+        <id name="rowId" type="java.lang.String"/>
+        <property name="p_region" type="java.lang.String" update="false"/>
+        <property name="p_company" type="java.lang.String" update="false"/>
+        <property generated="never" name="docNo" type="java.lang.String" update="false"/>
+        <property name="p_req_type" type="java.lang.String" update="false"/>
+        <property name="reqOfficer" type="java.lang.String" update="false"/>
+        <property name="p_contract_no" type="java.lang.String" update="false"/>
+        <property name="p_location_id" type="java.lang.String" update="false"/>
+        <property name="p_location_name" type="java.lang.String" update="false"/>
+        <property name="siteDetail" type="java.lang.String" update="false"/>
+        <property name="p_location_zone" type="java.lang.String" update="false" />
+        <property name="p_effective_dt_from" type="java.util.Date" update="false"/>
+        <property name="p_expire_dt_from" type="java.util.Date" update="false"/>
+        <property name="networkStatus" type="java.lang.String" update="false"/>
+        <property name="flowStatus" type="java.lang.String" update="false"/>
+        <property name="statusDT" type="java.util.Date" update="false"/>
+        <property name="p_batch_no" type="java.lang.String" update="false"/>
+        <property name="approveDT" type="java.util.Date" update="false"/>
+        <property name="approveBy" type="java.lang.String" update="false"/>
+        <property name="costPerYear" type="java.lang.String" update="false"/>
+        <property name="modifiedDetail" type="java.lang.String" update="false"/>
+        <property name="nearSiteCost" type="java.lang.String" update="false"/>
+        <property name="growingCost" type="java.lang.String" update="false"/>
+        <property name="flowRemark" type="java.lang.String" update="false"/>
+        <property name="p_user" type="java.lang.String" update="false"/>
+        <property name="can_edit" type="java.lang.String" update="false"/>
+        <property name="can_delete" type="java.lang.String" update="false"/>
+        <property name="can_print" type="java.lang.String" update="false"/>
+        <property name="flowStatusId" type="java.lang.String" update="false"/>
+        <property name="menuGroupDisplay" type="java.lang.String" update="false"/>
+    </class>
+    <class name="th.co.ais.domain.sa.SiteAppSP" entity-name="searchSiteApp">
+        <id name="rowId" type="java.lang.String"/>
+        <property name="region" type="java.lang.String" update="false"/>
+        <property name="company" type="java.lang.String" update="false"/>
+        <property generated="never" name="docNo" type="java.lang.String" update="false"/>
+        <property name="reqType" type="java.lang.String" update="false"/>
+        <property name="reqOfficer" type="java.lang.String" update="false"/>
+        <property name="contractNo" type="java.lang.String" update="false"/>
+        <property name="locationId" type="java.lang.String" update="false"/>
+        <property name="locationName" type="java.lang.String" update="false"/>
+        <property name="siteDetail" type="java.lang.String" update="false"/>
+        <property name="locationZone" type="java.lang.String" update="false" />
+        <property name="effectiveDt" type="java.util.Date" update="false"/>
+        <property name="expireDt" type="java.util.Date" update="false"/>
+        <property name="networkStatus" type="java.lang.String" update="false"/>
+        <property name="flowStatus" type="java.lang.String" update="false"/>
+        <property name="statusDT" type="java.util.Date" update="false"/>
+        <property name="batchNo" type="java.lang.String" update="false"/>
+        <property name="approveDT" type="java.util.Date" update="false"/>
+        <property name="approveBy" type="java.lang.String" update="false"/>
+        <property name="costPerYear" type="java.lang.String" update="false"/>
+        <property name="modifiedDetail" type="java.lang.String" update="false"/>
+        <property name="nearSiteCost" type="java.lang.String" update="false"/>
+        <property name="growingCost" type="java.lang.String" update="false"/>
+        <property name="flowRemark" type="java.lang.String" update="false"/>
+        <property name="user" type="java.lang.String" update="false"/>
+        <property name="flowStatusId" type="java.lang.String" update="false"/>
+    </class>
+    <!-- // popupNearestSite -->
+    <class entity-name="popupNearestSite" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property update="false" name="siteAppId" type="java.lang.String"/>
+        <property update="false" name="contractId" type="java.lang.String"/>
+        <property update="false" name="contractTime" type="java.math.BigDecimal"/>
+        <property update="false" name="contractTimeSeq" type="java.math.BigDecimal"/>
+        <property update="false" name="contractNo" type="java.lang.String"/>
+        <property update="false" name="reqType" type="java.lang.String"/>
+        <property update="false" name="reqDocType" type="java.lang.String"/>
+        <property update="false" name="docTypeText" type="java.lang.String"/>
+        <property update="false" name="title" type="java.lang.String"/>
+        <property update="false" name="updateDT" type="java.util.Date"/>
+        <property update="false" name="updateBy" type="java.lang.String"/>
+        <property update="false" name="region" type="java.lang.String"/>
+        <property update="false" name="docNo" type="java.lang.String"/>
+        <property update="false" name="docDt" type="java.util.Date"/>
+        <property update="false" name="docStatus" type="java.lang.String"/>
+        <property update="false" name="company" type="java.lang.String"/>
+        <property update="false" name="locationId" type="java.lang.String"/>
+        <property update="false" name="locationName" type="java.lang.String"/>
+        <property update="false" name="siteDetail" type="java.lang.String"/>
+        <property update="false" name="effectiveDt" type="java.util.Date"/>
+        <property update="false" name="expireDt" type="java.util.Date"/>
+        <property update="false" name="rentAmtPerYear" type="java.math.BigDecimal"/>
+        
+        <property update="false" name="locationArea" type="java.lang.String"/>
+        <property update="false" name="maxRentNearestSite" type="java.math.BigDecimal"/>
+        <property update="false" name="minRent" type="java.math.BigDecimal"/>
+        <property update="false" name="avgRent" type="java.math.BigDecimal"/>
+        <property update="false" name="styleClassName" type="java.lang.String"/>
+    </class>
+    <!-- // popupSiteHistoryTab -->
+    <class entity-name="popupSiteHistoryTab" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property update="false" name="siteAppId" type="java.lang.String"/>
+        <property update="false" name="contractId" type="java.lang.String"/>
+        <property update="false" name="contractTime" type="java.math.BigDecimal"/>
+        <property update="false" name="contractTimeSeq" type="java.math.BigDecimal"/>
+        <property update="false" name="contractNo" type="java.lang.String"/>
+        <property update="false" name="reqType" type="java.lang.String"/>
+        <property update="false" name="reqDocType" type="java.lang.String"/>
+        <property update="false" name="title" type="java.lang.String"/>
+        <property update="false" name="reqOfficer" type="java.lang.String"/>
+        <property update="false" name="reqOfficerManual" type="java.lang.String"/>
+        <property update="false" name="company" type="java.lang.String"/>
+        <property update="false" name="region" type="java.lang.String"/>
+        <property update="false" name="docNo" type="java.lang.String"/>
+        <property update="false" name="docDt" type="java.util.Date"/>
+        <property update="false" name="docStatus" type="java.lang.String"/>
+        <property update="false" name="updateDT" type="java.util.Date"/>
+        <property update="false" name="locationId" type="java.lang.String"/>
+        <property update="false" name="locationName" type="java.lang.String"/>
+        <property update="false" name="locationNameBG" type="java.lang.String"/>
+        <property update="false" name="coLocateCompany" type="java.lang.String"/>
+        <property update="false" name="coLocateCompanyBG" type="java.lang.String"/>
+        <property update="false" name="coContractNo" type="java.lang.String"/>
+        <property update="false" name="coContractNoBG" type="java.lang.String"/>
+        <property update="false" name="phase" type="java.lang.String"/>
+        <property update="false" name="phaseBG" type="java.lang.String"/>
+        <property update="false" name="locationZone" type="java.lang.String"/>
+        <property update="false" name="locationType" type="java.lang.String"/>
+        <property update="false" name="locationTypeBG" type="java.lang.String"/>
+        <property update="false" name="locationAddressNo" type="java.lang.String"/>
+        <property update="false" name="locationAddressNoBG" type="java.lang.String"/>
+        <property update="false" name="locationBuilding" type="java.lang.String"/>
+        <property update="false" name="locationBuildingBG" type="java.lang.String"/>
+        <property update="false" name="locationFloor" type="java.lang.String"/>
+        <property update="false" name="locationFloorBG" type="java.lang.String"/>
+        <property update="false" name="locationRoomNo" type="java.lang.String"/>
+        <property update="false" name="locationRoomNoBG" type="java.lang.String"/>
+        <property update="false" name="locationStreet" type="java.lang.String"/>
+        <property update="false" name="locationStreetBG" type="java.lang.String"/>
+        <property update="false" name="locationTambon" type="java.lang.String"/>
+        <property update="false" name="locationTambonBG" type="java.lang.String"/>
+        <property update="false" name="locationAmphurId" type="java.lang.String"/>
+        <property update="false" name="locationAmphurIdBG" type="java.lang.String"/>
+        <property update="false" name="amphurName" type="java.lang.String"/>
+        <property update="false" name="amphurNameBG" type="java.lang.String"/>
+        <property update="false" name="locationProvinceId" type="java.lang.String"/>
+        <property update="false" name="locationProvinceIdBG" type="java.lang.String"/>
+        <property update="false" name="provinceName" type="java.lang.String"/>
+        <property update="false" name="provinceNameBG" type="java.lang.String"/>
+        <property update="false" name="locationPostCode" type="java.lang.String"/>
+        <property update="false" name="locationPostCodeBG" type="java.lang.String"/>
+        <property update="false" name="landArea" type="java.math.BigDecimal"/>
+        <property update="false" name="landAreaBG" type="java.lang.String"/>
+        <property update="false" name="landAreaType" type="java.lang.String"/>
+        <property update="false" name="landAreaTypeBG" type="java.lang.String"/>
+        <property update="false" name="deckArea" type="java.math.BigDecimal"/>
+        <property update="false" name="deckAreaBG" type="java.lang.String"/>
+        <property update="false" name="buildingArea" type="java.math.BigDecimal"/>
+        <property update="false" name="buildingAreaBG" type="java.lang.String"/>
+        <property update="false" name="roomArea" type="java.math.BigDecimal"/>
+        <property update="false" name="roomAreaBG" type="java.lang.String"/>
+        <property update="false" name="areaRemark" type="java.lang.String"/>
+        <property update="false" name="areaRemarkBG" type="java.lang.String"/>
+        <property update="false" name="stationType" type="java.lang.String"/>
+        <property update="false" name="stationTypeBG" type="java.lang.String"/>
+        
+        <property update="false" name="ageYear" type="java.lang.Integer"/>
+        <property update="false" name="ageMonth" type="java.lang.Integer"/>
+        <property update="false" name="ageDay" type="java.lang.Integer"/>
+        <property update="false" name="terminateContractDt" type="java.util.Date"/>
+        <property update="false" name="lessorHouseNo" type="java.lang.String"/>
+        <property update="false" name="lessorBuilding" type="java.math.BigDecimal"/>
+        <property update="false" name="lessorStreet" type="java.lang.String"/>
+        <property update="false" name="lessorFloor" type="java.lang.String"/>
+        <property update="false" name="lessorRoomNo" type="java.lang.String"/>
+        <property update="false" name="lessorTambon" type="java.lang.String"/>
+        <property update="false" name="lessorAmphurId" type="java.lang.String"/>
+        <property update="false" name="lessorProvinceId" type="java.lang.String"/>
+        <property update="false" name="lessorPostCode" type="java.lang.String"/>
+    </class>
+    
+    <!-- // popupRentalSiteHistoryTab -->
+    <class entity-name="popupRentalSiteHistoryTab" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property update="false" name="siteAppId" type="java.lang.String"/>
+        <property update="false" name="contractId" type="java.lang.String"/>
+        <property update="false" name="contractTime" type="java.math.BigDecimal"/>
+        <property update="false" name="contractTimeSeq" type="java.math.BigDecimal"/>
+        <property update="false" name="contractNo" type="java.lang.String"/>
+        <property update="false" name="reqType" type="java.lang.String"/>
+        <property update="false" name="reqDocType" type="java.lang.String"/>
+        <property update="false" name="title" type="java.lang.String"/>
+        <property update="false" name="updateDT" type="java.util.Date"/>
+        <property update="false" name="updateBy" type="java.lang.String"/>
+        <property update="false" name="region" type="java.lang.String"/>
+        <property update="false" name="docNo" type="java.lang.String"/>
+        <property update="false" name="docDt" type="java.util.Date"/>
+        <property update="false" name="docStatus" type="java.lang.String"/>
+        <property update="false" name="rentAmt" type="java.math.BigDecimal"/>
+        <property update="false" name="rentAmtBG" type="java.lang.String"/>
+        <property update="false" name="rentDetail" type="java.lang.String"/>
+        <property update="false" name="rentDetailBG" type="java.lang.String"/>
+        <property update="false" name="rentWhtDetail" type="java.lang.String"/>
+        <property update="false" name="rentWhtDetailBG" type="java.lang.String"/>
+        <property update="false" name="rentServiceAmt" type="java.math.BigDecimal"/>
+        <property update="false" name="rentServiceAmtBG" type="java.lang.String"/>
+        <property update="false" name="rentServiceDetail" type="java.lang.String"/>
+        <property update="false" name="rentServiceDetailBG" type="java.lang.String"/>
+        <property update="false" name="rentServiceVatType" type="java.lang.String"/>
+        <property update="false" name="rentServiceVatTypeBG" type="java.lang.String"/>
+        <property update="false" name="rentServiceWht" type="java.lang.String"/>
+        <property update="false" name="rentServiceWhtBG" type="java.lang.String"/>
+        <property update="false" name="rentAreaAmtMemo" type="java.lang.String"/>
+        <property update="false" name="rentAreaAmtMemoBG" type="java.lang.String"/>
+        <property update="false" name="rentServiceAmtMemo" type="java.lang.String"/>
+        <property update="false" name="rentServiceAmtMemoBG" type="java.lang.String"/>
+        <property update="false" name="rentSetupAmtMemo" type="java.lang.String"/>
+        <property update="false" name="rentSetupAmtMemoBG" type="java.lang.String"/>
+        <property update="false" name="rentOtherAmtMemo" type="java.lang.String"/>
+        <property update="false" name="rentOtherAmtMemoBG" type="java.lang.String"/>
+        <property update="false" name="rentSpecialAmtMemo" type="java.lang.String"/>
+        <property update="false" name="rentSpecialAmtMemoBG" type="java.lang.String"/>
+        <property update="false" name="totalRentService" type="java.math.BigDecimal"/>
+        <property update="false" name="totalRentServiceBG" type="java.lang.String"/>
+        <property update="false" name="rentPaymentPeriod" type="java.lang.String"/>
+        <property update="false" name="rentPaymentPeriodBG" type="java.lang.String"/>
+        
+        <property update="false" name="effectiveDt" type="java.util.Date"/>
+        <property update="false" name="expireDt" type="java.util.Date"/>
+        <property update="false" name="rentWhtType" type="java.lang.String"/>
+        <property update="false" name="rentWhtRate" type="java.math.BigDecimal"/>
+        <property update="false" name="rentVatType" type="java.lang.String"/>
+        <property update="false" name="rentVatRate" type="java.lang.String"/>
+        <property update="false" name="rentAmtOld" type="java.math.BigDecimal"/>
+        <property update="false" name="servPaymentPeriod" type="java.lang.String"/>
+        <property update="false" name="servPaymentPeriodOth" type="java.lang.String"/>
+        <property update="false" name="rentAmtAdd" type="java.math.BigDecimal"/>
+        <property update="false" name="rentAmtAddPerc" type="java.math.BigDecimal"/>
+        <property update="false" name="rentServAmtOld" type="java.math.BigDecimal"/>
+        <property update="false" name="rentServAmtAdd" type="java.math.BigDecimal"/>
+        <property update="false" name="rentServAmtAddPerc" type="java.math.BigDecimal"/>
+        <property update="false" name="rentPaymentPeriodOth" type="java.lang.String"/>
+    </class>
+    <!-- subSiteHistoryTab -->
+    <class name="th.co.ais.domain.sa.SiteAppSiteSP" entity-name="subSiteHistoryTab">
+        <id name="rowId" type="java.lang.String"/>
+        <property type="java.lang.String" update="false" name="siteAppSiteId" />
+        <property type="java.lang.String" update="false" name="siteAppId" />
+        <property type="java.lang.String" update="false" name="locationId" />
+        <property type="java.lang.String" update="false" name="locationName" />
+        <property type="java.lang.String" update="false" name="locationCode" />
+        <property type="java.lang.String" update="false" name="siteId" />
+        <property type="java.lang.String" update="false" name="siteCode" />
+        <property type="java.lang.String" update="false" name="siteGroup" />
+        <property type="java.lang.String" update="false" name="siteType" />
+        <property type="java.lang.String" update="false" name="recordStatus" />
+        <property type="java.lang.String" update="false" name="version" />
+        <property type="java.lang.String" update="false" name="system" />
+        <property type="java.lang.String" update="false" name="stationType" />
+        <property type="java.lang.String" update="false" name="company" />
+        <property type="java.lang.String" update="false" name="siteName" />
+        <property type="java.lang.String" update="false" name="updateBy" />
+        <property type="java.util.Date" update="false" name="updateDT" />
+    </class>
+    <!-- // popupContractHistoryTab -->
+    <class entity-name="popupContractHistoryTab" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property update="false" name="siteAppId" type="java.lang.String"/>
+        <property update="false" name="contractId" type="java.lang.String"/>
+        <property update="false" name="contractTime" type="java.math.BigDecimal"/>
+        <property update="false" name="contractTimeSeq" type="java.math.BigDecimal"/>
+        <property update="false" name="contractNo" type="java.lang.String"/>
+        <property update="false" name="reqType" type="java.lang.String"/>
+        <property update="false" name="reqDocType" type="java.lang.String"/>
+        <property update="false" name="title" type="java.lang.String"/>
+        <property update="false" name="updateDT" type="java.util.Date"/>
+        <property update="false" name="updateBy" type="java.lang.String" />
+        <property update="false" name="region" type="java.lang.String"/>
+        <property update="false" name="docNo" type="java.lang.String"/>
+        <property update="false" name="docStatus" type="java.lang.String"/>
+        <property update="false" name="docDt" type="java.util.Date"/>
+        <property update="false" name="lessorName" type="java.lang.String"/>  
+        <property update="false" name="lessorNameBG" type="java.lang.String"/>
+        <property update="false" name="lessorHouseNo" type="java.lang.String"/>
+        <property update="false" name="lessorHouseNoBG" type="java.lang.String"/>   
+        <property update="false" name="lessorBuilding" type="java.lang.String"/>
+        <property update="false" name="lessorBuildingBG" type="java.lang.String"/>   
+        <property update="false" name="lessorFloor" type="java.lang.String"/>
+        <property update="false" name="lessorFloorBG" type="java.lang.String"/>  
+        <property update="false" name="lessorRoomNo" type="java.lang.String"/>
+        <property update="false" name="lessorRoomNoBG" type="java.lang.String"/>  
+        <property update="false" name="lessorStreet" type="java.lang.String"/>  
+        <property update="false" name="lessorStreetBG" type="java.lang.String"/>
+        <property update="false" name="lessorTambon" type="java.lang.String"/>
+        <property update="false" name="lessorTambonBG" type="java.lang.String"/>  
+        <property update="false" name="lessorAmphurId" type="java.lang.String"/>  
+        <property update="false" name="amphurName" type="java.lang.String"/>
+        <property update="false" name="amphurNameBG" type="java.lang.String"/>   
+        <property update="false" name="lessorProvinceId" type="java.lang.String"/>
+        <property update="false" name="provinceName" type="java.lang.String"/>
+        <property update="false" name="provinceNameBG" type="java.lang.String"/>   
+        <property update="false" name="lessorPostCode" type="java.lang.String"/>
+        <property update="false" name="lessorPostCodeBG" type="java.lang.String"/>
+        <property update="false" name="lessorTaxId" type="java.lang.String"/>
+        <property update="false" name="lessorTaxIdBG" type="java.lang.String"/>
+        <property update="false" name="contactName" type="java.lang.String"/>
+        <property update="false" name="contactNameBG" type="java.lang.String"/>   
+        <property update="false" name="contactTel" type="java.lang.String"/>
+        <property update="false" name="contactTelBG" type="java.lang.String"/>  
+        <property update="false" name="contactMobile" type="java.lang.String"/>
+        <property update="false" name="contactMobileBG" type="java.lang.String"/>  
+        <property update="false" name="contactFax" type="java.lang.String"/>
+        <property update="false" name="contactFaxBG" type="java.lang.String"/>   
+        <property update="false" name="contactEmail" type="java.lang.String"/>
+        <property update="false" name="contactEmailBG" type="java.lang.String"/> 
+    </class>
+    <!-- // popupElectricalHistoryTab -->
+    <class entity-name="popupElectricalHistoryTab" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property update="false" name="siteAppId" type="java.lang.String"/>
+        <property update="false" name="contractId" type="java.lang.String"/>
+        <property update="false" name="contractTime" type="java.math.BigDecimal"/>
+        <property update="false" name="contractTimeSeq" type="java.math.BigDecimal"/>
+        <property update="false" name="contractNo" type="java.lang.String"/>
+        <property update="false" name="reqType" type="java.lang.String"/>
+        <property update="false" name="updateDT" type="java.util.Date"/>
+        <property update="false" name="updateBy" type="java.lang.String"/>
+        <property update="false" name="region" type="java.lang.String"/>
+        <property update="false" name="docNo" type="java.lang.String"/>
+        <property update="false" name="docDt" type="java.util.Date"/>
+        <property update="false" name="docStatus" type="java.lang.String"/>
+        <property update="false" name="elUseMultiResourse" type="java.lang.String"/>
+        <property update="false" name="elUseNewMeter" type="java.lang.String"/>
+        <property update="false" name="elUseOldMeter" type="java.lang.String"/>
+        <property update="false" name="elUseOwner" type="java.lang.String"/>
+        <property update="false" name="elOwnerType" type="java.lang.String"/>
+        <property update="false" name="elUseDesc" type="java.lang.String"/>
+        <property update="false" name="elUseDescBG" type="java.lang.String"/>
+        <property update="false" name="elPayOnPackage" type="java.lang.String"/>
+        <property update="false" name="elPackagePeriodType" type="java.lang.String"/>
+        <property update="false" name="elPackageDesc" type="java.lang.String"/>
+        <property update="false" name="elPackageDescBG" type="java.lang.String"/>
+        <property update="false" name="elPayOnUsed" type="java.lang.String"/>
+        <property update="false" name="elUnitPrice" type="java.math.BigDecimal"/>
+        <property update="false" name="elVatType" type="java.lang.String"/>
+        <property update="false" name="payOnUsedDesc" type="java.lang.String"/>
+        <property update="false" name="payOnUsedDescBG" type="java.lang.String"/>
+        <property update="false" name="payDesc" type="java.lang.String"/>
+        <property update="false" name="payDescBG" type="java.lang.String"/>
+        <property update="false" name="elRemark" type="java.lang.String"/>
+        <property update="false" name="elRemarkBG" type="java.lang.String"/>
+    </class>
+    <!-- // popupElectricDepositHistoryTab -->
+    <class entity-name="popupElectricDepositHistoryTab" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property update="false" name="siteAppId" type="java.lang.String"/>
+        <property update="false" name="contractId" type="java.lang.String"/>
+        <property update="false" name="contractTime" type="java.math.BigDecimal"/>
+        <property update="false" name="contractTimeSeq" type="java.math.BigDecimal"/>
+        <property update="false" name="contractNo" type="java.lang.String"/>
+        <property update="false" name="reqType" type="java.lang.String"/>
+        <property update="false" name="updateDT" type="java.util.Date"/>
+        <property update="false" name="updateBy" type="java.lang.String"/>
+        <property update="false" name="region" type="java.lang.String"/>
+        <property update="false" name="docNo" type="java.lang.String"/>
+        <property update="false" name="docDt" type="java.util.Date"/>
+        <property update="false" name="docStatus" type="java.lang.String"/>
+        <property update="false" name="elDepositFlag" type="java.lang.String"/>
+        <property update="false" name="elBGDeposit" type="java.math.BigDecimal"/>
+        <property update="false" name="elBGDepositVatType" type="java.lang.String"/>
+        <property update="false" name="elCashDeposit" type="java.math.BigDecimal"/>
+        <property update="false" name="elCashDepositVatType" type="java.lang.String"/>
+        <property update="false" name="elDepositRemark" type="java.lang.String"/>
+        <property update="false" name="elDepositRemarkBG" type="java.lang.String"/>
+        <property update="false" name="depositFlagDesc" type="java.lang.String"/>
+        <property update="false" name="depositFlagDescBG" type="java.lang.String"/>
+        <property update="false" name="bgDepositDesc" type="java.lang.String"/>
+        <property update="false" name="bgDepositDescBG" type="java.lang.String"/>
+        <property update="false" name="bgDepositVatDesc" type="java.lang.String"/>
+        <property update="false" name="bgDepositVatDescBG" type="java.lang.String"/>
+        <property update="false" name="cashDepositDesc" type="java.lang.String"/>
+        <property update="false" name="cashDepositDescBG" type="java.lang.String"/>
+        <property update="false" name="cashDepositvatDesc" type="java.lang.String"/>
+        <property update="false" name="cashDepositvatDescBG" type="java.lang.String"/>
+    </class>
+    <!-- // popupPropertyTaxHistoryTab -->
+    <class entity-name="popupPropertyTaxHistoryTab" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property update="false" name="siteAppId" type="java.lang.String"/>
+        <property update="false" name="contractId" type="java.lang.String"/>
+        <property update="false" name="contractTime" type="java.math.BigDecimal"/>
+        <property update="false" name="contractTimeSeq" type="java.math.BigDecimal"/>
+        <property update="false" name="contractNo" type="java.lang.String"/>
+        <property update="false" name="reqType" type="java.lang.String"/>
+        <property update="false" name="updateBy" type="java.lang.String"/>
+        <property update="false" name="updateDT" type="java.util.Date" />
+        <property update="false" name="region" type="java.lang.String"/>
+        <property update="false" name="docNo" type="java.lang.String"/>
+        <property update="false" name="docDt" type="java.util.Date"/>
+        <property update="false" name="docStatus" type="java.lang.String"/>
+        <property update="false" name="payBy" type="java.lang.String"/>
+        <property update="false" name="payByBG" type="java.lang.String"/>
+        <property update="false" name="ptRemark" type="java.lang.String"/>
+        <property update="false" name="ptRemarkBG" type="java.lang.String"/>
+    </class>
+    <!-- // popupInsuranceHistoryTab -->
+    <class entity-name="popupInsuranceHistoryTab" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+            <property update="false" name="siteAppId" type="java.lang.String"/>
+            <property update="false" name="contractId" type="java.lang.String"/>
+            <property update="false" name="contractTime" type="java.math.BigDecimal"/>
+            <property update="false" name="contractTimeSeq" type="java.math.BigDecimal"/>
+            <property update="false" name="contractNo" type="java.lang.String"/>
+            <property update="false" name="reqType" type="java.lang.String"/>
+            <property update="false" name="reqDocType" type="java.lang.String"/>
+            <property update="false" name="title" type="java.lang.String"/>
+            <property update="false" name="updateDT" type="java.util.Date"/>
+            <property update="false" name="updateBy" type="java.lang.String" />
+            <property update="false" name="region" type="java.lang.String"/>
+            <property update="false" name="docNo" type="java.lang.String"/>
+            <property update="false" name="docDt" type="java.util.Date"/>
+            <property update="false" name="docStatus" type="java.lang.String"/>
+            <property update="false" name="insFlag" type="java.lang.String"/>
+            <property update="false" name="insFlagBG" type="java.lang.String"/>
+            <property update="false" name="insSumInsured" type="java.math.BigDecimal"/>
+            <property update="false" name="insSumInsuredBG" type="java.lang.String"/>
+            <property update="false" name="insEffectiveDt" type="java.util.Date"/>
+            <property update="false" name="insEffectiveDtBG" type="java.lang.String"/>
+            <property update="false" name="insExpireDt" type="java.util.Date"/>
+            <property update="false" name="insExpireDtBG" type="java.lang.String"/>
+            <property update="false" name="insBeneficiary" type="java.lang.String"/>
+            <property update="false" name="insBeneficiaryBG" type="java.lang.String"/>  
+    </class>
+    <class entity-name="expBatch" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="retResult" type="java.lang.String"/>
+        <property update="false" name="message" type="java.lang.String"/>  
+    </class>
+    <class entity-name="calAmtTeb3" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="retResult" type="java.lang.String"/>
+    </class>
+    <class entity-name="calRentAmtTeb3" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property name="rentAmtAdd" type="java.math.BigDecimal"/>
+        <property name="rentAmtAddPerc" type="java.math.BigDecimal"/>
+        <property name="rentAmt" type="java.math.BigDecimal"/>
+        <property name="rentPeriodType" type="java.lang.String"/>
+    </class>
+    <class entity-name="expExcel" name="th.co.ais.domain.sa.SiteAcqSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property name="p_company" type="java.lang.String" update="false" />
+        <property name="p_region" type="java.lang.String" update="false" />
+        <property name="p_req_type" type="java.lang.String" update="false" />
+        <property name="p_title" type="java.lang.String" update="false" />
+        <property name="docNo" type="java.lang.String" update="false" />
+        <property name="p_contract_no" type="java.lang.String" update="false" />
+        <property name="p_location_id" type="java.lang.String" update="false" />
+        <property name="p_location_name" type="java.lang.String" update="false" />
+        <property name="siteDetail" type="java.lang.String" update="false" />
+        <property name="p_location_zone" type="java.lang.String" update="false" />
+        <property name="p_effective_dt_from" type="java.util.Date" update="false" />
+        <property name="p_expire_dt_from" type="java.util.Date" update="false" />
+        <property name="networkStatus" type="java.lang.String" update="false" />
+        <property name="owner" type="java.lang.String" update="false" />
+        <property name="reqOfficer" type="java.lang.String" update="false" />
+    </class>
+    <class entity-name="exp002Excel" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property name="company" type="java.lang.String" update="false" />
+        <property name="region" type="java.lang.String" update="false" />
+        <property name="reqType" type="java.lang.String" update="false" />
+        <property name="title" type="java.lang.String" update="false" />
+        <property name="docNo" type="java.lang.String" update="false" />
+        <property name="contractNo" type="java.lang.String" update="false" />
+        <property name="locationId" type="java.lang.String" update="false" />
+        <property name="locationName" type="java.lang.String" update="false" />
+        <property name="siteDetail" type="java.lang.String" update="false" />
+        <property name="locationZone" type="java.lang.String" update="false" />
+        <property name="effectiveDt" type="java.util.Date" update="false" />
+        <property name="expireDt" type="java.util.Date" update="false" />
+        <property name="networkStatus" type="java.lang.String" update="false" />
+        <property name="owner" type="java.lang.String" update="false" />
+        <property name="reqOfficer" type="java.lang.String" update="false" />
+    </class>
+    <class entity-name="clearBatch" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="retResult" type="java.lang.String"/>
+    </class>
+    <class entity-name="officerApprove" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="retResult" type="java.lang.String"/>
+        <property update="false" name="message" type="java.lang.String"/>
+    </class>
+    <class entity-name="deleteSiteAcq" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="retResult" type="java.lang.String"/>
+    </class>
+    <class entity-name="doPopupNEW" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="retResult" type="java.lang.String"/>
+        <property update="false" name="siteAppId" type="java.lang.String"/>
+        <property update="false" name="message" type="java.lang.String"/>
+    </class>
+    <class entity-name="popupRentalHistory" name="th.co.ais.domain.sa.SiteAppSP">
+        <id name="rowId" type="java.lang.String"/>
+        <property update="false" name="expenseType" type="java.lang.String"/>
+        <property update="false" name="rentAmt" type="java.math.BigDecimal"/>
+        <property update="false" name="rentVatType" type="java.lang.String"/>
+        <property update="false" name="rentWhtType" type="java.lang.String"/>
+        <property update="false" name="rentWhtRate" type="java.math.BigDecimal"/>
+        <property update="false" name="rentPaymentPeriod" type="java.lang.String"/>
+        <property update="false" name="rentPeriod" type="java.lang.String"/>
+        <property update="false" name="contractNo" type="java.lang.String"/>
+        <property update="false" name="effectiveDt" type="java.util.Date"/>
+        <property update="false" name="expireDt" type="java.util.Date"/>
+        <property update="false" name="reqType" type="java.lang.String"/>
+        <property update="false" name="cycleNo" type="java.lang.Integer"/>
+        <property update="false" name="seqNo" type="java.lang.Integer"/>
+    </class>
+    <!-- << classes declarement -->
+    
+    <!-- ============================================================================== -->
+    <!-- ============================================================================== -->
+    
+    <!-- >> queries declarement -->
+    <sql-query name="querySearchSiteAcq" callable="true">
+        <return class="th.co.ais.domain.sa.SiteAcqSP" entity-name="searchSiteAcq">
+            <return-property name="rowId" column="SITE_APP_ID" />
+            <return-property name="p_region" column="REGION" />
+            <return-property name="p_company" column="COMPANY" />
+            <return-property name="docNo" column="DOC_NO" />
+            <return-property name="p_req_type" column="REQ_DOC_TYPE" />
+            <return-property name="reqOfficer" column="REQ_OFFICER" />
+            <return-property name="p_contract_no" column="CONTRACT_NO" />
+            <return-property name="p_location_id" column="LOCATION_ID" />
+            <return-property name="p_location_name" column="LOCATION_NAME" />
+            <return-property name="siteDetail" column="SITE_DETAIL" />
+            <return-property name="p_location_zone" column="LOCATION_ZONE" />
+            <return-property name="p_effective_dt_from" column="EFFECTIVE_DT" />
+            <return-property name="p_expire_dt_from" column="EXPIRE_DT" />
+            <return-property name="networkStatus" column="NETWORK_STATUS" />
+            <return-property name="flowStatus" column="FLOW_STATUS" />
+            <return-property name="statusDT" column="STATUS_DT" />
+            <return-property name="p_batch_no" column="BATCH_NO" />
+            <return-property name="approveDT" column="APPROVE_DT" />
+            <return-property name="approveBy" column="APPROVE_BY" />
+            <return-property name="costPerYear" column="COST_PER_YEAR" />
+            <return-property name="modifiedDetail" column="MODIFIED_DETAIL" />
+            <return-property name="nearSiteCost" column="NEAR_SITE_COST" />
+            <return-property name="growingCost" column="GROWING_COST" />
+            <return-property name="flowRemark" column="FLOW_REMARK" />
+            <return-property name="p_user" column="USER_ID" />
+            <return-property name="can_edit" column="CAN_EDIT" />
+            <return-property name="can_delete" column="CAN_DELETE" />
+            <return-property name="can_print" column="CAN_PRINT" />
+            <return-property name="flowStatusId" column="FLOW_STATUS_ID" />
+            <return-property name="menuGroupDisplay" column="MENU_GROUP" />
+        </return>
+        <![CDATA[ call SEM.SEM_SP_MSA003_SEARCH  (?, :p_company, :p_region, :docNo, :p_req_type, :p_title, :p_docStatus,
+         :p_location_id, :p_location_code, :p_location_name, :p_location_type, :p_location_zone, :p_site_code, :p_contract_no,
+         :p_lessor_name, :p_effective_dt_from,  :p_effective_dt_to,  :p_expire_dt_from, :p_expire_dt_to, :p_batch_no, :p_user,
+         :p_address, :p_province_id, :p_phone ) ]]>
+    </sql-query>
+    
+    <sql-query name="querySearchSiteApp" callable="true">
+        <return class="th.co.ais.domain.sa.SiteAppSP" entity-name="searchSiteApp">
+            <return-property name="rowId" column="SITE_APP_ID" />
+            <return-property name="region" column="REGION" />
+            <return-property name="company" column="COMPANY" />
+            <return-property name="docNo" column="DOC_NO" />
+            <return-property name="reqType" column="REQ_DOC_TYPE" />
+            <return-property name="reqOfficer" column="REQ_OFFICER" />
+            <return-property name="contractNo" column="CONTRACT_NO" />
+            <return-property name="locationId" column="LOCATION_ID" />
+            <return-property name="locationName" column="LOCATION_NAME" />
+            <return-property name="siteDetail" column="SITE_DETAIL" />
+            <return-property name="locationZone" column="LOCATION_ZONE" />
+            <return-property name="effectiveDtFrom" column="EFFECTIVE_DT" />
+            <return-property name="expireDtFrom" column="EXPIRE_DT" />
+            <return-property name="networkStatus" column="NETWORK_STATUS" />
+            <return-property name="flowStatus" column="FLOW_STATUS" />
+            <return-property name="statusDT" column="STATUS_DT" />
+            <return-property name="batchNo" column="BATCH_NO" />
+            <return-property name="approveDT" column="APPROVE_DT" />
+            <return-property name="approveBy" column="APPROVE_BY" />
+            <return-property name="costPerYear" column="COST_PER_YEAR" />
+            <return-property name="modifiedDetail" column="MODIFIED_DETAIL" />
+            <return-property name="nearSiteCost" column="NEAR_SITE_COST" />
+            <return-property name="growingCost" column="GROWING_COST" />
+            <return-property name="flowRemark" column="FLOW_REMARK" />
+            <return-property name="user" column="USER_ID" />
+            <return-property name="flowStatusId" column="FLOW_STATUS_ID" />
+        </return>
+        <![CDATA[ call SEM.SEM_SP_MSA003_SEARCH(?, :company, :region , :docNo, :reqType, :title,:docStatus,
+         :locationId, :locationCode, :locationName, :locationType, :locationZone, :siteCode, :contractNo,
+         :lessorName,:effectiveDtFrom, :effectiveDtTo, :expireDtFrom, :expireDtTo, :batchNo,:user,
+         :address, :provinceId, :Phone) ]]>
+    </sql-query>
+    
+    <!-- >> msa00PopupNearestSite -->
+    <sql-query name="msa00PopupNearestSite" callable="true">
+        <return class="th.co.ais.domain.sa.SiteAppSP" entity-name="popupNearestSite">
+           <return-property column="SITE_APP_ID" name="rowId"/>
+           <return-property column="SITE_APP_ID" name="siteAppId"/>
+           <return-property column="CONTRACT_ID" name="contractId"/>
+           <return-property column="CONTRACT_TIME" name="contractTime"/>
+           <return-property column="CONTRACT_TIME_SEQ" name="contractTimeSeq"/>
+           <return-property column="CONTRACT_NO" name="contractNo"/>
+           <return-property column="REQ_TYPE" name="reqType"/>
+           <return-property column="REQ_DOC_TYPE" name="reqDocType"/>
+           <return-property column="DOC_TYPE_TEXT" name="docTypeText"/>
+           <return-property column="TITLE" name="title"/>
+           <return-property column="UPDATE_DT" name="updateDT"/>
+           <return-property column="UPDATE_BY" name="updateBy"/>
+           <return-property column="REGION" name="region"/>
+           <return-property column="DOC_NO" name="docNo"/>
+           <return-property column="DOC_DT" name="docDt"/>
+           <return-property column="DOC_STATUS" name="docStatus"/>
+           <return-property column="COMPANY" name="company"/>
+           <return-property column="LOCATION_ID" name="locationId"/>
+           <return-property column="LOCATION_NAME" name="locationName"/>
+           <return-property column="SITE_DETAIL" name="siteDetail"/>
+           <return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+           <return-property column="EXPIRE_DT" name="expireDt"/>
+           <return-property column="RENT_AMT_PER_YEAR" name="rentAmtPerYear"/>
+           <return-property column="LOCATION_AREA" name="locationArea"/>
+           <return-property column="MAX_RENT" name="maxRentNearestSite"/>
+           <return-property column="MIN_RENT" name="minRent"/>
+           <return-property column="AVG_RENT" name="avgRent"/>
+           <return-property column="HL" name="styleClassName"/>
+        </return>
+        <![CDATA[ call SEM_PG_SA_POPUP_POPUP_NEAREST_SITE(?, :rowId ) ]]>
+    </sql-query>
+    
+    <!-- // siteHistoryTab -->
+    <sql-query callable="true" name="msa002MainSiteHistoryTab">
+        <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="popupSiteHistoryTab">
+		   <return-property column="SITE_APP_ID" name="rowId"/>
+		   <return-property column="SITE_APP_ID" name="siteAppId"/>
+           <return-property column="CONTRACT_ID" name="contractId"/>
+           <return-property column="CONTRACT_TIME" name="contractTime"/>
+           <return-property column="CONTRACT_TIME_SEQ" name="contractTimeSeq"/>
+           <return-property column="CONTRACT_NO" name="contractNo"/>
+           <return-property column="REQ_TYPE" name="reqType"/>
+           <return-property column="REQ_DOC_TYPE" name="reqDocType"/>
+           <return-property column="TITLE" name="title"/>
+           <return-property column="REQ_OFFICER" name="reqOfficer"/>
+           <return-property column="REQ_OFFICER_MANUAL" name="reqOfficerManual"/>
+           <return-property column="COMPANY" name="company"/>
+           <return-property column="REGION" name="region"/>
+           <return-property column="DOC_NO" name="docNo"/>
+           <return-property column="DOC_DT" name="docDt"/>
+           <return-property column="DOC_STATUS" name="docStatus"/>
+           <return-property column="UPDATE_DT" name="updateDT"/>
+           <return-property column="LOCATION_ID" name="locationId"/>
+           <return-property column="LOCATION_NAME" name="locationName"/>
+           <return-property column="LOCATION_NAME_BG" name="locationNameBG"/>
+           <return-property column="CO_LOCATE_COMPANY" name="coLocateCompany"/>
+           <return-property column="CO_LOCATE_COMPANY_BG" name="coLocateCompanyBG"/>
+           <return-property column="CO_CONTRACT_NO" name="coContractNo"/>
+           <return-property column="CO_CONTRACT_NO_BG" name="coContractNoBG"/>
+           <return-property column="PHASE" name="phase"/>
+           <return-property column="PHASE_BG" name="phaseBG"/>
+           <return-property column="LOCATION_ZONE" name="locationZone"/>
+           <return-property column="LOCATION_TYPE" name="locationType"/>
+           <return-property column="LOCATION_TYPE_BG" name="locationTypeBG"/>
+           <return-property column="LOCATION_ADDRESS_NO" name="locationAddressNo"/>
+           <return-property column="LOCATION_ADDRESS_NO_BG" name="locationAddressNoBG"/>
+           <return-property column="LOCATION_BUILDING" name="locationBuilding"/>
+           <return-property column="LOCATION_BUILDING_BG" name="locationBuildingBG"/>
+           <return-property column="LOCATION_FLOOR" name="locationFloor"/>
+           <return-property column="LOCATION_FLOOR_BG" name="locationFloorBG"/>
+           <return-property column="LOCATION_ROOM_NO" name="locationRoomNo"/>
+           <return-property column="LOCATION_ROOM_NO_BG" name="locationRoomNoBG"/>
+           <return-property column="LOCATION_STREET" name="locationStreet"/>
+           <return-property column="LOCATION_STREET_BG" name="locationStreetBG"/>
+           <return-property column="LOCATION_TAMBON" name="locationTambon"/>
+           <return-property column="LOCATION_TAMBON_BG" name="locationTambonBG"/>
+           <return-property column="LOCATION_AMPHUR_ID" name="locationAmphurId"/>
+           <return-property column="LOCATION_AMPHUR_ID_BG" name="locationAmphurIdBG"/>
+           <return-property column="AMPHUR_NAME" name="amphurName"/>
+           <return-property column="AMPHUR_NAME_BG" name="amphurNameBG"/>
+           <return-property column="LOCATION_PROVINCE_ID" name="locationProvinceId"/>
+           <return-property column="LOCATION_PROVINCE_ID_BG" name="locationProvinceIdBG"/>
+           <return-property column="PROVINCE_NAME" name="provinceName"/>
+           <return-property column="PROVINCE_NAME_BG" name="provinceNameBG"/>
+           <return-property column="LOCATION_POSTCODE" name="locationPostCode"/>
+           <return-property column="LOCATION_POSTCODE_BG" name="locationPostCodeBG"/>
+           <return-property column="LAND_AREA" name="landArea"/>
+           <return-property column="LAND_AREA_BG" name="landAreaBG"/>
+           <return-property column="LAND_AREA_TYPE" name="landAreaType"/>
+           <return-property column="LAND_AREA_TYPE_BG" name="landAreaTypeBG"/>
+           <return-property column="DECK_AREA" name="deckArea"/>
+           <return-property column="DECK_AREA_BG" name="deckAreaBG"/>
+           <return-property column="BUILDING_AREA" name="buildingArea"/>
+           <return-property column="BUILDING_AREA_BG" name="buildingAreaBG"/>
+           <return-property column="ROOM_AREA" name="roomArea"/>
+           <return-property column="ROOM_AREA_BG" name="roomAreaBG"/>
+           <return-property column="AREA_REMARK" name="areaRemark"/>
+           <return-property column="AREA_REMARK_BG" name="areaRemarkBG"/>
+           <return-property column="STATION_TYPE" name="stationType"/>
+           <return-property column="STATION_TYPE_BG" name="stationTypeBG"/>
+           <return-property column="AGE_YEAR" name="ageYear"/>
+           <return-property column="AGE_MONTH" name="ageMonth"/>
+           <return-property column="AGE_DAY" name="ageDay"/>
+           <return-property column="TERMINATE_CONTRACT_DT" name="terminateContractDt"/>
+           <return-property column="LESSOR_HOUSE_NO" name="lessorHouseNo"/>
+           <return-property column="LESSOR_BUILDING" name="lessorBuilding"/>
+           <return-property column="LESSOR_STREET" name="lessorStreet"/>
+           <return-property column="LESSOR_FLOOR" name="lessorFloor"/>
+           <return-property column="LESSOR_ROOM_NO" name="lessorRoomNo"/>
+           <return-property column="LESSOR_TAMBON" name="lessorTambon"/>
+           <return-property column="LESSOR_AMPHUR_ID" name="lessorAmphurId"/>
+           <return-property column="LESSOR_PROVINCE_ID" name="lessorProvinceId"/>
+           <return-property column="LESSOR_POSTCODE" name="lessorPostCode"/>
+		  </return>
+		  <![CDATA[ call SEM_PG_SA_POPUP_SEM_SP_MSA002_HISTORY_SITE_HD(?, :siteAppId) ]]>
+	</sql-query>
+	<!-- // -->
+	<sql-query callable="true" name="msa002SubSiteHistoryTab">
+        <return alias="" class="th.co.ais.domain.sa.SiteAppSiteSP" entity-name="subSiteHistoryTab">
+            <return-property column="SITE_APP_SITE_ID" name="rowId"/>
+            <return-property column="SITE_APP_SITE_ID" name="siteAppSiteId"/>
+            <return-property column="SITE_APP_ID" name="siteAppId" />
+            <return-property column="LOCATION_ID" name="locationId" />
+            <return-property column="LOCATION_NAME" name="locationName"/>
+            <return-property column="LOCATION_CODE" name="locationCode"/>
+            <return-property column="SITE_ID" name="siteId"/>
+            <return-property column="SITE_CODE" name="siteCode"/>
+            <return-property column="SITE_GROUP" name="siteGroup"/>
+            <return-property column="SITE_TYPE" name="siteType"/>
+            <return-property column="RECORD_STATUS" name="recordStatus"/>
+            <return-property column="SYSTEM" name="system"/>
+            <return-property column="STATION_TYPE" name="stationType"/>
+            <return-property column="COMPANY" name="company"/>
+            <return-property column="SITE_NAME" name="siteName"/>
+            <return-property column="UPDATE_BY" name="updateBy"/>
+            <return-property column="UPDATE_DT" name="updateDT"/>
+            <return-property column="VERSION" name="version"/>
+        </return>
+        <![CDATA[ call SEM_PG_SA_POPUP_SEM_SP_MSA002_HISTORY_SITE_DT(?, :siteAppId) ]]>
+    </sql-query>
+	 <!-- // popupContractHistoryTab -->
+    <sql-query callable="true" name="msa002PopupContractHistoryTab">
+        <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="popupContractHistoryTab">
+           <return-property column="SITE_APP_ID" name="rowId"/>
+           <return-property column="SITE_APP_ID" name="siteAppId"/>
+           <return-property column="CONTRACT_ID" name="contractId"/>
+           <return-property column="CONTRACT_TIME" name="contractTime"/>
+           <return-property column="CONTRACT_TIME_SEQ" name="contractTimeSeq"/>
+           <return-property column="CONTRACT_NO" name="contractNo"/>
+           <return-property column="REQ_TYPE" name="reqType"/>
+           <return-property column="REQ_DOC_TYPE" name="reqDocType"/>
+           <return-property column="TITLE" name="title"/>
+           <return-property column="UPDATE_DT" name="updateDT"/>
+           <return-property column="UPDATE_BY" name="updateBy"/>
+           <return-property column="REGION" name="region"/>
+           <return-property column="DOC_NO" name="docNo"/>
+           <return-property column="DOC_DT" name="docDt"/>
+           <return-property column="DOC_STATUS" name="docStatus"/>
+           <return-property column="LESSOR_NAME" name="lessorName"/>
+           <return-property column="LESSOR_NAME_BG" name="lessorNameBG"/>
+           <return-property column="LESSOR_HOUSE_NO" name="lessorHouseNo"/>
+           <return-property column="LESSOR_HOUSE_NO_BG" name="lessorHouseNoBG"/>
+           <return-property column="LESSOR_BUILDING" name="lessorBuilding"/>
+           <return-property column="LESSOR_BUILDING_BG" name="lessorBuildingBG"/>
+           <return-property column="LESSOR_FLOOR" name="lessorFloor"/>
+           <return-property column="LESSOR_FLOOR_BG" name="lessorFloorBG"/>
+           <return-property column="LESSOR_ROOM_NO" name="lessorRoomNo"/>
+           <return-property column="LESSOR_ROOM_NO_BG" name="lessorRoomNoBG"/>
+           <return-property column="LESSOR_STREET" name="lessorStreet"/>
+           <return-property column="LESSOR_STREET_BG" name="lessorStreetBG"/>
+           <return-property column="LESSOR_TAMBON" name="lessorTambon"/>
+           <return-property column="LESSOR_TAMBON_BG" name="lessorTambonBG"/>
+           <return-property column="LESSOR_AMPHUR_ID" name="lessorAmphurId"/>
+           <return-property column="AMPHUR_NAME" name="amphurName"/>
+           <return-property column="AMPHUR_NAME_BG" name="amphurNameBG"/>
+           <return-property column="LESSOR_PROVINCE_ID" name="lessorProvinceId"/>
+           <return-property column="PROVINCE_NAME" name="provinceName"/>
+           <return-property column="PROVINCE_NAME_BG" name="provinceNameBG"/>
+           <return-property column="LESSOR_POSTCODE" name="lessorPostCode"/>
+           <return-property column="LESSOR_POSTCODE_BG" name="lessorPostCodeBG"/>
+           <return-property column="LESSOR_TAX_ID" name="lessorTaxId"/>
+           <return-property column="LESSOR_TAX_ID_BG" name="lessorTaxIdBG"/>
+           <return-property column="CONTACT_NAME" name="contactName"/>
+           <return-property column="CONTACT_NAME_BG" name="contactNameBG"/>
+           <return-property column="CONTACT_TEL" name="contactTel"/>
+           <return-property column="CONTACT_TEL_BG" name="contactTelBG"/>
+           <return-property column="CONTACT_MOBILE" name="contactMobile"/>
+           <return-property column="CONTACT_MOBILE_BG" name="contactMobileBG"/>
+           <return-property column="CONTACT_FAX" name="contactFax"/>
+           <return-property column="CONTACT_FAX_BG" name="contactFaxBG"/>
+           <return-property column="CONTACT_EMAIL" name="contactEmail"/>
+           <return-property column="CONTACT_EMAIL_BG" name="contactEmailBG"/>
+          </return>
+          <![CDATA[ call SEM_PG_SA_POPUP_POPUP_CONTRACT_HISTORY(?, :siteAppId) ]]>
+    </sql-query>
+    <!-- // popupRentalHistoryTab -->
+    <sql-query callable="true" name="msa002PopupRentalHistoryTab">
+        <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="popupRentalSiteHistoryTab">
+           <return-property column="SITE_APP_ID" name="rowId"/>
+           <return-property column="SITE_APP_ID" name="siteAppId"/>
+           <return-property column="CONTRACT_ID" name="contractId"/>
+           <return-property column="CONTRACT_TIME" name="contractTime"/>
+           <return-property column="CONTRACT_TIME_SEQ" name="contractTimeSeq"/>
+           <return-property column="CONTRACT_NO" name="contractNo"/>
+           <return-property column="REQ_TYPE" name="reqType"/>
+           <return-property column="REQ_DOC_TYPE" name="reqDocType"/>
+           <return-property column="TITLE" name="title"/>
+           <return-property column="UPDATE_DT" name="updateDT"/>
+           <return-property column="UPDATE_BY" name="updateBy"/>
+           <return-property column="REGION" name="region"/>
+           <return-property column="DOC_NO" name="docNo"/>
+           <return-property column="DOC_DT" name="docDt"/>
+           <return-property column="DOC_STATUS" name="docStatus"/>
+           <return-property column="RENT_AMT" name="rentAmt"/>
+           <return-property column="RENT_AMT_BG" name="rentAmtBG"/>
+           <return-property column="RENT_DETAIL" name="rentDetail"/>
+           <return-property column="RENT_DETAIL_BG" name="rentDetailBG"/>
+           <return-property column="RENT_WHT_DETAIL" name="rentWhtDetail"/>
+           <return-property column="RENT_WHT_DETAIL_BG" name="rentWhtDetailBG"/>
+           <return-property column="RENT_SERVICE_AMT" name="rentServiceAmt"/>
+           <return-property column="RENT_SERVICE_AMT_BG" name="rentServiceAmtBG"/>
+           <return-property column="RENT_SERVICE_DETAIL" name="rentServiceDetail"/>
+           <return-property column="RENT_SERVICE_DETAIL_BG" name="rentServiceDetailBG"/>
+           <return-property column="RENT_SERVICE_VAT_TYPE" name="rentServiceVatType"/>
+           <return-property column="RENT_SERVICE_VAT_TYPE_BG" name="rentServiceVatTypeBG"/>
+           <return-property column="RENT_SERVICE_WHT" name="rentServiceWht"/>
+           <return-property column="RENT_SERVICE_WHT_BG" name="rentServiceWhtBG"/>
+           <return-property column="RENT_AREA_AMT_MEMO" name="rentAreaAmtMemo"/>
+           <return-property column="RENT_AREA_AMT_MEMO_BG" name="rentAreaAmtMemoBG"/>
+           <return-property column="RENT_SERVICE_AMT_MEMO" name="rentServiceAmtMemo"/>
+           <return-property column="RENT_SERVICE_AMT_MEMO_BG" name="rentServiceAmtMemoBG"/>
+           <return-property column="RENT_SETUP_AMT_MEMO" name="rentSetupAmtMemo"/>
+           <return-property column="RENT_SETUP_AMT_MEMO_BG" name="rentSetupAmtMemoBG"/>
+           <return-property column="RENT_OTHER_AMT_MEMO" name="rentOtherAmtMemo"/>
+           <return-property column="RENT_OTHER_AMT_MEMO_BG" name="rentOtherAmtMemoBG"/>
+           <return-property column="RENT_SPECIAL_AMT_MEMO" name="rentSpecialAmtMemo"/>
+           <return-property column="RENT_SPECIAL_AMT_MEMO_BG" name="rentSpecialAmtMemoBG"/>
+           <return-property column="TOTAL_RENT_SERVICE" name="totalRentService"/>
+           <return-property column="TOTAL_RENT_SERVICE_BG" name="totalRentServiceBG"/>
+           <return-property column="RENT_PAYMENT_PERIOD" name="rentPaymentPeriod"/>
+           <return-property column="RENT_PAYMENT_PERIOD_BG" name="rentPaymentPeriodBG"/>
+           
+           <return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+           <return-property column="EXPIRE_DT" name="expireDt"/>
+           <return-property column="RENT_WHT_TYPE" name="rentWhtType"/>
+           <return-property column="RENT_WHT_RATE" name="rentWhtRate"/>
+           <return-property column="RENT_VAT_TYPE" name="rentVatType"/>
+           <return-property column="RENT_VAT_RATE" name="rentVatRate"/>
+           <return-property column="RENT_AMT_OLD" name="rentAmtOld"/>
+           <return-property column="SERVICE_PAYMENT_PERIOD" name="servPaymentPeriod"/>
+           <return-property column="SERVICE_PAYMENT_PERIOD_OTH" name="servPaymentPeriodOth"/>
+           <return-property column="RENT_AMT_ADD" name="rentAmtAdd"/>
+           <return-property column="RENT_AMT_ADD_PERC" name="rentAmtAddPerc"/>
+           <return-property column="RENT_SERV_AMT_OLD" name="rentServAmtOld"/>
+           <return-property column="RENT_SERV_AMT_ADD" name="rentServAmtAdd"/>
+           <return-property column="RENT_SERV_AMT_ADD_PERC" name="rentServAmtAddPerc"/>
+           <return-property column="RENT_PAYMENT_PERIOD_OTH" name="rentPaymentPeriodOth"/>
+         </return>
+         <![CDATA[ call SEM_PG_SA_POPUP_POPUP_RENTAL_HISTORY(?, :siteAppId) ]]>
+    </sql-query>
+    <!-- // popupElectricalHistoryTab -->
+    <sql-query callable="true" name="msa002PopupElectricalHistoryTab">
+        <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="popupElectricalHistoryTab">
+           <return-property column="SITE_APP_ID" name="rowId"/>
+           <return-property column="SITE_APP_ID" name="siteAppId"/>
+           <return-property column="CONTRACT_ID" name="contractId"/>
+           <return-property column="CONTRACT_TIME" name="contractTime"/>
+           <return-property column="CONTRACT_TIME_SEQ" name="contractTimeSeq"/>
+           <return-property column="CONTRACT_NO" name="contractNo"/>
+           <return-property column="REQ_TYPE" name="reqType"/>
+           <return-property column="UPDATE_DT" name="updateDT"/>
+           <return-property column="UPDATE_BY" name="updateBy"/>
+           <return-property column="REGION" name="region"/>
+           <return-property column="DOC_NO" name="docNo"/>
+           <return-property column="DOC_DT" name="docDt"/>
+           <return-property column="DOC_STATUS" name="docStatus"/>
+           <return-property column="EL_USE_MULTI_RESOURSE" name="elUseMultiResourse"/>
+           <return-property column="EL_USE_NEW_METER" name="elUseNewMeter"/>
+           <return-property column="EL_USE_OLD_METER" name="elUseOldMeter"/>
+           <return-property column="EL_USE_OWNER" name="elUseOwner"/>
+           <return-property column="EL_OWNER_TYPE" name="elOwnerType"/>
+           <return-property column="EL_USE_DESC" name="elUseDesc"/>
+           <return-property column="EL_USE_DESC_BG" name="elUseDescBG"/>
+           <return-property column="EL_PAY_ON_PACKAGE" name="elPayOnPackage"/>
+           <return-property column="EL_PACKAGE_PERIOD_TYPE" name="elPackagePeriodType"/>
+           <return-property column="EL_PACKAGE_DESC" name="elPackageDesc"/>
+           <return-property column="EL_PACKAGE_DESC_BG" name="elPackageDescBG"/>
+           <return-property column="EL_PAY_ON_USED" name="elPayOnUsed"/>
+           <return-property column="EL_UNIT_PRICE" name="elUnitPrice"/>
+           <return-property column="EL_VAT_TYPE" name="elVatType"/>
+           <return-property column="PAY_ON_USED_DESC" name="payOnUsedDesc"/>
+           <return-property column="PAY_ON_USED_DESC_BG" name="payOnUsedDescBG"/>
+           <return-property column="PAY_DESC" name="payDesc"/>
+           <return-property column="PAY_DESC_BG" name="payDescBG"/>
+           <return-property column="EL_REMARK" name="elRemark"/>
+           <return-property column="EL_REMARK_BG" name="elRemarkBG"/>
+         </return>
+         <![CDATA[ call SEM_PG_SA_POPUP_POPUP_ELECTRIC_HISTORY(?, :siteAppId) ]]>
+    </sql-query>
+    <!-- // popupElectricDepositHistoryTab -->
+    <sql-query callable="true" name="msa002PopupElectricalDepositHistoryTab">
+        <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="popupElectricDepositHistoryTab">
+           <return-property column="SITE_APP_ID" name="rowId"/>
+           <return-property column="SITE_APP_ID" name="siteAppId"/>
+           <return-property column="CONTRACT_ID" name="contractId"/>
+           <return-property column="CONTRACT_TIME" name="contractTime"/>
+           <return-property column="CONTRACT_TIME_SEQ" name="contractTimeSeq"/>
+           <return-property column="CONTRACT_NO" name="contractNo"/>
+           <return-property column="REQ_TYPE" name="reqType"/>
+           <return-property column="UPDATE_DT" name="updateDT"/>
+           <return-property column="UPDATE_BY" name="updateBy"/>
+           <return-property column="REGION" name="region"/>
+           <return-property column="DOC_NO" name="docNo"/>
+           <return-property column="DOC_DT" name="docDt"/>
+           <return-property column="DOC_STATUS" name="docStatus"/>
+           <return-property column="EL_DEPOSIT_FLAG" name="elDepositFlag"/>
+           <return-property column="EL_BG_DEPOSIT" name="elBGDeposit"/>
+           <return-property column="EL_BG_DEPOSIT_VAT_TYPE" name="elBGDepositVatType"/>
+           <return-property column="EL_CASH_DEPOSIT" name="elCashDeposit"/>
+           <return-property column="EL_CASH_DEPOSIT_VAT_TYPE" name="elCashDepositVatType"/>
+           <return-property column="EL_DEPOSIT_REMARK" name="elDepositRemark"/>
+           <return-property column="EL_DEPOSIT_REMARK_BG" name="elDepositRemarkBG"/>
+           <return-property column="DEPOSIT_FLAG_DESC" name="depositFlagDesc"/>
+           <return-property column="DEPOSIT_FLAG_DESC_BG" name="depositFlagDescBG"/>
+           <return-property column="BG_DEPOSIT_DESC" name="bgDepositDesc"/>
+           <return-property column="BG_DEPOSIT_DESC_BG" name="bgDepositDescBG"/>
+           <return-property column="BG_DEPOSIT_VAT_DESC" name="bgDepositVatDesc"/>
+           <return-property column="BG_DEPOSIT_VAT_DESC_BG" name="bgDepositVatDescBG"/>
+           <return-property column="CASH_DEPOSIT_DESC" name="cashDepositDesc"/>
+           <return-property column="CASH_DEPOSIT_DESC_BG" name="cashDepositDescBG"/>
+           <return-property column="CASH_DEPOSIT_VAT_DESC" name="cashDepositvatDesc"/>
+           <return-property column="CASH_DEPOSIT_VAT_DESC_BG" name="cashDepositvatDescBG"/>
+         </return>
+         <![CDATA[ call SEM_PG_SA_POPUP_POPUP_ELECTRIC_DEPOSIT_HISTORY(?, :siteAppId) ]]>
+    </sql-query>
+    <!-- // popupPropertyHistoryTab -->
+    <sql-query callable="true" name="msa002PopupPropertyTaxHistoryTab">
+        <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="popupPropertyTaxHistoryTab">
+           <return-property column="SITE_APP_ID" name="rowId"/>
+           <return-property column="SITE_APP_ID" name="siteAppId"/>
+           <return-property column="CONTRACT_ID" name="contractId"/>
+           <return-property column="CONTRACT_TIME" name="contractTime"/>
+           <return-property column="CONTRACT_TIME_SEQ" name="contractTimeSeq"/>
+           <return-property column="CONTRACT_NO" name="contractNo"/>
+           <return-property column="REQ_TYPE" name="reqType"/>
+           <return-property column="UPDATE_DT" name="updateDT"/>
+           <return-property column="UPDATE_BY" name="updateBy"/>
+           <return-property column="REGION" name="region"/>
+           <return-property column="DOC_NO" name="docNo"/>
+           <return-property column="DOC_DT" name="docDt"/>
+           <return-property column="DOC_STATUS" name="docStatus"/>
+           <return-property column="PAY_BY" name="payBy"/>
+           <return-property column="PAY_BY_BG" name="payByBG"/>
+           <return-property column="PT_REMARK" name="ptRemark"/>
+           <return-property column="PT_REMARK_BG" name="ptRemarkBG"/>
+         </return>
+         <![CDATA[ call SEM_PG_SA_POPUP_POPUP_PROPERTY_TAX_HISTORY(?, :siteAppId) ]]>
+    </sql-query>
+    <!-- // popupInsuranceHistoryTab -->
+    <sql-query callable="true" name="msa002PopupInsuranceHistoryTab">
+        <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="popupInsuranceHistoryTab">
+           <return-property column="SITE_APP_ID" name="rowId"/>
+           <return-property column="SITE_APP_ID" name="siteAppId"/>
+           <return-property column="CONTRACT_ID" name="contractId"/>
+           <return-property column="CONTRACT_TIME" name="contractTime"/>
+           <return-property column="CONTRACT_TIME_SEQ" name="contractTimeSeq"/>
+           <return-property column="CONTRACT_NO" name="contractNo"/>
+           <return-property column="REQ_TYPE" name="reqType"/>
+           <return-property column="REQ_DOC_TYPE" name="reqDocType"/>
+           <return-property column="TITLE" name="title"/>
+           <return-property column="UPDATE_DT" name="updateDT"/>
+           <return-property column="UPDATE_BY" name="updateBy"/>
+           <return-property column="REGION" name="region"/>
+           <return-property column="DOC_NO" name="docNo"/>
+           <return-property column="DOC_DT" name="docDt"/>
+           <return-property column="DOC_STATUS" name="docStatus"/>
+           <return-property column="INS_FLAG" name="insFlag"/>
+           <return-property column="INS_FLAG_BG" name="insFlagBG"/>
+           <return-property column="INS_SUM_INSURED" name="insSumInsured"/>
+           <return-property column="INS_SUM_INSURED_BG" name="insSumInsuredBG"/>
+           <return-property column="INS_EFFECTIVE_DT" name="insEffectiveDt"/>
+           <return-property column="INS_EFFECTIVE_DT_BG" name="insEffectiveDtBG"/>
+           <return-property column="INS_EXPIRE_DT" name="insExpireDt"/>
+           <return-property column="INS_EXPIRE_DT_BG" name="insExpireDtBG"/>
+           <return-property column="INS_BENEFICIARY" name="insBeneficiary"/>
+           <return-property column="INS_BENEFICIARY_BG" name="insBeneficiaryBG"/>
+         </return>
+         <![CDATA[ call SEM_PG_SA_POPUP_POPUP_INSURANCE_HISTORY(?, :siteAppId) ]]>
+    </sql-query>
+    <!-- // siteHistoryTab -->
+    <sql-query callable="true" name="msa002RentalHistoryTab">
+        <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="popupRentalHistory">
+		   <return-property column="ROWNUM" name="rowId"/>
+		   <return-property column="EXPENSE_TYPE_NAME" name="expenseType"/>
+		   <return-property column="RENT_AMT" name="rentAmt"/>
+		   <return-property column="VAT_TYPE_NAME" name="rentVatType"/>
+		   <return-property column="WHT_TYPE_NAME" name="rentWhtType"/>
+           <return-property column="WHT_RATE" name="rentWhtRate"/>
+           <return-property column="PAY_PERIOD_TYPE_NAME" name="rentPaymentPeriod"/>
+           <return-property column="RENT_PERIOD_TYPE" name="rentPeriod"/>
+           <return-property column="CONTRACT_NO" name="contractNo"/>
+           <return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+           <return-property column="EXPIRE_DT" name="expireDt"/>
+           <return-property column="REQ_TYPE_NAME" name="reqType"/>
+           <return-property column="CYCLE_NO" name="cycleNo"/>
+           <return-property column="SEQ_NO" name="seqNo"/>
+		  </return>
+		  <![CDATA[ call SEM_SP_MSA001_RENT_HIST(?, :contractNo, :siteAppId) ]]>
+	</sql-query>
+	<!-- // -->
+	<!-- gen Batch -->
+	<sql-query callable="true" name="msa003ExpBatch">
+	   <![CDATA[ call SEM_PG_MSA002_GEN_AND_SAVE_BATCH_NEW(cast(? as refcursor), cast(:siteAppId as clob), cast(:targetDt as varchar), cast(:reqType as varchar), cast(:region as varchar), cast(:userId as varchar), cast(:value1 as varchar), cast(:value2 as varchar), cast(:value3 as varchar), cast(:value4 as varchar), cast(:value5 as varchar))]]>
+	   <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="expBatch">
+	       <return-property column="P_RESULT" name="retResult"/>
+	       <return-property column="P_MESSAGE" name="message"/>
+	   </return>
+	</sql-query>
+	<!-- calAmt -->
+    <sql-query callable="true" name="msa002CalAmt">
+       <![CDATA[ call SEM_SP_MSA001_CAL_AMT(?, :effectiveDt, :expireDt, :rentAmt, :rentPeriodType, :rentServiceAmt, :rentServicePeriodType)]]>
+       <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="calAmtTeb3">
+           <return-property column="V_RESULT" name="retResult"/>
+       </return>
+    </sql-query>
+    <!-- calRentAmt -->
+    <sql-query callable="true" name="msa002CalRentAmt">
+       <![CDATA[ call SEM_SP_MSA001_CAL_RENT(?, :rentAmtOld, :rentPeriodTypeOld, :rentAmtAdd, :rentAmtAddPerc, :rentAmt, :rentPeriodType)]]>
+       <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="calRentAmtTeb3">
+           <return-property column="ROWNUM" name="rowId"/>
+           <return-property column="V_RENT_ADD" name="rentAmtAdd"/>
+           <return-property column="V_RENT_PERCENT" name="rentAmtAddPerc"/>
+           <return-property column="V_RENT_AMT" name="rentAmt"/>
+           <return-property column="V_RENT_TYPE" name="rentPeriodType"/>
+       </return>
+    </sql-query>
+    <!-- calServiceAmt -->
+    <sql-query callable="true" name="msa002CalServiceAmt">
+       <![CDATA[ call SEM_SP_MSA001_CAL_RENT(?, :rentServAmtOld, :rentServPeriodTypeOld, :rentServAmtAdd, :rentServAmtAddPerc, :rentServiceAmt, :rentServicePeriodType)]]>
+       <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="calRentAmtTeb3">
+           <return-property column="ROWNUM" name="rowId"/>
+           <return-property column="V_RENT_ADD" name="rentAmtAdd"/>
+           <return-property column="V_RENT_PERCENT" name="rentAmtAddPerc"/>
+           <return-property column="V_RENT_AMT" name="rentAmt"/>
+           <return-property column="V_RENT_TYPE" name="rentPeriodType"/>
+       </return>
+    </sql-query>
+	<!-- export excel -->
+    <sql-query callable="true" name="msa003Exp">
+       <![CDATA[ call SEM_SP_MSA003_EXP_BATCH(?, :p_batch_no)]]>
+       <return alias="" class="th.co.ais.domain.sa.SiteAcqSP" entity-name="expExcel">
+            <return-property column="SITE_APP_ID" name="rowId"/>
+            <return-property column="COMPANY" name="p_company"/>
+            <return-property column="REGION" name="p_region"/>
+            <return-property column="REQ_TYPE_DESC" name="p_req_type"/>
+            <return-property column="TITLE" name="p_title"/>
+            <return-property column="DOC_NO" name="docNo"/>
+            <return-property column="CONTRACT_NO" name="p_contract_no"/>
+            <return-property column="LOCATION_ID" name="p_location_id"/>
+            <return-property column="LOCATION_NAME" name="p_location_name"/>
+            <return-property column="SITE_DETAIL" name="siteDetail"/>
+            <return-property column="LOCATION_ZONE" name="p_location_zone"/>
+            <return-property column="EFFECTIVE_DT" name="p_effective_dt_from"/>
+            <return-property column="EXPIRE_DT" name="p_expire_dt_from"/>
+            <return-property column="NETWORK_STATUS" name="networkStatus"/>
+            <return-property column="OWNER" name="owner"/>
+            <return-property column="REQ_OFFICER" name="reqOfficer"/>
+       </return>
+    </sql-query>
+    <!-- export excel -->
+    <sql-query callable="true" name="msa002Exp">
+       <![CDATA[ call SEM_SP_MSA003_EXP_BATCH(?, :batchNo)]]>
+       <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="exp002Excel">
+            <return-property column="SITE_APP_ID" name="rowId"/>
+            <return-property column="COMPANY" name="company"/>
+            <return-property column="REGION" name="region"/>
+            <return-property column="REQ_TYPE_DESC" name="reqType"/>
+            <return-property column="TITLE" name="title"/>
+            <return-property column="DOC_NO" name="docNo"/>
+            <return-property column="CONTRACT_NO" name="contractNo"/>
+            <return-property column="LOCATION_ID" name="locationId"/>
+            <return-property column="LOCATION_NAME" name="locationName"/>
+            <return-property column="SITE_DETAIL" name="siteDetail"/>
+            <return-property column="LOCATION_ZONE" name="locationZone"/>
+            <return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+            <return-property column="EXPIRE_DT" name="expireDt"/>
+            <return-property column="NETWORK_STATUS" name="networkStatus"/>
+            <return-property column="OWNER" name="owner"/>
+            <return-property column="REQ_OFFICER" name="reqOfficer"/>
+       </return>
+    </sql-query>
+	<!-- clear Batch -->
+    <sql-query callable="true" name="msa003ClearBatch">
+       <![CDATA[ call SEM_SP_MSA001_CLR_BATCH_NO(?, :siteAppId, :userId)]]>
+       <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="clearBatch">
+           <return-property column="P_RESULT" name="retResult"/>
+       </return>
+    </sql-query>
+    <!-- Approve to Leader -->
+    <sql-query callable="true" name="msa003OfficerApprove">
+       <![CDATA[ call SEM_SP_MSA001_OFFICER_APPROVE(?, :siteAppId, :userId)]]>
+       <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="officerApprove">
+           <return-property column="P_RESULT" name="retResult"/>
+           <return-property column="P_MESSAGE" name="message"/>
+       </return>
+    </sql-query>
+    <!-- Delete SiteAcq -->
+    <sql-query callable="true" name="msa003DeleteSiteAcq">
+       <![CDATA[ call SEM_PG_MSA002_SEM_SA_SITE_APP_DEL(?, :siteAppId)]]>
+       <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="deleteSiteAcq">
+           <return-property column="P_RESULT" name="retResult"/>
+       </return>
+    </sql-query>
+	<!-- popup NEW Process -->
+	<sql-query callable="true" name="msa003DoPopupNEW">
+       <![CDATA[ call SEM_PG_MSA003_NEW_REQUEST(?, :requestType, :siteAppId, :userId, :mailName)]]>
+       <return alias="" class="th.co.ais.domain.sa.SiteAppSP" entity-name="doPopupNEW">
+           <return-property column="P_RESULT" name="retResult"/>
+           <return-property column="SITE_APP_ID" name="siteAppId"/>
+           <return-property column="P_MESSAGE" name="message"/>
+       </return>
+    </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.Mir006SP" entity-name="mir006Srch">
+		<id name="rowId" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="locationId" type="java.lang.String" />
+		<property name="locationName" type="java.lang.String" />
+		<property name="insuredAmt" type="java.lang.Double" />
+		<property name="effDate" type="java.sql.Date" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+	</class>
+	
+	<class name="th.co.ais.domain.ir.Mir006SP" entity-name="mir006Edt">
+		<id name="result" type="java.lang.String" />
+		<property name="msgError" type="java.lang.String" />
+	</class>
+	
+	<sql-query name="queryInsured" callable="true">
+		<return class="th.co.ais.domain.ir.Mir006SP" entity-name="mir006Srch">
+			<return-property name="rowId" column="INSURED_ID" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="insuredAmt" column="INSURED_AMT" />
+			<return-property name="effDate" column="EFFECTIVE_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR006_SRCH(?, :company, :networkType, :contractNo, :plxFlag, :locationId, :locationName, :effDateFrom, :effDateTo) ]]>
+	</sql-query>
+	
+	<sql-query name="queryInsuredEdt" callable="true">
+		<return class="th.co.ais.domain.ir.Mir006SP" entity-name="mir006Edt">
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="msgError" column="P_REMARK" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR006_EDT(?, :rowId, :company, :networkType, :contractNo, :insuredAmt, :effDate, :currentUser) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

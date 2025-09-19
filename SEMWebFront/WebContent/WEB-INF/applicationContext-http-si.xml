@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<bean id="siteApproveService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteApproveService" />
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteApproveService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteApproveMapLocService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteApproveMapLocService" />
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteApproveMapLocService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteTerminateService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteTerminateService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteTerminateService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>	
+	
+	<bean id="siteContractService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteContractService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteContractService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteInfoMapLocService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteInfoMapLocService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteInfoMapLocService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="legalApproveService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/legalApproveService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ILegalApproveService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteInfoService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteInfoService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteInfoService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="sendRenewService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/sendRenewService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISendRenewService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteConstructService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteConstructService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteConstructService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteDepositService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteDepositService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteDepositService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteElectricService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteElectricService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteElectricService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteInsuranceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteInsuranceService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteInsuranceService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteLessorService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteLessorService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteLessorService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="sitePropertyTaxService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/sitePropertyTaxService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISitePropertyTaxService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteRentCondService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteRentCondService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteRentCondService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteRentService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteRentService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteRentService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="siteSubRentService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/siteSubRentService"/>
+		<property name="serviceInterface" value="th.co.ais.service.si.ISiteSubRentService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<!-- 2015/01/22 added by.. YUT -->
+	<bean id="legalSiteAppService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/legalSiteAppService" />
+		<property name="serviceInterface" value="th.co.ais.service.si.ILegalSiteAppService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+</beans>

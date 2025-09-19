@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SiteApproveMapLocSeqSP">
+		<!--<id name="rowId" type="java.lang.String"/>-->
+		<id name="seq" type="java.lang.Integer" />
+	</class>
+	<sql-query name="querySeqSiteApproveMapLocBySiteApproveId" callable="true">
+		<return class="th.co.ais.domain.si.SiteApproveMapLocSeqSP">
+			<return-property name="seq" column="RUN_SEQ_NO" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI001_SEQ_MAP_LOC(?, :siteApproveId) ]]>
+	</sql-query>
+</hibernate-mapping>

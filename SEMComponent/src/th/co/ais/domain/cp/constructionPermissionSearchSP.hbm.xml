@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.cp">
+	<class name="th.co.ais.domain.cp.ConstructionPermissionSearchSP" entity-name="permissionSearch">
+  		 <id name="rowId" type="java.lang.String"/>
+		  <property name="siteContructId" type="java.lang.String"/>
+		  <property name="siteApproveId" type="java.lang.String"/>
+		  <property name="reqId" type="java.lang.String"/>
+		  <property name="siteInfoId" type="java.lang.String"/>
+		  <property name="contractNo" type="java.lang.String"/>
+		  <property name="siteName" type="java.lang.String"/>
+		  <property name="locationId" type="java.lang.String"/>
+		  <property name="siteConstructStatus" type="java.lang.String"/>
+		  <property name="siteConstructStatusName" type="java.lang.String"/>
+		  <property name="supplierName" type="java.lang.String"/>
+		  <property name="conPermissionDocNo" type="java.lang.String"/>
+		  <property name="conBuildDocNo" type="java.lang.String"/>
+		  <property name="constructType" type="java.lang.String"/>
+		  <property name="constructTypeName" type="java.lang.String"/>
+		  <property name="constructStatus" type="java.lang.String"/>
+		  <property name="constructStatusName" type="java.lang.String"/>
+		  <property name="conBillNo" type="java.lang.String"/>
+		  <property name="conBillPayStatus" type="java.lang.String"/>
+		  <property name="conBillPayStatusName" type="java.lang.String"/>
+		  <property name="companyCri" type="java.lang.String"/>
+		  <property name="siteStatusName" type="java.lang.String"/>
+		  <property name="flowStatus" type="java.lang.String"/>
+		  <property name="docNo" type="java.lang.String"/>
+		  <property name="totSendDocNo" type="java.lang.String"/>
+		  <property name="totRefDocNo" type="java.lang.String"/>
+		  <property name="siteAmphurId" type="java.lang.String"/>
+		  <property name="siteProvinceId" type="java.lang.String"/>
+		  <property name="editableFlag" type="java.lang.String"/>
+		  <property name="migrateFlag" type="java.lang.String"/>
+		  <property name="contractId" type="java.lang.String"/>
+		  <property name="terminateFlag" type="java.lang.String"/>
+		  <property name="locationCode" type="java.lang.String"/>
+		  <property name="siteCode" type="java.lang.String"/>
+		  			
+ 	</class>
+	
+	<sql-query name="querySearchConstructionPermission" callable="true">
+		<return class="th.co.ais.domain.cp.ConstructionPermissionSearchSP" entity-name="permissionSearch">  
+			 <return-property column="SITE_CONSTRUCT_ID" name="rowId"/>
+			   <return-property column="SITE_CONSTRUCT_ID" name="siteContructId"/>
+			   <return-property column="SITE_APPROVE_ID" name="siteApproveId"/>
+			   <return-property column="REQ_TYPE" name="reqId"/>
+			   <return-property column="SITE_INFO_ID" name="siteInfoId"/>
+			   <return-property column="CONTRACT_NO" name="contractNo"/>
+			   <return-property column="SITE_NAME" name="siteName"/>
+			   <return-property column="LOCATION_ID" name="locationId"/>
+			   <return-property column="SITE_CONSTRUCT_STATUS" name="siteConstructStatus"/>
+			   <return-property column="SITE_CONSTRUCT_STATUS_NAME" name="siteConstructStatusName"/>
+			   <return-property column="SUPPLIER_NAME" name="supplierName"/>
+			   <return-property column="CON_PERMISSION_DOC_NO" name="conPermissionDocNo"/>
+			   <return-property column="CON_BUILD_DOC_NO" name="conBuildDocNo"/>
+			   <return-property column="CONSTRUCT_TYPE" name="constructType"/>
+			   <return-property column="CONSTRUCT_TYPE_NAME" name="constructTypeName"/>
+			   <return-property column="CONSTRUCT_STATUS" name="constructStatus"/>
+			   <return-property column="CONSTRUCT_STATUS_NAME" name="constructStatusName"/>
+			   <return-property column="CON_BILL_NO" name="conBillNo"/>
+			   <return-property column="CON_BILL_PAY_STATUS" name="conBillPayStatus"/>
+			   <return-property column="CON_PAYMENT_STATUS_NAME" name="conBillPayStatusName"/>
+			   <return-property column="COMPANY" name="companyCri"/>
+			   <return-property column="SITE_STATUS_NAME" name="siteStatusName"/>
+			   <return-property column="FLOW_STATUS" name="flowStatus"/>
+			   <return-property column="DOC_NO" name="docNo"/>
+			   <return-property column="TOT_SEND_DOC_NO" name="totSendDocNo"/>
+			   <return-property column="TOT_REF_DOC_NO" name="totRefDocNo"/>
+			   <return-property column="SITE_AMPHUR_ID" name="siteAmphurId"/>
+			   <return-property column="SITE_PROVINCE_ID" name="siteProvinceId"/>
+			   <return-property column="EDIT_FLAG" name="editableFlag"/>
+			   <return-property column="MIGRATE_FLAG" name="migrateFlag"/>
+			   <return-property column="CONTRACT_ID" name="contractId"/>
+			   <return-property column="TERMINATE_STATUS" name="terminateFlag"/>
+			   <return-property column="LOCATION_CODE" name="locationCode"/>
+			   <return-property column="SITE_CODE" name="siteCode"/>
+		</return>
+		<![CDATA[call SEM.SEM_SP_MCP001_SRCH(?, :companyCri, :contractNoCri, :siteNameCri, :locationIdCri, 
+		:regionCri, :siteConstructStatusCri, :docNoCri, :supplierNameCri, :totSendDocNoCri, :totRefDocNoCri, 
+		:conPermissionDocNoCri, :constructTypeCri, :constructStatusCri, :conBuildDocNoCri, :conBillNoCri, 
+		:conBillPayStatusCri, :migrateFlagCri, :strParam,:noContract ,:dummyFlag ,:locationCodeCri ,:siteCodeCri)]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+
+

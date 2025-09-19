@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SEMRRT020" pageWidth="595" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="PARAM_COMPANY" class="java.lang.String"/>
+	<parameter name="PARAM_MONTH_YEAR" class="java.lang.String"/>
+	<parameter name="PARAM_MASTER_GROUP" class="java.lang.String"/>
+	<parameter name="PARAM_HEADER_NAME" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA[".\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_USERNAME" class="java.lang.String"/>
+	<parameter name="PARAM_PRINT_DATE" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_MONTH_YEAR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM TABLE (SEM_PG_RRT020.GET_DATA_MASTER_GROUP($P{PARAM_MASTER_GROUP}))]]>
+	</queryString>
+	<field name="MASTER_GROUP" class="java.lang.String"/>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<group name="MASTER GROUP" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{MASTER_GROUP}]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="80" splitType="Stretch">
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-1" x="0" y="0" width="535" height="10">
+					<printWhenExpression><![CDATA[new Boolean($F{MASTER_GROUP} != null && $F{MASTER_GROUP}.equals("VEN_NAME") ? true : false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PARAM_COMPANY">
+					<subreportParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_HEADER_NAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_HEADER_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_DISPLAY_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_USERNAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_USERNAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MASTER_GROUP">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MASTER_GROUP}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() + "SEMRRT020_1D.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-2" x="0" y="10" width="535" height="10">
+					<printWhenExpression><![CDATA[new Boolean($F{MASTER_GROUP} != null && $F{MASTER_GROUP}.equals("VEN_CODE") ? true : false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PARAM_COMPANY">
+					<subreportParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_HEADER_NAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_HEADER_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_DISPLAY_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_USERNAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_USERNAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MASTER_GROUP">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MASTER_GROUP}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() + "SEMRRT020_2D.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-3" x="0" y="20" width="535" height="10">
+					<printWhenExpression><![CDATA[new Boolean($F{MASTER_GROUP} != null && $F{MASTER_GROUP}.equals("VEN_BOOK")? true :false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PARAM_COMPANY">
+					<subreportParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_HEADER_NAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_HEADER_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_DISPLAY_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_USERNAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_USERNAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MASTER_GROUP">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MASTER_GROUP}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() + "SEMRRT020_3D.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-4" x="0" y="30" width="535" height="10">
+					<printWhenExpression><![CDATA[new Boolean($F{MASTER_GROUP} != null && $F{MASTER_GROUP}.equals("PAYEE")? true :false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PARAM_COMPANY">
+					<subreportParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_HEADER_NAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_HEADER_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_DISPLAY_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_USERNAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_USERNAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MASTER_GROUP">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MASTER_GROUP}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() + "SEMRRT020_4D.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-5" x="0" y="40" width="535" height="10">
+					<printWhenExpression><![CDATA[new Boolean($F{MASTER_GROUP} != null && $F{MASTER_GROUP}.equals("PAYEE_BOOK")? true :false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PARAM_COMPANY">
+					<subreportParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_HEADER_NAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_HEADER_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_DISPLAY_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_USERNAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_USERNAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MASTER_GROUP">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MASTER_GROUP}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() + "SEMRRT020_5D.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-6" x="0" y="50" width="535" height="10">
+					<printWhenExpression><![CDATA[new Boolean($F{MASTER_GROUP} != null && $F{MASTER_GROUP}.equals("LOCATION")? true :false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PARAM_COMPANY">
+					<subreportParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_HEADER_NAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_HEADER_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_DISPLAY_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_USERNAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_USERNAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MASTER_GROUP">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MASTER_GROUP}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() + "SEMRRT020_6D.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-7" x="0" y="60" width="535" height="10">
+					<printWhenExpression><![CDATA[new Boolean($F{MASTER_GROUP} != null && $F{MASTER_GROUP}.equals("PAYMENT")? true :false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PARAM_COMPANY">
+					<subreportParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_HEADER_NAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_HEADER_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_DISPLAY_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_USERNAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_USERNAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MASTER_GROUP">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MASTER_GROUP}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() + "SEMRRT020_7D.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-8" x="0" y="70" width="535" height="10">
+					<printWhenExpression><![CDATA[new Boolean($F{MASTER_GROUP} != null && $F{MASTER_GROUP}.equals("CONTRACT")? true :false)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PARAM_COMPANY">
+					<subreportParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_HEADER_NAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_HEADER_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_DISPLAY_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_USERNAME">
+					<subreportParameterExpression><![CDATA[$P{PARAM_USERNAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MASTER_GROUP">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MASTER_GROUP}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_MONTH_YEAR">
+					<subreportParameterExpression><![CDATA[$P{PARAM_MONTH_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() + "SEMRRT020_8D.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

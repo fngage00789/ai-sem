@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.RentalPaySSearchSp">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="jobType" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="regionName" type="java.lang.String"/>
+		<property name="payExportTotal" type="java.lang.Integer"/>
+		<property name="payNoExportTotal" type="java.lang.Integer"/>
+		<property name="payTotal" type="java.lang.Integer"/>
+		<property name="noPayTotal" type="java.lang.Integer"/>
+		<property name="grandTotal" type="java.lang.Integer" />
+		
+	</class>
+	<sql-query name="querySearchRentalPayS" callable="true">
+		<return class="th.co.ais.domain.rt.RentalPaySSearchSp">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="jobType" column="JOB_TYPE" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="regionName" column="REGION_NAME" />
+			<return-property name="payExportTotal" column="PAY_EXPORT_TOTAL" />
+			<return-property name="payNoExportTotal" column="PAY_NONEXPORT_TOTAL" />
+			<return-property name="payTotal" column="GRAND_TOTAL" />
+			<return-property name="noPayTotal" column="NONPAY_TOTAL" />
+			<return-property name="grandTotal" column="PAY_TOTAL" />
+
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT002_SRCH_S(?, :contractNo, :company, :siteName, :region, :siteType, :dueDtFrom, 
+									:dueDtTo, :periodNo, :expenseType, :vendorId, :vendorName, :paymentMethod,
+								    :paymentType, :paymentDt, :chqReceiveDt, :siteStatus, :networkStatus, :paymentRequestDt, :paymentStatus, :jobType, :picoFlag) ]]>
+	</sql-query>
+</hibernate-mapping>

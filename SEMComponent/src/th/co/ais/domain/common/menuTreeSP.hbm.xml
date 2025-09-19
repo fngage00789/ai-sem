@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 10, 2014 4:51:25 PM by Hibernate Tools 3.3.0.GA -->
+
+<hibernate-mapping package="th.co.ais.domain.common">
+
+    <class name="th.co.ais.domain.common.MenuTreeSP" entity-name="menuTree">
+    	<id name="rowId" type="java.lang.String"/>
+        <property name="menuLevel" type="java.lang.String"/>
+        <property name="menuLabel" type="java.lang.String"/>
+        <property name="menuUrl" type="java.lang.String"/>
+        <property name="menuGroup" type="java.lang.String"/>
+        <property name="recordCount" type="java.lang.String"/>
+        <property name="menuGroupType" type="java.lang.String"/>
+    </class>
+    
+    <class name="th.co.ais.domain.common.MenuTreeSP" entity-name="SI_menuTree">
+    	<id name="rowId" type="java.lang.String"/>
+        <property name="menuLevel" type="java.lang.String"/>
+        <property name="menuLabel" type="java.lang.String"/>
+        <property name="menuUrl" type="java.lang.String"/>
+        <property name="menuGroup" type="java.lang.String"/>
+        <property name="recordCount" type="java.lang.String"/>
+        <property name="menuSubGroup" type="java.lang.String"/>
+        <property name="strParam" type="java.lang.String"/>
+        <property name="region" type="java.lang.String"/>
+        <property name="company" type="java.lang.String"/>
+    </class>
+    
+    <class name="th.co.ais.domain.common.MenuTreeSP" entity-name="getMenuTree">
+        <id name="rowId" type="java.lang.String"/>
+        <property name="menuLevel" type="java.lang.String"/>
+        <property name="menuLabel" type="java.lang.String"/>
+        <property name="menuUrl" type="java.lang.String"/>
+        <property name="menuGroup" type="java.lang.String"/>
+        <property name="recordCount" type="java.lang.String"/>
+        <property name="menuSubGroup" type="java.lang.String"/>
+        <property name="strParam" type="java.lang.String"/>
+    </class>
+    
+    <class name="th.co.ais.domain.common.MenuTreeSP" entity-name="sapMenuTree">
+    	<id name="rowId" type="java.lang.String"/>
+        <property name="menuLevel" type="java.lang.String"/>
+        <property name="menuLabel" type="java.lang.String"/>
+        <property name="recordCount" type="java.lang.String"/>
+        <property name="menuGroupType" type="java.lang.String"/>
+        <property name="headerFlag" type="java.lang.String"/>
+        <property name="mainId" type="java.math.BigDecimal"/>
+        <property name="refId" type="java.math.BigDecimal"/>
+        <property name="menuSeq" type="java.math.BigDecimal"/>
+        <property name="menuGroup" type="java.lang.String"/>
+        <property name="strParam" type="java.lang.String"/>
+        <property name="totalSum" type="java.lang.String"/>
+    </class>
+    
+    <class name="th.co.ais.domain.common.MenuTreeSP" entity-name="sapTeamList">
+    	<id name="rowId" type="java.lang.String"/>
+        <property name="teamId" type="java.lang.String"/>
+        <property name="teamName" type="java.lang.String"/>
+        <property name="createById" type="java.lang.String"/>
+        <property name="createBy" type="java.lang.String"/>
+        <property name="vendorTotal" type="java.math.BigDecimal"/>
+        <property name="bookbankTotal" type="java.math.BigDecimal"/>
+        <property name="payeeTotal" type="java.math.BigDecimal"/>
+        <property name="bookbankPayeeTotal" type="java.math.BigDecimal"/>
+        <property name="allTotal" type="java.math.BigDecimal"/>
+    </class>
+    
+    
+    <!-- ============================================================================== -->
+	<!-- ============================================================================== -->
+    
+    
+    
+    <sql-query name="msa01GetTodoMenu" callable="true">
+	    <return alias="" class="th.co.ais.domain.common.MenuTreeSP" entity-name="menuTree">
+	    	<return-property column="MENU_LEVEL" name="rowId"/>
+	        <return-property column="MENU_LEVEL" name="menuLevel"/>
+			<return-property column="MENU_LABEL" name="menuLabel"/>
+			<return-property column="MENU_URL" name="menuUrl"/>
+			<return-property column="MENU_GROUP" name="menuGroup"/>
+			<return-property column="RECORD_COUNT" name="recordCount"/>
+			<return-property column="MENU_GROUP_TYPE" name="menuGroupType"/>
+	    </return>
+	    <![CDATA[call SEM.SEM_SP_MSA001_GET_TODO_MENU(?, cast(:menuGroup as varchar), cast(:userLogin as varchar))]]>
+	</sql-query>
+	
+	<sql-query name="msi001GetTodoMenu" callable="true">
+	    <return alias="" class="th.co.ais.domain.common.MenuTreeSP" entity-name="SI_menuTree">
+	    	<return-property column="MENU_LEVEL" name="rowId"/>
+	        <return-property column="MENU_LEVEL" name="menuLevel"/>
+			<return-property column="MENU_LABEL" name="menuLabel"/>
+			<return-property column="MENU_URL" name="menuUrl"/>
+			<return-property column="MENU_GROUP" name="menuGroup"/>
+			<return-property column="SUB_GROUP" name="menuSubGroup"/>
+			<return-property column="RECORD_COUNT" name="recordCount"/>
+			<return-property column="PARAMETER" name="strParam"/>
+			<return-property column="REGION" name="region"/>
+			<return-property column="COMPANY" name="company"/>
+	    </return>
+	    <![CDATA[call SEM.SEM_SP_MSI001_GET_TODO_MENU(?, :menuGroup, :menuSubGroup, :userLogin, :company, :region) ]]>
+	</sql-query>
+	
+	<sql-query name="getMenuTodoMenu" callable="true">
+        <return alias="" class="th.co.ais.domain.common.MenuTreeSP" entity-name="getMenuTree">
+            <return-property column="MENU_LEVEL" name="rowId"/>
+            <return-property column="MENU_LEVEL" name="menuLevel"/>
+            <return-property column="MENU_LABEL" name="menuLabel"/>
+            <return-property column="MENU_URL" name="menuUrl"/>
+            <return-property column="MENU_GROUP" name="menuGroup"/>
+            <return-property column="P_MENU_SUB_GROUP" name="menuSubGroup"/>
+            <return-property column="RECORD_COUNT" name="recordCount"/>
+            <return-property column="PARAMETER" name="strParam"/>
+        </return>
+        <![CDATA[call SEM.SEM_SP_MSI001_GET_TODO_MENU(?, :menuGroup, :menuSubGroup, :userLogin, :company, :region)]]>
+    </sql-query>
+    
+    <sql-query name="getMenuTodoByCriterria" callable="true">
+        <return alias="" class="th.co.ais.domain.common.MenuTreeSP" entity-name="SI_menuTree">
+            <return-property column="MENU_LEVEL" name="rowId"/>
+            <return-property column="MENU_LEVEL" name="menuLevel"/>
+            <return-property column="MENU_LABEL" name="menuLabel"/>
+            <return-property column="MENU_URL" name="menuUrl"/>
+            <return-property column="MENU_GROUP" name="menuGroup"/>
+            <return-property column="P_MENU_SUB_GROUP" name="menuSubGroup"/>
+            <return-property column="RECORD_COUNT" name="recordCount"/>
+            <return-property column="PARAMETER" name="strParam"/>
+            <return-property column="REGION" name="region"/>
+            <return-property column="COMPANY" name="company"/>
+        </return>
+        <![CDATA[call SEM.SEM_SP_MSI001_GET_TODO_MENU(?, :menuGroup, :menuSubGroup, :userLogin, :company, :region, :elType)]]>
+    </sql-query>
+    
+    <sql-query name="mmm002SapGetTodoMenu" callable="true">
+	    <return alias="" class="th.co.ais.domain.common.MenuTreeSP" entity-name="sapMenuTree">
+	    	<return-property column="MAIN_ID" name="rowId"/>
+	        <return-property column="MENU_LEVEL" name="menuLevel"/>
+			<return-property column="MENU_LABEL" name="menuLabel"/>
+			<return-property column="RECORE_COUNT" name="recordCount"/>
+			<return-property column="MENU_LEVEL_SUM" name="menuGroupType"/>
+			<return-property column="HEADER_FLAG" name="headerFlag"/>
+			<return-property column="MAIN_ID" name="mainId"/>
+			<return-property column="REF_ID" name="refId"/>
+			<return-property column="MENU_SEQ" name="menuSeq"/>
+			<return-property column="MENU_GROUP" name="menuGroup"/>
+			<return-property column="MENU_STATUS" name="strParam"/>
+			<return-property column="TOTAL_SUM" name="totalSum"/>
+	    </return>
+	    <![CDATA[call SEM.SEM_SAP_TODO_MENU(?, :menuGroup, :userLogin, :userRole, :vendorCode,
+	    :payeeName, :idCard, :taxId, :contractNo, :siteName, :accountNo, :accountName,
+	    :batchNo, :createBy, :pageFlag, :company, :region)]]>
+	</sql-query>
+	
+	<sql-query name="semsapTodoStaffSearch" callable="true">
+		<return alias="" class="th.co.ais.domain.common.MenuTreeSP" entity-name="sapTeamList">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="TEAM_ID" name="teamId"/>
+			<return-property column="TEAM_NAME" name="teamName"/>
+			<return-property column="CREATE_BY_ID" name="createById"/>
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="VENDOR_TOTAL" name="vendorTotal"/>
+			<return-property column="BOOKBANK_TOTAL" name="bookbankTotal"/>
+			<return-property column="PAYEE_TOTAL" name="payeeTotal"/>
+			<return-property column="BOOKBANK_PAYEE_TOTAL" name="bookbankPayeeTotal"/>
+			<return-property column="ALL_TOTAL" name="allTotal"/>
+		</return>
+		<![CDATA[call SEM.SEM_SAP_TODO_STAFF_LIST (?, :vendorCode, :payeeName, :idCard, :taxId, 
+		:contractNo, :siteName, :accountNo, :accountName, :bacthNo, :createBy, :teamId, :company, :region)]]>
+	</sql-query>
+
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004SrchSumDpstESP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="depositBgAmt" type="java.lang.Double"/>
+		<property name="depositCashAmt" type="java.lang.Double"/>
+		
+	</class>
+	<sql-query name="msi004SrchSumDepositElectric" callable="true">
+		<return class="th.co.ais.domain.si.Msi004SrchSumDpstESP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="depositBgAmt" column="DEPOSIT_BG_AMT" />
+			<return-property name="depositCashAmt" column="DEPOSIT_CASH_AMT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_SUM_DPST_E (?, :siteInfoId) ]]>
+	</sql-query>
+</hibernate-mapping>

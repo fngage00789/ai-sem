@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+	<class name="th.co.ais.domain.pt.Mpt001Srch">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="region" type="java.lang.String" />
+		<property name="ptTaxPayType" type="java.lang.String" />
+		<property name="pTaxPayDesc" type="java.lang.String" />
+		<property name="payGovtFlag" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="province" type="java.lang.String" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+		<property name="siteInfoId" type="java.lang.String" />
+		<property name="vendorMasterId" type="java.lang.String" />
+		<property name="constructionName" type="java.lang.String" />
+	</class>
+	<sql-query name="spMpt001Srch" callable="true">
+		<return class="th.co.ais.domain.pt.Mpt001Srch">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="region" column="REGION" />
+			<return-property name="ptTaxPayType" column="PTAX_PAY_TYPE" />
+			<return-property name="pTaxPayDesc" column="PTAX_PAY_DESC" />
+			<return-property name="payGovtFlag" column="PAY_GOVT_FLAG" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="province" column="PROVINCE" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="constructionName" column="CONSTRUCTION_NAME" />
+		</return>
+		<![CDATA[ call SEM_SP_MPT001_SRCH(?, :contractNo, :company, :region, :province, :ptTaxPayType, :payGovtFlag, :strParam) ]]>
+	</sql-query>
+</hibernate-mapping>

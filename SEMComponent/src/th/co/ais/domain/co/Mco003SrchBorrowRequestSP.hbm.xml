@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco003SrchBorrowRequestSP" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="docNo" type="java.lang.String" />
+		<property name="receiveDt" type="java.util.Date" />
+		<property name="samSendDt" type="java.util.Date" />
+		<property name="samAssignSendDt" type="java.util.Date" />
+		<property name="remark" type="java.lang.String" />
+		<property name="siteNum" type="java.lang.Integer" />
+		<property name="siteBorrowNum" type="java.lang.Integer" />
+		<property name="siteRemainNum" type="java.lang.Integer" />
+		<property name="company" type="java.lang.String" />
+		<property name="siteSendNum" type="java.lang.Integer" />
+		<property name="siteNotSendNum" type="java.lang.Integer" />
+		<property name="siteApproveNum" type="java.lang.Integer" />
+		<property name="siteRejectNum" type="java.lang.Integer" />
+	</class>
+	<sql-query name="spMco003Search" callable="true">
+		<return class="th.co.ais.domain.co.Mco003SrchBorrowRequestSP">  
+			<return-property name="rowId" column="BORROW_REQUEST_ID" />
+			<return-property name="docNo" column="DOC_NO" />
+			<return-property name="receiveDt" column="RECEIVE_DT" />
+			<return-property name="samSendDt" column="SAM_SEND_DT" />
+			<return-property name="samAssignSendDt" column="SAM_ASSIGN_SEND_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="siteNum" column="SITE_NUM" />
+			<return-property name="siteBorrowNum" column="SITE_BORROW_NUM" />
+			<return-property name="siteRemainNum" column="SITE_REMAIN_NUM" />
+			<return-property name="company" column="COMPANY" />
+		  	<return-property name="siteSendNum" column="SITE_SEND_NUM" />
+			<return-property name="siteNotSendNum" column="SITE_NOTSEND_NUM" />
+			<return-property name="siteApproveNum" column="SITE_APPROVE_NUM" />
+			<return-property name="siteRejectNum" column="SITE_REJECT_NUM" />
+		</return>
+		 <![CDATA[ call SEM_SP_MCO003_SRCH(cast(? as refcursor), :company, :docNo, :contractNo, :status) ]]>
+	</sql-query>
+</hibernate-mapping>

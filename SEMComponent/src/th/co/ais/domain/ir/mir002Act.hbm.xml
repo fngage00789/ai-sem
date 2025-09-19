@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.Mir002Act" >
+		<id name="ResultMsg" type="java.lang.String" />
+		<property name="pRemark" type="java.lang.String" />
+		
+	</class>
+	<sql-query name="mir002Act" callable="true">
+		<return class="th.co.ais.domain.ir.Mir002Act">  
+			<return-property name="ResultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR002_ACT(?, :userId) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.ReplacementValueSP" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="tfType" type="java.lang.String" />
+		<property name="replRate" type="java.lang.Double" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+		<property name="effDt" type="java.sql.Date" />
+		<property name="networkCode" type="java.lang.String" />
+		<property name="cCode" type="java.lang.String" />
+		<property name="tfCode" type="java.lang.String" />
+		<property name="replRowId" type="java.lang.String" />
+		
+	</class>
+	<sql-query name="queryReplacementValue" callable="true">
+		<return class="th.co.ais.domain.ir.ReplacementValueSP">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="tfType" column="TF_TYPE" />
+			<return-property name="replRate" column="REPL_RATE" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="effDt" column="EFF_DT" />
+			<return-property name="networkCode" column="NT_CODE" />
+			<return-property name="cCode" column="C_CODE" />
+			<return-property name="tfCode" column="TF_CODE" />
+			<return-property name="replRowId" column="SEM_IR_REPL_ID" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR003_SRCH(?, :company, :networkType, :tfType, :effDt) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

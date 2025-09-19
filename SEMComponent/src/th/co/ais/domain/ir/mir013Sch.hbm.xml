@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.Mir013Sch" entity-name="mir013Sch">
+		<id name="claimId" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="transferType" type="java.lang.String" />
+		<property name="transferTypeDesc" type="java.lang.String" />
+		<property name="policyNo" type="java.lang.String" />
+		<property name="locationId" type="java.lang.String" />
+		<property name="locationCode" type="java.lang.String" />
+		<property name="locationName" type="java.lang.String" />
+		<property name="claimNo" type="java.lang.String" />
+		<property name="claimDt" type="java.sql.Date" />
+		<property name="claimStatus" type="java.lang.String" />
+		<property name="claimStatusDesc" type="java.lang.String" />
+		<property name="lossType" type="java.lang.String" />
+		<property name="lossTypeDesc" type="java.lang.String" />
+		<property name="estimateAmt" type="java.lang.Double" />
+		<property name="deductAmt" type="java.lang.Double" />
+		<property name="claimAmt" type="java.lang.Double" />
+		<property name="litigantFlg" type="java.lang.String" />
+		<property name="litigantAmt" type="java.lang.Double" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+		<property name="draftNo" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.ir.Mir013Sch" entity-name="mir014Sch">
+		<id name="claimId" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="transferType" type="java.lang.String" />
+		<property name="transferTypeDesc" type="java.lang.String" />
+		<property name="policyNo" type="java.lang.String" />
+		<property name="locationId" type="java.lang.String" />
+		<property name="locationCode" type="java.lang.String" />
+		<property name="locationName" type="java.lang.String" />
+		<property name="claimNo" type="java.lang.String" />
+		<property name="claimDt" type="java.sql.Date" />
+		<property name="claimStatus" type="java.lang.String" />
+		<property name="claimStatusDesc" type="java.lang.String" />
+		<property name="lossType" type="java.lang.String" />
+		<property name="lossTypeDesc" type="java.lang.String" />
+		<property name="estimateAmt" type="java.lang.Double" />
+		<property name="deductAmt" type="java.lang.Double" />
+		<property name="claimAmt" type="java.lang.Double" />
+		<property name="litigantFlg" type="java.lang.String" />
+		<property name="litigantAmt" type="java.lang.Double" />
+		<property name="closeDt" type="java.sql.Date" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+
+	</class>
+	
+	<sql-query name="mir013Sch" callable="true" >
+		<return class="th.co.ais.domain.ir.Mir013Sch" entity-name="mir013Sch">  
+			<return-property name="claimId" column="CLAIM_ID" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="transferType" column="TRANSFER_TYPE" />
+			<return-property name="transferTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="policyNo" column="POLICY_NO" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="claimNo" column="CLAIM_NO" />
+			<return-property name="claimDt" column="CLAIM_DT" />
+			<return-property name="claimStatus" column="CLAIM_STATUS" />
+			<return-property name="claimStatusDesc" column="CLAIM_STATUS_DESC" />
+			<return-property name="lossType" column="LOSS_TYPE" />
+			<return-property name="lossTypeDesc" column="LOSS_TYPE_DESC" />
+			<return-property name="estimateAmt" column="ESTIMATE_AMT" />
+			<return-property name="deductAmt" column="DEDUCT_AMT" />
+			<return-property name="claimAmt" column="CLAIM_AMT" />
+			<return-property name="litigantFlg" column="LITIGANT_FLG" />
+			<return-property name="litigantAmt" column="LITIGANT_AMT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="draftNo" column="DRAFT_NO" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR013_SRCH(?, :company, :region, :zone, :locationCode, :locationId, 
+		 							   :locationName, :networkType, :transferType, :policyType, :policyNo, 
+		 							   :contractNo, :claimDtFrom, :claimDtTo, :claimNo, :claimStatus,
+		 							   :lossDtFrom, :lossDtTo, :lossType) ]]>
+	</sql-query>
+	
+	<sql-query name="mir014Sch" callable="true" >
+		<return class="th.co.ais.domain.ir.Mir013Sch" entity-name="mir014Sch">  
+			<return-property name='claimId' column='CLAIM_ID' />
+			<return-property name='networkType' column='NETWORK_TYPE' />
+			<return-property name='networkTypeDesc' column='NETWORK_TYPE_DESC' />
+			<return-property name='company' column='COMPANY' />
+			<return-property name='transferType' column='TRANSFER_TYPE' />
+			<return-property name='transferTypeDesc' column='TRANSFER_TYPE_DESC' />
+			<return-property name='policyNo' column='POLICY_NO' />
+			<return-property name='locationId' column='LOCATION_ID' />
+			<return-property name='locationCode' column='LOCATION_CODE' />
+			<return-property name='locationName' column='LOCATION_NAME' />
+			<return-property name='claimNo' column='CLAIM_NO' />
+			<return-property name='claimDt' column='CLAIM_DT' />
+			<return-property name='claimStatus' column='CLAIM_STATUS' />
+			<return-property name='claimStatusDesc' column='CLAIM_STATUS_DESC' />
+			<return-property name='lossType' column='LOSS_TYPE' />
+			<return-property name='lossTypeDesc' column='LOSS_TYPE_DESC' />
+			<return-property name='estimateAmt' column='ESTIMATE_AMT' />
+			<return-property name='deductAmt' column='DEDUCT_AMT' />
+			<return-property name='claimAmt' column='CLAIM_AMT' />
+			<return-property name='litigantFlg' column='LITIGANT_FLG' />
+			<return-property name='litigantAmt' column='LITIGANT_AMT' />
+			<return-property name='closeDt' column='CLOST_DT' />
+			<return-property name='updateBy' column='UPDATE_BY' />
+			<return-property name='updateDt' column='UPDATE_DT' />
+
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR014_SRCH(?, :company, :networkType, :transferType, :policyType, :region, 
+		 							   :zone, :locationCode, :locationId, :locationName, :policyNo, 
+		 							   :contractNo, :claimDtFrom, :claimDtTo, :claimNo, :claimStatus,
+		 							   :lossDtFrom, :lossDtTo, :lossType) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

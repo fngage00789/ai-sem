@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+	<class name="th.co.ais.domain.pt.Mpt001SrchHist">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="pTaxPayDescHist" type="java.lang.String"/>
+		<property name="pTaxPayDesc" type="java.lang.String"/>
+		<property name="payGovtFlagHist" type="java.lang.String"/>
+		<property name="payGovtFlag" type="java.lang.String"/>
+		<property name="createBy" type="java.lang.String"/>
+		<property name="createDt" type="java.sql.Date"/>
+	</class>
+	<sql-query name="spMpt001SrchHist" callable="true">
+		<return class="th.co.ais.domain.pt.Mpt001SrchHist">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="pTaxPayDescHist" column="PTAX_PAY_DESC_HIST" />
+			<return-property name="pTaxPayDesc" column="PTAX_PAY_DESC" />
+			<return-property name="payGovtFlagHist" column="PTAX_PAY_FLAG_HIST" />
+			<return-property name="payGovtFlag" column="PAY_GOVT_FLAG" />
+			<return-property name="createBy" column="CREATE_BY" />
+			<return-property name="createDt" column="CREATE_DT" />
+		</return>
+		<![CDATA[ call SEM_SP_MPT001_SRCH_HIST(?, :contractNo) ]]>
+	</sql-query>
+</hibernate-mapping>

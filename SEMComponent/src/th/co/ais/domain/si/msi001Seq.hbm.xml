@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi001Seq">
+		<id name="seqNo" type="java.lang.Integer"/>
+	</class>
+	<sql-query name="msi001Seq" callable="true">
+		<return class="th.co.ais.domain.si.Msi001Seq">
+			<return-property name="seqNo" column="RUN_SEQ_NO" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI001_SEQ(?, :docNo) ]]>
+	</sql-query>
+</hibernate-mapping>

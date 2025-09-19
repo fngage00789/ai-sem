@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.RentalPayNormalSaveActSP" entity-name="spMrt003Act">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.rt.RentalPayNormalSaveActSP" entity-name="spMrt009Act">
+        <id name="resultMsg" type="java.lang.String"/>
+        <property name="pRemark" type="java.lang.String"/>
+    </class>
+	
+	<sql-query name="spMrt003Act" callable="true">
+		<return class="th.co.ais.domain.rt.RentalPayNormalSaveActSP" entity-name="spMrt003Act">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT003_ACT(?, :rowId, :actionType, :remark, :userId) ]]>
+	</sql-query>
+	<sql-query name="spMrt009Act" callable="true">
+        <return class="th.co.ais.domain.rt.RentalPayNormalSaveActSP" entity-name="spMrt009Act">
+            <return-property name="resultMsg" column="P_RESULT" />
+            <return-property name="pRemark" column="P_REMARK" />
+        </return>
+        <![CDATA[ call SEM.SEM_SP_MRT009_ACT(?, :rowId, :actionType, :remark, :userId) ]]>
+    </sql-query>
+</hibernate-mapping>

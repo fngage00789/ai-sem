@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004SrchSubRentSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="seqNo" type="java.lang.String"/>
+		<property name="subCompany" type="java.lang.String"/>
+		<property name="subContractNo" type="java.lang.String"/>
+		<property name="effDate" type="java.util.Date"/>
+		<property name="expDate" type="java.util.Date"/>
+		<property name="rentType" type="java.lang.String"/>
+		<property name="rentTypeName" type="java.lang.String"/>
+		<property name="detail" type="java.lang.String"/>
+		<property name="rentAmt" type="java.lang.Double"/>
+		<property name="rentPeriodType" type="java.lang.String"/>
+		<property name="rentPeriodTypeName" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="msi004SrchSubRent" callable="true">
+		<return class="th.co.ais.domain.si.Msi004SrchSubRentSP">
+			<return-property name="rowId" column="SITE_SUB_RENT_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="seqNo" column="SEQ_NO" />
+			<return-property name="subCompany" column="SUB_COMPANY" />
+			<return-property name="subContractNo" column="SUB_CONTRACT_NO" />
+			<return-property name="effDate" column="EFFECTIVE_DT" />
+			<return-property name="expDate" column="EXPIRE_DT" />
+			<return-property name="rentType" column="RENT_TYPE" />
+			<return-property name="rentTypeName" column="RENT_TYPE_NAME" />
+			<return-property name="detail" column="DETAIL" />
+			<return-property name="rentAmt" column="RENT_AMT"/>
+			<return-property name="rentPeriodType" column="RENT_PERIOD_TYPE"/>
+			<return-property name="rentPeriodTypeName" column="RENT_PERIOD_TYPE_NAME"/>
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_SUB_RENT (?, :siteInfoId) ]]>
+	</sql-query>
+</hibernate-mapping>

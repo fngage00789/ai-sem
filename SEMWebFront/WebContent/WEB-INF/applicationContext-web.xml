@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+
+	
+
+<bean id="outcomeTable" class="org.springframework.beans.factory.config.MapFactoryBean">
+		<property name="sourceMap">
+			<map>
+				
+				<entry>
+					<key>
+						<value>blank</value>
+					</key>
+					<bean id="blank" class="th.co.ais.web.action.nav.Page">
+						<property name="category" value="NONE" />
+						<property name="mode" value="NONE" />
+						<property name="sysDefSettingName" value="" />
+					</bean>
+				</entry>
+				
+				<entry>
+					<key>
+						<value>home</value>
+					</key>
+					<bean id="home" class="th.co.ais.web.action.nav.Page">
+						<property name="category" value="ADMIN" />
+						<property name="mode" value="NONE" />
+						<property name="sysDefSettingName" value="" />
+						<property name="beanClass" value="" />
+					</bean>
+				</entry>
+				
+				<entry>
+				<key>
+					<value>siteApprove-create</value>
+				</key>
+				<bean id="siteApprove-create" class="th.co.ais.web.action.nav.Page">
+					<property name="category" value="NONE" />
+					<property name="mode" value="CREATE" />
+					<property name="sysDefSettingName" value="" />
+					<property name="beanClass"
+						value="th.co.ais.web.action.approve.SiteApproveAction" />
+				</bean>
+				</entry>
+				
+				<entry>
+				<key>
+					<value>siteApprove-search</value>
+				</key>
+				<bean id="siteApprove-search" class="th.co.ais.web.action.nav.Page">
+					<property name="category" value="NONE" />
+					<property name="mode" value="SEARCH" />
+					<property name="sysDefSettingName" value="" />
+					<property name="beanClass"
+						value="th.co.ais.web.action.approve.SiteApproveAction" />
+				</bean>
+				</entry>
+			</map>
+		</property>
+</bean>
+
+
+</beans>

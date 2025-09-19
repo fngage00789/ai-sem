@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="metabCompanyService"
+		class="com.ais.migrate.mnims.spring.service.MetabCompanyService"
+		singleton="false">
+		<property name="metabCompanyDAO">
+			<ref bean="metabCompanyDAO" />
+		</property>
+	</bean>
+	<bean id="semElMeterInfoService"
+		class="com.ais.migrate.sem.spring.service.SemElMeterInfoService"
+		singleton="false">
+		<property name="semElMeterInfoDAO">
+			<ref bean="semElMeterInfoDAO" />
+		</property>
+	</bean>
+	
+	<bean id="migrateSapService" class="com.ais.migrate.sem.spring.service.MigrateSapService" singleton="false">
+		<!-- property name="sapMappingDAO" ref="sapMappingDAO" / -->
+		<property name="migrateService" ref="migrateService" />
+	</bean>
+	
+	<bean id="migrateService" class="com.ais.migrate.sem.spring.service.tran.MigrateService" singleton="false">
+		<property name="migrateDAO" ref="migrateDAO" />
+	</bean>
+</beans>

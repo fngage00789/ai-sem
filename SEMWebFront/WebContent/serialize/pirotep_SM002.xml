@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_21" class="java.beans.XMLDecoder"> 
+ <object class="th.co.ais.web.bean.SsoBean"> 
+  <void property="clientIpAddress"> 
+   <string>null</string> 
+  </void> 
+  <void property="dc"> 
+   <string>50088458</string> 
+  </void> 
+  <void property="employee"> 
+   <object class="th.co.ais.domain.gm.Employee"> 
+    <void property="buildingCode"> 
+     <string>ST2</string> 
+    </void> 
+    <void property="companyCode"> 
+     <string>AIS</string> 
+    </void> 
+    <void property="costCenter"> 
+     <string>0000054330</string> 
+    </void> 
+    <void property="email"> 
+     <string>pirotep@ais.co.th</string> 
+    </void> 
+    <void property="employeeGroup"> 
+     <string>1</string> 
+    </void> 
+    <void property="employeeType"> 
+     <string>PS</string> 
+    </void> 
+    <void property="engName"> 
+     <string>PAIROTE</string> 
+    </void> 
+    <void property="engSurname"> 
+     <string>PRAPASSORNCHAIKUL</string> 
+    </void> 
+    <void property="floor"> 
+     <string>17</string> 
+    </void> 
+    <void property="mobileNo"> 
+     <string>081-8073335</string> 
+    </void> 
+    <void property="orgDesc"> 
+     <string>Utilities Expense &amp; Site Support Team</string> 
+    </void> 
+    <void property="orgId"> 
+     <string>50088458</string> 
+    </void> 
+    <void property="pin"> 
+     <string>00004935</string> 
+    </void> 
+    <void property="positionId"> 
+     <string>50049068</string> 
+    </void> 
+    <void property="positionName"> 
+     <string>Utilities Expense&amp;Site Support Team Lead</string> 
+    </void> 
+    <void property="provinceName"> 
+     <string>กรุงเทพมหานคร</string> 
+    </void> 
+    <void property="recDateTime"> 
+     <string>2009-05-28 22:10:01</string> 
+    </void> 
+    <void property="status"> 
+     <string>3</string> 
+    </void> 
+    <void property="telNo"> 
+     <string>0-2299-6279</string> 
+    </void> 
+    <void property="thaiName"> 
+     <string>ไพโรจน์</string> 
+    </void> 
+    <void property="thaiSurname"> 
+     <string>ประภัสสรชัยกุล</string> 
+    </void> 
+    <void property="userStamp"> 
+     <string>pirotep</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="fn"> 
+   <string>PAIROTE</string> 
+  </void> 
+  <void property="gl"> 
+   <string></string> 
+  </void> 
+  <void property="groupId"> 
+   <string>174</string> 
+  </void> 
+  <void property="host"> 
+   <string>https://employeeservices.ais.co.th/EmployeeService/</string> 
+  </void> 
+  <void property="lc"> 
+   <string></string> 
+  </void> 
+  <void property="ln"> 
+   <string>PRAPASSORNCHAIKUL</string> 
+  </void> 
+  <void property="pt"> 
+   <string>Utilities Expense &amp; Site Support Manager</string> 
+  </void> 
+  <void property="rid"> 
+   <string>42</string> 
+  </void> 
+  <void property="rn"> 
+   <string>SEM_User</string> 
+  </void> 
+  <void property="sc"> 
+   <string></string> 
+  </void> 
+  <void property="sid"> 
+   <string>216</string> 
+  </void> 
+  <void property="sn"> 
+   <string>SM002</string> 
+  </void> 
+  <void property="ssoCompCodes"> 
+   <object class="java.util.HashMap"/> 
+  </void> 
+  <void property="ssoProgCodes"> 
+   <object class="java.util.HashMap"/> 
+  </void> 
+  <void property="subModuleId"> 
+   <string>216</string> 
+  </void> 
+  <void property="template"> 
+   <string>template01</string> 
+  </void> 
+  <void property="theme"> 
+   <string>theme01</string> 
+  </void> 
+  <void property="token"> 
+   <string>CLJrNGKpGQLfplSRPBmQLkQPDPLGyrh1TzVX1K1WSMLJd7nQGjCc!-849838618!1292143294875,pirotep,174,216,null</string> 
+  </void> 
+  <void property="tokenId"> 
+   <string>CLJrNGKpGQLfplSRPBmQLkQPDPLGyrh1TzVX1K1WSMLJd7nQGjCc!-849838618!1292143294875</string> 
+  </void> 
+  <void property="userName"> 
+   <string>pirotep</string> 
+  </void> 
+ </object> 
+</java> 

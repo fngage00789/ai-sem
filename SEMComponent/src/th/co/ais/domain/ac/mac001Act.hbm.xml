@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.ac">
+	<class name="th.co.ais.domain.ac.Mac001Act">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+		<property name="filename" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMac001Act" callable="true">
+		<return class="th.co.ais.domain.ac.Mac001Act">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+			<return-property name="filename" column="P_FILENAME" />
+		</return>
+		<![CDATA[ call SEM_SP_MAC001_ACT(?, :transPaymentId, :actionType, :remark, :userId) ]]>
+	</sql-query>
+</hibernate-mapping>

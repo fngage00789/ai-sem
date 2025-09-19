@@ -1,0 +1,1454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<!-- ==================== DEFINE GENERAL REPORT PROPERTIES ==================== -->
+<!--	<bean class="th.co.ais.rpt.util.DocmosisEngineManager" destroy-method="stopEngine" init-method="startEngine" />-->
+	
+	<bean class="th.co.ais.rpt.util.JasperUtilLoader">
+		<property name="exportPath" value="${EXPORT_PATH}" />
+		<property name="imagePath" value="${IMAGE_PATH}" />
+		<property name="jasperPath" value="${JASPER_PATH}" />
+		<property name="jasperSubReportPath" value="${JASPER_SUB_REPORT_PATH}" />
+	</bean>
+	
+	<bean class="th.co.ais.rpt.util.DocmosisUtilLoader">
+		<property name="exportPath" value="${EXPORT_PATH}" />
+		<property name="imagePath" value="${IMAGE_PATH}" />
+		<property name="docmosisReportPath" value="${DOCMOSIS_REPORT_PATH}" />
+		<property name="docmosisSubReportPath" value="${DOCMOSIS_SUB_REPORT_PATH}" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMESI001)====================-->
+	<bean id="SEMESI001ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMESI001ReportParameter" />
+	</bean>
+
+	<bean id="SEMESI001Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMESI001.jasper" />
+	</bean>
+		
+	<bean id="SEMESI001ReportService" 
+		class="th.co.ais.service.impl.report.SEMESI001ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMESI001Jasper" />
+		<property name="jibxMarshaller" ref="SEMESI001ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMESI001ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMECO001, SEMECO003, SEMECO004, SEMMECO005)====================-->
+	<bean id="semeco001ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMECO001ReportDao" parent="abstractHibernateDAO"/>
+	<bean id="semeco005ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMECO005ReportDao" parent="abstractHibernateDAO"/>
+	
+	
+	<bean id="SEMECO001ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMECO001ReportParameter" />
+	</bean>
+
+	<bean id="SEMECO001Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMECO001.doc" />
+	</bean>
+
+	<bean id="SEMECO001ReportService" 
+		class="th.co.ais.service.impl.report.SEMECO001ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMECO001Docmosis" />
+		<property name="semeco001ReportDao" ref="semeco001ReportDao" />
+		<property name="jibxMarshaller" ref="SEMECO001ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMECO001ReportParameterMarshaller" />
+	</bean>
+	
+	<bean id="SEMECO003ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMECO001ReportParameter" />
+	</bean>
+
+	<bean id="SEMECO003Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMECO003.doc" />
+	</bean>
+		
+	<bean id="SEMECO003ReportService" 
+		class="th.co.ais.service.impl.report.SEMECO003ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMECO003Docmosis" />
+		<property name="semeco001ReportDao" ref="semeco001ReportDao" />
+		<property name="jibxMarshaller" ref="SEMECO003ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMECO003ReportParameterMarshaller" />
+	</bean>
+	
+	<bean id="SEMECO004ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMECO001ReportParameter" />
+	</bean>
+
+	<bean id="SEMECO004Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMECO004.doc" />
+	</bean>
+		
+	<bean id="SEMECO004ReportService" 
+		class="th.co.ais.service.impl.report.SEMECO004ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMECO004Docmosis" />
+		<property name="semeco001ReportDao" ref="semeco001ReportDao" />
+		<property name="jibxMarshaller" ref="SEMECO004ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMECO004ReportParameterMarshaller" />
+	</bean>
+	
+	<bean id="SEMECO005ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMECO001ReportParameter" />
+	</bean>
+
+	<bean id="SEMECO005Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMECO005.doc" />
+	</bean>
+		
+	<bean id="SEMECO005ReportService" 
+		class="th.co.ais.service.impl.report.SEMECO005ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMECO005Docmosis" />
+		<property name="semeco005ReportDao" ref="semeco005ReportDao" />
+		<property name="jibxMarshaller" ref="SEMECO005ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMECO005ReportParameterMarshaller" />
+	</bean>
+	
+	<bean id="SEMECO007ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMECO001ReportParameter" />
+	</bean>
+
+	<bean id="SEMECO007Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMECO007.doc" />
+	</bean>
+		
+	<bean id="SEMECO007ReportService" 
+		class="th.co.ais.service.impl.report.SEMECO007ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMECO007Docmosis" />
+		<property name="semeco001ReportDao" ref="semeco001ReportDao" />
+		<property name="jibxMarshaller" ref="SEMECO007ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMECO007ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMECP001)====================-->
+	<bean id="SEMECP001ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMECP001ReportParameter" />
+	</bean>
+
+	<bean id="SEMECP001Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMECP001.doc" />
+	</bean>
+
+	<bean id="semecp001ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMECP001ReportDao" parent="abstractHibernateDAO"/>
+		
+	<bean id="SEMECP001ReportService" 
+		class="th.co.ais.service.impl.report.SEMECP001ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMECP001Docmosis" />
+		<property name="semecp001ReportDao" ref="semecp001ReportDao" />
+		<property name="jibxMarshaller" ref="SEMECP001ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMECP001ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMECP002)====================-->
+	<bean id="SEMECP002ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMECP002ReportParameter" />
+	</bean>
+
+	<bean id="SEMECP002Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMECP002.doc" />
+	</bean>
+
+	<bean id="semecp002ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMECP002ReportDao" parent="abstractHibernateDAO"/>
+		
+	<bean id="SEMECP002ReportService" 
+		class="th.co.ais.service.impl.report.SEMECP002ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMECP002Docmosis" />
+		<property name="semecp002ReportDao" ref="semecp002ReportDao" />
+		<property name="jibxMarshaller" ref="SEMECP002ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMECP002ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMMCO001)====================-->
+	<bean id="semmco001ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMMCO001ReportDao" parent="abstractHibernateDAO"/>
+	
+	<bean id="SEMMCO001ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMMCO001ReportParameter" />
+	</bean>
+
+	<bean id="SEMMCO001Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMMCO001.doc" />
+	</bean>
+
+	<bean id="SEMMCO001ReportService" 
+		class="th.co.ais.service.impl.report.SEMMCO001ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMMCO001Docmosis" />
+		<property name="semmco001ReportDao" ref="semmco001ReportDao" />
+		<property name="jibxMarshaller" ref="SEMMCO001ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMMCO001ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMMCO005)====================-->
+	<bean id="semmco005ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMMCO005ReportDao" parent="abstractHibernateDAO"/>
+	
+	<bean id="SEMMCO005ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMMCO005ReportParameter" />
+	</bean>
+
+	<bean id="SEMMCO005Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMMCO005.doc" />
+	</bean>
+
+	<bean id="SEMMCO005ReportService" 
+		class="th.co.ais.service.impl.report.SEMMCO005ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMMCO005Docmosis" />
+		<property name="semmco005ReportDao" ref="semmco005ReportDao" />
+		<property name="jibxMarshaller" ref="SEMMCO005ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMMCO005ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMECO001)====================-->
+	<bean id="semmrt003ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMMRT003ReportDao" parent="abstractHibernateDAO"/>
+	
+	<bean id="SEMMRT003ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMMRT003ReportParameter" />
+	</bean>
+
+	<bean id="SEMMRT003Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMMRT003.doc" />
+	</bean>
+		
+	<bean id="SEMMRT003ReportService" 
+		class="th.co.ais.service.impl.report.SEMMRT003ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMMRT003Docmosis" />
+		<property name="semmrt003ReportDao" ref="semmrt003ReportDao" />
+		<property name="jibxMarshaller" ref="SEMMRT003ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMMRT003ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMMCO004)====================-->
+	<bean id="semmco004ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMMCO004ReportDao" parent="abstractHibernateDAO"/>
+	
+	<bean id="SEMMCO004ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMMCO004ReportParameter" />
+	</bean>
+
+	<bean id="SEMMCO004Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMMCO004.doc" />
+	</bean>
+		
+	<bean id="SEMMCO004ReportService" 
+		class="th.co.ais.service.impl.report.SEMMCO004ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMMCO004Docmosis" />
+		<property name="semmco004ReportDao" ref="semmco004ReportDao" />
+		<property name="jibxMarshaller" ref="SEMMCO004ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMMCO004ReportParameterMarshaller" />
+	</bean>
+
+	<!--==================== DEFINE REPORT VARIABLE (SEMMIR008)====================-->
+	<bean id="semmir008ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMMIR008ReportDao" parent="abstractHibernateDAO"/>
+	
+	<bean id="SEMMIR008ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMMIR008ReportParameter" />
+	</bean>
+
+	<bean id="SEMMIR008Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMMIR008.doc" />
+	</bean>
+		
+	<bean id="SEMMIR008ReportService" 
+		class="th.co.ais.service.impl.report.SEMMIR008ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMMIR008Docmosis" />
+		<property name="semmir008ReportDao" ref="semmir008ReportDao" />
+		<property name="jibxMarshaller" ref="SEMMIR008ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMMIR008ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMMIR012)====================-->
+	<bean id="SEMMIR012ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMMIR012ReportParameter" />
+	</bean>
+
+	<bean id="SEMMIR012Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMMIR012.doc" />
+	</bean>
+		
+	<bean id="SEMMIR012ReportService" 
+		class="th.co.ais.service.impl.report.SEMMIR012ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="irClaimDao" ref="irClaimDao" />
+		<property name="irClaimDetailDao" ref="irClaimDetailDao" />
+		<property name="docmosisFile" ref="SEMMIR012Docmosis" />
+		<property name="jibxMarshaller" ref="SEMMIR012ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMMIR012ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMMPT003)====================-->
+	 <bean id="SEMMPT003ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMMPT003ReportParameter" />
+	</bean>
+
+	<bean id="SEMMPT003Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMMPT003.jasper" />
+	</bean>
+		
+	<bean id="SEMMPT003ReportService" 
+		class="th.co.ais.service.impl.report.SEMMPT003ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMMPT003Jasper" />
+		<property name="jibxMarshaller" ref="SEMMPT003ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMMPT003ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT001)====================-->
+	<bean id="SEMRRT001ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT001ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT001Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT001.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT001ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT001ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT001Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT001ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT001ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT002)====================-->
+	<bean id="SEMRRT002ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT002ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT002Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT002.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT002ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT002ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT002Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT002ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT002ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT003)====================-->
+	<bean id="SEMRRT003ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT003ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT003Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT003.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT003ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT003ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT003Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT003ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT003ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT004)====================-->
+	<bean id="SEMRRT004ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT004ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT004Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT004.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT004ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT004ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT004Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT004ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT004ReportParameterMarshaller" />
+	</bean>
+	
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT012)====================-->
+	<bean id="SEMRRT012ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT012ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT012Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT012.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT012ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT012ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT012Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT012ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT012ReportParameterMarshaller" />
+	</bean>
+
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT013)====================-->
+	<bean id="SEMRRT013ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT013ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT013Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT013.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT013ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT013ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT013Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT013ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT013ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT015)====================-->
+	<bean id="SEMRRT015ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT015ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT015Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT015.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT015ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT015ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT015Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT015ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT015ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT016)====================-->
+	<bean id="SEMRRT016ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT016ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT016Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT016.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT016ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT016ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT016Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT016ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT016ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT017)====================-->
+	 <bean id="SEMRRT017ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT017ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT017Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT017.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT017ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT017ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT017Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT017ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT017ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT018)====================-->
+	 <bean id="SEMRRT018ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT018ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT018Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT018.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT018ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT018ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT018Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT018ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT018ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT019)====================-->
+	 <bean id="SEMRRT019ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT019ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT019Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT019.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT019ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT019ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT019Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT019ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT019ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT020)====================-->
+	 <bean id="SEMRRT020ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT020ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT020Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT020.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT020ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT020ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT020Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT020ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT020ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT021)====================-->
+	 <bean id="SEMRRT021ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT021ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT021Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT021.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT021ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT021ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT021Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT021ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT021ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT022)====================-->
+	 <bean id="SEMRRT022ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT022ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT022Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT022.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT022ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT022ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT022Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT022ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT022ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT023)====================-->
+	 <bean id="SEMRRT023ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT023ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT023Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT023.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT023ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT023ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT023Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT023ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT023ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRRT024)====================-->
+	 <bean id="SEMRRT024ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRRT024ReportParameter" />
+	</bean>
+
+	<bean id="SEMRRT024Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRRT024.jasper" />
+	</bean>
+		
+	<bean id="SEMRRT024ReportService" 
+		class="th.co.ais.service.impl.report.SEMRRT024ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRRT024Jasper" />
+		<property name="jibxMarshaller" ref="SEMRRT024ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRRT024ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI001)====================-->
+	<bean id="SEMRSI001ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI001ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI001Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI001.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI001ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI001ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI001Jasper" />
+		<property name="jibxMarshaller" ref="SEMRSI001ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI001ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI002)====================-->
+	<bean id="SEMRSI002ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI002ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI002Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI002.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI002ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI002ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI002Jasper" />
+		<property name="jibxMarshaller" ref="SEMRSI002ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI002ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI003)====================-->
+	<bean id="SEMRSI003ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI003ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI003Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI003.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI003ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI003ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI003Jasper" />
+		<property name="jibxMarshaller" ref="SEMRSI003ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI003ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI008)====================-->
+	<bean id="SEMRSI008ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI008ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI008Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI008.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI008ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI008ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI008Jasper" />
+		<property name="jibxMarshaller" ref="SEMRSI008ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI008ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI004)====================-->
+	<bean id="SEMRSI004ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI004ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI004Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI004.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI004ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI004ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI004Jasper" />
+		<property name="jibxMarshaller" ref="SEMRSI004ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI004ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI005)====================-->
+	<bean id="SEMRSI005ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI005ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI005Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI005.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI005ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI005ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI005Jasper" />
+		<property name="jibxMarshaller" ref="SEMRSI005ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI005ReportParameterMarshaller" />
+	</bean>
+		<!--==================== DEFINE REPORT VARIABLE (SEMRSI010)====================-->
+	<bean id="SEMRSI010ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI010ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI010Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI010.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI010ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI010ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI010Jasper" />
+		<property name="jibxMarshaller" ref="SEMRSI010ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI010ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI012)====================-->
+	<bean id="SEMRSI012ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI012ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI012Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI012.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI012ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI012ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI012Jasper" />
+		<property name="jibxMarshaller"   ref="SEMRSI012ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI012ReportParameterMarshaller" />
+	</bean>	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI013)====================-->
+	<bean id="SEMRSI013ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI013ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI013Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI013.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI013ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI013ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI013Jasper" />
+		<property name="jibxMarshaller"   ref="SEMRSI013ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI013ReportParameterMarshaller" />
+	</bean>	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI014)====================-->
+	<bean id="SEMRSI014ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI014ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI014Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI014.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI014ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI014ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI014Jasper" />
+		<property name="jibxMarshaller"   ref="SEMRSI014ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI014ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI015)====================-->
+	<bean id="SEMRSI015ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI015ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI015Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI015.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI015ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI015ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI015Jasper" />
+		<property name="jibxMarshaller"   ref="SEMRSI015ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI015ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI016)====================-->
+	<bean id="SEMRSI016ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI016ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI016Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI016.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI016ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI016ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI016Jasper" />
+		<property name="jibxMarshaller"   ref="SEMRSI016ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI016ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI018)====================-->
+	<bean id="SEMRSI018ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI018ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI018Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI018.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI018ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI018ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI018Jasper" />
+		<property name="jibxMarshaller"   ref="SEMRSI018ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI018ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRSI020)====================-->
+	<bean id="SEMRSI020ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRSI020ReportParameter" />
+	</bean>
+
+	<bean id="SEMRSI020Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRSI020.jasper" />
+	</bean>
+		
+	<bean id="SEMRSI020ReportService" 
+		class="th.co.ais.service.impl.report.SEMRSI020ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRSI020Jasper" />
+		<property name="jibxMarshaller"   ref="SEMRSI020ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRSI020ReportParameterMarshaller" />
+	</bean>
+    <!--==================== DEFINE REPORT VARIABLE (SEMRCO001)====================-->
+	<bean id="SEMRCO001ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRCO001ReportParameter" />
+	</bean>
+
+	<bean id="SEMRCO001Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRCO001.jasper" />
+	</bean>
+		
+	<bean id="SEMRCO001ReportService" 
+		class="th.co.ais.service.impl.report.SEMRCO001ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRCO001Jasper" />
+		<property name="jibxMarshaller"   ref="SEMRCO001ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRCO001ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRCO002)====================-->
+	<bean id="SEMRCO002ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRCO002ReportParameter" />
+	</bean>
+
+	<bean id="SEMRCO002Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRCO002.jasper" />
+	</bean>
+		
+	<bean id="SEMRCO002ReportService" 
+		class="th.co.ais.service.impl.report.SEMRCO002ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRCO002Jasper" />
+		<property name="jibxMarshaller"   ref="SEMRCO002ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRCO002ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMREL001)====================-->
+	<bean id="SEMREL001ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMREL001ReportParameter" />
+	</bean>
+
+	<bean id="SEMREL001Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMREL001.jasper" />
+	</bean>
+		
+	<bean id="SEMREL001ReportService" 
+		class="th.co.ais.service.impl.report.SEMREL001ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMREL001Jasper" />
+		<property name="jibxMarshaller" ref="SEMREL001ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMREL001ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMREL002)====================-->
+	<bean id="SEMREL002ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMREL002ReportParameter" />
+	</bean>
+
+	<bean id="SEMREL002Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMREL002.jasper" />
+	</bean>
+		
+	<bean id="SEMREL002ReportService" 
+		class="th.co.ais.service.impl.report.SEMREL002ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMREL002Jasper" />
+		<property name="jibxMarshaller" ref="SEMREL002ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMREL002ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMREL003)====================-->
+	<bean id="SEMREL003ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMREL003ReportParameter" />
+	</bean>
+
+	<bean id="SEMREL003Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMREL003.jasper" />
+	</bean>
+		
+	<bean id="SEMREL003ReportService" 
+		class="th.co.ais.service.impl.report.SEMREL003ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMREL003Jasper" />
+		<property name="jibxMarshaller" ref="SEMREL003ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMREL003ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMREL004)====================-->
+	<bean id="SEMREL004ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMREL004ReportParameter" />
+	</bean>
+
+	<bean id="SEMREL004Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMREL004.jasper" />
+	</bean>
+		
+	<bean id="SEMREL004ReportService" 
+		class="th.co.ais.service.impl.report.SEMREL004ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMREL004Jasper" />
+		<property name="jibxMarshaller" ref="SEMREL004ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMREL004ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMREL005)====================-->
+	<bean id="SEMREL005ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMREL005ReportParameter" />
+	</bean>
+
+	<bean id="SEMREL005-1Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMREL005-1.jasper" />
+	</bean>
+	<bean id="SEMREL005-2Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMREL005-2.jasper" />
+	</bean>
+		
+	<bean id="SEMREL005-1ReportService" 
+		class="th.co.ais.service.impl.report.SEMREL005ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMREL005-1Jasper" />
+		<property name="jibxMarshaller" ref="SEMREL005ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMREL005ReportParameterMarshaller" />
+	</bean>
+	<bean id="SEMREL005-2ReportService" 
+		class="th.co.ais.service.impl.report.SEMREL005ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMREL005-2Jasper" />
+		<property name="jibxMarshaller" ref="SEMREL005ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMREL005ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMREL006)====================-->
+	<bean id="SEMREL006ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMREL006ReportParameter" />
+	</bean>
+
+	<bean id="SEMREL006Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMREL006-1.jasper" />
+	</bean>
+		
+	<bean id="SEMREL006ReportService" 
+		class="th.co.ais.service.impl.report.SEMREL006ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMREL006Jasper" />
+		<property name="jibxMarshaller" ref="SEMREL006ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMREL006ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMREL007)====================-->
+	<bean id="SEMREL007ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMREL007ReportParameter" />
+	</bean>
+
+	<bean id="SEMREL007Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMREL007.jasper" />
+	</bean>
+		
+	<bean id="SEMREL007ReportService" 
+		class="th.co.ais.service.impl.report.SEMREL007ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMREL007Jasper" />
+		<property name="jibxMarshaller" ref="SEMREL007ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMREL007ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRIR001)====================-->
+	<bean id="SEMRIR001ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRIR001ReportParameter" />
+	</bean>
+
+	<bean id="SEMRIR001Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRIR001.jasper" />
+	</bean>
+		
+	<bean id="SEMRIR001ReportService" 
+		class="th.co.ais.service.impl.report.SEMRIR001ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRIR001Jasper" />
+		<property name="jibxMarshaller" ref="SEMRIR001ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRIR001ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRIR002)====================-->
+	<bean id="SEMRIR002ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRIR002ReportParameter" />
+	</bean>
+
+	<bean id="SEMRIR002Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRIR002.jasper" />
+	</bean>
+		
+	<bean id="SEMRIR002ReportService" 
+		class="th.co.ais.service.impl.report.SEMRIR002ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRIR002Jasper" />
+		<property name="jibxMarshaller" ref="SEMRIR002ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRIR002ReportParameterMarshaller" />
+	</bean>
+		<!--==================== DEFINE REPORT VARIABLE (SEMRIR003)====================-->
+	<bean id="SEMRIR003ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRIR003ReportParameter" />
+	</bean>
+
+	<bean id="SEMRIR003Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRIR003.jasper" />
+	</bean>
+		
+	<bean id="SEMRIR003ReportService" 
+		class="th.co.ais.service.impl.report.SEMRIR003ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRIR003Jasper" />
+		<property name="jibxMarshaller" ref="SEMRIR003ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRIR003ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRPT001)====================-->
+	<bean id="SEMRPT001ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRPT001ReportParameter" />
+	</bean>
+
+	<bean id="SEMRPT001Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRPT001.jasper" />
+	</bean>
+		
+	<bean id="SEMRPT001ReportService" 
+		class="th.co.ais.service.impl.report.SEMRPT001ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRPT001Jasper" />
+		<property name="jibxMarshaller" ref="SEMRPT001ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRPT001ReportParameterMarshaller" />
+	</bean>
+<!--==================== DEFINE REPORT VARIABLE (SEMRIR004)====================-->
+	 <bean id="SEMRIR004ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRIR004ReportParameter" />
+	</bean>
+
+	<bean id="SEMRIR004Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRIR004.jasper" />
+	</bean>
+		
+	<bean id="SEMRIR004ReportService" 
+		class="th.co.ais.service.impl.report.SEMRIR004ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRIR004Jasper" />
+		<property name="jibxMarshaller" ref="SEMRIR004ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRIR004ReportParameterMarshaller" />
+	</bean>	
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRIR005)====================-->
+	 <bean id="SEMRIR005ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRIR005ReportParameter" />
+	</bean>
+
+	<bean id="SEMRIR005Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRIR005.jasper" />
+	</bean>
+		
+	<bean id="SEMRIR005ReportService" 
+		class="th.co.ais.service.impl.report.SEMRIR005ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRIR005Jasper" />
+		<property name="jibxMarshaller" ref="SEMRIR005ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRIR005ReportParameterMarshaller" />
+	</bean>	
+	<!--==================== DEFINE REPORT VARIABLE (SEMRPT002)====================-->
+	<bean id="SEMRPT002ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRPT002ReportParameter" />
+	</bean>
+
+	<bean id="SEMRPT002Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRPT002.jasper" />
+	</bean>
+		
+	<bean id="SEMRPT002ReportService" 
+		class="th.co.ais.service.impl.report.SEMRPT002ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRPT002Jasper" />
+		<property name="jibxMarshaller" ref="SEMRPT002ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRPT002ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRPT003)====================-->
+	<bean id="SEMRPT003ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRPT003ReportParameter" />
+	</bean>
+
+	<bean id="SEMRPT003Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRPT003.jasper" />
+	</bean>
+		
+	<bean id="SEMRPT003ReportService" 
+		class="th.co.ais.service.impl.report.SEMRPT003ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRPT003Jasper" />
+		<property name="jibxMarshaller" ref="SEMRPT003ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRPT003ReportParameterMarshaller" />
+	</bean>
+	<!--==================== DEFINE REPORT VARIABLE (SEMRPT004)====================-->
+	<bean id="SEMRPT004ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMRPT004ReportParameter" />
+	</bean>
+
+	<bean id="SEMRPT004Jasper" 
+		class="th.co.ais.rpt.resource.JasperFileResource">
+		<constructor-arg value="SEMRPT004.jasper" />
+	</bean>
+		
+	<bean id="SEMRPT004ReportService" 
+		class="th.co.ais.service.impl.report.SEMRPT004ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jasperFile" ref="SEMRPT004Jasper" />
+		<property name="jibxMarshaller" ref="SEMRPT004ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMRPT004ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMMEL008)====================-->
+	<bean id="semmel008ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMMEL008ReportDao" parent="abstractHibernateDAO"/>
+	
+	<bean id="SEMMEL008ReportParameterMarshaller" 
+		class="org.springframework.oxm.jibx.JibxMarshaller">
+		<property name="targetClass" 
+			value="th.co.ais.rpt.parameter.SEMMEL008ReportParameter" />
+	</bean>
+
+	<bean id="SEMMEL008Docmosis" 
+		class="th.co.ais.rpt.resource.DocmosisFileResource">
+		<constructor-arg value="SEMMEL008.doc" />
+	</bean>
+		
+	<bean id="SEMMEL008ReportService" 
+		class="th.co.ais.service.impl.report.SEMMEL008ReportService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="docmosisFile" ref="SEMMEL008Docmosis" />
+		<property name="semmel008ReportDao" ref="semmel008ReportDao" />
+		<property name="jibxMarshaller" ref="SEMMEL008ReportParameterMarshaller" />
+		<property name="jibxUnMarshaller" ref="SEMMEL008ReportParameterMarshaller" />
+	</bean>
+	
+	<!--==================== DEFINE REPORT VARIABLE (SEMMEL009)====================-->
+    <bean id="semmel009ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMMEL009ReportDao" parent="abstractHibernateDAO"/>
+    
+    <bean id="SEMMEL009ReportParameterMarshaller" 
+        class="org.springframework.oxm.jibx.JibxMarshaller">
+        <property name="targetClass" 
+            value="th.co.ais.rpt.parameter.SEMMEL009ReportParameter" />
+    </bean>
+
+    <bean id="SEMMEL009Docmosis" 
+        class="th.co.ais.rpt.resource.DocmosisFileResource">
+        <constructor-arg value="SEMMEL009.doc" />
+    </bean>
+        
+    <bean id="SEMMEL009ReportService" 
+        class="th.co.ais.service.impl.report.SEMMEL009ReportService">
+        <property name="dataSource" ref="dataSource" />
+        <property name="docmosisFile" ref="SEMMEL009Docmosis" />
+        <property name="semmel009ReportDao" ref="semmel009ReportDao" />
+        <property name="jibxMarshaller" ref="SEMMEL009ReportParameterMarshaller" />
+        <property name="jibxUnMarshaller" ref="SEMMEL009ReportParameterMarshaller" />
+    </bean>
+    
+    
+    <!--==================== DEFINE REPORT VARIABLE (SEMMSA003)====================-->
+    <bean id="semmsa003ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMMSA003ReportDao" parent="abstractHibernateDAO"/>
+    
+    <bean id="SEMMSA003ReportParameterMarshaller" 
+        class="org.springframework.oxm.jibx.JibxMarshaller">
+        <property name="targetClass" 
+            value="th.co.ais.rpt.parameter.SEMMSA003ReportParameter" />
+    </bean>
+
+    <bean id="SEMMSA003Docmosis" 
+        class="th.co.ais.rpt.resource.DocmosisFileResource">
+        <constructor-arg value="SEMMSA003.doc" />
+    </bean>
+        
+    <bean id="SEMMSA003ReportService" 
+        class="th.co.ais.service.impl.report.SEMMSA003ReportService">
+        <property name="dataSource" ref="dataSource" />
+        <property name="docmosisFile" ref="SEMMSA003Docmosis" />
+        <property name="semmsa003ReportDao" ref="semmsa003ReportDao" />
+        <property name="jibxMarshaller" ref="SEMMSA003ReportParameterMarshaller" />
+        <property name="jibxUnMarshaller" ref="SEMMSA003ReportParameterMarshaller" />
+    </bean>
+    
+  
+       <!--==================== DEFINE REPORT VARIABLE (SEMMCP002)====================-->
+    <bean id="semmcp002ReportDao" class="th.co.ais.dao.rpt.jdbc.SEMMCP002ReportDao" parent="abstractHibernateDAO"/>
+    
+    <bean id="SEMMCP002ReportParameterMarshaller" 
+        class="org.springframework.oxm.jibx.JibxMarshaller">
+        <property name="targetClass" 
+            value="th.co.ais.rpt.parameter.SEMMCP002ReportParameter" />
+    </bean>
+
+    <bean id="SEMMCP002Docmosis" 
+        class="th.co.ais.rpt.resource.DocmosisFileResource">
+        <constructor-arg value="SEMMCP002.doc" />
+    </bean>
+        
+    
+    <bean id="SEMMCP002ReportService" 
+        class="th.co.ais.service.impl.report.SEMMCP002ReportService">
+        <property name="dataSource" ref="dataSource" />
+        <property name="docmosisFile" ref="SEMMCP002Docmosis" />
+        <property name="semmcp002ReportDao" ref="semmcp002ReportDao" />
+        <property name="jibxMarshaller" ref="SEMMCP002ReportParameterMarshaller" />
+        <property name="jibxUnMarshaller" ref="SEMMCP002ReportParameterMarshaller" />
+    </bean>
+    
+    
+    <!-- ===================== DEFINE REPORT VARIABLE (SEMECO004P)==================== -->
+    <bean id="SEMECO004PReportParameterMarshaller" 
+        class="org.springframework.oxm.jibx.JibxMarshaller">
+        <property name="targetClass" 
+            value="th.co.ais.rpt.parameter.SEMECO001ReportParameter" />
+    </bean>
+
+    <bean id="SEMECO004PDocmosis" 
+        class="th.co.ais.rpt.resource.DocmosisFileResource">
+        <constructor-arg value="SEMECO004P.doc" />
+    </bean>
+        
+    <bean id="SEMECO004PReportService" 
+        class="th.co.ais.service.impl.report.SEMECO004ReportService">
+        <property name="dataSource" ref="dataSource" />
+        <property name="docmosisFile" ref="SEMECO004PDocmosis" />
+        <property name="semeco001ReportDao" ref="semeco001ReportDao" />
+        <property name="jibxMarshaller" ref="SEMECO004PReportParameterMarshaller" />
+        <property name="jibxUnMarshaller" ref="SEMECO004PReportParameterMarshaller" />
+    </bean>
+    
+    <!-- ===================== DEFINE REPORT VARIABLE (SEMECO003P)==================== -->
+    <bean id="SEMECO003PReportParameterMarshaller" 
+        class="org.springframework.oxm.jibx.JibxMarshaller">
+        <property name="targetClass" 
+            value="th.co.ais.rpt.parameter.SEMECO001ReportParameter" />
+    </bean>
+
+    <bean id="SEMECO003PDocmosis" 
+        class="th.co.ais.rpt.resource.DocmosisFileResource">
+        <constructor-arg value="SEMECO003P.doc" />
+    </bean>
+        
+    <bean id="SEMECO003PReportService" 
+        class="th.co.ais.service.impl.report.SEMECO003ReportService">
+        <property name="dataSource" ref="dataSource" />
+        <property name="docmosisFile" ref="SEMECO003PDocmosis" />
+        <property name="semeco001ReportDao" ref="semeco001ReportDao" />
+        <property name="jibxMarshaller" ref="SEMECO003PReportParameterMarshaller" />
+        <property name="jibxUnMarshaller" ref="SEMECO003PReportParameterMarshaller" />
+    </bean>
+    
+    <!-- ===================== DEFINE REPORT VARIABLE (SEMECO003P)==================== -->
+    <bean id="SEMECO007PReportParameterMarshaller" 
+        class="org.springframework.oxm.jibx.JibxMarshaller">
+        <property name="targetClass" 
+            value="th.co.ais.rpt.parameter.SEMECO001ReportParameter" />
+    </bean>
+
+    <bean id="SEMECO007PDocmosis" 
+        class="th.co.ais.rpt.resource.DocmosisFileResource">
+        <constructor-arg value="SEMECO007P.doc" />
+    </bean>
+        
+    <bean id="SEMECO007PReportService" 
+        class="th.co.ais.service.impl.report.SEMECO007ReportService">
+        <property name="dataSource" ref="dataSource" />
+        <property name="docmosisFile" ref="SEMECO007PDocmosis" />
+        <property name="semeco001ReportDao" ref="semeco001ReportDao" />
+        <property name="jibxMarshaller" ref="SEMECO007PReportParameterMarshaller" />
+        <property name="jibxUnMarshaller" ref="SEMECO007PReportParameterMarshaller" />
+    </bean>
+</beans>
+
+

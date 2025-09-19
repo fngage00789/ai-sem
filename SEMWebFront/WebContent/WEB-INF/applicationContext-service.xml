@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+		
+		<!-- Audit Log -->
+		<bean id="abstractService" abstract="true" class="th.co.ais.service.AbstractService">
+			<property name="auditTrailService" ref="auditTrailService" />
+		</bean>
+		
+		<bean id="auditTrailService" class="th.co.ais.service.common.impl.audittrail.AuditTrailServiceImpl">
+			<property name="auditTrailDAO" ref="auditTrailDAO" />
+		</bean>
+		
+		<!-- Common Service -->
+		<bean id="commonService" class="th.co.ais.service.impl.common.CommonService" />
+		
+		<!-- General Service -->
+		<bean id="messageService" class="th.co.ais.service.impl.gm.MessageServiceImpl" 
+			  parent="abstractService">
+			<property name="messageDao" ref="messageDao" />
+		</bean>
+		<bean id="companyService" class="th.co.ais.service.impl.gm.CompanyServiceImpl" 
+			  parent="abstractService">
+			<property name="companyDao" ref="companyDao" />
+		</bean>
+		<bean id="locationMasterService" class="th.co.ais.service.impl.gm.LocationMasterServiceImpl" 
+			  parent="abstractService">
+			<property name="locationMasterDao" ref="locationMasterDao"/>
+		</bean>
+		
+		<bean id="regionService" class="th.co.ais.service.impl.gm.RegionServiceImpl" 
+			  parent="abstractService">
+			<property name="regionDao" ref="regionDao" />
+		</bean>
+		<bean id="provinceService" class="th.co.ais.service.impl.gm.ProvinceServiceImpl" 
+			  parent="abstractService">
+			<property name="provinceDao" ref="provinceDao" />
+		</bean>
+		<bean id="bgMasterService" class="th.co.ais.service.impl.gm.BgMasterServiceImpl" 
+			  parent="abstractService">
+			<property name="bgMasterDao" ref="bgMasterDao" />			
+		</bean>
+		
+		<bean id="attachmentService" class="th.co.ais.service.impl.gm.AttachmentServiceImpl" 
+			  parent="abstractService">
+			<property name="attachmentDao" ref="attachmentDao" />			
+		</bean>
+		
+		<bean id="amphurService" class="th.co.ais.service.impl.gm.AmphurServiceImpl" 
+			  parent="abstractService">
+			<property name="amphurDao" ref="amphurDao" />
+		</bean>
+		
+		<bean id="employeeService" class="th.co.ais.service.impl.gm.EmployeeServiceImpl" 
+			  parent="abstractService">
+			<property name="employeeDao" ref="employeeDao" />
+		</bean>
+		
+		<bean id="parameterConfigService" class="th.co.ais.service.impl.gm.ParameterConfigServiceImpl" 
+			  parent="abstractService">
+			<property name="parameterConfigDao" ref="parameterConfigDao" />
+		</bean>
+		<bean id="transPaymentService" class="th.co.ais.service.impl.gm.TransPaymentServiceImpl" 
+			  parent="abstractService">
+			<property name="transPaymentDao" ref="transPaymentDao" />
+		</bean>
+		
+		<bean id="vendorMasterService" class="th.co.ais.service.impl.gm.VendorMasterServiceImpl" 
+			  parent="abstractService">
+			<property name="vendorMasterDao" ref="vendorMasterDao" />	
+			<property name="vendorMapPayeeService" ref="vendorMapPayeeService" />
+			<property name="vendorBookbankService" ref="vendorBookbankService" />
+		</bean>
+		<bean id="payeeMasterService" class="th.co.ais.service.impl.gm.PayeeMasterServiceImpl" 
+			  parent="abstractService">
+			<property name="payeeMasterDao" ref="payeeMasterDao" />
+			<property name="vendorMapPayeeService" ref="vendorMapPayeeService" />
+			<property name="payeeBookbankService" ref="payeeBookbankService" />
+		</bean>
+		<bean id="vendorMapPayeeService" class="th.co.ais.service.impl.gm.VendorMapPayeeServiceImpl" 
+		      parent="abstractService">
+			<property name="vendorMapPayeeDao" ref="vendorMapPayeeDao" />			
+		</bean>	
+		<bean id="vendorBookbankService" class="th.co.ais.service.impl.gm.VendorBookbankServiceImpl" 
+			  parent="abstractService">
+			<property name="vendorBookbankDao" ref="vendorBookbankDao" />
+		</bean>
+		
+		<bean id="payeeBookbankService" class="th.co.ais.service.impl.gm.PayeeBookbankServiceImpl" 
+			  parent="abstractService">
+			<property name="payeeBookbankDao" ref="payeeBookbankDao" />
+		</bean>
+		<bean id="bankService" class="th.co.ais.service.impl.gm.BankServiceImpl" 
+			  parent="abstractService">
+			<property name="bankDao" ref="bankDao" />
+		</bean>
+		
+		<bean id="parameterMasterService" class="th.co.ais.service.impl.gm.ParameterMasterServiceImpl" parent="abstractService">
+			<property name="parameterMasterDao" ref="parameterMasterDao" />
+		</bean>
+		
+		<bean id="costCenterService" class="th.co.ais.service.impl.gm.CostCenterServiceImpl" 
+			  parent="abstractService">
+			<property name="costCenterDao" ref="costCenterDao" />			
+		</bean>
+		
+		<bean id="glAccountService" class="th.co.ais.service.impl.gm.GLAccountServiceImpl" 
+			  parent="abstractService">
+			<property name="glAccountDao" ref="glAccountDao" />			
+		</bean>
+		
+		
+		<!-- added by.. YUT 2014/10/10 -->
+		<bean id="bankMasterService" class="th.co.ais.service.impl.gm.BankMasterServiceImpl" 
+			  parent="abstractService">
+			<property name="bankMasterDao" ref="bankMasterDao" />	
+		</bean>
+		<!-- added by.. YUT 2014/10/10 -->
+		
+		
+		<!-- added by.. YUT 2014/11/10 -->
+		<bean id="menuTreeService" class="th.co.ais.service.impl.common.MenuTreeServiceImpl" 
+			  parent="abstractService">
+			<property name="menuTreeDao" ref="menuTreeDao" />	
+		</bean>
+		<!-- added by.. YUT 2014/10/10 -->
+		
+		
+		<!-- Site Info Service -->
+		<bean id="siteApproveService" class="th.co.ais.service.impl.si.SiteApproveServiceImpl" 
+			  parent="abstractService">
+			<property name="siteApproveDao" ref="siteApproveDao" />
+		</bean>
+		<bean id="siteApproveMapLocService" class="th.co.ais.service.impl.si.SiteApproveMapLocServiceImpl" 
+			  parent="abstractService">
+			<property name="siteApproveMapLocDao" ref="siteApproveMapLocDao" />
+		</bean>
+		<bean id="lovMasterService" class="th.co.ais.service.impl.gm.LovMasterServiceImpl" 
+			  parent="abstractService">
+			<property name="lovMasterDao" ref="lovMasterDao" />
+		</bean>
+		<bean id="siteTerminateService" class="th.co.ais.service.impl.si.SiteTerminateServiceImpl" 
+			  parent="abstractService">
+			<property name="siteTerminateDao" ref="siteTerminateDao" />			
+		</bean>
+		<bean id="siteContractService" class="th.co.ais.service.impl.si.SiteContractServiceImpl" 
+		  parent="abstractService">
+		<property name="siteContractDao" ref="siteContractDao"/>
+		</bean>
+		<bean id="siteInfoMapLocService" class="th.co.ais.service.impl.si.SiteInfoMapLocServiceImpl" 
+		  parent="abstractService">
+		<property name="siteInfoMapLocDao" ref="siteInfoMapLocDao"/>
+		</bean>
+		<bean id="legalApproveService" class="th.co.ais.service.impl.si.LegalApproveServiceImpl" 
+			  parent="abstractService">
+			<property name="legalApproveDao" ref="legalApproveDao" />
+		</bean>
+		<bean id="siteInfoService" class="th.co.ais.service.impl.si.SiteInfoServiceImpl" 
+			  parent="abstractService">
+			<property name="siteInfoDao" ref="siteInfoDao" />
+		</bean>
+		<bean id="sendRenewService" class="th.co.ais.service.impl.si.SendRenewServiceImpl" 
+			  parent="abstractService">
+			<property name="sendRenewDao" ref="sendRenewDao" />
+		</bean>
+			<bean id="siteConstructService" class="th.co.ais.service.impl.si.SiteConstructServiceImpl" 
+			  parent="abstractService">
+			<property name="siteConstructDao" ref="siteConstructDao" />
+		</bean>
+		<bean id="siteDepositService" class="th.co.ais.service.impl.si.SiteDepositServiceImpl" 
+			  parent="abstractService">
+			<property name="siteDepositDao" ref="siteDepositDao" />
+		</bean>
+		<bean id="siteElectricService" class="th.co.ais.service.impl.si.SiteElectricServiceImpl" 
+			  parent="abstractService">
+			<property name="siteElectricDao" ref="siteElectricDao" />
+		</bean>
+		<bean id="siteInsuranceService" class="th.co.ais.service.impl.si.SiteInsuranceServiceImpl" 
+			  parent="abstractService">
+			<property name="siteInsurancetDao" ref="siteInsurancetDao" />
+		</bean>
+		<bean id="siteLessorService" class="th.co.ais.service.impl.si.SiteLessorServiceImpl" 
+			  parent="abstractService">
+			<property name="siteLessorDao" ref="siteLessorDao" />
+		</bean>
+		<bean id="sitePropertyTaxService" class="th.co.ais.service.impl.si.SitePropertyTaxServiceImpl" 
+			  parent="abstractService">
+			<property name="sitePropertyTaxDao" ref="sitePropertyTaxDao" />
+		</bean>
+		<bean id="siteRentCondService" class="th.co.ais.service.impl.si.SiteRentCondServiceImpl" 
+			  parent="abstractService">
+			<property name="siteRentCondDao" ref="siteRentCondDao" />
+		</bean>
+		<bean id="siteRentService" class="th.co.ais.service.impl.si.SiteRentServiceImpl" 
+			  parent="abstractService">
+			<property name="siteRentDao" ref="siteRentDao" />
+		</bean>
+		<bean id="siteSubRentService" class="th.co.ais.service.impl.si.SiteSubRentServiceImpl" 
+			  parent="abstractService">
+			<property name="siteSubRentDao" ref="siteSubRentDao" />
+		</bean>
+		
+		<!-- added by.. YUT 2015/01/22 -->
+		<bean id="legalSiteAppService" class="th.co.ais.service.impl.si.LegalSiteAppServiceImpl" parent="abstractService">
+			<property name="legalSiteAppDao" ref="legalSiteAppDao" />
+		</bean>
+		<!-- added by.. YUT 2015/01/22 -->
+		
+		<!-- Insurance Service -->
+		<bean id="replacementService" class="th.co.ais.service.impl.ir.ReplacementServiceImpl" 
+			  parent="abstractService">
+			<property name="replacementDao" ref="replacementDao" />
+		</bean>
+		<bean id="insuredService" class="th.co.ais.service.impl.ir.InsuredServiceImpl" 
+			  parent="abstractService">
+			 <property name="insuredDao" ref="insuredDao"/>
+			 <property name="acqCostDao" ref="acqCostDao"/>
+			 <property name="acqCostLogDao" ref="acqCostLogDao"/>
+		</bean>
+		<bean id="deductibleService" class="th.co.ais.service.impl.ir.DeductibleServiceImpl" 
+			  parent="abstractService">
+			<property name="deductibleDao" ref="deductibleDao" />
+		</bean>
+		<bean id="premiumService" class="th.co.ais.service.impl.ir.PremiumServiceImpl" 
+			  parent="abstractService">
+			<property name="premiumDao" ref="premiumDao" />
+		</bean>
+		<bean id="zoneService" class="th.co.ais.service.impl.gm.ZoneServiceImpl" 
+			  parent="abstractService">
+			<property name="zoneDao" ref="zoneDao" />
+		</bean>
+		<bean id="generateDraftService" class="th.co.ais.service.impl.ir.GenerateDraftServiceImpl" 
+			  parent="abstractService">
+			<property name="generateDraftDao" ref="generateDraftDao" />
+		</bean>
+		<bean id="irClaimService" class="th.co.ais.service.impl.ir.IrClaimServiceImpl" 
+			  parent="abstractService">
+			<property name="irClaimDao" ref="irClaimDao" />
+			<property name="irClaimDetailDao" ref="irClaimDetailDao" />
+		</bean>
+		<bean id="irClaimDetailService" class="th.co.ais.service.impl.ir.IrClaimDetailServiceImpl" 
+			  parent="abstractService">
+			<property name="irClaimDetailDao" ref="irClaimDetailDao" />
+		</bean>
+		<bean id="insurancePaymentService" class="th.co.ais.service.impl.ir.InsurancePaymentServiceImpl" 
+			  parent="abstractService">
+			<property name="insurancePaymentDao" ref="insurancePaymentDao" />
+		</bean>
+		<bean id="irDraftService" class="th.co.ais.service.impl.ir.IrDraftServiceImpl" 
+			  parent="abstractService">
+			<property name="irDraftDao" ref="irDraftDao" />
+			<property name="irDraftDetailDao" ref="irDraftDetailDao" />
+			<property name="irPolicySumDao" ref="irPolicySumDao" />
+		</bean>
+		<bean id="irLoacClaimService" class="th.co.ais.service.impl.ir.IrLoadClaimServiceImpl" 
+			  parent="abstractService">
+			<property name="irLoadClaimDao" ref="irLoadClaimDao" />
+			<property name="irLoadClaimLogDao" ref="irLoadClaimLogDao" />
+		</bean>
+		
+		<!-- Rental Service -->
+		<bean id="rentalMasterService" class="th.co.ais.service.impl.rt.RentalMasterServiceImpl" 
+			  parent="abstractService">
+			  <property name="rentalMasterDao" ref="rentalMasterDao"/>
+		</bean>
+		<bean id="rentalPlanService" class="th.co.ais.service.impl.rt.RentalPlanServiceImpl" 
+			  parent="abstractService">
+			  <property name="rentalPlanDao" ref="rentalPlanDao"/>
+		</bean>
+		<bean id="rentalDetailService" class="th.co.ais.service.impl.rt.RentalDetailServiceImpl" 
+			  parent="abstractService">
+			  <property name="rentalDetailDao" ref="rentalDetailDao"/>
+			  <property name="rentalCondMapSiDao" ref="rentalCondMapSiDao"/>
+		</bean>
+		<bean id="rentalCondMapSiService" class="th.co.ais.service.impl.rt.RentalCondMapSiServiceImpl" 
+			  parent="abstractService">
+			  <property name="rentalCondMapSiDao" ref="rentalCondMapSiDao"/>
+		</bean>
+		<bean id="rentalPaymentService" class="th.co.ais.service.impl.rt.RentalPaymentServiceImpl" 
+			  parent="abstractService">
+			  <property name="rentalPaymentDao" ref="rentalPaymentDao"/>
+		</bean>
+		<bean id="depositDetailService" class="th.co.ais.service.impl.rt.DepositDetailServiceImpl" 
+			  parent="abstractService">
+			  <property name="depositDetailDao" ref="depositDetailDao"/>
+			  <property name="depositCondMapSiDao" ref="depositCondMapSiDao"/>
+		</bean>
+		<bean id="depositCondMapSiService" class="th.co.ais.service.impl.rt.DepositCondMapSiServiceImpl" 
+			  parent="abstractService">
+			  <property name="depositCondMapSiDao" ref="depositCondMapSiDao"/>
+		</bean>
+		<bean id="pettyCashService" class="th.co.ais.service.impl.rt.PettyCashServiceImpl" 
+			  parent="abstractService">
+			  <property name="pettyCashDao" ref="pettyCashDao"/>
+		</bean>
+		<bean id="pettyCashPayService" class="th.co.ais.service.impl.rt.PettyCashPayServiceImpl" 
+			  parent="abstractService">
+			  <property name="pettyCashPayDao" ref="pettyCashPayDao"/>
+		</bean>
+		<bean id="rentalClrRecService" class="th.co.ais.service.impl.rt.RentalClrRecServiceImpl" 
+			  parent="abstractService">
+			  <property name="rentalClrRecDao" ref="rentalClrRecDao"/>
+		</bean>
+		<bean id="returnDepositService" class="th.co.ais.service.impl.rt.ReturnDepositServiceImpl" 
+			  parent="abstractService">
+			  <property name="returnDepositDao" ref="returnDepositDao"/>
+		</bean>
+		
+		<!-- Property Tax Service -->
+		<bean id="pTaxMasterService" class="th.co.ais.service.impl.pt.PTaxMasterServiceImpl" 
+			  parent="abstractService">
+			  <property name="pTaxMasterDao" ref="pTaxMasterDao"/>
+		</bean>
+		<bean id="pTaxPaymentService" class="th.co.ais.service.impl.pt.PTaxPaymentServiceImpl" 
+			  parent="abstractService">
+			  <property name="pTaxPaymentDao" ref="pTaxPaymentDao"/>
+		</bean>
+		
+		<!-- SAP Service -->
+		<bean id="sapService" class="th.co.ais.service.impl.sap.SapServiceImpl" 
+			  parent="abstractService">
+			<property name="sapMappingDao" ref="sapMappingDao" />			
+			<property name="sapTrxLogDao" ref="sapTrxLogDao" />
+			<property name="sapTrxHdrDao" ref="sapTrxHdrDao" />
+			<property name="sapTrxDtlDao" ref="sapTrxDtlDao" />
+			<property name="transPaymentHistDao" ref="transPaymentHistDao" />
+		</bean>
+		<bean id="sapErrorLogService" class="th.co.ais.service.impl.sap.SapErrorLogServiceImpl" 
+			  parent="abstractService">
+			  <property name="sapErrorLogDao" ref="sapErrorLogDao"/>
+		</bean>
+		
+		<!-- Contract Service -->
+		<bean id="contractStatusService" class="th.co.ais.service.impl.co.ContractStatusServiceImpl" 
+			  parent="abstractService">
+			<property name="contractStatusDao" ref="contractStatusDao" />
+		</bean>
+		<bean id="contractCheckDocService" class="th.co.ais.service.impl.co.ContractCheckDocServiceImpl" 
+			  parent="abstractService">
+			<property name="contractCheckDocDao" ref="contractCheckDocDao" />
+		</bean>
+		<bean id="contractFileService" class="th.co.ais.service.impl.co.ContractFileServiceImpl" 
+			  parent="abstractService">
+			<property name="contractFileDao" ref="contractFileDao" />
+		</bean>
+		<bean id="borrowRequestService" class="th.co.ais.service.impl.co.BorrowRequestServiceImpl" 
+			  parent="abstractService">
+			<property name="borrowRequestDao" ref="borrowRequestDao" />
+			<property name="borrowContractDao" ref="borrowContractDao" />
+			<property name="returnContractDao" ref="returnContractDao" />
+		</bean>
+		
+		<!-- Electric Service -->
+		<bean id="bgMasterELService" class="th.co.ais.service.impl.el.BgMasterServiceImpl" parent="abstractService">
+			<property name="bgMasterDao" ref="bgMasterELDao" />
+			<property name="plUtil" ref="plUtil" />
+			<property name="privateDepositDao" ref="privateDepositDao"/>
+			<property name="attachmentDao" ref="attachmentDao" />
+		</bean>
+		<bean id="parameterService" class="th.co.ais.service.impl.gm.ParameterServiceImpl" parent="abstractService">
+			<property name="parameterDao" ref="parameterDao" />			
+		</bean>	
+		<bean id="managementService" class="th.co.ais.service.impl.el.ManagementServiceImpl" parent="abstractService">
+			<property name="managementDao" ref="managementDao" />	
+			<property name="plUtil" ref="plUtil" />		
+		</bean>	
+		<bean id="managementMasterService" class="th.co.ais.service.impl.el.ManagementMasterServiceImpl" parent="abstractService">
+			<property name="managementMasterDao" ref="managementMasterDao" />	
+		</bean>	
+		<bean id="meterInfoService" class="th.co.ais.service.impl.el.MeterInfoServiceImpl" parent="abstractService">
+			<property name="meterInfoDao" ref="meterInfoDao" />
+			<property name="plUtil" ref="plUtil" />		
+		</bean>	
+		<bean id="warrantDetailService" class="th.co.ais.service.impl.el.WarrantDetailServiceImpl" parent="abstractService">
+			<property name="warrantDetailDao" ref="warrantDetailDao" />
+			<property name="plUtil" ref="plUtil" />
+			<property name="managementDao" ref="managementDao" />
+		</bean>
+		<bean id="warrantMasterService" class="th.co.ais.service.impl.el.WarrantMasterServiceImpl" parent="abstractService">
+			<property name="warrantMasterDao" ref="warrantMasterDao" />
+		</bean>
+		<bean id="depositDetailELService" class="th.co.ais.service.impl.el.DepositDetailServiceImpl" parent="abstractService">
+			  <property name="depositDetailDao" ref="depositDetailELDao"/>
+		</bean>
+		<bean id="meterInstallmentService" class="th.co.ais.service.impl.el.MeterInstallmentServiceImpl" parent="abstractService">
+			  <property name="meterInstallmentDao" ref="meterInstallmentDao"/>
+		</bean>
+		<bean id="privateDepositService" class="th.co.ais.service.impl.el.PrivateDepositServiceImpl" parent="abstractService">
+			  <property name="privateDepositDao" ref="privateDepositDao"/>
+			  <property name="plUtil" ref="plUtil"/>
+		</bean>
+		<bean id="paymentService" class="th.co.ais.service.impl.el.PaymentServiceImpl" parent="abstractService">
+	  		<property name="paymentDao" ref="paymentELDao" /> 
+	  		<property name="depositDetailDao" ref="depositDetailELDao" />
+	  		<property name="privateDepositDao" ref="privateDepositDao" />
+			<property name="paymentDetailDao" ref="paymentDetailDao" /> 
+	  		<property name="plUtil" ref="plUtil" />
+	  		<property name="meterInstallmentDao" ref="meterInstallmentDao" />	  			
+	  	</bean>
+		<bean id="prepaidPaymentService" class="th.co.ais.service.impl.el.PrepaidPaymentServiceImpl" parent="abstractService">
+	  		<property name="prepaidpaymentDao" ref="prepaidpaymentDao" /> 
+	  	</bean>
+		<bean id="paymentDetailService" class="th.co.ais.service.impl.el.PaymentDetailServiceImpl" parent="abstractService">
+	  		<property name="paymentDao" ref="paymentDetailDao" /> 
+	  	</bean>
+		<bean id="paymentVendorMapPayeeService" class="th.co.ais.service.impl.el.PaymentVendorMapPayeeServiceImpl" parent="abstractService">
+	  		<property name="vendorMapPayeeDao" ref="paymentVendorMapPayeeDao" /> 
+	  	</bean>
+	  	<bean id="paymentDefaultService" class="th.co.ais.service.impl.el.PaymentDefaultServiceImpl" parent="abstractService">
+	  		<property name="paymentDefaultDao" ref="paymentDefaultDao" /> 
+	  	</bean>
+	  	<bean id="bgMapContractService" class="th.co.ais.service.impl.el.BgMapContractServiceImpl" parent="abstractService">
+			<property name="bgMapContractDao" ref="bgMapContractDao" />			
+		</bean>
+		<bean id="vendorMapPayeeELService" class="th.co.ais.service.impl.el.VendorMapPayeeELServiceImpl" parent="abstractService">
+			<property name="vendorMapPayeeELDao" ref="vendorMapPayeeELDao" />
+			<property name="vendorMapPayeeService" ref="vendorMapPayeeService" />
+		</bean>
+		<bean id="privateprepaidPaymentService" class="th.co.ais.service.impl.el.PrivatePrepaidPaymentServiceImpl" parent="abstractService">
+			<property name="privatePrepaidDao" ref="privatePrepaidDao" />			
+		</bean>
+		
+		<bean id="uploadMeterFileService" class="th.co.ais.service.impl.el.UploadMeterFileServiceImpl" parent="abstractService">
+			<property name="uploadMeterFileDao" ref="uploadMeterFileDao" />	
+			<property name="plUtil" ref="plUtil" />
+			<property name="managementDao" ref="managementDao" />
+			<property name="meterInfoDao" ref="meterInfoDao" />
+		</bean>		
+		<bean id="importMasterDataELService" class="th.co.ais.service.impl.el.ImportMasterDataELServiceImpl" parent="abstractService">
+			<property name="importMasterDataELDao" ref="importMasterDataELDao" />	
+		</bean>
+		<bean id="importTransactionELService" class="th.co.ais.service.impl.el.ImportTransactionELServiceImpl" parent="abstractService">
+			<property name="importTransactionELDao" ref="importTransactionELDao" />	
+			<property name="plUtil" ref="plUtil" />
+		</bean>
+		<bean id="uploadTextService" class="th.co.ais.service.impl.el.UploadTextServiceImpl" parent="abstractService">
+			<property name="uploadTextDao" ref="uploadTextDao" />	
+			<property name="plUtil" ref="plUtil" />
+		</bean>
+		<!-- <bean id="importMeaNewTmpService" class="th.co.ais.service.impl.el.ImportMeaNewTmpServiceImpl" parent="abstractService">
+			<property name="importMeaNewTmpDao" ref="importMeaNewTmpDao" />	
+		</bean>-->
+		<bean id="importPeaNewExtService" class="th.co.ais.service.impl.el.ImportPeaNewExtServiceImpl" parent="abstractService">
+			<property name="importPeaNewExtDao" ref="importPeaNewExtDao" />	
+		</bean>
+		<bean id="importPeaOldExtService" class="th.co.ais.service.impl.el.ImportPeaOldExtServiceImpl" parent="abstractService">
+			<property name="importPeaOldExtDao" ref="importPeaOldExtDao" />	
+		</bean>
+		<bean id="importMeaOldExtService" class="th.co.ais.service.impl.el.ImportMeaOldExtServiceImpl" parent="abstractService">
+			<property name="importMeaOldExtDao" ref="importMeaOldExtDao" />	
+		</bean>
+		<bean id="importMeaNewTmpService" class="th.co.ais.service.impl.el.ImportMeaNewTmpServiceImpl" parent="abstractService">
+			<property name="importMeaNewTmpDao" ref="importMeaNewTmpDao" />	
+		</bean>
+		<bean id="importDataLogService" class="th.co.ais.service.impl.el.ImportDataLogServiceImpl" parent="abstractService">
+			<property name="importDataLogDao" ref="importDataLogDao" />
+		</bean>
+		
+		<bean id="loadClearChequeService" class="th.co.ais.service.impl.lc.LoadClearChequeServiceImpl" 
+			  parent="abstractService">
+			<property name="loadClearChequeDao" ref="loadClearChequeDao" />
+		</bean>
+		
+		<bean id="loadClearChqService" class="th.co.ais.service.impl.lc.LoadClearChqServiceImpl" 
+			  parent="abstractService">
+			<property name="loadClearChqDao" ref="loadClearChqDao" />
+		</bean>
+		
+		<bean id="regionZoneService" class="th.co.ais.service.impl.si.RegionZoneServiceImpl" 
+			  parent="abstractService">
+			<property name="regionZoneDao" ref="regionZoneDao" />
+		</bean>
+		
+		<bean id="auditTrailAdvice" class="th.co.ais.service.advice.AuditTrailAdvice" />
+		<bean id="auditTrailAdvisor" class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+			<property name="advice" ref="auditTrailAdvice" />
+			<property name="expression">
+				<value>
+					execution(* th.co.ais.service..*.create*(..)) ||
+					execution(* th.co.ais.service..*.update*(..)) ||
+					execution(* th.co.ais.service..*.delete*(..)) ||
+					execution(* th.co.ais.service..*.query*(..)) 
+				</value>
+			</property>
+		</bean>
+		
+		<bean id="serviceExceptionAdvice" class="th.co.ais.service.advice.ServiceExceptionAdvice" />
+		<bean id="serviceExceptionAdvisor" class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+			<property name="advice" ref="serviceExceptionAdvice" />
+			<property name="expression">
+				<value>
+					execution(* th.co.ais.service.impl.co..*.*(..)) ||
+					execution(* th.co.ais.service.impl.common..*.*(..)) ||
+					execution(* th.co.ais.service.impl.el..*.*(..)) ||
+					execution(* th.co.ais.service.impl.gm..*.*(..)) ||
+					execution(* th.co.ais.service.impl.ir..*.*(..)) ||
+					execution(* th.co.ais.service.impl.pt..*.*(..)) ||
+					execution(* th.co.ais.service.impl.rt..*.*(..)) ||
+					execution(* th.co.ais.service.impl.si..*.*(..)) ||
+					execution(* th.co.ais.service.impl.authorize..*.*(..))
+				</value>
+			</property>
+		</bean>
+		
+		
+		<!-- added by.. YUT 2014/10/10 -->
+		<!-- Site Acquistion Service -->
+		<bean id="siteAcquistionService" class="th.co.ais.service.impl.sa.SiteAcquistionServiceImpl" parent="abstractService">
+			<property name="siteAppDao" ref="siteAppDao" />
+			<property name="siteAppDisputeDao" ref="siteAppDisputeDao" />	
+			<property name="siteAppDocDao" ref="siteAppDocDao" />
+			<property name="siteAppSiteDao" ref="siteAppSiteDao" />
+			<property name="siteCntrctSttsDao" ref="siteCntrctSttsDao" />
+			<property name="siteAppMailDao" ref="siteAppMailDao" />
+		</bean>
+		<!-- added by.. YUT 2014/10/10 -->
+		
+		
+		<!-- << -->
+		
+		
+		<!-- ==================== REPORT JOB ==================== -->	
+	<bean id="reportServiceHelper" class="th.co.ais.service.impl.rpt.ReportServiceHelper" />
+	
+	<bean id="reportJobService" class="th.co.ais.service.impl.rpt.ReportJobServiceImpl">
+		<property name="reportJobDao" ref="reportJobDao" />
+		<property name="reportNameDao" ref="reportNameDao" />
+		<property name="reportServiceHelper" ref="reportServiceHelper" />		
+	</bean>
+	
+	<bean id="reportScheduleJobService" class="th.co.ais.service.impl.rpt.ReportScheduleJobServiceImpl">
+		<property name="reportScheduleJobDao" ref="reportScheduleJobDao" />
+		<property name="reportNameDao" ref="reportNameDao" />
+		<property name="reportServiceHelper" ref="reportServiceHelper" />
+	</bean>
+	
+	<bean id="reportServiceManager" class="th.co.ais.manager.impl.rpt.ReportServiceManagerImpl" >
+		<property name="reportJobService" ref="reportJobService" />
+		<property name="reportServiceHelper" ref="reportServiceHelper" />
+	</bean>
+	
+	<bean id="reportWebHelper" class="th.co.ais.web.report.util.ReportWebHelper" >
+		<property name="reportService" ref="reportServiceManager" />
+	</bean>
+	<!--  END REPORT SERVICE     -->
+	<!--<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />
+--></beans>		

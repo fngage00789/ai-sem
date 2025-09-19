@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_24" class="java.beans.XMLDecoder"> 
+ <object class="th.co.ais.web.bean.SsoBean"> 
+  <void property="clientIpAddress"> 
+   <string>null</string> 
+  </void> 
+  <void property="dc"> 
+   <string></string> 
+  </void> 
+  <void property="employee"> 
+   <object class="th.co.ais.domain.gm.Employee"> 
+    <void property="buildingCode"> 
+     <string>ST2</string> 
+    </void> 
+    <void property="companyCode"> 
+     <string>FAX</string> 
+    </void> 
+    <void property="costCenter"> 
+     <string>0000015000</string> 
+    </void> 
+    <void property="email"> 
+     <string>amorns@ais.co.th</string> 
+    </void> 
+    <void property="employeeGroup"> 
+     <string>1</string> 
+    </void> 
+    <void property="employeeType"> 
+     <string>ES</string> 
+    </void> 
+    <void property="engName"> 
+     <string>AMORN</string> 
+    </void> 
+    <void property="engSurname"> 
+     <string>SATAMEGHA</string> 
+    </void> 
+    <void property="floor"> 
+     <string>17</string> 
+    </void> 
+    <void property="mobileNo"> 
+     <string>0818343023</string> 
+    </void> 
+    <void property="orgDesc"> 
+     <string>Site Management</string> 
+    </void> 
+    <void property="orgId"> 
+     <string>50094485</string> 
+    </void> 
+    <void property="pin"> 
+     <string>00000597</string> 
+    </void> 
+    <void property="positionId"> 
+     <string>50070807</string> 
+    </void> 
+    <void property="positionName"> 
+     <string>AVP-Site Management</string> 
+    </void> 
+    <void property="provinceName"> 
+     <string>กรุงเทพมหานคร</string> 
+    </void> 
+    <void property="recDateTime"> 
+     <string>2012-01-13 22:05:46</string> 
+    </void> 
+    <void property="status"> 
+     <string>3</string> 
+    </void> 
+    <void property="telNo"> 
+     <string>0-2299-6055</string> 
+    </void> 
+    <void property="thaiName"> 
+     <string>อมร</string> 
+    </void> 
+    <void property="thaiSurname"> 
+     <string>ศตะเมฆ</string> 
+    </void> 
+    <void property="userStamp"> 
+     <string>amorns</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="fn"> 
+   <string>AMORN</string> 
+  </void> 
+  <void property="gl"> 
+   <string></string> 
+  </void> 
+  <void property="groupId"> 
+   <string>305</string> 
+  </void> 
+  <void property="host"> 
+   <string>https://employeeservices.ais.co.th/EmployeeService/</string> 
+  </void> 
+  <void property="lc"> 
+   <string>1128</string> 
+  </void> 
+  <void property="ln"> 
+   <string>SATAMEGHA</string> 
+  </void> 
+  <void property="pt"> 
+   <string>AVP-Site Management</string> 
+  </void> 
+  <void property="rid"> 
+   <string>68</string> 
+  </void> 
+  <void property="rn"> 
+   <string>Site ExpMNG</string> 
+  </void> 
+  <void property="sc"> 
+   <string></string> 
+  </void> 
+  <void property="sid"> 
+   <string>239</string> 
+  </void> 
+  <void property="sn"> 
+   <string>SM043</string> 
+  </void> 
+  <void property="ssoCompCodes"> 
+   <object class="java.util.HashMap"/> 
+  </void> 
+  <void property="ssoProgCodes"> 
+   <object class="java.util.HashMap"/> 
+  </void> 
+  <void property="subModuleId"> 
+   <string>239</string> 
+  </void> 
+  <void property="template"> 
+   <string>template01</string> 
+  </void> 
+  <void property="theme"> 
+   <string>theme01</string> 
+  </void> 
+  <void property="token"> 
+   <string>vlpGP8CdLSTJHL5pR3s1G1RjfvwFSdGp2Nh2wb0txmw62VQdgrkm!-1909051763!1329381949609,amorns,305,239,null</string> 
+  </void> 
+  <void property="tokenId"> 
+   <string>vlpGP8CdLSTJHL5pR3s1G1RjfvwFSdGp2Nh2wb0txmw62VQdgrkm!-1909051763!1329381949609</string> 
+  </void> 
+  <void property="userName"> 
+   <string>amorns</string> 
+  </void> 
+ </object> 
+</java> 

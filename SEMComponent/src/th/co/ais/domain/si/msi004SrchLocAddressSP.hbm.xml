@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004SrchLocAddressSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="locationName" type="java.lang.String"/>
+		<property name="address" type="java.lang.String"/>
+		<property name="tumbon" type="java.lang.String"/>
+		<property name="amphur" type="java.lang.String"/>
+		<property name="province" type="java.lang.String"/>
+		<property name="zipcode" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="msi004SrchLocAddress" callable="true">
+		<return class="th.co.ais.domain.si.Msi004SrchLocAddressSP">
+			<return-property name="rowId" column="LOCATION_ID" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="tumbon" column="TUMBOL" />
+			<return-property name="amphur" column="AMPHUR" />
+			<return-property name="province" column="PROVINCE" />
+			<return-property name="zipcode" column="ZIP_CODE" />
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_LOC_ADDR (?, :rowId) ]]>
+	</sql-query>
+</hibernate-mapping>

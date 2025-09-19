@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 ?.?. 2557, 19:13:22 by Hibernate Tools 3.3.0.GA -->
+
+<hibernate-mapping package="th.co.ais.domain.sa">
+	<class name="th.co.ais.domain.sa.SiteAcqSrchFile" entity-name="srchContractObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="attachmentPath" type="java.lang.String"/>
+		<property name="fileName" type="java.lang.String"/>
+		<property name="updateDt" type="java.util.Date"/>
+		<property name="updateBy" type="java.lang.String"/>
+	</class>
+	
+	
+	
+	<sql-query callable="true" name="msa005SrchContract">
+		<return alias="" class="th.co.ais.domain.sa.SiteAcqSrchFile" entity-name="srchContractObj">
+			<return-property name="rowId" column="ATTACHMENT_ID" />
+			<return-property name="attachmentPath" column="ATTACHMENT_PATH" />
+			<return-property name="fileName" column="FILE_NAME" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+		</return>   
+		<![CDATA[ call SEM.SEM_SP_MCO003_SRCH_FILE(?, :contractNo) ]]>
+	</sql-query>
+</hibernate-mapping>

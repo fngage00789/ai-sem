@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SiteInfoMapLocSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="locationName" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="stationType" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="rentAmt" type="java.lang.Double"/>
+		<property name="mainLocFlag" type="java.lang.String"/>
+		
+		<property name="siteGroup" type="java.lang.String"/>
+		<property name="system" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="siteId" type="java.lang.String"/>
+		<property name="siteCode" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="siteActivity" type="java.lang.String"/>
+		<property name="towerType" type="java.lang.String"/>
+		<property name="towerLocation" type="java.lang.String"/>
+		<property name="towerHeight" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="querySearchSiteInfoMapLoc" callable="true">
+		<return class="th.co.ais.domain.si.SiteInfoMapLocSP">
+			<return-property name="rowId" column="SITE_INFO_MAP_LOC_ID" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="region" column="REGION" />
+			<return-property name="stationType" column="STATION_TYPE" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="rentAmt" column="RENT_AMT" />
+			<return-property name="mainLocFlag" column="MAIN_LOC_FLAG" />
+			
+			<return-property name="siteGroup" column="SITE_GROUP" />
+			<return-property name="system" column="SYSTEM" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="siteId" column="SITE_ID" />
+			<return-property name="siteCode" column="SITE_CODE" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="siteActivity" column="SITEACTIVITY" />	
+			<return-property name="towerType" column="TOWER_TYPE" />
+			<return-property name="towerLocation" column="TOWER_LOCATION" />	
+			<return-property name="towerHeight" column="TOWER_HEIGHT" />
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_MAP_LOC (?, :siteInfoId) ]]>
+	</sql-query>
+</hibernate-mapping>

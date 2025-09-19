@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+
+	<class name="th.co.ais.domain.si.LegalSiteAppSP" entity-name="legalSiteApp">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="siteAppId" type="java.lang.String" />
+		<property name="batchNo" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="docNo" type="java.lang.String" />
+		<property name="reqDocType" type="java.lang.String" />
+		<property name="reqOfficer" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="effectiveDt" type="java.sql.Date" />
+		<property name="expireDt" type="java.sql.Date" />
+		<property name="locationId" type="java.lang.String" />
+		<property name="locationName" type="java.lang.String" />
+		<property name="siteDetail" type="java.lang.String" />
+		<property name="locationZone" type="java.lang.String" />
+		<property name="networkStatus" type="java.lang.String" />
+		<property name="flowStatus" type="java.lang.String" />
+		<property name="statusDt" type="java.sql.Date" />
+		<property name="approveDt" type="java.sql.Date" />
+		<property name="approveBy" type="java.lang.String" />
+		<property name="flowRemark" type="java.lang.String" />
+		<property name="userId" type="java.lang.String" />
+	</class>
+	
+	<sql-query name="mlg001Search" callable="true">
+		<return class="th.co.ais.domain.si.LegalSiteAppSP" entity-name="legalSiteApp">
+			<return-property column="SITE_APP_ID" name="rowId"/>
+			<return-property column="SITE_APP_ID" name="siteAppId"/>
+			<return-property column="BATCH_NO" name="batchNo"/>
+			<return-property column="REGION" name="region"/>
+			<return-property column="COMPANY" name="company"/>
+			<return-property column="DOC_NO" name="docNo"/>
+			<return-property column="REQ_DOC_TYPE" name="reqDocType"/>
+			<return-property column="REQ_OFFICER" name="reqOfficer"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+			<return-property column="EXPIRE_DT" name="expireDt"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="LOCATION_NAME" name="locationName"/>
+			<return-property column="SITE_DETAIL" name="siteDetail"/>
+			<return-property column="LOCATION_ZONE" name="locationZone"/>
+			<return-property column="NETWORK_STATUS" name="networkStatus"/>
+			<return-property column="FLOW_STATUS" name="flowStatus"/>
+			<return-property column="STATUS_DT" name="statusDt"/>
+			<return-property column="APPROVE_DT" name="approveDt"/>
+			<return-property column="APPROVE_BY" name="approveBy"/>
+			<return-property column="FLOW_REMARK" name="flowRemark"/>
+			<return-property column="USER_ID" name="userId"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MLG001_SEARCH(?, :menuGroup, :menuSubGroup, :strParam, :userId) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

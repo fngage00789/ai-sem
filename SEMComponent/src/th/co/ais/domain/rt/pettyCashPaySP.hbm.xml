@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="PettyCashPaySP" entity-name="searchPettyCash">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="pettyCashPayNo" type="java.lang.String"/>
+		<property name="requestName" type="java.lang.String" />
+		<property name="requestSubject" type="java.lang.String" />
+		<property name="requestAmt" type="java.lang.Double" />
+		<property name="vatTypeName" type="java.lang.String" />
+		<property name="vatType" type="java.lang.String" />
+		<property name="vatRate" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="incRequestAmt" type="java.lang.Double" />
+		<property name="excRequestAmt" type="java.lang.Double" />
+		<property name="receiptTaxFlag" type="java.lang.String" />
+		<property name="clrReceiptTaxFlag" type="java.lang.String" />
+		<property name="clrReceiptTaxFlagName" type="java.lang.String" />
+		<property name="requestDt" type="java.util.Date" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="siteName" type="java.lang.String" />
+		<property name="effectiveDt" type="java.util.Date" />
+		<property name="expireDt" type="java.util.Date" />
+		<property name="expenseType" type="java.lang.String" />
+		<property name="expenseTypeName" type="java.lang.String" />
+		<property name="dueDt" type="java.util.Date" />
+		<property name="pettyCashPayStatus" type="java.lang.String" />
+		<property name="pettyCashPayStatusName" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+		<property name="rentalPaymentId" type="java.lang.String" />
+		<property name="recordStatus" type="java.lang.String" />
+		<property name="version" type="java.lang.Long" />
+		<property name="refClrBatchNo" type="java.lang.String" />
+		<property name="taxInvoiceNo" type="java.lang.String" />
+		<property name="taxInvoiceDt" type="java.util.Date" />
+		<property name="exportDt" type="java.util.Date" />
+		<property name="exportFlag" type="java.lang.String" />
+	</class>
+	<class name="th.co.ais.domain.rt.PettyCashPaySP" entity-name="updateMRT008" >
+		<id name="statusResult" type="java.lang.String" />
+		<property name="exportDt" type="java.util.Date" />
+		<property name="refClrBatchNo" type="java.lang.String" />
+	</class>
+	
+	<sql-query name="spMrt008SrchPettyCashPay" callable="true">
+		<return class="th.co.ais.domain.rt.PettyCashPaySP" entity-name="searchPettyCash">
+			<return-property name="rowId" column="PETTY_CASH_PAY_ID" />
+			<return-property name="company" column="COMPANY"/>
+			<return-property name="pettyCashPayNo" column="PETTY_CASH_PAY_NO"/>
+			<return-property name="requestName" column="REQUEST_NAME" />
+			<return-property name="requestSubject" column="REQUEST_SUBJECT" />
+			<return-property name="requestAmt" column="REQUEST_AMT" />
+			<return-property name="vatTypeName" column="VAT_TYPE_NAME" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatRate" column="VAT_RATE" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="incRequestAmt" column="INC_REQUEST_AMT" />
+			<return-property name="excRequestAmt" column="EXC_REQUEST_AMT" />
+			<return-property name="receiptTaxFlag" column="RECEIPT_TAX_FLAG" />
+			<return-property name="clrReceiptTaxFlag" column="CLR_RECEIPT_TAX_FLAG" />
+			<return-property name="clrReceiptTaxFlagName" column="CLR_RECEIPT_TAX_FLAG_D" />
+			<return-property name="requestDt" column="REQUEST_DT" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="expenseTypeName" column="EXPENSE_TYPE_NAME" />
+			<return-property name="dueDt" column="DUE_DT" />
+			<return-property name="pettyCashPayStatus" column="PETTY_CASH_PAY_STATUS" />
+			<return-property name="pettyCashPayStatusName" column="PETTY_CASH_PAY_STATUS_NAME" />
+		
+			<return-property name="remark" column="REMARK" />
+			<return-property name="rentalPaymentId" column="RENTAL_PAYMENT_ID" />
+			<return-property name="recordStatus" column="RECORD_STATUS" />
+			<return-property name="version" column="VERSION" />
+			<return-property name="refClrBatchNo" column="REF_CLR_BATCH_NO" />
+			<return-property name="taxInvoiceNo" column="TAX_INVOICE_NO" />
+			<return-property name="taxInvoiceDt" column="TAX_INVOICE_DT" />
+			<return-property name="exportDt" column="EXPORT_DT" />
+			<return-property name="exportFlag" column="EXPORT_FLAG" />
+			
+		</return>
+	<![CDATA[ call SEM.SEM_SP_MRT008_SRCH_PAY(?, :company, :pettyCashPayNo, :region, :requestName, 
+									  :requestType, :requestSubject, :requestDtFrom, :requestDtTo, 
+									  :contractNo, :siteName, :dueDtFrom, :dueDtTo, :pettyCashPayStatus,
+									  :refClrBatchNo, :category) ]]>
+	</sql-query>
+	
+	<sql-query name="updateRT008PayExport" callable="true" >
+		<return class="th.co.ais.domain.rt.PettyCashPaySP" entity-name="updateMRT008">  
+			<return-property name="statusResult" column="P_RESULT" />
+			<return-property name="refClrBatchNo" column="REF_CLR_BATCH_NO" />
+			<return-property name="exportDt" column="EXPORT_DT" />
+		</return>
+	<![CDATA[ call SEM.SEM_SP_MRT008_UPD_PAY_EXPORT(?, :pettyCashPayIds, :username) ]]>
+	</sql-query>
+</hibernate-mapping>

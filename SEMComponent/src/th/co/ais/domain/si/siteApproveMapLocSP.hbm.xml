@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SiteApproveMapLocSP">
+		<id name="mapLocId" type="java.lang.String"/>
+		<property name="siteApproveId" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="locationName" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="stationType" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+	</class>
+	<sql-query name="querySearchSiteApproveMapLocBySiteApproveId" callable="true">
+		<return class="th.co.ais.domain.si.SiteApproveMapLocSP">
+			<return-property name="mapLocId" column="SITE_APPROVE_MAP_LOC_ID" />
+			<return-property name="siteApproveId" column="SITE_APPROVE_ID" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="region" column="REGION" />
+			<return-property name="stationType" column="STATION_TYPE"/>
+			<return-property name="networkStatus" column="NETWORK_STATUS"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI001_SRCH_MAP_LOC(?, :siteApproveId) ]]>
+	</sql-query>
+</hibernate-mapping>

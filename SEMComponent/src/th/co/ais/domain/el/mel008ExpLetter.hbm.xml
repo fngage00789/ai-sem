@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+ <class name="th.co.ais.domain.el.Mel008ExpLetter">
+  <id name="rowId" type="java.lang.String"/>
+  <!-- <property name="vendorCode" type="java.lang.String"/> -->
+      <property name="vendorName" type="java.lang.String"/>
+      <property name="vendorAddress1" type="java.lang.String"/>
+      <property name="vendorAddress2" type="java.lang.String"/>
+      <property name="contractNo" type="java.lang.String"/>
+ </class>
+ 
+ <sql-query name="spMel008Exp" callable="true" >
+   <return class="th.co.ais.domain.el.Mel008ExpLetter" >
+       <return-property name="rowId" column="SEQ" />
+      <!-- <return-property name="vendorCode" column="VENDOR" />-->
+       <return-property name="vendorName" column="VENDOR_NAME" />
+       <return-property name="vendorAddress1" column="VENDOR_ADDRESS1" />
+       <return-property name="vendorAddress2" column="VENDOR_ADDRESS2" />
+       <return-property name="contractNo" column="CONTRACT_NO"/>
+  </return>
+  <![CDATA[ call SEM_SP_MRT003_LETTER(?, :rowId) ]]>
+ </sql-query>
+</hibernate-mapping>

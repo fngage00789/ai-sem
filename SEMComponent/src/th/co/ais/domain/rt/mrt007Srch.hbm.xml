@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt007Srch">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="company" type="java.lang.String" />
+		<property name="transPaymentId" type="java.lang.String" />
+		<property name="paymentGroupNo" type="java.lang.String" />
+		<property name="paymentDocNo" type="java.lang.String" />
+		<property name="expenseType" type="java.lang.String" />
+		<property name="expenseTypeName" type="java.lang.String" />
+		<property name="paymentType" type="java.lang.String" />
+		<property name="paymentTypeName" type="java.lang.String" />
+		<property name="siteInfoId" type="java.lang.String" />
+		<property name="depositDetailId" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="siteName" type="java.lang.String" />
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="periodStartDt" type="java.sql.Date" />
+		<property name="periodEndDt" type="java.sql.Date" />
+		<property name="periodAmt" type="java.lang.Double" />
+		<property name="payVatType" type="java.lang.String" />
+		<property name="payVatTypeName" type="java.lang.String" />
+		<property name="payVatRate" type="java.lang.String" />
+		<property name="payVatAmt" type="java.lang.String" />
+		<property name="payWhtType" type="java.lang.String" />
+		<property name="payWhtTypeName" type="java.lang.String" />
+		<property name="payWhtRate" type="java.lang.String" />
+		<property name="payWhtAmt" type="java.lang.String" />
+		<property name="doc68" type="java.lang.String" />
+		<property name="doc92" type="java.lang.String" />
+		<property name="chqDt" type="java.sql.Date" />
+		<property name="chqNo" type="java.lang.String" />
+		<property name="chqClearingStatus" type="java.lang.String" />
+		<property name="transferDt" type="java.sql.Date" />
+		<property name="receiptNo" type="java.lang.String" />
+		<property name="taxInvoiceNo" type="java.lang.String" />
+		<property name="taxInvoiceDt" type="java.sql.Date" />
+		<property name="remark" type="java.lang.String" />
+		<property name="clrReceiptStatus" type="java.lang.String" />
+		<property name="clrReceiptStatusName" type="java.lang.String" />
+		<property name="clrRejectReason" type="java.lang.String" />
+		<property name="batchNo" type="java.lang.String" />
+		<property name="receiptStatus" type="java.lang.String" />
+		<property name="receiptStatusName" type="java.lang.String" />
+		<property name="periodNoStart" type="java.lang.String" />
+		<property name="periodNoEnd" type="java.lang.String" />
+		<property name="payExcAmt" type="java.lang.String" />
+		<property name="payIncAmt" type="java.lang.String" />
+		<property name="rentalClrRecId" type="java.lang.String" />
+		<property name="strNetAmnt" type="java.lang.String" />
+		<property name="oldContractNo" type="java.lang.String" />
+		<property name="siteAddr" type="java.lang.String" />
+		<property name="vendorAddr" type="java.lang.String" />
+		<property name="vendorTel" type="java.lang.String" />
+		<property name="vendorEmail" type="java.lang.String" />
+		<property name="contractName" type="java.lang.String" />
+		<property name="period" type="java.lang.String" />
+		<property name="reqType" type="java.lang.String" />
+		<property name="remainCount" type="java.math.BigDecimal" />
+		<property name="emailFlag" type="java.lang.String" />
+		<property name="smsFlag" type="java.lang.String" />
+		<property name="payPeriodType" type="java.lang.String" />
+		<property name="createBy" type="java.lang.String" />
+		<property name="smClearFrom" type="java.sql.Date" />
+		<property name="smClearTo" type="java.sql.Date" />
+		<property name="donateFlag" type="java.lang.String" />
+		<property name="clearType" type="java.lang.String" />
+		<property name="saSiteApprove" type="java.lang.String" />
+		<property name="taxId" type="java.lang.String" />
+		<property name="branchNo" type="java.lang.String" />	
+	</class>
+	<sql-query name="spMrt007Srch" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt007Srch">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="transPaymentId" column="TRANS_PAYMENT_ID" />
+			<return-property name="paymentGroupNo" column="PAYMENT_GROUP_NO" />
+			<return-property name="paymentDocNo" column="PAYMENT_DOC_NO" />	
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="expenseTypeName" column="EXPENSE_TYPE_NAME" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="paymentTypeName" column="PAYMENT_TYPE_NAME" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="depositDetailId" column="DEPOSIT_DETAIL_ID" />
+			<return-property name="region" column="REGION" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="periodStartDt" column="PERIOD_START_DT" />
+			<return-property name="periodEndDt" column="PERIOD_END_DT" />
+			<return-property name="periodAmt" column="PERIOD_AMT" />
+			<return-property name="payVatType" column="PAY_VAT_TYPE" />
+			<return-property name="payVatTypeName" column="PAY_VAT_TYPE_NAME" />
+			<return-property name="payVatRate" column="PAY_VAT_RATE" />
+			<return-property name="payVatAmt" column="PAY_VAT_AMT" />
+			<return-property name="payWhtType" column="PAY_WHT_TYPE" />
+			<return-property name="payWhtTypeName" column="PAY_WHT_TYPE_NAME" />
+			<return-property name="payWhtRate" column="PAY_WHT_RATE" />
+			<return-property name="payWhtAmt" column="PAY_WHT_AMT" />
+			<return-property name="doc68" column="DOC_68" />
+			<return-property name="doc92" column="DOC_92" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqNo" column="CHQ_NO" />
+			<return-property name="chqClearingStatus" column="CHQ_CLEARING_STATUS" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="receiptNo" column="RECEIPT_NO" />
+			<return-property name="taxInvoiceNo" column="TAX_INVOICE_NO" />
+			<return-property name="taxInvoiceDt" column="TAX_INVOICE_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="clrReceiptStatus" column="CLR_RECEIPT_STATUS" />
+			<return-property name="clrReceiptStatusName" column="CLR_RECEIPT_STATUS_NAME" />
+			<return-property name="clrRejectReason" column="CLR_REJECT_REASON" />
+			<return-property name="batchNo" column="BATCH_NO" />
+			<return-property name="receiptStatus" column="RECEIPT_STATUS" />
+			<return-property name="receiptStatusName" column="RECEIPT_STATUS_NAME" />
+			<return-property name="periodNoStart" column="PERIOD_NO_START" /> 
+			<return-property name="periodNoEnd" column="PERIOD_NO_END" />
+			<return-property name="payExcAmt" column="PAY_EXC_AMT" />
+			<return-property name="payIncAmt" column="PAY_INC_AMT" />
+			<return-property name="rentalClrRecId" column="RENTAL_CLR_REC_ID" />
+			<return-property name="strNetAmnt" column="NET_AMT" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			
+			<return-property name="siteAddr" column="SITE_ADDRESS" />
+			<return-property name="vendorAddr" column="VENDOR_ADDRESS" />
+			<return-property name="vendorTel" column="VENDOR_TEL" />
+			<return-property name="vendorEmail" column="VENDOR_EMAIL" />
+			<return-property name="contractName" column="CONTACT_NAME" />
+			<return-property name="period" column="PERIOD" />
+			<return-property name="reqType" column="REQ_TYPE" />
+			
+			<return-property name="remainCount" column="REMAIN_COUNT" />
+			<return-property name="emailFlag" column="EMAIL_FLAG" />
+			<return-property name="smsFlag" column="SMS_FLAG" />
+			<return-property name="payPeriodType" column="PAY_PERIOD_TYPE" />
+			<return-property name="createBy" column="CREATE_BY" />
+			
+			<return-property name="smClearFrom" column="SM_CLEAR_FROM" />
+			<return-property name="smClearTo" column="SM_CLEAR_TO" />
+			<return-property name="donateFlag" column="DONATE_FLAG" />
+			
+			
+			<return-property name="clearType" column="CLEAR_TYPE" />
+			<!-- expenseType -->
+			<return-property name="saSiteApprove" column="SA_SITE_APPROVE" />
+			<return-property name="taxId" column="TAX_ID" />
+			<return-property name="branchNo" column="BRANCH_NO" />
+			
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT007_SRCH(  ?,
+					cast(:company as varchar),
+					cast(:batchNo as varchar) ,
+					cast(:region as varchar),
+					cast(:contractNo as varchar),
+					cast(:siteName as varchar),
+					cast(:expenseType as varchar), 
+					cast(:dueDtFrom as date),
+					cast(:dueDtTo as date),
+					cast(:paymentType as varchar), 
+					cast(nullif(:amtStr,'') as numeric) , 
+					cast(:receiptType as varchar), 
+					cast(:clrReceiptStatus as varchar),
+					cast(:doc92 as varchar),
+					cast(:doc68 as varchar),
+					cast(:lessorName as varchar),
+					cast(:lessorHouseNo as varchar), 
+					cast(:province as varchar),
+					cast(:taxId as varchar),
+					cast(nullif(:periodNo,'') as numeric),
+					cast(:moduleType as varchar),
+					cast(:chqNo as varchar),
+					cast(:exportStatus as varchar),
+					cast(:localGovtStr as varchar),
+					cast(:strParam as varchar),
+					cast(:locationId as varchar),
+					cast(:locationCode as varchar),
+					cast(:siteCode as varchar),
+					cast(:receiptNo as varchar),
+					cast(:contractName as varchar),
+					cast(:reqType as varchar),
+					cast(:deposit as varchar),
+					cast(:createBy as varchar),
+					cast(:smClearFrom as date),
+					cast(:smClearTo as date)
+					)]]>
+	</sql-query>
+</hibernate-mapping>

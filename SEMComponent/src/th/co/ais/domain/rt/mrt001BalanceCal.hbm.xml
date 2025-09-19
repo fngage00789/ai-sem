@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001BalanceCal">
+		<id name="balanceAmt" type="java.lang.Double"/>
+		<property name="result" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMrt001BalanceCal" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001BalanceCal">
+			<return-property name="balanceAmt" column="P_BALANCE" />
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_BALANCE(?, cast(:rentalAmt as numeric), :rentPeriodType, cast(:effectiveDt as date), cast(:expireDt as date), :payPeriodType,
+											cast(:payPeriod as numeric), cast(:periodStartDt as date), cast(:periodEndDt as date), cast(:periodAmt as numeric), :siteRentCondId,
+											:vendorMasterId, :payeeMasterId) ]]>
+	</sql-query>
+</hibernate-mapping>

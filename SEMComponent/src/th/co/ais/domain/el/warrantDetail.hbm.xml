@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+ 	<class name="th.co.ais.domain.el.WarrantDetailSP">
+  		<id name="rowId" type="java.lang.String"/>
+  		<property name="company" type="java.lang.String"/>
+  		<property name="contractNo" type="java.lang.String"/>
+  		<property name="siteName" type="java.lang.String"/>
+  		<property name="locationId" type="java.lang.String"/>
+  		<property name="locationCode" type="java.lang.String"/>
+	  	<property name="warrantType" type="java.lang.String"/>
+	  	<property name="exportFlag" type="java.lang.String"/>
+	  	<property name="printDtFrom" type="java.sql.Date"/>
+	  	<property name="printDtTo" type="java.sql.Date"/>
+	  	<property name="sentSamuserDtFrom" type="java.sql.Date"/>
+	  	<property name="sentSamuserDtTo" type="java.sql.Date"/>
+	  </class>
+ 	<sql-query name="queryWarrantDetailSP" callable="true">
+		<return class="th.co.ais.domain.el.WarrantDetailSP">
+			<return-property name="rowId" column="WARRANT_ID" />
+			<return-property name="electricId" column="ELECTRIC_ID" />
+			<return-property name="printTimes" column="PRINT_TIMES" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="province" column="PROVINCE" />
+			<return-property name="warrantType" column="WARRANT_TYPE" />
+			<return-property name="meterId" column="METER_ID" />
+			<return-property name="receivedDt" column="RECEIVED_DT" />
+			<return-property name="printDt" column="PRINT_DT" />
+			<return-property name="sentSighDt" column="SENT_SIGN_DT" />
+			<return-property name="signDt" column="SIGN_DT" />
+			<return-property name="sentWarrantDt" column="SENT_WARRANT_DT" />
+			<return-property name="sentContractDt" column="SENT_CONTRACT_DT" />
+			<return-property name="sentSamuserDt" column="SENT_SAMUSER_DT" />
+			<return-property name="samuserName" column="SAMUSER_NAME" />
+			<return-property name="samuserTel" column="SAMUSER_TEL" />
+			<return-property name="exportFlag" column="EXPORT_FLAG" />
+			<return-property name="exportDt" column="EXPORT_DT" />
+			<return-property name="version" column="VERSION" />
+			<return-property name="recordStatus" column="RECORD_STATUS" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="createBy" column="CREATE_BY" />
+			<return-property name="createDt" column="CREATE_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		</return>
+		 <![CDATA[ call EBS.SEM_SP_EL_WARRANT_SRCH(?, :company, :contractNo, :siteName, :locationId, :locationCode, :warrantType, :exportFlag, :printDtFrom, :printDtTo, :sentSamuserDtFrom, :sentSamuserDtTo) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.DeductibleSP" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="deductId" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="tfType" type="java.lang.String" />
+		<property name="tfCode" type="java.lang.String" />
+		<property name="lsType" type="java.lang.String" />
+		<property name="lsCode" type="java.lang.String" />
+		<property name="deductAmt" type="java.lang.String" />
+		<property name="effDt" type="java.sql.Date" />
+		<property name="networkCode" type="java.lang.String" />
+		<property name="cCode" type="java.lang.String" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+	</class>
+	<sql-query name="queryDeductible" callable="true">
+		<return class="th.co.ais.domain.ir.DeductibleSP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="deductId" column="SEM_IR_DEDUCT_ID" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="tfType" column="TF_TYPE" />
+			<return-property name="tfCode" column="TF_CODE" />
+			<return-property name="lsType" column="LOSS_TYPE" />
+			<return-property name="lsCode" column="LS_CODE" />
+			<return-property name="effDt" column="EFF_DT" />
+			<return-property name="networkCode" column="NT_CODE" />
+			<return-property name="cCode" column="C_CODE" />
+			<return-property name="deductAmt" column="DEDUCT_AMT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR004_SRCH(?, :company, :networkType, :tfType, :effDt) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

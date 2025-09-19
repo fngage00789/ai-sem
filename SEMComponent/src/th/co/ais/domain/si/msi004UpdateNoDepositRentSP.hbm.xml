@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004UpdateNoDepositRentSP">
+		<id name="resultMsg" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="msi004UpdateNoDepositRent" callable="true">
+		<return class="th.co.ais.domain.si.Msi004UpdateNoDepositRentSP">
+			<return-property name="resultMsg" column="P_RESULT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_UPD_NO_DEPOSIT_R (?, :siteInfoId, :currentUser ) ]]>
+	</sql-query>
+</hibernate-mapping>

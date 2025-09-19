@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+
+ 
+ <class name="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="UploadMeterAddElPermissionFile">
+ 	
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ <class name="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="DeleteByRowUploadMeter">
+ 	
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+ <class name="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="UploadMeterPermissionFile">
+	<id name="rowId" type="java.lang.String"/>
+ 	<property name="lineNo" type="java.lang.String" ></property>
+ 	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="locationId" type="java.lang.String" ></property>
+ 	<property name="locationCode" type="java.lang.String" ></property>
+ 	<property name="meterType" type="java.lang.String" ></property>
+ 	<property name="transformerLabel" type="java.lang.String" ></property>
+ 	<property name="transformerSize" type="java.lang.String" ></property>
+ 	<property name="transformerSerial" type="java.lang.String" ></property>
+ 	<property name="transformerDt" type="java.util.Date" ></property>
+ 	<property name="meterSize" type="java.lang.String" ></property>
+ 	<property name="meterWire" type="java.lang.String" ></property>
+ 	<property name="onMeterDt" type="java.util.Date" ></property>
+ 	<property name="areaCode" type="java.lang.String" ></property>
+ 	<property name="meterId" type="java.lang.String" ></property>
+ 	<property name="areaName" type="java.lang.String" ></property>
+ 	<property name="status" type="java.lang.String" ></property>
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	<property name="errorDesc" type="java.lang.String" ></property>
+ 	<property name="contractNo" type="java.lang.String" ></property>
+ 	<property name="subSentDetailDt" type="java.util.Date" ></property>
+ 	<property name="supplier" type="java.lang.String" ></property>
+ 	<property name="rate" type="java.lang.String" ></property>
+ 	<property name="fee" type="java.lang.String" ></property>
+ 	<property name="siteCode" type="java.lang.String" ></property>
+ 	<property name="batchNo" type="java.lang.String" ></property>
+ 	<property name="contractStatus" type="java.lang.String" ></property>
+ 	<property name="siteInfoId" type="java.lang.String" ></property>
+ </class>
+ 
+ <class name="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="UploadMeterPermissionFileDtl">
+	<id name="rowId" type="java.lang.String"/>
+ 	<property name="lineNo" type="java.lang.String" ></property>
+ 	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="locationId" type="java.lang.String" ></property>
+ 	<property name="locationCode" type="java.lang.String" ></property>
+ 	<property name="meterType" type="java.lang.String" ></property>
+ 	<property name="transformerLabel" type="java.lang.String" ></property>
+ 	<property name="transformerSize" type="java.lang.String" ></property>
+ 	<property name="transformerSerial" type="java.lang.String" ></property>
+ 	<property name="transformerDt" type="java.util.Date" ></property>
+ 	<property name="meterSize" type="java.lang.String" ></property>
+ 	<property name="meterWire" type="java.lang.String" ></property>
+ 	<property name="onMeterDt" type="java.util.Date" ></property>
+ 	<property name="areaCode" type="java.lang.String" ></property>
+ 	<property name="meterId" type="java.lang.String" ></property>
+ 	<property name="areaName" type="java.lang.String" ></property>
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	<property name="contractNo" type="java.lang.String" ></property>
+ 	<property name="subSentDetailDt" type="java.util.Date" ></property>
+ 	<property name="supplier" type="java.lang.String" ></property>
+ 	<property name="rate" type="java.lang.String" ></property>
+ 	<property name="fee" type="java.lang.String" ></property>
+ 	<property name="siteCode" type="java.lang.String" ></property>
+ </class>
+ 
+ 
+  <class name="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="UploadMeterUpdatePermissionFile">
+	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+ <sql-query name="mel003AddUploadMeterPermissionFile" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="UploadMeterAddElPermissionFile">
+ 	
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[ call SEM.SEM_SP_MEL003_METER_IMP(?, :lineNo, :contractNo, :locationId, :locationCode, :siteName, :subSentDetailDtStr, :supplier, :transformerLabel, :transformerSize, :transformerSerial, :transformerDtStr, :meterSize, :meterWire, :onMeterDtStr, :areaCode, :meterId, :areaName, :rate, :meterType, :remark, :siteCode, :fee, :user, :fileName) ]]>
+ </sql-query>
+ 
+ <sql-query name="mel003AddFileName" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="UploadMeterAddElPermissionFile">
+ 	
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[ call SEM.SEM_SP_MEL003_METER_IMP_LOG(?, :company, :user, :fileName) ]]>
+ </sql-query>
+ <sql-query name="mel003SearchUploadMeterWarrantCaseSuccess" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="UploadMeterPermissionFile">
+ 		<return-property name="rowId" column="EL_IMPORT_METER_DATA_ID"></return-property>
+ 		<return-property name="lineNo" column="LINE_NO"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="locationId" column="LOCATION_ID"></return-property>
+ 		<return-property name="locationCode" column="LOCATION_CODE"></return-property>
+ 		<return-property name="contractNo" column="CONTRACT_NO"></return-property>
+ 		<return-property name="subSentDetailDt" column="SUB_DT"></return-property>
+ 		<return-property name="supplier" column="SUPPLIER"></return-property>
+ 		<return-property name="rate" column="EL_METER_RATE"></return-property>
+ 		<return-property name="siteCode" column="SITE_CODE"></return-property>
+ 		<return-property name="fee" column="EL_PAY_TYPE"></return-property>
+ 		<return-property name="errorDesc" column="Error_MSG"></return-property>
+ 		
+ 		<return-property name="transformerLabel" column="EL_TRANSFORMER_LABEL"></return-property>
+ 		<return-property name="transformerSize" column="EL_TRANSFORMER_SIZE"></return-property>
+ 		<return-property name="transformerSerial" column="EL_TRANSFORMER_SERIEL"></return-property>
+ 		<return-property name="transformerDt" column="EL_TRANSFORMER_DT"></return-property>
+ 		<return-property name="meterSize" column="EL_METER_SIZE"></return-property>
+ 		<return-property name="meterWire" column="EL_METER_WIRE"></return-property>
+ 		<return-property name="onMeterDt" column="EL_ON_METER_DT"></return-property>
+ 		<return-property name="areaCode" column="EL_AREA_CODE"></return-property>
+ 		<return-property name="meterId" column="METER_ID"></return-property>
+ 		<return-property name="areaName" column="EL_AREA_NAME"></return-property>
+ 		<return-property name="remark" column="EL_REMARK"></return-property>
+ 		<return-property name="status" column="IMPORT_STATUS"></return-property>
+ 		<return-property name="meterType" column="EL_METER_TYPE"></return-property>
+ 		<return-property name="batchNo" column="BATCH_NO"></return-property>
+ 		<return-property name="contractStatus" column="CONTRACT_STATUS"></return-property>
+ 		<return-property name="siteInfoId" column="SITE_INFO_ID"></return-property>
+ 	</return>
+ 	<![CDATA[ call SEM.SEM_SP_MEL003_METER_LIST(?, :logId, :status) ]]>
+ 	</sql-query>
+ 	
+ 	
+ 	<sql-query name="mel003SearchForEdit" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="UploadMeterPermissionFileDtl">
+ 		<return-property name="rowId" column="EL_IMPORT_METER_DATA_ID"></return-property>
+ 		<return-property name="lineNo" column="LINE_NO"></return-property>
+ 		<return-property name="locationId" column="LOCATION_ID"></return-property>
+ 		<return-property name="locationCode" column="LOCATION_CODE"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="contractNo" column="CONTRACT_NO"></return-property>
+ 		<return-property name="subSentDetailDt" column="SUB_DT"></return-property>
+ 		<return-property name="supplier" column="Supplier"></return-property>
+ 		<return-property name="transformerLabel" column="EL_TRANSFORMER_LABEL"></return-property>
+ 		<return-property name="transformerSize" column="EL_TRANSFORMER_SIZE"></return-property>
+ 		<return-property name="transformerSerial" column="EL_TRANSFORMER_SERIEL"></return-property>
+ 		<return-property name="transformerDt" column="EL_TRANSFORMER_DT"></return-property>
+ 		<return-property name="meterSize" column="EL_METER_SIZE"></return-property>
+ 		<return-property name="meterWire" column="EL_METER_WIRE"></return-property>
+ 		<return-property name="onMeterDt" column="EL_ON_METER_DT"></return-property>
+ 		<return-property name="areaCode" column="EL_AREA_CODE"></return-property>
+ 		<return-property name="meterId" column="METER_ID"></return-property>
+ 		<return-property name="areaName" column="EL_AREA_NAME"></return-property>
+ 		<return-property name="meterType" column="EL_METER_TYPE"></return-property>
+ 		<return-property name="rate" column="EL_METER_RATE"></return-property>
+ 		<return-property name="remark" column="EL_REMARK"></return-property>
+ 		<return-property name="siteCode" column="SITE_CODE"></return-property>
+ 		<return-property name="fee" column="EL_PAY_TYPE"></return-property>
+ 	
+ 	</return>
+ 	<![CDATA[ call SEM.SEM_SP_MEL003_METER_LIST_DTL(?, :rowId) ]]>
+ 	</sql-query>
+ 	
+  	<sql-query name="mel003UpdateElPermissionWarrant" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="UploadMeterUpdatePermissionFile">
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL003_METER_DTL_UPD(?, :rowId, :contractNo, :locationId, :locationCode, :siteCode, :siteName, :subSentDetailDt,
+ 	 :supplier, :transformerLabel, :transformerSize, :transformerSerial, :transformerDt, :meterSize, :meterWire,:onMeterDt, :areaCode, :meterId
+ 	 , :areaName, :meterType, :rate, :remark, :fee, :user) ]]>
+ 	</sql-query>
+ 	
+ 	<sql-query name="mel003DeleteByRowUploadFile" callable="true">
+ 	<return class="th.co.ais.domain.el.UploadMeterPermistionWarrant" entity-name="DeleteByRowUploadMeter">
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[ call SEM.SEM_SP_MEL003_METER_DTL_DEL(?, :rowId, :user) ]]>
+ 	</sql-query>
+ </hibernate-mapping>

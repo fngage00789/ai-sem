@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+	<class name="th.co.ais.domain.pt.Mpt002Srch">
+		<id name="tmpRowId" type="java.lang.String"/>
+		<property name="rowId" type="java.lang.String"/>
+		<property name="pTaxEstmFlag" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="preContractNo" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="pTaxYear" type="java.lang.Integer" />
+		<property name="siteStatus" type="java.lang.String" />
+		<property name="payGovtFlag" type="java.lang.String" />
+		<property name="govtName" type="java.lang.String" />
+		<property name="province" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="contractEffDt" type="java.sql.Date" />
+		<property name="contractExpDt" type="java.sql.Date" />
+		<property name="pTaxStartDt" type="java.sql.Date" />
+		<property name="pTaxEndDt" type="java.sql.Date" />
+		<property name="siteName" type="java.lang.String" />
+		<property name="siteAddress" type="java.lang.String" />
+		<property name="lessorName" type="java.lang.String" />
+		<property name="siteInfoId" type="java.lang.String" />
+		<property name="preSiteInfoId" type="java.lang.String" />
+		<property name="vendorMasterId" type="java.lang.String" />
+	</class>
+	<sql-query name="spMpt002Srch" callable="true">
+		<return class="th.co.ais.domain.pt.Mpt002Srch">
+			<return-property name="tmpRowId" column="ROW_ID" />
+			<return-property name="rowId" column="PTAX_MASTER_ID" />
+			<return-property name="pTaxEstmFlag" column="PTAX_ESTM_FLAG" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="preContractNo" column="PRE_CONTRACT_NO" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="pTaxYear" column="PTAX_YEAR" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="payGovtFlag" column="PAY_GOVT_FLAG" />
+			<return-property name="govtName" column="GOVT_NAME" />
+			<return-property name="province" column="PROVINCE" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="contractEffDt" column="CONTRACT_EFF_DT" />
+			<return-property name="contractExpDt" column="CONTRACT_EXP_DT" />
+			<return-property name="pTaxStartDt" column="PTAX_START_DT" />
+			<return-property name="pTaxEndDt" column="PTAX_END_DT" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="siteAddress" column="SITE_ADDRESS" />
+			<return-property name="lessorName" column="LESSOR_NAME" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="preSiteInfoId" column="PRE_SITE_INFO_ID" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+		</return>
+		<![CDATA[ call SEM_SP_MPT002_SRCH(?, :pTaxYearFrom, :pTaxYearTo, :contractNo, :company, :region, :province, :amphur, :pTaxPayType, :payGovtFlag, :lessorName, :govtName, :pTaxStatus, :payeeName) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt007UpdateDocSP" entity-name="updateDocSrchObj">
+		<id name="rowId" type="java.lang.String" />
+		<property name="siteInfoId" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="siteName" type="java.lang.String" />
+		<property name="locationId" type="java.lang.String" />
+		<property name="vendorId" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="paymentAmt" type="java.math.BigDecimal" />
+		<property name="vat" type="java.math.BigDecimal" />
+		<property name="whtAmt" type="java.math.BigDecimal" />
+		<property name="totalAmt" type="java.math.BigDecimal" />
+		<property name="chqNo" type="java.lang.String" />
+		<property name="chqDt" type="java.util.Date" />
+		<property name="transferDt" type="java.util.Date" />
+		<property name="doc68" type="java.lang.String" />
+		<property name="doc68Dt" type="java.util.Date" />
+		<property name="doc92" type="java.lang.String" />
+		<property name="doc92Dt" type="java.util.Date" />
+		<property name="payExcAmt" type="java.math.BigDecimal" />
+		<property name="periodStartDt" type="java.util.Date" />
+		<property name="periodEndDt" type="java.util.Date" />
+		<property name="periodNoStart" type="java.math.BigDecimal" />
+		<property name="periodNoEnd" type="java.math.BigDecimal" />
+	</class>
+	<class name="th.co.ais.domain.rt.Mrt007UpdateDocSP" entity-name="updateDocObj">
+		<id name="result" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+	</class>
+	<class name="th.co.ais.domain.rt.Mrt007UpdateDocSP" entity-name="updateClrStatusObj">
+		<id name="result" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+	</class>
+	<class name="th.co.ais.domain.rt.Mrt007UpdateDocSP" entity-name="updateClrBatchObj">
+		<id name="result" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+	</class>
+	<!-- << classes declarement -->
+	
+	<!-- ============================================================================== -->
+	<!-- ============================================================================== -->
+	
+	<!-- >> queries declarement -->
+	
+	<sql-query name="spMrt007UpdateDocSrch" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt007UpdateDocSP" entity-name="updateDocSrchObj">
+			<return-property name="rowId" column="TRANS_PAYMENT_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="vendorId" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="periodStartDt" column="PERIOD_START_DT" />
+			<return-property name="periodEndDt" column="PERIOD_END_DT" />
+			<return-property name="periodNoStart" column="PERIOD_NO_START" />
+			<return-property name="periodNoEnd" column="PERIOD_NO_END" />
+			<return-property name="paymentAmt" column="PERIOD_AMT" />
+			<return-property name="payExcAmt" column="PAY_EXC_AMT" />
+			<return-property name="vat" column="PAY_VAT_AMT" />
+			<return-property name="whtAmt" column="PAY_WHT_AMT" />
+			<return-property name="totalAmt" column="PAY_INC_AMT" />
+			<return-property name="chqNo" column="CHQ_NO" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="doc68" column="DOC_68" />
+			<return-property name="doc68Dt" column="DOC_68_DT" />
+			<return-property name="doc92" column="DOC_92" />
+			<return-property name="doc92Dt" column="DOC_92_DT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT007_UPD_DOC_SRCH(?, :transPaymentId) ]]>
+	</sql-query>
+	<sql-query name="spMrt007UpdateDocSave" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt007UpdateDocSP" entity-name="updateDocObj">
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT007_DOC_UPD(?, :rowId, :doc68, :doc68Dt, :doc92, :doc92Dt ) ]]>
+	</sql-query>
+	<sql-query name="spMrt007UpdateClrStatus" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt007UpdateDocSP" entity-name="updateClrStatusObj">
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT007_UPD_CLR_FLAG(?, :rowId, :clrReceiptStatus, :userId, :remark) ]]>
+	</sql-query>
+	
+ 	<sql-query name="spMrt007UpdateCrlBatch" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt007UpdateDocSP" entity-name="updateClrBatchObj">
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT007_UPD_CLEAR_BATCH(?, :rowId, :userId) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.gm">
+ <class entity-name="queryVendorMaster" name="th.co.ais.domain.gm.VendorMasterSP">
+  <id name="rowId" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorCode" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorName" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="idCard" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="taxId" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="contractNo" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="siteName" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorStatus" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="bookBankStatus" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="remark" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorMasterId" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="contractNoDesc" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="expenseType" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorMapPayeeId" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeName" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeStatus" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeBookBankStatus" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="color" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="branchId" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="batchNo" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="bookbankBatchNo" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeBatchNo" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeBookbankBatchNo" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="lotNo" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="actionType" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="reqType" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="expenseTypeDesc" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="bankName" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="bankAccNo" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="bankAccName" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeBankName" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeBankAccNo" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeBankAccName" type="java.lang.String"/>
+ </class>
+ <class entity-name="checkVendorMaster" name="th.co.ais.domain.gm.VendorMasterSP">
+  <id name="rowId" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorCode" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorName1" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="idCard" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="taxId" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="address" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="hqFlag" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="branchNo" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="company" type="java.lang.String"/>
+ </class>
+ <class entity-name="checkVendorMasterSave" name="th.co.ais.domain.gm.VendorMasterSP">
+  <id name="pResult" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="remark" type="java.lang.String"/>
+ </class>
+ <class entity-name="searchVendoeMaster" name="th.co.ais.domain.gm.VendorMasterSP">
+  <id name="rowId" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorCode" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorName" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeMasterId" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeCode" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeName" type="java.lang.String"/>
+ </class>
+ <class entity-name="mct001SrchCon" name="th.co.ais.domain.gm.VendorMasterSP">
+  <id name="rowId" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="contractNo" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorCode" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="vendorName" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="payeeName" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="expenseTypeDesc" type="java.lang.String"/>
+ </class>
+ <class entity-name="mct001ChkHq" name="th.co.ais.domain.gm.VendorMasterSP">
+  <id name="pResult" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="pMessageCode" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="pHqFlag" type="java.lang.String"/>
+	  <property generated="never" lazy="false" name="pBranchNo" type="java.lang.String"/>
+ </class>
+ <class entity-name="mct001SendVendorToSAP" name="th.co.ais.domain.gm.VendorMasterSP">
+ 	<id name="retResult" type="java.lang.String" />
+ 	<property name="retMessage" type="java.lang.String" generated="never" lazy="false"></property>
+ 	<property name="fileName" type="java.lang.String" generated="never" lazy="false"></property>
+ </class>
+ <class entity-name="mct001SendVendorBookbank" name="th.co.ais.domain.gm.VendorMasterSP">
+ 	<id name="pResult" type="java.lang.String" />
+ 		<property name="remark" type="java.lang.String" generated="never" lazy="false"></property>
+ </class>
+ <class entity-name="mct001SendPayee" name="th.co.ais.domain.gm.VendorMasterSP">
+ 	<id name="pResult" type="java.lang.String" />
+ 		<property name="remark" type="java.lang.String" generated="never" lazy="false"></property>
+ </class>
+ <class entity-name="mct001SendPayeeBookbank" name="th.co.ais.domain.gm.VendorMasterSP">
+ 	<id name="pResult" type="java.lang.String" />
+ 		<property name="remark" type="java.lang.String" generated="never" lazy="false"></property>
+ </class>
+ <class entity-name="queryCity" name="th.co.ais.domain.gm.VendorMasterSP">
+ 	<id name="province" type="java.lang.String" />
+ 		<property name="provinceCode" type="java.lang.String" generated="never" lazy="false"></property>
+ </class>
+ <class entity-name="queryAmphur" name="th.co.ais.domain.gm.VendorMasterSP">
+ 	<id name="amphur" type="java.lang.String" />
+ 		<property name="amphurCode" type="java.lang.String" generated="never" lazy="false"></property>
+ </class>
+ <class entity-name="queryDistrict" name="th.co.ais.domain.gm.VendorMasterSP">
+ 	<id name="district" type="java.lang.String" />
+ 		<property name="districtCode" type="java.lang.String" generated="never" lazy="false"></property>
+ </class>
+ <class entity-name="mct001ClearBatch" name="th.co.ais.domain.gm.VendorMasterSP">
+ 	<id name="pResult" type="java.lang.String" />
+ 		<property name="remark" type="java.lang.String" generated="never" lazy="false"></property>
+ </class>
+  <class entity-name="mel001SrchVendor" name="th.co.ais.domain.gm.VendorMasterSP">
+ 	<id name="vendorMasterId" type="java.lang.String" />
+ 		<property name="vendorCode" type="java.lang.String" generated="never" lazy="false"></property>
+ 		<property name="vendorName" type="java.lang.String" generated="never" lazy="false"></property>
+ </class>
+ <!-- << classes declarement -->
+    
+    <!-- ============================================================================== -->
+    <!-- ============================================================================== -->
+    
+ <!-- >> queries declarement -->
+ <sql-query callable="true" name="queryVendorMaster">
+ <return alias="" class="th.co.ais.domain.gm.VendorMasterSP" entity-name="queryVendorMaster">
+	   <return-property column="ROW_ID" name="rowId"/>
+	   <return-property column="VENDOR_CODE" name="vendorCode"/>
+	   <return-property column="VENDOR_NAME" name="vendorName"/>
+	   <return-property column="ID_CARD" name="idCard"/>
+	   <return-property column="TAX_ID" name="taxId"/>
+	   <return-property column="CONTRACT_NO" name="contractNo"/>
+	   <return-property column="SITE_NAME" name="siteName"/>
+	   <return-property column="VENDOR_STATUS" name="vendorStatus"/>
+	   <return-property column="BOOKBANK_STATUS" name="bookBankStatus"/>
+	   <return-property column="REMARK" name="remark"/>
+	   <return-property column="VENDOR_MASTER_ID" name="vendorMasterId"/>
+	   <return-property column="CONTRACT_NO_DESC" name="contractNoDesc"/>
+	   <return-property column="EXPENSE_TYPE" name="expenseType"/>
+	   <return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+	   <return-property column="PAYEE_NAME" name="payeeName"/>
+	   <return-property column="PAYEE_STATUS" name="payeeStatus"/>
+	   <return-property column="PAYEE_BOOKBANK_STATUS" name="payeeBookBankStatus"/>
+	   <return-property column="COLOR" name="color"/>
+	   <return-property column="BRANCH_NO" name="branchId"/>
+	   <return-property column="BATCH_NO" name="batchNo"/>
+	   <return-property column="VENDOR_BOOKBANK_BATCH_NO" name="bookbankBatchNo"/>
+	   <return-property column="PAYEE_BATCH_NO" name="payeeBatchNo"/>
+	   <return-property column="PAYEE_BOOKBANK_BATCH_NO" name="payeeBookbankBatchNo"/>
+	   <return-property column="LOT_NO" name="lotNo"/>
+	   <return-property column="ACTION_TYPE" name="actionType"/>
+	   <return-property column="REQ_TYPE" name="reqType"/>
+	   <return-property column="EXPENSE_TYPE_DESC" name="expenseTypeDesc"/>
+	   <return-property column="BANK_NAME" name="bankName"/>
+	   <return-property column="BANK_ACC_NO" name="bankAccNo"/>
+	   <return-property column="BANK_ACC_NAME" name="bankAccName"/>
+	   <return-property column="PAYEE_BANK_NAME" name="payeeBankName"/>
+	   <return-property column="PAYEE_BANK_ACC_NO" name="payeeBankAccNo"/>
+	   <return-property column="PAYEE_BANK_ACC_NAME" name="payeeBankAccName"/>
+  </return>
+  <![CDATA[ call SEM.SEM_SP_MCT001_SRCH(?, :vendorCode, :vendorName, :idCard,
+	:taxId, :contractNo, :siteName, :bankAccNo, :bankAccName, :vendorStatus,
+	:bookBankStatus, :company, :region, :picoFlagStr,:payeeStatus, :payeeBookBankStatus,
+    :batchNo, :lotNo, :createBy) ]]>
+ </sql-query>
+ <sql-query callable="true" name="queryCheckVendorMasterExisted">
+ <return alias="" class="th.co.ais.domain.gm.VendorMasterSP" entity-name="checkVendorMaster">
+   <return-property column="VENDOR_MASTER_ID" name="rowId"/>
+   <return-property column="VENDOR_CODE" name="vendorCode"/>
+   <return-property column="VENDOR_NAME1" name="vendorName1"/>
+   <return-property column="ID_CARD" name="idCard"/>
+   <return-property column="TAX_ID" name="taxId"/>
+   <return-property column="ADDRESS" name="address"/>
+   <return-property column="HQ_FLAG" name="hqFlag"/>
+   <return-property column="BRANCH_NO" name="branchNo"/>
+   <return-property column="COMPANY" name="company"/>
+  </return>
+  <![CDATA[ call SEM.SEM_SP_MCT001_CHK_V(?, :vendorType, :vendorName1, :idCard, :taxId, :tax13) ]]>
+ </sql-query>
+ <!-- check vender Befor Save -->
+ <sql-query callable="true" name="queryCheckVendorMasterBeforSave">
+ <return alias="" class="th.co.ais.domain.gm.VendorMasterSP" entity-name="checkVendorMasterSave">
+   <return-property column="RESULT" name="pResult"/>
+   <return-property column="REMARK" name="remark"/>
+  </return>
+  <![CDATA[ call SEM.SEM_SP_MCT001_CHK_S(?, :vendorType, :vendorName1, :idCard, :tax13, :branchNo) ]]>
+ </sql-query>
+ <!-- end check vender Befor Save -->
+ <sql-query callable="true"
+   name="searchVendorMaster"><![CDATA[ call SEM.sem_sp_mir010_srch_v(?) ]]><return
+   alias="" class="th.co.ais.domain.gm.VendorMasterSP" entity-name="searchVendoeMaster">
+   <return-property column="VENDOR_MASTER_ID" name="rowId"/>
+   <return-property column="VENDOR_CODE" name="vendorCode"/>
+   <return-property column="VENDOR_NAME" name="vendorName"/>
+   <return-property column="PAYEE_MASTER_ID" name="payeeMasterId"/>
+   <return-property column="PAYEE_CODE" name="payeeCode"/>
+   <return-property column="PAYEE_NAME" name="payeeName"/>
+  </return>
+ </sql-query>
+ <sql-query callable="true"
+   name="mct001SrchCon"><![CDATA[ call SEM.SEM_SP_MCT001_SRCH_CON(?, :contractNo ,:vendorMasterId) ]]><return
+   alias="" class="th.co.ais.domain.gm.VendorMasterSP" entity-name="mct001SrchCon">
+   <return-property column="VENDOR_MAP_PAYEE_ID" name="rowId"/>
+   <return-property column="CONTRACT_NO" name="contractNo"/>
+   <return-property column="VENDOR_CODE" name="vendorCode"/>
+   <return-property column="VENDOR_NAME" name="vendorName"/>
+   <return-property column="PAYEE_NAME" name="payeeName"/>
+   <return-property column="EXPENSE_TYPE_DESC" name="expenseTypeDesc"/>
+  </return>
+ </sql-query>
+ <sql-query callable="true" name="mct001ChkHq">
+ 	<return alias="" class="th.co.ais.domain.gm.VendorMasterSP" entity-name="mct001ChkHq">
+	   <return-property column="P_RESULT" name="pResult"/>
+	   <return-property column="P_MESSAGE_CODE" name="pMessageCode"/>
+	   <return-property column="P_HQ_FLAG" name="pHqFlag"/>
+	   <return-property column="P_BRANCH_NO" name="pBranchNo"/>
+  	</return>
+  	<![CDATA[ call SEM.SEM_SP_MCT001_CHK_HQ(?, :hqFlag ,:branchNo, :vendorType, :rowId, :taxId, :tax13) ]]>
+ </sql-query>
+ <sql-query name="mct001SendVendorToSAP" callable="true">
+ 	<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="mct001SendVendorToSAP">
+ 		<return-property name="retResult" column="P_RESULT"></return-property>
+ 		<return-property name="retMessage" column="P_REMARK"></return-property>
+ 		<return-property name="fileName" column="FILE_NAME"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MCT001_VM_ACT(?, :vendorMapPayeeId, :userId)]]>
+ </sql-query>
+ <sql-query name="mct001SendVendorBookbank" callable="true">
+ 	<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="mct001SendVendorBookbank">
+ 		<return-property name="pResult" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MCT001_VB_ACT(?, :vendorMapPayeeId, :userId)]]>
+ </sql-query>
+ <sql-query name="mct001SendPayee" callable="true">
+ 	<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="mct001SendPayee">
+ 		<return-property name="pResult" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MCT001_PM_ACT(?, :vendorMapPayeeId, :userId)]]>
+ </sql-query>
+ <sql-query name="mct001SendPayeeBookbank" callable="true">
+ 	<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="mct001SendPayeeBookbank">
+ 		<return-property name="pResult" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MCT001_PB_ACT(?, :vendorMapPayeeId, :userId)]]>
+ </sql-query>
+ <sql-query name="queryCity">
+ 	<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="queryCity">
+ 		<return-property name="province" column="PROVINCE"></return-property>
+ 		<return-property name="provinceCode" column="PROVINCE_CODE"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_PG_MT_GET_PROVINCE_DATA(?)]]>
+ </sql-query>
+ <sql-query name="queryAmphur" >
+ 	<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="queryAmphur">
+ 		<return-property name="amphur" column="CITY"></return-property>
+ 		<return-property name="amphurCode" column="CITY_CODE"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_PG_MT_GET_CITY_DATA(:provinceCode, ?)]]>
+ </sql-query>
+ <sql-query name="queryDistrict">
+ 	<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="queryDistrict">
+ 		<return-property name="district" column="DISTRICT"></return-property>
+ 		<return-property name="districtCode" column="DISTRICT_CODE"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_PG_MT_GET_DISTRICT_DATA(:provinceCode, :amphurCode, ?)]]>
+ </sql-query>
+ <sql-query name="mct001ClearBatch" callable="true">
+ 	<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="mct001ClearBatch">
+ 		<return-property name="pResult" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MCT001_CLEAR_BATCH(?, :vendorMapPayeeId, :userId)]]>
+ </sql-query>
+ 
+ <sql-query name="mel001SrchVendor" callable="true">
+ 	<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="mel001SrchVendor">
+ 		<return-property name="vendorMasterId" column="VENDOR_MASTER_ID"></return-property>
+ 		<return-property name="vendorCode" column="VENDOR_CODE"></return-property>
+ 		<return-property name="vendorName" column="VENDOR_NAME"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MEL001_SRCH_VENDOR(?, :expenseType, :contractNo)]]>
+ </sql-query>
+</hibernate-mapping>

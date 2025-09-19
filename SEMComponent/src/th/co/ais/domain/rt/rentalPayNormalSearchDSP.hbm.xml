@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.RentalPayNormalSearchDSP" entity-name="querySearch">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="totalAmt" type="java.lang.Double"/>
+		<property name="depositFlag" type="java.lang.String"/>
+		<property name="depositAmt" type="java.lang.Double"/>
+		<property name="paymentAmt" type="java.lang.Double"/>
+		<property name="paymentType" type="java.lang.String"/>
+		<property name="paymentMethod" type="java.lang.String"/>
+		<property name="bankAccNo" type="java.lang.String"/>
+		<property name="bankName" type="java.lang.String"/>
+		<property name="chqDt" type="java.sql.Date"/>
+		<property name="chqReceiveDt" type="java.sql.Date"/>
+		<property name="transferDt" type="java.sql.Date"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="dueDt" type="java.sql.Date"/>		
+		<property name="periodNo" type="java.lang.Integer"/>
+		<property name="payPeriodType" type="java.lang.String"/>
+		<property name="periodY" type="java.lang.Integer"/>
+		<property name="periodM" type="java.lang.Integer"/>
+		<property name="periodD" type="java.lang.Integer"/>
+		<property name="calYear" type="java.lang.Integer"/>
+		<property name="calMonth" type="java.lang.Integer"/>
+		<property name="dueAmt" type="java.lang.Double"/>		
+		<property name="vatType" type="java.lang.String"/>
+		<property name="excAmt" type="java.lang.Double"/>	
+		<property name="vatRate" type="java.lang.Double"/>	
+		<property name="vatAmt" type="java.lang.Double"/>	
+		<property name="incAmt" type="java.lang.Double"/>	
+		<property name="whtRate" type="java.lang.Double"/>	
+		<property name="whtAmt" type="java.lang.Double"/>	
+		<property name="maxDepositAmt" type="java.lang.Double"/>	
+		<property name="periodType" type="java.lang.String"/>
+		<property name="whtType" type="java.lang.String"/>
+		<property name="fineFlag" type="java.lang.String"/>
+		<property name="extraFlag" type="java.lang.String"/>
+		<property name="discountFlag" type="java.lang.String"/>
+		<property name="vatBefore" type="java.lang.String"/>
+		<property name="discountRate" type="java.lang.Integer"/>
+		<property name="discountAmt" type="java.lang.Double"/>
+		<property name="effDate" type="java.sql.Date"/>
+		<property name="expDate" type="java.sql.Date"/>
+		<property name="siteName" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.rt.RentalPayNormalSearchDSP" entity-name="saveCreate">
+		<id name="resultMsg" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.rt.RentalPayNormalSearchDSP" entity-name="calAmt">
+		<id name="excAmt" type="java.lang.Double"/>
+		<property name="vatAmt" type="java.lang.Double"/>	
+		<property name="incAmt" type="java.lang.Double"/>	
+		<property name="whtAmt" type="java.lang.Double"/>	
+	</class>
+	
+	<sql-query name="querySearchRentalPayNormalD" callable="true" >
+		<return class="th.co.ais.domain.rt.RentalPayNormalSearchDSP" entity-name="querySearch">
+			<return-property name="rowId" column="RENTAL_PAYMENT_ID" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="depositFlag" column="DEPOSIT_FLAG" />
+			<return-property name="depositAmt" column="DEPOSIT_AMT" />
+			<return-property name="paymentAmt" column="PAYMENT_AMT" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="bankAccNo" column="BANK_ACC_NO" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="dueDt" column="DUE_DT" />
+			<return-property name="periodNo" column="PERIOD_NO" />
+			<return-property name="payPeriodType" column="PAY_PERIOD_TYPE" />
+			<return-property name="periodY" column="PAY_PERIOD_Y" />
+			<return-property name="periodM" column="PAY_PERIOD_M" />
+			<return-property name="periodD" column="PAY_PERIOD_D" />
+			<return-property name="calYear" column="CAL_YEAR" />
+			<return-property name="calMonth" column="CAL_MONTH" />
+			<return-property name="dueAmt" column="DUE_AMT" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatRate" column="VAT_RATE" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="incAmt" column="INC_AMT" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="maxDepositAmt" column="MAX_DEPOSIT_AMT" />
+			<return-property name="periodType" column="PERIOD_TYPE" />
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="fineFlag" column="PENAL_FLAG" />
+			<return-property name="extraFlag" column="EXTRA_FLAG" />
+			<return-property name="effDate" column="EFFECTIVE_DT" />
+			<return-property name="expDate" column="EXPIRE_DT" />
+			<return-property name="discountFlag" column="DISCOUNT_FLAG" />
+			<return-property name="vatBefore" column="DISCOUNT_COND" />
+			<return-property name="discountRate" column="DISCOUNT_RATE" />
+			<return-property name="discountAmt" column="DISCOUNT_AMT" />
+			<return-property name="siteName" column="SITE_NAME" />
+		</return>
+		<![CDATA[ call SEM_SP_MRT003_SRCH_D(?, :rowId) ]]>
+	</sql-query>
+	
+	<sql-query name="saveRentalCreate" callable="true" >
+		<return class="th.co.ais.domain.rt.RentalPayNormalSearchDSP" entity-name="saveCreate">
+			<return-property name="resultMsg" column="P_RESULT" />
+		</return>
+		<![CDATA[ call SEM_SP_MRT003_GEN_SPC(
+					 ?,
+					:contractNo,
+					:rentalDetailId,
+					:expenseType,
+					:expense,
+					:whtType,
+				cast(:whtRate as numeric),
+					:vatType,
+				cast(:vatRate as numeric),
+				cast(:periodStartDt  as date),
+				cast(:periodEndDt as date),
+				cast(:dueAmt as numeric),
+				cast(:excAmt as numeric),
+				cast(:vatAmt as numeric),
+				cast(:incAmt as numeric),
+				cast(:whtAmt as numeric),
+					:vendorMasterId,
+					:payeeId,
+					:remark,
+					:user ) ]]>
+	</sql-query>
+	
+	<sql-query name="rentalCalAmt" callable="true" >
+		<return class="th.co.ais.domain.rt.RentalPayNormalSearchDSP" entity-name="calAmt">
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="incAmt" column="INC_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+		</return>
+		<![CDATA[ call SEM_SP_MRT003_CAL_AMOUNT(?, :vatType, cast(:vatRate as numeric), :whtType, cast(:whtRate as numeric), cast(:dueAmt as numeric)) ]]>
+	</sql-query>
+</hibernate-mapping>

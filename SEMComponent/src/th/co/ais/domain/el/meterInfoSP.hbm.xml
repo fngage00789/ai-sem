@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.MeterInfoSP" entity-name="meterInfoSP">
+		<id name="eMeterRate" type="java.lang.String"/>
+		<property name="eTransformerType" type="java.lang.String"/>
+		<property name="eMeterType" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.el.MeterInfoSP" entity-name="meterInfoValidateAdd">
+		<id name="pResult" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="getMeterRate" callable="true">
+		<return class="th.co.ais.domain.el.MeterInfoSP" entity-name="meterInfoSP">  
+			<return-property name="eMeterRate" column="METER_RATE"/>
+			<return-property name="eTransformerType" column="TRANSFORMER_TYPE"/>
+			<return-property name="eMeterType" column="METER_TYPE"/>
+		</return>
+	<![CDATA[ call SEM_PG_EL_METER_PROCESS_SEM_EL_METER_TYPE_INFO(?, :eMeterType, :electricUseType, :fileType, :meterTypeFlag, :meterRate, :transformerType) ]]>
+	</sql-query>
+	
+	<sql-query name="validateAddMeterInfo" callable="true">
+		<return class="th.co.ais.domain.el.MeterInfoSP" entity-name="meterInfoValidateAdd">  
+			<return-property name="pResult" column="P_RESULT"/>
+			<return-property name="pRemark" column="P_REMARK"/>
+		</return>
+	<![CDATA[ call SEM_PG_EL_METER_PROCESS_SEM_EL_METER_TYPE_VALIDATE(?, :eMeterType, :electricUseType, :fileType, :eMeterRate, :eTransformerType) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

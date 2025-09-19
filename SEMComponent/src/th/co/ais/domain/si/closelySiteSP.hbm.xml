@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.CloselySiteSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="oldContractNo" type="java.lang.String"/>
+		<property name="effDt" type="java.lang.String"/>
+		<property name="expDt" type="java.lang.String"/>
+		<property name="address" type="java.lang.String"/>
+		<property name="placeType" type="java.lang.String"/>
+		<property name="rtAmountPerYer" type="java.lang.Double"/>
+		<property name="svAmountPerYer" type="java.lang.Double"/>
+		<property name="rtAmountCenter" type="java.lang.Double"/>
+		<property name="svAmountCenter" type="java.lang.Double"/>
+	</class>
+	<sql-query name="queryCloselySite" callable="true">
+		<return class="th.co.ais.domain.si.CloselySiteSP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expDt" column="EXPIRE_DT" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="placeType" column="PLACE_TYPE" />
+			<return-property name="rtAmountPerYer" column="RENTAL_AMT_PER_YEAR" />
+			<return-property name="svAmountPerYer" column="SERVICE_AMT_PER_YEAR" />
+			<return-property name="rtAmountCenter" column="RENTAL_AMT_CENTER" />
+			<return-property name="svAmountCenter" column="SERVICE_AMT_CENTER" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SITE (?, :contractNo) ]]>
+	</sql-query>
+</hibernate-mapping>

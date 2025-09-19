@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.mm">
+	<!-- JAVA CLASSes -->
+	<class name="Mmm001ValidatePage" entity-name="vendorMasterValidatePage">
+		<id name="siteInfo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="backButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="saveButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="cancelButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="newVendorButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="EditVendorButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="changeVendorButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="sendMNGButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="exportBatchButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="clearBatchButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="cancelVendorButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="deleteVendorButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="newChangeButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="editChangeButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="copyVendorButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="roleSap" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="company" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorName1" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorName2" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorName3" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorName4" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="branch" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="branchNo" type="java.lang.String"/>
+			  
+			<property generated="never" lazy="false" update="false" name="vat" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="block" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="notPayee" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="noContract" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="blackList" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="pTax" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorRemark" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="noContractRemark" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="addressBox" type="java.lang.String"/>
+		
+			<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractEffectveDate" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractExpireDate" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payType" type="java.lang.String"/>
+		
+			<property generated="never" lazy="false" update="false" name="bookbankGrid" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="newBookbank" type="java.lang.String"/>
+		
+			<property generated="never" lazy="false" update="false" name="payeeGrid" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="newPayee" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractInfoBox" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="confirmVendorButton" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="checkVendor" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="editDataButton" type="java.lang.String"/>
+	</class>
+	
+	
+	<!-- SQLs >>> -->
+	<sql-query name="semsapVendorValidatePage" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001ValidatePage" entity-name="vendorMasterValidatePage">
+			<return-property column="SITE_INFO" name="siteInfo"/>
+			<return-property column="BACK_BUTTON" name="backButton"/>
+			<return-property column="SAVE_BUTTON" name="saveButton"/>
+			<return-property column="CANCEL_BUTTON" name="cancelButton"/>
+			<return-property column="NEW_VENDON_BUTTON" name="newVendorButton"/>
+			<return-property column="EDIT_VENDON_BUTTON" name="EditVendorButton"/>
+			<return-property column="CHANGE_VENDON_BUTTON" name="changeVendorButton"/>
+			<return-property column="SEND_MNG_BUTTON" name="sendMNGButton"/>
+			<return-property column="EXPORT_BATCH_BUTTON" name="exportBatchButton"/>
+			<return-property column="CLEAR_BATCH_BUTTON" name="clearBatchButton"/>
+			<return-property column="CANCEL_VENDON_BUTTON" name="cancelVendorButton"/>
+			<return-property column="DELETE_VENDON_BUTTON" name="deleteVendorButton"/>
+			<return-property column="NEW_CHANGE_BUTTON" name="newChangeButton"/>
+			<return-property column="EDIT_CHANGE_BUTTON" name="editChangeButton"/>
+			<return-property column="COPY_VENDON_BUTTON" name="copyVendorButton"/>
+			<return-property column="ROLE_SAP" name="roleSap"/>
+			<return-property column="COMPANY" name="company"/>
+			<return-property column="VENDOR_TYPE" name="vendorType"/>
+			<return-property column="VENDOR_NAME_1" name="vendorName1"/>
+			<return-property column="VENDOR_NAME_2" name="vendorName2"/>
+			<return-property column="VENDOR_NAME_3" name="vendorName3"/>
+			<return-property column="VENDOR_NAME_4" name="vendorName4"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="BRANCH" name="branch"/>
+			<return-property column="BRANCH_NO" name="branchNo"/>
+			  
+			<return-property column="VAT_SELECT" name="vat"/>
+			<return-property column="BLOCK_SELECT" name="block"/>
+			<return-property column="NOT_PAYEE_SELECT" name="notPayee"/>
+			<return-property column="NO_CONTRACT_SELECT" name="noContract"/>
+			<return-property column="BLACK_LIST_SELECT" name="blackList"/>
+			<return-property column="PTAX_SELECT" name="pTax"/>
+			<return-property column="VENDOR_REMARK" name="vendorRemark"/>
+			<return-property column="VENDOR_FLOW_STATUS" name="vendorFlowStatus"/>
+			<return-property column="VENDOR_BATCH" name="vendorBatch"/>
+			<return-property column="NO_CONTRACT_REMARK" name="noContractRemark"/>
+			<return-property column="ADDRESS_BOX" name="addressBox"/>
+		
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="CONTRACT_EFFECTIVE_DATE" name="contractEffectveDate"/>
+			<return-property column="CONTRACT_EXPIRE_DATE" name="contractExpireDate"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="PAY_TYPE" name="payType"/>
+		
+			<return-property column="BOOKBANK_GRID" name="bookbankGrid"/>
+			<return-property column="NEW_BOOKBANK" name="newBookbank"/>
+		
+			<return-property column="PAYEE_GRID" name="payeeGrid"/>
+			<return-property column="NEW_PAYEE" name="newPayee"/>
+			
+			<return-property column="CONTRACT_INFO_BOX" name="contractInfoBox"/>
+			<return-property column="CONFIRM_VENDON_BUTTON" name="confirmVendorButton"/>
+			<return-property column="CHECK_VENDOR" name="checkVendor"/>
+			<return-property column="EDIT_DATA_BUTTON" name="editDataButton"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VENDOR_PAGE (?, :param1, :param2, :param3, :param4, :param5) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

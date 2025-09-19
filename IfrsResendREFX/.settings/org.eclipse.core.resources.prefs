@@ -1,0 +1,10 @@
+#Thu Jan 30 10:52:50 ICT 2020
+eclipse.preferences.version=1
+encoding//src/com/ais/sem/ifrs16/webservice/cresem/SI_OB_Z_RE_IF_SEM_CREATE.java=UTF-8
+encoding//src/com/ais/sem/ifrs16/webservice/cresem/SI_OB_Z_RE_IF_SEM_CREATEBindingStub.java=UTF-8
+encoding//src/com/ais/sem/ifrs16/webservice/cresem/SI_OB_Z_RE_IF_SEM_CREATEService.java=UTF-8
+encoding//src/com/ais/sem/ifrs16/webservice/cresem/SI_OB_Z_RE_IF_SEM_CREATEServiceLocator.java=UTF-8
+encoding//src/com/ais/sem/ifrs16/webservice/cresem/bean/ZREIF_S_CONTRACTRESPONSE.java=UTF-8
+encoding//src/com/ais/sem/ifrs16/webservice/cresem/bean/ZREIF_S_CONTRACTTEMPLATE_INTER.java=UTF-8
+encoding//src/com/ais/sem/ifrs16/webservice/cresem/bean/Z_RE_IF_SEM_CREATE.java=UTF-8
+encoding//src/com/ais/sem/ifrs16/webservice/cresem/bean/Z_RE_IF_SEM_CREATEResponse.java=UTF-8

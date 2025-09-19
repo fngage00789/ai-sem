@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+
+	<class name="th.co.ais.domain.si.QueryRenewSAMSearchSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="firstEffDt" type="java.sql.Date"/>
+		<property name="effDt" type="java.sql.Date"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="expDt" type="java.sql.Date"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="sendRenewType" type="java.lang.String"/>
+		<property name="approveStatus" type="java.lang.String"/>
+		<property name="samDt" type="java.sql.Date"/>
+		<property name="siteStatus" type="java.lang.String"/>
+		<property name="invalidDt" type="java.sql.Date"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="address" type="java.lang.String"/>
+	</class>
+	<sql-query name="querySearchQueryRenewSAM" callable="true">
+	<return class="th.co.ais.domain.si.QueryRenewSAMSearchSP">
+		<return-property name="rowId" column="CONTRACT_NO" />
+		<return-property name="contractNo" column="CONTRACT_NO" />
+		<return-property name="firstEffDt" column="FIRST_EFFECTIVE_DT" />
+		<return-property name="effDt" column="EFFECTIVE_DT" />
+		<return-property name="locationId" column="LOCATION_ID" />
+		<return-property name="siteName" column="SITE_NAME" />
+		<return-property name="expDt" column="EXPIRE_DT" />
+		<return-property name="networkStatus" column="NETWORK_STATUS" />
+		<return-property name="sendRenewType" column="SEND_RENEW_TYPE" />
+		<return-property name="approveStatus" column="APPROVE_STATUS" />
+		<return-property name="samDt" column="SAM_DT" />
+		<return-property name="siteStatus" column="SITE_STATUS" />
+		<return-property name="invalidDt" column="INVALID_DT" />
+		<return-property name="locationCode" column="LOCATION_CODE" />
+		<return-property name="address" column="ADDRESS" />
+	 </return>
+		<![CDATA[ call SEM.SEM_SP_QSI001_SRCH(?, :contractNo, :company, :contractStartDt, :contractEndDt, :contractNoEndFlag, :locationId, :locationCode, :siteName, :region, :samDtFrom, :samDtTo, :sendRenewType, :approveStatus, :siteStatus,:invalidDtFrom, :invalidDtTo, :siteType, :expireDtFrom, :expireDtTo) ]]>
+	</sql-query>
+</hibernate-mapping>

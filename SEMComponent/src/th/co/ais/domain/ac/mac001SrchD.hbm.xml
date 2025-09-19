@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.ac">
+	<class name="th.co.ais.domain.ac.Mac001SrchD">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="paymentDocNo" type="java.lang.String"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String" />
+		<property name="siteName" type="java.lang.String" />
+		<property name="siteStatus" type="java.lang.String" />
+		<property name="networkStatus" type="java.lang.String" />
+		<property name="pmsStatus" type="java.lang.String" />
+		<property name="dueDt" type="java.sql.Date" />
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="preVendorCode" type="java.lang.String" />
+		<property name="preVendorName" type="java.lang.String" />
+		<property name="prePayeeName" type="java.lang.String" />
+		<property name="vatType" type="java.lang.String" />
+		<property name="vatRate" type="java.lang.Double" />		
+		<property name="whtType" type="java.lang.String" />
+		<property name="whtRate" type="java.lang.Double" />
+		<property name="excAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="incAmt" type="java.lang.Double" />
+		<property name="whtAmt" type="java.lang.Double" />
+		<property name="dutyAmt" type="java.lang.Double" />
+		<property name="docType" type="java.lang.String" />
+		<property name="docNo" type="java.lang.String" />
+		<property name="payExcAmt" type="java.lang.Double" />
+		<property name="payVatAmt" type="java.lang.Double" />
+		<property name="payIncAmt" type="java.lang.Double" />
+		<property name="payWhtAmt" type="java.lang.Double" />
+		<property name="payDutyAmt" type="java.lang.Double" />
+		<property name="depositAmt" type="java.lang.Double" />
+		<property name="totalAmt" type="java.lang.Double" />
+		<property name="preTotalAmt" type="java.lang.Double" />
+		<property name="glAccount" type="java.lang.String" />
+		<property name="costCenter" type="java.lang.String" />
+		<property name="paymentDt" type="java.sql.Date" />
+		<property name="paymentStatus" type="java.lang.String" />
+		<property name="paymentType" type="java.lang.String" />
+		<property name="paymentMethod" type="java.lang.String" />
+		<property name="chqDt" type="java.sql.Date" />
+		<property name="chqReceiveDt" type="java.sql.Date" />
+		<property name="chqNo" type="java.lang.String" />
+		<property name="doc68" type="java.lang.String" />
+		<property name="doc68Dt" type="java.sql.Date" />
+		<property name="doc92" type="java.lang.String" />
+		<property name="doc92Dt" type="java.sql.Date" />
+		<property name="remark" type="java.lang.String" />
+		<property name="bankAccNo" type="java.lang.String" />
+		<property name="preBankAccNo" type="java.lang.String" />
+		<property name="preContractNo" type="java.lang.String" />
+		<property name="siteInfoId" type="java.lang.String" />
+		<property name="preSiteInfoId" type="java.lang.String" />
+		<property name="paymentTypeDesc" type="java.lang.String" />
+		<property name="paymentMethodDesc" type="java.lang.String" />
+		<property name="transferDt" type="java.sql.Date" />
+		<property name="vendorMasterId" type="java.lang.String" />
+		<property name="payeeMasterId" type="java.lang.String" />
+		<property name="expenseTypeDesc" type="java.lang.String" />
+		<property name="periodTypeDesc" type="java.lang.String" />
+		<property name="expenseDesc" type="java.lang.String" />
+	</class>
+	<sql-query name="spMac001SrchD" callable="true">
+		<return class="th.co.ais.domain.ac.Mac001SrchD">
+			<return-property name="rowId" column="TRANS_PAYMENT_ID" />
+			<return-property name="paymentDocNo" column="PAYMENT_DOC_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="pmsStatus" column="PMS_STATUS" />
+			<return-property name="dueDt" column="DUE_DT" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="preVendorCode" column="PRE_VENDOR_CODE" />
+			<return-property name="preVendorName" column="PRE_VENDOR_NAME" />
+			<return-property name="prePayeeName" column="PRE_PAYEE_NAME" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatRate" column="VAT_RATE" />
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="incAmt" column="INC_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="dutyAmt" column="DUTY_AMT" />
+			<return-property name="docType" column="DOC_TYPE" />
+			<return-property name="docNo" column="DOC_NO" />
+			<return-property name="payExcAmt" column="PAY_EXC_AMT" />
+			<return-property name="payVatAmt" column="PAY_VAT_AMT" />
+			<return-property name="payIncAmt" column="PAY_INC_AMT" />
+			<return-property name="payWhtAmt" column="PAY_WHT_AMT" />
+			<return-property name="payDutyAmt" column="PAY_DUTY_AMT" />
+			<return-property name="depositAmt" column="DEPOSIT_AMT" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="preTotalAmt" column="PRE_TOTAL_AMT" />
+			<return-property name="glAccount" column="GL_ACCOUNT" />
+			<return-property name="costCenter" column="COST_CENTER" />
+			<return-property name="paymentDt" column="PAYMENT_DT" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+			<return-property name="chqNo" column="CHQ_NO" />
+			<return-property name="doc68" column="DOC_68" />
+			<return-property name="doc68Dt" column="DOC_68_DT" />
+			<return-property name="doc92" column="DOC_92" />
+			<return-property name="doc92Dt" column="DOC_92_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="bankAccNo" column="BANK_ACC_NO" />
+			<return-property name="preBankAccNo" column="PRE_BANK_ACC_NO" />
+			<return-property name="preContractNo" column="PRE_CONTRACT_NO" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="preSiteInfoId" column="PRE_SITE_INFO_ID" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="paymentMethodDesc" column="PAYMENT_METHOD_DESC" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="payeeMasterId" column="PAYEE_MASTER_ID" />
+			<return-property name="expenseTypeDesc" column="EXPENSE_TYPE_DESC" />
+			<return-property name="periodTypeDesc" column="PERIOD_TYPE_DESC" />
+			<return-property name="expenseDesc" column="EXPENSE_DESC" />
+		</return>
+		<![CDATA[ call SEM_SP_MAC001_SRCH_D(?, :rowId) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.LegalApproveSeqSP" entity-name="msi002SeqLegal">
+		<id name="maxSq" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.sa.SiteAppSP" entity-name="msi002Save">
+        <id name="result" type="java.lang.String"/>
+        <property name="message" type="java.lang.String" update="false"/>
+    </class>
+	
+	<!-- << classes declarement -->
+    
+    <!-- ============================================================================== -->
+    <!-- ============================================================================== -->
+    
+    <!-- >> queries declarement -->
+	
+	<sql-query name="spMsi002SeqLegal" callable="true">
+		<return class="th.co.ais.domain.si.LegalApproveSeqSP" entity-name="msi002SeqLegal">
+			<return-property name="maxSq" column="RUN_SEQ_NO" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI002_SEQ_LEGAL(?, :siteApproveId) ]]>
+	</sql-query>
+	
+	<sql-query name="spMsi002Save" callable="true">
+        <return class="th.co.ais.domain.sa.SiteAppSP" entity-name="msi002Save">
+            <return-property name="result" column="P_RESULT" />
+            <return-property name="message" column="P_MESSAGE" />
+        </return>
+        <![CDATA[ call SEM.SEM_SP_MSI002_SAVE(?, :mode, :siteApproveId, :rowId, :checkDt, :outDt, :seqNo, :legalApproveStatus, :remark, :riskType1, 
+        :riskType1Remark, :riskType2, :riskType2Remark, :riskType3, :riskType3Remark, :riskTypeOther, :riskTypeOtherRemark, :siteAppId, 
+        :placeType, :placeTypeRemark, :partiesType, :partiesTypeRemark, :strDataList, :createBy, :receiveDt) ]]>
+    </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.ElMeterIdSP" entity-name="elMeterIdSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="meterId" type="java.lang.String"/>
+		<property name="areaCode" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.el.MeterInfoHistory" entity-name="mel001ListWarrant">
+		<id name="electricId" type="java.lang.String"/>
+		<property name="warrantId" type="java.lang.String"/>
+		<property name="warrantType" type="java.lang.String"/>
+		<property name="receivedDt" type="java.util.Date" ></property>
+		<property name="printDt" type="java.util.Date" ></property>
+		<property name="sentWarrantDt" type="java.util.Date" ></property>
+		<property name="sentContractDt" type="java.util.Date" ></property>
+		<property name="terminateCutoffDt" type="java.util.Date" ></property>
+		<property name="expandCutoffDt" type="java.util.Date" ></property>
+		<property name="expandNewOnmeterDt" type="java.util.Date" ></property>
+		<property name="transferMeterDt" type="java.util.Date" ></property>
+		<property name="transfercutoffDt" type="java.util.Date" ></property>
+	</class>
+	
+	<sql-query name="getMeterId" callable="true">
+		<return class="th.co.ais.domain.el.MeterInfoHistory" entity-name="elMeterIdSP">  
+			<return-property name="rowId" column="FEE_METER_ID"/>
+			<return-property name="meterId" column="FEE_METER_ID"/>
+			<return-property name="areaCode" column="FEE_AREA_CODE"/>
+		</return>
+	<![CDATA[ call SEM_EL_METER_INFO_FEE(?, :contractNo) ]]>
+	</sql-query>
+	
+	<sql-query name="spMel001ListWarrant" callable="true">
+		<return class="th.co.ais.domain.el.MeterInfoHistory" entity-name="mel001ListWarrant">  
+			<return-property name="electricId" column="electric_id"/>
+			<return-property name="warrantId" column="warrant_id"/>
+			<return-property name="warrantType" column="warrant_type"/>
+			<return-property name="receivedDt" column="received_dt"/>
+			<return-property name="printDt" column="print_dt"/>
+			<return-property name="sentWarrantDt" column="sent_warrant_dt"/>
+			<return-property name="sentContractDt" column="sent_contract_dt"/>
+			<return-property name="terminateCutoffDt" column="terminate_cutoff_dt"/>
+			<return-property name="expandCutoffDt" column="expand_cutoff_dt"/>
+			<return-property name="expandNewOnmeterDt" column="expand_new_onmeter_dt"/>
+			<return-property name="transferMeterDt" column="transfer_meter_dt"/>
+			<return-property name="transfercutoffDt" column="transfer_cutoff_dt"/>
+		</return>
+	<![CDATA[ call SEM_SP_MEL001_LIST_WARRANT(?, :electricId) ]]>
+	</sql-query>
+</hibernate-mapping>

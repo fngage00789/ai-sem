@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ais.migrate.sem.model">
+ <class name="com.ais.migrate.sem.model.ParamsProcedure">
+  <id name="pAllowPaging" type="java.lang.Integer"/>
+  <property generated="never" lazy="false" name="pRowStart" type="java.lang.Integer"/>
+  <property generated="never" lazy="false" name="pRowEnd" type="java.lang.Integer"/>
+  <property generated="never" lazy="false" name="pTotalRecords" type="java.lang.Integer" />
+  <property generated="never" lazy="false" name="pOrderBy" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="pCriterias" type="java.lang.String"/>
+ </class>
+ <sql-query callable="true" name="SP_GET_CONTRACT_CLEAN">
+ 	{ call SEM.SP_GET_CONTRACT_CLEAN(?, :pAllowPaging, :pRowStart, :pRowEnd, :pTotalRecords, :pOrderBy, :pCriterias) }
+ 	<return class="com.ais.migrate.sem.hibernate.annotion.MpContractClean" />
+ </sql-query>
+</hibernate-mapping>

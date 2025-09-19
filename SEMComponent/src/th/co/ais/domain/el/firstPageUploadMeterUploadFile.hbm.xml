@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.cp">
+
+
+ <class name="th.co.ais.domain.el.FirstPageUploadMeterUploadFile" entity-name="UploadMeterUploadFileFirst" > 
+ 	<id name="rowId" type="java.lang.String"/>
+	<property name="contractNo" type="java.lang.String" ></property>
+	<property name="company" type="java.lang.String" ></property>
+ 	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="ctStartDt" type="java.util.Date" ></property>
+ 	<property name="ctFinishDt" type="java.util.Date" ></property>
+ 	<property name="region" type="java.lang.String" ></property>
+ 	<property name="province" type="java.lang.String" ></property>
+ 	<property name="typeUseElectric" type="java.lang.String" ></property>
+ 	<property name="state" type="java.lang.String" ></property>
+ 	<property name="meterId" type="java.lang.String" ></property>
+ 	
+ 	<property name="supplier" type="java.lang.String" ></property>
+ 	<property name="transformerLabel" type="java.lang.String" ></property>
+ 	<property name="transformerSize" type="java.lang.String" ></property>
+ 	<property name="transformerSerial" type="java.lang.String" ></property>
+ 	<property name="transformerDt" type="java.util.Date" ></property>
+ 	<property name="meterSize" type="java.lang.String" ></property>
+ 	<property name="meterWire" type="java.lang.String" ></property>
+ 	<property name="meterType" type="java.lang.String" ></property>
+ 	<property name="rate" type="java.lang.String" ></property>
+ 	<property name="locationId" type="java.lang.String" ></property>
+ 	<property name="locationCode" type="java.lang.String" ></property>
+ 	<property name="electricType" type="java.lang.String" ></property>
+ 	<property name="batchNo" type="java.lang.String" ></property>
+ 	<property name="statusContract" type="java.lang.String" ></property>
+ 	<property name="siteInfoId" type="java.lang.String" ></property>
+ </class>
+ 
+  
+ <sql-query name="mel003SearchUploadFileFirstPage" callable="true">
+ 	<return class="th.co.ais.domain.el.FirstPageUploadMeterUploadFile" entity-name="UploadMeterUploadFileFirst" >
+ 		<return-property name="rowId" column="EL_IMPORT_METER_ID"></return-property>
+ 		<return-property name="contractNo" column="CONTRACT_NO"></return-property>
+ 		<return-property name="company" column="COMPANY"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="ctStartDt" column="EFFECTIVE_DT"></return-property>
+ 		<return-property name="ctFinishDt" column="END_DT"></return-property>
+ 		<return-property name="region" column="REGION"></return-property>
+ 		<return-property name="province" column="PROVINCE"></return-property>
+ 		<return-property name="typeUseElectric" column="ELECTRIC_TYPE"></return-property>
+ 		<return-property name="state" column="PROCESS_STATUS"></return-property>
+ 		<return-property name="meterId" column="METER_ID"></return-property>
+ 		<return-property name="supplier" column="SUPPLIER"></return-property>
+ 		<return-property name="transformerLabel" column="TRANSFORMER_LABEL"></return-property>
+ 		<return-property name="transformerSize" column="TRANSFORMER_SIZE"></return-property>
+ 		<return-property name="transformerSerial" column="TRANSFORMER_SERIAL"></return-property>
+ 		<return-property name="transformerDt" column="TRANSFORMER_DT"></return-property>
+ 		<return-property name="meterSize" column="METER_SIZE"></return-property>
+ 		<return-property name="meterWire" column="METER_WIRE"></return-property>
+ 		<return-property name="meterType" column="METER_TYPE"></return-property>
+ 		<return-property name="rate" column="RATE"></return-property>
+ 		<return-property name="locationId" column="LOCATION_ID"></return-property>
+ 		<return-property name="locationCode" column="LOCATION_CODE"></return-property>
+ 		<return-property name="electricType" column="ELECTRIC_TYPE"></return-property>
+ 		<return-property name="batchNo" column="BATCH_NO"></return-property>
+ 		<return-property name="statusContract" column="CONTRACT_STATUS"></return-property>
+ 		<return-property name="siteInfoId" column="SITE_INFO_ID"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MEL003_METER_SRCH_F(?, :company, :contractNo , :siteName , :region, :province
+ 	, :locationId , :locationCode, :typeUseElectric, :reqType, :processStatusCode, :meterId, :uploadFileDtFrom, :uploadFileDtTo, :fileName) ]]>
+ </sql-query>
+ 
+ 
+  </hibernate-mapping>

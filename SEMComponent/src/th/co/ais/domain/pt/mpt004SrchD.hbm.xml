@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+	<class name="th.co.ais.domain.pt.Mpt004SrchD">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="contractEndDt" type="java.sql.Date"/>
+		<property name="pTaxYear" type="java.lang.String"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="periodNo" type="java.lang.String"/>
+		<property name="monthFrom" type="java.lang.String"/>
+		<property name="monthTo" type="java.lang.String"/>
+		<property name="periodType" type="java.lang.String"/>
+		<property name="periodInterval" type="java.lang.Integer"/>
+		<property name="docType" type="java.lang.String"/>
+		<property name="penaltyType" type="java.lang.String"/>
+		<property name="docNo" type="java.lang.String"/>
+		<property name="docDt" type="java.sql.Date"/>
+		<property name="pTaxPayType" type="java.lang.String"/>
+		<property name="pTaxPayTypeDesc" type="java.lang.String"/>
+		<property name="payGovtFlag" type="java.lang.String"/>
+		<property name="paymentStatus" type="java.lang.String"/>
+		<property name="paymentStatusDesc" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String"/>
+		<property name="estmAmt" type="java.lang.Double"/>
+		<property name="pTaxAmt" type="java.lang.Double"/>
+		<property name="totalAmt" type="java.lang.Double"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="vatRate" type="java.lang.Double"/>
+		<property name="whtType" type="java.lang.String"/>
+		<property name="whtRate" type="java.lang.Double"/>
+		<property name="excAmt" type="java.lang.Double"/>
+		<property name="vatAmt" type="java.lang.Double"/>
+		<property name="incAmt" type="java.lang.Double"/>
+		<property name="whtAmt" type="java.lang.Double"/>
+		<property name="chqAmt" type="java.lang.Double"/>
+		<property name="diffAmt" type="java.lang.Double"/>
+		<property name="diffRemark" type="java.lang.String"/>
+		<property name="paymentType" type="java.lang.String"/>
+		<property name="paymentMethod" type="java.lang.String"/>
+		<property name="bankAccNo" type="java.lang.String"/>
+		<property name="bankName" type="java.lang.String"/>
+		<property name="chqDt" type="java.sql.Date"/>
+		<property name="chqReceiveDt" type="java.sql.Date"/>
+		<property name="transferDt" type="java.sql.Date"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="payeeId" type="java.lang.String"/>
+		<property name="ptaxStatus" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMpt004SrchD" callable="true">
+		<return class="th.co.ais.domain.pt.Mpt004SrchD">
+			<return-property name="rowId" column="PTAX_PAYMENT_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="contractEndDt" column="CONTRACT_END_DT" />
+			<return-property name="pTaxYear" column="PTAX_YEAR" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="periodNo" column="PERIOD_NO" />
+			<return-property name="monthFrom" column="MONTH_FROM" />
+			<return-property name="monthTo" column="MONTH_TO" />
+			<return-property name="periodType" column="PERIOD_TYPE" />
+			<return-property name="periodInterval" column="PERIOD_INTERVAL" />
+			<return-property name="docType" column="DOC_TYPE" />
+			<return-property name="penaltyType" column="PENALTY_TYPE" />
+			<return-property name="docNo" column="DOC_NO" />
+			<return-property name="docDt" column="DOC_DT" />
+			<return-property name="pTaxPayType" column="PTAX_PAY_TYPE" />
+			<return-property name="pTaxPayTypeDesc" column="PTAX_PAY_TYPE_DESC" />
+			<return-property name="payGovtFlag" column="PAY_GOVT_FLAG" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="estmAmt" column="ESTM_AMT" />
+			<return-property name="pTaxAmt" column="PTAX_AMT" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatRate" column="VAT_RATE" />
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="incAmt" column="INC_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="chqAmt" column="CHQ_AMT" />
+			<return-property name="diffAmt" column="DIFF_AMT" />
+			<return-property name="diffRemark" column="DIFF_REMARK" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="bankAccNo" column="PAYEE_BANK_ACC_NO" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="payeeId" column="PAYEE_ID" />
+			<return-property name="ptaxStatus" column="PTAX_STATUS" />
+		</return>
+		<![CDATA[ call SEM_SP_MPT004_SRCH_D(?, :rowId) ]]>
+	</sql-query>
+</hibernate-mapping>

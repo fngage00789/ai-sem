@@ -1,0 +1,163 @@
+ 05-07-2565 09:18:04:689 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 09:22:49:241 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(38) - enter by get
+ 05-07-2565 09:22:49:243 DEBUG com.ais.web.authenticate.VerifyLoginValidationFilter.doGet(40) - SSO Program UserNamenull
+ 05-07-2565 09:22:50:156 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : tfaZa99eu7vLy9yHh0srD9dI_byP-F4bOqoU1-2B at Tue Jul 05 09:22:50 ICT 2022
+ 05-07-2565 09:22:57:124 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 05-07-2565 09:22:57:496 DEBUG th.co.ais.web.bean.ReActivateSsoStored.addItem(99) - Application put new session id : tfaZa99eu7vLy9yHh0srD9dI_byP-F4bOqoU1-2B, and user name : rapeesuw
+ 05-07-2565 09:24:04:316 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 05-07-2565 09:24:04:317 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMMSI001-1
+ 05-07-2565 09:24:04:317 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : null
+ 05-07-2565 09:24:04:318 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : null
+ 05-07-2565 09:24:04:318 INFO  th.co.ais.web.util.WebUtil.clearAllSessionNotUsed(58) - ### clear All Session ###
+ 05-07-2565 09:24:04:319 DEBUG th.co.ais.web.action.NavAction.navi(130) - nav programe :SEMMSI001-1
+ 05-07-2565 09:33:04:676 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 09:33:04:677 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key wsEmployeeURL
+ 05-07-2565 09:33:04:917 ERROR th.co.ais.web.servlet.QuartzJob.execute(78) - no protocol: 
+ 05-07-2565 09:33:04:918 DEBUG th.co.ais.web.bean.ReActivateSsoStored.removeItem(129) - Application remove session id : tfaZa99eu7vLy9yHh0srD9dI_byP-F4bOqoU1-2B
+ 05-07-2565 09:48:04:681 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 10:03:04:667 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 10:18:04:670 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 10:33:04:680 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 10:48:04:679 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 11:03:04:669 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 11:18:04:673 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 11:27:20:565 DEBUG th.co.ais.web.servlet.SessionListener.sessionDestroyed(52) - Current Session destroyed :tfaZa99eu7vLy9yHh0srD9dI_byP-F4bOqoU1-2B Logging out user!
+ 05-07-2565 11:27:20:616 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key wsEmployeeURL
+ 05-07-2565 11:27:20:781 ERROR th.co.ais.web.servlet.SessionListener.sessionDestroyed(61) - An error occour while logout from servlet!
+org.springframework.transaction.TransactionSystemException: Could not roll back Hibernate transaction; nested exception is org.hibernate.TransactionException: JDBC rollback failed
+	at org.springframework.orm.hibernate3.HibernateTransactionManager.doRollback(HibernateTransactionManager.java:679)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:845)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:822)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.completeTransactionAfterThrowing(TransactionAspectSupport.java:411)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:114)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:90)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:172)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:202)
+	at com.sun.proxy.$Proxy173.logout(Unknown Source)
+	at th.co.ais.web.servlet.SessionListener.sessionDestroyed(SessionListener.java:59)
+	at io.undertow.servlet.core.ApplicationListeners.sessionDestroyed(ApplicationListeners.java:328)
+	at io.undertow.servlet.core.SessionListenerBridge.doDestroy(SessionListenerBridge.java:98)
+	at io.undertow.servlet.core.SessionListenerBridge.access$000(SessionListenerBridge.java:41)
+	at io.undertow.servlet.core.SessionListenerBridge$1.call(SessionListenerBridge.java:54)
+	at io.undertow.servlet.core.SessionListenerBridge$1.call(SessionListenerBridge.java:51)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:42)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at io.undertow.servlet.core.SessionListenerBridge.sessionDestroyed(SessionListenerBridge.java:73)
+	at io.undertow.server.session.SessionListeners.sessionDestroyed(SessionListeners.java:61)
+	at io.undertow.server.session.InMemorySessionManager$SessionImpl.invalidate(InMemorySessionManager.java:586)
+	at io.undertow.server.session.InMemorySessionManager$SessionImpl$2$1.run(InMemorySessionManager.java:393)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.hibernate.TransactionException: JDBC rollback failed
+	at org.hibernate.transaction.JDBCTransaction.rollback(JDBCTransaction.java:204)
+	at org.springframework.orm.hibernate3.HibernateTransactionManager.doRollback(HibernateTransactionManager.java:676)
+	... 31 more
+Caused by: java.sql.SQLException: Io exception: Connection reset
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:146)
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:255)
+	at oracle.jdbc.driver.T4CConnection.doRollback(T4CConnection.java:577)
+	at oracle.jdbc.driver.PhysicalConnection.rollback(PhysicalConnection.java:1136)
+	at org.jboss.jca.adapters.jdbc.BaseWrapperManagedConnection.jdbcRollback(BaseWrapperManagedConnection.java:1106)
+	at org.jboss.jca.adapters.jdbc.WrappedConnection.rollback(WrappedConnection.java:924)
+	at org.hibernate.transaction.JDBCTransaction.rollbackAndResetAutoCommit(JDBCTransaction.java:217)
+	at org.hibernate.transaction.JDBCTransaction.rollback(JDBCTransaction.java:196)
+	... 32 more
+ 05-07-2565 11:33:04:668 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 11:48:04:684 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 12:03:04:677 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 12:08:42:151 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : Mm_GdtIwSV-f9QrhLtEpkcumVJlAgExC9v13fZEY at Tue Jul 05 12:08:42 ICT 2022
+ 05-07-2565 12:08:42:176 DEBUG th.co.ais.web.servlet.SessionSecurityFilter.validateDataBeforeGetComponent(216) - java.lang.NullPointerException
+ 05-07-2565 12:08:42:257 ERROR org.ajax4jsf.webapp.BaseXMLFilter.doXmlFilter(227) - Exception in the filter chain
+javax.servlet.ServletException: viewId:/pages/home.jsf - View /pages/home.jsf could not be restored.
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:270)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at th.co.ais.web.servlet.SessionSecurityFilter.doFilter(SessionSecurityFilter.java:162)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.ajax4jsf.webapp.BaseXMLFilter.doXmlFilter(BaseXMLFilter.java:206)
+	at org.ajax4jsf.webapp.BaseFilter.handleRequest(BaseFilter.java:290)
+	at org.ajax4jsf.webapp.BaseFilter.processUploadsAndHandleRequest(BaseFilter.java:388)
+	at org.ajax4jsf.webapp.BaseFilter.doFilter(BaseFilter.java:515)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1504)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.faces.application.ViewExpiredException: viewId:/pages/home.jsf - View /pages/home.jsf could not be restored.
+	at com.sun.faces.lifecycle.RestoreViewPhase.execute(RestoreViewPhase.java:185)
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:100)
+	at com.sun.faces.lifecycle.RestoreViewPhase.doPhase(RestoreViewPhase.java:103)
+	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:118)
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:265)
+	... 53 more
+ 05-07-2565 12:09:13:692 INFO  th.co.ais.web.servlet.SessionListener.sessionDestroyed(48) - Cannot find ssoBean from Session!
+ 05-07-2565 12:10:31:749 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 12:11:21:057 DEBUG th.co.ais.web.servlet.SessionListener.sessionCreated(29) - Current Session created : rF_eIOH4ck7J-bdvRc1rcWGQjP2Oxg8QJpmsQ46g at Tue Jul 05 12:11:21 ICT 2022
+ 05-07-2565 12:15:19:032 DEBUG th.co.ais.web.servlet.SSOLoginServlet.doPost(111) - byPass = byPass
+ 05-07-2565 12:15:19:499 DEBUG th.co.ais.web.bean.ReActivateSsoStored.addItem(99) - Application put new session id : rF_eIOH4ck7J-bdvRc1rcWGQjP2Oxg8QJpmsQ46g, and user name : rapeesuw
+ 05-07-2565 12:15:26:663 DEBUG th.co.ais.web.action.NavAction.navi(106) - -- navi() --
+ 05-07-2565 12:15:26:665 DEBUG th.co.ais.web.action.NavAction.navi(115) - WT###jsp : SEMMCT003-2
+ 05-07-2565 12:15:26:666 DEBUG th.co.ais.web.action.NavAction.navi(116) - WT###java : null
+ 05-07-2565 12:15:26:666 DEBUG th.co.ais.web.action.NavAction.navi(117) - WT###method : null
+ 05-07-2565 12:15:26:666 INFO  th.co.ais.web.util.WebUtil.clearAllSessionNotUsed(58) - ### clear All Session ###
+ 05-07-2565 12:15:26:668 DEBUG th.co.ais.web.action.NavAction.navi(130) - nav programe :SEMMCT003-2
+ 05-07-2565 12:25:31:749 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 12:25:31:750 DEBUG th.co.ais.web.util.WebUtil.getResources(386) - Can't find resource for bundle java.util.PropertyResourceBundle, key wsEmployeeURL
+ 05-07-2565 12:25:32:000 ERROR th.co.ais.web.servlet.QuartzJob.execute(78) - no protocol: 
+ 05-07-2565 12:25:32:000 DEBUG th.co.ais.web.bean.ReActivateSsoStored.removeItem(129) - Application remove session id : rF_eIOH4ck7J-bdvRc1rcWGQjP2Oxg8QJpmsQ46g
+ 05-07-2565 12:40:31:748 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 12:55:31:746 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 13:10:31:750 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 13:25:31:747 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 13:40:31:739 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token
+ 05-07-2565 13:55:31:739 INFO  th.co.ais.web.servlet.QuartzJob.execute(44) - Executing Quartz Job to reactivate SSO Token

@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SiteInfoRegHistSrch" entity-name="siteInfoServObj">
+		<id name="siteInfoServId" type="java.lang.String"/>
+		<property update="false" name="servName" type="java.lang.String"/>
+		<property update="false" name="action" type="java.lang.String" />
+		<property update="false" name="seq" type="java.lang.String" />
+		<property update="false" name="createDt" type="java.sql.Date" />
+		<property update="false" name="createBy" type="java.lang.String" />
+		<property update="false" name="updateDt" type="java.sql.Date" /> 
+		<property update="false" name="updateBy" type="java.lang.String" />
+		<property update="false" name="serviceId" type="java.lang.String" />
+	</class>
+	<class name="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoPTSrchObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="effectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="expireDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="ptTaxPayType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ptTaxPayTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ptRemark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ptEffectiveDt" type="java.util.Date"/>
+	</class>
+	<class name="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoELContSrchObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteInfoELContId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteInfoId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="effectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="expireDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="changeEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="periodStartDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="periodEndDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="electricType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="electricTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" type="java.lang.String" name="electricCondSubtype" />
+		<property generated="never" lazy="false" update="false" type="java.lang.String" name="electricCondSubtypeName" />
+		<property generated="never" lazy="false" update="false" type="java.math.BigDecimal" name="electricOldAmt" />
+		<property generated="never" lazy="false" update="false" type="java.math.BigDecimal" name="electricAddAmt" />
+		<property generated="never" lazy="false" update="false" name="electricAmt" type="java.math.BigDecimal"/>
+		<property generated="never" lazy="false" update="false" type="java.lang.String" name="noUnitPriceFlag" />
+		<property generated="never" lazy="false" update="false" name="electricPeriodType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="electricPeriodTypeName" type="java.lang.String"/>		
+		<property generated="never" lazy="false" update="false" name="detail" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elVatType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elVatTypeName" type="java.lang.String"/>
+		<property generated="never" name="payPeriodType" type="java.lang.String"/>
+		<property generated="never" name="payPeriodTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="refSiteElectricCondId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="serviceId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="serviceName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elPayPeriod" type="java.lang.Integer"/>
+		<property generated="never" lazy="false" update="false" name="status" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="recordStatus" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="elEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="elType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elUseOthSiteContractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="takeAllPeriodType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="takeAllPeriodTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="refSiteElCondId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elCondType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elCondTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elCondSubType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elCondSubTypeName" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="msiReturnResultMsg">
+		<id name="retResult" type="java.lang.String"/>
+		<property name="retResultMsg" type="java.lang.String" update="false" />
+	</class>
+	<class name="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoIRSrchObj">
+		<id name="siteInsuranceId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="insuranceType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="plxOldAmt" type="java.lang.Double"/>
+		<property generated="never" lazy="false" update="false" name="plxAddAmt" type="java.lang.Double"/>
+		<property generated="never" lazy="false" update="false" name="plxAmt" type="java.lang.Double"/>
+		<property generated="never" lazy="false" update="false" name="plxEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="plxExpireDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="effectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="expireDt" type="java.util.Date"/>
+		
+		<property generated="never" lazy="false" update="false" name="ownerAmt" type="java.lang.Double"/>
+		<property generated="never" lazy="false" update="false" name="ownerPeriodType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ownerPeriodTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ownerVatType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ownerVatTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ownerPayPeriodType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ownerPayPeriodTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ownerPayPeriod" type="java.lang.Integer"/>
+		<property generated="never" lazy="false" update="false" name="noOwnerAmt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="changeEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="plxBeneficiary" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="insuranceTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="detail" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="createBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoRentServSrchObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="serviceId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="rentAmt" type="java.math.BigDecimal"/>
+		<property generated="never" lazy="false" update="false" name="serviceName" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoUndoObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="retResult" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultMsg" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteAppELContSrch">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteAppELContId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteAppId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="effectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="expireDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="changeEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="periodStartDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="periodEndDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="electricType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="electricTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" type="java.lang.String" name="electricCondSubtype" />
+		<property generated="never" lazy="false" update="false" type="java.lang.String" name="electricCondSubtypeName" />
+		<property generated="never" lazy="false" update="false" type="java.math.BigDecimal" name="electricOldAmt" />
+		<property generated="never" lazy="false" update="false" type="java.math.BigDecimal" name="electricAddAmt" />
+		<property generated="never" lazy="false" update="false" name="electricAmt" type="java.math.BigDecimal"/>
+		<property generated="never" lazy="false" update="false" type="java.lang.String" name="noUnitPriceFlag" />
+		<property generated="never" lazy="false" update="false" name="electricPeriodType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="electricPeriodTypeName" type="java.lang.String"/>		
+		<property generated="never" lazy="false" update="false" name="detail" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elVatType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elVatTypeName" type="java.lang.String"/>
+		<property generated="never" name="payPeriodType" type="java.lang.String"/>
+		<property generated="never" name="payPeriodTypeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="refSiteElectricCondId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="serviceId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="serviceName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elPayPeriod" type="java.lang.Integer"/>
+	
+		
+	</class>
+
+	<class name="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="popupContractElUsemsi004">
+		<id name="rowId" type="java.lang.String"/>
+		<property type="java.lang.String" update="false" name="contractNo" />
+		<property type="java.lang.String" update="false" name="locationName" />
+		<property type="java.sql.Date" update="false" name="effectiveDt" />
+		<property type="java.sql.Date" update="false" name="expireDt" />
+		<property type="java.lang.String" update="false" name="contractStatusName" />
+	</class>
+
+	
+	<!-- << classes declarement -->
+	
+	<!-- ============================================================================== -->
+	<!-- ============================================================================== -->
+	
+	<!-- >> queries declarement -->
+	
+	<sql-query callable="true" name="msi004SiteInfoServiceSrch">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoRegHistSrch" entity-name="siteInfoServObj">
+			<return-property column="SITE_INFO_SERVICES_ID" name="siteInfoServId" />
+			<return-property column="SERVICE_NAME" name="servName" />
+			<return-property column="ACTION" name="action" />
+			<return-property column="SEQ" name="seq" />
+			<return-property column="CREATE_BY" name="createBy" />
+			<return-property column="CREATE_DT" name="createDt" />
+			<return-property column="UPDATE_BY" name="updateBy" />
+			<return-property column="UPDATE_DT" name="updateDt" />
+			<return-property column="SERVICES_ID" name="serviceId" />
+		</return>
+		<![CDATA[ call SEM_PG_MSA002_SEM_SI_SITE_INFO_SERVICES(?, :mode, :siteInfoId) ]]>
+	</sql-query>
+	<sql-query callable="true" name="msi004SiteInfoPTSrch">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoPTSrchObj">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+			<return-property column="EXPIRE_DT" name="expireDt"/>
+			<return-property column="PROPERTY_TAX_PAY_TYPE" name="ptTaxPayType"/>
+			<return-property column="PT_TAX_PAY_TYPE_NAME" name="ptTaxPayTypeName"/>
+			<return-property column="REMARK" name="ptRemark"/>
+			<return-property column="PT_EFFECTIVE_DT" name="ptEffectiveDt"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_PT (?, :siteInfoId) ]]>
+	</sql-query>
+	
+	<sql-query callable="true" name="msi004SiteInfoELCondSrch">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoELContSrchObj">
+			<return-property column="SITE_INFO_ELECTRIC_COND_ID" name="rowId"/>
+		   <return-property column="SITE_INFO_ELECTRIC_COND_ID" name="siteInfoELContId"/>
+		   <return-property column="SITE_INFO_ID" name="siteInfoId"/>
+		   <return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+		   <return-property column="EXPIRE_DT" name="expireDt"/>
+		   <return-property column="CHANGE_EFFECTIVE_DT" name="changeEffectiveDt"/>
+		   <return-property column="PERIOD_START_DT" name="periodStartDt"/>
+		   <return-property column="PERIOD_END_DT" name="periodEndDt"/>
+		   <return-property column="ELECTRIC_TYPE" name="electricType"/>
+		   <return-property column="ELECTRIC_TYPE_NAME" name="electricTypeName"/>
+		   <return-property column="CONTRACT_NO" name="contractNo"/>
+		   <return-property column="ELECTRIC_COND_SUBTYPE" name="electricCondSubtype"/>
+		   <return-property column="ELECTRIC_COND_SUBTYPE_NAME" name="electricCondSubtypeName"/>
+		   <return-property column="ELECTRIC_OLD_AMT" name="electricOldAmt"/>
+		   <return-property column="ELECTRIC_ADD_AMT" name="electricAddAmt"/>
+		   <return-property column="ELECTRIC_AMT" name="electricAmt"/>
+		   <return-property column="NO_UNIT_PRICE_FLAG" name="noUnitPriceFlag"/>
+		   <return-property column="ELECTRIC_PERIOD_TYPE" name="electricPeriodType"/>
+		   <return-property column="ELECTRIC_PERIOD_TYPE_NAME" name="electricPeriodTypeName"/>
+		   <return-property column="DETAIL" name="detail"/>
+		   <return-property column="VAT_TYPE" name="elVatType"/>
+		   <return-property column="VAT_TYPE_NAME" name="elVatTypeName"/>
+		   <return-property column="PAY_PERIOD_TYPE" name="payPeriodType"/>
+		   <return-property column="PAY_PERIOD_TYPE_NAME" name="payPeriodTypeName"/>
+		   <return-property column="REF_SITE_ELECTRIC_COND_ID" name="refSiteElectricCondId"/>   
+		   <return-property column="SERVICE_ID" name="serviceId"/>
+		   <return-property column="SERVICE_NAME" name="serviceName"/>
+		   	<return-property column="PAY_PERIOD" name="elPayPeriod"/>
+			<return-property column="STATUS" name="status"/>
+			<return-property column="RECORD_STATUS" name="recordStatus"/>
+			
+			<return-property column="CHANGE_EFFECTIVE_DT" name="elEffectiveDt"/>
+			<return-property column="ELECTRIC_TYPE" name="elType"/>
+			<return-property column="CONTRACT_NO" name="elUseOthSiteContractNo"/>
+			
+			<return-property column="ELECTRIC_PERIOD_TYPE" name="takeAllPeriodType"/>
+			<return-property column="ELECTRIC_PERIOD_TYPE_NAME" name="takeAllPeriodTypeName"/>
+			<return-property column="REF_SITE_ELECTRIC_COND_ID" name="refSiteElCondId"/>
+			<return-property column="ELECTRIC_COND_TYPE" name="elCondType"/>
+			<return-property column="ELECTRIC_COND_TYPE_NAME" name="elCondTypeName"/>
+			<return-property column="ELECTRIC_COND_SUBTYPE" name="elCondSubType"/>
+			<return-property column="ELECTRIC_COND_SUBTYPE_NAME" name="elCondSubTypeName"/>	
+		</return>
+		<![CDATA[ call SEM.SEM_SI_SITE_INFO_EL_COND_SRCH (?, :mode, :siteInfoId) ]]>
+	</sql-query>
+	
+	<sql-query callable="true" name="msi004SiteInfoELCondIns">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="msiReturnResultMsg">
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_MESSAGE" name="retResultMsg"/>
+  		</return>
+  		<![CDATA[ call SEM.SEM_SI_SITE_INFO_EL_COND_INS(?,
+			cast(:siteInfoId as varchar),
+			cast(:fromSiteInfoId as varchar),
+			cast(:elRemark as varchar),
+			cast(:elOwnerType as varchar),
+			cast(:takeAllAmt as varchar),
+			cast(:takeAllPeriodType as varchar),
+			cast(:elUnitPrice as varchar),
+			cast(:payPeriodType as varchar),
+			cast(:elPayPeriod as varchar),
+			cast(:depositCondType as varchar),
+			cast(:elUseMultiResourse as varchar),
+			cast(:elType1 as varchar),
+			cast(:elType2 as varchar),
+			cast(:elType3 as varchar),
+			cast(:elType4 as varchar),
+			cast(:noUtilPrice as varchar),
+			cast(:elUseOthSiteContractNo as varchar),
+			cast(:version as varchar),
+			cast(:totalDepositBgAmt as varchar),
+			cast(:totalDepositCashAmt as varchar),
+			cast(:noDeposit as varchar),
+		    cast(:elEffectiveDt as date),
+			cast(:detail as varchar),
+			cast(:elOldAmt as numeric),
+			cast(:elAddPercent as numeric),
+			cast(:elAddAmt as numeric),
+			cast(:takeAllPeriodType as varchar),
+			cast(:whtType as varchar),
+		    cast(:whtRate as numeric),
+			cast(:elVatType as varchar),
+		    cast(:periodStartDt as date),
+		    cast(:periodEndDt as date),
+			cast(:elAdj as varchar),
+			cast(:elAdjPeriodType as varchar),
+			cast(:serviceId as varchar),
+			cast(:elOldPeriodType as varchar),
+			cast(:elAddPeriodType as varchar),
+			cast(:refSiteElCond as varchar),
+			cast(:elCondType as varchar),
+			cast(:elCondSubType as varchar),
+			cast(:userId as varchar),
+			cast(:elType5 as varchar)) ]]>
+ 	</sql-query>
+ 	
+ 	<sql-query callable="true" name="msi004SiteInfoELCondUpd">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="msiReturnResultMsg">
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_MESSAGE" name="retResultMsg"/>
+  		</return>
+  		<![CDATA[ call SEM.SEM_SI_SITE_INFO_EL_COND_UPD(?, cast(:siteInfoELContId as varchar),	
+		cast(:siteInfoId as varchar),	
+		cast(:fromSiteInfoId as varchar),	
+		cast(:elRemark as varchar),	
+		cast(:elOwnerType as varchar),	
+		cast(:takeAllAmt as varchar),	
+		cast(:takeAllPeriodType as varchar),	
+		cast(:elUnitPrice as varchar),	
+		cast(:payPeriodType as varchar),	
+		cast(:elPayPeriod as varchar),	
+		cast(:depositCondType as varchar),	
+		cast(:elUseMultiResourse as varchar),	
+		cast(:elType1 as varchar),	
+		cast(:elType2 as varchar),	
+		cast(:elType3 as varchar),	
+		cast(:elType4 as varchar),	
+		cast(:noUtilPrice as varchar),	
+		cast(:elUseOthSiteContractNo as varchar),	
+		cast(:version as varchar),	
+		cast(:totalDepositBgAmt as varchar),	
+		cast(:totalDepositCashAmt as varchar),	
+		cast(:noDeposit as varchar),	
+		cast(:elEffectiveDt as date),	
+		cast(:detail as varchar),	
+		cast(:elOldAmt as numeric),	
+		cast(:elAddPercent as numeric),	
+		cast(:elAddAmt as numeric),	
+		cast(:takeAllPeriodType as varchar),	
+		cast(:whtType as varchar),	
+		cast(:whtRate as numeric),	
+		cast(:elVatType as varchar),	
+		cast(:periodStartDt as date),	
+		cast(:periodEndDt as date),	
+		cast(:elAdj as varchar),	
+		cast(:elAdjPeriodType as varchar),	
+		cast(:serviceId as varchar),	
+		cast(:elOldPeriodType as varchar),	
+		cast(:elAddPeriodType as varchar),	
+		cast(:refSiteElCond as varchar),	
+		cast(:elCondType as varchar),	
+		cast(:elCondSubType as varchar),	
+		cast(:userId as varchar),	
+		cast(:elType5	as varchar)
+		) ]]>
+ 	</sql-query>
+ 	
+ 	<sql-query callable="true" name="msi004SiteInfoElCondDel">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="msiReturnResultMsg">
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_MESSAGE" name="retResultMsg"/>
+  		</return>
+  		<![CDATA[ call SEM.SEM_SI_SITE_INFO_EL_COND_DEL(?, :siteInfoELContId, :siteInfoId, :expenseType, :serviceId, :userId) ]]>
+ 	</sql-query>
+ 	
+	<sql-query callable="true" name="msi004SiteInfoIRSrch">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoIRSrchObj">
+			<return-property column="SITE_INSURANCE_ID" name="siteInsuranceId"/>
+			<return-property column="INSURANCE_TYPE" name="insuranceType"/>
+			<return-property column="INSURANCE_TYPE_NAME" name="insuranceTypeName"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="PLX_OLD_AMT" name="plxOldAmt"/>
+			<return-property column="PLX_ADD_AMT" name="plxAddAmt"/>
+			<return-property column="PLX_AMT" name="plxAmt"/>
+			<return-property column="PLX_EFFECTIVE_DT" name="plxEffectiveDt"/>
+			<return-property column="PLX_EXPIRE_DT" name="plxExpireDt"/>
+			<return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+			<return-property column="EXPIRE_DT" name="expireDt"/>
+			
+			<return-property column="OWNER_AMT" name="ownerAmt"/>
+			<return-property column="OWNER_PERIOD_TYPE" name="ownerPeriodType"/>
+			<return-property column="OWNER_PERIOD_TYPE_NAME" name="ownerPeriodTypeName"/>
+			<return-property column="OWNER_VAT_TYPE" name="ownerVatType"/>
+			<return-property column="OWNER_VAT_TYPE_NAME" name="ownerVatTypeName"/>
+			<return-property column="OWNER_PAY_PERIOD_TYPE" name="ownerPayPeriodType"/>
+			<return-property column="OWNER_PAY_PERIOD_TYPE_NAME" name="ownerPayPeriodTypeName"/>
+			<return-property column="OWNER_PAY_PERIOD" name="ownerPayPeriod"/>
+			<return-property column="NO_OWNER_AMT" name="noOwnerAmt"/>
+			<return-property column="INS_CHANGE_EFFECTIVE_DT" name="changeEffectiveDt"/>
+			<return-property column="PLX_BENEFICIARY" name="plxBeneficiary"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="DETAIL" name="detail"/>
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="UPDATE_BY" name="updateBy"/>
+		</return>
+		<![CDATA[ call SEM.SEM_MSI004_SITE_INFO_INS_SRCH (?, :siteInfoId, :contractNo, :mode) ]]>
+	</sql-query>
+	
+	<sql-query callable="true" name="msi004SiteInfoRentServSrch">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoRentServSrchObj">
+			<return-property column="ROWNUM" name="rowId"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="SERVICE_ID" name="serviceId"/>
+			<return-property column="RENT_AMT" name="rentAmt"/>
+			<return-property column="SERVICE_NAME" name="serviceName"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_SUM_RENT_SE (?, :siteInfoId) ]]>
+	</sql-query>
+	
+	<sql-query callable="true" name="msi004SiteInfoRentalUndo">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoUndoObj">
+			<return-property column="SITE_INFO_ID" name="rowId"/>
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_REMARK" name="resultMsg"/>
+		</return>
+		<![CDATA[ call SEM_PG_SI_UNDO_SEM_SI_RENT_UNDO (?, :siteInfoId, :userId) ]]>
+	</sql-query>
+	
+	
+	<sql-query callable="true" name="msi004SiteInfoRentalDepositUndo">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoUndoObj">
+			<return-property column="SITE_INFO_ID" name="rowId"/>
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_REMARK" name="resultMsg"/>
+		</return>
+		<![CDATA[ call SEM_PG_SI_UNDO_SEM_SI_RENT_DEPOSIT_UNDO (?, :siteInfoId, :userId) ]]>
+	</sql-query>
+	
+	<sql-query callable="true" name="msi004SiteInfoPTUndo">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoUndoObj">
+			<return-property column="SITE_INFO_ID" name="rowId"/>
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_REMARK" name="resultMsg"/>
+		</return>
+		<![CDATA[ call SEM_PG_SI_UNDO_SEM_SI_PROPERTY_TAX_UNDO (?, :siteInfoId, :userId) ]]>
+	</sql-query>
+	
+	<sql-query callable="true" name="msi004SiteInfoIRUndo">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoUndoObj">
+			<return-property column="SITE_INFO_ID" name="rowId"/>
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_REMARK" name="resultMsg"/>
+		</return>
+		<![CDATA[ call SEM_PG_SI_UNDO_SEM_SI_INSURANCE_UNDO (?, :siteInfoId, :userId) ]]>
+	</sql-query>
+	
+	<sql-query callable="true" name="msi004SiteInfoContractUndo">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoUndoObj">
+			<return-property column="SITE_INFO_ID" name="rowId"/>
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_REMARK" name="resultMsg"/>
+		</return>
+		<![CDATA[ call SEM_PG_SI_UNDO_SEM_SI_CONTRACT_UNDO (?, :siteInfoId, :userId) ]]>
+	</sql-query>
+	
+	
+	<sql-query callable="true" name="msi004SiteAppELCondSrch">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteAppELContSrch">
+			<return-property column="SITE_APP_ELECTRIC_COND_ID" name="rowId"/>
+		   <return-property column="SITE_APP_ELECTRIC_COND_ID" name="siteAppELContId"/>
+		   <return-property column="SITE_APP_ID" name="siteAppId"/>
+		   <return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+		   <return-property column="EXPIRE_DT" name="expireDt"/>
+		   <return-property column="CHANGE_EFFECTIVE_DT" name="changeEffectiveDt"/>
+		   <return-property column="PERIOD_START_DT" name="periodStartDt"/>
+		   <return-property column="PERIOD_END_DT" name="periodEndDt"/>
+		   <return-property column="ELECTRIC_TYPE" name="electricType"/>
+		   <return-property column="ELECTRIC_TYPE_NAME" name="electricTypeName"/>
+		   <return-property column="CONTRACT_NO" name="contractNo"/>
+		   <return-property column="ELECTRIC_COND_SUBTYPE" name="electricCondSubtype"/>
+		   <return-property column="ELECTRIC_COND_SUBTYPE_NAME" name="electricCondSubtypeName"/>
+		   <return-property column="ELECTRIC_OLD_AMT" name="electricOldAmt"/>
+		   <return-property column="ELECTRIC_ADD_AMT" name="electricAddAmt"/>
+		   <return-property column="ELECTRIC_AMT" name="electricAmt"/>
+		   <return-property column="NO_UNIT_PRICE_FLAG" name="noUnitPriceFlag"/>
+		   <return-property column="ELECTRIC_PERIOD_TYPE" name="electricPeriodType"/>
+		   <return-property column="ELECTRIC_PERIOD_TYPE_NAME" name="electricPeriodTypeName"/>
+		   <return-property column="DETAIL" name="detail"/>
+		   <return-property column="VAT_TYPE" name="elVatType"/>
+		   <return-property column="VAT_TYPE_NAME" name="elVatTypeName"/>
+		   <return-property column="PAY_PERIOD_TYPE" name="payPeriodType"/>
+		   <return-property column="PAY_PERIOD_TYPE_NAME" name="payPeriodTypeName"/>
+		   <return-property column="REF_SITE_ELECTRIC_COND_ID" name="refSiteElectricCondId"/>   
+		   <return-property column="SERVICE_ID" name="serviceId"/>
+		   <return-property column="SERVICE_NAME" name="serviceName"/>
+		   <return-property column="PAY_PERIOD" name="elPayPeriod"/>
+
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SI_SITE_ACQ_EL_COND_SRCH (?, :siteInfoId) ]]>
+	</sql-query>
+	
+		<!-- // msa002PopupContractElUse -->
+	<sql-query callable="true" name="msi004PopupContractElUse">
+		<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="popupContractElUsemsi004">
+			<return-property column="CONTRACT_NO" name="rowId"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="LOCATION_NAME" name="locationName" />
+			<return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+			<return-property column="EXPIRE_DT" name="expireDt"/>
+			<return-property column="CONTRACT_STATUS_NAME" name="contractStatusName"/>
+		</return>
+		<![CDATA[ call SEM.SEM_PG_SA_POPUP_POPUP_CONTRACT_EL_USE(?, :company, :contractNo, :locationName) ]]>
+	</sql-query>
+	
+	<sql-query callable="true" name="msi004SiteInfoElUndo">
+	<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoUndoObj">
+			<return-property column="SITE_INFO_ID" name="rowId"/>
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_REMARK" name="resultMsg"/>
+		</return>
+		<![CDATA[ call SEM_PG_SI_UNDO_SEM_SI_EL_UNDO (?, :siteInfoId, :userId) ]]>
+	</sql-query>
+	
+	<sql-query callable="true" name="msi004SiteInfoElDepositUndo">
+	<return alias="" class="th.co.ais.domain.si.SiteInfoMapSiteAcqSP" entity-name="siteInfoUndoObj">
+			<return-property column="SITE_INFO_ID" name="rowId"/>
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_REMARK" name="resultMsg"/>
+		</return>
+		<![CDATA[ call SEM_PG_SI_UNDO_SEM_SI_EL_DEPOSIT_UNDO (?, :siteInfoId, :userId) ]]>
+	</sql-query>
+	
+	
+		
+</hibernate-mapping>

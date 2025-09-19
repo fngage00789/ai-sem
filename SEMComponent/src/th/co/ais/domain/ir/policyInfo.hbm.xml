@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.Policy" entity-name="MIR008_DRAFT">
+		<id name="rowId" type="java.lang.String" />
+		<property name="draftNo" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="transferTypeDesc" type="java.lang.String" />
+		<property name="policyType" type="java.lang.String" />
+		<property name="policyTypeDesc" type="java.lang.String" />
+		<property name="companyDesc" type="java.lang.String" />
+		<property name="address" type="java.lang.String" />
+		<property name="totalLoacation" type="java.lang.String" />
+		<property name="policyStartDt" type="java.sql.Date" />
+		<property name="policyStartTM1" type="java.lang.String" />
+		<property name="policyStartTM2" type="java.lang.String" />
+		<property name="policyEndDt" type="java.sql.Date" />
+		<property name="policyEndTM1" type="java.lang.String" />
+		<property name="policyEndTM2" type="java.lang.String" />
+		<property name="insuredAmt" type="java.lang.Double" />
+		<property name="limitLost" type="java.lang.String" />
+		<property name="limitLostAmt" type="java.lang.Double" />
+		<property name="deductAmt" type="java.lang.Double" />
+		<property name="premiumRate" type="java.lang.Double" />
+		<property name="premiumAmt" type="java.lang.Double" />
+		<property name="dutyAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="totalPremiumAmt" type="java.lang.Double" />
+		<property name="insuredName" type="java.lang.String" />
+		<property name="docDate" type="java.sql.Date" />
+		<property name="policyDt" type="java.sql.Date" />
+		<property name="remark" type="java.lang.String" />
+		<property name="forMonth" type="java.lang.String" />
+		<property name="forYear" type="java.lang.String" />
+		<property name="refPolicyNo" type="java.lang.String" />
+		<property name="refDate" type="java.sql.Date" />
+	</class>
+	
+	<class name="th.co.ais.domain.ir.Policy" entity-name="MIR008_UPD">
+		<id name="pResult" type="java.lang.String" />
+		<property name="pRemark" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.ir.Policy" entity-name="MIR008_SAVE">
+		<id name="pResult" type="java.lang.String" />
+		<property name="pRemark" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.ir.Policy" entity-name="MIR009_POLICY">
+		<id name="rowId" type="java.lang.String" />
+		<property name="draftNo" type="java.lang.String" />
+		<property name="policyNo" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="transferTypeDesc" type="java.lang.String" />
+		<property name="policyType" type="java.lang.String" />
+		<property name="policyTypeDesc" type="java.lang.String" />
+		<property name="companyDesc" type="java.lang.String" />
+		<property name="address" type="java.lang.String" />
+		<property name="totalLoacation" type="java.lang.String" />
+		<property name="policyStartDt" type="java.sql.Date" />
+		<property name="policyStartTM1" type="java.lang.String" />
+		<property name="policyStartTM2" type="java.lang.String" />
+		<property name="policyEndDt" type="java.sql.Date" />
+		<property name="policyEndTM1" type="java.lang.String" />
+		<property name="policyEndTM2" type="java.lang.String" />
+		<property name="insuredAmt" type="java.lang.Double" />
+		<property name="limitLost" type="java.lang.String" />
+		<property name="limitLostAmt" type="java.lang.Double" />
+		<property name="deductAmt" type="java.lang.Double" />
+		<property name="premiumRate" type="java.lang.Double" />
+		<property name="premiumAmt" type="java.lang.Double" />
+		<property name="dutyAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="totalPremiumAmt" type="java.lang.Double" />
+		<property name="insuredName" type="java.lang.String" />
+		<property name="docDate" type="java.sql.Date" />
+		<property name="policyDt" type="java.sql.Date" />
+		<property name="remark" type="java.lang.String" />
+		<property name="forMonth" type="java.lang.String" />
+		<property name="forYear" type="java.lang.String" />
+		<property name="refPolicyNo" type="java.lang.String" />
+		<property name="refDate" type="java.sql.Date" />
+	</class>
+	
+	<sql-query name="mir008SchDraft" callable="true" >
+		<return class="th.co.ais.domain.ir.Policy" entity-name="MIR008_DRAFT">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="draftNo" column="DRAFT_NO" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="transferTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="policyType" column="POLICY_TYPE" />
+			<return-property name="policyTypeDesc" column="POLICY_TYPE_DESC" />
+			<return-property name="companyDesc" column="COMPANY_DESC" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="totalLoacation" column="TOTAL_LOCATION" />
+			<return-property name="policyStartDt" column="POLICY_START_DT" />
+			<return-property name="policyStartTM1" column="POLICY_START_TM1" />
+			<return-property name="policyStartTM2" column="POLICY_START_TM2" />
+			<return-property name="policyEndDt" column="POLICY_END_DT" />
+			<return-property name="policyEndTM1" column="POLICY_END_TM1" />
+			<return-property name="policyEndTM2" column="POLICY_END_TM2" />
+			<return-property name="insuredAmt" column="INSURED_AMT" />
+			<return-property name="limitLost" column="LIMIT_LOST" />
+			<return-property name="limitLostAmt" column="LIMIT_LOST_AMT" />
+			<return-property name="deductAmt" column="DEDUCT_AMT" />
+			<return-property name="premiumRate" column="PREMIUM_RATE" />
+			<return-property name="premiumAmt" column="PREMIUM_AMT" />
+			<return-property name="dutyAmt" column="DUTY_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="totalPremiumAmt" column="TOTAL_PREMIUM_AMT" />
+			<return-property name="insuredName" column="INSURED_NAME" />
+			<return-property name="docDate" column="DOC_DT" />
+			<return-property name="policyDt" column="POLICY_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="forMonth" column="FOR_MONTH" />
+			<return-property name="forYear" column="FOR_YEAR" />
+			<return-property name="refPolicyNo" column="REF_NO" />
+			<return-property name="refDate" column="REF_DT" />
+		</return>
+		 <![CDATA[ call SEM_SP_MIR008_DRAFT(?, :draftNo) ]]>
+	</sql-query>
+	
+	
+	<sql-query name="mir008SchDraftUPD" callable="true" >
+		<return class="th.co.ais.domain.ir.Policy" entity-name="MIR008_UPD">  
+			<return-property name="pResult" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+			
+		</return>
+		  <![CDATA[ call SEM_SP_MIR008_UPD(?, :draftNo, cast(:policyStartDt as date), :policyStartTM1, :policyStartTM2, cast(:policyEndDt as date),
+							:policyEndTM1, :policyEndTM2, :limitLost, cast(:limitLostAmt as numeric), :insuredName,
+							cast(:docDate as date), cast(:policyDt as date), :remark, :forMonth, :forYear,
+							:refPolicyNo, cast(:refDate as date), :userId, :deleteFlag) ]]>
+	</sql-query>
+	
+	
+	<sql-query name="mir008Save" callable="true" >
+		<return class="th.co.ais.domain.ir.Policy" entity-name="MIR008_SAVE">  
+			<return-property name="pResult" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+			
+		</return>
+		  <![CDATA[ call SEM_SP_MIR008_SAVE(?, :draftNo) ]]>
+	</sql-query>
+	
+	<sql-query name="mir009Policy" callable="true" >
+		<return class="th.co.ais.domain.ir.Policy" entity-name="MIR009_POLICY">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="draftNo" column="DRAFT_NO" />
+			<return-property name="policyNo" column="POLICY_NO" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="transferTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="policyType" column="POLICY_TYPE" />
+			<return-property name="policyTypeDesc" column="POLICY_TYPE_DESC" />
+			<return-property name="companyDesc" column="COMPANY_DESC" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="totalLoacation" column="TOTAL_LOCATION" />
+			<return-property name="policyStartDt" column="POLICY_START_DT" />
+			<return-property name="policyStartTM1" column="POLICY_START_TM1" />
+			<return-property name="policyStartTM2" column="POLICY_START_TM2" />
+			<return-property name="policyEndDt" column="POLICY_END_DT" />
+			<return-property name="policyEndTM1" column="POLICY_END_TM1" />
+			<return-property name="policyEndTM2" column="POLICY_END_TM2" />
+			<return-property name="insuredAmt" column="INSURED_AMT" />
+			<return-property name="limitLost" column="LIMIT_LOST" />
+			<return-property name="limitLostAmt" column="LIMIT_LOST_AMT" />
+			<return-property name="deductAmt" column="DEDUCT_AMT" />
+			<return-property name="premiumRate" column="PREMIUM_RATE" />
+			<return-property name="premiumAmt" column="PREMIUM_AMT" />
+			<return-property name="dutyAmt" column="DUTY_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="totalPremiumAmt" column="TOTAL_PREMIUM_AMT" />
+			<return-property name="insuredName" column="INSURED_NAME" />
+			<return-property name="docDate" column="DOC_DT" />
+			<return-property name="policyDt" column="POLICY_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="forMonth" column="FOR_MONTH" />
+			<return-property name="forYear" column="FOR_YEAR" />
+			<return-property name="refPolicyNo" column="REF_NO" />
+			<return-property name="refDate" column="REF_DT" />
+		</return>
+		 <![CDATA[ call SEM_SP_MIR009_POLICY(?, :policyNo) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

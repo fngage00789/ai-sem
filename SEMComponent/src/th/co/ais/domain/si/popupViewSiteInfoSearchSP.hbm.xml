@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+
+	<class name="th.co.ais.domain.si.PopupViewSiteInfoSearchSP">
+		<id name="rowId" type="java.lang.String"/>
+			<property name="contractNo" type="java.lang.String"/>
+			<property name="siteName" type="java.lang.String"/>
+			<property name="locationId" type="java.lang.String"/>
+			<property name="locationCode" type="java.lang.String"/>
+			<property name="firsteffectiveDt" type="java.util.Date"/>
+			<property name="effectiveDt" type="java.util.Date"/>
+			<property name="expireDt" type="java.util.Date"/>
+			<property name="stationType" type="java.lang.String"/>
+			<property name="address" type="java.lang.String"/>
+			<property name="street" type="java.lang.String"/>
+			<property name="tambon" type="java.lang.String"/>
+			<property name="amphur" type="java.lang.String"/>
+			<property name="province" type="java.lang.String"/>
+			<property name="remark" type="java.lang.String"/>
+			<property name="siteType" type="java.lang.String"/>
+			<property name="deckArea" type="java.lang.Double"/>
+			<property name="buildingArea" type="java.lang.Double"/>
+			<property name="roomNo" type="java.lang.String"/>
+			<property name="roomArea" type="java.lang.Double"/>
+			<property name="landArea" type="java.lang.Double"/>
+			<property name="areaUnitType" type="java.lang.String"/>
+			<property name="owner" type="java.lang.String"/>
+			<property name="lessorName" type="java.lang.String"/>
+			<property name="ownerAddress" type="java.lang.String"/>
+			<property name="ownerStreet" type="java.lang.String"/>
+			<property name="ownerTambon" type="java.lang.String"/>
+			<property name="ownerAmphur" type="java.lang.String"/>
+			<property name="ownerProvince" type="java.lang.String"/>
+			<property name="networkStatus" type="java.lang.String"/>
+			<property name="siteStatus" type="java.lang.String"/>
+			<property name="contractStatus" type="java.lang.String"/>
+			<property name="sendTOTStatus" type="java.lang.String"/>
+			<property name="docRemain" type="java.lang.String"/>
+			
+			<property name="depositCash" type="java.lang.Double"/>
+			<property name="depositBg" type="java.lang.String"/>
+			
+			<property name="depositEtCash" type="java.lang.Double"/>
+			<property name="depositEtBg" type="java.lang.String"/>
+		
+			<property name="contactName" type="java.lang.String"/>
+			<property name="contactTel" type="java.lang.String"/>
+			<property name="contactFax" type="java.lang.String"/>
+			<property name="rentAmt" type="java.lang.Double"/>
+			<property name="rentPayPeriod" type="java.lang.String"/>
+			<property name="rentWhtType" type="java.lang.String"/>
+			<property name="serviceAmt" type="java.lang.Double"/>
+			<property name="servicePayPeriod" type="java.lang.String"/>
+			<property name="serviceVatType" type="java.lang.String"/>
+			<property name="serviceWhtType" type="java.lang.String"/>
+			<property name="rentServiceAmt" type="java.lang.Double"/>
+			<property name="propertyTaxPayType" type="java.lang.String"/>
+			<property name="propertyTaxHistPay" type="java.lang.String"/>
+			<property name="electricType" type="java.lang.String"/>
+		
+			<property name="etUnitPriceAmt" type="java.lang.Double"/>
+			<property name="takeAll" type="java.lang.String"/>
+			<property name="takeAllAmt" type="java.lang.Double"/>
+			<property name="takeAllPeriodType" type="java.lang.String"/>
+			
+			<property name="reqTypeName" type="java.lang.String"/>
+			<property name="title" type="java.lang.String"/>
+			<property name="oldContractNo" type="java.lang.String"/>
+			<property name="insuranceType" type="java.lang.String" />
+			<property name="moneyAmount" type="java.lang.Double"/>
+			<property name="elVatType" type="java.lang.String" />
+			
+			<property name="emerContactName" type="java.lang.String" />
+			<property name="emerPhoneNum" type="java.lang.String" />
+			<property name="categoryName" type="java.lang.String" />
+			<property name="subCategoryName" type="java.lang.String" />
+			<property name="rentalDetail" type="java.lang.String" />
+			<property name="zone" type="java.lang.String" />
+			<property name="contractFlow" type="java.lang.String" />
+			<property name="rentalDepositDetail" type="java.lang.String" />
+			<property name="elDepositDetail" type="java.lang.String" />
+			<property name="contractStartDt_p1" type="java.util.Date" />
+			<property name="contractEndDt_p1" type="java.util.Date" />
+			<property name="rentalAmt_p1Str" type="java.lang.String" />
+			<property name="rentalInclude_p1" type="java.math.BigDecimal" />
+			<property name="contractStartDt_p2" type="java.util.Date" />
+			<property name="contractEndDt_p2" type="java.util.Date" />
+			<property name="rentalAmt_p2Str" type="java.lang.String" />
+			<property name="rentalInclude_p2" type="java.math.BigDecimal" />
+			<property name="contractStartDt_p3" type="java.util.Date" />
+			<property name="contractEndDt_p3" type="java.util.Date" />
+			<property name="rentalAmt_p3Str" type="java.lang.String" />
+			<property name="rentalInclude_p3" type="java.math.BigDecimal" />
+			<property name="taxId" type="java.lang.String" />
+			<property name="onwerBirthday" type="java.util.Date" />
+			<property name="rentVatType" type="java.lang.String" />
+			<property name="serviceDepositDetail" type="java.lang.String" />
+			<property name="servDetail" type="java.lang.String" />
+	</class>
+	<sql-query name="querypopupViewSiteInFoSearch" callable="true">
+			<return class="th.co.ais.domain.si.PopupViewSiteInfoSearchSP">
+			<return-property name="rowId" column="CONTRACT_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO"/>
+			<return-property name="siteName" column="SITE_NAME"/>
+			<return-property name="locationId" column="LOCATION_ID"/>
+			<return-property name="locationCode" column="LOCATION_CODE"/>
+			<return-property name="firsteffectiveDt" column="FIRST_EFFECTIVE_DT"/>
+			<return-property name="effectiveDt" column="EFFECTIVE_DT"/>
+			<return-property name="expireDt" column="EXPIRE_DT"/>
+			<return-property name="stationType" column="STATION_TYPE"/>
+			<return-property name="address" column="ADDRESS"/>
+			<return-property name="street" column="STREET"/>
+			<return-property name="tambon" column="TAMBON"/>
+			<return-property name="amphur" column="AMPHUR"/>
+			<return-property name="province" column="PROVINCE"/>
+			<return-property name="remark" column="REMARK"/>
+			<return-property name="siteType" column="SITE_TYPE"/>
+			<return-property name="deckArea" column="DECK_AREA"/>
+			<return-property name="buildingArea" column="BUILDING_AREA"/>
+			<return-property name="roomNo" column="ROOM_NO"/>
+			<return-property name="roomArea" column="ROOM_AREA"/>
+			<return-property name="landArea" column="LAND_AREA"/>
+			<return-property name="areaUnitType" column="AREA_UNIT_TYPE"/>
+			<return-property name="owner" column="OWNER"/>
+			<return-property name="lessorName" column="LESSOR_NAME"/>
+			<return-property name="ownerAddress" column="OWNER_ADDRESS"/>
+			<return-property name="ownerStreet" column="OWNER_STREET"/>
+			<return-property name="ownerTambon" column="OWNER_TAMBON"/>
+			<return-property name="ownerAmphur" column="OWNER_AMPHUR"/>
+			<return-property name="ownerProvince" column="OWNER_PROVINCE"/>
+			<return-property name="networkStatus" column="NETWORK_STATUS"/>
+			<return-property name="siteStatus" column="SITE_STATUS"/>
+			<return-property name="contractStatus" column="CONTRACT_STATUS"/>
+			<return-property name="sendTOTStatus" column="SEND_TOT_STATUS"/>
+			<return-property name="docRemain" column="DOC_REMAIN"/>
+
+			<return-property name="depositCash" column="DEPOSIT_CASH"/>
+			<return-property name="depositBg" column="DEPOSIT_BG"/>
+
+			<return-property name="depositEtCash" column="DEPOSIT_ET_CASH"/>
+			<return-property name="depositEtBg" column="DEPOSIT_ET_BG"/>
+		
+			<return-property name="contactName" column="CONTACT_NAME"/>
+			<return-property name="contactTel" column="CONTACT_TEL"/>
+			<return-property name="contactFax" column="CONTACT_FAX"/>
+			<return-property name="rentAmt" column="RENT_AMT"/>
+			<return-property name="rentPayPeriod" column="RENT_PAY_PERIOD"/>
+			<return-property name="rentWhtType" column="RENT_WHT_TYPE"/>
+			<return-property name="serviceAmt" column="SERVICE_AMT"/>
+			<return-property name="servicePayPeriod" column="SERVICE_PAY_PERIOD"/>
+			<return-property name="serviceVatType" column="SERVICE_VAT_TYPE"/>
+			<return-property name="serviceWhtType" column="SERVICE_WHT_TYPE"/>
+			<return-property name="rentServiceAmt" column="RENT_SERVICE_AMT"/>
+			<return-property name="propertyTaxPayType" column="PROPERTY_TAX_PAY_TYPE"/>
+			<return-property name="propertyTaxHistPay" column="PROPERTY_TAX_HIST_PAY"/>
+			<return-property name="electricType" column="ELECTRIC_TYPE"/>
+	
+			<return-property name="etUnitPriceAmt" column="ET_UNIT_PRICE_AMT"/>
+			<return-property name="takeAll" column="TAKE_ALL"/>
+			<return-property name="takeAllAmt" column="TAKE_ALL_AMT"/>
+			<return-property name="takeAllPeriodType" column="TAKE_ALL_PERIOD_TYPE"/>
+			
+			<return-property name="reqTypeName" column="REQ_TYPE_NAME"/>
+			<return-property name="title" column="TITLE"/>
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO"/>
+			<return-property name="insuranceType" column="INSURANCE_TYPE"/>
+			<return-property name="moneyAmount" column="INSURANCE_AMT"/>
+			<return-property name="elVatType" column="EL_VAT_TYPE"/>
+			
+			<return-property name="emerContactName" column="EMER_CONTACT_NAME"/>
+           <return-property name="emerPhoneNum" column="EMER_CONTACT_PHONE_NUM"/>
+           <return-property name="categoryName" column="OWNER_CATEGORY"/>
+           <return-property name="subCategoryName" column="OWNER_SUB_CATEGORY"/>
+           <return-property name="rentalDetail" column="RENTAL_DETAIL"/>
+           <return-property name="servDetail" column="SERV_DETAIL"/>
+           <return-property name="zone" column="SITE_ZONE"/>
+           <return-property name="contractFlow" column="CONTRACT_FLOW"/>
+           <return-property name="rentalDepositDetail" column="RENTAL_DEPOSIT_DETAIL"/>
+           <return-property name="elDepositDetail" column="EL_DEPOSIT_DETAIL"/>
+           
+           <return-property name="contractStartDt_p1" column="CONTRACT_START_DT_P1"/>
+           <return-property name="contractEndDt_p1" column="CONTRACT_END_DT_P1"/>
+           <return-property name="rentalAmt_p1Str" column="RENTAL_AMT_P1"/>
+           <return-property name="rentalInclude_p1" column="RENTAL_INCLUDE_P1"/>
+           
+           <return-property name="contractStartDt_p2" column="CONTRACT_START_DT_P2"/>
+           <return-property name="contractEndDt_p2" column="CONTRACT_END_DT_P2"/>
+           <return-property name="rentalAmt_p2Str" column="RENTAL_AMT_P2"/>
+           <return-property name="rentalInclude_p2" column="RENTAL_INCLUDE_P2"/>
+           
+           <return-property name="contractStartDt_p3" column="CONTRACT_START_DT_P3"/>
+           <return-property name="contractEndDt_p3" column="CONTRACT_END_DT_P3"/>
+           <return-property name="rentalAmt_p3Str" column="RENTAL_AMT_P3"/>
+           <return-property name="rentalInclude_p3" column="RENTAL_INCLUDE_P3"/>
+           
+           <return-property name="taxId" column="TAX_ID"/>
+           <return-property name="onwerBirthday" column="OWNER_BIRTHDAY"/>
+           <return-property name="rentVatType" column="RENT_VAT_TYPE"/>
+           <return-property name="serviceDepositDetail" column="SERVICE_DEPOSIT_DETAIL"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_PSI003_SRCH(?, :siteInFoId) ]]>
+	</sql-query>
+</hibernate-mapping>

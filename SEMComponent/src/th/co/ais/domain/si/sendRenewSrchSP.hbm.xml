@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SendRenewSrchSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="firstEffDt" type="java.sql.Date"/>
+		<property name="effDt" type="java.sql.Date"/>
+		<property name="expDt" type="java.sql.Date"/>
+		<property name="rentAmt" type="java.lang.Double"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="sendRenewType" type="java.lang.String"/>		
+		<property name="approveStatus" type="java.lang.String"/>
+		<property name="sendRenewStatus" type="java.lang.String"/>
+		<property name="sendRenewDt" type="java.sql.Date"/>
+		<property name="sendRenewBackDt" type="java.sql.Date"/>
+		<property name="approvebackDt" type="java.sql.Date"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="samDt" type="java.sql.Date"/>
+		<property name="sendRenewStatusCd" type="java.lang.String"/>
+		<property name="district" type="java.lang.String"/>
+		<property name="amphur" type="java.lang.String"/>
+		<property name="province" type="java.lang.String"/>
+		<property name="renewAgeDesc" type="java.lang.String"/>
+		<property name="userName" type="java.lang.String"/>
+		<property name="contactName" type="java.lang.String"/>
+		<property name="telephone" type="java.lang.String"/>
+		<property name="address" type="java.lang.String"/>
+		<property name="siteStatus" type="java.lang.String"/>
+		<property name="flowStatus" type="java.lang.String"/>
+		<property name="zoneId" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+	</class>
+	<sql-query name="querySearchSendRenew" callable="true">
+		<return class="th.co.ais.domain.si.SendRenewSrchSP">
+			<return-property name="rowId" column="SEND_RENEW_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="firstEffDt" column="FIRST_EFFECTIVE_DT" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expDt" column="EXPIRE_DT" />
+			<return-property name="rentAmt" column="RENT_AMT" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="sendRenewType" column="SEND_RENEW_TYPE" />
+			<return-property name="approveStatus" column="APPROVE_STATUS" />
+			<return-property name="sendRenewStatus" column="SEND_RENEW_STATUS" />
+			<return-property name="sendRenewDt" column="SEND_RENEW_DT" />
+			<return-property name="sendRenewBackDt" column="SEND_RENEW_BACK_DT" />
+			<return-property name="approvebackDt" column="APPROVE_BACK_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="samDt" column="SAM_DT" />			
+			<return-property name="sendRenewStatusCd" column="SEND_RENEW_STATUS_CD" />
+			<return-property name="district" column="DISTRICT" />
+			<return-property name="amphur" column="AMPHUR" />
+			<return-property name="province" column="PROVINCE" />
+			<return-property name="renewAgeDesc" column="RENEW_AGE_DESC" />
+			<return-property name="userName" column="USER_NAME" />
+			<return-property name="contactName" column="CONTACT_NAME" />
+			<return-property name="telephone" column="TELEPHONE" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="zoneId" column="ZONE_ID" />
+			<return-property column="SITE_STATUS" name="siteStatus"/>
+   			<return-property column="FLOW_STATUS" name="flowStatus"/>
+   			<return-property name="company" column="COMPANY" />
+			<return-property name="region" column="REGION" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI005_SRCH(?, :contractNo, :company, :contractStartDt, :contractEndDt, :contractNoEndFlag, 
+		:locationId, :locationCode, :siteName, :region, :approveDtFrom, :approveDtTo, :approveBackDtFrom, :approveBackDtTo, 
+		:samDtFrom, :samDtTo, :approveStatus, :sendRenewType, :sendRenewStatus, :siteType, :expireDtFrom, :expireDtTo, :chkPico) ]]>
+	</sql-query>
+</hibernate-mapping>

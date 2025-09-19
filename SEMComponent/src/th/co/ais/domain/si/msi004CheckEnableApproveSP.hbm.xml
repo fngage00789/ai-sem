@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004CheckEnableApproveSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="editableFlag" type="java.lang.String"/>
+		<property name="approveFlag" type="java.lang.String"/>
+		<property name="cancelApproveFlag" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="msi004CheckEnableApprove" callable="true">
+		<return class="th.co.ais.domain.si.Msi004CheckEnableApproveSP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="editableFlag" column="EDITABLE_FLAG" />
+			<return-property name="approveFlag" column="APPROVE_FLAG" />
+			<return-property name="cancelApproveFlag" column="CANCELAPPROVE_FLAG" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_CHK_ENA_APPROVE(?, :siteInfoId) ]]>
+	</sql-query>
+</hibernate-mapping>

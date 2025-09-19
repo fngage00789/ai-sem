@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+	<class name="th.co.ais.domain.pt.Mpt006Srch">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="pTaxHistId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="changeAmt" type="java.lang.Integer" />
+		<property name="pTaxPayDesc" type="java.lang.String" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.util.Date" />
+	</class>
+	<sql-query name="spMpt006Srch" callable="true">
+		<return class="th.co.ais.domain.pt.Mpt006Srch">
+			<return-property name="rowId" column="PTAX_HIST_ID" />
+			<return-property name="pTaxHistId" column="PTAX_HIST_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="changeAmt" column="CHANGE_AMT" />
+			<return-property name="pTaxPayDesc" column="PTAX_PAY_DESC" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		</return>
+		<![CDATA[ call SEM_SP_MPT006_SRCH(?, :ptTaxPayType, :createDateFrom, :createDateTo, :vendorSave) ]]>
+	</sql-query>
+</hibernate-mapping>

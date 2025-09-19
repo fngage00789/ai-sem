@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.gm">
+	<class entity-name="mct011Srch" name="th.co.ais.domain.gm.VendorMasterSP">
+	  <id name="rowId" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="idCard" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="contractNo" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="siteName" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="remark" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="vendorMasterId" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="vendorMapPayeeId" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="payeeName" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="vendorType" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="bankAccType" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="bankAccNo" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="bankAccName" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="bankAccCode" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="bankName" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="bankBranch" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="province" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="newBankFlag" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="recordStatus" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="recordStatusDesc" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="createBy" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="createDt" type="java.util.Date"/>
+	   <property generated="never" lazy="false" name="approveBy" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="approveDT" type="java.util.Date"/>
+	   <property generated="never" lazy="false" name="siteInfoId" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="exportFlag" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="batchNo" type="java.lang.String"/>
+	   <property generated="never" lazy="false" name="payeeAddress" type="java.lang.String"/> 
+	</class>
+	
+	<!-- << classes declarement -->
+    
+    <!-- ============================================================================== -->
+    <!-- ============================================================================== -->
+    
+    <!-- >> queries declarement -->
+    
+	<sql-query callable="true" name="queryMct011Srch">
+   		<return alias="" class="th.co.ais.domain.gm.VendorMasterSP" entity-name="mct011Srch">
+   		<return-property column="ROW_ID" name="rowId"/>
+   		<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+   		<return-property column="PAYEE_TYPE_DESC" name="vendorType"/>
+   		<return-property column="PAYEE_NAME" name="payeeName"/>
+   		<return-property column="PAYEE_ID_CARD" name="idCard"/>
+   		<return-property column="BANK_ACC_TYPE" name="bankAccType"/>
+   		<return-property column="BANK_ACC_NO" name="bankAccNo"/>
+   		<return-property column="BANK_ACC_NAME" name="bankAccName"/>
+   		<return-property column="BANK_CODE" name="bankAccCode"/>
+   		<return-property column="BANK_NAME" name="bankName"/>
+   		<return-property column="BANK_BRANCH" name="bankBranch"/>
+   		<return-property column="PROVINCE" name="province"/>
+   		<return-property column="NEW_BANK_FLAG" name="newBankFlag"/>
+   		<return-property column="CONTRACT_NO" name="contractNo"/>
+   		<return-property column="SITE_NAME" name="siteName"/>
+   		<return-property column="RECORD_STATUS" name="recordStatus"/>
+   		<return-property column="RECORD_STATUS_DESC" name="recordStatusDesc"/>
+		<return-property column="REMARK" name="remark"/>
+		<return-property column="CREATE_BY" name="createBy"/>
+		<return-property column="CREATE_DT" name="createDt"/>
+		<return-property column="APPROVE_BY" name="approveBy"/> 
+		<return-property column="APPROVE_DT" name="approveDT"/>
+		<return-property column="SITE_INFO_ID" name="siteInfoId"/>
+		<return-property column="VENDOR_MASTER_ID" name="vendorMasterId"/>
+		<return-property column="EXPORT_FLAG" name="exportFlag"/>
+		<return-property column="BATCH_NO" name="batchNo"/>
+		<return-property column="ADDRESS" name="payeeAddress"/>
+	</return>
+  <![CDATA[ call SEM.SEM_SP_MCT011_SRCH(?, :recordStatus, :payeeName, :idCard,
+	:contractNo, :siteName, :batchNo, :createBy) ]]>
+	</sql-query>
+</hibernate-mapping>

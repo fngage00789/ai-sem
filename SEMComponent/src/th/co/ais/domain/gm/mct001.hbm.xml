@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.gm">
+	
+	<class name="th.co.ais.domain.gm.Mct001SP" entity-name="mct001Del">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+		
+	</class>
+	
+	<class name="th.co.ais.domain.gm.VendorMasterSP" entity-name="mapVendor">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="vendorCodeOld" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="address" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.gm.VendorMasterSP" entity-name="vendorSummary">
+		<id type="java.lang.String" name="rowId" />
+		<property type="java.lang.String" update="false" name="vendorCode"/>
+		<property type="java.lang.String" update="false" name="vendorName"/>
+		<property type="java.lang.String" update="false" name="tax13"/>
+		<property type="java.lang.String" update="false" name="address"/>
+		<property type="java.lang.String" update="false" name="district"/>
+		<property type="java.lang.String" update="false" name="amphur"/>
+		<property type="java.lang.String" update="false" name="city"/>
+		<property type="java.lang.String" update="false" name="postCode"/>
+		<property type="java.lang.String" update="false" name="telephone"/>
+		<property type="java.lang.String" update="false" name="mobileNo"/>
+		<property type="java.lang.String" update="false" name="contractNo"/>
+		<property type="java.sql.Date" update="false" name="updateDt"/>
+	</class>
+	
+	<class name="th.co.ais.domain.gm.VendorMasterSP" entity-name="vendorHistory">
+		<id type="java.lang.String" name="rowId" />
+		<property type="java.lang.String" update="false" name="vendorName"/>
+		<property type="java.lang.String" update="false" name="address"/>
+		<property type="java.lang.String" update="false" name="district"/>
+		<property type="java.lang.String" update="false" name="amphur"/>
+		<property type="java.lang.String" update="false" name="city"/>
+		<property type="java.lang.String" update="false" name="telephone"/>
+		<property type="java.lang.String" update="false" name="mobileNo"/>
+		<property type="java.lang.String" update="false" name="contractNo"/>
+		<property type="java.lang.String" update="false" name="createBy"/>
+		<property type="java.sql.Date" update="false" name="createDt"/>
+	</class>
+	
+	<class name="th.co.ais.domain.gm.VendorMasterSP" entity-name="bookbankHistory">
+		<id type="java.lang.String" name="rowId" />
+		<property type="java.lang.String" update="false" name="bankName"/>
+		<property type="java.lang.String" update="false" name="bankBranch"/>
+		<property type="java.lang.String" update="false" name="province"/>
+		<property type="java.lang.String" update="false" name="bankAccNo"/>
+		<property type="java.lang.String" update="false" name="bankAccName"/>
+		<property type="java.lang.String" update="false" name="updateBy"/>
+		<property type="java.sql.Date" update="false" name="updateDt"/>
+	</class>
+	
+	
+	<sql-query name="mct001Del" callable="true">
+		<return class="th.co.ais.domain.gm.Mct001SP" entity-name="mct001Del">  
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+			
+		</return>
+	<![CDATA[ call SEM.SEM_SP_MCT001_DEL(?, :rowId, :actionType, :currentUser, :lessorId) ]]>
+	</sql-query>
+	
+	<sql-query name="queryGetMapVendor" callable="true">
+		<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="mapVendor">  
+			<return-property name="rowId" column="VENDOR_CODE" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorCodeOld" column="VENDOR_CODE_OLD" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="address" column="ADDRESS" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_GET_MAP_VENDOR(?, :vendorCode, :vendorName) ]]>
+	</sql-query>
+	
+	<sql-query name="queryGetMct001History" callable="true">
+		<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="vendorSummary">  
+			<return-property name="rowId" column="VENDOR_MASTER_ID" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="tax13" column="TAX13" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="district" column="DISTRICT" />
+			<return-property name="amphur" column="AMPHUR" />
+			<return-property name="city" column="CITY" />
+			<return-property name="postCode" column="POST_CODE" />
+			<return-property name="telephone" column="TELEPHONE" />
+			<return-property name="mobileNo" column="MOBILE_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCT001_HIST(?, :vendorMasterId) ]]>
+	</sql-query>
+	
+	<sql-query name="queryGetVendorHistory" callable="true">
+		<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="vendorHistory">  
+			<return-property name="rowId" column="VENDOR_MASTER_HIST_ID" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="district" column="DISTRICT" />
+			<return-property name="amphur" column="AMPHUR" />
+			<return-property name="city" column="CITY" />
+			<return-property name="telephone" column="TELEPHONE" />
+			<return-property name="mobileNo" column="MOBILE_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="createBy" column="CREATE_BY" />
+			<return-property name="createDt" column="CREATE_DT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCT001_VM_HIST(?, :vendorMasterId) ]]>
+	</sql-query>
+	
+	<sql-query name="queryGetBookbankHistory" callable="true">
+		<return class="th.co.ais.domain.gm.VendorMasterSP" entity-name="bookbankHistory">  
+			<return-property name="rowId" column="VENDOR_BOOKBANK_ID" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="bankBranch" column="BANK_BRANCH" />
+			<return-property name="province" column="PROVINCE" />
+			<return-property name="bankAccNo" column="BANK_ACC_NO" />
+			<return-property name="bankAccName" column="BANK_ACC_NAME" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCT001_VB_HIST(?, :vendorMasterId) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

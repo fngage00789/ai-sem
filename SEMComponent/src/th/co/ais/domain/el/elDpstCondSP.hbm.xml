@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class entity-name="el001SrchDpstCond" name="th.co.ais.domain.el.ELDpstCondSP">
+		<id name="siteDepositId" type="java.lang.String"/>
+		<property name="depositCondType" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="seqNo" type="java.math.BigDecimal"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="epenseTypeName" type="java.lang.String"/>
+		<property name="depositType" type="java.lang.String"/>
+		<property name="depositTypeName" type="java.lang.String"/>
+		<property name="detail" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="service" type="java.lang.String"/>
+		<property name="condDepositAmt" type="java.math.BigDecimal"/>
+		<property name="whtType" type="java.lang.String"/>
+		<property name="whtTypeName" type="java.lang.String"/>
+		<property name="whtRate" type="java.lang.String"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="vatTypeName" type="java.lang.String"/>
+		<property name="vatRate" type="java.lang.String"/>
+		<property name="newStatus" type="java.lang.String"/>
+		<property name="newStatusName" type="java.lang.String"/>
+		<property name="periodStartDt" type="java.sql.Date"/>
+		<property name="periodEndDt" type="java.sql.Date"/>
+		<property name="electricId" type="java.lang.String"/>
+		<property name="serviceId" type="java.lang.String"/>
+		<property name="verFlag" type="java.lang.String"/>
+	</class>
+	
+	<class entity-name="el001SrchDpstDtl" name="th.co.ais.domain.el.ELDpstCondSP">
+		<id name="privateDepositId" type="java.lang.String"/>
+		<property name="siteDepositId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="electricOwnerType" type="java.lang.String"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="depositType" type="java.lang.String"/>
+		<property name="service" type="java.lang.String"/>
+		<property name="serviceName" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="payeeCode" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String"/>
+		<property name="bgNo" type="java.lang.String"/>
+		<property name="depositAmt" type="java.math.BigDecimal"/>
+		<property name="depositDetail" type="java.lang.String"/>
+		<property name="whtType" type="java.lang.String"/>
+		<property name="whtTypeName" type="java.lang.String"/>
+		<property name="whtRate" type="java.lang.String"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="vatTypeName" type="java.lang.String"/>
+		<property name="vatRate" type="java.lang.String"/>
+		<property name="periodStartDt" type="java.sql.Date"/>
+		<property name="periodEndDt" type="java.sql.Date"/>
+		<property name="newFlag" type="java.lang.String"/>
+		<property name="electricId" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="depositDetailId" type="java.lang.String"/>
+		<property name="bgMasterId" type="java.lang.String"/>
+	</class>
+	
+	<class entity-name="el001InsertDpst" name="th.co.ais.domain.el.ELDpstCondSP">
+		<id name="result" type="java.lang.String"/>
+		<property name="message" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="el001SrchDpstCond" callable="true" >
+		<return class="th.co.ais.domain.el.ELDpstCondSP" entity-name="el001SrchDpstCond">
+			<return-property name="depositCondType" column="DEPOSIT_COND_TYPE" />
+			<return-property name="siteDepositId" column="SITE_DEPOSIT_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="seqNo" column="SEQ_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="epenseTypeName" column="EXPENSE_TYPE_NAME" />
+			<return-property name="depositType" column="DEPOSIT_TYPE" />
+			<return-property name="depositTypeName" column="DEPOSIT_TYPE_NAME" />
+			<return-property name="detail" column="DETAIL" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="service" column="SERVICE" />
+			<return-property name="condDepositAmt" column="COND_DEPOSIT_AMT" />
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="whtTypeName" column="WHT_TYPE_NAME" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatTypeName" column="VAT_TYPE_NAME" />
+			<return-property name="vatRate" column="VAT_RATE" />
+			<return-property name="newStatus" column="NEW_STATUS" />
+			<return-property name="newStatusName" column="NEW_STATUS_NAME" />
+			<return-property name="periodStartDt" column="PERIOD_START_DT" />
+			<return-property name="periodEndDt" column="PERIOD_END_DT" />
+			<return-property name="electricId" column="ELECTRIC_ID"/>
+			<return-property name="serviceId" column="SERVICE_ID"/>
+			<return-property name="verFlag" column="VER_FLAG"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_SRCH_DPST_COND(? ,:electricId) ]]>
+	</sql-query>
+	
+	<sql-query name="el001SrchDpstDtl" callable="true" >
+		<return class="th.co.ais.domain.el.ELDpstCondSP" entity-name="el001SrchDpstDtl">
+			<return-property name="privateDepositId" column="PRIVATE_DEROSIT_ID" />
+			<return-property name="siteDepositId" column="SITE_DEPOSIT_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="electricOwnerType" column="ELECTRIC_OWNER_TYPE" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="depositType" column="DEPOSIT_TYPE" />
+			<return-property name="service" column="SERVICE" />
+			<return-property name="serviceName" column="SERVICE_NAME" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeCode" column="PAYEE_CODE" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="bgNo" column="BG_NO" />
+			<return-property name="depositAmt" column="DEPOSIT_AMT" />
+			<return-property name="depositDetail" column="DEPOSIT_DETAIL" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatTypeName" column="VAT_TYPE_DESC" />
+			<return-property name="vatRate" column="VAT_RATE" />
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="whtTypeName" column="WHT_TYPE_DESC" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="periodStartDt" column="FROM_PERIOD_DT" />
+			<return-property name="periodEndDt" column="TO_PERIOD_DT" />
+			<return-property name="newFlag" column="new_flag" />
+			<return-property name="electricId" column="ELECTRIC_ID"/>
+			<return-property name="remark" column="REMARK"/>
+			<return-property name="depositDetailId" column="DEPOSIT_DETAIL_ID"/>
+			<return-property name="bgMasterId" column="BG_MASTER_ID"/>
+	
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_SRCH_DPST_DTL(? ,:electricId) ]]>
+	</sql-query>
+	
+	<sql-query name="el001InsertDpst" callable="true" >
+		<return class="th.co.ais.domain.el.ELDpstCondSP" entity-name="el001InsertDpst">
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="message" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_INSERT_DPST(? ,:mode ,:electricId ,:siteInfoId ,:contractNo ,:siteDepositId ,:privateDepositId 
+												,:depositTypeName ,:periodStartDt ,:periodEndDt ,:depositAmt ,:whtType 
+												,:whtRate ,:vatType ,:vatRate ,:service ,:vendorMasterId 
+												,:payeeMasterId ,:remark ,:newFlag ,:user, :bgMasterId, :depositDetailId) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

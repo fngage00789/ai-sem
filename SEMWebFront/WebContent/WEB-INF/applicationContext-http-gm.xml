@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+		
+	<bean id="commonService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/commonService" />
+		<property name="serviceInterface" value="th.co.ais.common.service.ICommonService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="lovMasterService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/lovMasterService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.ILovMasterService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>		
+	
+	<!-- added by.. YUT 2014/11/10 -->
+	<bean id="menuTreeService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/menuTreeService"/>
+		<property name="serviceInterface" value="th.co.ais.common.service.IMenuTreeService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	<!-- added by.. YUT 2014/10/10 -->
+	
+	<bean id="messageService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/messageService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.IMessageService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>	
+	
+	<bean id="regionService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/regionService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.IRegionService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="provinceService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/provinceService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.IProvinceService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="companyService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/companyService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.ICompanyService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="locationMasterService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/locationMasterService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.ILocationMasterService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="vendorMasterService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/vendorMasterService"/>
+		<property name="serviceInterface" value="th.co.ais.service.gm.IVendorMasterService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>	
+		
+		
+	<!-- added by.. YUT 2014/10/10 -->
+	<bean id="bankMasterService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/bankMasterService"/>
+		<property name="serviceInterface" value="th.co.ais.service.gm.IBankMasterService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	<!-- added by.. YUT 2014/10/10 -->
+	
+	
+	<!--<bean id="auditTrailService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/auditTrailService"/>
+		<property name="serviceInterface" value="th.co.ais.service.common.audittrail.AuditTrailService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	--><bean id="bgMasterService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/bgMasterService"/>
+		<property name="serviceInterface" value="th.co.ais.service.gm.IBgMasterService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="attachmentService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/attachmentService"/>
+		<property name="serviceInterface" value="th.co.ais.service.gm.IAttachmentService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="zoneService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/zoneService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.IZoneService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>	
+	
+	<bean id="amphurService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/amphurService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.IAmphurService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>	
+	
+	<bean id="vendorBookbankService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/vendorBookbankService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.IVendorBookbankService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>	
+	
+	<bean id="payeeBookbankService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/payeeBookbankService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.IPayeeBookbankService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>	
+	
+	<bean id="employeeService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/employeeService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.IEmployeeService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>	
+	
+	<bean id="parameterConfigService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/parameterConfigService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.IParameterConfigService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="transPaymentService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/transPaymentService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.ITransPaymentService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="payeeMasterService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/payeeMasterService"/>
+		<property name="serviceInterface" value="th.co.ais.service.gm.IPayeeMasterService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	<bean id="vendorMapPayeeService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/vendorMapPayeeService"/>
+		<property name="serviceInterface" value="th.co.ais.service.gm.IVendorMapPayeeService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	<bean id="parameterService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/parameterService"/>
+		<property name="serviceInterface" value="th.co.ais.service.gm.IParameterService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+	
+	<bean id="bankService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl" value="http://${appServer}/${appContextPath}/remoting/bankService" />
+		<property name="serviceInterface" value="th.co.ais.service.gm.IBankService" />
+		<property name="httpInvokerRequestExecutor">
+			<bean class="org.springframework.remoting.httpinvoker.CommonsHttpInvokerRequestExecutor"/>
+		</property>
+	</bean>
+</beans>

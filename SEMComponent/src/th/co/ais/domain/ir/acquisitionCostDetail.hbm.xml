@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+ 	<class name="th.co.ais.domain.ir.AcquisitionCostDetailSP">
+  		<id name="rowId" type="java.lang.String"/>
+  		<property name="networkType" type="java.lang.String"/>
+  		<property name="company" type="java.lang.String"/>
+  		<property name="transferType" type="java.lang.String"/>
+  		<property name="regionName" type="java.lang.String"/>
+  		<property name="provinceName" type="java.lang.String"/>
+  		<property name="locationId" type="java.lang.String"/>
+	  	<property name="locationName" type="java.lang.String"/>
+	  	<property name="acqAmt" type="java.lang.String"/>
+	  	<property name="asOfMonth" type="java.lang.String"/>
+	  	<!--<property name="updateBy" type="java.lang.String"/>
+	  	<property name="updateDt" type="java.sql.Date"/>
+	--></class>
+ 	<sql-query name="queryAcquisitionCostDetailSP" callable="true">
+		<return class="th.co.ais.domain.ir.AcquisitionCostDetailSP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="transferType" column="TF_TYPE" />
+			<return-property name="regionName" column="REGION" />
+			<return-property name="provinceName" column="PROVINCE_NAME" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="acqAmt" column="ACQ_AMT" />
+			<return-property name="asOfMonth" column="AS_OF_MONTH" />
+			<!--<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		--></return>
+		<![CDATA[ call SEM.SEM_SP_MIR002_SRCH(?, :company, :networkType, :transferType, :region, :province, :locationId, :effDt) ]]>
+	</sql-query>
+</hibernate-mapping>

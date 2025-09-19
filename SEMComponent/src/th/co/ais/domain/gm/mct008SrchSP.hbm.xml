@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping package="th.co.ais.domain.gm">
+		<class name="ParameterMasterSP" >
+			<id name="rowId" type="java.lang.String" />
+			<property name="type" type="java.lang.String" />
+			<property name="company" type="java.lang.String" />
+			<property name="code" type="java.lang.String" />
+			<property name="name" type="java.lang.String" />
+			<property name="value" type="java.lang.String" />
+			<property name="remark" type="java.lang.String" />
+			<property name="typeName" type="java.lang.String" />
+		</class>
+		<sql-query name="queryCT008SrchSP" callable="true">
+			<return class="th.co.ais.domain.gm.ParameterMasterSP">
+				<return-property name="rowId" column="MASTER_ID" />
+				<return-property name="type" column="MASTER_PARAMETER_TYPE" />
+				<return-property name="company" column="COMPANY" />
+				<return-property name="code" column="CODE" />
+				<return-property name="name" column="NAME" />
+				<return-property name="value" column="VALUE" />
+				<return-property name="remark" column="REMARK" />
+				<return-property name="typeName" column="MASTER_PARAMETER_TYPE_NAME" />
+			</return>
+		    <![CDATA[ call SEM.SEM_SP_MCT008_SRCH(?, :type) ]]>
+		</sql-query>
+	</hibernate-mapping>
+
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.Mir013Edt" entity-name="mri013SchD">
+		<id name="claimId" type="java.lang.String" />
+		<property name="claimAmt" type="java.lang.Double" />
+		<property name="insurChqNo" type="java.lang.String" />
+		<property name="insurChqDt" type="java.sql.Date" />
+		<property name="insurRecpNo" type="java.lang.String" />
+		<property name="insurRecpDt" type="java.sql.Date" />
+		<property name="transferFlg" type="java.lang.String" />
+		<property name="tfChqAmt" type="java.lang.Double" />
+		<property name="tfChqNo" type="java.lang.String" />
+		<property name="tfChqDt" type="java.sql.Date" />
+		<property name="litigantFlg" type="java.lang.String" />
+		<property name="litigantAmt" type="java.lang.Double" />
+		<property name="litigantRecpNo" type="java.lang.String" />
+		<property name="litigantRecpDt" type="java.sql.Date" />
+		<property name="claimStatus" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+
+	</class>
+	
+	<class name="th.co.ais.domain.ir.Mir013Edt" entity-name="mri013Edt">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.ir.Mir013Edt" entity-name="mir013Load">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="mir013SchD" callable="true">
+		<return class="th.co.ais.domain.ir.Mir013Edt" entity-name="mri013SchD">
+			<return-property name="claimId" column="CLAIM_ID" />
+			<return-property name="claimAmt" column="CLAIM_AMT" />
+			<return-property name="insurChqNo" column="INSUR_CHQ_NO" />
+			<return-property name="insurChqDt" column="INSUR_CHQ_DT" />
+			<return-property name="insurRecpNo" column="INSUR_RECP_NO" />
+			<return-property name="insurRecpDt" column="INSUR_RECP_DT" />
+			<return-property name="transferFlg" column="TRANSFER_FLG" />
+			<return-property name="tfChqAmt" column="TF_CHQ_AMT" />
+			<return-property name="tfChqNo" column="TF_CHQ_NO" />
+			<return-property name="tfChqDt" column="TF_CHQ_DT" />
+			<return-property name="litigantFlg" column="LITIGANT_FLG" />
+			<return-property name="litigantAmt" column="LITIGANT_AMT" />
+			<return-property name="litigantRecpNo" column="LITIGANT_RECP_NO" />
+			<return-property name="litigantRecpDt" column="LITIGANT_RECP_DT" />
+			<return-property name="claimStatus" column="CLAIM_STATUS" />
+			<return-property name="remark" column="REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MIR013_SRCH_D(?, :claimId) ]]>
+										
+	</sql-query>
+	
+	<sql-query name="mir013Edt" callable="true">
+		<return class="th.co.ais.domain.ir.Mir013Edt" entity-name="mri013Edt">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MIR013_EDT(?, :claimId, cast(:claimAmt as numeric), :insurChqNo, cast(:insurChqDt as date ), :insurRecpNo,
+											cast(:insurRecpDt as date ), :transferFlg, cast(:tfChqAmt as numeric), :tfChqNo, cast(:tfChqDt as date ),
+											:litigantFlg, cast(:litigantAmt as numeric), :litigantRecpNo, cast(:litigantRecpDt as date ), :claimStatus,
+											:remark , :draftNo) ]]>
+										
+	</sql-query>
+	
+	<sql-query name="mir013Load" callable="true">
+		<return class="th.co.ais.domain.ir.Mir013Edt" entity-name="mir013Load">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MIR013_LOAD(?, :currentUser) ]]>
+										
+	</sql-query>
+</hibernate-mapping>
+

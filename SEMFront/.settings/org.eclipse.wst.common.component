@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+            
+    
+    <wb-module deploy-name="SEMFront">
+                        
+        
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+                        
+        
+        <dependent-module archiveName="SEMWebFront.war" deploy-path="/" handle="module:/resource/SEMWebFront/SEMWebFront">
+                                    
+            
+            <dependent-object/>
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+                        
+        
+        <dependent-module archiveName="SEMComponent.jar" deploy-path="/lib" handle="module:/resource/SEMComponent/SEMComponent">
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+                        
+        
+        <dependent-module archiveName="SEMWebApp.war" deploy-path="/" handle="module:/resource/SEMWebApp/SEMWebApp">
+                                    
+            
+            <dependent-object/>
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+                        
+        
+        <dependent-module archiveName="SEMService.jar" deploy-path="/lib" handle="module:/resource/SEMService/SEMService">
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+                        
+        
+        <dependent-module archiveName="SEMDao.jar" deploy-path="/lib" handle="module:/resource/SEMDao/SEMDao">
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+                        
+        
+        <dependent-module archiveName="SEMSAPService.jar" deploy-path="/lib" handle="module:/resource/SEMSAPService/SEMSAPService">
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+        <dependent-module archiveName="rpt-parameter.jar" deploy-path="/lib" handle="module:/classpath/lib/com.example.sem/target/rpt-parameter.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                    
+    
+    </wb-module>
+        
+
+</project-modules>

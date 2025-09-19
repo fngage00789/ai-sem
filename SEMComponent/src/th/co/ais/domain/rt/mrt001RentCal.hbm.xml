@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001RentCal" entity-name="mrt001TotPeriodNo">
+		<id name="totPeriodNo" type="java.lang.Integer"/>
+		<property name="periodAmt" type="java.lang.Double"/>
+	</class>
+	
+	<class name="th.co.ais.domain.rt.Mrt001RentCal" entity-name="mrtRentCalDetail">
+		<id name="vResult" type="java.lang.String"/>
+		<property name="vMessage" type="java.lang.String"/>
+
+	</class>
+	
+		<class name="th.co.ais.domain.rt.Mrt001RentCal" entity-name="mrtChkMethod">
+		<id name="vResult" type="java.lang.String"/>
+		<property name="vMessage" type="java.lang.String"/>
+
+	</class>
+	
+	
+		<class name="th.co.ais.domain.rt.Mrt001RentCal" entity-name="mrtSrchCalconfig">
+		<id name="serviceId" type="java.lang.String"/>
+		<property name="serviceName" type="java.lang.String"/>
+		<property name="configRate" type="java.lang.Double"/>
+		</class>
+		
+		<class name="th.co.ais.domain.rt.Mrt001RentCal" entity-name="mrtSrchCalDetail">
+		<id name="rentalCaldetail" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="rentalDetailId" type="java.lang.String"/>
+		<property name="rentalCalCode" type="java.lang.String"/>
+		<property name="serviceId" type="java.lang.String"/>
+		<property name="calAmt" type="java.lang.Double"/>
+		</class>
+	
+		<sql-query name="spMrt001RentCal" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001RentCal" entity-name="mrt001TotPeriodNo">
+			<return-property name="totPeriodNo" column="P_TOT_PERIOD_NO" />
+			<return-property name="periodAmt" column="P_PERIOD_AMT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_RENT_CAL(?, cast(:rentalAmt as numeric), :rentPeriodType, cast(:payPeriod as numeric), :payPeriodType, cast(:periodYear as numeric), cast(:periodMonth as numeric), cast(:periodDay as numeric)) ]]>
+	</sql-query>
+	
+	<sql-query name="mrt001RentCalDetail" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001RentCal" entity-name="mrtRentCalDetail">
+			<return-property name="vResult" column="V_RESULT" />
+			<return-property name="vMessage" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_RENT_CAL_DETAIL(?, :rentalDetailId, :siteInfoId, :rentalCalCode, :serviceList, :user,:serviceId) ]]>
+	</sql-query>
+
+		<sql-query name="mrt001SrchCalConfig" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001RentCal" entity-name="mrtSrchCalconfig">
+			<return-property name="serviceId" column="SERVICES_ID" />
+			<return-property name="serviceName" column="SERVICE_NAME" />
+			<return-property name="configRate" column="CONFIG_RATE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_SRCH_CAL_CONFIG(?, :serviceId, :siteInfoId) ]]>
+	</sql-query>
+
+	<sql-query name="mrt001ChkMethod" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001RentCal" entity-name="mrtChkMethod">
+			<return-property name="vResult" column="V_RESULT" />
+			<return-property name="vMessage" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_CHK_METHOD(?, :rentalCalCode, :periodAmt, :serviceList) ]]>
+	</sql-query>
+	
+		<sql-query name="mrt001SrchCalDetail" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001RentCal" entity-name="mrtSrchCalDetail">
+			<return-property name="rentalCaldetail" column="RENTAL_CAL_DETAIL_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="rentalDetailId" column="RENTAL_DETAIL_ID" />
+			<return-property name="rentalCalCode" column="RENTAL_CAL_CODE" />
+			<return-property name="serviceId" column="SERVICES_ID" />
+			<return-property name="calAmt" column="CAL_AMT" />
+		</return>
+		<![CDATA[ call SEM_SP_MRT001_SRCH_CAL_DETAIL(?, :rentalDetailId) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.el">
+ <class name="th.co.ais.domain.el.paymentExpExcel" entity-name="mel008ExpExcel">
+  <id name="rowId" type="java.lang.String"/>
+  	  <property name="payNo" type="java.lang.String" />
+      <property name="contractNo" type="java.lang.String"/>
+       <property name="siteName" type="java.lang.String"/>
+      <property name="docNo" type="java.lang.String"/>
+      <property name="docDt" type="java.util.Date"/>
+      <property name="vendorId" type="java.lang.String"/>
+      <property name="vendorName" type="java.lang.String"/>
+      <property name="payeeName" type="java.lang.String"/>
+      <property name="excludeVatAmt" type="java.math.BigDecimal"/>
+      <property name="vatAmt" type="java.math.BigDecimal"/>
+      <property name="includeVatAmt" type="java.math.BigDecimal"/>
+      <property name="whtAmt" type="java.math.BigDecimal"/>
+      <property name="paymentType" type="java.lang.String"/>
+      <property name="paymentMethod" type="java.lang.String"/>
+      <property name="expenseType" type="java.lang.String"/>
+      <property name="detailFlag" type="java.lang.String"/>
+      <property name="paymentId" type="java.lang.String"/>
+      <property name="toTermOfPaymentDt" type="java.util.Date"/>
+      <property name="fromTermOfPaymentDt" type="java.util.Date"/>
+      <property name="chqReceivedDt" type="java.util.Date"/>
+      <property name="transferDt" type="java.util.Date"/>
+      <property name="company" type="java.lang.String"/>
+ </class>
+ <class name="th.co.ais.domain.el.paymentExpExcel" entity-name="mel008ExpRemarkExcel">
+  <id name="rowId" type="java.lang.String"/>
+  	  <property name="payNo" type="java.lang.String" />
+      <property name="contractNo" type="java.lang.String"/>
+       <property name="siteName" type="java.lang.String"/>
+      <property name="docNo" type="java.lang.String"/>
+      <property name="docDt" type="java.util.Date"/>
+      <property name="vendorId" type="java.lang.String"/>
+      <property name="vendorName" type="java.lang.String"/>
+      <property name="payeeName" type="java.lang.String"/>
+      <property name="excludeVatAmt" type="java.math.BigDecimal"/>
+      <property name="vatAmt" type="java.math.BigDecimal"/>
+      <property name="includeVatAmt" type="java.math.BigDecimal"/>
+      <property name="whtAmt" type="java.math.BigDecimal"/>
+      <property name="paymentType" type="java.lang.String"/>
+      <property name="paymentMethod" type="java.lang.String"/>
+      <property name="expenseType" type="java.lang.String"/>
+      <property name="detailFlag" type="java.lang.String"/>
+      <property name="paymentId" type="java.lang.String"/>
+      <property name="toTermOfPaymentDt" type="java.util.Date"/>
+      <property name="fromTermOfPaymentDt" type="java.util.Date"/>
+      <property name="chqReceivedDt" type="java.util.Date"/>
+      <property name="transferDt" type="java.util.Date"/>
+      <property name="company" type="java.lang.String"/>
+      <property name="remarkPending" type="java.lang.String"/>
+	  <property name="remarkVerify" type="java.lang.String"/>
+	  <property name="remark" type="java.lang.String"/>
+ </class>
+ 
+ <sql-query name="spMel008ExpExcel" callable="true"  >
+   <return class="th.co.ais.domain.el.paymentExpExcel" entity-name="mel008ExpExcel" >
+   	   <return-property name="rowId" column="ROW_NUM" />
+       <return-property name="payNo" column="PAY_NO" />
+       <return-property name="contractNo" column="CONTRACT_NO" />
+       <return-property name="siteName" column="SITE_NAME" />
+       <return-property name="docNo" column="DOC_NO" />
+       <return-property name="docDt" column="DOC_DT" />
+       <return-property name="vendorId" column="VENDOR_ID"/>
+       <return-property name="vendorName" column="VENDOR_NAME"/>
+       <return-property name="payeeName" column="PAYEE_NAME"/> 
+       <return-property name="excludeVatAmt" column="EXCLUDE_VAT_AMT"/> 
+       <return-property name="vatAmt" column="VAT_AMT"/> 
+       <return-property name="includeVatAmt" column="INCLUDE_VAT_AMT"/> 
+       <return-property name="whtAmt" column="WHT_AMT"/> 
+       <return-property name="paymentType" column="PAYMENT_TYPE"/>
+       <return-property name="paymentMethod" column="PAYMENT_METHOD"/>
+       <return-property name="expenseType" column="EXPENSE_TYPE"/>
+       <return-property name="detailFlag" column="DETAIL_FLAG"/>
+       <return-property name="paymentId" column="PAYMENT_ID"/>
+       <return-property name="fromTermOfPaymentDt" column="FROM_TERM_OF_PAYMENT_DT"/>
+       <return-property name="toTermOfPaymentDt" column="TO_TERM_OF_PAYMENT_DT"/>
+       <return-property name="chqReceivedDt" column="CHQ_RECEIVED_DT"/>
+       <return-property name="transferDt" column="TRANSFER_DT"/>
+       <return-property name="company" column="COMPANY"/>
+  </return>
+  <![CDATA[ call SEM.SEM_SP_MEL008_EX(?, :rowId) ]]>
+ </sql-query>
+ 
+ <sql-query name="spMel008ExpRemarkExcel" callable="true"  >
+   <return class="th.co.ais.domain.el.paymentExpExcel" entity-name="mel008ExpRemarkExcel" >
+   	   <return-property name="rowId" column="ROW_NUM" />
+       <return-property name="payNo" column="PAY_NO" />
+       <return-property name="contractNo" column="CONTRACT_NO" />
+       <return-property name="siteName" column="SITE_NAME" />
+       <return-property name="docNo" column="DOC_NO" />
+       <return-property name="docDt" column="DOC_DT" />
+       <return-property name="vendorId" column="VENDOR_ID"/>
+       <return-property name="vendorName" column="VENDOR_NAME"/>
+       <return-property name="payeeName" column="PAYEE_NAME"/> 
+       <return-property name="excludeVatAmt" column="EXCLUDE_VAT_AMT"/> 
+       <return-property name="vatAmt" column="VAT_AMT"/> 
+       <return-property name="includeVatAmt" column="INCLUDE_VAT_AMT"/> 
+       <return-property name="whtAmt" column="WHT_AMT"/> 
+       <return-property name="paymentType" column="PAYMENT_TYPE"/>
+       <return-property name="paymentMethod" column="PAYMENT_METHOD"/>
+       <return-property name="expenseType" column="EXPENSE_TYPE"/>
+       <return-property name="detailFlag" column="DETAIL_FLAG"/>
+       <return-property name="paymentId" column="PAYMENT_ID"/>
+       <return-property name="fromTermOfPaymentDt" column="FROM_TERM_OF_PAYMENT_DT"/>
+       <return-property name="toTermOfPaymentDt" column="TO_TERM_OF_PAYMENT_DT"/>
+       <return-property name="chqReceivedDt" column="CHQ_RECEIVED_DT"/>
+       <return-property name="transferDt" column="TRANSFER_DT"/>
+       <return-property name="company" column="COMPANY"/>
+       <return-property name="remarkPending" column="REMARK_PENDING"/>
+	   <return-property name="remarkVerify" column="REMARK_VERIFY"/>
+	   <return-property name="remark" column="REMARK"/>
+  </return>
+  <![CDATA[ call SEM.SEM_SP_MEL008_EX_REMARK(?, :rowId) ]]>
+ </sql-query>
+</hibernate-mapping>

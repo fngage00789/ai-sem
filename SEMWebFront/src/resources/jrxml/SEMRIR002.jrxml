@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SEMRIR002" pageWidth="844" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="784" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<template><![CDATA[$V{ReportUtil}.getJasperPath()+"SEMStyleTemplate.jrtx"]]></template>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<subDataset name="SEMRIR002-DS">
+		<parameter name="PARAM_COMPANY" class="java.lang.String" isForPrompting="false"/>
+		<parameter name="PARAM_IR_YEAR" class="java.lang.String" isForPrompting="false"/>
+		<parameter name="PARAM_NETWORK_TYPE" class="java.lang.String" isForPrompting="false"/>
+		<parameter name="PARAM_POLICY_TYPE" class="java.lang.String" isForPrompting="false"/>
+		<parameter name="PARAM_REGION" class="java.lang.String" isForPrompting="false"/>
+		<parameter name="PARAM_LOSS_TYPE" class="java.lang.String" isForPrompting="false"/>
+		<queryString>
+			<![CDATA[SELECT * FROM TABLE (SEM_PG_RIR002.GET_DATA(
+	$P{PARAM_COMPANY},
+	$P{PARAM_IR_YEAR},
+	$P{PARAM_NETWORK_TYPE},
+	$P{PARAM_POLICY_TYPE},
+	$P{PARAM_REGION},
+	$P{PARAM_LOSS_TYPE}
+))]]>
+		</queryString>
+		<field name="NETWORK_TYPE" class="java.lang.String"/>
+		<field name="NETWORK_TYPE_DESC" class="java.lang.String"/>
+		<field name="LOSS_TYPE" class="java.lang.String"/>
+		<field name="LOSS_TYPE_DESC" class="java.lang.String"/>
+		<field name="LOSS_RANGE" class="java.lang.String"/>
+		<field name="IR_YEAR" class="java.lang.String"/>
+		<field name="LOSS_TOTAL" class="java.math.BigDecimal"/>
+		<field name="LOSS_AMT" class="java.math.BigDecimal"/>
+		<variable name="ITEM_NO" class="java.lang.Integer" resetType="Group" resetGroup="NETWORK_TYPE_DESC" calculation="Count">
+			<variableExpression><![CDATA[$F{LOSS_RANGE}]]></variableExpression>
+		</variable>
+		<group name="NETWORK_TYPE_DESC">
+			<groupExpression><![CDATA[$F{NETWORK_TYPE_DESC}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="PARAM_HEADER_NAME" class="java.lang.String"/>
+	<parameter name="PARAM_COMPANY" class="java.lang.String"/>
+	<parameter name="PARAM_IR_YEAR" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_IR_YEAR" class="java.lang.String"/>
+	<parameter name="PARAM_NETWORK_TYPE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_DISPLAY_NETWORK_TYPE" class="java.lang.String"/>
+	<parameter name="PARAM_POLICY_TYPE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_DISPLAY_POLICY_TYPE" class="java.lang.String"/>
+	<parameter name="PARAM_REGION" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_LOSS_TYPE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_DISPLAY_LOSS_TYPE" class="java.lang.String"/>
+	<parameter name="PARAM_USERNAME" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM TABLE (SEM_PG_RIR002.GET_DATA(
+	$P{PARAM_COMPANY},
+	$P{PARAM_IR_YEAR},
+	$P{PARAM_NETWORK_TYPE},
+	$P{PARAM_POLICY_TYPE},
+	$P{PARAM_REGION},
+	$P{PARAM_LOSS_TYPE}
+))]]>
+	</queryString>
+	<field name="NETWORK_TYPE" class="java.lang.String"/>
+	<field name="NETWORK_TYPE_DESC" class="java.lang.String"/>
+	<field name="LOSS_TYPE" class="java.lang.String"/>
+	<field name="LOSS_TYPE_DESC" class="java.lang.String"/>
+	<field name="LOSS_RANGE" class="java.lang.String"/>
+	<field name="IR_YEAR" class="java.lang.String"/>
+	<field name="LOSS_TOTAL" class="java.math.BigDecimal"/>
+	<field name="LOSS_AMT" class="java.math.BigDecimal"/>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="113" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-18" style="Header Style" x="0" y="0" width="784" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PARAM_HEADER_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-23" style="Header Style" x="0" y="20" width="784" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SEMRIR002 : Report ทรัพย์สินเสียหายต่ำกว่า Deduction แบ่งตามช่วงความเสียหาย]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-100" x="0" y="40" width="784" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-99" style="Criteria Style" x="0" y="60" width="784" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Print by : "+$P{PARAM_USERNAME}+",  Print date :"+String.valueOf(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField-23" style="Criteria Style" x="0" y="80" width="784" height="33"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Criteria : "+
+"บริษัท : " + new String($P{PARAM_COMPANY} != null && !$P{PARAM_COMPANY}.equals("") ? $P{PARAM_COMPANY} : "-") + " ," +
+" ปีกรมธรรม์ : " + new String($P{PARAM_DISPLAY_IR_YEAR} != null && !$P{PARAM_DISPLAY_IR_YEAR}.equals("") ? $P{PARAM_DISPLAY_IR_YEAR} : "-") + " ," +
+" ประเภท : " + new String($P{PARAM_DISPLAY_NETWORK_TYPE} != null && !$P{PARAM_DISPLAY_NETWORK_TYPE}.equals("") ? $P{PARAM_DISPLAY_NETWORK_TYPE} : "-") + " ," +
+"ประเภทกรรมธรรม์ : " + new String($P{PARAM_DISPLAY_POLICY_TYPE} != null && !$P{PARAM_DISPLAY_POLICY_TYPE}.equals("") ? $P{PARAM_DISPLAY_POLICY_TYPE} : "-") + " ," +
+"ภูมิภาค : " + new String($P{PARAM_REGION} != null && !$P{PARAM_REGION}.equals("") ? "["+$P{PARAM_REGION}+"]" : "-")
++" ," +
+"ประเภทความเสียหาย : " + new String($P{PARAM_DISPLAY_LOSS_TYPE} != null && !$P{PARAM_DISPLAY_LOSS_TYPE}.equals("") ? $P{PARAM_DISPLAY_LOSS_TYPE} : "-")]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<crosstab columnBreakOffset="30">
+				<reportElement key="crosstab" x="0" y="0" width="784" height="20"/>
+				<crosstabDataset>
+					<dataset>
+						<datasetRun subDataset="SEMRIR002-DS">
+							<datasetParameter name="PARAM_IR_YEAR">
+								<datasetParameterExpression><![CDATA[$P{PARAM_IR_YEAR}]]></datasetParameterExpression>
+							</datasetParameter>
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+				</crosstabDataset>
+				<crosstabHeaderCell>
+					<cellContents mode="Transparent">
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="0" y="0" width="84" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+							<text><![CDATA[Type]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="84" y="0" width="140" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+							<text><![CDATA[ประเภทความเสียหาย]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="224" y="0" width="140" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+							<text><![CDATA[Range]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="0" y="15" width="84" height="15"/>
+							<box>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<text><![CDATA[]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="84" y="15" width="140" height="15"/>
+							<box>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<text><![CDATA[]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="224" y="15" width="140" height="15"/>
+							<box>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<text><![CDATA[]]></text>
+						</staticText>
+					</cellContents>
+				</crosstabHeaderCell>
+				<rowGroup name="NETWORK_TYPE_DESC" width="0">
+					<bucket>
+						<bucketExpression class="java.lang.String"><![CDATA[$F{NETWORK_TYPE_DESC}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents/>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents/>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<rowGroup name="LOSS_TYPE_DESC" width="0" totalPosition="End">
+					<bucket>
+						<bucketExpression class="java.lang.String"><![CDATA[$F{LOSS_TYPE_DESC}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents/>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents mode="Transparent">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement key="staticText" style="Total Style" x="0" y="0" width="84" height="15"/>
+								<box>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Total Style" x="84" y="0" width="140" height="15"/>
+								<box>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Total Style" x="224" y="0" width="140" height="15"/>
+								<box>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<rowGroup name="LOSS_RANGE" width="364">
+					<bucket>
+						<bucketExpression class="java.lang.String"><![CDATA[$F{LOSS_RANGE}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Transparent">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement key="textField" style="Detail Style" x="0" y="0" width="84" height="15"/>
+								<box>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{NETWORK_TYPE_DESC}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement key="textField" style="Detail Style" x="84" y="0" width="140" height="15"/>
+								<box>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{LOSS_TYPE_DESC}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement key="textField" style="Detail Style" x="224" y="0" width="140" height="15"/>
+								<box>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{LOSS_RANGE}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents/>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="IR_YEAR" height="30" headerPosition="Center">
+					<bucket>
+						<bucketExpression class="java.lang.String"><![CDATA[$F{IR_YEAR}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents mode="Transparent">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement key="textField" style="Column Header Style" x="0" y="0" width="140" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{IR_YEAR}]]></textFieldExpression>
+							</textField>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="0" y="15" width="35" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[จำนวน]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="35" y="15" width="105" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[ความเสียหาย]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents/>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="LOSS_TOTALMeasure" class="java.math.BigDecimal" calculation="Sum">
+					<measureExpression><![CDATA[$F{LOSS_TOTAL}]]></measureExpression>
+				</measure>
+				<measure name="LOSS_AMT" class="java.math.BigDecimal" calculation="Sum">
+					<measureExpression><![CDATA[$F{LOSS_AMT}]]></measureExpression>
+				</measure>
+				<crosstabCell width="140" height="15">
+					<cellContents mode="Transparent">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField isStretchWithOverflow="true" pattern="#,##0;(#,##0)" isBlankWhenNull="true">
+							<reportElement key="textField" style="Detail Style" x="0" y="0" width="35" height="15"/>
+							<box>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{LOSS_TOTALMeasure}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+							<reportElement key="textField" style="Detail Style" x="35" y="0" width="105" height="15"/>
+							<box>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{LOSS_AMT}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="140" height="0" rowTotalGroup="NETWORK_TYPE_DESC">
+					<cellContents backcolor="#005FB3" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="0" height="15" columnTotalGroup="IR_YEAR">
+					<cellContents mode="Transparent">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="0" height="0" rowTotalGroup="NETWORK_TYPE_DESC" columnTotalGroup="IR_YEAR">
+					<cellContents backcolor="#005FB3" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="140" height="15" rowTotalGroup="LOSS_TYPE_DESC">
+					<cellContents mode="Transparent">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField isStretchWithOverflow="true" pattern="#,##0;(#,##0)" isBlankWhenNull="true">
+							<reportElement key="textField" style="Total Style" x="0" y="0" width="35" height="15"/>
+							<box>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{LOSS_TOTALMeasure}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+							<reportElement key="textField" style="Total Style" x="35" y="0" width="105" height="15"/>
+							<box>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{LOSS_AMT}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="0" height="15" rowTotalGroup="LOSS_TYPE_DESC" columnTotalGroup="IR_YEAR">
+					<cellContents mode="Transparent">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="140" height="0" rowTotalGroup="LOSS_RANGE">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<crosstabCell width="0" height="0" rowTotalGroup="LOSS_RANGE" columnTotalGroup="IR_YEAR">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<whenNoDataCell>
+					<cellContents mode="Transparent">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+					</cellContents>
+				</whenNoDataCell>
+			</crosstab>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

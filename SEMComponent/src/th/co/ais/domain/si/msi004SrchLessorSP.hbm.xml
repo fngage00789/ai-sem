@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004SrchLessorSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="lessorName" type="java.lang.String"/>
+		<property name="address" type="java.lang.String"/>
+		<property name="tel" type="java.lang.String"/>
+		<property name="fax" type="java.lang.String"/>
+		<property name="editableFlag" type="java.lang.String"/>
+		<property name="deleteableFalg" type="java.lang.String"/>
+		<property name="overFlag" type="java.lang.String"/>
+		<property name="overFlagName" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="msi004SearchLessor" callable="true">
+		<return class="th.co.ais.domain.si.Msi004SrchLessorSP">
+			<return-property name="rowId" column="SITE_LESSOR_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="lessorName" column="LESSOR_NAME" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="tel" column="TEL" />
+			<return-property name="fax" column="FAX" />
+			<return-property name="editableFlag" column="EDITABLE_FLAG" />
+			<return-property name="deleteableFalg" column="DELETABLE_FLAG" />
+			<return-property name="overFlag" column="OVER_FLAG" />
+			<return-property name="overFlagName" column="OVER_FLAG_NAME" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_LESSOR (?, :siteInfoId) ]]>
+	</sql-query>
+</hibernate-mapping>

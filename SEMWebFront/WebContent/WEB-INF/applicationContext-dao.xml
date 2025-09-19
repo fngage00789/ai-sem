@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+		
+		<bean id="hibernateDaoSupport" abstract="true" class="org.springframework.orm.hibernate3.support.HibernateDaoSupport">
+			<property name="sessionFactory" ref="sessionFactory" />
+		</bean>
+
+		<bean id="abstractHibernateDAO" abstract="true"
+			  class="th.co.ais.dao.AbstractHibernateDAO" 
+			  parent="hibernateDaoSupport">
+		</bean>
+		
+		<bean id="auditTrailDAO" class="th.co.ais.dao.common.audittrail.AuditTrailDAO"
+			  parent="abstractHibernateDAO">
+		</bean>
+		
+		<!-- General DAO -->
+		<bean id="lovMasterDao" class="th.co.ais.dao.impl.gm.LovMasterHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="messageDao" class="th.co.ais.dao.impl.gm.MessageHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="regionDao" class="th.co.ais.dao.impl.gm.RegionHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="provinceDao" class="th.co.ais.dao.impl.gm.ProvinceHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="companyDao" class="th.co.ais.dao.impl.gm.CompanyHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="locationMasterDao" class="th.co.ais.dao.impl.gm.LocationMasterHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="bgMasterDao" class="th.co.ais.dao.impl.gm.BgMasterHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="attachmentDao" class="th.co.ais.dao.impl.gm.AttachmentHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="zoneDao" class="th.co.ais.dao.impl.gm.ZoneHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="amphurDao" class="th.co.ais.dao.impl.gm.AmphurHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="employeeDao" class="th.co.ais.dao.impl.gm.EmployeeHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="parameterConfigDao" class="th.co.ais.dao.impl.gm.ParameterConfigHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="transPaymentDao" class="th.co.ais.dao.impl.gm.TransPaymentHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="transPaymentHistDao" class="th.co.ais.dao.impl.gm.TransPaymentHistHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="payeeMasterDao" class="th.co.ais.dao.impl.gm.PayeeMasterHibernateDAO" parent="abstractHibernateDAO"/>	
+		<bean id="vendorMasterDao" class="th.co.ais.dao.impl.gm.VendorMasterHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="vendorMapPayeeDao" class="th.co.ais.dao.impl.gm.VendorMapPayeeHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="vendorBookbankDao" class="th.co.ais.dao.impl.gm.VendorBookbankHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="payeeBookbankDao" class="th.co.ais.dao.impl.gm.PayeeBookbankHibernateDAO" parent="abstractHibernateDAO"/>	
+		<bean id="bankDao" class="th.co.ais.dao.impl.gm.BankHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="parameterMasterDao" class="th.co.ais.dao.impl.gm.ParameterMasterHibernateDAO" parent="abstractHibernateDAO"/>	
+		<bean id="costCenterDao" class="th.co.ais.dao.impl.gm.CostCenterHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="glAccountDao" class="th.co.ais.dao.impl.gm.GLAccountHibernateDAO" parent="abstractHibernateDAO"/>
+		
+		<!-- added by.. YUT 2014/10/10 -->
+		<bean id="bankMasterDao" class="th.co.ais.dao.impl.gm.BankMasterHibernateDAO" parent="abstractHibernateDAO"/>
+			
+		<!-- Site Info DAO -->
+		<bean id="siteApproveDao" class="th.co.ais.dao.impl.si.SiteApproveHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteApproveMapLocDao" class="th.co.ais.dao.impl.si.SiteApproveMapLocHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteTerminateDao" class="th.co.ais.dao.impl.si.SiteTerminateHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="legalApproveDao" class="th.co.ais.dao.impl.si.LegalApproveHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteContractDao" class="th.co.ais.dao.impl.si.SiteContractHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteInfoMapLocDao" class="th.co.ais.dao.impl.si.SiteInfoMapLocHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteInfoDao" class="th.co.ais.dao.impl.si.SiteInfoHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="sendRenewDao" class="th.co.ais.dao.impl.si.SendRenewHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteConstructDao" class="th.co.ais.dao.impl.si.SiteConstructHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteDepositDao" class="th.co.ais.dao.impl.si.SiteDepositHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteElectricDao" class="th.co.ais.dao.impl.si.SiteElectricHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteInsurancetDao" class="th.co.ais.dao.impl.si.SiteInsuranceHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteLessorDao" class="th.co.ais.dao.impl.si.SiteLessorHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="sitePropertyTaxDao" class="th.co.ais.dao.impl.si.SitePropertyTaxHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteRentCondDao" class="th.co.ais.dao.impl.si.SiteRentCondHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteRentDao" class="th.co.ais.dao.impl.si.SiteRentHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteSubRentDao" class="th.co.ais.dao.impl.si.SiteSubRentHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="regionZoneDao" class="th.co.ais.dao.impl.si.RegionZoneDAO" parent="abstractHibernateDAO"/>
+		
+		<!-- added by.. YUT 2015/01/22 -->
+		<bean id="legalSiteAppDao" class="th.co.ais.dao.impl.si.LegalSiteAppHibernateDAO" parent="abstractHibernateDAO"/>
+		
+		<!-- Insurance DAO -->
+		<bean id="replacementDao" class="th.co.ais.dao.impl.ir.ReplacementHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="insuredDao" class="th.co.ais.dao.impl.ir.InsuredHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="deductibleDao" class="th.co.ais.dao.impl.ir.DeductibleHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="premiumDao" class="th.co.ais.dao.impl.ir.PremiumHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="generateDraftDao" class="th.co.ais.dao.impl.ir.GenerateDraftHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="irClaimDao" class="th.co.ais.dao.impl.ir.IrClaimHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="irClaimDetailDao" class="th.co.ais.dao.impl.ir.IrClaimDetailHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="insurancePaymentDao" class="th.co.ais.dao.impl.ir.InsurancePaymentHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="acqCostDao" class="th.co.ais.dao.impl.ir.AcqCostHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="acqCostLogDao" class="th.co.ais.dao.impl.ir.AcqCostLogHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="irDraftDao" class="th.co.ais.dao.impl.ir.IrDraftHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="irDraftDetailDao" class="th.co.ais.dao.impl.ir.IrDraftDetailHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="irPolicySumDao" class="th.co.ais.dao.impl.ir.IrPolicySumHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="irLoadClaimDao" class="th.co.ais.dao.impl.ir.IrLoadClaimHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="irLoadClaimLogDao" class="th.co.ais.dao.impl.ir.IrLoadClaimLogHibernateDAO" parent="abstractHibernateDAO"/>
+		
+		<!-- Rental DAO -->
+		<bean id="rentalMasterDao" class="th.co.ais.dao.impl.rt.RentalMasterHibernateDAO" parent="abstractHibernateDAO" />
+		<bean id="rentalPlanDao" class="th.co.ais.dao.impl.rt.RentalPlanHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="rentalDetailDao" class="th.co.ais.dao.impl.rt.RentalDetailHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="rentalPaymentDao" class="th.co.ais.dao.impl.rt.RentalPaymentHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="rentalCondMapSiDao" class="th.co.ais.dao.impl.rt.RentalCondMapSiHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="depositDetailDao" class="th.co.ais.dao.impl.rt.DepositDetailHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="depositCondMapSiDao" class="th.co.ais.dao.impl.rt.DepositCondMapSiHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="pettyCashDao" class="th.co.ais.dao.impl.rt.PettyCashHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="pettyCashPayDao" class="th.co.ais.dao.impl.rt.PettyCashPayHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="rentalClrRecDao" class="th.co.ais.dao.impl.rt.RentalClrRecHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="returnDepositDao" class="th.co.ais.dao.impl.rt.ReturnDepositHibernateDAO" parent="abstractHibernateDAO"/>
+		
+		<!-- SAP DAO -->
+		<bean id="sapMappingDao" class="th.co.ais.dao.impl.sap.SapMappingHibernateDAO" parent="abstractHibernateDAO"/>		
+		<bean id="sapTrxLogDao" class="th.co.ais.dao.impl.sap.SapTrxLogHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="sapTrxHdrDao" class="th.co.ais.dao.impl.sap.SapTrxHdrHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="sapTrxDtlDao" class="th.co.ais.dao.impl.sap.SapTrxDtlHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="sapErrorLogDao" class="th.co.ais.dao.impl.sap.SapErrorLogHibernateDAO" parent="abstractHibernateDAO"/>
+		
+		<!-- Property Tax DAO -->
+		<bean id="pTaxMasterDao" class="th.co.ais.dao.impl.pt.PTaxMasterHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="pTaxPaymentDao" class="th.co.ais.dao.impl.pt.PTaxPaymentHibernateDAO" parent="abstractHibernateDAO"/>
+		
+		<!-- Contract DAO -->
+		<bean id="contractStatusDao" class="th.co.ais.dao.impl.co.ContractStatusHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="contractCheckDocDao" class="th.co.ais.dao.impl.co.ContractCheckDocHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="contractFileDao" class="th.co.ais.dao.impl.co.ContractFileHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="borrowRequestDao" class="th.co.ais.dao.impl.co.BorrowRequestHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="borrowContractDao" class="th.co.ais.dao.impl.co.BorrowContractHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="returnContractDao" class="th.co.ais.dao.impl.co.ReturnContractHibernateDAO" parent="abstractHibernateDAO"/>
+		
+		<!-- Electric DAO -->
+		<bean id="bgMasterELDao" class="th.co.ais.dao.impl.el.BgMasterHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="bgMapContractDao" class="th.co.ais.dao.impl.el.BgMapContractHibernateDAO" parent="abstractHibernateDAO"/>
+		<!-- <bean id="payeeBookbankDao" class="th.co.ais.dao.impl.gm.PayeeBookbankHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="vendorBookbankDao" class="th.co.ais.dao.impl.gm.VendorBookbankHibernateDAO" parent="abstractHibernateDAO"/> -->
+		<bean id="parameterDao" class="th.co.ais.dao.impl.gm.ParameterHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="managementDao" class="th.co.ais.dao.impl.el.ManagementHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="managementMasterDao" class="th.co.ais.dao.impl.el.ManagementMasterHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="meterInfoDao" class="th.co.ais.dao.impl.el.MeterInfoHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="warrantDetailDao" class="th.co.ais.dao.impl.el.WarrantDetailHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="depositDetailELDao" class="th.co.ais.dao.impl.el.DepositDetailHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="meterInstallmentDao" class="th.co.ais.dao.impl.el.MeterInstallmentHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="privateDepositDao" class="th.co.ais.dao.impl.el.PrivateDepositHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="paymentELDao" class="th.co.ais.dao.impl.el.PaymentHibernateDAO" parent="abstractHibernateDAO" /> 
+		<bean id="prepaidpaymentDao" class="th.co.ais.dao.impl.el.PrepaidPaymentHibernateDAO" parent="abstractHibernateDAO" /> 
+
+	  	<bean id="paymentDetailDao" class="th.co.ais.dao.impl.el.PaymentDetailHibernateDAO" parent="abstractHibernateDAO" /> 
+	  	<bean id="paymentVendorMapPayeeDao" class="th.co.ais.dao.impl.el.PaymentVendorMapPayeeHibernateDAO" parent="abstractHibernateDAO" /> 
+	  	<bean id="plUtil" class="th.co.ais.dao.impl.el.PLUtil" parent="hibernateDaoSupport"/> 
+	  	<bean id="warrantMasterDao" class="th.co.ais.dao.impl.el.WarrantMasterHibernateDAO" parent="abstractHibernateDAO"/>
+	  	<bean id="paymentDefaultDao" class="th.co.ais.dao.impl.el.PaymentDefaultHibernateDAO" parent="abstractHibernateDAO" />
+	  	<bean id="vendorMapPayeeELDao" class="th.co.ais.dao.impl.el.VendorMapPayeeELHibernateDAO" parent="abstractHibernateDAO"/>
+	  	<bean id="uploadMeterFileDao" class="th.co.ais.dao.impl.el.UploadMeterFileHibernateDAO" parent="abstractHibernateDAO"/>
+	  	<bean id="importMasterDataELDao" class="th.co.ais.dao.impl.el.ImportMasterDataELHibernateDAO" parent="abstractHibernateDAO"/>
+	  	<bean id="importTransactionELDao" class="th.co.ais.dao.impl.el.ImportTransactionELHibernateDAO" parent="abstractHibernateDAO"/>
+	  	<bean id="uploadTextDao" class="th.co.ais.dao.impl.el.UploadTextHibernateDAO" parent="abstractHibernateDAO"/>
+	  	<bean id="importPeaNewExtDao" class="th.co.ais.dao.impl.el.ImportPeaNewExtHibernateDAO" parent="abstractHibernateDAO"/>
+	  	<bean id="importPeaOldExtDao" class="th.co.ais.dao.impl.el.ImportPeaOldExtHibernateDAO" parent="abstractHibernateDAO"/>
+	  	<bean id="importMeaOldExtDao" class="th.co.ais.dao.impl.el.ImportMeaOldExtHibernateDAO" parent="abstractHibernateDAO"/>
+	  	<bean id="importMeaNewTmpDao" class="th.co.ais.dao.impl.el.ImportMeaNewTmpHibernateDAO" parent="abstractHibernateDAO"/>
+	  	<bean id="importDataLogDao" class="th.co.ais.dao.impl.el.ImportDataLogHibernateDAO" parent="abstractHibernateDAO"/>
+        <bean id="privatePrepaidDao" class="th.co.ais.dao.impl.el.PrivatePrepaidMeterInstallmentHibernateDAO" parent="abstractHibernateDAO"/>
+        
+        <!-- Load clear cheque -->
+         <bean id="loadClearChequeDao" class="th.co.ais.dao.impl.lc.LoadClearChequeDAO" parent="abstractHibernateDAO"/>
+         <bean id="loadClearChqDao" class="th.co.ais.dao.impl.lc.LoadClearChqDAO" parent="abstractHibernateDAO"/>
+         
+		
+		<bean id="reportNameDao" class="th.co.ais.dao.rpt.hibernate.HibernateReportNameDao">
+			<property name="sessionFactory" ref="sessionFactory" />
+		</bean>
+		<bean id="reportScheduleJobDao" class="th.co.ais.dao.rpt.hibernate.HibernateReportScheduleJobDao">
+			<property name="sessionFactory" ref="sessionFactory" />
+		</bean>
+		<bean id="reportJobDao" class="th.co.ais.dao.rpt.hibernate.HibernateReportJobDao">
+			<property name="sessionFactory" ref="sessionFactory" />
+		</bean>
+		
+		
+		<!-- added by.. YUT 2014/11/10 -->
+		<bean id="menuTreeDao" class="th.co.ais.dao.impl.common.MenuTreeHibernateDAO" parent="abstractHibernateDAO"/>
+		
+		<!-- added by.. YUT 2014/11/28 -->
+		<bean id="siteAppDao" class="th.co.ais.dao.impl.sa.SiteAppHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteAppDisputeDao" class="th.co.ais.dao.impl.sa.SiteAppDisputeHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteAppDocDao" class="th.co.ais.dao.impl.sa.SiteAppDocHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteAppSiteDao" class="th.co.ais.dao.impl.sa.SiteAppSiteHibernateDAO" parent="abstractHibernateDAO"/>
+		<bean id="siteCntrctSttsDao" class="th.co.ais.dao.impl.sa.SiteContractStatusHibernateDAO" parent="abstractHibernateDAO"/>
+		
+		<bean id="siteAppMailDao" class="th.co.ais.dao.impl.sa.SiteAppMailHibernateDAO" parent="abstractHibernateDAO"/>
+		
+</beans>	

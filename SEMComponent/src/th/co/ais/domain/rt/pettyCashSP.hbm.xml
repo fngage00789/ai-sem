@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt"  >
+	<class name="PettyCashSP" entity-name="searchMrt008">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="pettyCashType" type="java.lang.String"/>
+		<property name="receiveDt" type="java.util.Date" />
+		<property name="pettyCashAmt" type="java.lang.Double" />
+		<property name="clearDt" type="java.util.Date" />
+		<property name="clearAmt" type="java.lang.Double" />
+		<property name="balanceAmt" type="java.lang.Double" />
+		<property name="bfAmt" type="java.lang.Double" />
+		<property name="remark" type="java.lang.String" />
+		<property name="editFlag" type="java.lang.String" />
+		<property name="refClrBatchNo" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.rt.PettyCashSP" entity-name="checkMrt008" >
+		<id name="statusResult" type="java.lang.String" />
+		<property name="remark" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.rt.PettyCashSP" entity-name="balanceAmtMrt008" >
+		<id name="statusResult" type="java.lang.String" />
+		<property name="remark" type="java.lang.String"/>
+		<property name="balanceAmt" type="java.lang.Double"/>
+		<property name="clearAmt" type="java.lang.Double"/>
+	</class>
+	<sql-query name="spMrt008SrchPettyCash" callable="true" >
+		<return class="th.co.ais.domain.rt.PettyCashSP" entity-name="searchMrt008">
+			<return-property name="rowId" column="PETTY_CASH_ID" />
+			<return-property name="pettyCashType" column="PETTY_CASH_TYPE" />
+			<return-property name="receiveDt" column="RECEIVE_DT" />
+			<return-property name="pettyCashAmt" column="PETTY_CASH_AMT" />
+			<return-property name="clearDt" column="CLEAR_DT" />
+			<return-property name="clearAmt" column="CLEAR_AMT" />
+			<return-property name="balanceAmt" column="BALANCE_AMT" />
+			<return-property name="bfAmt" column="BF_AMT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="editFlag" column="EDIT_FLAG" />
+			<return-property name="refClrBatchNo" column="REF_CLR_BATCH_NO" />
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT008_SRCH(?, :company, :receiveDtFrom, :receiveDtTo, :clearDtFrom, :clearDtTo) ]]>
+	</sql-query>
+	<sql-query name="spMrt008Check" callable="true" >
+		<return class="th.co.ais.domain.rt.PettyCashSP" entity-name="checkMrt008">  
+			<return-property name="statusResult" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+		</return>
+	<![CDATA[ call SEM.SEM_SP_MRT008_CHECK (?, :company, :refClrBatchNo, :clearDt, :receiveDt) ]]>
+	</sql-query>
+	
+	<sql-query name="spMrt008BLAmt" callable="true" >
+		<return class="th.co.ais.domain.rt.PettyCashSP" entity-name="balanceAmtMrt008">  
+			<return-property name="statusResult" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+			<return-property name="balanceAmt" column="P_LAST_BALANCE_AMT"/>
+			<return-property name="clearAmt" column="P_CLEAR_AMT"/>
+		</return>
+	<![CDATA[ call SEM.SEM_SP_MRT008_BL_AMT (?, :company, :refClrBatchNo) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+ <class name="th.co.ais.domain.el.PrintMasterPermission"  entity-name="ProxyListPrintDoc">
+ 	<id name="rowId" type="java.lang.String" />
+ 	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="contractNo" type="java.lang.String" ></property>
+ 	<property name="company" type="java.lang.String" ></property>
+ 	<property name="companyName" type="java.lang.String" ></property>
+ 	<property name="signName" type="java.lang.String" ></property>
+ 	<property name="signAge" type="java.lang.String" ></property>
+ 	<property name="signAddress" type="java.lang.String" ></property>
+ 	<property name="signCitizenId" type="java.lang.String" ></property>
+ 	<property name="encodeElectric" type="java.lang.String" ></property>
+ 	<property name="siteAddress" type="java.lang.String" ></property>
+ 	<property name="expireDt" type="java.lang.String" ></property>
+ 	<property name="receivedNo" type="java.lang.String" ></property>
+ 	<property name="typePermission" type="java.lang.String" ></property>
+ 	<property name="meterId" type="java.lang.String" ></property>
+ 	<property name="typeUseElectric" type="java.lang.String" ></property>
+ </class>
+ 
+  <sql-query name="mel013PrintDoc" callable="true">
+ 	<return class="th.co.ais.domain.el.PrintMasterPermission" entity-name="ProxyListPrintDoc" >
+ 		<return-property name="rowId" column="EL_IMPORT_PROXY_DATA_ID"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="contractNo" column="CONTRACT_NO"></return-property>
+ 		<return-property name="companyName" column="COMPANY_NAME"></return-property>
+ 		<return-property name="company" column="COMPANY"></return-property>
+ 		<return-property name="signName" column="SIGN_NAME"></return-property>
+ 		<return-property name="signAge" column="SIGN_AGE"></return-property>
+ 		<return-property name="signAddress" column="SIGN_ADDRESS"></return-property>
+ 		<return-property name="signCitizenId" column="SIGN_CITIZEN_ID"></return-property>
+ 		<return-property name="encodeElectric" column="ENCODE_ELECTRIC"></return-property>
+ 		<return-property name="siteAddress" column="SITE_ADDRESS"></return-property>
+ 		<return-property name="expireDt" column="EXPIRE_DT"></return-property>
+ 		<return-property name="receivedNo" column="RECEIVE_NO"></return-property>
+ 		<return-property name="typeUseElectric" column="ELECTRIC_TYPE"></return-property>
+ 		<return-property name="typePermission" column="WARRANT_TYPE"></return-property>
+ 		<return-property name="meterId" column="METER_ID"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[ call SEM.SEM_SP_MEL013_PROXY_PRINT(?, :rowId, :printBy) ]]>
+ </sql-query>
+ </hibernate-mapping>

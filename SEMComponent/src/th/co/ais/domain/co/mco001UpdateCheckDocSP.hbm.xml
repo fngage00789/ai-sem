@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco001UpdateCheckDocSP">
+		<id name="resultMsg" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="mco001UpdateCheckDoc" callable="true">
+		<return class="th.co.ais.domain.co.Mco001UpdateCheckDocSP">
+			<return-property name="resultMsg" column="P_RESULT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO001_UPD_CHECK_DOC (?, :siteInfoId, :currentUser)]]>
+	</sql-query>
+</hibernate-mapping>

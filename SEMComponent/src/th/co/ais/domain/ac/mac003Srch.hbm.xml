@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.ac">
+	<class name="th.co.ais.domain.ac.Mac003Srch">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="errorDt" type="java.sql.Date"/>
+		<property name="transPaymentId" type="java.lang.String"/>
+		<property name="paymentDocNo" type="java.lang.String"/>
+		<property name="transAmt" type="java.lang.Double"/>
+		<property name="doc68" type="java.lang.String"/>
+		<property name="doc92" type="java.lang.String"/>
+		<property name="errorStatusDesc" type="java.lang.String"/>
+		<property name="errorDesc" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="fileName" type="java.lang.String"/>
+		<property name="updateBy" type="java.lang.String"/>
+		<property name="updateDt" type="java.sql.Date"/>
+	</class>
+	<sql-query name="spMac003Srch" callable="true">
+		<return class="th.co.ais.domain.ac.Mac003Srch">
+			<return-property name="rowId" column="SAP_ERROR_LOG_ID" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="errorDt" column="ERROR_DT" />
+			<return-property name="transPaymentId" column="TRANS_PAYMENT_ID" />
+			<return-property name="paymentDocNo" column="PAYMENT_DOC_NO" />
+			<return-property name="transAmt" column="TRANS_AMT" />
+			<return-property name="doc68" column="DOC_68" />
+			<return-property name="doc92" column="DOC_92" />
+			<return-property name="errorStatusDesc" column="ERROR_STATUS_DESC" />
+			<return-property name="errorDesc" column="ERROR_DESC" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="fileName" column="FILE_NAME" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+		</return>
+		<![CDATA[ call SEM_SP_MAC003_SRCH(?, :company, :errorDtFrom, :errorDtTo, :errorDesc, :errorStatus, :remark) ]]>
+	</sql-query>
+</hibernate-mapping>

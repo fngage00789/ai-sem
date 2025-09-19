@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.MEL008Act">
+		<id name="pResult" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+		<property name="pBatchNo" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="mel008Act" callable="true">
+		<return class="th.co.ais.domain.el.MEL008Act">  
+			<return-property name="pResult" column="P_RESULT"/>
+			<return-property name="pRemark" column="P_REMARK"/>
+			<return-property name="pBatchNo" column="P_BATCH_NO"/>
+		</return>
+	<![CDATA[ call SEM_SP_MEL008_ACT(?, :paymentId, :actionType, :userLogin, :payNo, :remark, :collectiveDbNo) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

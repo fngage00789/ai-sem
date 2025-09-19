@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.co" >
+	<class name="th.co.ais.domain.co.Mco003SearchBorrowSP"  entity-name="mcoSrchBorrow">
+		<id name="borrowContractId" type="java.lang.String"/>
+		<property name="rowId" type="java.lang.String"/>
+		<property name="returnContractId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="effectiveDt" type="java.util.Date"/>
+		<property name="expireDt" type="java.util.Date"/>
+		<property name="docApproveFlag" type="java.lang.String"/>
+		<property name="docContractFlag" type="java.lang.String"/>
+		<property name="remarkDocOther" type="java.lang.String"/>
+		<property name="old_contractNo" type="java.lang.String"/>
+		<property name="borrowForTypeName" type="java.lang.String"/>
+		<property name="borrowOfficerName" type="java.lang.String"/>
+		<property name="borrowName" type="java.lang.String"/>
+		<property name="borrowDt" type="java.util.Date"/>
+		<property name="returnName" type="java.lang.String"/>
+		<property name="returnDt" type="java.util.Date"/>
+		<property name="remarkCannotBorrow" type="java.lang.String"/>
+		<property name="cycle" type="java.lang.String"/>
+		<property name="sequence" type="java.lang.String"/>
+		<property name="cantBorrowFlg" type="java.lang.String"/>
+		<property name="borrowStatus" type="java.lang.String"/>
+		<property name="contractType" type="java.lang.String"/>
+		<property name="flagSoftfile" type="java.lang.String"/>
+		<property name="status" type="java.lang.String"/>
+		<property name="borrowContractType" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.co.Mco003SearchBorrowSP"  entity-name="mcoAppBorrow">
+		<id name="result" type="java.lang.String"/>
+		<property name="lMessage" type="java.lang.String"/>
+		
+	</class>
+	<class name="th.co.ais.domain.co.Mco003SearchBorrowSP"  entity-name="mcoSendAppBorrow">
+		<id name="result" type="java.lang.String"/>
+		<property name="lMessage" type="java.lang.String"/>
+		
+	</class>
+	
+	<sql-query name="spMco003SearchBorrow" callable="true">
+		<return class="th.co.ais.domain.co.Mco003SearchBorrowSP"  entity-name="mcoSrchBorrow">  
+			<return-property name="rowId" column="BORROW_REQUEST_ID" />
+			<return-property name="borrowContractId" column="BORROW_CONTRACT_ID" />
+			<return-property name="returnContractId" column="RETURN_CONTRACT_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="docApproveFlag" column="DOC_APPROVE_FLAG" />
+			<return-property name="docContractFlag" column="DOC_CONTRACT_FLAG" />
+			<return-property name="remarkDocOther" column="REMARK_DOC_OTHER" />
+			<return-property name="old_contractNo" column="OLD_CONTRACT_NO"/>
+			<return-property name="borrowForTypeName" column="BORROW_FOR_TYPE_NAME" />
+			<return-property name="borrowOfficerName" column="BORROW_OFFICER_NAME" />
+			<return-property name="borrowName" column="BORROW_NAME" />
+			<return-property name="borrowDt" column="BORROW_DT" />
+			<return-property name="returnName" column="RETURN_NAME" />
+			<return-property name="returnDt" column="RETURN_DT" />
+			<return-property name="remarkCannotBorrow" column="REMARK_CANNOT_BORROW" />
+			<return-property name="cycle" column="CYCLE_NO" />
+			<return-property name="sequence" column="SEQ_NO" />
+			<return-property name="cantBorrowFlg" column="CANNOT_BORROW_FLAG" />
+			
+			<return-property name="borrowStatus" column="BORROW_STATUS" />
+			<return-property name="contractType" column="CONTRACT_TYPE" />
+			<return-property name="flagSoftfile" column="FLAG_SOFTFILE" />
+			<return-property name="status" column="STATUS" />
+			<return-property name="borrowContractType" column="BORROW_CONTRACT_TYPE" />
+		</return>
+		 <![CDATA[ call SEM_SP_MCO003_SRCH_BORROW(?,:company, :borrowRequestId ,:contractNo, :status) ]]>
+	</sql-query>
+	
+	<sql-query name="spMco003ApproveBorrow" callable="true">
+		<return class="th.co.ais.domain.co.Mco003SearchBorrowSP"  entity-name="mcoAppBorrow">  
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="lMessage" column="L_MESSAGE" />
+			
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MCO003_APPROVE(?, :contractNo, :borrowStatus, :userId) ]]>
+	</sql-query>
+	<sql-query name="spMco003SendApproveBorrow" callable="true">
+		<return class="th.co.ais.domain.co.Mco003SearchBorrowSP"  entity-name="mcoSendAppBorrow">  
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="lMessage" column="L_MESSAGE" />
+			
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MCO003_SEND_CONTRACT(?, :rowId, :userId) ]]>
+	</sql-query>
+</hibernate-mapping>

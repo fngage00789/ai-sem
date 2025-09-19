@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco004SrchSP" entity-name="mco004Srch">
+		<id name="rowId" type="java.lang.String" />
+		<property name="subRentId" type="java.lang.String" />
+		<property name="lessorSiteInfoId" type="java.lang.String" />
+		<property name="lesseeSiteInfoId" type="java.lang.String" />
+		<property name="lessorContractNo" type="java.lang.String" />
+		<property name="lesseeContractNo" type="java.lang.String" />
+		<property name="locationId" type="java.lang.String" />
+		<property name="siteName" type="java.lang.String" />
+		<property name="effectiveDt" type="java.sql.Date" />
+		<property name="expireDt" type="java.sql.Date" />
+		<property name="rentAmt" type="java.lang.Double" />
+		<property name="serviceAmt" type="java.lang.Double" />
+		<property name="lesseeCompany" type="java.lang.String" />
+		<property name="lesseeRegion" type="java.lang.String" />
+		<property name="lesseeSiteType" type="java.lang.String" />
+		<property name="subRentType" type="java.lang.String" />
+		<property name="subRentStatus" type="java.lang.String" />
+		<property name="groupNo" type="java.lang.String" />
+		<property name="contractAge" type="java.lang.String" />
+		<property name="address" type="java.lang.String" />
+		<property name="street" type="java.lang.String" />
+		<property name="amphur" type="java.lang.String" />
+		<property name="district" type="java.lang.String" />
+		<property name="deckArea" type="java.lang.String" />
+		<property name="buildingArea" type="java.lang.String" />
+		<property name="roomArea" type="java.lang.String" />
+		<property name="landArea" type="java.lang.String" />
+		<property name="postcode" type="java.lang.String" />
+		<property name="province" type="java.lang.String" />
+		<property name="lesseeContractId" type="java.lang.String" />
+		<property name="dutyAmt" type="java.lang.Double" />
+		<property name="borrowStatus" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="reqTypeName" type="java.lang.String" />
+		
+	</class>
+	
+	<class name="th.co.ais.domain.co.Mco004SrchSP" entity-name="mco004SrchSummary">
+		<id name="rowId" type="java.lang.String" />
+		<property name="monthYear" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="totalAmt" type="java.lang.Double" />
+		<property name="createAmt" type="java.lang.Double" />
+		<property name="remainAmt" type="java.lang.Double" />
+	</class>
+	
+	<class name="th.co.ais.domain.co.Mco004SrchSP" entity-name="mco004Insert">
+		<id name="result" type="java.lang.String" />
+		<property name="resultMsg" type="java.lang.String" />
+		<property name="subRentId" type="java.lang.String" />
+		<property name="lesseeSiteInfoId" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.co.Mco004SrchSP" entity-name="mco004Update">
+		<id name="result" type="java.lang.String" />
+		<property name="resultMsg" type="java.lang.String" />
+	</class>
+	
+	
+	<sql-query name="mco004Srch" callable="true">
+		<return class="th.co.ais.domain.co.Mco004SrchSP" entity-name="mco004Srch">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="subRentId" column="SUB_RENT_ID" />
+			<return-property name="lessorSiteInfoId" column="LESSOR_SITE_INFO_ID" />
+			<return-property name="lesseeSiteInfoId" column="LESSEE_SITE_INFO_ID" />
+			<return-property name="lessorContractNo" column="LESSOR_CONTRACT_NO" />
+			<return-property name="lesseeContractNo" column="LESSEE_CONTRACT_NO" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="rentAmt" column="RENT_AMT" />
+			<return-property name="serviceAmt" column="SERVICE_AMT" />
+			<return-property name="lesseeCompany" column="LESSEE_COMPANY" />
+			<return-property name="lesseeRegion" column="LESSEE_REGION" />
+			<return-property name="lesseeSiteType" column="LESSEE_SITE_TYPE" />
+			<return-property name="subRentType" column="SUB_RENT_TYPE" />
+			<return-property name="subRentStatus" column="SUB_RENT_STATUS" />
+			<return-property name="groupNo" column="GROUP_NO" />
+			<return-property name="contractAge" column="CONTRACT_AGE" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="street" column="SITE_STREET" />
+			<return-property name="district" column="SITE_TAMBON" />
+			<return-property name="amphur" column="AMPHUR_NAME" />
+			<return-property name="province" column="PROVINCE_NAME" />
+			<return-property name="postcode" column="SITE_POSTCODE" />
+			<return-property name="deckArea" column="DECK_AREA" />
+			<return-property name="buildingArea" column="BUILDING_AREA" />
+			<return-property name="roomArea" column="ROOM_AREA" />
+			<return-property name="landArea" column="LAND_AREA" />
+			<return-property name="lesseeContractId" column="LESSEE_CONTRACT_ID" />
+			<return-property name="dutyAmt" column="DUTY_AMT" />
+			<return-property name="borrowStatus" column="BORROW_STATUS" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="region" column="REGION" />
+			<return-property name="reqTypeName" column="REQ_TYPE_NAME" />
+
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO004_SRCH(?, :effDateFrom, :expDateTo, :region, :company, :contractNo,
+										:siteName, :locationId, :subRentType, :subRentStatus, :groupNo, :strPico)]]>
+	</sql-query>
+	
+	<sql-query name="mco004SrchSummary" callable="true">
+		<return class="th.co.ais.domain.co.Mco004SrchSP" entity-name="mco004SrchSummary">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="monthYear" column="MONTH_YEAR" />
+			<return-property name="region" column="REGION" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="createAmt" column="CREATED_AMT" />
+			<return-property name="remainAmt" column="REMAIN_AMT" />
+
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO004_SRCH_SUMMARY(?, :subRentSummaryType ,:month ,:year ,:region)]]>
+	</sql-query>
+	
+	<sql-query name="mco004Insert" callable="true">
+		<return class="th.co.ais.domain.co.Mco004SrchSP" entity-name="mco004Insert">
+			<return-property name="result" column="RESULT" />
+			<return-property name="resultMsg" column="MESSAGE" />
+			<return-property name="subRentId" column="SUB_RENT_ID" />
+			<return-property name="lesseeSiteInfoId" column="LESSEE_SITE_INFO_ID" />
+
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO004_INSERT(?, :lessorSiteInfoId, :lesseeContractNo, cast(:effectiveDt as date), cast(:expireDt as date), cast(:rentAmt as numeric),
+										cast(:serviceAmt as numeric), :lesseeCompany, :lesseeRegion, :lesseeSiteType, :subRentType,
+										:currentUser)]]>
+	</sql-query>
+	
+	<sql-query name="mco004Update" callable="true">
+		<return class="th.co.ais.domain.co.Mco004SrchSP" entity-name="mco004Update">
+			<return-property name="result" column="RESULT" />
+			<return-property name="resultMsg" column="MESSAGE" />
+
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO004_UPDATE(?, :subRentId,:lessorSiteInfoId, :lesseeContractNo, cast(:effectiveDt as date), cast(:expireDt as date), 
+										cast(:rentAmt as numeric), cast(:serviceAmt as numeric), :lesseeCompany, :lesseeRegion, :lesseeSiteType, 
+										:subRentType, :currentUser)]]>
+	</sql-query>
+	
+</hibernate-mapping>

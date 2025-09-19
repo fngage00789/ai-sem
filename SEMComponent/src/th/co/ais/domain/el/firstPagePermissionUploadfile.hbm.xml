@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.cp">
+
+
+ <class name="th.co.ais.domain.el.FirstPageProxyPermissionUploadFile" entity-name="ProxyListUploadFileFirst" > 
+ 	<id name="rowId" type="java.lang.String"/>
+	<property name="company" type="java.lang.String" ></property>
+	<property name="contractNo" type="java.lang.String" ></property>
+ 	<property name="locationId" type="java.lang.String" ></property>
+ 	<property name="locationCode" type="java.lang.String" ></property>
+ 	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="ctStartDt" type="java.util.Date" ></property>
+ 	<property name="ctFinishDt" type="java.util.Date" ></property>
+ 	<property name="areaType" type="java.lang.String" ></property>
+ 	<property name="address" type="java.lang.String" ></property>
+ 	<property name="tumbon" type="java.lang.String" ></property>
+ 	<property name="amphur" type="java.lang.String" ></property>
+ 	<property name="province" type="java.lang.String" ></property>
+ 	<property name="typeUseElectric" type="java.lang.String" ></property>
+ 	<property name="printFlag" type="java.lang.String" ></property>
+ 	<property name="status" type="java.lang.String" ></property>
+ 	<property name="subCon" type="java.lang.String" ></property>
+ 	<property name="subDt" type="java.util.Date" ></property>
+ 	<property name="errMsg" type="java.lang.String" ></property>
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	<property name="phase" type="java.lang.String" ></property>
+ 	<property name="siteCode" type="java.lang.String" ></property>
+ 	<property name="supplier" type="java.lang.String" ></property>
+ 	<property name="statusContract" type="java.lang.String" ></property>
+ 	<property name="batchNo" type="java.lang.String" ></property>
+ </class>
+ 
+  
+ <sql-query name="mel013SearchUploadFileFirstPage" callable="true">
+ 	<return class="th.co.ais.domain.el.FirstPageProxyPermissionUploadFile" entity-name="ProxyListUploadFileFirst" >
+ 		<return-property name="rowId" column="EL_IMPORT_PROXY_DATA_ID"></return-property>
+ 		<return-property name="company" column="COMPANY"></return-property>
+ 		<return-property name="contractNo" column="CONTRACT_NO"></return-property>
+ 		<return-property name="locationId" column="LOCATION_ID"></return-property>
+ 		<return-property name="locationCode" column="LOCATION_CODE"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="ctStartDt" column="EFFECTIVE_DT"></return-property>
+ 		<return-property name="ctFinishDt" column="EXPIRE_DT"></return-property>
+ 		<return-property name="areaType" column="PLACE_TYPE"></return-property>
+ 		<return-property name="address" column="SITE_HOUSE_NO"></return-property>
+ 		<return-property name="tumbon" column="SITE_TUMBOL"></return-property>
+ 		<return-property name="amphur" column="AMPHUR_NAME"></return-property>
+ 		<return-property name="province" column="PROVINCE_NAME"></return-property>
+ 		<return-property name="typeUseElectric" column="ELECTRIC_TYPE"></return-property>
+ 		<return-property name="printFlag" column="PRINT_FLAG"></return-property>
+ 		<return-property name="status" column="Status"></return-property>
+ 		<return-property name="subCon" column="Sub_Contractor"></return-property>
+ 		<return-property name="subDt" column="Sub_Dt"></return-property>
+ 		<return-property name="remark" column="Remark"></return-property>
+ 		<return-property name="phase" column="PHASE"></return-property>
+ 		<return-property name="siteCode" column="SITE_CODE"></return-property>
+ 		<return-property name="errMsg" column="MESSAGE"></return-property>
+ 		<return-property name="supplier" column="SUPPLIER"></return-property>
+ 		<return-property name="statusContract" column="CONTRACT_STATUS"></return-property>
+ 		<return-property name="batchNo" column="BATCH_NO"></return-property>
+ 		
+ 		
+ 		
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MEL013_PROXY_SRCH_F(?, :company, :contractNo , :siteName , :region, :province, :locationId , :locationCode, :typeUseElectric, :reqType, :processStatusCode, :uploadFileDtFrom, :uploadFileDtTo, :fileName, :supplier, :batchNo, :flagPrint) ]]>
+ </sql-query>
+ 
+ 
+  </hibernate-mapping>

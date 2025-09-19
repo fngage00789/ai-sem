@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001UpdDpstMap">
+		<id name="result" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMrt001UpdDpstMap" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001UpdDpstMap">
+			<return-property name="result" column="P_RESULT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_UPD_DPST_MAP(?, :rentalMasterId, :depositDetailId, cast(:depositAmt as numeric), :currentUser) ]]>
+	</sql-query>
+</hibernate-mapping>

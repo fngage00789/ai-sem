@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.PaymentHistSP" entity-name="paymentHistObj">
+		<id name="rowId" type="java.lang.String"/>	
+			<property name="contractNo" type="java.lang.String"/>	
+			<property name="oldContractNo" type="java.lang.String"/>	
+			<property name="company" type="java.lang.String"/>	
+			<property name="expenseType" type="java.lang.String"/>
+			<property name="expenseTypeDesc" type="java.lang.String"/>
+			<property name="vendorId" type="java.lang.String"/>
+			<property name="vendorName" type="java.lang.String"/>	
+			<property name="payeeId" type="java.lang.String"/>
+			<property name="payeeName" type="java.lang.String"/>
+			<property name="meterId" type="java.lang.String"/>
+			<property name="termOfPaymentDt" type="java.util.Date"/>
+			<property name="fromTermOfPaymentDt" type="java.util.Date"/>	
+			<property name="toTermOfPaymentDt" type="java.util.Date"/>	
+			<property name="pRead" type="java.lang.String"/>	
+			<property name="lRead" type="java.lang.String"/>	
+			<property name="unitPrice" type="java.math.BigDecimal"/>	
+			<property name="unitVatType" type="java.lang.String"/>	
+			<property name="payAmt" type="java.math.BigDecimal"/>	
+			<property name="vatType" type="java.lang.String"/>	
+			<property name="vatAmt" type="java.math.BigDecimal"/>	
+			<property name="excludeVatAmt" type="java.math.BigDecimal"/>		
+			<property name="includeVatAmt" type="java.math.BigDecimal"/>	
+			<property name="whtAmt" type="java.math.BigDecimal"/>	
+			<property name="chqAmt" type="java.math.BigDecimal"/>	
+			<property name="paymentType" type="java.lang.String"/>	
+			<property name="paymentTypeDesc" type="java.lang.String"/>	
+			<property name="bankName" type="java.lang.String"/>	
+			<property name="bankAccount" type="java.lang.String"/>	
+			<property name="chqNo" type="java.lang.String"/>	
+			<property name="chqPostingDt" type="java.util.Date"/>	
+			<property name="chqReceivedDt" type="java.util.Date"/>	
+			<property name="transferDt" type="java.util.Date"/>	
+			<property name="chqClearingDt" type="java.util.Date"/>	
+			<property name="doc68" type="java.lang.String"/>	
+			<property name="doc92" type="java.lang.String"/>	
+			<property name="remark" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="srchPaymentHist" callable="true">
+		<return class="th.co.ais.domain.el.PaymentHistSP" entity-name="paymentHistObj">
+			<return-property name="rowId" column="PAYMENT_ID"/>	
+			<return-property name="contractNo" column="CONTRACT_NO"/>	
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO"/>	
+			<return-property name="company" column="COMPANY"/>	
+			<return-property name="expenseType" column="EXPENSE_TYPE"/>
+			<return-property name="expenseTypeDesc" column="EXPENSE_TYPE_DESC"/>
+			<return-property name="vendorId" column="VENDOR_ID"/>
+			<return-property name="vendorName" column="VENDOR_NAME"/>	
+			<return-property name="payeeId" column="PAYEE_ID"/>
+			<return-property name="payeeName" column="PAYEE_NAME"/>
+			<return-property name="meterId" column="METER_ID"/>
+			<return-property name="termOfPaymentDt" column="TERM_OF_PAYMENT_DT"/>
+			<return-property name="fromTermOfPaymentDt" column="FROM_TERM_OF_PAYMENT_DT"/>	
+			<return-property name="toTermOfPaymentDt" column="TO_TERM_OF_PAYMENT_DT"/>	
+			<return-property name="pRead" column="P_READ"/>	
+			<return-property name="lRead" column="L_READ"/>	
+			<return-property name="unitPrice" column="UNIT_PRICE"/>	
+			<return-property name="unitVatType" column="UNIT_VAT_TYPE"/>	
+			<return-property name="payAmt" column="PAY_AMT"/>	
+			<return-property name="vatType" column="VAT_TYPE"/>	
+			<return-property name="vatAmt" column="VAT_AMT"/>	
+			<return-property name="excludeVatAmt" column="EXCLUDE_VAT_AMT"/>	
+			<return-property name="includeVatAmt" column="INCLUDE_VAT_AMT"/>	
+			<return-property name="whtAmt" column="WHT_AMT"/>	
+			<return-property name="chqAmt" column="CHQ_AMT"/>	
+			<return-property name="paymentType" column="PAYMENT_TYPE"/>	
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC"/>	
+			<return-property name="bankName" column="BANK_NAME"/>	
+			<return-property name="bankAccount" column="BANK_ACCOUNT"/>	
+			<return-property name="chqNo" column="CHQ_NO"/>	
+			<return-property name="chqPostingDt" column="CHQ_POSTING_DT"/>	
+			<return-property name="chqReceivedDt" column="CHQ_RECEIVED_DT"/>	
+			<return-property name="transferDt" column="TRANSFER_DT"/>	
+			<return-property name="chqClearingDt" column="CHQ_CLEARING_DT"/>	
+			<return-property name="doc68" column="DOC_68"/>	
+			<return-property name="doc92" column="DOC_92"/>	
+			<return-property name="remark" column="REMARK"/>
+
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL005_PAYMENT_HIST(?, :contractNo) ]]>
+	</sql-query>
+</hibernate-mapping>

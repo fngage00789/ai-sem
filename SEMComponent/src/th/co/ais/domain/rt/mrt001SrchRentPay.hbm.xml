@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001SrchRentPay">
+		<id name="rowId" type="java.lang.String" />
+		<property name="periodStartDt" type="java.sql.Date" />
+		<property name="periodNoStart" type="java.lang.String" />
+		<property name="expenseType" type="java.lang.String" />
+		<property name="expenseTypeDesc" type="java.lang.String" />
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="payPeriodType" type="java.lang.String" />
+		<property name="payPeriodY" type="java.lang.String" />
+		<property name="payPeriodM" type="java.lang.String" />
+		<property name="payPeriodD" type="java.lang.String" />
+		<property name="excAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="whtRate" type="java.lang.Double" />
+		<property name="whtAmt" type="java.lang.Double" />
+		<property name="incAmt" type="java.lang.Double" />
+		<property name="paymentStatusDesc" type="java.lang.String" />
+		<property name="siteStatus" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+		<property name="rentalPaymentId" type="java.lang.String" />
+		<property name="serviceId" type="java.lang.String" />
+		<property name="serviceName" type="java.lang.String" />
+		<property name="expenseDesc" type="java.lang.String" />
+
+	</class>
+	<sql-query name="mrt001SrchRentPay" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001SrchRentPay">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="periodStartDt" column="PERIOD_START_DT" />
+			<return-property name="periodNoStart" column="PERIOD_NO_START" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="expenseTypeDesc" column="EXPENSE_TYPE_DESC" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="payPeriodType" column="PAY_PERIOD_TYPE" />
+			<return-property name="payPeriodY" column="PAY_PERIOD_Y" />
+			<return-property name="payPeriodM" column="PAY_PERIOD_M" />
+			<return-property name="payPeriodD" column="PAY_PERIOD_D" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="incAmt" column="INC_AMT" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="rentalPaymentId" column="RENTAL_PAYMENT_ID" />
+			<return-property name="serviceId" column="SERVICE_ID" />
+			<return-property name="serviceName" column="SERVICE_NAME" />
+			<return-property name="expenseDesc" column="EXPENSE_DESC" />
+			
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_SRCH_RENT_PAY(?, :rowId) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004SrchExportSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="phase" type="java.lang.String"/>
+		<property name="systemName" type="java.lang.String"/>
+		<property name="effDate" type="java.util.Date"/>
+		<property name="expireDate" type="java.util.Date"/>
+		<property name="address" type="java.lang.String"/>
+		<property name="street" type="java.lang.String"/>
+		<property name="tambon" type="java.lang.String"/>
+		<property name="amphur" type="java.lang.String"/>
+		<property name="province" type="java.lang.String"/>
+		<property name="ownerName" type="java.lang.String"/>
+		<property name="tel" type="java.lang.String"/>
+		<property name="siteTypeName" type="java.lang.String"/>
+		<property name="deckArea" type="java.lang.Double"/>
+		<property name="roomArea" type="java.lang.Double"/>
+		<property name="landAreaSqm" type="java.lang.Double"/>
+		<property name="landAreaSqw" type="java.lang.Double"/>
+		<property name="rentAmtMonth" type="java.lang.Double"/>
+		<property name="rentAmtYear" type="java.lang.Double"/>
+		<property name="sumRentAmt" type="java.lang.Double"/>
+		<property name="serviceAmtMonth" type="java.lang.Double"/>
+		<property name="serviceAmtYear" type="java.lang.Double"/>
+		<property name="sumServiceAmt" type="java.lang.Double"/>
+		<property name="sumRentServiceAmt" type="java.lang.Double"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="reqTypeName" type="java.lang.String"/>
+		<property name="placeTypeName" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="msi004SearchExport" callable="true">
+		<return class="th.co.ais.domain.si.Msi004SrchExportSP">
+		<return-property name="rowId" column="ROW_ID" />
+		<return-property name="contractNo" column="CONTRACT_NO"/>
+		<return-property name="siteName" column="SITE_NAME"/>
+		<return-property name="locationId" column="LOCATION_ID"/>
+		<return-property name="locationCode" column="LOCATION_CODE"/>
+		<return-property name="phase" column="PHASE"/>
+		<return-property name="systemName" column="SYSTEM_NAME"/>
+		<return-property name="effDate" column="EFFECTIVE_DT"/>
+		<return-property name="expireDate" column="EXPIRE_DT"/>
+		<return-property name="address" column="ADDRESS"/>
+		<return-property name="street" column="SITE_STREET"/>
+		<return-property name="tambon" column="SITE_TAMBON"/>
+		<return-property name="amphur" column="AMPHUR_NAME"/>
+		<return-property name="province" column="PROVINCE_NAME"/>
+		<return-property name="ownerName" column="OWNER_NAME"/>
+		<return-property name="tel" column="TEL"/>
+		<return-property name="siteTypeName" column="SITE_TYPE_NAME"/>
+		<return-property name="deckArea" column="DECK_AREA"/>
+		<return-property name="roomArea" column="ROOM_AREA"/>
+		<return-property name="landAreaSqm" column="LAND_AREA_SQM"/>
+		<return-property name="landAreaSqw" column="LAND_AREA_SQW"/>
+		<return-property name="rentAmtMonth" column="RENT_AMT_MONTH"/>
+		<return-property name="rentAmtYear" column="RENT_AMT_YEAR"/>
+		<return-property name="sumRentAmt" column="SUM_RENT_AMT"/>
+		<return-property name="serviceAmtMonth" column="SERVICE_AMT_MONTH"/>
+		<return-property name="serviceAmtYear" column="SERVICE_AMT_YEAR"/>
+		<return-property name="sumServiceAmt" column="SUM_SERVICE_AMT"/>
+		<return-property name="sumRentServiceAmt" column="SUM_RENT_SERVICE_AMT"/>
+		<return-property name="company" column="COMPANY"/>
+		<return-property name="region" column="REGION"/>
+		<return-property name="reqTypeName" column="REQ_TYPE_NAME"/>
+		<return-property name="placeTypeName" column="PLACE_TYPE_NAME"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_EXPORT (?, :siteInfoId) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001SrchDpstCond">
+		<id name="siteDepositId" type="java.lang.String"/>
+		<property name="depositCondType" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="seqNo" type="java.lang.String"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="expenseTypeName" type="java.lang.String"/>
+		<property name="depositType" type="java.lang.String"/>
+		<property name="depositTypeName" type="java.lang.String"/>
+		<property name="detail" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="condDepositAmt" type="java.lang.Double"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="vatTypeName" type="java.lang.String"/>
+		<property name="vatRate" type="java.lang.String"/>
+		<property name="newStatus" type="java.lang.String"/>
+		<property name="newStatusName" type="java.lang.String"/>
+		<property name="sumDepositAmt" type="java.lang.Double"/>
+		<property name="condBalanceAmt" type="java.lang.Double"/>
+		<property name="periodStDt" type="java.sql.Date"/>
+		<property name="periodEndDt" type="java.sql.Date"/>
+	</class>
+	<sql-query name="spMrt001SrchDpstCond" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001SrchDpstCond">
+			<return-property name="siteDepositId" column="SITE_DEPOSIT_ID" />
+			<return-property name="depositCondType" column="DEPOSIT_COND_TYPE" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="seqNo" column="SEQ_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="expenseTypeName" column="EXPENSE_TYPE_NAME" />
+			<return-property name="depositType" column="DEPOSIT_TYPE" />
+			<return-property name="depositTypeName" column="DEPOSIT_TYPE_NAME" />
+			<return-property name="detail" column="DETAIL" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="condDepositAmt" column="COND_DEPOSIT_AMT" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatTypeName" column="VAT_TYPE_NAME" />
+			<return-property name="vatRate" column="VAT_RATE" />
+			<return-property name="newStatus" column="NEW_STATUS" />
+			<return-property name="newStatusName" column="NEW_STATUS_NAME" />
+			<return-property name="sumDepositAmt" column="SUM_DEPOSIT_AMT" />
+			<return-property name="condBalanceAmt" column="COND_BALANCE_AMT" />
+			<return-property name="periodStDt" column="PERIOD_START_DT" />
+			<return-property name="periodEndDt" column="PERIOD_END_DT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_SRCH_DPST_COND(?, :siteInfoId, :rentalMasterId) ]]>
+	</sql-query>
+</hibernate-mapping>

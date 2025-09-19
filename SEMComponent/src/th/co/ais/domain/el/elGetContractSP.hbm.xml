@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.ElGetContractSP">
+		<id name="contractNo" type="java.lang.String"/>
+		<property name="effectiveDt" type="java.util.Date"/>
+		<property name="expireDt" type="java.util.Date"/>
+		<property name="siteStatus" type="java.lang.String"/>
+		<property name="siteStatusDesc" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="networkStatusDesc" type="java.lang.String"/>
+		<property name="meterStatus" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="elGetContract" callable="true">
+		<return class="th.co.ais.domain.el.ElGetContractSP">  
+			<return-property name="contractNo" column="CONTRACT_NO"/>
+			<return-property name="effectiveDt" column="EFFECTIVE_DT"/>
+			<return-property name="expireDt" column="EXPIRE_DT"/>
+			<return-property name="siteStatus" column="SITE_STATUS"/>
+			<return-property name="siteStatusDesc" column="SITE_STATUS_DESC"/>
+			<return-property name="networkStatus" column="NETWORK_STATUS"/>
+			<return-property name="networkStatusDesc" column="NETWORK_STATUS_DESC"/>
+			<return-property name="meterStatus" column="METER_STATUS"/>
+		</return>
+	<![CDATA[ call SEM_EL_GET_CONTRACT(?, :importTranId, :contractNo) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

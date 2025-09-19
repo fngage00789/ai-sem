@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004CheckPtUndefSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="checkFlag" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="msi004CheckPtUndef" callable="true">
+		<return class="th.co.ais.domain.si.Msi004CheckPtUndefSP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="checkFlag" column="CHK_FLAG"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_CHK_PT_UNDEF (?, :siteInfoId ) ]]>
+	</sql-query>
+</hibernate-mapping>

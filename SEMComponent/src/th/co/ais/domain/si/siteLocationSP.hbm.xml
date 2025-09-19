@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SiteLocationSP" entity-name="searchLocation">
+		<id name="rowId" type="java.lang.String"/>
+			<property name="locationId" type="java.lang.String"/>
+			<property name="locationCode" type="java.lang.String"/>
+			<property name="locationName" type="java.lang.String"/>
+			<property name="region" type="java.lang.String"/>
+			<property name="stationType" type="java.lang.String"/>
+			<property name="contractNo" type="java.lang.String"/>
+			<property name="province" type="java.lang.String"/>
+			<property name="address" type="java.lang.String"/>
+			<property name="networkStatus" type="java.lang.String"/>
+			
+			<property name="locationStatus" type="java.lang.String"/>
+			<property name="siteGroup" type="java.lang.String"/>
+			<property name="system" type="java.lang.String"/>
+			<property name="locStationType" type="java.lang.String"/>
+			<property name="company" type="java.lang.String"/>
+			<property name="siteCode" type="java.lang.String"/>
+			<property name="siteId"  type="java.lang.String" />	
+			<property name="siteName" type="java.lang.String"/>
+			<property name="siteActivity" type="java.lang.String"/>
+			<property name="towerType" type="java.lang.String"/>
+			<property name="towerLocation" type="java.lang.String"/>
+			<property name="towerHeight" type="java.lang.Integer"/>
+			<property name="locationZone" type="java.lang.String"/>
+			<property name="reLocate" type="java.lang.String"/>
+			<property name="phase" type="java.lang.String"/>
+			<property name="locationType" type="java.lang.String"/>
+			<property name="locAddressNo" type="java.lang.String"/>
+			<property name="locBuilding" type="java.lang.String"/>
+			<property name="locFloor" type="java.lang.String"/>
+			<property name="locStreet" type="java.lang.String"/>
+			<property name="tumbol" type="java.lang.String"/>
+			<property name="amphur" type="java.lang.String"/>
+			<property name="zipCode" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.si.SiteLocationSP" entity-name="searchLocationForIR">
+		<id name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="locationName" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="stationType" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="province" type="java.lang.String"/>
+		<property name="address" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="querySiteLocationSearch" callable="true">
+		<return class="th.co.ais.domain.si.SiteLocationSP" entity-name="searchLocation">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />	
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="region" column="REGION" />
+			<return-property name="stationType" column="STATION_TYPE" />	
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="province" column="PROVINCE_ID" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			
+			<return-property name="locationStatus" column="LOCATIONSTATUS" />
+			<return-property name="siteGroup" column="SITE_GROUP" />
+			<return-property name="system" column="SYSTEM" />
+			<return-property name="locStationType" column="LOC_STATION_TYPE" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="siteCode" column="SITE_CODE" />	
+			<return-property name="siteId" column="SITE_ID" />	
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="siteActivity" column="SITEACTIVITY" />	
+			<return-property name="towerType" column="TOWER_TYPE" />
+			<return-property name="towerLocation" column="TOWER_LOCATION" />
+			<return-property name="towerHeight" column="TOWER_HEIGHT" />
+			<return-property name="locationZone" column="ZONE_DESCRIPTION" />	
+			<return-property name="reLocate" column="RE_LOCATE" />
+			<return-property name="phase" column="PHASE" />
+			<return-property name="locationType" column="LOCATION_TYPE" />	
+			<return-property name="locAddressNo" column="LOC_ADDR_NO" />
+			<return-property name="locBuilding" column="LOCBUILDING" />
+			<return-property name="locFloor" column="LOCFLOOR" />
+			<return-property name="locStreet" column="LOCSTREET" />	
+			<return-property name="tumbol" column="TUMBOL" />
+			<return-property name="amphur" column="AMPHUR" />
+			<return-property name="zipCode" column="ZIP_CODE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_PSI001_SRCH (?, :locationId, :locationCode, :locationName, :siteId, :siteCode, :siteName) ]]>
+	</sql-query>
+	
+	<sql-query name="querySiteLocationSearchForIR" callable="true">
+		<return class="th.co.ais.domain.si.SiteLocationSP" entity-name="searchLocationForIR">
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="region" column="REGION" />
+			<return-property name="stationType" column="STATION_TYPE" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="province" column="PROVINCE_ID" />
+			<return-property name="address" column="ADDRESS" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MIR010_SRCH_L (?, :locationId, :locationCode, :locationName) ]]>
+	</sql-query>
+</hibernate-mapping>

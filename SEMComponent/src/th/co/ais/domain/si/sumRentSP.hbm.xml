@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SumRentSP">
+		<id name="rowId"  type="java.lang.String"/>
+		<property name="rentAddAmt" type="java.lang.Double"/>
+		<property name="rentAddPeriodType" type="java.lang.String"/>
+		<property name="rentAddPeriodTypeName" type="java.lang.String"/>
+		<property name="serviceAddAmt" type="java.lang.Double"/>
+		<property name="serviceAddPeriodType" type="java.lang.String"/>
+		<property name="serviceAddPeriodTypeName" type="java.lang.String"/>
+		<property name="rentAmt" type="java.lang.Double"/>
+		<property name="rentPeriodType" type="java.lang.String"/>
+		<property name="rentPeriodTypeName" type="java.lang.String"/>
+		<property name="serviceAmt" type="java.lang.Double"/>
+		<property name="servicePeriodType" type="java.lang.String"/>
+		<property name="servicePeriodTypeName" type="java.lang.String"/>
+		<property name="rentServiceAmt" type="java.lang.Double"/>
+		<property name="rentServicePeriodType" type="java.lang.String"/>
+		<property name="rentServicePeriodTypeName" type="java.lang.String"/>
+		<property name="ageRentServiceAmt" type="java.lang.Double"/>
+		<property name="ageRentAmt" type="java.lang.Double"/>
+		<property name="ageServiceAmt" type="java.lang.Double"/>
+		<property name="ageDonateAmt" type="java.lang.Double"/>
+		
+	</class>
+	<sql-query name="querySearchSumRent" callable="true">
+		<return class="th.co.ais.domain.si.SumRentSP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="rentAddAmt" column="RENT_ADD_AMT" />
+			<return-property name="rentAddPeriodType" column="RENT_ADD_PERIOD_TYPE" />
+			<return-property name="rentAddPeriodTypeName" column="RENT_ADD_PERIOD_TYPE_NAME" />
+			<return-property name="serviceAddAmt" column="SERVICE_ADD_AMT" />
+			<return-property name="serviceAddPeriodType" column="SERVICE_ADD_PERIOD_TYPE" />
+			<return-property name="serviceAddPeriodTypeName" column="SERVICE_ADD_PERIOD_TYPE_NAME" />
+			<return-property name="rentAmt" column="RENT_AMT" />
+			<return-property name="rentPeriodType" column="RENT_PERIOD_TYPE" />
+			<return-property name="rentPeriodTypeName" column="RENT_PERIOD_TYPE_NAME" />
+			<return-property name="serviceAmt" column="SERVICE_AMT" />
+			<return-property name="servicePeriodType" column="SERVICE_PERIOD_TYPE" />
+			<return-property name="servicePeriodTypeName" column="SERVICE_PERIOD_TYPE_NAME" />
+			<return-property name="rentServiceAmt" column="RENT_SERVICE_AMT" />
+			<return-property name="rentServicePeriodType" column="RENT_SERVICE_PERIOD_TYPE" />
+			<return-property name="rentServicePeriodTypeName" column="RENT_SERVICE_PERIOD_TYPE_NAME" />
+			<return-property name="ageRentServiceAmt" column="AGE_RENT_SERVICE_AMT" />
+			<return-property name="ageRentAmt" column="AGE_RENT_AMT" />
+			<return-property name="ageServiceAmt" column="AGE_SERVICE_AMT" />
+			<return-property name="ageDonateAmt" column="AGE_DONATE_AMT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_SUM_RENT (?, :siteInfoId) ]]>
+	</sql-query>
+</hibernate-mapping>

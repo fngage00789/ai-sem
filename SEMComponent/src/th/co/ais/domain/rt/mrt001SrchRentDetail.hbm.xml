@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<!-- 
+		expenseType, vendorMasterId, payeeMasterId, whtTypeDetail, vatTypeDetail, payPeriodDetail;
+	 -->
+	<class name="th.co.ais.domain.rt.Mrt001SrchRentDetail">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="rentalMasterId" type="java.lang.String"/>
+		<property name="expenseTypeName" type="java.lang.String" />
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="whtType" type="java.lang.String" />
+		<property name="whtTypeName" type="java.lang.String" />
+		<property name="whtRate" type="java.lang.String" />
+		<property name="vatType" type="java.lang.String" />
+		<property name="vatRate" type="java.lang.String" />
+		<property name="vatTypeName" type="java.lang.String" />
+		<property name="payPeriodTypeAName" type="java.lang.String" />
+		<property name="periodAmt" type="java.lang.Double" />
+		<property name="rentPeriodType" type="java.lang.String" />
+		<property name="periodYear" type="java.lang.String" />
+		<property name="periodMonth" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+		<property name="effDate" type="java.sql.Date" />
+		<property name="periodStartDt" type="java.sql.Date" />
+		<property name="periodEndDt" type="java.sql.Date" />
+		<property name="totPeriodNo" type="java.lang.Integer" />
+		<property name="vendorMasterId" type="java.lang.String" />
+		<property name="mSiteRentCond" type="java.lang.String" />
+		<property name="cntVendor" type="java.lang.Integer" />
+		<property name="amtPerMonth" type="java.lang.Double" />
+		<property name="amtPerYear" type="java.lang.Double" />
+		<property name="amtOneTime" type="java.lang.Double" />
+		<property name="serviceName" type="java.lang.String" />
+		<property name="serviceCalType" type="java.lang.String" />
+		<property name="serviceId" type="java.lang.String" />
+		<property name="rentalCalCode" type="java.lang.String" />
+		<property name="expenseDesc" type="java.lang.String" />
+	</class>
+	<sql-query name="spMrt001SrchRentDetail" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001SrchRentDetail">
+			<return-property name="rowId" column="RENTAL_DETAIL_ID" />
+			<return-property name="rentalMasterId" column="RENTAL_MASTER_ID" />
+			<return-property name="expenseTypeName" column="EXPENSE_TYPE_NAME" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="whtTypeName" column="WHT_TYPE_NAME" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatRate" column="VAT_RATE" />
+			<return-property name="vatTypeName" column="VAT_TYPE_NAME" />
+			<return-property name="payPeriodTypeAName" column="PAY_PERIOD_TYPE_NAME" />
+			<return-property name="periodAmt" column="PERIOD_AMT" />
+			<return-property name="rentPeriodType" column="RENT_PERIOD_TYPE" />
+			<return-property name="periodYear" column="PERIOD_YEAR" />
+			<return-property name="periodMonth" column="PERIOD_MONTH" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="effDate" column="EFFECTIVE_DT" />
+			<return-property name="periodStartDt" column="PERIOD_START_DT" />
+			<return-property name="periodEndDt" column="PERIOD_END_DT" />
+			<return-property name="totPeriodNo" column="TOT_PERIOD_NO" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="mSiteRentCond" column="M_SITE_RENT_COND" />
+			<return-property name="cntVendor" column="CNT_VENDOR" />
+			<return-property name="amtPerMonth" column="AMT_PER_MONTH"/>
+			<return-property name="amtPerYear" column="AMT_PER_YEAR"/>
+			<return-property name="amtOneTime" column="AMT_ONE_TIME"/>
+			<return-property name="serviceName" column="SERVICE_NAME"/>
+			<return-property name="serviceCalType" column="RENTAL_CAL_NAME"/>
+			<return-property name="serviceId" column="SERVICE_ID"/>
+			<return-property name="rentalCalCode" column="RENTAL_CAL_CODE"/>
+			<return-property name="expenseDesc" column="EXPENSE_DESC"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_SRCH_RENT_DETAIL(?, :rentalMasterId) ]]>
+	</sql-query>
+</hibernate-mapping>

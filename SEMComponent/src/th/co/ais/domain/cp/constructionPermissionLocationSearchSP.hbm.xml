@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.cp">
+	<class name="th.co.ais.domain.cp.ConstructionPermissionLocationSearchSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="siteInfoMapLocId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="seqNo" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="locationName" type="java.lang.String"/>	
+		<property name="region" type="java.lang.String"/>
+		<property name="stationType" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="rentAMT" type="java.lang.String"/>
+		<property name="mainLocFlag" type="java.lang.String"/>
+	</class>
+	 
+	<sql-query name="querySearchConstructionLocation" callable="true">
+	<return class="th.co.ais.domain.cp.ConstructionPermissionLocationSearchSP">
+		<return-property name="rowId" column="SEQ_NO" />		
+		<return-property  name="siteInfoMapLocId" column="SITE_INFO_MAP_LOC_ID" />
+		<return-property  name="siteInfoId" column="SITE_INFO_ID" />
+		<return-property  name="seqNo" column="SEQ_NO" />
+		<return-property  name="locationId" column="LOCATION_ID" />
+		<return-property  name="locationCode" column="LOCATION_CODE" />
+		<return-property  name="locationName" column="LOCATION_NAME" />	
+		<return-property  name="region" column="REGION" />
+		<return-property  name="stationType" column="STATION_TYPE" />
+		<return-property  name="networkStatus" column="NETWORK_STATUS" />
+		<return-property  name="rentAMT" column="RENT_AMT" />
+		<return-property  name="mainLocFlag" column="MAIN_LOC_FLAG" />
+	 </return>
+		<![CDATA[call SEM.SEM_SP_MSI004_SRCH_MAP_LOC(?, :siteInfoId)]]>
+	</sql-query>
+</hibernate-mapping>

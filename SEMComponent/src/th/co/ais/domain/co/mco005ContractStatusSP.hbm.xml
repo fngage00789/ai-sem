@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.co">
+ <class name="th.co.ais.domain.co.Mco005ContractStatusSP">
+  <id name="lovCode" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="lovName" type="java.lang.String"/>
+ </class>
+ <sql-query callable="true"
+   name="mco005ContractStatus"><![CDATA[ call SEM.SEM_SP_MCO005_SRCH_DDL_STATUS (?,:role, :company, :currentFlag)]]><return
+    class="th.co.ais.domain.co.Mco005ContractStatusSP">
+   <return-property column="LOV_CODE" name="lovCode"/>
+   <return-property column="LOV_NAME" name="lovName"/>
+  </return>
+ </sql-query>
+</hibernate-mapping>

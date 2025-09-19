@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco003SearchPSI002SP" >
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="renewNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="effectiveDt" type="java.util.Date"/>
+		<property name="expireDt" type="java.util.Date"/>
+	</class>
+	<sql-query name="spMco003SearchPSI002" callable="true">
+		<return class="th.co.ais.domain.co.Mco003SearchPSI002SP">  
+			<return-property name="rowId" column="SITE_INFO_ID" />
+			<return-property name="contractId" column="CONTRACT_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="renewNo" column="RENEW_NO" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="region" column="REGION" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+		</return>
+		 <![CDATA[ call SEM_SP_PSI002_SRCH(?,:contractNo, :siteName , :company, :currentFlag) ]]>
+	</sql-query>
+</hibernate-mapping>

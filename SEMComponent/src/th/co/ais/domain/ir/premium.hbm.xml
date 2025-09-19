@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.Premium" entity-name="mir007SchR">
+		<id name="rowId" type="java.lang.String" />
+		<property name="premiumRate" type="java.lang.Double" />
+		
+	</class>
+	
+	
+	<sql-query name="mir007SchR" callable="true">
+		<return class="th.co.ais.domain.ir.Premium" entity-name="mir007SchR">  
+			<return-property name="rowId" column="PREMIUM_ID" />
+			<return-property name="premiumRate" column="PREMIUM_RATE" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR007_SRCH_R(?, :company, :networkType, :transferType, :policyType, 
+		 							   :effDt, :expDt) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

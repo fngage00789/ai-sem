@@ -1,0 +1,2567 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_21" class="java.beans.XMLDecoder"> 
+ <object class="th.co.ais.web.bean.SsoBean"> 
+  <void property="clientIpAddress"> 
+   <string>null</string> 
+  </void> 
+  <void property="dc"> 
+   <string>50025447</string> 
+  </void> 
+  <void property="employee"> 
+   <object class="th.co.ais.domain.gm.Employee"> 
+    <void property="buildingCode"> 
+     <string>ST1</string> 
+    </void> 
+    <void property="companyCode"> 
+     <string>AWN</string> 
+    </void> 
+    <void property="costCenter"> 
+     <string>0000010000</string> 
+    </void> 
+    <void property="email"> 
+     <string>tussanus@ais.co.th</string> 
+    </void> 
+    <void property="employeeGroup"> 
+     <string>1</string> 
+    </void> 
+    <void property="employeeType"> 
+     <string>OS</string> 
+    </void> 
+    <void property="engName"> 
+     <string>TUSSANUN</string> 
+    </void> 
+    <void property="engSurname"> 
+     <string>SITTIRUNG</string> 
+    </void> 
+    <void property="floor"> 
+     <string>24</string> 
+    </void> 
+    <void property="orgDesc"> 
+     <string>Finance</string> 
+    </void> 
+    <void property="orgId"> 
+     <string>50090562</string> 
+    </void> 
+    <void property="pin"> 
+     <string>00008115</string> 
+    </void> 
+    <void property="positionId"> 
+     <string>50045986</string> 
+    </void> 
+    <void property="positionName"> 
+     <string>Finance Support Officer</string> 
+    </void> 
+    <void property="recDateTime"> 
+     <string>2009-05-28 22:10:04</string> 
+    </void> 
+    <void property="status"> 
+     <string>3</string> 
+    </void> 
+    <void property="telNo"> 
+     <string>0-2615-3371</string> 
+    </void> 
+    <void property="thaiName"> 
+     <string>ทัศนันท์</string> 
+    </void> 
+    <void property="thaiSurname"> 
+     <string>สิทธิรุ่ง</string> 
+    </void> 
+    <void property="userStamp"> 
+     <string>tussanus</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="fn"> 
+   <string>TUSSANUN</string> 
+  </void> 
+  <void property="gl"> 
+   <string></string> 
+  </void> 
+  <void property="groupId"> 
+   <string>198</string> 
+  </void> 
+  <void property="host"> 
+   <string>https://employeeservices.ais.co.th/EmployeeService/</string> 
+  </void> 
+  <void property="lc"> 
+   <string></string> 
+  </void> 
+  <void property="ln"> 
+   <string>SITTIRUNG</string> 
+  </void> 
+  <void property="pt"> 
+   <string>Finance Support Officer</string> 
+  </void> 
+  <void property="rid"> 
+   <string>42</string> 
+  </void> 
+  <void property="rn"> 
+   <string>SEM_User</string> 
+  </void> 
+  <void property="sc"> 
+   <string></string> 
+  </void> 
+  <void property="sid"> 
+   <string>237</string> 
+  </void> 
+  <void property="sn"> 
+   <string>SM023</string> 
+  </void> 
+  <void property="ssoCompCodes"> 
+   <object class="java.util.HashMap"> 
+    <void method="put"> 
+     <string>SEMMCT001-1</string> 
+     <array class="Permission.bean.ais.com.SSOCompCode" length="5"> 
+      <void index="0"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnDelete</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Delete</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1747</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="1"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnEdit</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Edit</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1747</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="2"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnExport</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Export</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1747</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="3"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnNew</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>New</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1747</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="4"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnView</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>View</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1747</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+     </array> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMRT007-1</string> 
+     <array class="Permission.bean.ais.com.SSOCompCode" length="6"> 
+      <void index="0"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnAcClr</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>AcClr</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1711</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="1"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnAcRej</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>AcRej</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1711</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="2"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnEdit</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Edit</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1711</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="3"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnExport</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Export</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1711</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="4"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnFnClr</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>FnClr</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1711</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="5"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnFnRej</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>FnRej</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1711</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+     </array> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMCT007-1</string> 
+     <array class="Permission.bean.ais.com.SSOCompCode" length="10"> 
+      <void index="0"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnDelete</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Delete</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1749</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="1"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnEdit</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Edit</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1749</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="2"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnNewLovMaster</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>NewLovMaster</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1749</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="3"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnView</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>View</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1749</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="4"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdoGroup1</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Contract</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1749</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="5"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdoGroup2</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Legal</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1749</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="6"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdoGroup3</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Electric</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1749</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="7"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdoGroup4</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Other</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1749</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="8"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdoGroup5</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Finance</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1749</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="9"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdoGroup6</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Account</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1749</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+     </array> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMCT007-2</string> 
+     <array class="Permission.bean.ais.com.SSOCompCode" length="8"> 
+      <void index="0"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnNewLovMaster</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>NewLovMaster</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1794</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="1"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnSave</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Save</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1794</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="2"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdordoGroup1</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>rdoGroup1</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1794</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="3"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdordoGroup2</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>rdoGroup2</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1794</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="4"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdordoGroup3</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>rdoGroup3</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1794</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="5"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdordoGroup4</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>rdoGroup4</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1794</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="6"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdordoGroup5</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>rdoGroup5</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1794</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="7"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>rdordoGroup6</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>rdoGroup6</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1794</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+     </array> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMRT007-1-A</string> 
+     <array class="Permission.bean.ais.com.SSOCompCode" length="6"> 
+      <void index="0"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnAcClr</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>AcClr</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1740</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="1"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnAcRej</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>AcRej</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1740</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="2"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnEdit</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Edit</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1740</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="3"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnExport</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Export</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1740</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="4"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnFnClr</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>FnClr</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1740</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="5"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnFnRej</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>FnRej</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1740</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+     </array> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMCT003-1</string> 
+     <array class="Permission.bean.ais.com.SSOCompCode" length="4"> 
+      <void index="0"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnApproveAccount</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Approve Account</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1814</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="1"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnApproveFinance</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Approve Finance</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1814</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="2"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnRejectAccount</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Reject Account</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1814</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="3"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnRejectFinance</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Reject Finance</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1814</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+     </array> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMSI001-1</string> 
+     <array class="Permission.bean.ais.com.SSOCompCode" length="5"> 
+      <void index="0"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnDelete</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Delete</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1684</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="1"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnEdit</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Edit</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1684</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="2"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnExport</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>Export</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1684</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="3"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnNew</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>New</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1684</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>0</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void index="4"> 
+       <object class="Permission.bean.ais.com.SSOCompCode"> 
+        <void property="compCode"> 
+         <string>btnView</string> 
+        </void> 
+        <void property="compDesc"> 
+         <string>View</string> 
+        </void> 
+        <void property="edit"> 
+         <string>0</string> 
+        </void> 
+        <void property="enable"> 
+         <string>1</string> 
+        </void> 
+        <void property="oth1"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth1_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth2"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth2_desc"> 
+         <string></string> 
+        </void> 
+        <void property="oth3"> 
+         <string>0</string> 
+        </void> 
+        <void property="oth3_desc"> 
+         <string></string> 
+        </void> 
+        <void property="progCodeId"> 
+         <long>1684</long> 
+        </void> 
+        <void property="subMid"> 
+         <long>237</long> 
+        </void> 
+        <void property="userGid"> 
+         <long>198</long> 
+        </void> 
+        <void property="visible"> 
+         <string>1</string> 
+        </void> 
+       </object> 
+      </void> 
+     </array> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="ssoProgCodes"> 
+   <object class="java.util.HashMap"> 
+    <void method="put"> 
+     <string>SEMMCT001-1</string> 
+     <object class="Permission.bean.ais.com.SSOProgCode"> 
+      <void property="add"> 
+       <string>0</string> 
+      </void> 
+      <void property="del"> 
+       <string>0</string> 
+      </void> 
+      <void property="edit"> 
+       <string>1</string> 
+      </void> 
+      <void property="inq"> 
+       <string>1</string> 
+      </void> 
+      <void property="oth1"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth1_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth2"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth2_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth3"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth3_desc"> 
+       <string></string> 
+      </void> 
+      <void property="proc"> 
+       <string>1</string> 
+      </void> 
+      <void property="progCodeId"> 
+       <long>1747</long> 
+      </void> 
+      <void property="progCodeName"> 
+       <string>SEMMCT001-1</string> 
+      </void> 
+      <void property="progDesc"> 
+       <string>Vendor Master</string> 
+      </void> 
+      <void property="subMid"> 
+       <long>237</long> 
+      </void> 
+      <void property="userGid"> 
+       <long>198</long> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMRT007-1</string> 
+     <object class="Permission.bean.ais.com.SSOProgCode"> 
+      <void property="add"> 
+       <string>0</string> 
+      </void> 
+      <void property="del"> 
+       <string>0</string> 
+      </void> 
+      <void property="edit"> 
+       <string>1</string> 
+      </void> 
+      <void property="inq"> 
+       <string>1</string> 
+      </void> 
+      <void property="oth1"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth1_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth2"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth2_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth3"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth3_desc"> 
+       <string></string> 
+      </void> 
+      <void property="proc"> 
+       <string>1</string> 
+      </void> 
+      <void property="progCodeId"> 
+       <long>1711</long> 
+      </void> 
+      <void property="progCodeName"> 
+       <string>SEMMRT007-1</string> 
+      </void> 
+      <void property="progDesc"> 
+       <string>Receipt Clearing</string> 
+      </void> 
+      <void property="subMid"> 
+       <long>237</long> 
+      </void> 
+      <void property="userGid"> 
+       <long>198</long> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMCT007-1</string> 
+     <object class="Permission.bean.ais.com.SSOProgCode"> 
+      <void property="add"> 
+       <string>0</string> 
+      </void> 
+      <void property="del"> 
+       <string>0</string> 
+      </void> 
+      <void property="edit"> 
+       <string>1</string> 
+      </void> 
+      <void property="inq"> 
+       <string>1</string> 
+      </void> 
+      <void property="oth1"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth1_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth2"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth2_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth3"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth3_desc"> 
+       <string></string> 
+      </void> 
+      <void property="proc"> 
+       <string>1</string> 
+      </void> 
+      <void property="progCodeId"> 
+       <long>1749</long> 
+      </void> 
+      <void property="progCodeName"> 
+       <string>SEMMCT007-1</string> 
+      </void> 
+      <void property="progDesc"> 
+       <string>Setup List of Value</string> 
+      </void> 
+      <void property="subMid"> 
+       <long>237</long> 
+      </void> 
+      <void property="userGid"> 
+       <long>198</long> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMCT007-2</string> 
+     <object class="Permission.bean.ais.com.SSOProgCode"> 
+      <void property="add"> 
+       <string>0</string> 
+      </void> 
+      <void property="del"> 
+       <string>0</string> 
+      </void> 
+      <void property="edit"> 
+       <string>1</string> 
+      </void> 
+      <void property="inq"> 
+       <string>1</string> 
+      </void> 
+      <void property="oth1"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth1_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth2"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth2_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth3"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth3_desc"> 
+       <string></string> 
+      </void> 
+      <void property="proc"> 
+       <string>1</string> 
+      </void> 
+      <void property="progCodeId"> 
+       <long>1794</long> 
+      </void> 
+      <void property="progCodeName"> 
+       <string>SEMMCT007-2</string> 
+      </void> 
+      <void property="progDesc"> 
+       <string>SEMMCT007-2</string> 
+      </void> 
+      <void property="subMid"> 
+       <long>237</long> 
+      </void> 
+      <void property="userGid"> 
+       <long>198</long> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMRT007-1-A</string> 
+     <object class="Permission.bean.ais.com.SSOProgCode"> 
+      <void property="add"> 
+       <string>0</string> 
+      </void> 
+      <void property="del"> 
+       <string>0</string> 
+      </void> 
+      <void property="edit"> 
+       <string>1</string> 
+      </void> 
+      <void property="inq"> 
+       <string>1</string> 
+      </void> 
+      <void property="oth1"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth1_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth2"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth2_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth3"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth3_desc"> 
+       <string></string> 
+      </void> 
+      <void property="proc"> 
+       <string>1</string> 
+      </void> 
+      <void property="progCodeId"> 
+       <long>1740</long> 
+      </void> 
+      <void property="progCodeName"> 
+       <string>SEMMRT007-1-A</string> 
+      </void> 
+      <void property="progDesc"> 
+       <string>Receipt Clearing (Account and Finance)</string> 
+      </void> 
+      <void property="subMid"> 
+       <long>237</long> 
+      </void> 
+      <void property="userGid"> 
+       <long>198</long> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMCT003-1</string> 
+     <object class="Permission.bean.ais.com.SSOProgCode"> 
+      <void property="add"> 
+       <string>0</string> 
+      </void> 
+      <void property="del"> 
+       <string>0</string> 
+      </void> 
+      <void property="edit"> 
+       <string>1</string> 
+      </void> 
+      <void property="inq"> 
+       <string>1</string> 
+      </void> 
+      <void property="oth1"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth1_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth2"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth2_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth3"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth3_desc"> 
+       <string></string> 
+      </void> 
+      <void property="proc"> 
+       <string>1</string> 
+      </void> 
+      <void property="progCodeId"> 
+       <long>1814</long> 
+      </void> 
+      <void property="progCodeName"> 
+       <string>SEMMCT003-1</string> 
+      </void> 
+      <void property="progDesc"> 
+       <string>SEMMCT003-1</string> 
+      </void> 
+      <void property="subMid"> 
+       <long>237</long> 
+      </void> 
+      <void property="userGid"> 
+       <long>198</long> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="put"> 
+     <string>SEMMSI001-1</string> 
+     <object class="Permission.bean.ais.com.SSOProgCode"> 
+      <void property="add"> 
+       <string>0</string> 
+      </void> 
+      <void property="del"> 
+       <string>0</string> 
+      </void> 
+      <void property="edit"> 
+       <string>1</string> 
+      </void> 
+      <void property="inq"> 
+       <string>1</string> 
+      </void> 
+      <void property="oth1"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth1_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth2"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth2_desc"> 
+       <string></string> 
+      </void> 
+      <void property="oth3"> 
+       <string>0</string> 
+      </void> 
+      <void property="oth3_desc"> 
+       <string></string> 
+      </void> 
+      <void property="proc"> 
+       <string>1</string> 
+      </void> 
+      <void property="progCodeId"> 
+       <long>1684</long> 
+      </void> 
+      <void property="progCodeName"> 
+       <string>SEMMSI001-1</string> 
+      </void> 
+      <void property="progDesc"> 
+       <string>Site Approve - Search</string> 
+      </void> 
+      <void property="subMid"> 
+       <long>237</long> 
+      </void> 
+      <void property="userGid"> 
+       <long>198</long> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="subModuleId"> 
+   <string>237</string> 
+  </void> 
+  <void property="template"> 
+   <string>template01</string> 
+  </void> 
+  <void property="theme"> 
+   <string>theme01</string> 
+  </void> 
+  <void property="token"> 
+   <string>Ry2hN0cCy4vGF9ns8nbWGp5VQdpJbNhVbG4JC62KBgZZwhGMrt9g!-1391072529!1299487938437,tussanus,198,237,null</string> 
+  </void> 
+  <void property="tokenId"> 
+   <string>Ry2hN0cCy4vGF9ns8nbWGp5VQdpJbNhVbG4JC62KBgZZwhGMrt9g!-1391072529!1299487938437</string> 
+  </void> 
+  <void property="userName"> 
+   <string>tussanus</string> 
+  </void> 
+ </object> 
+</java> 

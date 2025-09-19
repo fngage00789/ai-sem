@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.si">
+ <class name="th.co.ais.domain.si.LegalApproveSrchByAppvSP">
+	  <id name="rowId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" name="siteApproveId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" name="chkDt" type="java.sql.Date"/>
+		  <property generated="never" lazy="false" name="legalApproveStatus" type="java.lang.String"/>
+		  <property generated="never" lazy="false" name="legalApproveStatusName" type="java.lang.String"/>
+		  <property generated="never" lazy="false" name="remark" type="java.lang.String"/>
+		  <property generated="never" lazy="false" name="editTableFlag" type="java.lang.String"/>
+		  <property generated="never" lazy="false" name="deletableFlag" type="java.lang.String"/>
+		  <property generated="never" lazy="false" name="cancleTable" type="java.lang.String"/>
+		  <property generated="never" lazy="false" name="lastestFlag" type="java.lang.String"/>
+		  <property generated="never" lazy="false" name="receiveDt" type="java.sql.Date"/>
+		  <property generated="never" lazy="false" name="docNotComplete" type="java.lang.String"/>
+ </class>
+ <sql-query callable="true" name="querySearchLegalApproveByAppv"><![CDATA[ call SEM.SEM_SP_MSI002_SRCH_BY_APPV(?, :siteApproveId) ]]>
+   <return class="th.co.ais.domain.si.LegalApproveSrchByAppvSP">
+	   <return-property column="LEGAL_APPROVE_ID" name="rowId"/>
+	   <return-property column="SITE_APPROVE_ID" name="siteApproveId"/>
+	   <return-property column="CHECK_DT" name="chkDt"/>
+	   <return-property column="LEGAL_APPROVE_STATUS" name="legalApproveStatus"/>
+	   <return-property column="LEGAL_APPROVE_STATUS_NAME" name="legalApproveStatusName"/>
+	   <return-property column="REMARK" name="remark"/>
+	   <return-property column="EDITABLE_FLAG" name="editTableFlag"/>
+	   <return-property column="DELETABLE_FLAG" name="deletableFlag"/>
+	   <return-property column="CANCELABLE_FLAG" name="cancleTable"/>
+	   <return-property column="LATEST_FLAG" name="lastestFlag"/>
+	   <return-property column="RECEIVE_DT" name="receiveDt"/>
+	   <return-property column="DOC_NOT_COMPLETE" name="docNotComplete"/>
+  </return>
+ </sql-query>
+</hibernate-mapping>

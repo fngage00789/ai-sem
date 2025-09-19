@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+	<class name="th.co.ais.domain.pt.Mpt004Cal">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+		<property name="excAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="incAmt" type="java.lang.Double" />
+		<property name="whtAmt" type="java.lang.Double" />
+		<property name="chqAmt" type="java.lang.Double" />
+		<property name="diffAmt" type="java.lang.Double" />
+	</class>
+	<sql-query name="spMpt004Cal" callable="true">
+		<return class="th.co.ais.domain.pt.Mpt004Cal">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="incAmt" column="INC_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="chqAmt" column="CHQ_AMT" />
+			<return-property name="diffAmt" column="DIFF_AMT" />
+		</return>
+		<![CDATA[ call SEM_SP_MPT004_CAL(?, cast(:totalAmt as numeric), cast(:vatType as varchar), cast(:whtType as varchar), cast(:whtRate as numeric), cast(:estmAmt as numeric)) ]]>
+	</sql-query>
+</hibernate-mapping>

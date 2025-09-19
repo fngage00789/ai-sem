@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.BorrowRequestGenDocNoSearchSP" >
+		<id name="rowId" type="java.lang.String"/>
+		<property name="genDocNo" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMco003GenDocNo" callable="true">
+		<return class="th.co.ais.domain.co.BorrowRequestGenDocNoSearchSP">  
+			<return-property name="rowId" column="GEN_DOC_NO" />
+			<return-property name="genDocNo" column="GEN_DOC_NO" />
+		</return>
+		 <![CDATA[ call SEM_SP_MCO003_GEN_DOC_NO(?) ]]>
+	</sql-query>
+</hibernate-mapping>

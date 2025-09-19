@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="masterContractSrchObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractFormId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractFormName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractFormTitle" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="recordStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="createDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="createBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="updateDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contEndingFlag" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="masterContractDetailSrchObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractFormDetailId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractFormDetail" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractFormOrder" type="java.math.BigDecimal"/>
+		<property generated="never" lazy="false" update="false" name="recordStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="createDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="createBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="updateDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractBold" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractUnderline" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNewline" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="masterContractResultObj">
+		<id name="retResult" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="retRemark" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.co.Mco007MasterContractDetailSP" entity-name="contractParamNameObj">
+		<id name="paramId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="paramCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="paramName" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="reportTitleSrchObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractFormTitle" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="companyAddr" type="java.lang.String"/>		
+		<property generated="never" lazy="false" update="false" name="companyName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteHouseNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="araeSize" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ageContract" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="propertyTaxPayType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="promise" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="docDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="docDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contEndingFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteInstall" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="signName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="byName" type="java.lang.String"/>	
+		<property generated="never" lazy="false" update="false" name="signNameStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="byNameStr" type="java.lang.String"/>	
+		<property generated="never" lazy="false" update="false" name="expenseStr" type="java.lang.String"/>		
+	</class>
+	<class name="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="reportDetailSrchObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractFormDetail" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractBold" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractUnderline" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNewline" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.co.Mco007MasterContractDetailSP" entity-name="reportRentalSrchObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="rentalDetail" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="rentalVat" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="rentalPayPeriodType" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.co.Mco007MasterContractDetailSP" entity-name="reportELSrchObj">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="elDetail" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payPeriodType" type="java.lang.String"/>
+	</class>
+	<!-- << classes declarement -->
+	
+	<!-- ============================================================================== -->
+	<!-- ============================================================================== -->
+	
+	<!-- >> queries declarement -->
+	<sql-query callable="true" name="mco007MasterContractSrch">
+		<return alias="" class="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="masterContractSrchObj">
+			<return-property column="CONTRACT_FORMAT_ID" name="rowId"/>
+			<return-property column="CONTRACT_FORMAT_ID" name="contractFormId"/>
+			<return-property column="CONTRACT_FORMAT_NAME" name="contractFormName"/>
+			<return-property column="CONTRACT_FORMAT_TITLE" name="contractFormTitle"/>
+			<return-property column="RECORD_STATUS" name="recordStatus"/>
+			<return-property column="CREATE_DT" name="createDt"/>
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="UPDATE_DT" name="updateDt"/>
+			<return-property column="UPDATE_BY" name="updateBy"/>
+			<return-property column="FLAG_END" name="contEndingFlag"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO007_SRCH (?, :contractFormId, :contractFormName, :recordStatus)]]>
+	</sql-query>
+	<sql-query callable="true" name="mco007MasterContractDetailSrch">
+		<return alias="" class="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="masterContractDetailSrchObj">
+			<return-property column="CONTRACT_FORMAT_DET_ID" name="rowId"/>
+			<return-property column="CONTRACT_FORMAT_DET_ID" name="contractFormDetailId"/>
+			<return-property column="CONTRACT_FORMAT_DETAIL" name="contractFormDetail"/>
+			<return-property column="CONTRACT_FORMAT_ORDER" name="contractFormOrder"/>
+			<return-property column="RECORD_STATUS" name="recordStatus"/>
+			<return-property column="CREATE_DT" name="createDt"/>
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="UPDATE_DT" name="updateDt"/>
+			<return-property column="UPDATE_BY" name="updateBy"/>
+			<return-property column="CONTRACT_BOLD" name="contractBold"/>
+			<return-property column="CONTRACT_UNDERLINE" name="contractUnderline"/>
+			<return-property column="CONTRACT_NEWLINE" name="contractNewline"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO007_SRCH_DET (?, :contractFormId, :recordStatus)]]>
+	</sql-query>
+	<sql-query callable="true" name="mco007MasterContractIns">
+		<return alias="" class="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="masterContractResultObj">
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_REMARK" name="retRemark"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO007_INSERT (?, :mode, :contractFormId, :contractFormName, :contractFormTitle, :recordStatus, 
+		:contractFormDetail, :contractFormOrder, :contractBold, :contractUnderline, :contractNewline, :userId, :contEndingFlag)]]>
+	</sql-query>
+	<sql-query callable="true" name="mco007MasterContractUpd">
+		<return alias="" class="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="masterContractResultObj">
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_REMARK" name="retRemark"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO007_UPDATE (?, :mode, :contractFormId, :contractFormDetailId, :contractFormName, :contractFormTitle, :recordStatus, 
+		:contractFormDetail, :contractFormOrder, :contractBold, :contractUnderline, :contractNewline, :userId, :contEndingFlag)]]>
+	</sql-query>
+	<sql-query callable="true" name="mco007MasterContractDel">
+		<return alias="" class="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="masterContractResultObj">
+			<return-property column="P_RESULT" name="retResult"/>
+			<return-property column="P_REMARK" name="retRemark"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO007_DEL (?, :mode, :contractFormId, :contractFormDetailId, :recordStatus, :userId)]]>
+	</sql-query>
+	<sql-query callable="true" name="mco007ContractParamName">
+		<return alias="" class="th.co.ais.domain.co.Mco007MasterContractDetailSP" entity-name="contractParamNameObj">
+			<return-property column="PARAM_ID" name="paramId"/>
+			<return-property column="PARAM_CODE" name="paramCode"/>
+			<return-property column="PARAM" name="paramName"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO007_SRCH_PARAM (?)]]>
+	</sql-query>
+	<sql-query callable="true" name="mco007ReportTitleSrch">
+		<return alias="" class="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="reportTitleSrchObj">
+			<return-property column="SITE_INFO_ID" name="rowId"/>
+			<return-property column="TITLE" name="contractFormTitle"/>
+			<return-property column="SITE_NAME" name="siteName"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="COMPANY_ADDR" name="companyAddr"/>
+			<return-property column="COMPANY_NAME" name="companyName"/>
+			<return-property column="SITE_TYPE" name="siteType"/>
+			<return-property column="SITE_HOUSE_NO" name="siteHouseNo"/>
+			<return-property column="SITE_SIZE" name="araeSize"/>
+			<return-property column="AGE_CONTRACT" name="ageContract"/>
+			<return-property column="PROPERTY_TAX_PAY_TYPE" name="propertyTaxPayType"/>
+			<return-property column="PROMISE" name="promise"/>
+			<return-property column="DOC_DATE" name="docDt"/>
+			<return-property column="DOC_DATE_STR" name="docDtStr"/>
+			<return-property column="FLAG_END" name="contEndingFlag"/>
+			<return-property column="SITE_INSTALL" name="siteInstall"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="SIGN_NAME" name="signName"/>
+			<return-property column="BY_NAME" name="byName"/>
+			<return-property column="SIGN_NAME_STR" name="signNameStr"/>
+			<return-property column="BY_NAME_STR" name="byNameStr"/>
+			<return-property column="EXPENSE_STR" name="expenseStr"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO007_PRINT_HEAD (?, :contractFormId, :contractId)]]>
+	</sql-query>
+	<sql-query callable="true" name="mco007ReportDetailSrch">
+		<return alias="" class="th.co.ais.domain.co.Mco007MasterContractSP" entity-name="reportDetailSrchObj">
+			<return-property column="CONTRACT_FORMAT_DET_ID" name="rowId"/>
+			<return-property column="CONTRACT_FORMAT_DETAIL" name="contractFormDetail"/>
+			<return-property column="CONTRACT_BOLD" name="contractBold"/>
+			<return-property column="CONTRACT_UNDERLINE" name="contractUnderline"/>
+			<return-property column="CONTRACT_NEWLINE" name="contractNewline"/>
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO007_PRINT_DET (?, :contractFormId, :contractId)]]>
+	</sql-query>
+	<sql-query callable="true" name="mco007ReportRentalSrch">
+		<return alias="" class="th.co.ais.domain.co.Mco007MasterContractDetailSP" entity-name="reportRentalSrchObj">
+			<return-property column="SITE_RENT_COND_ID" name="rowId"/>
+			<return-property column="RENT" name="rentalDetail"/>
+			<return-property column="WHT_VAT" name="rentalVat"/>
+			<return-property column="PAY_PERIOD_TYPE" name="rentalPayPeriodType"/>
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO007_PRINT_RENT (?, :contractId)]]>
+	</sql-query>
+	<sql-query callable="true" name="mco007ReportELSrch">
+		<return alias="" class="th.co.ais.domain.co.Mco007MasterContractDetailSP" entity-name="reportELSrchObj">
+			<return-property column="SITE_INFO_ELECTRIC_COND_ID" name="rowId"/>
+			<return-property column="ELECTRIC_TYPE" name="elType"/>
+			<return-property column="EL" name="elDetail"/>
+			<return-property column="WHT_VAT" name="whtType"/>
+			<return-property column="PAY_PERIOD_TYPE" name="payPeriodType"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO007_PRINT_EL (?, :contractId)]]>
+	</sql-query>
+</hibernate-mapping>

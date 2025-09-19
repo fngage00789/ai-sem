@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.InsurancePayEditSaveSP">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	<sql-query name="mir010Pay" callable="true">
+		<return class="th.co.ais.domain.ir.InsurancePayEditSaveSP">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MIR010_PAY(?, :paymentGroupNo, :vendorCode, :payeeMasterId, :invoiceNo, cast(:excAmt as numeric),
+										 cast(:vatAmt as numeric), cast(:whtAmt as numeric), cast(:dutyAmt as numeric), :paymentType, :paymentMethod,
+										 cast(:chqDt as date), cast(:chqReceiveDt as date), cast(:transferDt as date), :remark, :userId, :contractNo) ]]>
+										
+	</sql-query>
+</hibernate-mapping>
+

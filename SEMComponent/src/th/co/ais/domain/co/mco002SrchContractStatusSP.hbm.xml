@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.co">
+ <class name="th.co.ais.domain.co.Mco002SrchContractStatusSP">
+  <id name="rowId" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="reqType" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="contractNo" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="siteInfoId" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="docNo" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="reqTypeName" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="effDate" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="expDate" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="dutyAmt" type="java.lang.Double"/>
+  <property generated="never" lazy="false" name="contractStatusName" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="locationId" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="old_contractNo" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="siteName" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="remark" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="company" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="age" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="region" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="contractStatus" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="d1" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="d2" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="d3" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="d4" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="d5" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="d6" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="d7" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="d8" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="d9" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="siteStatusName" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="flowStatus" type="java.lang.String"/>
+ 	
+  <property generated="never" lazy="false" name="siteApprovePersonName" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="receivePersonCode" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="createPersonCode" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="oldContractNo" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="oldSiteInfoId" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="borrowStatus" type="java.lang.String"/>
+ </class>
+ <sql-query callable="true"
+   name="mco002SearchContractStatus"><![CDATA[ call SEM.SEM_SP_MCO002_SRCH (?, :company, :reqType, :contractNo, :region,
+   :contractStatus, :receiveDateFrom, :receiveDateTo, :terminateFlag, :strPico, :locationId)]]><return
+   class="th.co.ais.domain.co.Mco002SrchContractStatusSP" >
+   <return-property column="CONTRACT_ID" name="rowId"/>
+   <return-property column="REQ_TYPE" name="reqType"/>
+   <return-property column="REQ_TYPE_NAME" name="reqTypeName"/>
+   <return-property column="CONTRACT_NO" name="contractNo"/>
+   <return-property column="SITE_INFO_ID" name="siteInfoId"/>
+   <return-property column="DOC_NO" name="docNo"/>
+   <return-property column="EFFECTIVE_DT" name="effDate"/>
+   <return-property column="EXPIRE_DT" name="expDate"/>
+   <return-property column="DUTY_AMT" name="dutyAmt"/>
+   <return-property column="CONTRACT_STATUS_NAME" name="contractStatusName"/>
+   <return-property column="LOCATION_ID" name="locationId"/>
+   <return-property column="OLD_CONTRACT_NO" name="old_contractNo"/>
+   <return-property column="SITE_NAME" name="siteName"/>
+   <return-property column="REMARK" name="remark"/>
+   <return-property column="COMPANY" name="company"/>
+   <return-property column="AGE" name="age"/>
+   <return-property column="REGION" name="region"/>
+   <return-property column="CONTRACT_STATUS" name="contractStatus"/>
+   <return-property column="D1" name="d1"/>
+   <return-property column="D2" name="d2"/>
+   <return-property column="D3" name="d3"/>
+   <return-property column="D4" name="d4"/>
+   <return-property column="D5" name="d5"/>
+   <return-property column="D6" name="d6"/>
+   <return-property column="D7" name="d7"/>
+   <return-property column="D8" name="d8"/>
+   <return-property column="D9" name="d9"/>
+   <return-property column="SITE_STATUS_NAME" name="siteStatusName"/>
+   <return-property column="FLOW_STATUS" name="flowStatus"/>
+   
+   <return-property column="RECEIVE_PERSON_NAME" name="receivePersonCode"/>
+   <return-property column="CREATE_PERSON_NAME" name="createPersonCode"/>
+   <return-property column="SITE_APPROVE_PERSON_NAME" name="siteApprovePersonName"/>
+   <return-property column="OLD_CONTRACT_NO" name="oldContractNo"/>
+   <return-property column="OLD_SITE_INFO_ID" name="oldSiteInfoId"/>
+   <return-property column="BORROW_STATUS" name="borrowStatus"/>
+  </return>
+ </sql-query>
+</hibernate-mapping>

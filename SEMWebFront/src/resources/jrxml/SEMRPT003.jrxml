@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SEMRPT003" pageWidth="4800" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="4740" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<template><![CDATA[$V{ReportUtil}.getJasperPath() + "SEMStyleTemplate.jrtx"]]></template>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<subDataset name="SEMRPT003-DS">
+		<parameter name="PARAM_COMPANY" class="java.lang.String" isForPrompting="false"/>
+		<parameter name="PARAM_PTAX_YEAR" class="java.lang.String" isForPrompting="false"/>
+		<parameter name="PARAM_PICO_FLG" class="java.lang.String" isForPrompting="false"/>
+		<queryString>
+			<![CDATA[SELECT * FROM TABLE (SEM_PG_RPT003.GET_DATA(
+	$P{PARAM_COMPANY},
+	$P{PARAM_PTAX_YEAR},
+	$P{PARAM_PICO_FLG}
+))]]>
+		</queryString>
+		<field name="REGION" class="java.lang.String"/>
+		<field name="SITE" class="java.math.BigDecimal"/>
+		<field name="COST" class="java.math.BigDecimal"/>
+		<field name="MONTH_NO" class="java.lang.String"/>
+		<field name="ASSESS_SITE" class="java.math.BigDecimal"/>
+		<field name="ASSESS_COST" class="java.math.BigDecimal"/>
+		<field name="ACTUAL_SITE" class="java.math.BigDecimal"/>
+		<field name="ACTUAL_COST" class="java.math.BigDecimal"/>
+		<variable name="ITEM_COUNT" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="PARAM_COMPANY" class="java.lang.String"/>
+	<parameter name="PARAM_PTAX_YEAR" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_PTAX_YEAR" class="java.lang.String"/>
+	<parameter name="PARAM_PICO_FLG" class="java.lang.String"/>
+	<parameter name="PARAM_HEADER_NAME" class="java.lang.String"/>
+	<parameter name="PARAM_USERNAME" class="java.lang.String"/>
+	<field name="REGION" class="java.lang.String"/>
+	<field name="SITE" class="java.math.BigDecimal"/>
+	<field name="COST" class="java.math.BigDecimal"/>
+	<field name="MONTH_NO" class="java.lang.String"/>
+	<field name="ASSESS_SITE" class="java.math.BigDecimal"/>
+	<field name="ASSESS_COST" class="java.math.BigDecimal"/>
+	<field name="ACTUAL_SITE" class="java.math.BigDecimal"/>
+	<field name="ACTUAL_COST" class="java.math.BigDecimal"/>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField-23" style="Criteria Style" x="0" y="80" width="1000" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Criteria : "+
+"บริษัท : " + new String($P{PARAM_COMPANY} != null && !$P{PARAM_COMPANY}.equals("") ? $P{PARAM_COMPANY} : "-") +
+", ปีภาษี : " + new String($P{PARAM_DISPLAY_PTAX_YEAR} != null && !$P{PARAM_DISPLAY_PTAX_YEAR}.equals("") ? $P{PARAM_DISPLAY_PTAX_YEAR} : "-") +
+", Pico : " + new String($P{PARAM_PICO_FLG}.equals("Y") ? "Yes" : "No")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-18" style="Header Style" x="0" y="0" width="1000" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PARAM_HEADER_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-100" x="0" y="40" width="1000" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-144" style="Criteria Style" x="0" y="60" width="1000" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Print by:"+$P{PARAM_USERNAME}+" , Print date:"+String.valueOf(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-23" style="Header Style" x="0" y="20" width="1000" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SEMRPT003 : Property Tax Progress & Performance Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<crosstab columnBreakOffset="60">
+				<reportElement key="crosstab-1" x="0" y="0" width="4740" height="15"/>
+				<crosstabParameter name="PARAM_PTAX_YEAR">
+					<parameterValueExpression><![CDATA[$P{PARAM_PTAX_YEAR}]]></parameterValueExpression>
+				</crosstabParameter>
+				<crosstabDataset>
+					<dataset>
+						<datasetRun subDataset="SEMRPT003-DS">
+							<datasetParameter name="PARAM_COMPANY">
+								<datasetParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="PARAM_PTAX_YEAR">
+								<datasetParameterExpression><![CDATA[$P{PARAM_PTAX_YEAR}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="PARAM_PICO_FLG">
+								<datasetParameterExpression><![CDATA[$P{PARAM_PICO_FLG}]]></datasetParameterExpression>
+							</datasetParameter>
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+				</crosstabDataset>
+				<crosstabHeaderCell>
+					<cellContents mode="Transparent">
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="0" y="0" width="50" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement/>
+							<text><![CDATA[]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="50" y="0" width="50" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement/>
+							<text><![CDATA[Target]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="100" y="0" width="70" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid"/>
+							</box>
+							<textElement/>
+							<text><![CDATA[]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="0" y="15" width="50" height="15"/>
+							<box>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement/>
+							<text><![CDATA[Region]]></text>
+						</staticText>
+						<textField isBlankWhenNull="false">
+							<reportElement key="textField-1" style="Column Header Style" x="50" y="15" width="50" height="15"/>
+							<box>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement verticalAlignment="Top" rotation="None"/>
+							<textFieldExpression class="java.lang.String"><![CDATA[$P{PARAM_PTAX_YEAR}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="100" y="15" width="70" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement/>
+							<text><![CDATA[]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="0" y="30" width="50" height="15"/>
+							<box>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement/>
+							<text><![CDATA[]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="50" y="30" width="50" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement/>
+							<text><![CDATA[Site]]></text>
+						</staticText>
+						<staticText>
+							<reportElement key="staticText-1" style="Column Header Style" x="100" y="30" width="70" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement/>
+							<text><![CDATA[Cost ]]></text>
+						</staticText>
+					</cellContents>
+				</crosstabHeaderCell>
+				<rowGroup name="REGION" width="50">
+					<bucket>
+						<bucketExpression class="java.lang.String"><![CDATA[$F{REGION}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Transparent">
+							<textField isBlankWhenNull="false">
+								<reportElement key="textField" style="Detail Style" x="0" y="0" width="50" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{REGION}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents/>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<rowGroup name="SITE" width="50" headerPosition="Middle">
+					<bucket>
+						<bucketExpression class="java.math.BigDecimal"><![CDATA[$F{SITE}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Transparent">
+							<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+								<reportElement key="textField" style="Detail Style" x="0" y="0" width="50" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{SITE}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents/>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<rowGroup name="COST" width="70" headerPosition="Middle">
+					<bucket>
+						<bucketExpression class="java.math.BigDecimal"><![CDATA[$F{COST}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Transparent">
+							<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+								<reportElement key="textField" style="Detail Style" x="0" y="0" width="70" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COST}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents/>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="YEAR" height="15" headerPosition="Center">
+					<bucket>
+						<bucketExpression class="java.lang.String"><![CDATA[$P{PARAM_PTAX_YEAR}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents backcolor="#CFDCEF" mode="Opaque">
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textField isBlankWhenNull="false">
+								<reportElement key="textField" style="Column Header Style" x="0" y="0" width="1120" height="15"/>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA["ปีภาษี " + $V{YEAR}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents/>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<columnGroup name="MONTH_NO" height="30" totalPosition="End" headerPosition="Center">
+					<bucket>
+						<bucketExpression class="java.lang.String"><![CDATA[$F{MONTH_NO}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents mode="Transparent">
+							<textField isBlankWhenNull="false">
+								<reportElement key="textField" style="Column Header Style" x="0" y="0" width="320" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{MONTH_NO}]]></textFieldExpression>
+							</textField>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="0" y="15" width="80" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[Access Site]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="80" y="15" width="80" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[Access Cost]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="160" y="15" width="80" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[Actual Site]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="240" y="15" width="80" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[Actual Cost]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents mode="Transparent">
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="0" y="15" width="80" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[Access Site]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="80" y="15" width="80" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[Access Cost]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="160" y="15" width="80" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[Actual Site]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="240" y="15" width="80" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[Actual Cost]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="0" y="0" width="320" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[Total (Site & Cost)]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="320" y="15" width="120" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[% Access Site to All]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="440" y="15" width="120" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[% Access Cost to All]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="560" y="15" width="120" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[% Actual Site to All]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="680" y="15" width="120" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[% Actual Cost to All]]></text>
+							</staticText>
+							<staticText>
+								<reportElement key="staticText-1" style="Column Header Style" x="320" y="0" width="480" height="15"/>
+								<box>
+									<topPen lineWidth="0.5" lineStyle="Solid"/>
+									<leftPen lineWidth="0.5" lineStyle="Solid"/>
+									<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+									<rightPen lineWidth="0.5" lineStyle="Solid"/>
+								</box>
+								<textElement/>
+								<text><![CDATA[Actual to Target]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="ASSESS_SITE_sum" class="java.math.BigDecimal" calculation="Sum">
+					<measureExpression><![CDATA[$F{ASSESS_SITE}]]></measureExpression>
+				</measure>
+				<measure name="ASSESS_COST_sum" class="java.math.BigDecimal" calculation="Sum">
+					<measureExpression><![CDATA[$F{ASSESS_COST}]]></measureExpression>
+				</measure>
+				<measure name="ACTUAL_SITE_sum" class="java.math.BigDecimal" calculation="Sum">
+					<measureExpression><![CDATA[$F{ACTUAL_SITE}]]></measureExpression>
+				</measure>
+				<measure name="ACTUAL_COST_sum" class="java.math.BigDecimal" calculation="Sum">
+					<measureExpression><![CDATA[$F{ACTUAL_COST}]]></measureExpression>
+				</measure>
+				<crosstabCell width="320" height="15">
+					<cellContents mode="Transparent">
+						<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+							<reportElement key="textField" style="Detail Style" x="0" y="0" width="80" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{ASSESS_SITE_sum}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+							<reportElement key="textField" style="Detail Style" x="80" y="0" width="80" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{ASSESS_COST_sum}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+							<reportElement key="textField" style="Detail Style" x="160" y="0" width="80" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{ACTUAL_SITE_sum}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+							<reportElement key="textField" style="Detail Style" x="240" y="0" width="80" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{ACTUAL_COST_sum}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="800" height="15" columnTotalGroup="MONTH_NO">
+					<cellContents mode="Transparent">
+						<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+							<reportElement key="textField-1" style="Detail Style" x="0" y="0" width="80" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{ASSESS_SITE_sum}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+							<reportElement key="textField-1" style="Detail Style" x="80" y="0" width="80" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{ASSESS_COST_sum}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+							<reportElement key="textField-1" style="Detail Style" x="160" y="0" width="80" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{ACTUAL_SITE_sum}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+							<reportElement key="textField-1" style="Detail Style" x="240" y="0" width="80" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{ACTUAL_COST_sum}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+							<reportElement key="textField-1" style="Detail Style" x="320" y="0" width="120" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[($V{ASSESS_SITE_sum}!= null && $V{SITE} != null) ? new BigDecimal($V{ASSESS_SITE_sum}.multiply(new BigDecimal(100)).doubleValue() / $V{SITE}.doubleValue()) : null]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+							<reportElement key="textField-1" style="Detail Style" x="440" y="0" width="120" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[($V{ASSESS_COST_sum} != null && $V{COST} != null) ? new BigDecimal($V{ASSESS_COST_sum}.multiply(new BigDecimal(100)).doubleValue() / $V{COST}.doubleValue() ) : null]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+							<reportElement key="textField-1" style="Detail Style" x="560" y="0" width="120" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[($V{ACTUAL_SITE_sum} != null && $V{SITE} != null) ? new BigDecimal($V{ACTUAL_SITE_sum}.multiply(new BigDecimal(100)).doubleValue() / $V{SITE}.doubleValue()) : null]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+							<reportElement key="textField-1" style="Detail Style" x="680" y="0" width="120" height="15"/>
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Solid"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid"/>
+							</box>
+							<textElement textAlignment="Right"/>
+							<textFieldExpression class="java.math.BigDecimal"><![CDATA[($V{ACTUAL_COST_sum} != null && $V{COST} != null) ? new BigDecimal($V{ACTUAL_COST_sum}.multiply(new BigDecimal(100)).doubleValue() / $V{COST}.doubleValue() ) : null]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="320" height="0" rowTotalGroup="REGION">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<crosstabCell width="800" height="0" rowTotalGroup="REGION" columnTotalGroup="MONTH_NO">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<crosstabCell width="0" height="15" columnTotalGroup="YEAR">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<crosstabCell width="0" height="0" rowTotalGroup="REGION" columnTotalGroup="YEAR">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<crosstabCell width="320" height="0" rowTotalGroup="SITE">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<crosstabCell width="800" height="0" rowTotalGroup="SITE" columnTotalGroup="MONTH_NO">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<crosstabCell width="0" height="0" rowTotalGroup="SITE" columnTotalGroup="YEAR">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<crosstabCell width="320" height="0" rowTotalGroup="COST">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<crosstabCell width="800" height="0" rowTotalGroup="COST" columnTotalGroup="MONTH_NO">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<crosstabCell width="0" height="0" rowTotalGroup="COST" columnTotalGroup="YEAR">
+					<cellContents mode="Transparent"/>
+				</crosstabCell>
+				<whenNoDataCell>
+					<cellContents mode="Transparent"/>
+				</whenNoDataCell>
+			</crosstab>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

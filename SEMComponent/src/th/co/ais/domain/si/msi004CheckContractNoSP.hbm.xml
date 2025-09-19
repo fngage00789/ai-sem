@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004CheckContractNoSP">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="message" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="msi004CheckContractNo" callable="true">
+		<return class="th.co.ais.domain.si.Msi004CheckContractNoSP">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="message" column="MESSAGE"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_CHK_CONTRACT_NO (?, :contractNo, :siteInfoId ) ]]>
+	</sql-query>
+</hibernate-mapping>

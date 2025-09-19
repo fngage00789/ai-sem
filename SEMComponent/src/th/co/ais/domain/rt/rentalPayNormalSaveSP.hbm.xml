@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.RentalPayNormalSaveSP">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMrt003Pay" callable="true">
+		<return class="th.co.ais.domain.rt.RentalPayNormalSaveSP">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT003_PAY(?, cast(:paymentGroupNo  as varchar), cast(:depositAmt as numeric),cast(:paymentType  as varchar), cast(:paymentMethod  as varchar) , cast(:chqDt as date) , cast(:chqReceiveDt as date), cast(:transferDt as date), cast(:remark as varchar), cast(:userId as varchar)) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt003Pop" entity-name="mrt003Pop">
+		<id name="rentalPaymentId" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="siteName" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="oldContractNo" type="java.lang.String" />
+		<property name="region" type="java.lang.String" />
+		<property name="effectiveDt" type="java.sql.Date" />
+		<property name="expireDt" type="java.sql.Date" />
+		<property name="vendorId" type="java.lang.String" />
+		<property name="vencdorName" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="siteStatus" type="java.lang.String" />
+		<property name="networkStatus" type="java.lang.String" />
+		<property name="dueDt" type="java.sql.Date" />
+		<property name="dueDtTo" type="java.sql.Date" />
+		<property name="paymentStatusDesc" type="java.lang.String" />
+		<property name="doc68" type="java.lang.String" />
+		<property name="payPeriodType" type="java.lang.String" />
+		<property name="periodNoStart" type="java.lang.String" />
+		<property name="periodNoEnd" type="java.lang.String" />
+		<property name="payPeriodY" type="java.lang.String" />
+		<property name="payPeriodM" type="java.lang.String" />
+		<property name="payPeriodD" type="java.lang.String" />
+		<property name="totalAmt" type="java.lang.Double" />
+		<property name="paymentTypeDesc" type="java.lang.String" />
+		<property name="bankName" type="java.lang.String" />
+		<property name="bankAccNo" type="java.lang.String" />
+		<property name="bankAccName" type="java.lang.String" />
+		<property name="bankBranch" type="java.lang.String" />
+		<property name="chqDt" type="java.sql.Date" />
+		<property name="chqReceiveDt" type="java.sql.Date" />
+		<property name="chqNo" type="java.lang.String" />
+		<property name="depositAmt" type="java.lang.Double" />
+		<property name="chqAmt" type="java.lang.Double" />
+		<property name="remark" type="java.lang.String" />
+
+	</class>
+	
+	<class name="th.co.ais.domain.rt.Mrt003Pop" entity-name="mrt003PopD">
+		<id name="rentalPaymentId" type="java.lang.String" />
+		<property name="expenseTypeDesc" type="java.lang.String" />
+		<property name="periodAmt" type="java.lang.Double" />
+		<property name="vatTypeDesc" type="java.lang.String" />
+		<property name="vatRate" type="java.lang.Double" />
+		<property name="whtTypeDesc" type="java.lang.String" />
+		<property name="whtRate" type="java.lang.Double" />
+		<property name="whtAmt" type="java.lang.Double" />
+		<property name="totalAmt" type="java.lang.Double" />
+
+	</class>
+	
+	<sql-query name="mrt003Pop" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt003Pop" entity-name="mrt003Pop">
+			<return-property name="rentalPaymentId" column="RENTAL_PAYMENT_ID" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="region" column="REGION" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="vendorId" column="VENDOR_CODE" />
+			<return-property name="vencdorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="dueDt" column="DUE_DT" />
+			<return-property name="dueDtTo" column="DUE_DT_TO" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="doc68" column="DOC_68" />
+			<return-property name="payPeriodType" column="PAY_PERIOD_TYPE" />
+			<return-property name="periodNoStart" column="PERIOD_NO_START" />
+			<return-property name="periodNoEnd" column="PERIOD_NO_END" />
+			<return-property name="payPeriodY" column="PAY_PERIOD_Y" />
+			<return-property name="payPeriodM" column="PAY_PERIOD_M" />
+			<return-property name="payPeriodD" column="PAY_PERIOD_D" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="bankAccNo" column="BANK_ACC_NO" />
+			<return-property name="bankAccName" column="BANK_ACC_NAME" />
+			<return-property name="bankBranch" column="BANK_BRANCH" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+			<return-property name="chqNo" column="CHQ_NO" />
+			<return-property name="depositAmt" column="DEPOSIT_AMT" />
+			<return-property name="chqAmt" column="CHQ_AMT" />
+			<return-property name="remark" column="REMARK" />
+
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT003_POP(?, :rentalPaymentId) ]]>
+	</sql-query>
+	
+	<sql-query name="mrt003PopD" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt003Pop" entity-name="mrt003PopD">
+			<return-property name="rentalPaymentId" column="RENTAL_PAYMENT_ID" />
+			<return-property name="expenseTypeDesc" column="EXPENSE_TYPE_DESC" />
+			<return-property name="periodAmt" column="PERIOD_AMT" />
+			<return-property name="vatTypeDesc" column="VAT_TYPE_DESC" />
+			<return-property name="vatRate" column="VAT_RATE" />
+			<return-property name="whtTypeDesc" column="WHT_TYPE_DESC" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT003_POP_D(?, :rentalPaymentId) ]]>
+	</sql-query>
+</hibernate-mapping>

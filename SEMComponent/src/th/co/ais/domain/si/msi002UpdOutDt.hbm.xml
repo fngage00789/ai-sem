@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi002UpdOutDt">
+		<id name="resultMsg" type="java.lang.String"/>
+	</class>
+	<sql-query name="msi002UpdOutDt" callable="true">
+		<return class="th.co.ais.domain.si.Msi002UpdOutDt">
+			<return-property name="resultMsg" column="P_RESULT" />
+			
+		</return>
+		<![CDATA[ call SEM_SP_MSI002_UPD_OUT_DT(?, :legalApproveId, :userId) ]]>
+	</sql-query>
+</hibernate-mapping>

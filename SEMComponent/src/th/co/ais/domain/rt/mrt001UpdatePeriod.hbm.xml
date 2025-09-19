@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001UpdatePeriod">
+		<id name="pResult" type="java.lang.String"/>
+	</class>
+	<sql-query name="mrt001UpdPeriod" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001UpdatePeriod">
+			<return-property name="pResult" column="P_RESULT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_UPD_PERIOD(?, :rentalPaymentId, :period, :userId) ]]>
+	</sql-query>
+</hibernate-mapping>

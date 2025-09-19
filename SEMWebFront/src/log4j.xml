@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value=" %d{dd-MM-yyyy HH:mm:ss:SSS} %-5p %c.%M(%L) - %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="FILEWEB" class="org.apache.log4j.DailyRollingFileAppender">
+		<!-- Local -->
+			<!-- <param name="File" value="C:/Users/malov/Documents/DEV/log/sem_web.log" /> -->			     
+	    <!-- DEV  -->
+			<param name="File" value="D:/SEMCODE/SEM-Migration/data/SEM/log/sem_web.log" />
+		<!-- STG  -->
+			<!-- <param name="File" value="/datacamp/SEM/log/sem_web.log" />	 -->
+		<!-- UAT  -->
+			<!-- <param name="File" value="/jboss/9_SEM_5.1.0/server/default/deploy/SEMFiles/log/sem_web.log" /> -->
+
+		<!-- PRODUCTION -->		      
+ 			<!-- <param name="File" value="/data/SEM/log/sem_web.log" /> -->
+
+		<!-- ONG -->
+<!-- 			<param name="File" value="C:/SEM/log/sem_web.log" /> -->
+			
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value=" %d{dd-MM-yyyy HH:mm:ss:SSS} %-5p %c.%M(%L) - %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- ALL<DEBUG<INFO<WARN<ERROR<FATAL<OFF -->
+	<category name="root">
+		<priority value="ERROR" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILEWEB" />
+	</category>
+	<category name="org.hibernate.SQL">
+		<priority value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILEWEB" />
+	</category>
+	<category name="org.springframework">
+		<priority value="ERROR" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILEWEB" />
+	</category>
+	<category name="org.ajax4jsf">
+		<priority value="ERROR" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILEWEB" />
+	</category>
+	<category name="th.co.ais">
+		<priority value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILEWEB" />
+	</category>
+	<category name="sap.client.service.call">
+		<priority value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILEWEB" />
+	</category>
+	<category name="com.ais.web.authenticate">
+		<priority value="DEBUG" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILEWEB" />
+	</category>
+</log4j:configuration>

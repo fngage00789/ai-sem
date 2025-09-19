@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.co">
+ <class name="th.co.ais.domain.co.Mco001CheckAddAbleSP">
+  <id name="rowId" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="addAbleFlag" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="editAbleFlag" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="deleteAbleFlag" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="editDutyFlag" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="editTotFlag" type="java.lang.String"/>
+ </class>
+ <sql-query callable="true"
+   name="mco001CheckAddAble"><![CDATA[ call SEM.SEM_SP_MCO001_CHK_ADDABLE (?, :role, :contractId) ]]>
+  <return class="th.co.ais.domain.co.Mco001CheckAddAbleSP" >
+   <return-property column="ROW_ID" name="rowId"/>
+   <return-property column="ADDABLE_FLAG" name="addAbleFlag"/>
+   <return-property column="EDITABLE_FLAG" name="editAbleFlag"/>
+   <return-property column="DELETABLE_FLAG" name="deleteAbleFlag"/>
+   <return-property column="EDIT_DUTY_FLAG" name="editDutyFlag"/>
+   <return-property column="EDIT_TOT_FLAG" name="editTotFlag"/>
+  </return>
+ </sql-query>
+</hibernate-mapping>

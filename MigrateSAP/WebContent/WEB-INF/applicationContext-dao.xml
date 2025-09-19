@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="metabCompanyDAO"
+		class="com.ais.migrate.mnims.spring.dao.MetabCompanyDAO"
+		singleton="false">
+		<property name="sessionFactory"> 
+			<ref bean="sessionFactoryMNIMS" />
+		</property>
+	</bean>
+	<bean id="semElMeterInfoDAO"
+		class="com.ais.migrate.sem.spring.dao.SemElMeterInfoDAO"
+		singleton="false">
+		<property name="sessionFactory"> 
+			<ref bean="sessionFactorySEM" />
+		</property>
+	</bean>
+	
+	<!-- Migrate -->
+	<bean id="sapMappingDAO" class="com.ais.migrate.sem.spring.dao.SapMappingDAO" singleton="false">
+		<property name="sessionFactory" ref="sessionFactorySEM" />
+	</bean>
+	<bean id="migrateDAO" class="com.ais.migrate.sem.spring.dao.MigrateDAO" singleton="false">
+		<property name="sessionFactory" ref="sessionFactorySEM" />
+	</bean>
+	<!-- End Migrate -->
+	
+</beans>

@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SEMRRT016" pageWidth="2310" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="2250" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<template><![CDATA[$V{ReportUtil}.getJasperPath()+"SEMStyleTemplate.jrtx"]]></template>
+	<parameter name="PARAM_HEADER_NAME" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_COMPANY" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_YEAR" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_MONTH" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_REGION" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_COST_CENTER" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_GL_CODE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_MONTH_DISPLAY" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_REGION_DISPLAY" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_USERNAME" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM TABLE (SEM_PG_RRT016.GET_DATA(
+	$P{PARAM_COMPANY},
+	$P{PARAM_YEAR},
+	$P{PARAM_MONTH},
+	$P{PARAM_REGION},
+	$P{PARAM_COST_CENTER},
+	$P{PARAM_GL_CODE}
+))]]>
+	</queryString>
+	<field name="COMPANY" class="java.lang.String"/>
+	<field name="GL_CODE" class="java.lang.String"/>
+	<field name="EXPENSE_NAME" class="java.lang.String"/>
+	<field name="COST_CENTER" class="java.lang.String"/>
+	<field name="REGION" class="java.lang.String"/>
+	<field name="CONTRACT_NO" class="java.lang.String"/>
+	<field name="SITE_NAME" class="java.lang.String"/>
+	<field name="CONTRACT_START_DT" class="java.sql.Timestamp"/>
+	<field name="CONTRACT_END_DT" class="java.sql.Timestamp"/>
+	<field name="BF_AMT" class="java.math.BigDecimal"/>
+	<field name="JAN_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="FEB_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="MAR_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="APR_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="MAY_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="JUN_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="JUL_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="AUG_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="SEP_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="OCT_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="NOV_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="DEC_AMOUNT" class="java.math.BigDecimal"/>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<variable name="TOTAL_AMOUNT" class="java.lang.Double">
+		<variableExpression><![CDATA[new Double(($F{JAN_AMOUNT} != null ? $F{JAN_AMOUNT}.doubleValue() : 0D) +
+($F{FEB_AMOUNT} != null ? $F{FEB_AMOUNT}.doubleValue() : 0D) +
+($F{MAR_AMOUNT} != null ? $F{MAR_AMOUNT}.doubleValue() : 0D) +
+($F{APR_AMOUNT} != null ? $F{APR_AMOUNT}.doubleValue() : 0D) +
+($F{MAY_AMOUNT} != null ? $F{MAY_AMOUNT}.doubleValue() : 0D) +
+($F{JUN_AMOUNT} != null ? $F{JUN_AMOUNT}.doubleValue() : 0D) +
+($F{JUL_AMOUNT} != null ? $F{JUL_AMOUNT}.doubleValue() : 0D) +
+($F{AUG_AMOUNT} != null ? $F{AUG_AMOUNT}.doubleValue() : 0D) +
+($F{SEP_AMOUNT} != null ? $F{SEP_AMOUNT}.doubleValue() : 0D) +
+($F{OCT_AMOUNT} != null ? $F{OCT_AMOUNT}.doubleValue() : 0D) +
+($F{NOV_AMOUNT} != null ? $F{NOV_AMOUNT}.doubleValue() : 0D) +
+($F{DEC_AMOUNT} != null ? $F{DEC_AMOUNT}.doubleValue() : 0D))]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_BF" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{BF_AMT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_JAN" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{JAN_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_FEB" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{FEB_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_MAR" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{MAR_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_APR" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{APR_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_MAY" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{MAY_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_JUN" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{JUN_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_JUL" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{JUL_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_AUG" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{AUG_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_SEP" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{SEP_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_OCT" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{OCT_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_NOV" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{NOV_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_DEC" class="java.math.BigDecimal" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEC_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GL_TOTAL_AMOUNT" class="java.lang.Double" resetType="Group" resetGroup="gl" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_BF" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{BF_AMT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_JAN" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{JAN_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_FEB" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{FEB_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_MAR" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{MAR_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_APR" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{APR_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_MAY" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{MAY_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_JUN" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{JUN_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_JUL" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{JUL_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_AUG" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{AUG_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_SEP" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{SEP_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_OCT" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{OCT_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_NOV" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{NOV_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_DEC" class="java.math.BigDecimal" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEC_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="COMPANY_TOTAL_AMOUNT" class="java.lang.Double" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_BF" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{BF_AMT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_JAN" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{JAN_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_FEB" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{FEB_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_MAR" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{MAR_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_APR" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{APR_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_MAY" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{MAY_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_JUN" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{JUN_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_JUL" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{JUL_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_AUG" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{AUG_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_SEP" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{SEP_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_OCT" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{OCT_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_NOV" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{NOV_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_DEC" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEC_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="GRAND_TOTAL_AMOUNT" class="java.lang.Double" resetType="Group" resetGroup="company" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_AMOUNT}]]></variableExpression>
+	</variable>
+	<group name="groupHeader">
+		<groupExpression><![CDATA[new Integer($V{COLUMN_COUNT}.intValue() / 49996)]]></groupExpression>
+		<groupHeader>
+			<band height="120" splitType="Stretch">
+				<staticText>
+					<reportElement key="staticText-23" style="Header Style" x="0" y="20" width="990" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[SEMRRT016 : Accrued Rent Report]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement key="textField-23" style="Criteria Style" x="0" y="80" width="990" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Criteria : "+
+"Company : " + new String($P{PARAM_COMPANY} != null && !$P{PARAM_COMPANY}.equals("") ? $P{PARAM_COMPANY} : "-") +
+" Year : " + new String($P{PARAM_YEAR} != null && !$P{PARAM_YEAR}.equals("") ? $P{PARAM_YEAR} : "-") +
+" Month : " + new String($P{PARAM_MONTH_DISPLAY} != null && !$P{PARAM_MONTH_DISPLAY}.equals("") ? $P{PARAM_MONTH_DISPLAY} : "-") +
+" Region : " + new String($P{PARAM_REGION_DISPLAY} != null && !$P{PARAM_REGION_DISPLAY}.equals("") ? $P{PARAM_REGION_DISPLAY} : "-") +
+" COST CENTER : " + new String($P{PARAM_COST_CENTER} != null && !$P{PARAM_COST_CENTER}.equals("") ? $P{PARAM_COST_CENTER}  : "-") +
+" GL CODE : " + new String($P{PARAM_GL_CODE} != null && !$P{PARAM_GL_CODE}.equals("") ? $P{PARAM_GL_CODE} : "-")]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-25" style="Column Header Style" mode="Opaque" x="0" y="100" width="120" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Company]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-46" style="Column Header Style" mode="Opaque" x="120" y="100" width="60" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[GL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-47" style="Column Header Style" mode="Opaque" x="180" y="100" width="240" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[ประเภทค่าใช้จ่าย]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-48" style="Column Header Style" mode="Opaque" x="420" y="100" width="60" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Cost Center]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-49" style="Column Header Style" mode="Opaque" x="480" y="100" width="36" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Region]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-50" style="Column Header Style" mode="Opaque" x="516" y="100" width="120" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Contract No]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-51" style="Column Header Style" mode="Opaque" x="636" y="100" width="234" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-52" style="Column Header Style" mode="Opaque" x="870" y="100" width="60" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Start Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-53" style="Column Header Style" mode="Opaque" x="930" y="100" width="60" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[End Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-54" style="Column Header Style" mode="Opaque" x="990" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[B/F]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-55" style="Column Header Style" mode="Opaque" x="1080" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Jan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-56" style="Column Header Style" mode="Opaque" x="1170" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Feb]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-57" style="Column Header Style" mode="Opaque" x="1260" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Mar]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-58" style="Column Header Style" mode="Opaque" x="1350" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Apl]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-59" style="Column Header Style" mode="Opaque" x="1440" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[May]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-60" style="Column Header Style" mode="Opaque" x="1530" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Jun]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-61" style="Column Header Style" mode="Opaque" x="1620" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Jul]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-62" style="Column Header Style" mode="Opaque" x="1710" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Aug]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-63" style="Column Header Style" mode="Opaque" x="1800" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Sep]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-64" style="Column Header Style" mode="Opaque" x="1890" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Oct]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-65" style="Column Header Style" mode="Opaque" x="1980" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Nov]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-66" style="Column Header Style" mode="Opaque" x="2070" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Dec]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-67" style="Column Header Style" mode="Opaque" x="2160" y="100" width="90" height="20" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-123" style="Criteria Style" x="0" y="60" width="990" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Print by:"+$P{PARAM_USERNAME}+" , Print date:"+String.valueOf(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()))]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="textField-125" style="Header Style" x="0" y="0" width="990" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{PARAM_HEADER_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-126" x="0" y="40" width="990" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<group name="company">
+		<groupExpression><![CDATA[$F{COMPANY}]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="15" splitType="Stretch">
+				<staticText>
+					<reportElement key="staticText-69" style="Total Style" mode="Opaque" x="0" y="0" width="120" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[     Total By Company]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-93" style="Total Style" mode="Opaque" x="120" y="0" width="60" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{GRAND_TOTAL_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-70" style="Total Style" mode="Opaque" x="180" y="0" width="810" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-94" style="Total Style" mode="Opaque" x="990" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_BF}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-95" style="Total Style" mode="Opaque" x="1080" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_JAN}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-96" style="Total Style" mode="Opaque" x="1170" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_FEB}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-97" style="Total Style" mode="Opaque" x="1260" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_MAR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-98" style="Total Style" mode="Opaque" x="1350" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_APR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-99" style="Total Style" mode="Opaque" x="1440" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_MAY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-100" style="Total Style" mode="Opaque" x="1530" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_JUN}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-101" style="Total Style" mode="Opaque" x="1620" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_JUL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-102" style="Total Style" mode="Opaque" x="1710" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_AUG}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-103" style="Total Style" mode="Opaque" x="1800" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_SEP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-104" style="Total Style" mode="Opaque" x="1890" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_OCT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-105" style="Total Style" mode="Opaque" x="1980" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_NOV}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-106" style="Total Style" mode="Opaque" x="2070" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{COMPANY_TOTAL_DEC}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-107" style="Total Style" mode="Opaque" x="2160" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.Double"><![CDATA[$V{COMPANY_TOTAL_AMOUNT}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="gl">
+		<groupExpression><![CDATA[$F{GL_CODE}]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="15" splitType="Stretch">
+				<staticText>
+					<reportElement key="staticText-45" style="Column Header Style" mode="Opaque" x="0" y="0" width="120" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[     Total By GL]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="textField-78" style="Column Header Style" mode="Opaque" x="120" y="0" width="60" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{GL_TOTAL_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="staticText-68" style="Column Header Style" mode="Opaque" x="180" y="0" width="810" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-79" style="Column Header Style" mode="Opaque" x="990" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_BF}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-80" style="Column Header Style" mode="Opaque" x="1080" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_JAN}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-81" style="Column Header Style" mode="Opaque" x="1170" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_FEB}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-82" style="Column Header Style" mode="Opaque" x="1260" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_MAR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-83" style="Column Header Style" mode="Opaque" x="1350" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_APR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-84" style="Column Header Style" mode="Opaque" x="1440" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_MAY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-85" style="Column Header Style" mode="Opaque" x="1530" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_JUN}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-86" style="Column Header Style" mode="Opaque" x="1620" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_JUL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-87" style="Column Header Style" mode="Opaque" x="1710" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_AUG}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-88" style="Column Header Style" mode="Opaque" x="1800" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_SEP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-89" style="Column Header Style" mode="Opaque" x="1890" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_OCT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-90" style="Column Header Style" mode="Opaque" x="1980" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_NOV}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-91" style="Column Header Style" mode="Opaque" x="2070" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GL_TOTAL_DEC}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-92" style="Column Header Style" mode="Opaque" x="2160" y="0" width="90" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression class="java.lang.Double"><![CDATA[$V{GL_TOTAL_AMOUNT}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-1" style="Detail Style" isPrintRepeatedValues="false" mode="Opaque" x="0" y="0" width="120" height="15" printWhenGroupChanges="gl" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{COMPANY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-56" style="Detail Style" mode="Opaque" x="120" y="0" width="60" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{GL_CODE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-57" style="Detail Style" mode="Opaque" x="180" y="0" width="240" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{EXPENSE_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-58" style="Detail Style" mode="Opaque" x="420" y="0" width="60" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{COST_CENTER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-59" style="Detail Style" mode="Opaque" x="480" y="0" width="36" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{REGION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-60" style="Detail Style" mode="Opaque" x="516" y="0" width="120" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CONTRACT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-61" style="Detail Style" mode="Opaque" x="636" y="0" width="234" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SITE_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-62" style="Detail Style" mode="Opaque" x="870" y="0" width="60" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{CONTRACT_START_DT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-63" style="Detail Style" mode="Opaque" x="930" y="0" width="60" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{CONTRACT_END_DT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-64" style="Detail Style" mode="Opaque" x="990" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{BF_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-65" style="Detail Style" mode="Opaque" x="1080" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{JAN_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-66" style="Detail Style" mode="Opaque" x="1170" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{FEB_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-67" style="Detail Style" mode="Opaque" x="1260" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{MAR_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-68" style="Detail Style" mode="Opaque" x="1350" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{APR_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-69" style="Detail Style" mode="Opaque" x="1440" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{MAY_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-70" style="Detail Style" mode="Opaque" x="1530" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{JUN_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-71" style="Detail Style" mode="Opaque" x="1620" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{JUL_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-72" style="Detail Style" mode="Opaque" x="1710" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{AUG_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-73" style="Detail Style" mode="Opaque" x="1800" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{SEP_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-74" style="Detail Style" mode="Opaque" x="1890" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{OCT_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-75" style="Detail Style" mode="Opaque" x="1980" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{NOV_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-76" style="Detail Style" mode="Opaque" x="2070" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{DEC_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement key="textField-77" style="Detail Style" mode="Opaque" x="2160" y="0" width="90" height="15" forecolor="#000000"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$V{TOTAL_AMOUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

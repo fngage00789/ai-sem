@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.ac">
+	<class name="th.co.ais.domain.ac.Mac001ReFile">
+		<id name="outTranspaymentId" type="java.lang.String"/>
+		<property name="fileName" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMac001ReFile" callable="true">
+		<return class="th.co.ais.domain.ac.Mac001ReFile">
+			<return-property name="outTranspaymentId" column="TRANS_PAYMENT_ID" />
+			<return-property name="fileName" column="FILE_NAME" />
+		</return>
+		<![CDATA[ call SEM_SP_MAC001_RE_FILE(?, :rowId) ]]>
+	</sql-query>
+</hibernate-mapping>

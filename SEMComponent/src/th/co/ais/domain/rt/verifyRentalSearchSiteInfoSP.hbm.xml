@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.rt.VerifyRentalSearchSiteInfoSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="company" type="java.lang.String" />
+		<property name="siteName" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="effDate" type="java.util.Date"/>
+		<property name="expireDate" type="java.util.Date"/>
+		<property name="reqType" type="java.lang.String" />
+		<property name="reqTypeName" type="java.lang.String"/>
+		<property name="title" type="java.lang.String" />
+		<property name="rentalJobStatus" type="java.lang.String" />
+		<property name="rentalJobStatusName" type="java.lang.String" />
+		<property name="verifyStatus" type="java.lang.String" />
+		<property name="verifyStatusName" type="java.lang.String" />
+		<property name="siteLessorId" type="java.lang.String"/>
+		<property name="lessorName" type="java.lang.String"/>
+		<property name="vendorMasterId" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String"/>
+		<property name="siteLastFlag" type="java.lang.String"/>
+		<property name="assignSiteInfoId" type="java.lang.String"/>
+		<property name="siteSeqNo" type="java.lang.String"/>
+		<property name="rentalMasterId" type="java.lang.String"/>
+		<property name="rentalLastestFlag" type="java.lang.String"/>
+		<property name="rentCondType" type="java.lang.String"/>
+		<property name="depositCondType" type="java.lang.String"/>
+		<property name="createBy" type="java.lang.String"/>
+		<property name="updateBy" type="java.lang.String"/>
+		<property name="createDt" type="java.util.Date"/>
+		<property name="updateDt" type="java.util.Date"/>
+		<property name="pendingDate" type="java.sql.Date"/>
+		<property name="vendorStatus" type="java.lang.String"/>
+		<property name="vendorStatusName" type="java.lang.String"/>
+		<property name="condType" type="java.lang.String"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="progressStatus" type="java.lang.String"/>
+		<property name="viewFlag" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="specialFlagStr" type="java.lang.String"/>
+		<property name="oldContractNo" type="java.lang.String"/>
+		<property name="oldSiteInfoId" type="java.lang.String"/>
+		<property name="cycleNo" type="java.lang.Double"/>
+		<property name="seqNo" type="java.lang.Double"/>
+		<property name="siteStatusName" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="terminateDt" type="java.util.Date"/>
+	</class>
+	<sql-query name="querySearchVerifyRentalSiteInfo" callable="true">
+		<return class="th.co.ais.domain.rt.VerifyRentalSearchSiteInfoSP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="effDate" column="EFFECTIVE_DT" />
+			<return-property name="expireDate" column="EXPIRE_DT" />
+			<return-property name="reqType" column="REQ_TYPE" />
+			<return-property name="reqTypeName" column="REQ_TYPE_NAME" />
+			<return-property name="title" column="TITLE" />
+			<return-property name="rentalJobStatus" column="RENTAL_JOB_STATUS" />
+			<return-property name="rentalJobStatusName" column="RENTAL_JOB_STATUS_NAME" />
+			<return-property name="verifyStatus" column="VERIFY_STATUS" />
+			<return-property name="verifyStatusName" column="VERIFY_STATUS_NAME" />
+			<return-property name="siteLessorId" column="SITE_LESSOR_ID" />
+			<return-property name="lessorName" column="LESSOR_NAME" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="siteLastFlag" column="SITE_LATEST_FLAG" />
+			<return-property name="assignSiteInfoId" column="ASSIGN_SITE_INFO_ID" />
+			<return-property name="siteSeqNo" column="SITE_SEQ_NO" />
+			<return-property name="rentalMasterId" column="RENTAL_MASTER_ID" />
+			<return-property name="rentalLastestFlag" column="RENTAL_LASTEST_FLAG" />
+			<return-property name="rentCondType" column="RENT_COND_TYPE" />
+			<return-property name="depositCondType" column="DEPOSIT_COND_TYPE" />
+			<return-property name="createBy" column="CREATE_BY" />
+			<return-property name="createDt" column="CREATE_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="pendingDate" column="PENDING_DT"/>
+			<return-property name="vendorStatus" column="VENDOR_STATUS"/>
+			<return-property name="vendorStatusName" column="VENDOR_STATUS_NAME"/>
+			<return-property name="condType" column="COND_TYPE"/>
+			<return-property name="expenseType" column="EXPENSE_TYPE"/>
+			<return-property name="progressStatus" column="PROGRESS_STATUS"/>
+			<return-property name="viewFlag" column="View_Flag"/>
+			<return-property name="remark" column="REMARK"/>
+			<return-property name="specialFlagStr" column="SPECIAL_FLG"/>
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO"/>
+			<return-property name="oldSiteInfoId" column="OLD_SITE_INFO_ID"/>
+			<return-property name="cycleNo" column="CYCLE_NO"/>
+			<return-property name="seqNo" column="SEQ_NO"/>
+			<return-property name="siteStatusName" column="SITE_STATUS_NAME"/>
+			<return-property name="networkStatus" column="NETWORK_STATUS"/>
+			<return-property name="terminateDt" column="TERMINATE_DT"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_SRCH(?, :contractNo, :company, :region, :siteName, :siteType, :reqType, :title, 
+									:vendorCode, :vendorName, :noVendorCode, :verifyStatus, :currentFlag, :picoFlag, :locationId, :strParam) ]]>
+	</sql-query>
+</hibernate-mapping>

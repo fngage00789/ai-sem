@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterface">
+		<id name="referenceId" type="java.lang.String" />
+		<property name="splitCase" type="java.lang.String"/>
+		<property name="fileName" type="java.lang.String"/>
+		<property name="activity" type="java.lang.String" />
+		<property name="companyCode1" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="companyCodeMain" type="java.lang.String" />
+		<property name="mainContractNo" type="java.lang.String" />
+		<property name="oldContractNo" type="java.lang.String" />
+		<property name="contractType" type="java.lang.String" />
+		<property name="objectDesc" type="java.lang.String" />
+		<property name="contractName" type="java.lang.String" />
+		<property name="dateContractConclusion" type="java.lang.String" />
+		<property name="dateContractStart" type="java.lang.String" />
+		<property name="dateFirstContractEnd" type="java.lang.String" />
+		<property name="authorizationGroup" type="java.lang.String" />
+		<property name="industry" type="java.lang.String" />
+		<property name="personResponsible" type="java.lang.String" />
+		<property name="casFlowStartingOn" type="java.lang.String" />
+		<property name="firstPostingFrom1" type="java.lang.String" />
+		<property name="currencyForContract" type="java.lang.String" />
+		<property name="typeOfRenewal" type="java.lang.String" />
+		<property name="renewalRulw" type="java.lang.String" />
+		<property name="sequenceNo" type="java.lang.String" />
+		<property name="noOfRenewals" type="java.lang.String" />
+		<property name="contractRenewedYears" type="java.lang.String" />
+		<property name="contractRenewedMonths" type="java.lang.String" />
+		<property name="contractRenewedDays" type="java.lang.String" />
+		<property name="typeOfAutomaticRenewal" type="java.lang.String" />
+		<property name="renewalExecution" type="java.lang.String" />
+		<property name="termNo1" type="java.lang.String" />
+		<property name="paymentMethod" type="java.lang.String" />
+		<property name="pmtMethsupl" type="java.lang.String" />
+		<property name="individSet" type="java.lang.String" />
+		<property name="paymentBlockKey" type="java.lang.String" />
+		<property name="termsOfPaymentKey" type="java.lang.String" />
+		<property name="keyForHouseBank" type="java.lang.String" />
+		<property name="bankDetailsId" type="java.lang.String" />
+		<property name="noteToPayee" type="java.lang.String" />
+		<property name="dunningArea" type="java.lang.String" />
+		<property name="dunningBlock" type="java.lang.String" />
+		<property name="accountDetermination" type="java.lang.String" />
+		<property name="taxType" type="java.lang.String" />
+		<property name="taxGroup" type="java.lang.String" />
+		<property name="businessPartnerNo1" type="java.lang.String" />
+		<property name="termNo2" type="java.lang.String" />
+		<property name="noFrequencyPeriod" type="java.lang.String" />
+		<property name="frequencyUnit" type="java.lang.String" />
+		<property name="frequencyStart" type="java.lang.String" />
+		<property name="paymentForm" type="java.lang.String" />
+		<property name="prorated" type="java.lang.String" />
+		<property name="calculateMethod" type="java.lang.String" />
+		<property name="factoryCalenda" type="java.lang.String" />
+		<property name="businessPartnerNo2" type="java.lang.String" />
+		<property name="businessPartnerRole" type="java.lang.String" />
+		<property name="dateStartRelationship" type="java.lang.String" />
+		<property name="dateEndRelationship" type="java.lang.String" />
+		<property name="addressType" type="java.lang.String" />
+		<property name="conditionSplit" type="java.lang.String" />
+		<property name="conditionType" type="java.lang.String" />
+		<property name="conditionPurpose1" type="java.lang.String" />
+		<property name="dateFromCondition" type="java.lang.String" />
+		<property name="dateUpToCondition" type="java.lang.String" />
+		<property name="currencyCondition" type="java.lang.String" />
+		<property name="noPostingTerm" type="java.lang.String" />
+		<property name="noFrequencyTerm" type="java.lang.String" />
+		<property name="noOrganizationalTerm" type="java.lang.String" />
+		<property name="costCenter" type="java.lang.String" />
+		<property name="profitCenter" type="java.lang.String" />
+		<property name="currencyUnitPrice" type="java.lang.String" />
+		<property name="calculationFormula" type="java.lang.String" />
+		<property name="distributionFormla" type="java.lang.String" />
+		<property name="conditionsExternalPurpose" type="java.lang.String" />
+		<property name="conditionOneTime" type="java.lang.String" />
+		<property name="statisticalInfoCondition" type="java.lang.String" />
+		<property name="firstPostingFrom2" type="java.lang.String" />
+		<property name="NoOfWhtTerm" type="java.lang.String" />
+		<property name="differentDueDateOneTime" type="java.lang.String" />
+		<property name="gradingTermInMonths" type="java.lang.String" />
+		<property name="gradingIntervalInMonths" type="java.lang.String" />
+		<property name="gradingPercentIncrease" type="java.lang.String" />
+		<property name="gradingAbsoluteIncrease" type="java.lang.String" />
+		<property name="contractStatus" type="java.lang.String" />
+		<property name="valuationRule" type="java.lang.String" />
+		<property name="objectId" type="java.lang.String" />
+		<property name="objectType" type="java.lang.String" />
+		<property name="objectValidFrom" type="java.lang.String" />
+		<property name="objectValidTo" type="java.lang.String" />
+		<property name="startOfConsideration" type="java.lang.String" />
+		<property name="firstPostingFrom3" type="java.lang.String" />
+		<property name="classification" type="java.lang.String" />
+		<property name="interestRate" type="java.lang.String" />
+		<property name="frequencyTerm" type="java.lang.String" />
+		<property name="distributFormula" type="java.lang.String" />
+		<property name="distribFormulaParameter" type="java.lang.String" />
+		<property name="probableEnd" type="java.lang.String" />
+		<property name="endOfUsageRou" type="java.lang.String" />
+		<property name="valuationStatus" type="java.lang.String" />
+		<property name="valuationBehavior" type="java.lang.String" />
+		<property name="companyCode2" type="java.lang.String" />
+		<property name="asset" type="java.lang.String" />
+		<property name="subno" type="java.lang.String" />
+		<property name="objectDescription" type="java.lang.String" />
+		<property name="acctasgobjtype" type="java.lang.String" />
+		<property name="absoluteStart" type="java.lang.String" />
+		<property name="absoluteEnd" type="java.lang.String" />
+		<property name="condValProperty" type="java.lang.String" />
+		<property name="condConsideration" type="java.lang.String" />
+		<property name="considerCondition" type="java.lang.String" />
+		<property name="percentage" type="java.lang.String" />
+		<property name="absoluteShare" type="java.lang.String" />
+		<property name="currency" type="java.lang.String" />
+		<property name="conditionPurpose2" type="java.lang.String" />
+		<property name="unitPrice" type="java.lang.String" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.util.Date" />
+		<property name="sapFilename" type="java.lang.String" />
+		<property name="sapActivity" type="java.lang.String" />
+		<property name="sapReferenceId" type="java.lang.String" />
+		<property name="sapCompanyCode" type="java.lang.String" />
+		<property name="sapContractNo" type="java.lang.String" />
+		<property name="sapRefxNo" type="java.lang.String" />
+		<property name="sapStatusCode" type="java.lang.String" />
+		<property name="sapErrorCode" type="java.lang.String" />
+		<property name="sapStatusMessage" type="java.lang.String" />
+		<property name="recordStatus" type="java.lang.String" />
+		<property name="resendSeq" type="java.lang.String" />
+	</class>
+	<class name="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterfaceUpdate">
+		<id name="result" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String" />
+	</class>
+	<class name="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterfaceTodolist">
+		<id name="referenceId" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="activity" type="java.lang.String"/>
+		<property name="companyCode1" type="java.lang.String"/>
+		<property name="sapRefxNo" type="java.lang.String"/>
+		<property name="sapStatusCode" type="java.lang.String"/>
+		<property name="sapStatusMessage" type="java.lang.String" />
+		<property name="conditionType" type="java.lang.String"/>
+		<property name="conditionPurpose1" type="java.lang.String"/>
+		<property name="dateFromCondition" type="java.lang.String"/>
+		<property name="dateUpToCondition" type="java.lang.String"/>
+		<property name="splitCase" type="java.lang.String"/>
+		<property name="firstPostingFrom1" type="java.lang.String"/>
+		<property name="dateFirstContractEnd" type="java.lang.String"/>
+		<property name="currencyUnitPrice" type="java.lang.String"/>
+		<property name="updateDt" type="java.util.Date" />
+		<property name="recordStatus" type="java.lang.String"/>
+		<property name="resendSeq" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.rt.Mrt010IfrsTodolistDetail" entity-name="Mrt010IfrsTodolistDetail">
+		<id name="referenceId" type="java.lang.String" />
+		<property name="company" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="dateFromCondition" type="java.lang.String"/>
+		<property name="dateUpToCondition" type="java.lang.String" />
+		<property name="contractStatus" type="java.lang.String"/>
+		<property name="contractType" type="java.lang.String"/>
+		<property name="withHoldingTax" type="java.lang.String"/>
+		<property name="withHoldingTaxPercentage" type="java.lang.String"/>
+		<property name="vat" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="status" type="java.lang.String"/>
+		<property name="errorMessage" type="java.lang.String" />
+		<property name="firstPostingFrom" type="java.lang.String"/>
+		<property name="dateFirstContractEnd" type="java.lang.String"/>
+		<property name="perYearOrPerMonth" type="java.lang.String"/>
+		<property name="splitCase" type="java.lang.String"/>
+		<property name="currencyUnitPrice" type="java.lang.String"/>
+		<property name="updateDt" type="java.util.Date"/>
+		<property name="refxNo" type="java.lang.String"/>
+		<property name="recordStatus" type="java.lang.String"/>
+		<property name="rentalDetailId" type="java.lang.String"/>
+		<property name="semConditionId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMrt010IfrsInterfaceOnline" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterface">
+			<return-property name="referenceId" column="REFERENCE_ID" />
+			<return-property name="splitCase" column="SPLIT_CASE" />
+			<return-property name="fileName" column="FILENAME" />
+			<return-property name="activity" column="ACTIVITY" />
+			<return-property name="companyCode1" column="COMPANY_CODE1" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="companyCodeMain" column="COMPANY_CODE_MAIN" />
+			<return-property name="mainContractNo" column="MAIN_CONTRACT_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="contractType" column="CONTRACT_TYPE" />
+			<return-property name="objectDesc" column="OBJECT_DESC" />
+			<return-property name="contractName" column="CONTRACT_NAME" />
+			<return-property name="dateContractConclusion" column="DATE_CONTRACT_CONCLUSION" />
+			<return-property name="dateContractStart" column="DATE_CONTRACT_START" />
+			<return-property name="dateFirstContractEnd" column="DATE_FIRST_CONTRACT_END" />
+			<return-property name="authorizationGroup" column="AUTHORIZATION_GROUP" />
+			<return-property name="industry" column="INDUSTRY" />
+			<return-property name="personResponsible" column="PERSON_RESPONSIBLE" />
+			<return-property name="casFlowStartingOn" column="CASH_FLOW_STARTING_ON" />
+			<return-property name="firstPostingFrom1" column="FIRST_POSTING_FROM1" />
+			<return-property name="currencyForContract" column="CURRENCY_FOR_CONTRACT" />
+			<return-property name="typeOfRenewal" column="TYPE_OF_RENEWAL" />
+			<return-property name="renewalRulw" column="RENEWAL_RULE" />
+			<return-property name="sequenceNo" column="SEQUENCE_NO" />
+			<return-property name="noOfRenewals" column="NO_OF_RENEWALS" />
+			<return-property name="contractRenewedYears" column="CONTRACT_RENEWED_YEARS" />
+			<return-property name="contractRenewedMonths" column="CONTRACT_RENEWED_MONTHS" />
+			<return-property name="contractRenewedDays" column="CONTRACT_RENEWED_DAYS" />
+			<return-property name="typeOfAutomaticRenewal" column="TYPE_OF_AUTOMATIC_RENEWAL" />
+			<return-property name="renewalExecution" column="RENEWAL_EXECUTION" />
+			<return-property name="termNo1" column="TERM_NO1" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="pmtMethsupl" column="PMT_METHSUPL" />
+			<return-property name="individSet" column="INDIVID_SET" />
+			<return-property name="paymentBlockKey" column="PAYMENT_BLOCK_KEY" />
+			<return-property name="termsOfPaymentKey" column="TERMS_OF_PAYMENT_KEY" />
+			<return-property name="keyForHouseBank" column="KEY_FOR_HOUSE_BANK" />
+			<return-property name="bankDetailsId" column="BANK_DETAILS_ID" />
+			<return-property name="noteToPayee" column="NOTE_TO_PAYEE" />
+			<return-property name="dunningArea" column="DUNNING_AREA" />
+			<return-property name="dunningBlock" column="DUNNING_BLOCK" />
+			<return-property name="accountDetermination" column="ACCOUNT_DETERMINATION" />
+			<return-property name="taxType" column="TAX_TYPE" />
+			<return-property name="taxGroup" column="TAX_GROUP" />
+			<return-property name="businessPartnerNo1" column="BUSINESS_PARTNER_NO1" />
+			<return-property name="termNo2" column="TERM_NO2" />
+			<return-property name="noFrequencyPeriod" column="NO_FREQUENCY_PERIOD" />
+			<return-property name="frequencyUnit" column="FREQUENCY_UNIT" />
+			<return-property name="frequencyStart" column="FREQUENCY_START" />
+			<return-property name="paymentForm" column="PAYMENT_FORM" />
+			<return-property name="prorated" column="PRORATED" />
+			<return-property name="calculateMethod" column="CALCULATE_METHOD" />
+			<return-property name="factoryCalenda" column="FACTORY_CALENDAR" />
+			<return-property name="businessPartnerNo2" column="BUSINESS_PARTNER_NO2" />
+			<return-property name="businessPartnerRole" column="BUSINESS_PARTNER_ROLE" />
+			<return-property name="dateStartRelationship" column="DATE_START_RELATIONSHIP" />
+			<return-property name="dateEndRelationship" column="DATE_END_RELATIONSHIP" />
+			<return-property name="addressType" column="ADDRESS_TYPE" />
+			<return-property name="conditionSplit" column="CONDITION_SPLIT" />
+			<return-property name="conditionType" column="CONDITION_TYPE" />
+			<return-property name="conditionPurpose1" column="CONDITION_PURPOSE1" />
+			<return-property name="dateFromCondition" column="DATE_FROM_CONDITION" />
+			<return-property name="dateUpToCondition" column="DATE_UP_TO_CONDITION" />
+			<return-property name="currencyCondition" column="CURRENCY_CONDITION" />
+			<return-property name="noPostingTerm" column="NO_POSTING_TERM" />
+			<return-property name="noFrequencyTerm" column="NO_FREQUENCY_TERM" />
+			<return-property name="noOrganizationalTerm" column="NO_ORGANIZATIONAL_TERM" />
+			<return-property name="costCenter" column="COST_CENTER" />
+			<return-property name="profitCenter" column="PROFIT_CENTER" />
+			<return-property name="currencyUnitPrice" column="CURRENCY_UNIT_PRICE" />
+			<return-property name="calculationFormula" column="CALCULATION_FORMULA" />
+			<return-property name="distributionFormla" column="DISTRIBUTION_FORMULA" />
+			<return-property name="conditionsExternalPurpose" column="CONDITIONS_EXTERNAL_PURPOSE" />
+			<return-property name="conditionOneTime" column="CONDITION_ONE_TIME" />
+			<return-property name="statisticalInfoCondition" column="STATISTICAL_INFO_CONDITION" />
+			<return-property name="firstPostingFrom2" column="FIRST_POSTING_FROM2" />
+			<return-property name="NoOfWhtTerm" column="NO_OF_WHT_TERM" />
+			<return-property name="differentDueDateOneTime" column="DIFFERENT_DUE_DATE_ONE_TIME" />
+			<return-property name="gradingTermInMonths" column="GRADING_TERM_IN_MONTHS" />
+			<return-property name="gradingIntervalInMonths" column="GRADING_INTERVAL_IN_MONTHS" />
+			<return-property name="gradingPercentIncrease" column="GRADING_PERCENT_INCREASE" />
+			<return-property name="gradingAbsoluteIncrease" column="GRADING_ABSOLUTE_INCREASE" />
+			<return-property name="contractStatus" column="CONTRACT_STATUS" />
+			<return-property name="valuationRule" column="VALUATION_RULE" />
+			<return-property name="objectId" column="OBJECT_ID" />
+			<return-property name="objectType" column="OBJECT_TYPE" />
+			<return-property name="objectValidFrom" column="OBJECT_VALID_FROM" />
+			<return-property name="objectValidTo" column="OBJECT_VALID_TO" />
+			<return-property name="startOfConsideration" column="START_OF_CONSIDERATION" />
+			<return-property name="firstPostingFrom3" column="FIRST_POSTING_FROM3" />
+			<return-property name="classification" column="CLASSIFICATION" />
+			<return-property name="interestRate" column="INTEREST_RATE" />
+			<return-property name="frequencyTerm" column="FREQUENCY_TERM" />
+			<return-property name="distributFormula" column="DISTRIBUT_FORMULA" />
+			<return-property name="distribFormulaParameter" column="DISTRIB_FORMULA_PARAMETER" />
+			<return-property name="probableEnd" column="PROBABLE_END" />
+			<return-property name="endOfUsageRou" column="END_OF_USAGE_ROU" />
+			<return-property name="valuationStatus" column="VALUATION_STATUS" />
+			<return-property name="valuationBehavior" column="VALUATION_BEHAVIOR" />
+			<return-property name="companyCode2" column="COMPANY_CODE2" />
+			<return-property name="asset" column="ASSET" />
+			<return-property name="subno" column="SUBNO" />
+			<return-property name="objectDescription" column="OBJECT_DESCRIPTION" />
+			<return-property name="acctasgobjtype" column="ACCTASGOBJTYPE" />
+			<return-property name="absoluteStart" column="ABSOLUTE_START" />
+			<return-property name="absoluteEnd" column="ABSOLUTE_END" />
+			<return-property name="condValProperty" column="COND_VAL_PROPERTY" />
+			<return-property name="condConsideration" column="COND_CONSIDERATION" />
+			<return-property name="considerCondition" column="CONSIDER_CONDITION" />
+			<return-property name="percentage" column="PERCENTAGE" />
+			<return-property name="absoluteShare" column="ABSOLUTE_SHARE" />
+			<return-property name="currency" column="CURRENCY" />
+			<return-property name="conditionPurpose2" column="CONDITION_PURPOSE2" />
+			<return-property name="unitPrice" column="UNIT_PRICE" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="sapFilename" column="SAP_FILENAME" />
+			<return-property name="sapActivity" column="SAP_ACTIVITY" />
+			<return-property name="sapReferenceId" column="SAP_REFERENCE_ID" />
+			<return-property name="sapCompanyCode" column="SAP_COMPANY_CODE" />
+			<return-property name="sapContractNo" column="SAP_CONTRACT_NO" />
+			<return-property name="sapRefxNo" column="SAP_REFX_NO" />
+			<return-property name="sapStatusCode" column="SAP_STATUS_CODE" />
+			<return-property name="sapErrorCode" column="SAP_ERROR_CODE" />
+			<return-property name="sapStatusMessage" column="SAP_STATUS_MESSAGE" />
+			<return-property name="recordStatus" column="RECORD_STATUS" />
+			<return-property name="resendSeq" column="RESEND_SEQ" />
+		</return>
+		<!-- <![CDATA[ call SEM.SEM_IFRS_20_ONLINE(?, :result, :remark, :contractNo, :userId) ]]> -->
+		<![CDATA[ call SEM.SEM_IFRS_20_ONLINE(?, :contractNo, :userId) ]]>
+	</sql-query>
+	<sql-query name="spMrt010IfrsInterfaceOnlineCH" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterface">
+			<return-property name="referenceId" column="REFERENCE_ID" />
+			<return-property name="splitCase" column="SPLIT_CASE" />
+			<return-property name="fileName" column="FILENAME" />
+			<return-property name="activity" column="ACTIVITY" />
+			<return-property name="companyCode1" column="COMPANY_CODE1" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="companyCodeMain" column="COMPANY_CODE_MAIN" />
+			<return-property name="mainContractNo" column="MAIN_CONTRACT_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="contractType" column="CONTRACT_TYPE" />
+			<return-property name="objectDesc" column="OBJECT_DESC" />
+			<return-property name="contractName" column="CONTRACT_NAME" />
+			<return-property name="dateContractConclusion" column="DATE_CONTRACT_CONCLUSION" />
+			<return-property name="dateContractStart" column="DATE_CONTRACT_START" />
+			<return-property name="dateFirstContractEnd" column="DATE_FIRST_CONTRACT_END" />
+			<return-property name="authorizationGroup" column="AUTHORIZATION_GROUP" />
+			<return-property name="industry" column="INDUSTRY" />
+			<return-property name="personResponsible" column="PERSON_RESPONSIBLE" />
+			<return-property name="casFlowStartingOn" column="CASH_FLOW_STARTING_ON" />
+			<return-property name="firstPostingFrom1" column="FIRST_POSTING_FROM1" />
+			<return-property name="currencyForContract" column="CURRENCY_FOR_CONTRACT" />
+			<return-property name="typeOfRenewal" column="TYPE_OF_RENEWAL" />
+			<return-property name="renewalRulw" column="RENEWAL_RULE" />
+			<return-property name="sequenceNo" column="SEQUENCE_NO" />
+			<return-property name="noOfRenewals" column="NO_OF_RENEWALS" />
+			<return-property name="contractRenewedYears" column="CONTRACT_RENEWED_YEARS" />
+			<return-property name="contractRenewedMonths" column="CONTRACT_RENEWED_MONTHS" />
+			<return-property name="contractRenewedDays" column="CONTRACT_RENEWED_DAYS" />
+			<return-property name="typeOfAutomaticRenewal" column="TYPE_OF_AUTOMATIC_RENEWAL" />
+			<return-property name="renewalExecution" column="RENEWAL_EXECUTION" />
+			<return-property name="termNo1" column="TERM_NO1" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="pmtMethsupl" column="PMT_METHSUPL" />
+			<return-property name="individSet" column="INDIVID_SET" />
+			<return-property name="paymentBlockKey" column="PAYMENT_BLOCK_KEY" />
+			<return-property name="termsOfPaymentKey" column="TERMS_OF_PAYMENT_KEY" />
+			<return-property name="keyForHouseBank" column="KEY_FOR_HOUSE_BANK" />
+			<return-property name="bankDetailsId" column="BANK_DETAILS_ID" />
+			<return-property name="noteToPayee" column="NOTE_TO_PAYEE" />
+			<return-property name="dunningArea" column="DUNNING_AREA" />
+			<return-property name="dunningBlock" column="DUNNING_BLOCK" />
+			<return-property name="accountDetermination" column="ACCOUNT_DETERMINATION" />
+			<return-property name="taxType" column="TAX_TYPE" />
+			<return-property name="taxGroup" column="TAX_GROUP" />
+			<return-property name="businessPartnerNo1" column="BUSINESS_PARTNER_NO1" />
+			<return-property name="termNo2" column="TERM_NO2" />
+			<return-property name="noFrequencyPeriod" column="NO_FREQUENCY_PERIOD" />
+			<return-property name="frequencyUnit" column="FREQUENCY_UNIT" />
+			<return-property name="frequencyStart" column="FREQUENCY_START" />
+			<return-property name="paymentForm" column="PAYMENT_FORM" />
+			<return-property name="prorated" column="PRORATED" />
+			<return-property name="calculateMethod" column="CALCULATE_METHOD" />
+			<return-property name="factoryCalenda" column="FACTORY_CALENDAR" />
+			<return-property name="businessPartnerNo2" column="BUSINESS_PARTNER_NO2" />
+			<return-property name="businessPartnerRole" column="BUSINESS_PARTNER_ROLE" />
+			<return-property name="dateStartRelationship" column="DATE_START_RELATIONSHIP" />
+			<return-property name="dateEndRelationship" column="DATE_END_RELATIONSHIP" />
+			<return-property name="addressType" column="ADDRESS_TYPE" />
+			<return-property name="conditionSplit" column="CONDITION_SPLIT" />
+			<return-property name="conditionType" column="CONDITION_TYPE" />
+			<return-property name="conditionPurpose1" column="CONDITION_PURPOSE1" />
+			<return-property name="dateFromCondition" column="DATE_FROM_CONDITION" />
+			<return-property name="dateUpToCondition" column="DATE_UP_TO_CONDITION" />
+			<return-property name="currencyCondition" column="CURRENCY_CONDITION" />
+			<return-property name="noPostingTerm" column="NO_POSTING_TERM" />
+			<return-property name="noFrequencyTerm" column="NO_FREQUENCY_TERM" />
+			<return-property name="noOrganizationalTerm" column="NO_ORGANIZATIONAL_TERM" />
+			<return-property name="costCenter" column="COST_CENTER" />
+			<return-property name="profitCenter" column="PROFIT_CENTER" />
+			<return-property name="currencyUnitPrice" column="CURRENCY_UNIT_PRICE" />
+			<return-property name="calculationFormula" column="CALCULATION_FORMULA" />
+			<return-property name="distributionFormla" column="DISTRIBUTION_FORMULA" />
+			<return-property name="conditionsExternalPurpose" column="CONDITIONS_EXTERNAL_PURPOSE" />
+			<return-property name="conditionOneTime" column="CONDITION_ONE_TIME" />
+			<return-property name="statisticalInfoCondition" column="STATISTICAL_INFO_CONDITION" />
+			<return-property name="firstPostingFrom2" column="FIRST_POSTING_FROM2" />
+			<return-property name="NoOfWhtTerm" column="NO_OF_WHT_TERM" />
+			<return-property name="differentDueDateOneTime" column="DIFFERENT_DUE_DATE_ONE_TIME" />
+			<return-property name="gradingTermInMonths" column="GRADING_TERM_IN_MONTHS" />
+			<return-property name="gradingIntervalInMonths" column="GRADING_INTERVAL_IN_MONTHS" />
+			<return-property name="gradingPercentIncrease" column="GRADING_PERCENT_INCREASE" />
+			<return-property name="gradingAbsoluteIncrease" column="GRADING_ABSOLUTE_INCREASE" />
+			<return-property name="contractStatus" column="CONTRACT_STATUS" />
+			<return-property name="valuationRule" column="VALUATION_RULE" />
+			<return-property name="objectId" column="OBJECT_ID" />
+			<return-property name="objectType" column="OBJECT_TYPE" />
+			<return-property name="objectValidFrom" column="OBJECT_VALID_FROM" />
+			<return-property name="objectValidTo" column="OBJECT_VALID_TO" />
+			<return-property name="startOfConsideration" column="START_OF_CONSIDERATION" />
+			<return-property name="firstPostingFrom3" column="FIRST_POSTING_FROM3" />
+			<return-property name="classification" column="CLASSIFICATION" />
+			<return-property name="interestRate" column="INTEREST_RATE" />
+			<return-property name="frequencyTerm" column="FREQUENCY_TERM" />
+			<return-property name="distributFormula" column="DISTRIBUT_FORMULA" />
+			<return-property name="distribFormulaParameter" column="DISTRIB_FORMULA_PARAMETER" />
+			<return-property name="probableEnd" column="PROBABLE_END" />
+			<return-property name="endOfUsageRou" column="END_OF_USAGE_ROU" />
+			<return-property name="valuationStatus" column="VALUATION_STATUS" />
+			<return-property name="valuationBehavior" column="VALUATION_BEHAVIOR" />
+			<return-property name="companyCode2" column="COMPANY_CODE2" />
+			<return-property name="asset" column="ASSET" />
+			<return-property name="subno" column="SUBNO" />
+			<return-property name="objectDescription" column="OBJECT_DESCRIPTION" />
+			<return-property name="acctasgobjtype" column="ACCTASGOBJTYPE" />
+			<return-property name="absoluteStart" column="ABSOLUTE_START" />
+			<return-property name="absoluteEnd" column="ABSOLUTE_END" />
+			<return-property name="condValProperty" column="COND_VAL_PROPERTY" />
+			<return-property name="condConsideration" column="COND_CONSIDERATION" />
+			<return-property name="considerCondition" column="CONSIDER_CONDITION" />
+			<return-property name="percentage" column="PERCENTAGE" />
+			<return-property name="absoluteShare" column="ABSOLUTE_SHARE" />
+			<return-property name="currency" column="CURRENCY" />
+			<return-property name="conditionPurpose2" column="CONDITION_PURPOSE2" />
+			<return-property name="unitPrice" column="UNIT_PRICE" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="sapFilename" column="SAP_FILENAME" />
+			<return-property name="sapActivity" column="SAP_ACTIVITY" />
+			<return-property name="sapReferenceId" column="SAP_REFERENCE_ID" />
+			<return-property name="sapCompanyCode" column="SAP_COMPANY_CODE" />
+			<return-property name="sapContractNo" column="SAP_CONTRACT_NO" />
+			<return-property name="sapRefxNo" column="SAP_REFX_NO" />
+			<return-property name="sapStatusCode" column="SAP_STATUS_CODE" />
+			<return-property name="sapErrorCode" column="SAP_ERROR_CODE" />
+			<return-property name="sapStatusMessage" column="SAP_STATUS_MESSAGE" />
+			<return-property name="recordStatus" column="RECORD_STATUS" />
+			<return-property name="resendSeq" column="RESEND_SEQ" />
+		</return>
+		<!-- <![CDATA[ call SEM.SEM_IFRS_20_ONLINE_CH(?, :result, :remark, :contractNo, :userId) ]]> -->
+		<![CDATA[ call SEM.SEM_IFRS_20_ONLINE_CH(?, :contractNo, :userId) ]]>
+	</sql-query>
+	<sql-query name="spMrt010IfrsInterfaceUpdate" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterfaceUpdate">
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_IFRS_20_UPD_INTERFACE(?, :referenceId, :userId, :sapFilename, :sapActivity, :sapReferenceId, :sapCompanyCode
+										, :sapContractNo, :sapRefxNo, :sapStatusCode, :sapErrorCode, :sapStatusMessage
+										, :recordStatus, :resendSeq) ]]>
+	</sql-query>
+	<sql-query name="spMrt010IfrsInterfaceTodolist" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterfaceTodolist">
+			<return-property name="referenceId" column="REFERENCE_ID" />
+			<return-property name="contractNo" column="เลขที่สัญญา" />
+			<return-property name="activity" column="ACTIVITY" />
+			<return-property name="companyCode1" column="COMPANY" />
+			<return-property name="sapRefxNo" column="REFX_NO" />
+			<return-property name="sapStatusCode" column="STATUS" />
+			<return-property name="sapStatusMessage" column="ERROR MESSAGE" />
+			<return-property name="conditionType" column="TYPE" />
+			<return-property name="conditionPurpose1" column="CONDITION" />
+			<return-property name="dateFromCondition" column="วันที่เริ่มสัญญา" />
+			<return-property name="dateUpToCondition" column="วันหมดสัญญา" />
+			<return-property name="splitCase" column="งวดการชำระ" />
+			<return-property name="firstPostingFrom1" column="วันที่เริ่มต้นงวด" />
+			<return-property name="dateFirstContractEnd" column="วันที่สิ้นสุดงวด" />
+			<return-property name="currencyUnitPrice" column="จำนวนเงิน" />
+			<return-property name="updateDt" column="วันที่ INTERFACE" />
+			<return-property name="recordStatus" column="RECORD_STATUS" />
+			<return-property name="resendSeq" column="RESEND_SEQ" />
+		</return>
+		<![CDATA[ call SEM.SEM_IFRS_20_TODOLIST(?) ]]>
+	</sql-query>
+	<sql-query name="spMrt010IfrsTodolistDetail" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsTodolistDetail">
+			<return-property name="referenceId" column="REFERENCE_ID" />
+			<return-property name="company" column="Company"/>
+			<return-property name="region" column="Region"/>
+			<return-property name="contractNo" column="เลขที่สัญญา"/>
+			<return-property name="siteName" column="Site Name"/>
+			<return-property name="dateFromCondition" column="วันที่เริ่มสัญญา"/>
+			<return-property name="dateUpToCondition" column="วันหมดสัญญา" />
+			<return-property name="contractStatus" column="สถานะสัญญา"/>
+			<return-property name="contractType" column="ประเภท"/>
+			<return-property name="withHoldingTax" column="ภาษีหัก ณ ที่จ่าย"/>
+			<return-property name="withHoldingTaxPercentage" column="ภาษีหัก ณ ที่จ่าย (%)"/>
+			<return-property name="vat" column="VAT(%)"/>
+			<return-property name="vendorCode" column="Vendor Code"/>
+			<return-property name="vendorName" column="Vendor Name"/>
+			<return-property name="status" column="STATUS"/>
+			<return-property name="errorMessage" column="ERROR MESSAGE" />
+			<return-property name="firstPostingFrom" column="วันที่เริ่มต้นงวด"/>
+			<return-property name="dateFirstContractEnd" column="วันที่สิ้นสุดงวด"/>
+			<return-property name="perYearOrPerMonth" column="ต่อปี/เดือน"/>
+			<return-property name="splitCase" column="งวดการชำระ"/>
+			<return-property name="currencyUnitPrice" column="จำนวนเงิน"/>
+			<return-property name="updateDt" column="วันที่ Interface"/>
+			<return-property name="refxNo" column="REFX NO"/>
+			<return-property name="recordStatus" column="RECORD_STATUS"/>
+			<return-property name="rentalDetailId" column="RENTAL_DETAIL_ID"/>
+			<return-property name="semConditionId" column="SEM_CONDITION_ID"/>
+			<return-property name="siteInfoId" column="SITE_INFO_ID"/>
+		</return>
+		<![CDATA[ call SEM_IFRS_20_INTERFACE_DETAIL(?, :referenceId) ]]>
+	</sql-query>
+	<sql-query name="spMrt010IfrsCloseJob" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterfaceTodolist">
+			<return-property name="referenceId" column="REFERENCE_ID" />
+			<return-property name="contractNo" column="เลขที่สัญญา" />
+			<return-property name="activity" column="ACTIVITY" />
+			<return-property name="companyCode1" column="COMPANY" />
+			<return-property name="sapRefxNo" column="REFX_NO" />
+			<return-property name="sapStatusCode" column="STATUS" />
+			<return-property name="sapStatusMessage" column="ERROR MESSAGE" />
+			<return-property name="conditionType" column="TYPE" />
+			<return-property name="conditionPurpose1" column="CONDITION" />
+			<return-property name="dateFromCondition" column="วันที่เริ่มสัญญา" />
+			<return-property name="dateUpToCondition" column="วันหมดสัญญา" />
+			<return-property name="splitCase" column="งวดการชำระ" />
+			<return-property name="firstPostingFrom1" column="วันที่เริ่มต้นงวด" />
+			<return-property name="dateFirstContractEnd" column="วันที่สิ้นสุดงวด" />
+			<return-property name="currencyUnitPrice" column="จำนวนเงินงวดละ" />
+			<return-property name="updateDt" column="วันที่ INTERFACE" />
+			<return-property name="recordStatus" column="RECORD_STATUS" />
+			<return-property name="resendSeq" column="RESEND_SEQ" />
+		</return>
+		<![CDATA[ call SEM_IFRS_20_CLOSE_JOB(?, :referenceId, :userId) ]]>
+	</sql-query>
+	<sql-query name="spMrt010IfrsUpdateRxfx" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterfaceTodolist">
+			<return-property name="referenceId" column="REFERENCE_ID" />
+			<return-property name="contractNo" column="เลขที่สัญญา" />
+			<return-property name="activity" column="ACTIVITY" />
+			<return-property name="companyCode1" column="COMPANY" />
+			<return-property name="sapRefxNo" column="REFX_NO" />
+			<return-property name="sapStatusCode" column="STATUS" />
+			<return-property name="sapStatusMessage" column="ERROR MESSAGE" />
+			<return-property name="conditionType" column="TYPE" />
+			<return-property name="conditionPurpose1" column="CONDITION" />
+			<return-property name="dateFromCondition" column="วันที่เริ่มสัญญา" />
+			<return-property name="dateUpToCondition" column="วันหมดสัญญา" />
+			<return-property name="splitCase" column="งวดการชำระ" />
+			<return-property name="firstPostingFrom1" column="วันที่เริ่มต้นงวด" />
+			<return-property name="dateFirstContractEnd" column="วันที่สิ้นสุดงวด" />
+			<return-property name="currencyUnitPrice" column="จำนวนเงินงวดละ" />
+			<return-property name="updateDt" column="วันที่ INTERFACE" />
+			<return-property name="recordStatus" column="RECORD_STATUS" />
+			<return-property name="resendSeq" column="RESEND_SEQ" />
+		</return>
+		<![CDATA[ call SEM_IFRS_20_UDP_REFX_NO(?, :referenceId, :sapRefxNo, :userId) ]]>
+	</sql-query>
+	<sql-query name="spMrt010IfrsInterface" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterface">
+			<return-property name="referenceId" column="REFERENCE_ID" />
+			<return-property name="splitCase" column="SPLIT_CASE" />
+			<return-property name="fileName" column="FILENAME" />
+			<return-property name="activity" column="ACTIVITY" />
+			<return-property name="companyCode1" column="COMPANY_CODE1" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="companyCodeMain" column="COMPANY_CODE_MAIN" />
+			<return-property name="mainContractNo" column="MAIN_CONTRACT_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="contractType" column="CONTRACT_TYPE" />
+			<return-property name="objectDesc" column="OBJECT_DESC" />
+			<return-property name="contractName" column="CONTRACT_NAME" />
+			<return-property name="dateContractConclusion" column="DATE_CONTRACT_CONCLUSION" />
+			<return-property name="dateContractStart" column="DATE_CONTRACT_START" />
+			<return-property name="dateFirstContractEnd" column="DATE_FIRST_CONTRACT_END" />
+			<return-property name="authorizationGroup" column="AUTHORIZATION_GROUP" />
+			<return-property name="industry" column="INDUSTRY" />
+			<return-property name="personResponsible" column="PERSON_RESPONSIBLE" />
+			<return-property name="casFlowStartingOn" column="CASH_FLOW_STARTING_ON" />
+			<return-property name="firstPostingFrom1" column="FIRST_POSTING_FROM1" />
+			<return-property name="currencyForContract" column="CURRENCY_FOR_CONTRACT" />
+			<return-property name="typeOfRenewal" column="TYPE_OF_RENEWAL" />
+			<return-property name="renewalRulw" column="RENEWAL_RULE" />
+			<return-property name="sequenceNo" column="SEQUENCE_NO" />
+			<return-property name="noOfRenewals" column="NO_OF_RENEWALS" />
+			<return-property name="contractRenewedYears" column="CONTRACT_RENEWED_YEARS" />
+			<return-property name="contractRenewedMonths" column="CONTRACT_RENEWED_MONTHS" />
+			<return-property name="contractRenewedDays" column="CONTRACT_RENEWED_DAYS" />
+			<return-property name="typeOfAutomaticRenewal" column="TYPE_OF_AUTOMATIC_RENEWAL" />
+			<return-property name="renewalExecution" column="RENEWAL_EXECUTION" />
+			<return-property name="termNo1" column="TERM_NO1" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="pmtMethsupl" column="PMT_METHSUPL" />
+			<return-property name="individSet" column="INDIVID_SET" />
+			<return-property name="paymentBlockKey" column="PAYMENT_BLOCK_KEY" />
+			<return-property name="termsOfPaymentKey" column="TERMS_OF_PAYMENT_KEY" />
+			<return-property name="keyForHouseBank" column="KEY_FOR_HOUSE_BANK" />
+			<return-property name="bankDetailsId" column="BANK_DETAILS_ID" />
+			<return-property name="noteToPayee" column="NOTE_TO_PAYEE" />
+			<return-property name="dunningArea" column="DUNNING_AREA" />
+			<return-property name="dunningBlock" column="DUNNING_BLOCK" />
+			<return-property name="accountDetermination" column="ACCOUNT_DETERMINATION" />
+			<return-property name="taxType" column="TAX_TYPE" />
+			<return-property name="taxGroup" column="TAX_GROUP" />
+			<return-property name="businessPartnerNo1" column="BUSINESS_PARTNER_NO1" />
+			<return-property name="termNo2" column="TERM_NO2" />
+			<return-property name="noFrequencyPeriod" column="NO_FREQUENCY_PERIOD" />
+			<return-property name="frequencyUnit" column="FREQUENCY_UNIT" />
+			<return-property name="frequencyStart" column="FREQUENCY_START" />
+			<return-property name="paymentForm" column="PAYMENT_FORM" />
+			<return-property name="prorated" column="PRORATED" />
+			<return-property name="calculateMethod" column="CALCULATE_METHOD" />
+			<return-property name="factoryCalenda" column="FACTORY_CALENDAR" />
+			<return-property name="businessPartnerNo2" column="BUSINESS_PARTNER_NO2" />
+			<return-property name="businessPartnerRole" column="BUSINESS_PARTNER_ROLE" />
+			<return-property name="dateStartRelationship" column="DATE_START_RELATIONSHIP" />
+			<return-property name="dateEndRelationship" column="DATE_END_RELATIONSHIP" />
+			<return-property name="addressType" column="ADDRESS_TYPE" />
+			<return-property name="conditionSplit" column="CONDITION_SPLIT" />
+			<return-property name="conditionType" column="CONDITION_TYPE" />
+			<return-property name="conditionPurpose1" column="CONDITION_PURPOSE1" />
+			<return-property name="dateFromCondition" column="DATE_FROM_CONDITION" />
+			<return-property name="dateUpToCondition" column="DATE_UP_TO_CONDITION" />
+			<return-property name="currencyCondition" column="CURRENCY_CONDITION" />
+			<return-property name="noPostingTerm" column="NO_POSTING_TERM" />
+			<return-property name="noFrequencyTerm" column="NO_FREQUENCY_TERM" />
+			<return-property name="noOrganizationalTerm" column="NO_ORGANIZATIONAL_TERM" />
+			<return-property name="costCenter" column="COST_CENTER" />
+			<return-property name="profitCenter" column="PROFIT_CENTER" />
+			<return-property name="currencyUnitPrice" column="CURRENCY_UNIT_PRICE" />
+			<return-property name="calculationFormula" column="CALCULATION_FORMULA" />
+			<return-property name="distributionFormla" column="DISTRIBUTION_FORMULA" />
+			<return-property name="conditionsExternalPurpose" column="CONDITIONS_EXTERNAL_PURPOSE" />
+			<return-property name="conditionOneTime" column="CONDITION_ONE_TIME" />
+			<return-property name="statisticalInfoCondition" column="STATISTICAL_INFO_CONDITION" />
+			<return-property name="firstPostingFrom2" column="FIRST_POSTING_FROM2" />
+			<return-property name="NoOfWhtTerm" column="NO_OF_WHT_TERM" />
+			<return-property name="differentDueDateOneTime" column="DIFFERENT_DUE_DATE_ONE_TIME" />
+			<return-property name="gradingTermInMonths" column="GRADING_TERM_IN_MONTHS" />
+			<return-property name="gradingIntervalInMonths" column="GRADING_INTERVAL_IN_MONTHS" />
+			<return-property name="gradingPercentIncrease" column="GRADING_PERCENT_INCREASE" />
+			<return-property name="gradingAbsoluteIncrease" column="GRADING_ABSOLUTE_INCREASE" />
+			<return-property name="contractStatus" column="CONTRACT_STATUS" />
+			<return-property name="valuationRule" column="VALUATION_RULE" />
+			<return-property name="objectId" column="OBJECT_ID" />
+			<return-property name="objectType" column="OBJECT_TYPE" />
+			<return-property name="objectValidFrom" column="OBJECT_VALID_FROM" />
+			<return-property name="objectValidTo" column="OBJECT_VALID_TO" />
+			<return-property name="startOfConsideration" column="START_OF_CONSIDERATION" />
+			<return-property name="firstPostingFrom3" column="FIRST_POSTING_FROM3" />
+			<return-property name="classification" column="CLASSIFICATION" />
+			<return-property name="interestRate" column="INTEREST_RATE" />
+			<return-property name="frequencyTerm" column="FREQUENCY_TERM" />
+			<return-property name="distributFormula" column="DISTRIBUT_FORMULA" />
+			<return-property name="distribFormulaParameter" column="DISTRIB_FORMULA_PARAMETER" />
+			<return-property name="probableEnd" column="PROBABLE_END" />
+			<return-property name="endOfUsageRou" column="END_OF_USAGE_ROU" />
+			<return-property name="valuationStatus" column="VALUATION_STATUS" />
+			<return-property name="valuationBehavior" column="VALUATION_BEHAVIOR" />
+			<return-property name="companyCode2" column="COMPANY_CODE2" />
+			<return-property name="asset" column="ASSET" />
+			<return-property name="subno" column="SUBNO" />
+			<return-property name="objectDescription" column="OBJECT_DESCRIPTION" />
+			<return-property name="acctasgobjtype" column="ACCTASGOBJTYPE" />
+			<return-property name="absoluteStart" column="ABSOLUTE_START" />
+			<return-property name="absoluteEnd" column="ABSOLUTE_END" />
+			<return-property name="condValProperty" column="COND_VAL_PROPERTY" />
+			<return-property name="condConsideration" column="COND_CONSIDERATION" />
+			<return-property name="considerCondition" column="CONSIDER_CONDITION" />
+			<return-property name="percentage" column="PERCENTAGE" />
+			<return-property name="absoluteShare" column="ABSOLUTE_SHARE" />
+			<return-property name="currency" column="CURRENCY" />
+			<return-property name="conditionPurpose2" column="CONDITION_PURPOSE2" />
+			<return-property name="unitPrice" column="UNIT_PRICE" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="sapFilename" column="SAP_FILENAME" />
+			<return-property name="sapActivity" column="SAP_ACTIVITY" />
+			<return-property name="sapReferenceId" column="SAP_REFERENCE_ID" />
+			<return-property name="sapCompanyCode" column="SAP_COMPANY_CODE" />
+			<return-property name="sapContractNo" column="SAP_CONTRACT_NO" />
+			<return-property name="sapRefxNo" column="SAP_REFX_NO" />
+			<return-property name="sapStatusCode" column="SAP_STATUS_CODE" />
+			<return-property name="sapErrorCode" column="SAP_ERROR_CODE" />
+			<return-property name="sapStatusMessage" column="SAP_STATUS_MESSAGE" />
+			<return-property name="recordStatus" column="RECORD_STATUS" />
+			<return-property name="resendSeq" column="RESEND_SEQ" />
+		</return>
+		<![CDATA[ call SEM.SEM_IFRS_20_RESEND_REFX(?, :referenceId) ]]>
+	</sql-query>
+	<sql-query name="spMrt010IfrsInterfaceSearch" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt010IfrsInterface" entity-name="Mrt010IfrsInterfaceTodolist">
+			<return-property name="referenceId" column="REFERENCE_ID" />
+			<return-property name="contractNo" column="เลขที่สัญญา" />
+			<return-property name="activity" column="ACTIVITY" />
+			<return-property name="companyCode1" column="COMPANY" />
+			<return-property name="sapRefxNo" column="REFX_NO" />
+			<return-property name="sapStatusCode" column="STATUS" />
+			<return-property name="sapStatusMessage" column="ERROR MESSAGE" />
+			<return-property name="conditionType" column="TYPE" />
+			<return-property name="conditionPurpose1" column="CONDITION" />
+			<return-property name="dateFromCondition" column="วันที่เริ่มสัญญา" />
+			<return-property name="dateUpToCondition" column="วันหมดสัญญา" />
+			<return-property name="splitCase" column="งวดการชำระ" />
+			<return-property name="firstPostingFrom1" column="วันที่เริ่มต้นงวด" />
+			<return-property name="dateFirstContractEnd" column="วันที่สิ้นสุดงวด" />
+			<return-property name="currencyUnitPrice" column="จำนวนเงิน" />
+			<return-property name="updateDt" column="วันที่ INTERFACE" />
+			<return-property name="recordStatus" column="RECORD_STATUS" />
+			<return-property name="resendSeq" column="RESEND_SEQ" />
+		</return>
+		<![CDATA[ call SEM_IFRS_20_SRCH(?, :companyCode1, :region, :contractNo, :sapRefxNo, :firstPostingFromFormatter
+						, :dateFirstContractEndFormatter, :interfaceDateFrom, :interfaceDateTo) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

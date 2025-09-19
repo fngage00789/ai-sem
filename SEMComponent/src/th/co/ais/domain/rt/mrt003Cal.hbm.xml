@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt003Cal">
+		<id name="dueAmt" type="java.lang.Double" />
+		<property name="excAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="incAmt" type="java.lang.Double" />
+		<property name="whtAmt" type="java.lang.Double" />
+		<property name="totalAmt" type="java.lang.Double" />
+	</class>
+	<sql-query name="mrt003Cal" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt003Cal">
+			<return-property name="dueAmt" column="DUE_AMT" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="incAmt" column="INC_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+		</return>
+		<![CDATA[ call SEM_SP_MRT003_CAL(?, :rentalpaymentId, :calYear, :calMonth ,:discountRate, :discountAmt, :pVatWht) ]]>
+	</sql-query>
+</hibernate-mapping>

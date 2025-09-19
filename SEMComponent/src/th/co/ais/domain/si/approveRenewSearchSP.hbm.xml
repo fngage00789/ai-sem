@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.ApproveRenewSearchSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="renewAgeCode" type="java.lang.String"/>
+		<property name="renewAgeDesc" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="address" type="java.lang.String"/>
+		<property name="effDt" type="java.sql.Date"/>
+		<property name="expDt" type="java.sql.Date"/>
+		<property name="sendRenewType" type="java.lang.String"/>		
+		<property name="approveStatus" type="java.lang.String"/>
+		<property name="sendRenewStatus" type="java.lang.String"/>
+		<property name="sendRenewDt" type="java.sql.Date"/>
+		<property name="approveBackDt" type="java.sql.Date"/>
+		<property name="approveDt" type="java.sql.Date"/>
+		<property name="sendRenewBackDt" type="java.sql.Date"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="approveStatusDesc" type="java.lang.String"/>
+		<property name="siteStatus" type="java.lang.String"/>
+		<property name="flowStatus" type="java.lang.String"/>
+	</class>
+	<sql-query name="querySearchApproveRenew" callable="true">
+		<return class="th.co.ais.domain.si.ApproveRenewSearchSP">
+			<return-property name="rowId" column="SEND_RENEW_ID" />
+			<return-property name="renewAgeCode" column="RENEW_AGE_CODE" />
+			<return-property name="renewAgeDesc" column="RENEW_AGE_DESC" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="address" column="ADDRESS" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expDt" column="EXPIRE_DT" />
+			<return-property name="sendRenewType" column="SEND_RENEW_TYPE" />
+			<return-property name="approveStatus" column="APPROVE_STATUS" />
+			<return-property name="sendRenewStatus" column="SEND_RENEW_STATUS" />
+			<return-property name="sendRenewDt" column="SEND_RENEW_DT" />
+			<return-property name="approveBackDt" column="APPROVE_BACK_DT" />
+			<return-property name="sendRenewBackDt" column="SEND_RENEW_BACK_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="approveDt" column="APPROVE_DT" />
+			<return-property name="approveStatusDesc" column="APPROVE_STATUS_DESC" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="flowStatus" column="FLOW_STATUS" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI006_SRCH(?, :contractNo, :company, :contractStartDt, :contractEndDt, :contractNoEndFlag, :locationId, :locationCode, :siteName, :zone, :sendRenewDtFrom, :sendRenewDtTo, :approveBackDtFrom, :approveBackDtTo, :sendRenewType, :approveStatus, :sendRenewStatus,
+									  :siteType, :expireDtFrom, :expireDtTo, :region) ]]>
+	</sql-query>
+</hibernate-mapping>

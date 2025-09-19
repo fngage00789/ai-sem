@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.co">
+ <class name="th.co.ais.domain.co.Mco002SrchNoFoundSP">
+  <id name="rowId" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="contractNo" type="java.lang.String"/>
+ </class>
+ <sql-query callable="true"
+   name="mco002SearchNoFoundStatus"><![CDATA[ call SEM.SEM_SP_MCO002_SRCH_NO_FOUND (?, :company, :reqType, :contractNo, :region, :contractStatus, :receiveDateFrom, :receiveDateTo, :terminateFlag, :strPico )]]>
+   <return  class="th.co.ais.domain.co.Mco002SrchNoFoundSP" >
+   <return-property column="ROW_ID" name="rowId"/>
+   <return-property column="CONTRACT_NO" name="contractNo"/>
+  </return>
+ </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,3065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SEMRRT003" printOrder="Horizontal" pageWidth="6142" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="6082" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<template><![CDATA[$V{ReportUtil}.getJasperPath()+"SEMStyleTemplate.jrtx"]]></template>
+	<parameter name="PARAM_COMPANY" class="java.lang.String"/>
+	<parameter name="PARAM_YEAR" class="java.lang.String"/>
+	<parameter name="PARAM_REGION" class="java.lang.String"/>
+	<parameter name="PARAM_STATION_TYPE" class="java.lang.String"/>
+	<parameter name="PARAM_HEADER_NAME" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_YEAR" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_DISPLAY_STATION_TYPE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PARAM_PICO" class="java.lang.String"/>
+	<parameter name="PARAM_USERNAME" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM TABLE (SEM_PG_RRT003.GET_DATA(
+	$P{PARAM_COMPANY},
+	$P{PARAM_REGION},
+	$P{PARAM_YEAR},
+	$P{PARAM_STATION_TYPE},
+	$P{PARAM_PICO}
+))]]>
+	</queryString>
+	<field name="REGION" class="java.lang.String"/>
+	<field name="PLAN_SITE" class="java.math.BigDecimal"/>
+	<field name="PLAN_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="MONTH_MM" class="java.lang.String"/>
+	<field name="ACTUAL_SITE" class="java.math.BigDecimal"/>
+	<field name="ACTUAL_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="ACTUAL_VAT" class="java.math.BigDecimal"/>
+	<field name="ACTUAL_WHT" class="java.math.BigDecimal"/>
+	<field name="ACTUAL_TOTAL" class="java.math.BigDecimal"/>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_PER_ROW" class="java.math.BigDecimal" resetType="Column">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_SITE_1}.add($V{TOTAL_ACTUAL_SITE_2}.add($V{TOTAL_ACTUAL_SITE_3}.add($V{TOTAL_ACTUAL_SITE_4}.add($V{TOTAL_ACTUAL_SITE_5}.add($V{TOTAL_ACTUAL_SITE_6}.add($V{TOTAL_ACTUAL_SITE_7}.add($V{TOTAL_ACTUAL_SITE_8}.add($V{TOTAL_ACTUAL_SITE_9}.add($V{TOTAL_ACTUAL_SITE_10}.add($V{TOTAL_ACTUAL_SITE_11}.add($V{TOTAL_ACTUAL_SITE_12})))))))))))]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_PER_ROW" class="java.math.BigDecimal" resetType="Column">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_1}.add($V{TOTAL_ACTUAL_AMOUNT_2}.add($V{TOTAL_ACTUAL_AMOUNT_3}.add($V{TOTAL_ACTUAL_AMOUNT_4}.add($V{TOTAL_ACTUAL_AMOUNT_5}.add($V{TOTAL_ACTUAL_AMOUNT_6}.add($V{TOTAL_ACTUAL_AMOUNT_7}.add($V{TOTAL_ACTUAL_AMOUNT_8}.add($V{TOTAL_ACTUAL_AMOUNT_9}.add($V{TOTAL_ACTUAL_AMOUNT_10}.add($V{TOTAL_ACTUAL_AMOUNT_11}.add($V{TOTAL_ACTUAL_AMOUNT_12})))))))))))]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_PER_ROW" class="java.math.BigDecimal" resetType="Column">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_VAT_1}.add($V{TOTAL_ACTUAL_VAT_2}.add($V{TOTAL_ACTUAL_VAT_3}.add($V{TOTAL_ACTUAL_VAT_4}.add($V{TOTAL_ACTUAL_VAT_5}.add($V{TOTAL_ACTUAL_VAT_6}.add($V{TOTAL_ACTUAL_VAT_7}.add($V{TOTAL_ACTUAL_VAT_8}.add($V{TOTAL_ACTUAL_VAT_9}.add($V{TOTAL_ACTUAL_VAT_10}.add($V{TOTAL_ACTUAL_VAT_11}.add($V{TOTAL_ACTUAL_VAT_12})))))))))))]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_PER_ROW" class="java.math.BigDecimal" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_WHT_1}.add($V{TOTAL_ACTUAL_WHT_2}.add($V{TOTAL_ACTUAL_WHT_3}.add($V{TOTAL_ACTUAL_WHT_4}.add($V{TOTAL_ACTUAL_WHT_5}.add($V{TOTAL_ACTUAL_WHT_6}.add($V{TOTAL_ACTUAL_WHT_7}.add($V{TOTAL_ACTUAL_WHT_8}.add($V{TOTAL_ACTUAL_WHT_9}.add($V{TOTAL_ACTUAL_WHT_10}.add($V{TOTAL_ACTUAL_WHT_11}.add($V{TOTAL_ACTUAL_WHT_12})))))))))))]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_SITE_PER_GROUP" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_SITE_PER_ROW}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_AMOUNT_PER_GROUP" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_AMOUNT_PER_GROUP}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_VAT_PER_GROUP" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_VAT_PER_ROW}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_WHT_PER_GROUP" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_WHT_PER_ROW}]]></variableExpression>
+	</variable>
+	<variable name="OUTSTANDING_SITE" class="java.math.BigDecimal" resetType="Column">
+		<variableExpression><![CDATA[$V{TOTAL_PLAN_SITE}.subtract($V{TOTAL_ACTUAL_SITE_PER_ROW})]]></variableExpression>
+	</variable>
+	<variable name="OUTSTANDING_AMOUNT" class="java.math.BigDecimal" resetType="Column">
+		<variableExpression><![CDATA[$V{TOTAL_PLAN_AMOUNT}.subtract($V{TOTAL_ACTUAL_AMOUNT_PER_ROW})]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_OUTSTANDING_SITE" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{OUTSTANDING_SITE}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_OUTSTANDING_AMOUNT" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_OUTSTANDING_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_1" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["01".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_1" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["01".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_1" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["01".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_1" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["01".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_1" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["01".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_2" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["02".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_2" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["02".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_2" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["02".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_2" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["02".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_2" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["02".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_3" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["03".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_3" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["03".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_3" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["03".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_3" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["03".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_3" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["03".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_4" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["04".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_4" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["04".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_4" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["04".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_4" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["04".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_4" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["04".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_5" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["05".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_5" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["05".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_5" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["05".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_5" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["05".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_5" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["05".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_6" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["06".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_6" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["06".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_6" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["06".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_6" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["06".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_6" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["06".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_7" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["07".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_7" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["07".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_7" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["07".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_7" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["07".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_7" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["07".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_8" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["08".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_8" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["08".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_8" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["08".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_8" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["08".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_8" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["08".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_9" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["09".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_9" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["09".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_9" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["09".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_9" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["09".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_9" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["09".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_10" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["10".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_10" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["10".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_10" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["10".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_10" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["10".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_10" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["10".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_11" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["11".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_11" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["11".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_11" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["11".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_11" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["11".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_11" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["11".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE_12" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["12".equals($F{MONTH_MM})?$F{ACTUAL_SITE}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT_12" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["12".equals($F{MONTH_MM})?$F{ACTUAL_AMOUNT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT_12" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["12".equals($F{MONTH_MM})?$F{ACTUAL_VAT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT_12" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["12".equals($F{MONTH_MM})?$F{ACTUAL_WHT}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL_12" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA["12".equals($F{MONTH_MM})?$F{ACTUAL_TOTAL}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_SITE" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$F{ACTUAL_SITE}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_AMOUNT" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$F{ACTUAL_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_VAT" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$F{ACTUAL_VAT}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_WHT" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$F{ACTUAL_WHT}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_ACTUAL_TOTAL" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$F{ACTUAL_TOTAL}]]></variableExpression>
+	</variable>
+	<variable name="REGION" class="java.lang.String" resetType="Group" resetGroup="region">
+		<variableExpression><![CDATA[$F{REGION}]]></variableExpression>
+	</variable>
+	<variable name="PLAN_SITE" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Average">
+		<variableExpression><![CDATA[$F{PLAN_SITE}]]></variableExpression>
+	</variable>
+	<variable name="PLAN_AMOUNT" class="java.math.BigDecimal" resetType="Group" resetGroup="region" calculation="Average">
+		<variableExpression><![CDATA[$F{PLAN_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_PLAN_SITE" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" incrementType="Group" incrementGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{PLAN_SITE}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_PLAN_AMOUNT" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" incrementType="Group" incrementGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{PLAN_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_1" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["01".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_1}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_1" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["01".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_1}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_1" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["01".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_1}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_1" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["01".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_1}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_1" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["01".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_1}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_2" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["02".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_2}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_2" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["02".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_2}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_2" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["02".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_2}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_2" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["02".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_2}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_2" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["02".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_2}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_3" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["03".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_3}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_3" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["03".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_3}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_3" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["03".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_3}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_3" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["03".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_3}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_3" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["03".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_3}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_4" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["04".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_4}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_4" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["04".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_4}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_4" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["04".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_4}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_4" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["04".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_4}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_4" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["04".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_4}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_5" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["05".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_5}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_5" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["05".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_5}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_5" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["05".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_5}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_5" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["05".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_5}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_5" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["05".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_5}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_6" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["06".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_6}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_6" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["06".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_6}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_6" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["06".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_6}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_6" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["06".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_6}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_6" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["06".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_6}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_7" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["07".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_7}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_7" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["07".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_7}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_7" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["07".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_7}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_7" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["07".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_7}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_7" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["07".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_7}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_8" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["08".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_8}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_8" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["08".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_8}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_8" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["08".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_8}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_8" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["08".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_8}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_8" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["08".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_8}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_9" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["09".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_9}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_9" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["09".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_9}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_9" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["09".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_9}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_9" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["09".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_9}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_9" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["09".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_9}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_10" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["010".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_10}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_10" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["010".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_10}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_10" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["010".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_10}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_10" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["010".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_10}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_10" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["010".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_10}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_11" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["011".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_11}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_11" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["011".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_11}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_11" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["011".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_11}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_11" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["011".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_11}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_11" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["011".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_11}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_12" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["012".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_SITE_12}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_12" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["012".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_AMOUNT_12}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_12" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["012".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_VAT_12}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_12" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["012".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_WHT_12}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_TOTAL_12" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" calculation="Sum">
+		<variableExpression><![CDATA["012".equals($F{MONTH_MM})?$V{TOTAL_ACTUAL_TOTAL_12}:new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_SITE_PER_ROW" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" incrementType="Group" incrementGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_SITE_PER_ROW}]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_AMOUNT_PER_ROW" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" incrementType="Group" incrementGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_PER_ROW}]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_VAT_PER_ROW" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" incrementType="Group" incrementGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_VAT_PER_ROW}]]></variableExpression>
+	</variable>
+	<variable name="SUM_TOTAL_ACTUAL_WHT_PER_ROW" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" incrementType="Group" incrementGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{TOTAL_ACTUAL_WHT_PER_ROW}]]></variableExpression>
+	</variable>
+	<variable name="SUM_OUTSTANDING_SITE" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" incrementType="Group" incrementGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{OUTSTANDING_SITE}]]></variableExpression>
+	</variable>
+	<variable name="SUM_OUTSTANDING_AMOUNT" class="java.math.BigDecimal" resetType="Group" resetGroup="groupHeader" incrementType="Group" incrementGroup="region" calculation="Sum">
+		<variableExpression><![CDATA[$V{OUTSTANDING_AMOUNT}]]></variableExpression>
+	</variable>
+	<group name="groupHeader">
+		<groupExpression><![CDATA[new Integer($V{COLUMN_COUNT}.intValue() / 49996)]]></groupExpression>
+		<groupHeader>
+			<band height="37" splitType="Stretch">
+				<staticText>
+					<reportElement key="staticText-41" style="Column Header Style" mode="Opaque" x="0" y="0" width="66" height="37" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Region]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-42" style="Column Header Style" mode="Opaque" x="66" y="0" width="159" height="24" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Plan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-43" style="Column Header Style" mode="Opaque" x="225" y="0" width="5256" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Actual]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-47" style="Column Header Style" mode="Opaque" x="225" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[JAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-48" style="Column Header Style" mode="Opaque" x="663" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[FEB]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-54" style="Column Header Style" mode="Opaque" x="1101" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[MAR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-60" style="Column Header Style" mode="Opaque" x="1539" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[APR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-66" style="Column Header Style" mode="Opaque" x="1977" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[MAY]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-72" style="Column Header Style" mode="Opaque" x="2415" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[JUN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-78" style="Column Header Style" mode="Opaque" x="2853" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[JUL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-84" style="Column Header Style" mode="Opaque" x="3291" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[AUG]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-90" style="Column Header Style" mode="Opaque" x="3729" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[SEP]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-96" style="Column Header Style" mode="Opaque" x="4167" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[OCT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-102" style="Column Header Style" mode="Opaque" x="4605" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[NOV]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-108" style="Column Header Style" mode="Opaque" x="5043" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[DEC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-49" style="Column Header Style" mode="Opaque" x="663" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-50" style="Column Header Style" mode="Opaque" x="729" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-51" style="Column Header Style" mode="Opaque" x="822" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-52" style="Column Header Style" mode="Opaque" x="915" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-53" style="Column Header Style" mode="Opaque" x="1008" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-27" style="Column Header Style" mode="Opaque" x="66" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-28" style="Column Header Style" mode="Opaque" x="132" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-31" style="Column Header Style" mode="Opaque" x="225" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-32" style="Column Header Style" mode="Opaque" x="291" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-33" style="Column Header Style" mode="Opaque" x="384" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-34" style="Column Header Style" mode="Opaque" x="477" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-35" style="Column Header Style" mode="Opaque" x="570" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-36" style="Column Header Style" mode="Opaque" x="5481" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-37" style="Column Header Style" mode="Opaque" x="5547" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-38" style="Column Header Style" mode="Opaque" x="5640" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-39" style="Column Header Style" mode="Opaque" x="5733" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-40" style="Column Header Style" mode="Opaque" x="5826" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-55" style="Column Header Style" mode="Opaque" x="1101" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-56" style="Column Header Style" mode="Opaque" x="1167" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-57" style="Column Header Style" mode="Opaque" x="1260" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-58" style="Column Header Style" mode="Opaque" x="1353" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-59" style="Column Header Style" mode="Opaque" x="1446" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-61" style="Column Header Style" mode="Opaque" x="1605" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-62" style="Column Header Style" mode="Opaque" x="1698" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-63" style="Column Header Style" mode="Opaque" x="1791" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-65" style="Column Header Style" mode="Opaque" x="1539" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-64" style="Column Header Style" mode="Opaque" x="1884" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-67" style="Column Header Style" mode="Opaque" x="2043" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-68" style="Column Header Style" mode="Opaque" x="2136" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-69" style="Column Header Style" mode="Opaque" x="2229" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-70" style="Column Header Style" mode="Opaque" x="2322" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-71" style="Column Header Style" mode="Opaque" x="1977" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-73" style="Column Header Style" mode="Opaque" x="2415" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-74" style="Column Header Style" mode="Opaque" x="2481" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-75" style="Column Header Style" mode="Opaque" x="2574" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-76" style="Column Header Style" mode="Opaque" x="2667" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-77" style="Column Header Style" mode="Opaque" x="2760" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-79" style="Column Header Style" mode="Opaque" x="2853" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-80" style="Column Header Style" mode="Opaque" x="2919" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-81" style="Column Header Style" mode="Opaque" x="3012" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-82" style="Column Header Style" mode="Opaque" x="3105" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-83" style="Column Header Style" mode="Opaque" x="3198" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-85" style="Column Header Style" mode="Opaque" x="3357" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-86" style="Column Header Style" mode="Opaque" x="3291" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-87" style="Column Header Style" mode="Opaque" x="3450" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-88" style="Column Header Style" mode="Opaque" x="3543" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-89" style="Column Header Style" mode="Opaque" x="3636" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-91" style="Column Header Style" mode="Opaque" x="3729" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-92" style="Column Header Style" mode="Opaque" x="3795" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-93" style="Column Header Style" mode="Opaque" x="3888" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-94" style="Column Header Style" mode="Opaque" x="3981" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-95" style="Column Header Style" mode="Opaque" x="4074" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-97" style="Column Header Style" mode="Opaque" x="4167" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-98" style="Column Header Style" mode="Opaque" x="4233" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-99" style="Column Header Style" mode="Opaque" x="4326" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-100" style="Column Header Style" mode="Opaque" x="4419" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-101" style="Column Header Style" mode="Opaque" x="4512" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-103" style="Column Header Style" mode="Opaque" x="4605" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-104" style="Column Header Style" mode="Opaque" x="4671" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-105" style="Column Header Style" mode="Opaque" x="4764" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-106" style="Column Header Style" mode="Opaque" x="4857" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-107" style="Column Header Style" mode="Opaque" x="4950" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-109" style="Column Header Style" mode="Opaque" x="5043" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-110" style="Column Header Style" mode="Opaque" x="5109" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-111" style="Column Header Style" mode="Opaque" x="5202" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[VAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-112" style="Column Header Style" mode="Opaque" x="5295" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[WHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-113" style="Column Header Style" mode="Opaque" x="5388" y="24" width="93" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-115" style="Column Header Style" mode="Opaque" x="5919" y="0" width="163" height="24" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[ผลต่าง]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-116" style="Column Header Style" mode="Opaque" x="5919" y="24" width="66" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Site]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-117" style="Column Header Style" mode="Opaque" x="5985" y="24" width="97" height="13" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-44" style="Column Header Style" mode="Opaque" x="5481" y="12" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="staticText-114" style="Column Header Style" mode="Opaque" x="5481" y="0" width="438" height="12" forecolor="#000000"/>
+					<box>
+						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="15" splitType="Stretch">
+				<staticText>
+					<reportElement key="staticText-45" style="Total Style" mode="Opaque" x="0" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top"/>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-42" style="Total Style" mode="Opaque" x="66" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{TOTAL_PLAN_SITE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-46" style="Total Style" mode="Opaque" x="225" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-42" style="Total Style" mode="Opaque" x="132" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{TOTAL_PLAN_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-47" style="Total Style" mode="Opaque" x="291" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-48" style="Total Style" mode="Opaque" x="384" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-49" style="Total Style" mode="Opaque" x="477" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-50" style="Total Style" mode="Opaque" x="570" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-61" style="Total Style" mode="Opaque" x="915" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-62" style="Total Style" mode="Opaque" x="822" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-63" style="Total Style" mode="Opaque" x="729" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-64" style="Total Style" mode="Opaque" x="663" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-65" style="Total Style" mode="Opaque" x="1008" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-71" style="Total Style" mode="Opaque" x="1353" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-72" style="Total Style" mode="Opaque" x="1260" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-73" style="Total Style" mode="Opaque" x="1167" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-74" style="Total Style" mode="Opaque" x="1101" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-75" style="Total Style" mode="Opaque" x="1446" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-81" style="Total Style" mode="Opaque" x="1698" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-83" style="Total Style" mode="Opaque" x="1605" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-85" style="Total Style" mode="Opaque" x="1539" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-76" style="Total Style" mode="Opaque" x="1884" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-79" style="Total Style" mode="Opaque" x="1791" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-91" style="Total Style" mode="Opaque" x="2136" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-93" style="Total Style" mode="Opaque" x="2043" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-95" style="Total Style" mode="Opaque" x="1977" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-86" style="Total Style" mode="Opaque" x="2322" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-89" style="Total Style" mode="Opaque" x="2229" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-97" style="Total Style" mode="Opaque" x="2415" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-99" style="Total Style" mode="Opaque" x="2481" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-101" style="Total Style" mode="Opaque" x="2574" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-103" style="Total Style" mode="Opaque" x="2667" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-105" style="Total Style" mode="Opaque" x="2760" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-107" style="Total Style" mode="Opaque" x="2853" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-109" style="Total Style" mode="Opaque" x="2919" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-111" style="Total Style" mode="Opaque" x="3012" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-113" style="Total Style" mode="Opaque" x="3105" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-115" style="Total Style" mode="Opaque" x="3198" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-121" style="Total Style" mode="Opaque" x="3291" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-122" style="Total Style" mode="Opaque" x="3357" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-123" style="Total Style" mode="Opaque" x="3450" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-124" style="Total Style" mode="Opaque" x="3543" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-125" style="Total Style" mode="Opaque" x="3636" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-131" style="Total Style" mode="Opaque" x="4074" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-132" style="Total Style" mode="Opaque" x="3981" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-133" style="Total Style" mode="Opaque" x="3888" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-134" style="Total Style" mode="Opaque" x="3795" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-135" style="Total Style" mode="Opaque" x="3729" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-141" style="Total Style" mode="Opaque" x="4512" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-142" style="Total Style" mode="Opaque" x="4419" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-143" style="Total Style" mode="Opaque" x="4326" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-144" style="Total Style" mode="Opaque" x="4233" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-145" style="Total Style" mode="Opaque" x="4167" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-151" style="Total Style" mode="Opaque" x="4605" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-152" style="Total Style" mode="Opaque" x="4671" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-153" style="Total Style" mode="Opaque" x="4764" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-154" style="Total Style" mode="Opaque" x="4857" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-51" style="Total Style" mode="Opaque" x="5481" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_PER_ROW}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-155" style="Total Style" mode="Opaque" x="4950" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-161" style="Total Style" mode="Opaque" x="5388" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_TOTAL_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-162" style="Total Style" mode="Opaque" x="5295" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-163" style="Total Style" mode="Opaque" x="5202" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-164" style="Total Style" mode="Opaque" x="5109" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-165" style="Total Style" mode="Opaque" x="5043" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_SITE_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-52" style="Total Style" mode="Opaque" x="5547" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_AMOUNT_PER_ROW}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-53" style="Total Style" mode="Opaque" x="5640" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_VAT_PER_ROW}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-54" style="Total Style" mode="Opaque" x="5733" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_PER_ROW}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-55" style="Total Style" mode="Opaque" x="5826" y="0" width="93" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_TOTAL_ACTUAL_WHT_PER_ROW}.add($V{SUM_TOTAL_ACTUAL_VAT_PER_ROW}.add($V{SUM_TOTAL_ACTUAL_SITE_PER_ROW}.add($V{SUM_TOTAL_ACTUAL_AMOUNT_PER_ROW})))]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-168" style="Total Style" mode="Opaque" x="5919" y="0" width="66" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_OUTSTANDING_SITE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-169" style="Total Style" mode="Opaque" x="5985" y="0" width="97" height="15" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.Number"><![CDATA[$V{SUM_OUTSTANDING_AMOUNT}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="region">
+		<groupExpression><![CDATA[$F{REGION}]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="15" splitType="Stretch">
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" isBlankWhenNull="true">
+					<reportElement key="textField-1" style="Detail Style" isPrintRepeatedValues="false" x="0" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{REGION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-26" style="Detail Style" isPrintRepeatedValues="false" x="132" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{PLAN_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-30" style="Detail Style" isPrintRepeatedValues="false" x="225" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-31" style="Detail Style" isPrintRepeatedValues="false" x="291" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-32" style="Detail Style" isPrintRepeatedValues="false" x="384" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-33" style="Detail Style" isPrintRepeatedValues="false" x="477" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-34" style="Detail Style" isPrintRepeatedValues="false" x="570" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-35" style="Detail Style" isPrintRepeatedValues="false" x="5481" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_PER_ROW}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-36" style="Detail Style" isPrintRepeatedValues="false" x="5547" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_PER_ROW}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-37" style="Detail Style" isPrintRepeatedValues="false" x="5640" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_PER_ROW}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-38" style="Detail Style" isPrintRepeatedValues="false" x="5733" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_PER_ROW}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-39" style="Detail Style" isPrintRepeatedValues="false" x="5826" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_PER_ROW}.add($V{TOTAL_ACTUAL_VAT_PER_ROW}.add($V{TOTAL_ACTUAL_SITE_PER_ROW}.add($V{TOTAL_ACTUAL_AMOUNT_PER_ROW})))]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-56" style="Detail Style" isPrintRepeatedValues="false" x="663" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-57" style="Detail Style" isPrintRepeatedValues="false" x="729" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-58" style="Detail Style" isPrintRepeatedValues="false" x="822" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-59" style="Detail Style" isPrintRepeatedValues="false" x="915" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-60" style="Detail Style" isPrintRepeatedValues="false" x="1008" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-66" style="Detail Style" isPrintRepeatedValues="false" x="1101" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-67" style="Detail Style" isPrintRepeatedValues="false" x="1167" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-68" style="Detail Style" isPrintRepeatedValues="false" x="1260" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-69" style="Detail Style" isPrintRepeatedValues="false" x="1353" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-70" style="Detail Style" isPrintRepeatedValues="false" x="1446" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-77" style="Detail Style" isPrintRepeatedValues="false" x="1884" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-78" style="Detail Style" isPrintRepeatedValues="false" x="1791" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-80" style="Detail Style" isPrintRepeatedValues="false" x="1698" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-82" style="Detail Style" isPrintRepeatedValues="false" x="1605" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-84" style="Detail Style" isPrintRepeatedValues="false" x="1539" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-87" style="Detail Style" isPrintRepeatedValues="false" x="2322" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-88" style="Detail Style" isPrintRepeatedValues="false" x="2229" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-90" style="Detail Style" isPrintRepeatedValues="false" x="2136" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-92" style="Detail Style" isPrintRepeatedValues="false" x="2043" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-94" style="Detail Style" isPrintRepeatedValues="false" x="1977" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-96" style="Detail Style" isPrintRepeatedValues="false" x="2415" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-98" style="Detail Style" isPrintRepeatedValues="false" x="2481" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-100" style="Detail Style" isPrintRepeatedValues="false" x="2574" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-102" style="Detail Style" isPrintRepeatedValues="false" x="2667" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-104" style="Detail Style" isPrintRepeatedValues="false" x="2760" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_6}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-106" style="Detail Style" isPrintRepeatedValues="false" x="2853" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-108" style="Detail Style" isPrintRepeatedValues="false" x="2919" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-110" style="Detail Style" isPrintRepeatedValues="false" x="3012" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-112" style="Detail Style" isPrintRepeatedValues="false" x="3105" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-114" style="Detail Style" isPrintRepeatedValues="false" x="3198" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_7}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-116" style="Detail Style" isPrintRepeatedValues="false" x="3291" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-117" style="Detail Style" isPrintRepeatedValues="false" x="3357" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-118" style="Detail Style" isPrintRepeatedValues="false" x="3450" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-119" style="Detail Style" isPrintRepeatedValues="false" x="3543" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-120" style="Detail Style" isPrintRepeatedValues="false" x="3636" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_8}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-126" style="Detail Style" isPrintRepeatedValues="false" x="3729" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-127" style="Detail Style" isPrintRepeatedValues="false" x="3795" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-128" style="Detail Style" isPrintRepeatedValues="false" x="3888" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-129" style="Detail Style" isPrintRepeatedValues="false" x="3981" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-130" style="Detail Style" isPrintRepeatedValues="false" x="4074" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_9}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-136" style="Detail Style" isPrintRepeatedValues="false" x="4167" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-137" style="Detail Style" isPrintRepeatedValues="false" x="4233" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-138" style="Detail Style" isPrintRepeatedValues="false" x="4326" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-139" style="Detail Style" isPrintRepeatedValues="false" x="4419" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_10}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-140" style="Detail Style" isPrintRepeatedValues="false" x="4512" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-146" style="Detail Style" isPrintRepeatedValues="false" x="4950" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-147" style="Detail Style" isPrintRepeatedValues="false" x="4857" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-148" style="Detail Style" isPrintRepeatedValues="false" x="4764" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-149" style="Detail Style" isPrintRepeatedValues="false" x="4671" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-150" style="Detail Style" isPrintRepeatedValues="false" x="4605" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_11}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-156" style="Detail Style" isPrintRepeatedValues="false" x="5043" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_SITE_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-157" style="Detail Style" isPrintRepeatedValues="false" x="5109" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_AMOUNT_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-158" style="Detail Style" isPrintRepeatedValues="false" x="5202" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_VAT_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-159" style="Detail Style" isPrintRepeatedValues="false" x="5295" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_WHT_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-160" style="Detail Style" isPrintRepeatedValues="false" x="5388" y="0" width="93" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TOTAL_ACTUAL_TOTAL_12}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-166" style="Detail Style" isPrintRepeatedValues="false" x="5919" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{OUTSTANDING_SITE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0.00;(-#,##0.00)" isBlankWhenNull="true">
+					<reportElement key="textField-167" style="Detail Style" isPrintRepeatedValues="false" x="5985" y="0" width="97" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{OUTSTANDING_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="region" pattern="#,##0;-#,##0" isBlankWhenNull="true">
+					<reportElement key="textField-26" style="Detail Style" isPrintRepeatedValues="false" x="66" y="0" width="66" height="15" printWhenGroupChanges="region" forecolor="#000000"/>
+					<box>
+						<topPen lineWidth="0.5" lineStyle="Solid"/>
+						<leftPen lineWidth="0.5" lineStyle="Solid"/>
+						<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Top"/>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{PLAN_SITE}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="site">
+		<groupExpression><![CDATA[$F{PLAN_SITE}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-23" style="Header Style" x="0" y="20" width="1008" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SEMRRT003 : New Rental Report]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-171" style="Header Style" x="0" y="40" width="1008" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-170" style="Criteria Style" x="0" y="60" width="1008" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Print by:"+$P{PARAM_USERNAME}+" , Print date:"+String.valueOf(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date()))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField-23" style="Criteria Style" x="0" y="80" width="1008" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Criteria : "+
+"บริษัท : " + new String($P{PARAM_COMPANY} != null && !$P{PARAM_COMPANY}.equals("") ? $P{PARAM_COMPANY} : "-") +
+", ปี : " + new String($P{PARAM_DISPLAY_YEAR} != null && !$P{PARAM_DISPLAY_YEAR}.equals("") ? $P{PARAM_DISPLAY_YEAR} : "-") +
+", ภูมิภาค : " + new String($P{PARAM_REGION} != null && !$P{PARAM_REGION}.equals("") ? $P{PARAM_REGION} : "-") +
+", Station Type : " + new String($P{PARAM_DISPLAY_STATION_TYPE} != null && !$P{PARAM_DISPLAY_STATION_TYPE}.equals("") ? $P{PARAM_DISPLAY_STATION_TYPE} : "-") +
+", Pico : " + new String($P{PARAM_PICO}.equals("Y") ? "Yes" : "No")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-18" style="Header Style" x="0" y="0" width="1008" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PARAM_HEADER_NAME}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

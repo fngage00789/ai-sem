@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.rt">
+ <class entity-name="mrt003PopPayQuery" name="th.co.ais.domain.rt.Mrt003PopPaySP">
+  <id name="paramRentalPaymentId" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="paymentType" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="paymentMethod" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="chqDt" type="java.sql.Date"/>
+  <property generated="never" lazy="false" name="chqReceiveDt" type="java.sql.Date"/>
+  <property generated="never" lazy="false" name="transferDt" type="java.sql.Date"/>
+  <property generated="never" lazy="false" name="doc68" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="doc68Dt" type="java.sql.Date"/>
+  <property generated="never" lazy="false" name="docPayment" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="docPaymentDt" type="java.sql.Date"/>
+  <property generated="never" lazy="false" name="docCancel" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="docCancelDt" type="java.sql.Date"/>
+  <property generated="never" lazy="false" name="vendorCode" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="vendorName" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="payeeName" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="docNo" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="totalAmt" type="java.lang.Double"/>
+  <property generated="never" lazy="false" name="payVatAmt" type="java.lang.Double"/>
+  <property generated="never" lazy="false" name="payWhtAmt" type="java.lang.Double"/>
+  <property generated="never" lazy="false" name="payDutyAmt" type="java.lang.Double"/>
+  <property generated="never" lazy="false" name="payAmt" type="java.lang.Double"/>
+  <property generated="never" lazy="false" name="bankAccNo" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="rcptPayCutAmount" type="java.lang.Double"/>
+ </class>
+ <class entity-name="updateManualSP" name="th.co.ais.domain.rt.Mrt003PopPaySP">
+  <id name="pResult" type="java.lang.String"/>
+ </class>
+ <sql-query callable="true"
+   name="mrt003PopPay"><![CDATA[ call SEM.SEM_SP_MRT003_POP_PAY(?, :paramRentalPaymentId)]]><return
+   alias="" class="th.co.ais.domain.rt.Mrt003PopPaySP" entity-name="mrt003PopPayQuery">
+   <return-property column="TRANS_PAYMENT_ID" name="paramRentalPaymentId"/>
+   <return-property column="PAYMENT_TYPE" name="paymentType"/>
+   <return-property column="PAYMENT_METHOD" name="paymentMethod"/>
+   <return-property column="CHQ_DT" name="chqDt"/>
+   <return-property column="CHQ_RECEIVE_DT" name="chqReceiveDt"/>
+   <return-property column="TRANSFER_DT" name="transferDt"/>
+   <return-property column="DOC_68" name="doc68"/>
+   <return-property column="DOC_68_DT" name="doc68Dt"/>
+   <return-property column="DOC_92" name="docPayment"/>
+   <return-property column="DOC_92_DT" name="docPaymentDt"/>
+   <return-property column="DOC_CANCEL" name="docCancel"/>
+   <return-property column="DOC_CANCEL_DT" name="docCancelDt"/>
+   <return-property column="VENDOR_CODE" name="vendorCode"/>
+   <return-property column="VENDOR_NAME" name="vendorName"/>
+   <return-property column="PAYEE_NAME" name="payeeName"/>
+   <return-property column="DOC_NO" name="docNo"/>
+   <return-property column="TOTAL_AMT" name="totalAmt"/>
+   <return-property column="PAY_VAT_AMT" name="payVatAmt"/>
+   <return-property column="PAY_WHT_AMT" name="payWhtAmt"/>
+   <return-property column="PAY_DUTY_AMT" name="payDutyAmt"/>
+   <return-property column="PAY_AMT" name="payAmt"/>
+   <return-property column="BANK_ACC_NO" name="bankAccNo"/>
+   <return-property column="RECEIPT_PAYCUT_AMOUNT" name="rcptPayCutAmount"/>
+  </return>
+ </sql-query>
+ <sql-query callable="true"
+   name="updateMrt003PopPay"><![CDATA[ call SEM.SEM_SP_MAC004_UPD(?, cast(:paramRentalPaymentId as varchar), cast(:paymentStatus as varchar), cast(:remarkPaymentStatus as varchar), cast(:userId as varchar), cast(:rcptPayCutAmount as varchar))]]><return
+   alias="" class="th.co.ais.domain.rt.Mrt003PopPaySP" entity-name="updateManualSP">
+   <return-property column="P_RESULT" name="pResult"/>
+  </return>
+ </sql-query>
+ 
+ <!-- fixed by.. YUT 2014/09/18 -->
+ <sql-query callable="true" name="mrt003UpdateStatus">
+ 	<![CDATA[ call SEM.SEM_SP_MRT003_UPD_STATUS(?, :paramRentalPaymentId, :paymentStatus, :remarkPaymentStatus, :userId)]]>	
+ 	<return alias="" class="th.co.ais.domain.rt.Mrt003PopPaySP" entity-name="updateManualSP">
+   		<return-property column="P_RESULT" name="pResult"/>
+  	</return>
+ </sql-query>
+ 
+</hibernate-mapping>

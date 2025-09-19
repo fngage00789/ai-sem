@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SEMRRT023_2D" pageWidth="1025" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1025" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<template><![CDATA[$V{ReportUtil}.getJasperPath() + "SEMStyleTemplate.jrtx"]]></template>
+	<parameter name="PARAM_USERNAME" class="java.lang.String"/>
+	<parameter name="PARAM_COMPANY" class="java.lang.String"/>
+	<parameter name="PARAM_REGION" class="java.lang.String"/>
+	<parameter name="PARAM_YEAR" class="java.lang.String"/>
+	<parameter name="PARAM_PAY_TYPE" class="java.lang.String"/>
+	<parameter name="PARAM_MODULE" class="java.lang.String"/>
+	<parameter name="PARAM_EXPENSE_TYPE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM TABLE (sem_pg_rrt023.get_data_2(
+	$P{PARAM_COMPANY},
+	$P{PARAM_REGION},
+	$P{PARAM_YEAR},
+	$P{PARAM_MODULE},
+	$P{PARAM_PAY_TYPE},
+	$P{PARAM_EXPENSE_TYPE}
+))]]>
+	</queryString>
+	<field name="RECIEPT_MONTH" class="java.lang.String"/>
+	<field name="MD_REMAIN_REC_L" class="java.math.BigDecimal"/>
+	<field name="MD_REMAIN_VAT_L" class="java.math.BigDecimal"/>
+	<field name="MD_CLEAR_REC_L" class="java.math.BigDecimal"/>
+	<field name="MD_CLEAR_VAT_L" class="java.math.BigDecimal"/>
+	<field name="CHQ_REMAIN_REC_L" class="java.math.BigDecimal"/>
+	<field name="CHQ_REMAIN_VAT_L" class="java.math.BigDecimal"/>
+	<field name="CHQ_CLEAR_REC_L" class="java.math.BigDecimal"/>
+	<field name="CHQ_CLEAR_VAT_L" class="java.math.BigDecimal"/>
+	<variable name="VAR_MD_REMAIN_REC_L" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{MD_REMAIN_REC_L}]]></variableExpression>
+	</variable>
+	<variable name="VAR_MD_REMAIN_VAT_L" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{MD_REMAIN_VAT_L}]]></variableExpression>
+	</variable>
+	<variable name="VAR_MD_CLEAR_REC_L" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{MD_CLEAR_REC_L}]]></variableExpression>
+	</variable>
+	<variable name="VAR_MD_CLEAR_VAT_L" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{MD_CLEAR_VAT_L}]]></variableExpression>
+	</variable>
+	<variable name="VAR_CHQ_REMAIN_REC_L" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{CHQ_REMAIN_REC_L}]]></variableExpression>
+	</variable>
+	<variable name="VAR_CHQ_REMAIN_VAT_L" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{CHQ_REMAIN_VAT_L}]]></variableExpression>
+	</variable>
+	<variable name="VAR_CHQ_CLEAR_REC_L" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{CHQ_CLEAR_REC_L}]]></variableExpression>
+	</variable>
+	<variable name="VAR_CHQ_CLEAR_VAT_L" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{CHQ_CLEAR_VAT_L}]]></variableExpression>
+	</variable>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-8" style="Criteria Style" x="0" y="60" width="1025" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Username : " + new String($P{PARAM_USERNAME} != null && !"".equals($P{PARAM_USERNAME}) ? $P{PARAM_USERNAME}: "-")+
+"     Print Date :" + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-8" style="Header Style" x="0" y="0" width="1025" height="40"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-6" style="Criteria Style" x="0" y="75" width="1025" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Company : " + new String($P{PARAM_COMPANY} != null && !"".equals($P{PARAM_COMPANY}) ? $P{PARAM_COMPANY} : "-") +
+"     Region : " + new String($P{PARAM_REGION} != null && !"".equals($P{PARAM_REGION}) ? $P{PARAM_REGION} : "-") +
+"     Year : " + new String($P{PARAM_YEAR} != null && !"".equals($P{PARAM_YEAR}) ? $P{PARAM_YEAR} : "-") +
+"     ประเภทการชำระ : " + new String($P{PARAM_PAY_TYPE} != null && !"".equals($P{PARAM_PAY_TYPE}) ? $P{PARAM_PAY_TYPE} : "-") +
+"     Module : " + new String($P{PARAM_MODULE} != null && !"".equals($P{PARAM_MODULE}) ? $P{PARAM_MODULE} : "-") +
+"     ประเภทค่าใช้จ่าย : " + new String($P{PARAM_EXPENSE_TYPE} != null && !"".equals($P{PARAM_EXPENSE_TYPE}) ? $P{PARAM_EXPENSE_TYPE} : "-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-9" style="Header Style" x="0" y="40" width="1025" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[รายการใบเสร็จค้าง 3 เดือน]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="0" y="15" width="65" height="15"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Month]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="0" y="0" width="65" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="65" y="0" width="480" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[โอน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="545" y="0" width="480" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[เช็ค]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="65" y="15" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Total Receipt Remain]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="185" y="15" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Total VAT Remain]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="305" y="15" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Clear]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="425" y="15" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[VAT Claim]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="545" y="15" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Total Receipt Remain]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="665" y="15" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Total VAT Remain]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="785" y="15" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Clear]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" style="Column Header Style" x="905" y="15" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[VAT Claim]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement key="textField" style="Detail Style" x="0" y="0" width="65" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RECIEPT_MONTH}.equals("01") ? "JAN" :
+    ( $F{RECIEPT_MONTH}.equals("02") ? "FEB" :
+        ( $F{RECIEPT_MONTH}.equals("03") ? "MAR" :
+            ( $F{RECIEPT_MONTH}.equals("04") ? "APR" :
+                ( $F{RECIEPT_MONTH}.equals("05") ? "MAY" :
+                    ( $F{RECIEPT_MONTH}.equals("06") ? "JUN" :
+                        ( $F{RECIEPT_MONTH}.equals("07") ? "JUL" :
+                            ($F{RECIEPT_MONTH}.equals("08") ? "AUG" :
+                                ( $F{RECIEPT_MONTH}.equals("09") ? "SEP" :
+                                    ( $F{RECIEPT_MONTH}.equals("10") ? "OCT" :
+                                        ( $F{RECIEPT_MONTH}.equals("11") ? "NOV" :
+                                            ( $F{RECIEPT_MONTH}.equals("12") ? "DEC" : "" )) ) ) ) ))))))]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement key="textField" style="Detail Style" x="65" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{MD_REMAIN_REC_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" style="Detail Style" x="185" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{MD_REMAIN_VAT_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement key="textField" style="Detail Style" x="305" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{MD_CLEAR_REC_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" style="Detail Style" x="425" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{MD_CLEAR_VAT_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement key="textField" style="Detail Style" x="545" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{CHQ_REMAIN_REC_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" style="Detail Style" x="665" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{CHQ_REMAIN_VAT_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement key="textField" style="Detail Style" x="785" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{CHQ_CLEAR_REC_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" style="Detail Style" x="905" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{CHQ_CLEAR_VAT_L}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="15" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText" style="Total Style" x="0" y="0" width="65" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement key="textField" style="Total Style" x="65" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{VAR_MD_REMAIN_REC_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" style="Total Style" x="185" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{VAR_MD_REMAIN_VAT_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement key="textField" style="Total Style" x="305" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{VAR_MD_CLEAR_REC_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" style="Total Style" x="425" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{VAR_MD_CLEAR_VAT_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement key="textField" style="Total Style" x="545" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{VAR_CHQ_REMAIN_REC_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" style="Total Style" x="665" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{VAR_CHQ_REMAIN_VAT_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement key="textField" style="Total Style" x="785" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{VAR_CHQ_CLEAR_REC_L}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" style="Total Style" x="905" y="0" width="120" height="15"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{VAR_CHQ_CLEAR_VAT_L}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

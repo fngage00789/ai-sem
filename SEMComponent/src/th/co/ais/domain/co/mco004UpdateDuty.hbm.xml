@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco004UpdateDuty">
+		<id name="pResult" type="java.lang.String" />
+	</class>
+	
+	<sql-query name="mco004UpdDuty" callable="true">
+		<return class="th.co.ais.domain.co.Mco004UpdateDuty">
+			<return-property name="pResult" column="RESULT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO004_UPDATE_DUTY(?, :contractId, cast(:dutyAmt as numeric), cast(:dutyPayDt as date), :dutyPayStatus, cast(:copyDuty as numeric), cast(:copyDutyAmt as numeric), cast(:otherDutyAmt as numeric), :groupNo)]]>
+	</sql-query>
+</hibernate-mapping>

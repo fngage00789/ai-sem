@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco001SrchStatusSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="seqNo" type="java.lang.String"/>
+		<property name="changeStatusDate" type="java.util.Date"/>
+		<property name="contractStatus" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="updateBy" type="java.lang.String"/>
+		<property name="contractStatusName" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="mco001SrchStatus" callable="true">
+		<return class="th.co.ais.domain.co.Mco001SrchStatusSP">
+			<return-property name="rowId" column="CONTRACT_STATUS_ID"/>
+			<return-property name="seqNo" column="SEQ_NO" />
+			<return-property name="changeStatusDate" column="CHANGE_STATUS_DT"/>
+			<return-property name="contractStatus" column="CONTRACT_STATUS"/>
+			<return-property name="remark" column="REMARK"/>
+			<return-property name="updateBy" column="UPDATE_BY"/>
+			<return-property name="contractStatusName" column="CONTRACT_STATUS_NAME"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO001_SRCH_STATUS (?, :contractId)]]>
+	</sql-query>
+</hibernate-mapping>

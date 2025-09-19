@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.SMSModel">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="mobileNo" type="java.lang.String"/>
+		<property name="vHeader" type="java.lang.String"/>
+		<property name="vMessage" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="mrt003SMS" callable="true">
+		<return class="th.co.ais.domain.rt.SMSModel">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="mobileNo" column="MOBILE_NO" />
+			<return-property name="vHeader" column="V_HEADER" />
+			<return-property name="vMessage" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM_SP_MRT003_SMS(?, :pType, :pRowId) ]]>
+	</sql-query>
+	
+	<sql-query name="mel009SMS" callable="true">
+		<return class="th.co.ais.domain.rt.SMSModel">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="mobileNo" column="MOBILE_NO" />
+			<return-property name="vHeader" column="V_HEADER" />
+			<return-property name="vMessage" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM_SP_MEL009_SMS(?, :pType, :pRowId) ]]>
+	</sql-query>
+	
+	<sql-query name="mrt007SMS" callable="true">
+		<return class="th.co.ais.domain.rt.SMSModel">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="mobileNo" column="MOBILE_NO" />
+			<return-property name="vHeader" column="V_HEADER" />
+			<return-property name="vMessage" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT007_SMS(?, :pType, :pRowId) ]]>
+	</sql-query>
+</hibernate-mapping>

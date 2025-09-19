@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+	<class name="th.co.ais.domain.pt.Mpt004SrchC">
+		<id name="contractNo" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="spMpt004SrchC" callable="true">
+		<return class="th.co.ais.domain.pt.Mpt004SrchC">
+			<return-property name="contractNo" column="CONTRACT_NO" />
+		</return>
+		<![CDATA[ call SEM_SP_MPT004_SRCH_C(?, :vendorCode) ]]>
+	</sql-query>
+</hibernate-mapping>

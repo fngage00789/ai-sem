@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.si">
+	
+	<class name="th.co.ais.domain.si.Msi004GenDpstSP" entity-name="eAdd" >
+		<id name="result" type="java.lang.String" />
+		<property name="message" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.si.Msi004GenDpstSP" entity-name="eDel" >
+		<id name="result" type="java.lang.String" />
+		<property name="message" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.si.Msi004GenDpstSP" entity-name="rAdd" >
+		<id name="result" type="java.lang.String" />
+		<property name="message" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.si.Msi004GenDpstSP" entity-name="rDel" >
+		<id name="result" type="java.lang.String" />
+		<property name="message" type="java.lang.String" />
+	</class>
+	
+	
+	<sql-query name="updateEAdd" callable="true" >
+		<return class="th.co.ais.domain.si.Msi004GenDpstSP" entity-name="eAdd">  
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="message" column="P_MESSAGE" />
+		</return>
+	<![CDATA[ call SEM_SP_MSI004_GEN_DPST_E_ADD(?, :siteDepositeId, :userId) ]]>
+	</sql-query>
+	
+	
+	<sql-query name="updateEDel" callable="true" >
+		<return class="th.co.ais.domain.si.Msi004GenDpstSP" entity-name="eDel">  
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="message" column="P_MESSAGE" />
+		</return>
+	<![CDATA[ call SEM_SP_MSI004_GEN_DPST_E_DEL(?, :siteDepositeId, :userId) ]]>
+	</sql-query>
+	
+	<sql-query name="updateRAdd" callable="true" >
+		<return class="th.co.ais.domain.si.Msi004GenDpstSP" entity-name="rAdd">  
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="message" column="P_MESSAGE" />
+		</return>
+	<![CDATA[ call SEM_SP_MSI004_GEN_DPST_R_ADD(?, :siteDepositeId, :userId) ]]>
+	</sql-query>
+	
+	
+	<sql-query name="updateRDel" callable="true" >
+		<return class="th.co.ais.domain.si.Msi004GenDpstSP" entity-name="rDel">  
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="message" column="P_MESSAGE" />
+		</return>
+	<![CDATA[ call SEM_SP_MSI004_GEN_DPST_R_DEL(?, :siteDepositeId, :userId) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.ElGroupSP" entity-name="elGroupSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="paymentDtFrom" type="java.util.Date"/>
+		<property name="paymentDtTo" type="java.util.Date"/>
+		<property name="kwh" type="java.lang.String"/>
+		<property name="unit" type="java.lang.String"/>
+		<property name="amt" type="java.lang.String"/>
+		<property name="periodDt" type="java.util.Date"/>
+	</class>
+	
+	<class name="th.co.ais.domain.el.ElGroupSP" entity-name="percentGrowth">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="month" type="java.lang.String"/>
+		<property name="kwh" type="java.lang.String"/>
+		<property name="cost" type="java.lang.String"/>
+		<property name="rate" type="java.lang.String"/>
+		<property name="percentKwh" type="java.lang.String"/>
+		<property name="percentCost" type="java.lang.String"/>
+		<property name="percentRate" type="java.lang.String"/>
+		<property name="seqNo" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="getOwnerGroup" callable="true">
+		<return class="th.co.ais.domain.el.ElGroupSP" entity-name="elGroupSP">  
+			<return-property name="rowId" column="ROW_ID"/>
+			<return-property name="contractNo" column="CONTRACT_NO"/>
+			<return-property name="siteName" column="SITE_NAME"/>
+			<return-property name="region" column="REGION"/>
+			<return-property name="locationCode" column="LOCATION_CODE"/>
+			<return-property name="paymentDtFrom" column="PERIOD_FROM_DT"/>
+			<return-property name="paymentDtTo" column="PERIOD_TO_DT"/>
+			<return-property name="kwh" column="KWH"/>
+			<return-property name="unit" column="UNIT"/>
+			<return-property name="amt" column="AMOUNT"/>
+			<return-property name="periodDt" column="PERIOD_DT"/>
+		</return>
+	<![CDATA[ call SEM_EL_OWNER_GROUP(?, :groupOwnerGroup, :expenseType, :groupFlagType, :groupContractNo) ]]>
+	</sql-query>
+	
+	<sql-query name="showPercentGrowth" callable="true">
+		<return class="th.co.ais.domain.el.ElGroupSP" entity-name="percentGrowth">  
+			<return-property name="rowId" column="MONTH"/>
+			<return-property name="month" column="MONTH"/>
+			<return-property name="kwh" column="KWH"/>
+			<return-property name="cost" column="AMOUNT"/>
+			<return-property name="rate" column="UNIT"/>
+			<return-property name="percentKwh" column="KWH_AVG"/>
+			<return-property name="percentCost" column="AMOUNT_AVG"/>
+			<return-property name="percentRate" column="UNIT_AVG"/>
+			<return-property name="seqNo" column="SEQ"/>
+		</return>
+	<![CDATA[ call SEM_EL_PERCENT_GROWTH(?, :percentContractNo, :termPayDtStr, :expenseType, cast(nullif(:percentKwhNew, '') as numeric), cast(nullif(:percentUnitNew, '') as numeric), cast(nullif(:percentAmtNew, '') as numeric), :percentType, :percentTransId, :percentRecStatus, :percentErrCode) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004SrchDepositElectricSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="depositCondType" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="seqNo" type="java.lang.String"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="expenseTypeName" type="java.lang.String"/>
+		<property name="depositType" type="java.lang.String"/>
+		<property name="depositTypeName" type="java.lang.String"/>
+		<property name="depositAmt" type="java.lang.Double"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="vatTypeName" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="newStatus" type="java.lang.String"/>
+		<property name="newStatusName" type="java.lang.String"/>
+		<property name="detail" type="java.lang.String"/>
+		<property name="editableFlag" type="java.lang.String"/>
+		<property name="deleteableFlag" type="java.lang.String"/>
+		
+		<property name="contStartDt" type="java.sql.Date"/>
+		<property name="contEndDt" type="java.sql.Date"/>
+		<property name="depositReturnCond" type="java.lang.String"/>
+		<property name="serviceName" type="java.lang.String"/>
+		<property name="bgNo" type="java.lang.String"/>
+		<property name="bankName" type="java.lang.String"/>
+		<property name="depositReturnAmt" type="java.lang.Double"/>
+		<property name="bgStratDt" type="java.sql.Date"/>
+		<property name="bgEndDt" type="java.sql.Date"/>
+		
+		<property name="depositReturnType" type="java.lang.String"/>
+		<property name="depositReturnTypeName" type="java.lang.String"/>
+		<property name="depositAmtOld" type="java.lang.Double"/>
+		<property name="depositAmtNew" type="java.lang.Double"/>
+		<property name="returnAmt" type="java.lang.Double"/>
+		<property name="depositBringForward" type="java.lang.String"/>
+		<property name="withdrawFlag" type="java.lang.String"/>
+		<property name="serviceId" type="java.lang.String"/>
+		<property name="depositStatus" type="java.lang.String"/>
+	</class>
+	<sql-query name="msi004SrchDepositElectric" callable="true">
+		<return class="th.co.ais.domain.si.Msi004SrchDepositElectricSP">
+			<return-property name="rowId" column="SITE_DEPOSIT_ID" />
+			<return-property name="depositCondType" column="DEPOSIT_COND_TYPE" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="seqNo" column="SEQ_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="expenseTypeName" column="EXPENSE_TYPE_NAME" />
+			<return-property name="depositType" column="DEPOSIT_TYPE" />
+			<return-property name="depositTypeName" column="DEPOSIT_TYPE_NAME" />
+			<return-property name="depositAmt" column="DEPOSIT_AMT" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatTypeName" column="VAT_TYPE_NAME" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="newStatus" column="NEW_STATUS" />
+			<return-property name="newStatusName" column="NEW_STATUS_NAME" />
+			<return-property name="detail" column="DETAIL" />
+			<return-property name="editableFlag" column="EDITABLE_FLAG" />
+			<return-property name="deleteableFlag" column="DELETABLE_FLAG" />
+			
+			<return-property name="contStartDt" column="CONT_START_DT" />
+			<return-property name="contEndDt" column="CONT_END_DT" />
+			<return-property name="depositReturnCond" column="DEPOSIT_RETURN_COND" />
+			<return-property name="serviceName" column="SERVICE_NAME" />
+			<return-property name="bgNo" column="BG_NO" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="depositReturnAmt" column="DEPOSIT_RETURN_AMT" />
+			<return-property name="bgStratDt" column="BG_START_DT" />
+			<return-property name="bgEndDt" column="BG_END_DT" />
+			
+			<return-property name="depositReturnType" column="DEPOSIT_RETURN_TYPE" />
+			<return-property name="depositReturnTypeName" column="DEPOSIT_RETURN_TYPE_NAME" />
+			<return-property name="depositAmtOld" column="DEPOSIT_AMT_OLD" />
+			<return-property name="depositAmtNew" column="DEPOSIT_AMT_NEW" />
+			<return-property name="returnAmt" column="RETURN_AMT" />
+			<return-property name="depositBringForward" column="DEPOSIT_BRING_FORWARD" />
+			<return-property name="withdrawFlag" column="WITHDRAW_FLAG" />
+			<return-property name="serviceId" column="SERVICE_ID" />
+			<return-property name="depositStatus" column="DEPOSIT_STATUS" />
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_DPST_E (?, :siteInfoId, :depositType, :depositCondType) ]]>
+	</sql-query>
+</hibernate-mapping>

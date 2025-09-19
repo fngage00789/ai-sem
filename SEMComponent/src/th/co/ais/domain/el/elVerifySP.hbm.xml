@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.ElVerifySP" entity-name="successValidate">
+		<id name="result" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.el.ElVerifySP" entity-name="melChkMethod">
+		<id name="vResult" type="java.lang.String"/>
+		<property name="vMessage" type="java.lang.String"/>
+
+	</class>
+	
+	<class name="th.co.ais.domain.el.ElVerifySP" entity-name="failValidate">
+		<id name="result" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.el.ElVerifySP" entity-name="melSrchCalConfig">
+		<id name="serviceId" type="java.lang.String"/>
+		<property name="serviceName" type="java.lang.String"/>
+		<property name="configRate" type="java.lang.Double"/>
+	</class>
+	
+	<class name="th.co.ais.domain.el.ElVerifySP" entity-name="melSrchCalDetail">
+			<id name="electricId" type="java.lang.String"/>
+			<property name="siteInfoId" type="java.lang.String"/>
+			<property name="electricDetailId" type="java.lang.String"/>
+			<property name="electricCalCode" type="java.lang.String"/>
+			<property name="serviceId" type="java.lang.String"/>
+			<property name="calAmt" type="java.lang.Double"/>
+	</class>
+	
+	<class name="th.co.ais.domain.el.ElVerifySP" entity-name="melElCalDetail">
+		<id name="vResult" type="java.lang.String"/>
+		<property name="vMessage" type="java.lang.String"/>		
+	</class>
+	
+	<class name="th.co.ais.domain.el.ElVerifySP" entity-name="mel006DelPayment">
+			<id name="vResult" type="java.lang.String"/>
+			<property name="vMessage" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="successValidate" callable="true">
+		<return class="th.co.ais.domain.el.ElVerifySP" entity-name="successValidate">  
+			<return-property name="result" column="P_RESULT"/>
+			<return-property name="remark" column="P_REMARK"/>
+		</return>
+	<![CDATA[ call SEM_SP_MEL005_SUCCESS_VALIDATE (?, :transId, :importTransId, :contractNo, :username) ]]>
+	</sql-query>
+	
+	<sql-query name="mel001SrchCalConfig" callable="true">
+		<return class="th.co.ais.domain.el.ElVerifySP" entity-name="melSrchCalConfig">
+			<return-property name="serviceId" column="SERVICES_ID" />
+			<return-property name="serviceName" column="SERVICE_NAME" />
+			<return-property name="configRate" column="CONFIG_RATE" />
+		</return>
+		<![CDATA[ call SEM_SP_MEL001_SRCH_CAL_CONFIG(?, :serviceId, :siteInfoId) ]]>
+	</sql-query>
+	
+	<sql-query name="failValidate" callable="true">
+		<return class="th.co.ais.domain.el.ElVerifySP" entity-name="successValidate">  
+			<return-property name="result" column="P_RESULT"/>
+			<return-property name="remark" column="P_REMARK"/>
+		</return>
+	<![CDATA[ call SEM_SP_MEL005_FAIL_VALIDATE (?, :transId, :importTransId, :contractNo, :username, :errorCode) ]]>
+	</sql-query>
+	
+	
+		<sql-query name="mel001ChkMethod" callable="true">
+		<return class="th.co.ais.domain.el.ElVerifySP" entity-name="melChkMethod">
+			<return-property name="vResult" column="V_RESULT" />
+			<return-property name="vMessage" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM_SP_MEL001_CHK_METHOD(?, :rentalCalCode, :periodAmt, :serviceList) ]]>
+	</sql-query>
+	
+	<sql-query name="mel001ElCalDetail" callable="true">
+		<return class="th.co.ais.domain.el.ElVerifySP" entity-name="melElCalDetail">
+			<return-property name="vResult" column="V_RESULT" />
+			<return-property name="vMessage" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_EL_CAL_DETAIL(?, :electricDetailId, :siteInfoId, :electricCalCode, :serviceList, :user,:serviceId) ]]>
+	</sql-query>
+	
+	<sql-query name="mel001SrchCalDetail" callable="true">
+		<return class="th.co.ais.domain.el.ElVerifySP" entity-name="melSrchCalDetail">
+			<return-property name="electricId" column="electric_id" />
+			<return-property name="siteInfoId" column="site_info_id" />
+			<return-property name="electricDetailId" column="electric_detail_id" />
+			<return-property name="electricCalCode" column="electric_cal_code" />
+			<return-property name="serviceId" column="services_id" />
+			<return-property name="calAmt" column="cal_amt" />
+		</return>
+		<![CDATA[ call SEM_SP_MEL001_SRCH_CAL_DETAIL(?,:electricId, :rentalDetailId, :electricUseType) ]]>
+	</sql-query>
+	
+	
+	<sql-query name="mel006DelPayment" callable="true">
+		<return class="th.co.ais.domain.el.ElVerifySP" entity-name="mel006DelPayment">
+			<return-property name="vResult" column="P_RESULT" />
+			<return-property name="vMessage" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM_EL_PAYMENT_DEL(?,:privatePrepaid, :createBy) ]]>
+	</sql-query>
+</hibernate-mapping>

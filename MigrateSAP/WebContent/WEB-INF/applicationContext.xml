@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+
+<beans>	
+	 <bean id="dataSourceSEM" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="url" value="jdbc:oracle:thin:@aacmdev01:1521:aacmdev" />
+		<property name="username" value="sem"/>
+		<property name="password" value="*10*sem." />	        		
+		<property name="maxActive" value="10"/>
+		<property name="maxIdle" value="10"/>
+		<property name="poolPreparedStatements" value="true"/>
+    </bean>
+    
+     <bean id="dataSourceMNIMS" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@10.208.152.13:1521:eadev"/>
+		<property name="username" value="mnims" />
+		<property name="password" value="evolution" />	        		
+		<property name="maxActive" value="10"/>
+		<property name="maxIdle" value="10"/>
+		<property name="poolPreparedStatements" value="true"/>
+    </bean>	
+    
+	<bean id="sessionFactoryMNIMS" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceMNIMS" />
+		<property name="annotatedClasses">
+			<list>
+				<value>com.ais.migrate.mnims.hibernate.annotion.MetabCompany</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="sessionFactorySEM" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceSEM" />	
+		<property name="annotatedClasses">
+			<list>
+				<value>com.ais.migrate.sem.hibernate.annotion.SemElMeterInfo</value>
+				<value>com.ais.migrate.sem.hibernate.annotion.SapMapping</value>
+				<value>com.ais.migrate.sem.hibernate.annotion.MigrateSapct</value>
+				<value>com.ais.migrate.sem.hibernate.annotion.MigrateSapmo</value>
+				<value>com.ais.migrate.sem.hibernate.annotion.MigrateSapv1</value>
+				<value>com.ais.migrate.sem.hibernate.annotion.MpSapct</value>
+				<value>com.ais.migrate.sem.hibernate.annotion.MpSapmo</value>
+				<value>com.ais.migrate.sem.hibernate.annotion.MpSapv1</value>
+				<value>com.ais.migrate.sem.hibernate.annotion.MpContractClean</value>
+			</list>
+		</property>
+		<!-- <property name="packagesToScan" value="com.ais.migrate.sem.model" /> -->
+		<property name="mappingResources">
+		    <list>		   	 	
+		   	 	<value>com/ais/migrate/sem/model/spContractClean.hbm.xml</value>	   	 	
+		   	</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

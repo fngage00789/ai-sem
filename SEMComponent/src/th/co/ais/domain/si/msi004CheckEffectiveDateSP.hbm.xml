@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004CheckEffectiveDateSP">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="message" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="msi004CheckEffectiveDate" callable="true">
+		<return class="th.co.ais.domain.si.Msi004CheckEffectiveDateSP">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="message" column="MESSAGE"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_CHK_EFFECTIVE_DT (?, :siteInfoId, :effectiveDate ) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.RentHistorySP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="effDt" type="java.util.Date"/>
+		<property name="expDt" type="java.util.Date"/>
+		<property name="rentalAmt" type="java.lang.Double"/>
+		<property name="serviceAmt" type="java.lang.Double"/>
+		<property name="total" type="java.lang.Double"/>
+		<property name="percent" type="java.lang.String"/>
+		<property name="percentTotal" type="java.lang.Double"/>
+		
+	</class>
+	<sql-query name="queryRentHistory" callable="true">
+		<return class="th.co.ais.domain.si.RentHistorySP">
+			<return-property name="rowId" column="CONTRACT_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expDt" column="EXPIRE_DT" />
+			<return-property name="rentalAmt" column="RENTAL_AMT" />
+			<return-property name="serviceAmt" column="SERVICE_AMT" />
+			<return-property name="total" column="TOTAL" />
+			<return-property name="percent" column="PERCENT" />
+			<return-property name="percentTotal" column="PERCENTTOTAL" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_HIST_RENT (?, :contractNo) ]]>
+	</sql-query>
+</hibernate-mapping>

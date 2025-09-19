@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 ?.?. 2554, 17:28:11 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="th.co.ais.domain.si">
+
+<class name="th.co.ais.domain.si.QuerySiteInfoSearchSP">
+		<id name="rowID" type="java.lang.Integer"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="zone" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="oldContractNo" type="java.lang.String"/>
+		<property name="ownerName" type="java.lang.String"/>
+		<property name="lessorName" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="siteTypeName" type="java.lang.String"/>
+		<property name="address" type="java.lang.String"/>
+		<property name="effectDate" type="java.sql.Date"/>
+		<property name="expireDate" type="java.sql.Date"/>
+		<property name="rentAmt" type="java.lang.Double"/>
+		<property name="serviceAmt" type="java.lang.Double"/>
+		<property name="electrictType" type="java.lang.String"/>
+		<property name="electrictOwner" type="java.lang.String"/>
+		<property name="siteStatusName" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+	</class>
+	<sql-query name="querySiteInfoSearch" callable="true">
+	<return class="th.co.ais.domain.si.QuerySiteInfoSearchSP">
+		<return-property name="rowID" column="ROW_ID" />
+		<return-property name="company" column="COMPANY" />
+		<return-property name="siteInfoId" column="SITE_INFO_ID"/>
+		<return-property name="region" column="REGION" />
+		<return-property name="zone" column="ZONE" />
+		<return-property name="contractNo" column="CONTRACT_NO" />
+		<return-property name="oldContractNo" column="OLD_NEXT_CONTRACT_NO" />
+		<return-property name="ownerName" column="OWNER_NAME" />
+		<return-property name="lessorName" column="LESSOR_NAME" />
+		<return-property name="locationId" column="LOCATION_ID" />
+		<return-property name="locationCode" column="LOCATION_CODE" />
+		<return-property name="siteName" column="SITE_NAME" />
+		<return-property name="siteTypeName" column="PLACE_TYPE_NAME" />
+		<return-property name="address" column="SITE_ADDR" />
+		<return-property name="effectDate" column="EFFECTIVE_DT" />
+		<return-property name="expireDate" column="EXPIRE_DT" />
+		<return-property name="rentAmt" column="RENT_AMT" />
+		<return-property name="serviceAmt" column="SERVICE_AMT" />
+		<return-property name="electrictType" column="ELECTRIC_TYPE" />
+		<return-property name="electrictOwner" column="ELECTRIC_OWNER" />
+		<return-property name="siteStatusName" column="SITE_STATUS_NAME" />
+		<return-property name="networkStatus" column="NETWORK_STATUS_NAME" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_QSI004_SRCH(?, :company, :region, :zone, :siteType, :pico, :contractNo, 
+				:siteName, :locationId, :locationCode, :fromEffectDt, :toEffectDt, :fromExpireDt, :toExpireDt, 
+				:noExpire, :siteStatus, :pending, :expire, :ownerName, :lessorName, :houseNo, :buildingName, 
+				:street, :tambon, :amphur, :province) ]]>
+		</sql-query>
+</hibernate-mapping>

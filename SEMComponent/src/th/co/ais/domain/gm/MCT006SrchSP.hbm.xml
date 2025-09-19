@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 ?.?. 2557, 19:13:22 by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping package="th.co.ais.domain.gm">
+ <class entity-name="mct006SrchObj" name="th.co.ais.domain.gm.MCT006SrchSP">
+  <id name="rowId" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="attModule" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="attSubModule" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="attaPublic" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="attaPublicName" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="attaPath" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="contractNo" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="createBy" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="createDt" type="java.util.Date"/>
+  <property generated="never" lazy="false" name="fileName" type="java.lang.String"/>
+ </class>
+ <sql-query callable="true"
+   name="queryMCT006Srch">
+   <return alias="" class="th.co.ais.domain.gm.MCT006SrchSP" entity-name="mct006SrchObj">
+   <return-property column="ATTACHMENT_ID" name="rowId"/>
+   <return-property column="ATTACHMENT_MODULE" name="attModule"/>
+   <return-property column="ATTACHMENT_SUB_MODULE" name="attSubModule"/>
+   <return-property column="ATTACHMENT_PUBLIC" name="attaPublic"/>
+   <return-property column="ATTACHMENT_PUBLIC_NAME" name="attaPublicName"/>
+   <return-property column="ATTACHMENT_PATH" name="attaPath"/>
+   <return-property column="CONTRACT_NO" name="contractNo"/>
+   <return-property column="CREATE_BY" name="createBy"/>
+   <return-property column="CREATE_DT" name="createDt"/>
+   <return-property column="FILE_NAME" name="fileName"/>
+  </return>
+  <![CDATA[ call SEM.SEM_SP_MCT006_SRCH(?, :attModule, :attSubModule, :contractNo, :createBy, :attaPublic) ]]>
+ </sql-query>
+</hibernate-mapping>

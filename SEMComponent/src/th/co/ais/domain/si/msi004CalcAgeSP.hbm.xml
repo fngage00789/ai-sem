@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004CalcAgeSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="ageYear" type="java.lang.Integer"/>
+		<property name="ageMonth" type="java.lang.Integer"/>
+		<property name="ageDay" type="java.lang.Integer"/>
+		
+	</class>
+	<sql-query name="msi004CalcAge" callable="true">
+		<return class="th.co.ais.domain.si.Msi004CalcAgeSP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="ageYear" column="AGE_YESR"/>
+			<return-property name="ageMonth" column="AGE_MONTH"/>
+			<return-property name="ageDay" column="AGE_DAY"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_CALC_AGE (?, cast(:effDate as date), cast(:expDate as date)) ]]>
+	</sql-query>
+</hibernate-mapping>

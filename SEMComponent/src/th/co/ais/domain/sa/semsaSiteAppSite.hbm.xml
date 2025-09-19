@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 ?.?. 2557, 19:13:22 by Hibernate Tools 3.3.0.GA -->
+
+<hibernate-mapping package="th.co.ais.domain.sa">
+	<!-- >> classes declarement -->
+	
+	<!-- // siteAppSiteSch -->
+	<class name="th.co.ais.domain.sa.SiteAppSiteSP" entity-name="siteAppSiteSch">
+		<id name="rowId" type="java.lang.String"/>
+		<property type="java.lang.String" update="false" name="siteAppSiteId" />
+		<property type="java.lang.String" update="false" name="siteAppId" />
+		<property type="java.lang.String" update="false" name="siteId" />
+		<property type="java.lang.String" update="false" name="siteCode" />
+		<property type="java.lang.String" update="false" name="siteDetail" />
+		<property type="java.lang.String" update="false" name="siteNameTh" />
+		<property type="java.lang.String" update="false" name="siteGroup" />
+		<property type="java.lang.String" update="false" name="siteType" />
+		<property type="java.lang.String" update="false" name="locationId" />
+		<property type="java.lang.String" update="false" name="recordStatus" />
+		<property type="java.lang.String" update="false" name="version" />
+		<property type="java.lang.String" update="false" name="system" />
+		<property type="java.lang.String" update="false" name="stationType" />
+		<property type="java.lang.String" update="false" name="company" />
+		<property type="java.lang.String" update="false" name="remark" />
+		<property type="java.lang.String" update="false" name="siteName" />
+		<property type="java.lang.String" update="false" name="locationName" />
+		<property type="java.lang.String" update="false" name="locationCode" />
+	</class>
+	
+	<!-- << classes declarement -->
+	
+	<!-- ============================================================================== -->
+	<!-- ============================================================================== -->
+	
+	<!-- >> queries declarement -->
+	
+	<!-- // siteAppSiteSch -->
+	<sql-query callable="true" name="msa002SiteAppSiteSrch_">
+		<return alias="" class="th.co.ais.domain.sa.SiteAppSiteSP" entity-name="siteAppSiteSch">
+			<return-property column="SITE_APP_SITE_ID" name="rowId"/>
+			<return-property column="SITE_APP_SITE_ID" name="siteAppSiteId"/>
+			<return-property column="SITE_APP_ID" name="siteAppId" />
+			<return-property column="SITE_CODE" name="siteCode"/>
+			<return-property column="SITE_DETAIL" name="siteDetail"/>
+			<return-property column="SITE_NAME_TH" name="siteNameTh"/>
+			<return-property column="SITE_GROUP" name="siteGroup"/>
+			<return-property column="SITE_TYPE" name="siteType"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="RECORD_STATUS" name="recordStatus"/>
+			<return-property column="VERSION" name="version"/>
+			<return-property column="SYSTEM" name="system"/>
+			<return-property column="STATION_TYPE" name="stationType"/>
+			<return-property column="COMPANY" name="company"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="SITE_NAME" name="siteName"/>
+			<return-property column="LOCATION_NAME" name="locationName"/>
+			<return-property column="LOCATION_CODE" name="locationCode"/>
+		</return>
+		<![CDATA[ call SEM_PG_MSA002_SEM_SA_SITE_APP_SITE_SRCH(?, :siteAppId) ]]>
+	</sql-query>
+	
+	<!-- << queries declarement -->
+	
+</hibernate-mapping>

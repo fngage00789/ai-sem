@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.MeterInstallment" entity-name="meterInstallmentSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="effectiveDt" type="java.util.Date"/>
+		<property name="expireDt" type="java.util.Date"/>
+		<property name="regionId" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="electricUseType" type="java.lang.String"/>
+		<property name="electricUseTypeDisplay" type="java.lang.String"/>
+		<property name="meterId" type="java.lang.String"/>
+		<property name="referMeterId" type="java.lang.String"/>
+		<property name="paidFlag" type="java.lang.String"/>
+		<property name="accureStatus" type="java.lang.String"/>
+		<property name="accureStatusName" type="java.lang.String"/>
+		<property name="termOfPaymentDt" type="java.util.Date"/>
+		<property name="formTermOfPaymentDt" type="java.util.Date"/>
+		<property name="toTermOfPaymentDt" type="java.util.Date"/>
+		<property name="kwhTotal" type="java.math.BigDecimal"/>
+		<property name="unit" type="java.math.BigDecimal"/>
+		<property name="amount" type="java.math.BigDecimal"/>
+		<property name="meterSPInfoId" type="java.lang.String"/>
+		<property name="service" type="java.lang.String"/>
+		<property name="contractStatus" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="paymentId" type="java.lang.String"/>
+		<property name="paymentDetailId" type="java.lang.String"/>
+		<property name="specialFlag" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="emailFlag" type="java.lang.String"/>
+		<property name="smsFlag" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.el.MeterInstallment" entity-name="clearAccure">
+		<id name="resultP" type="java.lang.String"/>
+		<property name="remarkP" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="getMeterInstallment" callable="true">
+		<return class="th.co.ais.domain.el.MeterInstallment" entity-name="meterInstallmentSP">  
+			<return-property name="rowId" column="METER_INSTALLMENT_ID"/>
+			<return-property name="contractNo" column="CONTRACT_NO"/>
+			<return-property name="company" column="COMPANY"/>
+			<return-property name="siteName" column="SITE_NAME"/>
+			<return-property name="effectiveDt" column="EFFECTIVE_DT"/>
+			<return-property name="expireDt" column="EXPIRE_DT"/>
+			<return-property name="regionId" column="REGION"/>
+			<return-property name="locationId" column="LOCATION_ID"/>
+			<return-property name="locationCode" column="LOCATION_CODE"/>
+			<return-property name="electricUseType" column="ELECTRIC_USE_TYPE"/>
+			<return-property name="electricUseTypeDisplay" column="ELECTRIC_USE_TYPE_NAME"/>
+			<return-property name="meterId" column="METER_ID"/>
+			<return-property name="referMeterId" column="REFER_METER_ID"/>
+			<return-property name="paidFlag" column="PAID_FLAG"/>
+			<return-property name="accureStatus" column="ACCURE_STATUS"/>
+			<return-property name="accureStatusName" column="ACCURE_STATUS_NAME"/>
+			<return-property name="termOfPaymentDt" column="TERM_OF_PAYMENT_DT"/>
+			<return-property name="formTermOfPaymentDt" column="FROM_TERM_OF_PAYMENT_DT"/>
+			<return-property name="toTermOfPaymentDt" column="TO_TERM_OF_PAYMENT_DT"/>
+			<return-property name="kwhTotal" column="KWH_TOTAL"/>
+			<return-property name="unit" column="UNIT"/>
+			<return-property name="amount" column="AMOUNT"/>
+			<return-property name="meterSPInfoId" column="METER_INFO_ID"/>
+			<return-property name="service" column="SERVICE"/>
+			<return-property name="contractStatus" column="CONTRACT_STATUS"/>
+			<return-property name="networkStatus" column="NETWORK_STATUS"/>
+			<return-property name="expenseType" column="EXPENSE_TYPE"/>
+			<return-property name="paymentId" column="PAYMENT_ID"/>
+			<return-property name="paymentDetailId" column="PAYMENT_DETAIL_ID"/>
+			<return-property name="specialFlag" column="SPECIAL_FLAG"/>
+			<return-property name="siteInfoId" column="SITE_INFO_ID"/>
+			<return-property name="emailFlag" column="EMAIL_FLAG"/>
+			<return-property name="smsFlag" column="SMS_FLAG"/>
+		</return>
+	<![CDATA[ call SEM_PG_EL_SITE_INFO_PROCESS_SEM_SP_MEL009_ACCURE_SRCH(?, :company, :region, :contractNo, :siteName, :meterId, :electricUseType,
+																	:locationId, :locationCode, :termOfPaymentDtFrom, :termOfPaymentDtTo,
+																	:paidFlag, :accureStatus, :pAction, :siteTypeCri, :picoFlag) ]]>
+	</sql-query>
+	
+	<sql-query name="clearAccureProcess" callable="true">
+		<return class="th.co.ais.domain.el.MeterInstallment" entity-name="clearAccure">  
+			<return-property name="resultP" column="P_RESULT"/>
+			<return-property name="remarkP" column="P_REMARK"/>
+		</return>
+	<![CDATA[ call SEM_PG_EL_SITE_INFO_PROCESS_SEM_SP_MEL009_ACCURE_PROCESS(?, :rowId, :contractNo, :pAction, :accureStatus, :userId, :termOfPaymentDt, :meterSPInfoId) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

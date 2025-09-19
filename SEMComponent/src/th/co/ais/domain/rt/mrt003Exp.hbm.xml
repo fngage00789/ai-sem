@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.rt">
+ <class entity-name="mrt003Exp" name="th.co.ais.domain.rt.Mrt003Exp">
+  <id name="rentalPaymentId" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="contractNo" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="oldContractNo" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="siteName" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="reqType" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="reqOfficer" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="expenseTypeDesc" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="chqNo" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="chqDt" type="java.sql.Date"/>
+  <property generated="never" lazy="false" name="chqName" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="remark" type="java.lang.String"/>
+  <property generated="never" lazy="false" name="company" type="java.lang.String"/>
+ </class>
+ <sql-query callable="true" name="mrt003Exp">
+ <return alias="" class="th.co.ais.domain.rt.Mrt003Exp" entity-name="mrt003Exp">
+   <return-property column="RENTAL_PAYMENT_ID" name="rentalPaymentId"/>
+   <return-property column="CONTRACT_NO" name="contractNo"/>
+   <return-property column="OLD_CONTRACT_NO" name="oldContractNo"/>
+   <return-property column="SITE_NAME" name="siteName"/>
+   <return-property column="REQ_TYPE" name="reqType"/>
+   <return-property column="REQ_OFFICER" name="reqOfficer"/>
+   <return-property column="EXPENSE_TYPE_DESC" name="expenseTypeDesc"/>
+   <return-property column="CHQ_NO" name="chqNo"/>
+   <return-property column="CHQ_DT" name="chqDt"/>
+   <return-property column="CHQ_NAME" name="chqName"/>
+   <return-property column="REMARK" name="remark"/>
+   <return-property column="COMPANY" name="company"/>
+  </return>
+  <![CDATA[ call SEM.SEM_SP_MRT003_EXP(?, :p_PaymentId) ]]>
+ </sql-query>
+</hibernate-mapping>

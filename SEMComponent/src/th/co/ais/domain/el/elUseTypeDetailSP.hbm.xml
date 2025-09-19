@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.ElUseTypeDetailSP" entity-name="elUsetype">
+		<id name="electricIdDetail" type="java.lang.String"/>
+		<property name="seqNo" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="pVatRate" type="java.lang.Double"/>
+		<property name="payPeriodTypeVal" type="java.lang.String"/>
+		<property name="payPeriodType" type="java.lang.String"/>
+		<property name="periodType" type="java.lang.String"/>
+		<property name="payPeriod" type="java.lang.Double"/>
+		<property name="periodAmt" type="java.lang.Double"/>
+		<property name="periodStartDt" type="java.sql.Date"/>
+		<property name="periodEndDt" type="java.sql.Date"/>
+		<property name="refSeq" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="recordStatus" type="java.lang.String"/>
+		<property name="deleteFlag" type="java.lang.String"/>
+		<property name="editFlag" type="java.lang.String"/>
+		<property name="pVatType" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.el.ElUseTypeDetailSP" entity-name="insertElUsetype">
+		<id name="pResult" type="java.lang.String"/>
+		<property name="pMessageCode" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="getElUseDetail" callable="true">
+		<return class="th.co.ais.domain.el.ElUseTypeDetailSP" entity-name="elUsetype">  
+			<return-property name="electricIdDetail" column="ELECTRIC_DETAIL_ID"/>
+			<return-property name="seqNo" column="SEQ_NO"/>
+			<return-property name="vendorCode" column="VENDOR_CODE"/>
+			<return-property name="vendorName" column="VENDOR_NAME"/>
+			<return-property name="vatType" column="VAT_TYPE"/>
+			<return-property name="pVatRate" column="P_VAT_RATE"/>
+			<return-property name="payPeriodTypeVal" column="P_PAY_PERIOD_TYPE"/>
+			<return-property name="payPeriodType" column="PAY_PERIOD_TYPE"/>
+			<return-property name="periodType" column="P_PERIOD_TYPE"/>
+			<return-property name="payPeriod" column="P_PAY_PERIOD"/>
+			<return-property name="periodAmt" column="PERIOD_AMT"/>
+			<return-property name="periodStartDt" column="PERIOD_START_DT"/>
+			<return-property name="periodEndDt" column="PERIOD_END_DT"/>
+			<return-property name="refSeq" column="REFERENCE_SEQ"/>
+			<return-property name="remark" column="REMARK"/>
+			<return-property name="recordStatus" column="RECORD_STATUS"/>
+			<return-property name="deleteFlag" column="DELETE_FLG"/>
+			<return-property name="editFlag" column="EDIT_FLAG"/>
+			<return-property name="pVatType" column="P_VAT_TYPE"/>
+		</return>
+	<![CDATA[ call SEM_SP_EL001_SEARCH_DTL(?, :electricId) ]]>
+	</sql-query>
+	
+	<sql-query name="insertElUseDetail" callable="true">
+		<return class="th.co.ais.domain.el.ElUseTypeDetailSP" entity-name="insertElUsetype">  
+			<return-property name="pResult" column="P_RESULT"/>
+			<return-property name="pMessageCode" column="P_MESSAGE_CODE"/>
+		</return>
+	<![CDATA[ call SEM_SP_EL001_INSERT_DETAIL(?, :mode, :electricId, :electricIdDetail, :periodStartDt, 
+										:periodEndDt, :periodAmt, :periodType, :pVatType, 
+										:pVatRate, :payPeriodTypeVal, :payPeriod, :vendorMasterId, 
+										:payeeMasterId, :remark, :user) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+	
+	<!-- Production DB	 -->
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="java:SEMDataSource"/> -->
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="java:jboss/datasources/OracleDS" proxy-interface="javax.sql.DataSource" /> -->
+	<jee:jndi-lookup id="dataSource" jndi-name="java:jboss/datasources/PostgresDS" proxy-interface="javax.sql.DataSource" />
+	
+	<!-- Load Test DB Oracle 10G -->
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@10.208.152.170:1521:aacmtst" />
+		<property name="username" value="sem" />
+		<property name="password" value="sem123#" />
+		<property name="initialSize" value="5" />
+		<property name="maxActive" value="20" />
+	</bean> -->
+	
+	<!-- Load Test DB Oracle 10G New -->
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@10.208.152.170:1521:aacmuat" />
+		<property name="username" value="sem" />
+		<property name="password" value="sem123#" />
+		<property name="initialSize" value="1" />
+		<property name="maxActive" value="5" />
+	</bean>-->
+	
+	<!-- Load Test DB Oracle 11G -->
+	<!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@10.252.164.14:1521:ASASEMDEV" />
+		<property name="username" value="sem" />
+		<property name="password" value="sem123#" />
+		<property name="initialSize" value="5" />
+		<property name="maxActive" value="20" />
+	</bean>-->
+	
+	<!-- UAT DB -->
+	<!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@10.208.152.211:1521:sem" />
+		<property name="username" value="sem" />
+		<property name="password" value="sem.ebd#" />
+		<property name="initialSize" value="3" />
+		<property name="maxActive" value="10" />
+	</bean> 
+	
+	--><!-- Sys DB -->
+<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">  -->
+<!--		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /> -->
+<!--		<property name="url" value="jdbc:oracle:thin:@NoomFreestyle:1521:orcl" /> -->
+<!--		<property name="username" value="sem" /> -->
+<!--		<property name="password" value="password" /> -->
+<!--		<property name="initialSize" value="3" /> -->
+<!--		<property name="maxActive" value="10" /> -->
+<!--	</bean>  -->
+	
+<!--	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">-->
+<!--		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />-->
+<!--		<property name="url" value="jdbc:oracle:thin:@10.208.152.211:1521:aacmdev" />-->
+<!--		<property name="username" value="sem" />-->
+<!--		<property name="password" value="*10*sem." />-->
+<!--		<property name="initialSize" value="3" />-->
+<!--		<property name="maxActive" value="10" />-->
+<!--	</bean>-->
+
+	<!-- Hibernate config -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<!-- module gm -->
+				<value>th.co.ais.domain.gm.SsoCompanyUser</value>
+				<value>th.co.ais.domain.gm.Company</value>
+				<value>th.co.ais.domain.gm.LocationMaster</value>
+				<value>th.co.ais.domain.gm.LovMaster</value>
+				<value>th.co.ais.domain.gm.Message</value>
+				<value>th.co.ais.domain.gm.Region</value>
+				<value>th.co.ais.domain.gm.Province</value>
+				<value>th.co.ais.domain.gm.PayeeBookbank</value>
+				<value>th.co.ais.domain.gm.VendorBookbank</value>
+				<value>th.co.ais.domain.gm.VendorMapPayee</value>
+				<value>th.co.ais.domain.gm.VendorMaster</value>
+				<value>th.co.ais.domain.gm.Amphur</value>
+				<value>th.co.ais.domain.gm.Attachment</value>
+				<value>th.co.ais.domain.gm.BgMaster</value>
+				<value>th.co.ais.domain.common.audittrail.AuditTrail</value>
+				<value>th.co.ais.domain.gm.Zone</value>
+				<value>th.co.ais.domain.gm.Employee</value>
+				<value>th.co.ais.domain.gm.ParameterConfig</value>
+				<value>th.co.ais.domain.gm.TransPayment</value>
+				<value>th.co.ais.domain.gm.TransPaymentHist</value>
+				<value>th.co.ais.domain.gm.PayeeMaster</value>
+				<value>th.co.ais.domain.gm.Bank</value>
+				<value>th.co.ais.domain.gm.SPStatus</value>
+				<value>th.co.ais.domain.gm.CT001Export</value>
+				<value>th.co.ais.domain.gm.CT001UpdateSP</value>
+				<value>th.co.ais.domain.gm.ParameterMaster</value>
+				<value>th.co.ais.domain.gm.CostCenter</value>	
+				<value>th.co.ais.domain.gm.GLAccount</value>
+				<value>th.co.ais.domain.gm.CT002UpdateRentSP</value>
+				<value>th.co.ais.domain.gm.Parameter</value>
+				<value>th.co.ais.domain.gm.MCT006SrchSP</value>
+				
+				
+				<!-- module si -->
+				<value>th.co.ais.domain.si.SiteApprove</value>
+				<value>th.co.ais.domain.si.SiteApproveMapLoc</value>
+				<value>th.co.ais.domain.si.SiteTerminate</value>
+				<value>th.co.ais.domain.si.LegalApprove</value>
+				<value>th.co.ais.domain.si.Contract</value>
+				<value>th.co.ais.domain.si.SiteInfoMapLoc</value>
+				<value>th.co.ais.domain.si.SiteInfo</value>
+				<value>th.co.ais.domain.si.SendRenew</value>
+				<value>th.co.ais.domain.si.Construct</value>
+				<value>th.co.ais.domain.si.Deposit</value>
+				<value>th.co.ais.domain.si.Electric</value>
+				<value>th.co.ais.domain.si.Insurance</value>
+				<value>th.co.ais.domain.si.Lessor</value>
+				<value>th.co.ais.domain.si.PropertyTax</value>
+				<value>th.co.ais.domain.si.RentCond</value>
+				<value>th.co.ais.domain.si.Rent</value>
+				<value>th.co.ais.domain.si.SubRent</value>
+				<value>th.co.ais.domain.si.LessorInfo</value>
+				
+				<!-- added by.. YUT 2015/01/22 -->
+				<value>th.co.ais.domain.si.SiteApp</value>
+				
+				<!-- module ir -->
+				<value>th.co.ais.domain.ir.Replacement</value>
+				<value>th.co.ais.domain.ir.Deduct</value>
+				<value>th.co.ais.domain.ir.Premium</value>
+				<value>th.co.ais.domain.ir.Insured</value>
+				<value>th.co.ais.domain.ir.PolicyDtl</value>
+				<value>th.co.ais.domain.ir.IrClaim</value>
+				<value>th.co.ais.domain.ir.IrClaimDetail</value>
+				<value>th.co.ais.domain.ir.InsurancePayment</value>
+				<value>th.co.ais.domain.ir.AcqCost</value>
+				<value>th.co.ais.domain.ir.AcqCostLog</value>
+				<value>th.co.ais.domain.ir.IrDraft</value>
+				<value>th.co.ais.domain.ir.IrDraftDetail</value>
+				<value>th.co.ais.domain.ir.IrPolicySum</value>
+				<value>th.co.ais.domain.ir.IrLoadClaim</value>
+				<value>th.co.ais.domain.ir.IrLoadClaimLog</value>
+				
+				
+				<!-- module rt -->
+				<value>th.co.ais.domain.rt.RentalMaster</value>
+				<value>th.co.ais.domain.rt.RentalDetail</value>
+				<value>th.co.ais.domain.rt.RentalPlan</value>
+				<value>th.co.ais.domain.rt.RentalCondMapSi</value>
+				<value>th.co.ais.domain.rt.RentalVendor</value>
+				<value>th.co.ais.domain.rt.DepositCondMapSi</value>
+				<value>th.co.ais.domain.rt.DepositDetail</value>
+				<value>th.co.ais.domain.rt.RentalPayment</value>
+				<value>th.co.ais.domain.rt.PettyCash</value>
+				<value>th.co.ais.domain.rt.PettyCashPay</value>
+				<value>th.co.ais.domain.rt.PettyCashMapPayment</value>
+				<value>th.co.ais.domain.rt.RentalClrRec</value>
+				<value>th.co.ais.domain.rt.ReturnDeposit</value>
+				<value>th.co.ais.domain.rt.Mrt003Exp</value>
+				<value>th.co.ais.domain.rt.Mrt003ExpLetter</value>
+				
+				<!-- module sap -->
+				<value>th.co.ais.domain.sap.SapMapping</value>
+				<value>th.co.ais.domain.sap.SapTrxLog</value>
+				<value>th.co.ais.domain.sap.SapTrxHdr</value>
+				<value>th.co.ais.domain.sap.SapTrxDtl</value>
+				<value>th.co.ais.domain.sap.SapErrorLog</value>
+				
+				<!-- module co -->
+				<value>th.co.ais.domain.co.ContractStatus</value>
+				<value>th.co.ais.domain.co.BorrowContract</value>
+				<value>th.co.ais.domain.co.BorrowRequest</value>
+				<value>th.co.ais.domain.co.ContractCheckDoc</value>
+				<value>th.co.ais.domain.co.ContractFile</value>
+				<value>th.co.ais.domain.co.ReturnContract</value>
+				
+				
+				<!-- module pt -->
+				<value>th.co.ais.domain.pt.PtaxPayment</value>
+				
+				
+				<!-- module lc -->
+				<value>th.co.ais.domain.ac.LoadClearCheque</value>
+				<value>th.co.ais.domain.ac.Mac001LoadClearChq</value>
+				
+				<!-- module el -->
+                <value>th.co.ais.domain.el.Mel008ExpLetter</value>
+                
+                <!-- module sa -->
+                <value>th.co.ais.domain.sa.SiteAcqSP</value>
+                <value>th.co.ais.domain.sa.Msa003ReportParam</value>
+                <value>th.co.ais.domain.sa.Msa001ManagerName</value>
+				
+				<!-- added by.. YUT 2014/11/28 -->
+				<!-- module sa -->
+				<value>th.co.ais.domain.sa.SemSaSiteApp</value>
+				<value>th.co.ais.domain.sa.SemSaSiteAppDispute</value>
+				<value>th.co.ais.domain.sa.SemSaSiteAppDoc</value>
+				<value>th.co.ais.domain.sa.SemSaSiteAppSite</value>
+				<value>th.co.ais.domain.sa.SemSaSiteContractStatus</value>
+				
+				<value>th.co.ais.domain.sa.SemSaSiteAppMailAddr</value>
+				
+				<value>com.ais.web.authenticate.RoleMenu</value>
+				
+			</list>
+		</property>
+		<!-- module el -->
+		 <property name="packagesToScan" value="th.co.ais.domain.el"/>
+		<property name="mappingResources">
+		    <list>
+		   	 	<!-- module gm -->
+		   	 	<value>th/co/ais/domain/gm/payeeMasterValue.hbm.xml</value>
+		   	 	<value>th/co/ais/domain/gm/mct001SrchMSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/vendorMasterValue.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/bgMasterSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/approveBookBankSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/approveBookBankAct.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/mct008SrchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/pct002SrchBgContract.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/mct001.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/mct001Conf.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/ct001ExportBank.hbm.xml</value>
+		    	<!-- addes by NEW 2015/10/06 -->
+		    	<value>th/co/ais/domain/gm/semmct010.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/semmct011.hbm.xml</value>
+		    	<value>th/co/ais/domain/gm/mct001Export.hbm.xml</value>
+		    	<!-- addes by NEW 2019/04/03 -->
+		    	<value>th/co/ais/domain/gm/MCT006SrchSP.hbm.xml</value>
+		    	
+		    	<!-- added by.. YUT 2014/10/10 -->
+		    	<value>th/co/ais/domain/gm/bankMasterSP.hbm.xml</value>
+		    	
+		    	<!-- addes by NEW 2014/12/08 -->
+                <!-- module sa -->
+                <value>th/co/ais/domain/sa/siteAcqSP.hbm.xml</value>
+                <value>th/co/ais/domain/sa/msa003ReportParam.hbm.xml</value>
+                <value>th/co/ais/domain/sa/msa001GetManager.hbm.xml</value>
+
+		    	<!-- module si -->
+		    	<value>th/co/ais/domain/si/siteApproveSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteApproveDisplaySP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteApproveMapLocSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteApproveMapLocSeqSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteTerminateSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/popupContractSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteInfoMapLocSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteLocationSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteLocationBySiteInfoIdSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/legalApproveDisplaySP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/legalApproveSrchByAppvSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteInfoSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteInfoMapSiteAcqSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/sendRenewSrchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/sendRenewActSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/sendRenewExpSrchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/sumRentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/sumDepositRentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/approveRenewSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteInfoSeqSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/siteInfoMapLocSeqSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/queryRenewSAMSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/queryNetworkStatusSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/querySiteManagementSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/legalApproveSeqSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchLessorSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SeqLessorSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchRentCondSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchDepositRentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SeqDepositSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SeqRentCondSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/popupViewSiteInfoSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchPtHistSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchDepositElectricSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchSumDpstESP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchSubRentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SeqSubRentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi002UpdLatestFlag.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi001UpdOutDt.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi001Del.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi001UpdRegion.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi002UpdOutDt.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CalcAgeSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004GenContractNoSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004GenDummyNoSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/approveSiteInfoSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchLocAddressSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004ClearMainLocFlagSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchExportSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CalcExpireDateSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004UpdateContractSkipSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004UpdateNoRentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004UpdateNoDepositRentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004UpdateNoDepositElectricSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004UpdateLatestFlagSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi002CheckAddedSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi001ChkDocNo.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckCancelableSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEditSiteSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEditPropertyTaxSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEditElectricSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEditContractSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEditLessorSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEditRentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEditDepositRentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEditDepositElectricSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEditInsuranceSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckContractNoSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckApproveSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004ChkCopySP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi001Seq.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/psi003SrchSiteInfo.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/popupContractAntCriSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/psi005Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEnableApproveSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEnableStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckPtUndefSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchSumRentAgeSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004CheckEffectiveDateSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004DefaultTotSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004SrchSiteStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004GenDpstSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi001chkReqTypeDel.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/querySiteInfoSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi001UpdateExport.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/closelySiteSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/rentHistorySP.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi001GenDocNo.hbm.xml</value>
+		    	<value>th/co/ais/domain/si/msi004GenDummySP.hbm.xml</value>
+		    	
+		    	<!-- added by.. YUT 2015/01/22 -->
+				<value>th/co/ais/domain/si/legalSiteApp.hbm.xml</value>
+		    	
+		    	<!-- module ir -->
+		    	<value>th/co/ais/domain/ir/policySP.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/exGenerateDraftSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir007Act.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/policyInfo.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/insurancePayActSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mirGetRunningNo.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/insurancePayEditSaveSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir011Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir013Sch.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir013Edt.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir001Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir002Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir003SP.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir004SP.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir005SP.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir006SP.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mir002Act.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/premium.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mel005FailSrchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/ir/mel005FailListSP.hbm.xml</value>
+		    	<!-- module rt -->
+		    	<value>th/co/ais/domain/rt/verifyRentalSearchSiteInfoSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/verifyRentalSearchSiteRentCondSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/rentalPaySearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/rentalPaySSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/rentalPayNormalSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/rentalPayNormalSearchDSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/rentalPayNormalSaveSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/rentalPayNormalEditSaveSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/rentalPayNormalActSaveSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001SrchVendor.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001SrchPayee.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001SrchRentDetail.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001SrchRentHist.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001UpdRentMap.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001UpdRentPay.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001UpdDpstMap.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001UpdDpstPay.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001SrchDpstCond.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001SrchDpstDetail.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001CheckDate.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt001BookBank.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt007Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt007UpdStatus.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/mrt007UpdBatchNo.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/pettyCashSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/pettyCashPaySP.hbm.xml</value>
+		    	<value>th/co/ais/domain/rt/pettyCashMapPaymentSP.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrtGetRunningNo.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt003Cal.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt006Srch.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt006Save.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt006getDepositDDL.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt001UpdRentJob.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt001VerifyStatus.hbm.xml</value>
+				<value>th/co/ais/domain/rt/checkVendorSP.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt001RentCal.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt003checkVendorMultiSP.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt001SrchRentPay.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt001BalanceCal.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt003Pop.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt003Exp.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt001SMS.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt001MAIL.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt003PopPaySP.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt001UpdatePeriod.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt003UpdateRemark.hbm.xml</value>
+				<value>th/co/ais/domain/rt/historyDetailSP.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt003ExpLetter.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt007updateDoc.hbm.xml</value>
+				<value>th/co/ais/domain/rt/mrt010IfrsInterface.hbm.xml</value>
+				
+		    	<!-- module cp -->
+		    	<value>th/co/ais/domain/cp/constructionPermissionSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/constructionPermissionLocationSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/popupVendorSupplierSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/constructionPermissionGenDocNoSearchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/constructionPermissionSavePay.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/mcp001ChkPayable.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/mcp001ChkSavePay.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/mcp001SavePay.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/mcp001CanclePay.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/constructionPermissionUploadfile.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/addProxyConstructionPermission.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/selectProxyConstructionDetailUploadFile.hbm.xml</value>
+		    	<value>th/co/ais/domain/cp/firstPageConstructionPermissionUploadfile.hbm.xml</value>
+		    	
+		    	<!-- module pt -->
+		    	<value>th/co/ais/domain/pt/mpt001Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt001Edt.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt001SrchHist.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt002Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt002Edt.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt002SrchHist.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt003Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt003Act.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt003ExpLetter.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt006Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt004Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt004Act.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt004Pay.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt004SrchD.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt004Chk.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt004Edt.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt004Cal.hbm.xml</value>
+		    	<value>th/co/ais/domain/pt/mpt004SrchC.hbm.xml</value>
+		    	
+		    	<!-- module co -->
+		    	<value>th/co/ais/domain/co/mco001SrchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco001SeqFileSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco001SrchFileSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco001UpdateStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco001SrchStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco001UpdateCheckDocSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco001UpdateCheckDocLSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco001SrchLovStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco001CheckAddAbleSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco001ContractStatusSP.hbm.xml</value>
+		    	
+		    	<value>th/co/ais/domain/co/mco002SrchContractStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco002UpdateContractStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco001SeqStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco002DefaultDutySP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco002SrchNoFoundSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco002CheckNoFileSP.hbm.xml</value>
+		    	
+		    	<value>th/co/ais/domain/co/Mco003SrchBorrowRequestSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/Mco003GenDocNoSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/Mco003SearchBorrowSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco003InsertBorrowSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/Mco003SearchPSI002SP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco003Del.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco003DelBorrow.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco003ChkBorrow.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco003ChkReturn.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco003SaveReturn.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco003SaveBorrow.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco003ChkContractSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/Mco003SearchContract.hbm.xml</value>
+		    	
+		    	
+		    	<value>th/co/ais/domain/co/mco004SrchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco004Act.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco004SrchLovStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco004SrchStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco004DefaultDutySP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco004UpdateDuty.hbm.xml</value>
+		    	
+		    	<value>th/co/ais/domain/co/mco005SrchSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco005ContractStatusSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/co/mco005UpdateContractStatusSP.hbm.xml</value>
+		    	
+		    	<value>th/co/ais/domain/co/mco006SrchContractStatusSP.hbm.xml</value>
+		    	
+		    	<value>th/co/ais/domain/co/mco007MasterContractSP.hbm.xml</value>
+		    	
+		    	<!-- module ac -->
+		    	<value>th/co/ais/domain/ac/mac001Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/ac/mac001SrchD.hbm.xml</value>
+		    	<value>th/co/ais/domain/ac/mac001Act.hbm.xml</value>
+		    	<value>th/co/ais/domain/ac/mac001Pay.hbm.xml</value>
+		    	<value>th/co/ais/domain/ac/mac001Sap.hbm.xml</value>
+		    	<value>th/co/ais/domain/ac/mac001SrchR.hbm.xml</value>
+		    	<value>th/co/ais/domain/ac/mac003Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/ac/mac003File.hbm.xml</value>
+		    	<value>th/co/ais/domain/ac/mac004Srch.hbm.xml</value>
+		    	<value>th/co/ais/domain/ac/mac004Act.hbm.xml</value>
+		    	<value>th/co/ais/domain/ac/mac001ReFile.hbm.xml</value>	    
+		    	<value>th/co/ais/domain/ac/mac001ClearChq.hbm.xml</value>	
+		    	
+		    	<!-- module el -->
+		    	<value>th/co/ais/domain/el/vendorSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/elGroupSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/uploadTextSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/elPrivateValidateSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/elMeterIdSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/elVerifySP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/meterInstallmentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/meterInfoSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/elSOGetVendorId.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/elGetContractSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/mel008ChkPay.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/mel008Act.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/elUseTypeDetailSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/paymentSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/paymentDetailSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/mel008ExpLetter.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/mel008Exp.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/electricPermissionUploadFile.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/addElectricPermission.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/selectDetailUploadFile.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/proxyElectricPermissionUploadFile.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/addProxyElectricPermission.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/selectProxyDetailUploadFile.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/firstPagePermissionUploadfile.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/searchPrintMasterPermission.hbm.xml</value>
+		    	
+		    	<value>th/co/ais/domain/el/firstPageUploadMeterUploadFile.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/selectMeterDetailUploadFile.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/addUploadMeterElectricPermission.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/electricMeterUploadFile.hbm.xml</value>
+		    	
+		    	<value>th/co/ais/domain/el/managementSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/bgMasterSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/schVerMasterSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/elVerifyCondSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/bookBankSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/elDpstCondSP.hbm.xml</value>
+		    	
+		    	<value>th/co/ais/domain/el/mel008ReportSP.hbm.xml</value>
+		    	<value>th/co/ais/domain/el/paymentHistSP.hbm.xml</value>
+		    	
+		    	<!-- added by.. YUT 2014/11/10 -->
+		    	<value>th/co/ais/domain/common/menuTreeSP.hbm.xml</value>
+		    	
+		    	
+		    	<!-- added by.. YUT 2014/11/28 -->
+				<!-- module sa -->
+				<value>th/co/ais/domain/sa/semsaHibernate.hbm.xml</value>
+				
+				<value>th/co/ais/domain/sa/siteAcqSrchFile.hbm.xml</value>
+				
+				<!-- added by.. YUT 2017/03/29 -->
+				<value>th/co/ais/domain/mm/semsapMaster.hbm.xml</value>
+		    	<value>th/co/ais/domain/mm/semsapVendorMaster.hbm.xml</value>
+		    	<value>th/co/ais/domain/mm/semsapVendorPayHistory.hbm.xml</value>
+		    	<value>th/co/ais/domain/mm/semsapValidatePage.hbm.xml</value>
+		    	<!-- <value>th/co/ais/domain/mm/semsapSemmmm002Search.hbm.xml</value> -->
+		    </list>
+		</property>
+		<property name="hibernateProperties">
+			<util:properties>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop> -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+			 	<prop key="hibernate.show_sql">true</prop>
+			</util:properties>
+		</property>		
+	</bean>		
+	
+	<!-- Transaction Manager -->
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<tx:advice id="hibernateTxAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="th.co.ais.service.exception.ServiceException" timeout="180"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:advisor pointcut="execution(* th.co.ais.service.impl..*(..))" advice-ref="hibernateTxAdvice"/>
+		<!-- ==================== START REPORT CONFIGURATION ==================== -->
+		<aop:advisor pointcut="execution(* th.co.ais.rpt.service.impl..*(..))" advice-ref="hibernateTxAdvice" />
+		<!-- ==================== END REPORT CONFIGURATION ==================== -->	
+	</aop:config>
+</beans>		

@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding>
+	<mapping class="th.co.ais.rpt.parameter.SEMESI001ReportParameter" name="SEMESI001ReportParameter">
+		<value style="element" name="company" field="company" usage="optional"/>
+		<value style="element" name="region" field="region" usage="optional"/>
+		<value style="element" name="reqType" field="reqType" usage="optional"/>
+		<value style="element" name="title" field="title" usage="optional"/>
+		<value style="element" name="assignContractNo" field="assignContractNo" usage="optional"/>
+		<value style="element" name="legalApproveStatus" field="legalApproveStatus" usage="optional"/>
+		<value style="element" name="locationId" field="locationId" usage="optional"/>
+		<value style="element" name="locationCode" field="locationCode" usage="optional"/>
+		<value style="element" name="siteName" field="siteName" usage="optional"/>
+		<value style="element" name="siteType" field="siteType" usage="optional"/>
+		<value style="element" name="siteInfoStatus" field="siteInfoStatus" usage="optional"/>
+		<value style="element" name="siteStatus" field="siteStatus" usage="optional"/>
+		<value style="element" name="siteStatus" field="siteStatus" usage="optional"/>
+		<value style="element" name="siteStatus" field="siteStatus" usage="optional"/>
+		<value style="element" name="contractNo" field="contractNo" usage="optional"/>
+		<value style="element" name="pendingStatus" field="pendingStatus" usage="optional"/>
+		<value style="element" name="expireStatus" field="expireStatus" usage="optional"/>
+		<value style="element" name="effectiveDtFrom" field="effectiveDtFrom" usage="optional"/>
+		<value style="element" name="effectiveDtTo" field="effectiveDtTo" usage="optional"/>
+		<value style="element" name="expireDtFrom" field="expireDtFrom" usage="optional"/>
+		<value style="element" name="expireDtTo" field="expireDtTo" usage="optional"/>
+		<value style="element" name="noExpireFlag" field="noExpireFlag" usage="optional"/>
+		<value style="element" name="lessorName" field="lessorName" usage="optional"/>
+		<value style="element" name="lessorName" field="lessorName" usage="optional"/>
+		<value style="element" name="currentFlag" field="currentFlag" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMECO001ReportParameter" name="SEMECO001ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="CONTRACT_ID" field="CONTRACT_ID" usage="optional"/>
+		<value style="element" name="CONTRACT_TYPE" field="CONTRACT_TYPE" usage="optional"/>
+		<value style="element" name="CONTRACT_TYPE_OLD" field="CONTRACT_TYPE_OLD" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMECP001ReportParameter" name="SEMECP001ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="SITE_CONSTRUCT_ID" field="SITE_CONSTRUCT_ID" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMECP002ReportParameter" name="SEMECP002ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="SITE_CONSTRUCT_ID" field="SITE_CONSTRUCT_ID" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMMCO001ReportParameter" name="SEMMCO001ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="CONTRACT_ID" field="CONTRACT_ID" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMMCO005ReportParameter" name="SEMMCO005ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="CONTRACT_ID" field="CONTRACT_ID" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMMCO004ReportParameter" name="SEMMCO004ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="lessorSiteInfoId" field="lessorSiteInfoId" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMMRT003ReportParameter" name="SEMMRT003ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="PAYMENT_ID" field="PAYMENT_ID" usage="optional"/>
+		<value style="element" name="USER_NAME" field="USER_NAME" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRIR004ReportParameter" name="SEMRIR004ReportParameter">
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_ir_year" field="p_ir_year" usage="optional"/>
+		<value style="element" name="p_network_type" field="p_network_type" usage="optional"/>
+		<value style="element" name="p_transfer_type" field="p_transfer_type" usage="optional"/>
+		<value style="element" name="p_policy_type" field="p_policy_type" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_display_type" field="p_display_type" usage="optional"/>
+		<value style="element" name="p_display_policy" field="p_display_policy" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMMIR008ReportParameter" name="SEMMIR008ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="draftNo" field="draftNo" usage="optional"/>
+		<value style="element" name="userName" field="userName" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMMIR012ReportParameter" name="SEMMIR012ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="irClaimId" field="irClaimId" usage="optional"/>
+		<value style="element" name="userName" field="userName" usage="optional"/>
+		<value style="element" name="provinceName" field="provinceName" usage="optional"/>
+		<value style="element" name="TransferTypeDesc" field="TransferTypeDesc" usage="optional"/>
+		<value style="element" name="lossTypeDesc" field="lossTypeDesc" usage="optional"/>
+		<value style="element" name="lossSubTypeDesc" field="lossSubTypeDesc" usage="optional"/>
+		<value style="element" name="claimStatusDescl" field="claimStatusDescl" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMMPT003ReportParameter" name="SEMMPT003ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_pTax_id" field="p_pTax_id" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT023ReportParameter" name="SEMRRT023ReportParameter">
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_payment_type" field="p_payment_type" usage="optional"/>
+		<value style="element" name="p_module" field="p_module" usage="optional"/>
+		<value style="element" name="p_expense_type" field="p_expense_type" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT024ReportParameter" name="SEMRRT024ReportParameter">
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_batchNo" field="p_batchNo" usage="optional"/>
+	</mapping>
+
+
+	<mapping class="th.co.ais.rpt.parameter.SEMRIR005ReportParameter" name="SEMRIR005ReportParameter">
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_ir_year" field="p_ir_year" usage="optional"/>
+		<value style="element" name="p_ir_network_type" field="p_ir_network_type" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_policy_type" field="p_policy_type" usage="optional"/>
+		<value style="element" name="p_display_policy" field="p_display_policy" usage="optional"/>
+		<value style="element" name="p_regions" field="p_regions" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_display_type" field="p_display_type" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT001ReportParameter" name="SEMRRT001ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_station_type" field="p_station_type" usage="optional"/>
+		<value style="element" name="p_display_station_type" field="p_display_station_type" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_pico" field="p_pico" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT002ReportParameter" name="SEMRRT002ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_month_year" field="p_month_year" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_station_type" field="p_station_type" usage="optional"/>
+		<value style="element" name="p_display_station_type" field="p_display_station_type" usage="optional"/>
+		<value style="element" name="p_pico" field="p_pico" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_display_month_year" field="p_display_month_year" usage="optional"/>
+	</mapping>
+
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT003ReportParameter" name="SEMRRT003ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_station_type" field="p_station_type" usage="optional"/>
+		<value style="element" name="p_display_station_type" field="p_display_station_type" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_pico" field="p_pico" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT004ReportParameter" name="SEMRRT004ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_station_type" field="p_station_type" usage="optional"/>
+		<value style="element" name="p_display_station_type" field="p_display_station_type" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_pico" field="p_pico" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_transfer_flag" field="p_transfer_flag" usage="optional"/>
+	</mapping>
+
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT012ReportParameter" name="SEMRRT012ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_contract_no" field="p_contract_no" usage="optional"/>
+		<value style="element" name="p_location_code" field="p_location_code" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_vendor_code" field="p_vendor_code" usage="optional"/>
+		<value style="element" name="p_deposit_type" field="p_deposit_type" usage="optional"/>
+		<value style="element" name="p_deposit_datet_from" field="p_deposit_datet_from" usage="optional"/>
+		<value style="element" name="p_deposit_date_to" field="p_deposit_date_to" usage="optional"/>
+		<value style="element" name="p_deposit_status" field="p_deposit_status" usage="optional"/>
+		<value style="element" name="p_bg_no" field="p_bg_no" usage="optional"/>
+		<value style="element" name="p_bank" field="p_bank" usage="optional"/>
+		<value style="element" name="p_expense_type" field="p_expense_type" usage="optional"/>
+		<value style="element" name="p_contract_status" field="p_contract_status" usage="optional"/>
+		<value style="element" name="p_network_status" field="p_network_status" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_display_bank" field="p_display_bank" usage="optional"/>
+		<value style="element" name="p_display_expense_type" field="p_display_expense_type" usage="optional"/>
+		<value style="element" name="p_display_contract_status" field="p_display_contract_status" usage="optional"/>
+		<value style="element" name="p_display_network_status" field="p_display_network_status" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT013ReportParameter" name="SEMRRT013ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_quater" field="p_quater" usage="optional"/>
+		<value style="element" name="p_vendor_code" field="p_vendor_code" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT015ReportParameter" name="SEMRRT015ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_contract_no" field="p_contract_no" usage="optional"/>
+		<value style="element" name="p_location_id" field="p_location_id" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_as_of_mmyyyy" field="p_as_of_mmyyyy" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT016ReportParameter" name="SEMRRT016ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_month" field="p_month" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_month_display" field="p_month_display" usage="optional"/>
+		<value style="element" name="p_region_display" field="p_region_display" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_cost_center" field="p_cost_center" usage="optional"/>
+		<value style="element" name="p_gl_code" field="p_gl_code" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI001ReportParameter" name="SEMRSI001ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_type" field="p_type" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI002ReportParameter" name="SEMRSI002ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_process_from" field="p_process_from" usage="optional"/>
+		<value style="element" name="p_process_to" field="p_process_to" usage="optional"/>
+		<value style="element" name="p_sla_type" field="p_sla_type" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_display_process_from" field="p_display_process_from" usage="optional"/>
+		<value style="element" name="p_display_process_to" field="p_display_process_to" usage="optional"/>
+		<value style="element" name="p_display_sla_type" field="p_display_sla_type" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI003ReportParameter" name="SEMRSI003ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_contract_no" field="p_contract_no" usage="optional"/>
+		<value style="element" name="p_site_name" field="p_site_name" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_approve_type" field="p_approve_type" usage="optional"/>
+		<value style="element" name="p_display_approve_type" field="p_display_approve_type" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI004ReportParameter" name="SEMRSI004ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_year_display" field="p_year_display" usage="optional"/>
+		<value style="element" name="p_month_from" field="p_month_from" usage="optional"/>
+		<value style="element" name="p_month_to" field="p_month_to" usage="optional"/>
+		<value style="element" name="p_month_from_display" field="p_month_from_display" usage="optional"/>
+		<value style="element" name="p_month_to_display" field="p_month_from_display" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI005ReportParameter" name="SEMRSI005ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_year_display" field="p_year_display" usage="optional"/>
+		<value style="element" name="p_month_from" field="p_month_from" usage="optional"/>
+		<value style="element" name="p_month_to" field="p_month_to" usage="optional"/>
+		<value style="element" name="p_month_from_display" field="p_month_from_display" usage="optional"/>
+		<value style="element" name="p_month_to_display" field="p_month_from_display" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI008ReportParameter" name="SEMRSI008ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_delay_month" field="p_delay_month" usage="optional"/>
+		<value style="element" name="p_contract_no" field="p_contract_no" usage="optional"/>
+		<value style="element" name="p_site_name" field="p_site_name" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI010ReportParameter" name="SEMRSI010ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_site_type" field="p_site_type" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI012ReportParameter" name="SEMRSI012ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="region" field="region" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_zone" field="p_zone" usage="optional"/>
+		<value style="element" name="p_display_zone" field="p_display_zone" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI013ReportParameter" name="SEMRSI013ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_year_display" field="p_year_display" usage="optional"/>
+		<value style="element" name="p_region_code" field="p_region_code" usage="optional"/>
+		<value style="element" name="p_site_type" field="p_site_type" usage="optional"/>
+		<value style="element" name="p_month" field="p_month" usage="optional"/>
+		<value style="element" name="p_month_display" field="p_month_display" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_display_site_type" field="p_display_site_type" usage="optional"/>	
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI014ReportParameter" name="SEMRSI014ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_year_display" field="p_year_display" usage="optional"/>
+		<value style="element" name="p_region_code" field="p_region_code" usage="optional"/>
+		<value style="element" name="p_month" field="p_month" usage="optional"/>
+		<value style="element" name="p_site_type" field="p_site_type" usage="optional"/>
+		<value style="element" name="p_month_display" field="p_month_display" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_display_site_type" field="p_display_site_type" usage="optional"/>	
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI015ReportParameter" name="SEMRSI015ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_region_code" field="p_region_code" usage="optional"/>
+		<value style="element" name="p_month" field="p_month" usage="optional"/>
+		<value style="element" name="p_display_month" field="p_display_month" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_site_type" field="p_site_type" usage="optional"/>
+		<value style="element" name="p_display_site_type" field="p_display_site_type" usage="optional"/>	
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI016ReportParameter" name="SEMRSI016ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_region_code" field="p_region_code" usage="optional"/>
+		<value style="element" name="p_month" field="p_month" usage="optional"/>
+		<value style="element" name="p_display_month" field="p_display_month" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_site_type" field="p_site_type" usage="optional"/>
+		<value style="element" name="p_display_site_type" field="p_display_site_type" usage="optional"/>	
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI018ReportParameter" name="SEMRSI018ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_year_display" field="p_year_display" usage="optional"/>
+		<value style="element" name="p_region_code" field="p_region_code" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRSI020ReportParameter" name="SEMRSI020ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_region_code" field="p_region_code" usage="optional"/>
+		<value style="element" name="p_month" field="p_month" usage="optional"/>
+		<value style="element" name="p_display_month" field="p_display_month" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRCO001ReportParameter" name="SEMRCO001ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_region_code" field="p_region_code" usage="optional"/>
+		<value style="element" name="p_month" field="p_month" usage="optional"/>
+		<value style="element" name="p_display_month" field="p_display_month" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRCO002ReportParameter" name="SEMRCO002ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_region_code" field="p_region_code" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT017ReportParameter" name="SEMRRT017ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_month" field="p_month" usage="optional"/>
+		<value style="element" name="p_display_month" field="p_display_month" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_col1_month" field="p_col1_month" usage="optional"/>
+		<value style="element" name="p_col2_month" field="p_col2_month" usage="optional"/>
+		<value style="element" name="p_col3_month" field="p_col3_month" usage="optional"/>
+		<value style="element" name="p_col4_month" field="p_col4_month" usage="optional"/>
+		<value style="element" name="p_col5_month" field="p_col5_month" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT018ReportParameter" name="SEMRRT018ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_contract_no" field="p_contract_no" usage="optional"/>
+		<value style="element" name="p_location_id" field="p_location_id" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_vendor" field="p_vendor" usage="optional"/>
+		<value style="element" name="p_contract_status" field="p_contract_status" usage="optional"/>
+		<value style="element" name="p_network_status" field="p_network_status" usage="optional"/>
+		<value style="element" name="p_display_contract_status" field="p_display_contract_status" usage="optional"/>
+		<value style="element" name="p_display_network_status" field="p_display_network_status" usage="optional"/>
+		<value style="element" name="p_asof" field="p_asof" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_display_as_of" field="p_display_as_of" usage="optional"/> 
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT019ReportParameter" name="SEMRRT019ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_month_year" field="p_month_year" usage="optional"/>
+		<value style="element" name="p_master_group" field="p_master_group" usage="optional"/>
+		<value style="element" name="p_contract_no" field="p_contract_no" usage="optional"/>
+		<value style="element" name="p_display_month_year" field="p_display_month_year" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT020ReportParameter" name="SEMRRT020ReportParameter">
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_master_group" field="p_master_group" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_print_date" field="p_print_date" usage="optional"/>
+		<value style="element" name="p_month_year" field="p_month_year" usage="optional"/>
+		<value style="element" name="p_display_month_year" field="p_display_month_year" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT021ReportParameter" name="SEMRRT021ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_month_year" field="p_month_year" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_contractNo" field="p_contractNo" usage="optional"/>
+		<value style="element" name="p_contractStatus" field="p_contractStatus" usage="optional"/>
+		<value style="element" name="p_diffType1" field="p_diffType1" usage="optional"/>
+		<value style="element" name="p_diffType2" field="p_diffType2" usage="optional"/>
+		<value style="element" name="p_display_month_year" field="p_display_month_year" usage="optional"/> 
+		<value style="element" name="p_username" field="p_username" usage="optional"/> 
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRRT022ReportParameter" name="SEMRRT022ReportParameter">
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_previousMonthFrom" field="p_previousMonthFrom" usage="optional"/>
+		<value style="element" name="p_previousMonthTo" field="p_previousMonthTo" usage="optional"/>
+		<value style="element" name="p_currentMonthFrom" field="p_currentMonthFrom" usage="optional"/>
+		<value style="element" name="p_currentMonthTo" field="p_currentMonthTo" usage="optional"/>
+		<value style="element" name="p_display_previousMonthFrom" field="p_display_previousMonthFrom" usage="optional"/>
+		<value style="element" name="p_display_previousMonthTo" field="p_display_previousMonthTo" usage="optional"/>
+		<value style="element" name="p_display_currentMonthFrom" field="p_display_currentMonthFrom" usage="optional"/>
+		<value style="element" name="p_display_currentMonthTo" field="p_display_currentMonthTo" usage="optional"/> 
+		<value style="element" name="p_expenseType" field="p_expenseType" usage="optional"/>
+		<value style="element" name="p_contractNo" field="p_contractNo" usage="optional"/>
+		<value style="element" name="p_percentDiffType" field="p_percentDiffType" usage="optional"/>
+		<value style="element" name="p_percentDiffAmt" field="p_percentDiffAmt" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMREL001ReportParameter" name="SEMREL001ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMREL002ReportParameter" name="SEMREL002ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_month" field="p_month" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_date" field="p_date" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMREL003ReportParameter" name="SEMREL003ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMREL004ReportParameter" name="SEMREL004ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMREL005ReportParameter" name="SEMREL005ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMREL006ReportParameter" name="SEMREL006ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMREL007ReportParameter" name="SEMREL007ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRPT001ReportParameter" name="SEMRPT001ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_ptax_year" field="p_ptax_year" usage="optional"/>
+		<value style="element" name="p_pico_flg" field="p_pico_flg" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRPT002ReportParameter" name="SEMRPT002ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_ptax_year" field="p_ptax_year" usage="optional"/>
+		<value style="element" name="p_expense_type" field="p_expense_type" usage="optional"/>
+		<value style="element" name="p_pico_flg" field="p_pico_flg" usage="optional"/>
+		<value style="element" name="p_display_year_tax" field="p_display_year_tax" usage="optional"/>
+		<value style="element" name="p_display_expense_type" field="p_display_expense_type" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRPT003ReportParameter" name="SEMRPT003ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_ptax_year" field="p_ptax_year" usage="optional"/>
+		<value style="element" name="p_display_ptax_year" field="p_display_ptax_year" usage="optional"/>
+		<value style="element" name="p_pico_flg" field="p_pico_flg" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRPT004ReportParameter" name="SEMRPT004ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_ptax_year" field="p_ptax_year" usage="optional"/>
+		<value style="element" name="p_pico_flg" field="p_pico_flg" usage="optional"/>
+	</mapping>
+
+	<mapping class="th.co.ais.rpt.parameter.SEMRIR001ReportParameter" name="SEMRIR001ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_type" field="p_type" usage="optional"/>
+		<value style="element" name="p_display_type" field="p_display_type" usage="optional"/>
+		<value style="element" name="p_policy" field="p_policy" usage="optional"/>
+		<value style="element" name="p_display_policy" field="p_display_policy" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_create_by" field="p_create_by" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRIR002ReportParameter" name="SEMRIR002ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_year" field="p_year" usage="optional"/>
+		<value style="element" name="p_display_year" field="p_display_year" usage="optional"/>
+		<value style="element" name="p_network_type" field="p_network_type" usage="optional"/>
+		<value style="element" name="p_display_network_type" field="p_display_network_type" usage="optional"/>
+		<value style="element" name="p_policy" field="p_policy" usage="optional"/>
+		<value style="element" name="p_display_policy" field="p_display_policy" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_loss_type" field="p_loss_type" usage="optional"/>
+		<value style="element" name="p_display_loss_type" field="p_display_loss_type" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMRIR003ReportParameter" name="SEMRIR003ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="p_header_name" field="p_header_name" usage="optional"/>
+		<value style="element" name="p_username" field="p_username" usage="optional"/>
+		<value style="element" name="p_company" field="p_company" usage="optional"/>
+		<value style="element" name="p_ir_year" field="p_ir_year" usage="optional"/>
+		<value style="element" name="p_display_ir_year" field="p_display_ir_year" usage="optional"/>
+		<value style="element" name="p_region" field="p_region" usage="optional"/>
+		<value style="element" name="p_zone" field="p_zone" usage="optional"/>
+		<value style="element" name="p_display_zone" field="p_display_zone" usage="optional"/>
+		<value style="element" name="p_loss_type" field="p_loss_type" usage="optional"/>
+		<value style="element" name="p_display_loss_type" field="p_display_loss_type" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMMEL008ReportParameter" name="SEMMEL008ReportParameter">
+		<value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+		<value style="element" name="PAYMENT_ID" field="PAYMENT_ID" usage="optional"/>
+		<value style="element" name="USER_NAME" field="USER_NAME" usage="optional"/>
+	</mapping>
+	
+	<mapping class="th.co.ais.rpt.parameter.SEMMEL009ReportParameter" name="SEMMEL009ReportParameter">
+        <value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+        <value style="element" name="PAYMENT_ID" field="PAYMENT_ID" usage="optional"/>
+        <value style="element" name="USER_NAME" field="USER_NAME" usage="optional"/>
+    </mapping>
+    
+    <mapping class="th.co.ais.rpt.parameter.SEMMSA003ReportParameter" name="SEMMSA003ReportParameter">
+        <value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+        <value style="element" name="CONTRACT_ID" field="CONTRACT_ID" usage="optional"/>
+        <value style="element" name="CONTRACT_TYPE" field="CONTRACT_TYPE" usage="optional"/>
+    </mapping>
+    
+    <mapping class="th.co.ais.rpt.parameter.SEMMCP002ReportParameter" name="SEMMCP002ReportParameter">
+        <value style="element" name="reportEngine" field="reportEngine" usage="optional"/>
+        <value style="element" name="CONTRACT_ID" field="CONTRACT_ID" usage="optional"/>
+        <value style="element" name="CONTRACT_TYPE" field="CONTRACT_TYPE" usage="optional"/>
+    </mapping>
+    
+</binding>

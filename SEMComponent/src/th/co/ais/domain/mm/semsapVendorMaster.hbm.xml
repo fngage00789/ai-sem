@@ -1,0 +1,2614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.mm">
+	<!-- JAVA CLASSes -->
+	<class name="Mmm001VendorMasterSP" entity-name="vendorMasterSearch">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="actionType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="actionState" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractOldNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorFlowStatusCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBlockStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeBankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAccountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAccountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBatch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankBatch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeBatch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeBatch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatusCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeFlowStatusCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeBookbankId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bpFlowStatusCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="clearBatchFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="contractEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="contractExpireDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="expenseTypeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payTypeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="viewSiteInfoId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="actionDetail" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="allStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="networkStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="lotNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBranchNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="otherStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="historyFlag" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001VendorMasterSP" entity-name="vendorMasterSearchFlow">
+		<id name="rowId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="actionType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="locationId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="locationCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="locationName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBlockStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBankName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeAccountNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeAccountName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeAccountStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankPayeeBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="createBy" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBookbankId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBookbankFlowStatus" type="java.lang.String"/>
+			
+			<property generated="never" lazy="false" update="false" name="oldContractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorFlowStatusCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankFlowStatusCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeFlowStatusCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankPayeeStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bpFlowStatusCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorChange" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="siteInfoId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankChange" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeChange" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBookbankChange" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractEffectiveDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="contractExpireDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="contractStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="networkStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBlackList" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBranchNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="actionTypeDisplay" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="otherStatus" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.mm.Mmm001VendorMasterSP" entity-name="todoVendorSearch">
+		<id name="rowId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="actionType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="locationId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="locationCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="locationName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBlockStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBankName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeAccountNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeAccountName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeAccountStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankPayeeBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="createBy" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBookbankId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+			
+			<property generated="never" lazy="false" update="false" name="oldContractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorFlowStatusCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankFlowStatusCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeFlowStatusCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankPayeeStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bpFlowStatusCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBookbankFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="menuUrl" type="java.lang.String"/>
+						
+			<property generated="never" lazy="false" update="false" name="vendorChange" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="siteInfoId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankChange" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeChange" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBookbankChange" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractEffectiveDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="contractExpireDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="contractStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="networkStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBlackList" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBranchNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="actionTypeDisplay" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="otherStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="groupNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="countGroupNo" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.mm.Mmm001VendorMasterSP" entity-name="semSapMapVendor">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCodeOld" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001ContractSP" entity-name="contractDetail">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractOldNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteInfoId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="region" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteLocation" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="networkStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="firstEffectiveDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="effectiveDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expireDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="pendingStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ownerName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contactName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="telephone" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001ContractSP" entity-name="popupContractSearchList">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractOldNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="region" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="networkStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="firstEffectiveDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="effectiveDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expireDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="pendingStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ownerName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contactName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="telephone" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001VendorContractSP" entity-name="vendorContractSearch">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBlockStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankBranch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeBankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAccountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAccountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="confirmMsg" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001VendorSP" entity-name="vendorDetail">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBlockStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName1" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName2" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName3" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName4" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="company" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="hqFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="branchNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="includeVAT" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtCode" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="vendorBlackListStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorRemark" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="notPayeeFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="otherExpenseFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBatch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="createBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="createDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="updateDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="remarkWithoutContract" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorTypeTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="hqFlagTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorFlowStatusTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="confirmFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCompanySap" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorInfoTxt1" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorInfoTxt2" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorInfoTxt3" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorInfoTxt4" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="confirmTxt" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001VendorSP" entity-name="vendorDetailSAP">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName1" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName2" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName3" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName4" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBlockStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="branchNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="includeVAT" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtCode" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="address1" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address2" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambol" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambolName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphur" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphurName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="provinceName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="postCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="telephone" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="mobileNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="fax" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="email" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001AddressSP" entity-name="addressDetail">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tabNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="sapFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="withHoldName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address1" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address2" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address3" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address4" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambol" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphur" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambolName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphurName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="pTaxFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="telephoneSapFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="mobileNoSapFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="faxSapFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="emailSapFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="postCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contactName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="telephone" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="mobileNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="fax" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="email" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambolTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphurTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="provinceTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="lessorName" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001BookbankSP" entity-name="vendorBookbankSearch">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBookbankId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankBranch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="activeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="updateDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="deleteFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="sendManagerFlag" type="java.lang.String"/>
+			
+	</class>
+	
+	<class name="Mmm001BookbankSP" entity-name="bookbankDetail">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBookbankId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankBranch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="activeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="createBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="createDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="updateDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="bookbankBatch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="provinceTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="activeStatusTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatusTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="confirmFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountTypeTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="confirmTxt" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001BookbankSP" entity-name="bookbankDetailSap">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBookbankId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankBranch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="activeStatus" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001BookbankSP" entity-name="bankMaster">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankBranch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001SAPBookbankSP" entity-name="sapBookbankParam">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBookbankId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankBranch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="activeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="callSapFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="koart" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="xTechAccNo" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001PayeeSP" entity-name="payeeInfo">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAddress1" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAddress2" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambol" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambolName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphur" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphurName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="provinceName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="postCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="telephone" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="mobileNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="fax" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="email" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="contactName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeStatusId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeFlowStatusId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeFlowStatus" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001SAPBookbankSP" entity-name="bookbankSEMDetail">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBookbankId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankBranch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="activeStatus" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001PayeeSP" entity-name="payeeSearch">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankBranch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="activeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="updateDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="deleteFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="sendManagerFlag" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001PayeeSP" entity-name="payeeDetail">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAddress1" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAddress2" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambol" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphur" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambolName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphurName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="pTaxFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="postCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contactName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="telephone" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="mobileNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="fax" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="email" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeBlockStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="hqFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="branchNo" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="expenseEffectiveDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payType" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="createBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="createDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="updateDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="payeeBatch" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="payeeTypeTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeFlowStatusTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="confirmFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="provinceTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="confirmTxt" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001BookbankPayeeSP" entity-name="bookbankPayeeDetail">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="firstEffectiveDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="effectiveDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expireDtStr" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankBranch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="createBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="createDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="updateDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="payeeBookbankBatch" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="provinceTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="activeStatusTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatusTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="confirmFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountTypeTxt" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="confirmTxt" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001BookbankPayeeSP" entity-name="bookbankPayeeList">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankBranch" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="deleteFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="sendManagerFlag" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001VendorSP" entity-name="vendorSEMDetail">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="branchNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambolName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphurName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="provinceName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="postCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="regionName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBlockStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBlackListStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="role" type="java.lang.String"/> 
+	</class>
+	
+	<class name="Mmm001ContractSP" entity-name="contractSearch">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractOldNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="region" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="networkStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="firstEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="effectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="expireDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="contractStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="pendingStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="ownerName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contactName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="telephone" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAccountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAccountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeStatus" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="payTypeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeEffectiveDtStr" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="expenseTypeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="vendorFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankPayeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="expenseSelectFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expenseDeleteFlag" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001ExportBatchResultSP" entity-name="exportBatchResult">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="batchNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="actionType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBlockStatus" type="java.lang.String"/>	
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractOldNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="locationName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeBankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAccountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAccountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAccountStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payeeAccountFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001SAPVendorSP" entity-name="sapVendorParam">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="company" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBlockStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBranchNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bookbankFlowStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="accountStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="activeStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="callSapFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="role" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="roleType" type="java.lang.String"/>
+	</class>
+		
+	<class name="ItemResultSP" entity-name="returnResult" >
+		<id name="resultCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultMessage" type="java.lang.String"/>
+	</class>
+	
+	<class name="ItemResultSP" entity-name="returnResultExpt" >
+		<id name="resultCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultMessage" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+	</class>
+	
+	<class name="ItemResultSP" entity-name="returnResultValidate" >
+		<id name="resultCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultMessage" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="emailFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="validateFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="validateCaseId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="emailFrom" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="emailTo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="emailSubject" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="emailDetail" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="closeBtnLabel" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="okBtnLabel" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="cancelBtnLabel" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="yesBtnLabel" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="noBtnLabel" type="java.lang.String"/>
+		
+	</class>
+	
+	<class name="ItemResultSP" entity-name="returnResultApprove" >
+		<id name="resultCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultMessage" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="emailFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="validateFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="validateCaseId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="emailFrom" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="emailTo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="emailSubject" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="emailDetail" type="java.lang.String"/>
+		
+		<property generated="never" lazy="false" update="false" name="closeBtnLabel" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="okBtnLabel" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="cancelBtnLabel" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="yesBtnLabel" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="noBtnLabel" type="java.lang.String"/>
+		
+	</class>
+	
+	<class name="ItemResultSP" entity-name="returnResultSaveDraft" >
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultMessage" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultParam" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001SAPVendorSP" entity-name="sapGetVendorInfo">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="company" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBranchNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="role" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="roleType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="result" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+	</class>
+	
+	<class name="MmmVendorMasterInfoSP" entity-name="sapVendorApprove">
+		<id name="rowId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="vendorName1" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="vendorName2" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="vendorName3" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="vendorName4" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="branch" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="company" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="street" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="street2" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="street3" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="street4" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="district" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="amphur" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="postCode" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="country" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="region" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="telNo" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="mobileNo" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="faxNo" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="email" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="headOffice" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="searchTeam" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="paymentTerm" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="paymentMethod" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="chkDoubleInv" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="whtType" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="whtCode" type="java.lang.String"/>	
+            <property generated="never" lazy="false" update="false" name="recipientType" type="java.lang.String"/>	
+            <property generated="never" lazy="false" update="false" name="role" type="java.lang.String"/>	
+            <property generated="never" lazy="false" update="false" name="roleType" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="accountGroup" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="reconAcct" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="loevm" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="sperr" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="confirmNoTax" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="result" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="stkzn" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="consNumberTel" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="consNumberMobile" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="consNumberFax" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="consNumberEmail" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="updateFlagTel" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="updateFlagMobile" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="updateFlagFax" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="updateFlagEmail" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="notPayeeFlag" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="whtType2" type="java.lang.String"/>
+            <property generated="never" lazy="false" update="false" name="whtCode2" type="java.lang.String"/>	
+            <property generated="never" lazy="false" update="false" name="recipientType2" type="java.lang.String"/>	
+	</class>
+	
+	<class name="Mmm001VendorSP" entity-name="withholdSearch">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtType" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.mm.Mmm001ContractHistory" entity-name="semSapContractHistory">
+		<id name="rowId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="effectiveDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="expireDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="whtType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vatType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankAcc" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBookbankNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBookbankAcc" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.mm.Mmm001ContractPayHistory" entity-name="semSapContractPayHistory">
+		<id name="rowId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractPaymentDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="invoiceNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="period" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bookbankNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="checkNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="periodType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="periodY" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="periodM" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="periodD" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="totalPaymentAmg" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vat" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="wht" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="docNoCancel" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="docNo" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.mm.Mmm001HistorySP" entity-name="semSapMasterHistory">
+		<id name="rowId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="updateDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="contentChange" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contentOld" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contentNew" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="effectiveDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="expireDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001VendorSP" entity-name="semsapMapVendorInfo">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName1" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName2" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName3" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorName4" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="idCard" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="taxId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="vendorBlockStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="hqFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="branchNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="whtCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="includeVAT" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address1" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address2" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address3" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="address4" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambol" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="tambolName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphur" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="amphurName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="province" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="provinceName" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="postCode" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="telephone" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="mobileNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="fax" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="email" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="role" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="notPayeeFlag" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="company" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001VendorSP" entity-name="vendorDetailSummary">
+		<id name="rowId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="effectiveDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="oldContractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractEffectiveDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="contractExpireDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorIdCard" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorTaxId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vat" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBlock" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="notPayee" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBlackList" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorAddress" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorAccountNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorAccountName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorAccountType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBankName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeIdCard" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeTaxId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeAddress" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeAccountNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeAccountName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeAccountType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBankName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="activeStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="siteInfoId" type="java.lang.String"/>
+			
+			<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorMapPayeeId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorBookbankId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeBookbankId" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001ExpenseWithContractOfVendorSP" entity-name="vendorGetPayment">
+		<id name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractEffectiveDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="contractExpireDt" type="java.util.Date"/>
+		<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="payType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="company" type="java.lang.String"/>
+	</class>
+	
+	<class name="th.co.ais.domain.mm.Mmm001HistorySP" entity-name="confirmInfo">
+		<id name="rowId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="updateDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="contentChange" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contentOld" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contentNew" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="effectiveDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="expireDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String"/>
+	</class>
+	
+	<class name="ItemResultSP" entity-name="returnResultValidateBack" >
+		<id name="resultType" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="resultCode" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001BookbankSP" entity-name="vendorBookbankCheckBBGsb">
+		<id name="result" type="java.lang.String"/>
+	</class>
+	
+	<!-- SQLs >>> -->
+	<sql-query name="semsapVendorSearch" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorMasterSP" entity-name="vendorMasterSearch">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="ACTION_TYPE" name="actionType"/>
+			<return-property column="ACTION_STATE" name="actionState"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME" name="vendorName"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="CONTRACT_TYPE" name="contractType"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="CONTRACT_OLD_NO" name="contractOldNo"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="LOCATION_CODE" name="locationCode"/>
+			<return-property column="LOCATION_NAME" name="locationName"/>
+			<return-property column="VENDOR_STATUS" name="vendorStatus"/>
+			<return-property column="VENDOR_FLOW_STATUS_CODE" name="vendorFlowStatusCode"/>
+			<return-property column="VENDOR_FLOW_STATUS" name="vendorFlowStatus"/>
+			<return-property column="VENDOR_BLOCK" name="vendorBlockStatus"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="PAYEE_CODE" name="payeeCode"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="PAYEE_STATUS" name="payeeStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS" name="payeeFlowStatus"/>
+			<return-property column="PAYEE_BANK_NAME" name="payeeBankName"/>
+			<return-property column="PAYEE_ACCOUNT_NO" name="payeeAccountNo"/>
+			<return-property column="PAYEE_ACCOUNT_NAME" name="payeeAccountName"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="BOOKBANK_PAYEE_STATUS" name="bookbankPayeeStatus"/>
+			<return-property column="BOOKBANK_PAYEE_FLOW_STATUS" name="bookbankPayeeFlowStatus"/>
+			<return-property column="VENDOR_BATCH" name="vendorBatch"/>
+			<return-property column="BOOKBANK_BATCH" name="bookbankBatch"/>
+			<return-property column="PAYEE_BATCH" name="payeeBatch"/>
+			<return-property column="BOOKBANK_PAYEE_BATCH" name="bookbankPayeeBatch"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+			<return-property column="BOOKBANK_ID" name="bookbankId"/>
+			<return-property column="BOOKBANK_FLOW_STATUS_CODE" name="bookbankFlowStatusCode"/>
+			<return-property column="PAYEE_FLOW_STATUS_CODE" name="payeeFlowStatusCode"/>
+			<return-property column="PAYEE_BOOKBANK_ID" name="payeeBookbankId"/>
+			<return-property column="BP_FLOW_STATUS_CODE" name="bpFlowStatusCode"/>
+			<return-property column="CLEAR_BATCH_FLAG" name="clearBatchFlag"/>
+			
+			<return-property column="VENDOR_EFFECTIVE_DT" name="vendorEffectiveDt"/>
+			<return-property column="CONTRACT_EFFECTIVE_DT" name="contractEffectiveDt"/>
+			<return-property column="CONTRACT_EXPIRE_DT" name="contractExpireDt"/>
+			<return-property column="EXPENSE_TYPE_ID" name="expenseTypeId"/>
+			<return-property column="PAY_TYPE_ID" name="payTypeId"/>
+			<return-property column="SITE_INFO_ID" name="viewSiteInfoId"/>
+			
+			<return-property column="ACTION_DETAIL" name="actionDetail"/>
+			<return-property column="ALL_STATUS" name="allStatus"/>
+			<return-property column="CONTRACT_STATUS" name="contractStatus"/>
+			<return-property column="NETWORK_STATUS" name="networkStatus"/>
+			<return-property column="LOT_NO" name="lotNo"/>
+			<return-property column="VENDOR_BRANCH_NO" name="vendorBranchNo"/>
+			<return-property column="OTHER_STATUS" name="otherStatus"/>
+			<return-property column="HISTORY_FLAG" name="historyFlag"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_SP_VENDOR_SEARCH (?, :company, :region, :systemType, :siteName, :contractNo, :locationId, :expenseType, :locationCode,
+		:siteCode, :vendorCode, :payeeCode, :vendorType, :payeeType, :vendorName, :idCard, :taxId, :vendorStatus, :blockStatus, :blackListStatus,
+		:vendorFlowStatus, :payeeStatus, :payeeFlowStatus, :bankCode, :bankBranch, :accountNo, :accountName, :bookbankStatus, :bookbankFlowStatus,
+		:bookbankPayeeStatus, :bookbankPayeeFlowStatus, :createBy, :batchNo, :contractFlag, :dummyFlag, :noExportBatch) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorSearchFlow" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorMasterSP" entity-name="vendorMasterSearchFlow">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="ACTION_TYPE" name="actionType"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME" name="vendorName"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="LOCATION_CODE" name="locationCode"/>
+			<return-property column="LOCATION_NAME" name="locationName"/>
+			<return-property column="VENDOR_STATUS" name="vendorStatus"/>
+			<return-property column="VENDOR_FLOW_STATUS" name="vendorFlowStatus"/>
+			<return-property column="VENDOR_BLOCK" name="vendorBlockStatus"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="PAYEE_STATUS" name="payeeStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS" name="payeeFlowStatus"/>
+			<return-property column="PAYEE_BANK_NAME" name="payeeBankName"/>
+			<return-property column="PAYEE_ACCOUNT_NO" name="payeeAccountNo"/>
+			<return-property column="PAYEE_ACCOUNT_NAME" name="payeeAccountName"/>
+			<return-property column="PAYEE_ACCOUNT_STATUS" name="payeeAccountStatus"/>
+			<return-property column="BOOKBANK_PAYEE_FLOW_STATUS" name="payeeBookbankFlowStatus"/>
+			<return-property column="VENDOR_BATCH" name="vendorBatch"/>
+			<return-property column="BOOKBANK_BATCH" name="bookbankBatch"/>
+			<return-property column="PAYEE_BATCH" name="payeeBatch"/>
+			<return-property column="BOOKBANK_PAYEE_BATCH" name="bookbankPayeeBatch"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="SITE_NAME" name="siteName"/>
+			<return-property column="BOOKBANK_ID" name="bookbankId"/>
+			<return-property column="PAYEE_NO" name="payeeNo"/>
+			<return-property column="BOOKBANK_PAYEE_ID" name="payeeBookbankId"/>
+			<return-property column="PAY_TYPE" name="payType"/>
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+			
+			<return-property column="OLD_CONTRACT_NO" name="oldContractNo"/>
+			
+			<return-property column="VENDOR_FLOW_STATUS_CODE" name="vendorFlowStatusCode"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS_CODE" name="bookbankFlowStatusCode"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS_CODE" name="payeeFlowStatusCode"/>
+			<return-property column="BOOKBANK_PAYEE_STATUS" name="bookbankPayeeStatus"/>
+			<return-property column="BP_FLOW_STATUS_CODE" name="bpFlowStatusCode"/>
+			
+			<return-property column="VENDOR_CHANGE" name="vendorChange"/>
+			<return-property column="CONTRACT_TYPE" name="contractType"/>
+			<return-property column="SITE_INFO_ID" name="siteInfoId"/>
+			<return-property column="BOOKBANK_CHANGE" name="bookbankChange"/>
+			<return-property column="PAYEE_CHANGE" name="payeeChange"/>
+			<return-property column="PAYEE_BOOKBANK_CHANGE" name="payeeBookbankChange"/>
+						
+			<return-property column="CONTRACT_EFFECTIVE_DT" name="contractEffectiveDt"/>
+			<return-property column="CONTRACT_EXPIRE_DT" name="contractExpireDt"/>
+			<return-property column="CONTRACT_STATUS" name="contractStatus"/>
+			<return-property column="NETWORK_STATUS" name="networkStatus"/>
+			<return-property column="VENDOR_BLACK_LIST" name="vendorBlackList"/>
+			<return-property column="VENDOR_BRANCH_NO" name="vendorBranchNo"/>
+			<return-property column="ACTION_TYPE_DISPLAY" name="actionTypeDisplay"/>
+			<return-property column="OTHER_STATUS" name="otherStatus"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_SEARCH_FLOW (?, :company, :region, :systemType, :siteName, :contractNo, :locationId, :expenseType, :locationCode,
+		:siteCode, :vendorCode, :payeeCode, :vendorType, :payeeType, :vendorName, :idCard, :taxId, :vendorStatus, :blockStatus, :blackListStatus,
+		:vendorFlowStatus, :payeeStatus, :payeeFlowStatus, :bankName, :bankBranch, :accountNo, :accountName, :bookbankStatus, :bookbankFlowStatus,
+		:bookbankPayeeStatus, :bookbankPayeeFlowStatus, :createBy, :batchNo) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapTodoVendorSearch" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorMasterSP" entity-name="todoVendorSearch">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="ACTION_TYPE" name="actionType"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME" name="vendorName"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="LOCATION_CODE" name="locationCode"/>
+			<return-property column="LOCATION_NAME" name="locationName"/>
+			<return-property column="VENDOR_STATUS" name="vendorStatus"/>
+			<return-property column="VENDOR_FLOW_STATUS" name="vendorFlowStatus"/>
+			<return-property column="VENDOR_BLOCK" name="vendorBlockStatus"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="PAYEE_STATUS" name="payeeStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS" name="payeeFlowStatus"/>
+			<return-property column="PAYEE_BANK_NAME" name="payeeBankName"/>
+			<return-property column="PAYEE_ACCOUNT_NO" name="payeeAccountNo"/>
+			<return-property column="PAYEE_ACCOUNT_NAME" name="payeeAccountName"/>
+			<return-property column="PAYEE_ACCOUNT_STATUS" name="payeeAccountStatus"/>
+			<return-property column="BOOKBANK_PAYEE_FLOW_STATUS" name="payeeBookbankFlowStatus"/>
+			<return-property column="VENDOR_BATCH" name="vendorBatch"/>
+			<return-property column="BOOKBANK_BATCH" name="bookbankBatch"/>
+			<return-property column="PAYEE_BATCH" name="payeeBatch"/>
+			<return-property column="BOOKBANK_PAYEE_BATCH" name="bookbankPayeeBatch"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="SITE_NAME" name="siteName"/>
+			<return-property column="BOOKBANK_ID" name="bookbankId"/>
+			<return-property column="PAYEE_NO" name="payeeNo"/>
+			<return-property column="BOOKBANK_PAYEE_ID" name="payeeBookbankId"/>
+			<return-property column="PAY_TYPE" name="payType"/>
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+			
+			<return-property column="OLD_CONTRACT_NO" name="oldContractNo"/>
+			
+			<return-property column="VENDOR_FLOW_STATUS_CODE" name="vendorFlowStatusCode"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS_CODE" name="bookbankFlowStatusCode"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS_CODE" name="payeeFlowStatusCode"/>
+			<return-property column="BOOKBANK_PAYEE_STATUS" name="bookbankPayeeStatus"/>
+			<return-property column="BP_FLOW_STATUS_CODE" name="bpFlowStatusCode"/>
+			<return-property column="MENU_URL" name="menuUrl"/>
+			<return-property column="VENDOR_CHANGE" name="vendorChange"/>
+			<return-property column="CONTRACT_TYPE" name="contractType"/>
+			<return-property column="SITE_INFO_ID" name="siteInfoId"/>
+			<return-property column="BOOKBANK_CHANGE" name="bookbankChange"/>
+			<return-property column="PAYEE_CHANGE" name="payeeChange"/>
+			<return-property column="PAYEE_BOOKBANK_CHANGE" name="payeeBookbankChange"/>
+			<return-property column="CONTRACT_EFFECTIVE_DT" name="contractEffectiveDt"/>
+			<return-property column="CONTRACT_EXPIRE_DT" name="contractExpireDt"/>
+			<return-property column="CONTRACT_STATUS" name="contractStatus"/>
+			<return-property column="NETWORK_STATUS" name="networkStatus"/>
+			<return-property column="VENDOR_BLACK_LIST" name="vendorBlackList"/>
+			<return-property column="VENDOR_BRANCH_NO" name="vendorBranchNo"/>
+			<return-property column="ACTION_TYPE_DISPLAY" name="actionTypeDisplay"/>
+			<return-property column="OTHER_STATUS" name="otherStatus"/>
+			<return-property column="GROUP_NO" name="groupNo"/>
+			<return-property column="COUNT_GROUP_NO" name="countGroupNo"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_TODO_VENDOR_LIST (?, :pageFlag, :menuGroup, :strParam, :vendorCode, 
+		:payeeName, :idCard, :taxId, :contractNo, :siteName, :accountNo, :accountName, :batchNo, :createBy, :createById,
+		:systemType, :vendorFlowStatus, :bookbankFlowStatus, :bookbankFlowStatus, :bookbankPayeeFlowStatus, :region) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapContractDetail" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001ContractSP" entity-name="contractDetail">
+			<return-property column="CONTRACT_NO" name="rowId"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="CONTRACT_OLD_NO" name="contractOldNo"/>
+			<return-property column="SITE_INFO_ID" name="siteInfoId"/>
+			<return-property column="REGION" name="region"/>
+			<return-property column="SITE_TYPE" name="siteType"/>
+			<return-property column="SITE_NAME" name="siteName"/>
+			<return-property column="SITE_LOCATION" name="siteLocation"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="LOCATION_CODE" name="locationCode"/>
+			<return-property column="NETWORK_STATUS" name="networkStatus"/>
+			<return-property column="FIRST_EFFECTIVE_DT_STR" name="firstEffectiveDtStr"/>
+			<return-property column="EFFECTIVE_DT_STR" name="effectiveDtStr"/>
+			<return-property column="EXPIRE_DT_STR" name="expireDtStr"/>
+			<return-property column="CONTRACT_STATUS" name="contractStatus"/>
+			<return-property column="PENDING_STATUS" name="pendingStatus"/>
+			<return-property column="OWNER_NAME" name="ownerName"/>
+			<return-property column="CONTACT_NAME" name="contactName"/>
+			<return-property column="CONTRACT_NAME" name="contractName"/>
+			<return-property column="TELEPHONE" name="telephone"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CONTRACT_DETAIL (?, :contractNo, :vendorId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorContractList" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorContractSP" entity-name="vendorContractSearch">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME" name="vendorName"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="SITE_NAME" name="siteName"/>
+			<return-property column="VENDOR_STATUS" name="vendorStatus"/>
+			<return-property column="VENDOR_FLOW_STATUS" name="vendorFlowStatus"/>
+			<return-property column="VENDOR_BLOCK_STATUS" name="vendorBlockStatus"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="PAYEE_STATUS" name="payeeStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS" name="payeeFlowStatus"/>
+			<return-property column="PAYEE_BANK_NAME" name="payeeBankName"/>
+			<return-property column="PAYEE_ACCOUNT_NO" name="payeeAccountNo"/>
+			<return-property column="PAYEE_ACCOUNT_NAME" name="payeeAccountName"/>
+			<return-property column="BOOKBANK_PAYEE_STATUS" name="bookbankPayeeStatus"/>
+			<return-property column="BOOKBANK_PAYEE_FLOW_STATUS" name="bookbankPayeeFlowStatus"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+			<return-property column="CONFIRM_MSG" name="confirmMsg"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VENDOR_CONTRACT_LIST (?, :contractNo) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorDetail" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorSP" entity-name="vendorDetail">
+			<return-property column="VENDOR_ID" name="rowId"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME1" name="vendorName"/>
+			<return-property column="VENDOR_NAME1" name="vendorName1"/>
+			<return-property column="VENDOR_NAME2" name="vendorName2"/>
+			<return-property column="VENDOR_NAME3" name="vendorName3"/>
+			<return-property column="VENDOR_NAME4" name="vendorName4"/>
+			<return-property column="VENDOR_TYPE" name="vendorType"/>
+			<return-property column="VENDOR_STATUS" name="vendorStatus"/>
+			<return-property column="VENDOR_FLOW_STATUS" name="vendorFlowStatus"/>
+			<return-property column="VENDOR_BLOCK_STATUS" name="vendorBlockStatus"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="COMPANY" name="company"/>
+			<return-property column="HQ_FLAG" name="hqFlag"/>
+			<return-property column="BRANCH_NO" name="branchNo"/>
+			<return-property column="WHT_ID" name="whtId"/>
+			<return-property column="VAT" name="includeVAT"/>
+			<return-property column="WHT_TYPE" name="whtType"/>
+			<return-property column="WHT_CODE" name="whtCode"/>
+			
+			<return-property column="VENDOR_BLACKLIST_STATUS" name="vendorBlackListStatus"/>
+			<return-property column="VENDOR_REMARK" name="vendorRemark"/>
+			
+			<return-property column="NOT_PAYEE_FLAG" name="notPayeeFlag"/>
+			<return-property column="OTHER_EXPENSE_FLAG" name="otherExpenseFlag"/>
+			<return-property column="VENDOR_BATCH" name="vendorBatch"/>
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="CREATE_DT" name="createDt"/>
+			<return-property column="UPDATE_BY" name="updateBy"/>
+			<return-property column="UPDATE_DT" name="updateDt"/>
+			<return-property column="REMARK_WITHOUT_CONTRACT" name="remarkWithoutContract"/>
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+			<return-property column="VENDOR_TYPE_TXT" name="vendorTypeTxt"/>
+			<return-property column="HQ_FLAG_TXT" name="hqFlagTxt"/>
+			<return-property column="VENDOR_FLOW_STATUS_TXT" name="vendorFlowStatusTxt"/>
+			<return-property column="CONFIRM_FLAG" name="confirmFlag"/>
+			<return-property column="VENDOR_COMPANY_SAP" name="vendorCompanySap"/>
+			<return-property column="VENDOR_INFO_TXT_1" name="vendorInfoTxt1"/>
+			<return-property column="VENDOR_INFO_TXT_2" name="vendorInfoTxt2"/>
+			<return-property column="VENDOR_INFO_TXT_3" name="vendorInfoTxt3"/>
+			<return-property column="VENDOR_INFO_TXT_4" name="vendorInfoTxt4"/>
+			<return-property column="CONFIRM_TXT" name="confirmTxt"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VENDOR_DETAIL (?, :contractNo, :vendorId, :groupType, :vendorMapPayeeId) ]]>
+	</sql-query>	
+	
+	<sql-query name="semsapVendorDetailSAP" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorSP" entity-name="vendorDetailSAP">
+			<return-property column="VENDOR_CODE" name="rowId"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME1" name="vendorName"/>
+			<return-property column="VENDOR_NAME1" name="vendorName1"/>
+			<return-property column="VENDOR_NAME2" name="vendorName2"/>
+			<return-property column="VENDOR_NAME3" name="vendorName3"/>
+			<return-property column="VENDOR_NAME4" name="vendorName4"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="VENDOR_BLOCK_STATUS" name="vendorBlockStatus"/>
+			<return-property column="BRANCH_NO" name="branchNo"/>
+			<return-property column="WHT_ID" name="whtId"/>
+			<return-property column="WHT_TYPE" name="whtType"/>
+			<return-property column="WHT_CODE" name="whtCode"/>
+			<return-property column="VAT" name="includeVAT"/>
+			
+			<return-property column="ADDRESS1" name="address1"/>
+			<return-property column="ADDRESS2" name="address2"/>
+			<return-property column="TAMBOL_CODE" name="tambol"/>
+			<return-property column="TAMBOL_NAME" name="tambolName"/>
+			<return-property column="AMPHUR_CODE" name="amphur"/>
+			<return-property column="AMPHUR_NAME" name="amphurName"/>
+			<return-property column="PROVINCE_CODE" name="province"/>
+			<return-property column="PROVINCE_NAME" name="provinceName"/>
+			<return-property column="POST_CODE" name="postCode"/>
+			<return-property column="TELEPHONE" name="telephone"/>
+			<return-property column="MOBILE_NO" name="mobileNo"/>
+			<return-property column="FAX" name="fax"/>
+			<return-property column="EMAIL" name="email"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VENDOR_DETAIL_SAP (?, :saveFlag, :vendorId, :vendorCode, :branchNo, :titleName,
+											  :vendorName1, :vendorName2, :vendorName3, :vendorName4, 
+											  :idCard, :vendorBlockStatus, :company, :whtType, :whtCode, 
+											  :recipientType, :address1, :address2, :tambolName, :amphurName,
+											  :province, :postCode, :telephone, :mobileNo, :fax, :email) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapAddress" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001AddressSP" entity-name="addressDetail">
+			<return-property column="TAB_NO" name="rowId"/>
+			<return-property column="TAB_NO" name="tabNo"/>
+			<return-property column="SAP_FLAG" name="sapFlag"/>
+			<return-property column="WITHHOLD_NAME" name="withHoldName"/>
+			<return-property column="ADDRESS1" name="address1"/>
+			<return-property column="ADDRESS2" name="address2"/>
+			<return-property column="ADDRESS3" name="address3"/>
+			<return-property column="ADDRESS4" name="address4"/>
+			<return-property column="TAMBOL_CODE" name="tambol"/>
+			<return-property column="AMPHUR_CODE" name="amphur"/>
+			<return-property column="PROVINCE_CODE" name="province"/>
+			<return-property column="TAMBOL_NAME" name="tambolName"/>
+			<return-property column="AMPHUR_NAME" name="amphurName"/>
+			<return-property column="PTAX_FLAG" name="pTaxFlag"/>
+			<return-property column="POST_CODE" name="postCode"/>
+			<return-property column="CONTACT_NAME" name="contactName"/>
+			<return-property column="TELEPHONE" name="telephone"/>
+			<return-property column="MOBILE_NO" name="mobileNo"/>
+			<return-property column="FAX" name="fax"/>
+			<return-property column="EMAIL" name="email"/>
+			<return-property column="TELEPHONE_FLAG" name="telephoneSapFlag"/>
+			<return-property column="MOBILE_NO_FLAG" name="mobileNoSapFlag"/>
+			<return-property column="FAX_FLAG" name="faxSapFlag"/>
+			<return-property column="EMAIL_FLAG" name="emailSapFlag"/>
+			<return-property column="TAMBOL_TXT" name="tambolTxt"/>
+			<return-property column="AMPHUR_TXT" name="amphurTxt"/>
+			<return-property column="PROVINCE_TXT" name="provinceTxt"/>
+			<return-property column="LESSOR_NAME" name="lessorName"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VENDOR_ADDRESS (?, :contractNo, :vendorId, :groupType, :lessorId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorBookbankList" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001BookbankSP" entity-name="vendorBookbankSearch">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="VENDOR_BOOKBANK_ID" name="vendorBookbankId"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="ACCOUNT_TYPE" name="accountType"/>
+			<return-property column="BANK_CODE" name="bankCode"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="PROVINCE" name="province"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="ACTIVE_STATUS" name="activeStatus"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="UPDATE_BY" name="updateBy"/>
+			<return-property column="UPDATE_DT" name="updateDt"/>
+			<return-property column="DELETE_FLAG" name="deleteFlag"/>
+			<return-property column="SEND_MANAGER_FLAG" name="sendManagerFlag"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VENDOR_BB_LIST (?, :contractNo, :vendorId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorPayeeList" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001PayeeSP" entity-name="payeeSearch">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="PAYEE_CODE" name="payeeCode"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="PAYEE_STATUS" name="payeeStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS" name="payeeFlowStatus"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="BOOKBANK_PAYEE_ID" name="bookbankPayeeId"/>
+			<return-property column="BOOKBANK_PAYEE_STATUS" name="bookbankPayeeStatus"/>
+			<return-property column="BOOKBANK_PAYEE_FLOW_STATUS" name="bookbankPayeeFlowStatus"/>
+			<return-property column="ACTIVE_STATUS" name="activeStatus"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>	  
+				  
+			<return-property column="UPDATE_BY" name="updateBy"/>
+			<return-property column="UPDATE_DT" name="updateDt"/>
+			
+			<return-property column="DELETE_FLAG" name="deleteFlag"/>
+			<return-property column="SEND_MANAGER_FLAG" name="sendManagerFlag"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_PAYEE_LIST (?, :contractNo, :vendorId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapContractList" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001ContractSP" entity-name="contractSearch">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="CONTRACT_OLD_NO" name="contractOldNo"/>
+			<return-property column="REGION" name="region"/>
+			<return-property column="SITE_TYPE" name="siteType"/>
+			<return-property column="SITE_NAME" name="siteName"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="LOCATION_CODE" name="locationCode"/>
+			<return-property column="NETWORK_STATUS" name="networkStatus"/>
+			<return-property column="FIRST_EFFECTIVE_DT" name="firstEffectiveDt"/>
+			<return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+			<return-property column="EXPIRE_DT" name="expireDt"/>
+			<return-property column="CONTRACT_STATUS" name="contractStatus"/>
+			<return-property column="PENDING_STATUS" name="pendingStatus"/>
+			<return-property column="OWNER_NAME" name="ownerName"/>
+			<return-property column="CONTACT_NAME" name="contactName"/>
+			<return-property column="CONTRACT_NAME" name="contractName"/>
+			<return-property column="TELEPHONE" name="telephone"/>
+			<return-property column="VENDOR_NAME" name="vendorName"/>
+			<return-property column="VENDOR_STATUS" name="vendorStatus"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="PAYEE_STATUS" name="payeeStatus"/>
+			<return-property column="BOOKBANK_PAYEE_NO" name="payeeAccountNo"/>
+			<return-property column="BOOKBANK_PAYEE_NAME" name="payeeAccountName"/>
+			<return-property column="BOOKBANK_PAYEE_STATUS" name="bookbankPayeeStatus"/>
+			
+			<return-property column="PAY_TYPE_ID" name="payTypeId"/>
+			<return-property column="PAY_TYPE" name="payType"/>
+			<return-property column="PAYEE_EFFECTIVE_DT_STR" name="payeeEffectiveDtStr"/>
+			
+			<return-property column="EXPENSE_TYPE_ID" name="expenseTypeId"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+			
+			<return-property column="VENDOR_FLOW_STATUS" name="vendorFlowStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS" name="payeeFlowStatus"/>
+			<return-property column="BOOKBANK_PAYEE_FLOW_STATUS" name="bookbankPayeeFlowStatus"/>
+			<return-property column="VENDOR_EFFECTIVE_DT" name="vendorEffectiveDt"/>
+			<return-property column="SELECT_FLAG" name="expenseSelectFlag"/>
+			<return-property column="DELETE_FLAG" name="expenseDeleteFlag"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CONTRACT_LIST (?, :contractNo, :vendorId, :bookbankId, :payeeId, :bookbankPayeeId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapPopupContractSearch" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001ContractSP" entity-name="popupContractSearchList">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="CONTRACT_OLD_NO" name="contractOldNo"/>
+			<return-property column="REGION" name="region"/>
+			<return-property column="SITE_TYPE" name="siteType"/>
+			<return-property column="SITE_NAME" name="siteName"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="LOCATION_CODE" name="locationCode"/>
+			<return-property column="NETWORK_STATUS" name="networkStatus"/>
+			<return-property column="FIRST_EFFECTIVE_DT_STR" name="firstEffectiveDtStr"/>
+			<return-property column="EFFECTIVE_DT_STR" name="effectiveDtStr"/>
+			<return-property column="EXPIRE_DT_STR" name="expireDtStr"/>
+			<return-property column="CONTRACT_STATUS" name="contractStatus"/>
+			<return-property column="PENDING_STATUS" name="pendingStatus"/>
+			<return-property column="OWNER_NAME" name="ownerName"/>
+			<return-property column="CONTACT_NAME" name="contactName"/>
+			<return-property column="CONTRACT_NAME" name="contractName"/>
+			<return-property column="TELEPHONE" name="telephone"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CONTRACT_SEARCH (?, :company, :region, :contractType, :locationId, :contractNo, :siteName,
+											null, null, null, null, null, :saveFlag) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapExportBatch" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001ExportBatchResultSP" entity-name="exportBatchResult">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="BATCH_NO" name="batchNo"/>
+			<return-property column="ACTION_TYPE" name="actionType"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME" name="vendorName"/>
+			<return-property column="VENDOR_STATUS" name="vendorStatus"/>
+			<return-property column="VENDOR_FLOW_STATUS" name="vendorFlowStatus"/>
+			<return-property column="VENDOR_BLOCK" name="vendorBlockStatus"/>
+		
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="CONTRACT_OLD_NO" name="contractOldNo"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="LOCATION_CODE" name="locationCode"/>
+			<return-property column="LOCATION_NAME" name="locationName"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="ACCOUNT_STATUS" name="accountStatus"/>
+			<return-property column="ACCOUNT_FLOW_STATUS" name="accountFlowStatus"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="PAYEE_STATUS" name="payeeStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS" name="payeeFlowStatus"/>
+			<return-property column="PAYEE_BANK_NAME" name="payeeBankName"/>
+			<return-property column="PAYEE_ACCOUNT_NO" name="payeeAccountNo"/>
+			<return-property column="PAYEE_ACCOUNT_NAME" name="payeeAccountName"/>
+			<return-property column="PAYEE_ACCOUNT_STATUS" name="payeeAccountStatus"/>
+			<return-property column="PAYEE_ACCOUNT_FLOW_STATUS" name="payeeAccountFlowStatus"/>			
+			<return-property column="REMARK" name="remark"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_EXPORT_BATCH (?, :param1, :param2, :param3) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapBookbankDetail" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001BookbankSP" entity-name="bookbankDetail">
+			<return-property column="VENDOR_BOOKBANK_ID" name="rowId"/>
+			<return-property column="VENDOR_BOOKBANK_ID" name="vendorBookbankId"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="ACCOUNT_TYPE" name="accountType"/>
+			<return-property column="BANK_CODE" name="bankCode"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="PROVINCE" name="province"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="ACTIVE_STATUS" name="activeStatus"/>
+			
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="CREATE_DT" name="createDt"/>
+			<return-property column="UPDATE_BY" name="updateBy"/>
+			<return-property column="UPDATE_DT" name="updateDt"/>
+			<return-property column="BOOKBANK_BATCH" name="bookbankBatch"/>
+			
+			<return-property column="PROVINCE_TXT" name="provinceTxt"/>
+			<return-property column="ACTIVE_STATUS_TXT" name="activeStatusTxt"/>
+			<return-property column="BOOKBANK_FLOW_STATUS_TXT" name="bookbankFlowStatusTxt"/>
+			<return-property column="CONFIRM_FLAG" name="confirmFlag"/>
+			<return-property column="ACCOUNT_TYPE_TXT" name="accountTypeTxt"/>
+			<return-property column="CONFIRM_TXT" name="confirmTxt"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_BOOKBANK_DETAIL (?, :vendorId, :vendorBookbankId, :strParam, :vendorMapPayeeId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapSearchBankMaster" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001BookbankSP" entity-name="bankMaster">
+			<return-property column="BANK_ID" name="rowId"/>
+			<return-property column="BANK_ID" name="bankId"/>
+			<return-property column="BANK_CODE" name="bankCode"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="PROVINCE_ID" name="province"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_SEARCH_BANK_MASTER (?, :bankCode, :bankName) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapBookbankDetailSAP" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001BookbankSP" entity-name="bookbankDetailSap">
+			<return-property column="ACCOUNT_NO" name="rowId"/>
+			<return-property column="VENDOR_BOOKBANK_ID" name="vendorBookbankId"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="ACCOUNT_TYPE" name="accountType"/>
+			<return-property column="BANK_CODE" name="bankCode"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="PROVINCE" name="province"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="ACTIVE_STATUS" name="activeStatus"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_BOOKBANK_DETAIL_SAP (?, :accountNo, :accountName, :accountType, :bankCode, :vendorBookbankId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapPayeeDetail" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001PayeeSP" entity-name="payeeDetail">
+			<return-property column="PAYEE_ID" name="rowId"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="PAYEE_CODE" name="payeeCode"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="PAYEE_TYPE" name="payeeType"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="ADDRESS1" name="payeeAddress1"/>
+			<return-property column="ADDRESS2" name="payeeAddress2"/>
+			<return-property column="TAMBOL" name="tambol"/>
+			<return-property column="AMPHUR" name="amphur"/>
+			<return-property column="TAMBOL_NAME" name="tambolName"/>
+			<return-property column="AMPHUR_NAME" name="amphurName"/>
+			<return-property column="PTAX_FLAG" name="pTaxFlag"/>
+			<return-property column="PROVINCE" name="province"/>
+			<return-property column="POST_CODE" name="postCode"/>
+			<return-property column="CONTACT_NAME" name="contactName"/>
+			<return-property column="TELEPHONE" name="telephone"/>
+			<return-property column="MOBILE_NO" name="mobileNo"/>
+			<return-property column="FAX" name="fax"/>
+			<return-property column="EMAIL" name="email"/>
+			<return-property column="PAYEE_STATUS" name="payeeStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS" name="payeeFlowStatus"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="PAYEE_BLOCK_STATUS" name="payeeBlockStatus"/>
+			<return-property column="HQ_FLAG" name="hqFlag"/>
+			<return-property column="BRANCH_NO" name="branchNo"/>
+			
+			<return-property column="EXPENSE_EFFECTIVE_DT_STR" name="expenseEffectiveDtStr"/>
+			<return-property column="PAY_TYPE" name="payType"/>
+			
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="CREATE_DT" name="createDt"/>
+			<return-property column="UPDATE_BY" name="updateBy"/>
+			<return-property column="UPDATE_DT" name="updateDt"/>
+			<return-property column="PAYEE_BATCH" name="payeeBatch"/>
+			
+			<return-property column="PAYEE_TYPE_TXT" name="payeeTypeTxt"/>
+			<return-property column="PAYEE_FLOW_STATUS_TXT" name="payeeFlowStatusTxt"/>
+			<return-property column="CONFIRM_FLAG" name="confirmFlag"/>
+			<return-property column="PROVINCE_TXT" name="provinceTxt"/>
+			<return-property column="CONFIRM_TXT" name="confirmTxt"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_PAYEE_DETAIL (?, :contractNo, :vendorId, :payeeId, :vendorMapPayeeId, :strParam) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapBookbankPayeeDetail" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001BookbankPayeeSP" entity-name="bookbankPayeeDetail">
+			<return-property column="BOOKBANK_PAYEE_ID" name="rowId"/>
+			<return-property column="BOOKBANK_PAYEE_ID" name="bookbankPayeeId"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="FIRST_EFFECTIVE_DT_STR" name="firstEffectiveDtStr"/>
+			<return-property column="EFFECTIVE_DT_STR" name="effectiveDtStr"/>
+			<return-property column="EXPIRE_DT_STR" name="expireDtStr"/>
+			<return-property column="PAY_TYPE" name="payType"/>
+			<return-property column="ACCOUNT_TYPE" name="accountType"/>
+			<return-property column="BANK_CODE" name="bankCode"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="PROVINCE" name="province"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="REMARK" name="remark"/>
+			
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="CREATE_DT" name="createDt"/>
+			<return-property column="UPDATE_BY" name="updateBy"/>
+			<return-property column="UPDATE_DT" name="updateDt"/>
+			<return-property column="BOOKBANK_PAYEE_BATCH" name="payeeBookbankBatch"/>
+			
+			<return-property column="PROVINCE_TXT" name="provinceTxt"/>
+			<return-property column="ACTIVE_STATUS_TXT" name="activeStatusTxt"/>
+			<return-property column="BOOKBANK_FLOW_STATUS_TXT" name="bookbankFlowStatusTxt"/>
+			<return-property column="CONFIRM_FLAG" name="confirmFlag"/>
+			<return-property column="ACCOUNT_TYPE_TXT" name="accountTypeTxt"/>
+			<return-property column="CONFIRM_TXT" name="confirmTxt"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_BOOKBANK_PAYEE_DETAIL (?, :contractNo, :vendorId, :bookbankPayeeId, :vendorMapPayeeId, :strParam) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapBookbankPayeeList" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001BookbankPayeeSP" entity-name="bookbankPayeeList">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="BOOKBANK_PAYEE_ID" name="bookbankPayeeId"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="ACCOUNT_TYPE" name="accountType"/>
+			<return-property column="BANK_CODE" name="bankCode"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="PROVINCE" name="province"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="BOOKBANK_PAYEE_STATUS" name="bookbankPayeeStatus"/>
+			<return-property column="BOOKBANK_PAYEE_FLOW_STATUS" name="bookbankPayeeFlowStatus"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+			
+			<return-property column="DELETE_FLAG" name="deleteFlag"/>
+			<return-property column="SEND_MANAGER_FLAG" name="sendManagerFlag"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_BOOKBANK_PAYEE_LIST (?, :contractNo, :vendorId, :payeeId, :vendorMapPayeeId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapCheckVendorPopup" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001SAPVendorSP" entity-name="sapVendorParam">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="COMPANY" name="company"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME" name="vendorName"/>
+			<return-property column="VENDOR_STATUS" name="vendorStatus"/>
+			<return-property column="VENDOR_FLOW_STATUS" name="vendorFlowStatus"/>
+			<return-property column="VENDOR_BLOCK_STATUS" name="vendorBlockStatus"/>
+			<return-property column="VENDOR_BRANCH_NO" name="vendorBranchNo"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="BOOKBANK_ID" name="bookbankId"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="ACCOUNT_STATUS" name="accountStatus"/>
+			<return-property column="ACTIVE_STATUS" name="activeStatus"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="CREATE_BY" name="createBy"/>
+			<return-property column="CALL_SAP_FLAG" name="callSapFlag"/>
+			<return-property column="ROLE" name="role"/>
+			<return-property column="ROLE_TYPE" name="roleType"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CHECK_VENDOR_POPUP (?, :company, :vendorName, :idCard, :taxId, :vendorBranchNo) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapListVendorPopup" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorSP" entity-name="vendorSEMDetail">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME" name="vendorName"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="BRANCH_NO" name="branchNo"/>
+			<return-property column="ADDRESS" name="address"/>
+			<return-property column="TAMBOL_NAME" name="tambolName"/>
+			<return-property column="AMPHUR_NAME" name="amphurName"/>
+			<return-property column="PROVINCE_NAME" name="provinceName"/>
+			<return-property column="POST_CODE" name="postCode"/>
+			<return-property column="REGION_NAME" name="regionName"/>
+			<return-property column="VENDOR_BLOCK_STATUS" name="vendorBlockStatus"/>
+			<return-property column="VENDOR_BLACKLIST_STATUS" name="vendorBlackListStatus"/>
+			<return-property column="ROLE" name="role"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_LIST_VENDOR_POPUP (?, :company, :vendorName, :idCard, :taxId, :vendorBranchNo, :vendorCode) ]]>
+	</sql-query>
+
+	<sql-query name="semSapCheckBookbankPopup" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001SAPBookbankSP" entity-name="sapBookbankParam">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_BOOKBANK_ID" name="vendorBookbankId"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="ACCOUNT_TYPE" name="accountType"/>
+			<return-property column="BANK_CODE" name="bankCode"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="PROVINCE" name="province"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="ACTIVE_STATUS" name="activeStatus"/>
+			<return-property column="CALL_SAP_FLAG" name="callSapFlag"/>
+			<return-property column="KOART" name="koart"/>
+			<return-property column="XTECH_ACCNO" name="xTechAccNo"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CHECK_BB_POPUP (?, :vendorId, :accountNo) ]]>
+	</sql-query>
+	
+	<sql-query name="semSapListBookbankPopup" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001SAPBookbankSP" entity-name="bookbankSEMDetail">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="VENDOR_BOOKBANK_ID" name="vendorBookbankId"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="ACCOUNT_TYPE" name="accountType"/>
+			<return-property column="BANK_CODE" name="bankCode"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="BANK_BRANCH" name="bankBranch"/>
+			<return-property column="PROVINCE" name="province"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="BOOKBANK_STATUS" name="bookbankStatus"/>
+			<return-property column="BOOKBANK_FLOW_STATUS" name="bookbankFlowStatus"/>
+			<return-property column="ACTIVE_STATUS" name="activeStatus"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_LIST_BOOKBANK_POPUP (?, :vendorId, :accountNo) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapCheckPayeePopup" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorSP" entity-name="payeeInfo">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="PAYEE_CODE" name="payeeCode"/>
+			<return-property column="PAYEE_TYPE" name="payeeType"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="ADDRESS_DESC" name="payeeAddress1"/>
+			<return-property column="ADDRESS" name="payeeAddress2"/>
+			<return-property column="TAMBOL_CODE" name="tambol"/>
+			<return-property column="TAMBOL_NAME" name="tambolName"/>
+			<return-property column="AMPHUR_CODE" name="amphur"/>
+			<return-property column="AMPHUR_NAME" name="amphurName"/>
+			<return-property column="PROVINCE_CODE" name="province"/>
+			<return-property column="PROVINCE_NAME" name="provinceName"/>
+			<return-property column="POST_CODE" name="postCode"/>
+			<return-property column="CONTACT_NAME" name="contactName"/>
+			<return-property column="TELEPHONE" name="telephone"/>
+			<return-property column="MOBILE_NO" name="mobileNo"/>
+			<return-property column="FAX" name="fax"/>
+			<return-property column="EMAIL" name="email"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="PAYEE_STATUS_ID" name="payeeStatusId"/>
+			<return-property column="PAYEE_STATUS" name="payeeStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS_ID" name="payeeFlowStatusId"/>
+			<return-property column="PAYEE_FLOW_STATUS" name="payeeFlowStatus"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CHECK_PAYEE_POPUP (?, :payeeName, :idCard, :taxId, :payeeCode) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapMapVendorInfo" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorSP" entity-name="semsapMapVendorInfo">
+			<return-property column="VENDOR_ID" name="rowId"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME1" name="vendorName"/>
+			<return-property column="VENDOR_NAME1" name="vendorName1"/>
+			<return-property column="VENDOR_NAME2" name="vendorName2"/>
+			<return-property column="VENDOR_NAME3" name="vendorName3"/>
+			<return-property column="VENDOR_NAME4" name="vendorName4"/>
+			<return-property column="VENDOR_TYPE" name="vendorType"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="VENDOR_BLOCK_STATUS" name="vendorBlockStatus"/>
+			<return-property column="HQ_FLAG" name="hqFlag"/>
+			<return-property column="BRANCH_NO" name="branchNo"/>
+			<return-property column="WHT_TYPE" name="whtType"/>
+			<return-property column="WHT_CODE" name="whtCode"/>
+			<return-property column="VAT" name="includeVAT"/>
+			<return-property column="ADDRESS1" name="address1"/>
+			<return-property column="ADDRESS2" name="address2"/>
+			<return-property column="ADDRESS3" name="address3"/>
+			<return-property column="ADDRESS4" name="address4"/>
+			<return-property column="TAMBOL_CODE" name="tambol"/>
+			<return-property column="TAMBOL_NAME" name="tambolName"/>
+			<return-property column="AMPHUR_CODE" name="amphur"/>
+			<return-property column="AMPHUR_NAME" name="amphurName"/>
+			<return-property column="PROVINCE_CODE" name="province"/>
+			<return-property column="PROVINCE_NAME" name="provinceName"/>
+			<return-property column="POST_CODE" name="postCode"/>
+			<return-property column="TELEPHONE" name="telephone"/>
+			<return-property column="MOBILE_NO" name="mobileNo"/>
+			<return-property column="FAX" name="fax"/>
+			<return-property column="EMAIL" name="email"/>
+			<return-property column="ROLE_SAP" name="role"/>
+			<return-property column="NOT_PAYEE_FLAG" name="notPayeeFlag"/>
+			<return-property column="VENDOR_COMPANY" name="company"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_MAP_VENDOR_INFO (?, :vendorId, :vendorCode, :branchNo, :titleName, :vendorName1, :vendorName2, 
+									   :vendorName3, :vendorName4, :address1, :address2, :address3, :address4, :tambolName,
+									   :amphurName, :postCode, :regionName, :taxId, :vendorType, :telephone, :mobileNo, 
+									   :fax, :email, :whtType, :whtCode, :recipientType, :sapReturnCode, :role, 
+									   :notPayeeFlag, :company, :vendorBlockStatus) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapSearchWht" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorSP" entity-name="withholdSearch">
+			<return-property column="WHT_ID" name="rowId"/>
+			<return-property column="WHT_ID" name="whtId"/>
+			<return-property column="WHT_CODE" name="whtCode"/>
+			<return-property column="WHT_TYPE" name="whtType"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_SEARCH_WHT (?, :whtId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapChangeStatus" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CHANGE_STATUS (?, :param1, :param2, :param3, :param4, :param5, :param6, 
+											 :param7, :param8, :param9, :param10, :param11, :param12,
+											 :param13, :param14) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapDeleteMaster" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_DELETE_MASTER (?, :param1, :param2, :param3, :param4, :param5, :param6, :param7, :param8) ]]>
+	</sql-query>
+	
+	
+	<sql-query name="semsapVendorDelete" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM_SP_MCT001_VENDER_DEL (?, :param1, :param2) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapDeleteVendorContract" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_DELETE_VENDOR_CONTRACT (?, :param1, :param2) ]]>
+	</sql-query>
+	
+	<sql-query name="semSapConfirm" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CONFIRM (?, :param1, :param2, :param3) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapValidateVendor" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultValidate">
+			<return-property column="O_RESULT_CODE" name="rowId"/>
+			<return-property column="O_RESULT_CODE" name="resultCode"/>
+			<return-property column="O_RESULT_TYPE" name="resultType"/>
+			<return-property column="O_RESULT_MESSAGE" name="resultMessage"/>
+			
+		 	<return-property column="O_EMAIL_FLAG" name="emailFlag"/>
+		 	<return-property column="O_VALIDATE_FLAG" name="validateFlag"/>
+		 	<return-property column="O_VALIDATE_CASE_ID" name="validateCaseId"/>
+		 	<return-property column="O_EMAIL_FROM" name="emailFrom"/>
+		 	<return-property column="O_EMAIL_TO" name="emailTo"/>
+			<return-property column="O_EMAIL_SUBJECT" name="emailSubject"/>
+		 	<return-property column="O_EMAIL_DETAIL" name="emailDetail"/>
+		 	<return-property column="V_CLOSE_LABEL" name="closeBtnLabel"/>
+			<return-property column="V_OK_LABEL" name="okBtnLabel"/>
+			<return-property column="V_CANCEL_LABEL" name="cancelBtnLabel"/>
+			<return-property column="V_YES_LABEL" name="yesBtnLabel"/>
+			<return-property column="V_NO_LABEL" name="noBtnLabel"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_VENDOR (?, :expenseType, :company, :vendorId, :vendorCode, :vendorName1, :vendorName2, 
+									   :vendorName3, :vendorName4, :idCard, :taxId, :vendorStatus, :vendorFlowStatus, 
+									   :vendorBlockStatus, :vendorBlackListStatus, :hqFlag, :branchNo, :contractNo, :saveFlag, 
+									   :whtId, :includeVAT, :updateBy, :vendorType, :vendorIdChngeFrm, :vendorRemark,
+									   :notPayeeFlag, :otherExpenseFlag, :mobileNo) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapValidateApprove" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultApprove">
+			<return-property column="O_RESULT_CODE" name="rowId"/>
+			<return-property column="O_RESULT_CODE" name="resultCode"/>
+			<return-property column="O_RESULT_TYPE" name="resultType"/>
+			<return-property column="O_RESULT_MESSAGE" name="resultMessage"/>
+			
+		 	<return-property column="O_EMAIL_FLAG" name="emailFlag"/>
+		 	<return-property column="O_VALIDATE_FLAG" name="validateFlag"/>
+		 	<return-property column="O_VALIDATE_CASE_ID" name="validateCaseId"/>
+		 	<return-property column="O_EMAIL_FROM" name="emailFrom"/>
+		 	<return-property column="O_EMAIL_TO" name="emailTo"/>
+			<return-property column="O_EMAIL_SUBJECT" name="emailSubject"/>
+		 	<return-property column="O_EMAIL_DETAIL" name="emailDetail"/>
+		 	<return-property column="V_CLOSE_LABEL" name="closeBtnLabel"/>
+			<return-property column="V_OK_LABEL" name="okBtnLabel"/>
+			<return-property column="V_CANCEL_LABEL" name="cancelBtnLabel"/>
+			<return-property column="V_YES_LABEL" name="yesBtnLabel"/>
+			<return-property column="V_NO_LABEL" name="noBtnLabel"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_APPROVE (?, :param1, :param2, :param3, :param4, :param5, :param6, :param7) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapValidateBookbank" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultValidate">
+			<return-property column="O_RESULT_CODE" name="resultCode"/>
+			<return-property column="O_RESULT_TYPE" name="resultType"/>
+			<return-property column="O_RESULT_MESSAGE" name="resultMessage"/>
+			
+			<return-property column="O_EMAIL_FLAG" name="emailFlag"/>
+		 	<return-property column="O_VALIDATE_FLAG" name="validateFlag"/>
+		 	<return-property column="O_VALIDATE_CASE_ID" name="validateCaseId"/>
+		 	<return-property column="O_EMAIL_FROM" name="emailFrom"/>
+		 	<return-property column="O_EMAIL_TO" name="emailTo"/>
+			<return-property column="O_EMAIL_SUBJECT" name="emailSubject"/>
+		 	<return-property column="O_EMAIL_DETAIL" name="emailDetail"/>
+		 	<return-property column="V_CLOSE_LABEL" name="closeBtnLabel"/>
+			<return-property column="V_OK_LABEL" name="okBtnLabel"/>
+			<return-property column="V_CANCEL_LABEL" name="cancelBtnLabel"/>
+			<return-property column="V_YES_LABEL" name="yesBtnLabel"/>
+			<return-property column="V_NO_LABEL" name="noBtnLabel"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_BOOKBANK (?, :vendorId, :contractNo, :accountNo, :accountName, :accountType, :bankCode, 
+									   :bankName, :bankBranch, :province, :remark, :bookbankStatus, :saveFlag, :updateBy, :vendorBookbankId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapValidatePayee" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultValidate">
+			<return-property column="O_RESULT_CODE" name="resultCode"/>
+			<return-property column="O_RESULT_TYPE" name="resultType"/>
+			<return-property column="O_RESULT_MESSAGE" name="resultMessage"/>
+			
+			<return-property column="O_EMAIL_FLAG" name="emailFlag"/>
+		 	<return-property column="O_VALIDATE_FLAG" name="validateFlag"/>
+		 	<return-property column="O_VALIDATE_CASE_ID" name="validateCaseId"/>
+		 	<return-property column="O_EMAIL_FROM" name="emailFrom"/>
+		 	<return-property column="O_EMAIL_TO" name="emailTo"/>
+			<return-property column="O_EMAIL_SUBJECT" name="emailSubject"/>
+		 	<return-property column="O_EMAIL_DETAIL" name="emailDetail"/>
+		 	<return-property column="V_CLOSE_LABEL" name="closeBtnLabel"/>
+			<return-property column="V_OK_LABEL" name="okBtnLabel"/>
+			<return-property column="V_CANCEL_LABEL" name="cancelBtnLabel"/>
+			<return-property column="V_YES_LABEL" name="yesBtnLabel"/>
+			<return-property column="V_NO_LABEL" name="noBtnLabel"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_PAYEE (?, :vendorId, :contractNo, :payeeId, :payeeName, :payeeType, :expenseType, :idCard, :taxId, 
+									   :payeeAddress1, :payeeAddress2, :tambol, :amphur, :province, :postCode, :telephone, :mobileNo,  
+									   :fax, :email, :remark, :payeeBlockStatus, :hqFlag, :branchNo, :saveFlag, :updateBy, 
+									   :vendorMapPayeeId, :expenseEffectiveDtStr, :payType) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapValidateBBPayee" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultValidate">
+			<return-property column="O_RESULT_CODE" name="resultCode"/>
+			<return-property column="O_RESULT_TYPE" name="resultType"/>
+			<return-property column="O_RESULT_MESSAGE" name="resultMessage"/>
+			
+			<return-property column="O_EMAIL_FLAG" name="emailFlag"/>
+		 	<return-property column="O_VALIDATE_FLAG" name="validateFlag"/>
+		 	<return-property column="O_VALIDATE_CASE_ID" name="validateCaseId"/>
+		 	<return-property column="O_EMAIL_FROM" name="emailFrom"/>
+		 	<return-property column="O_EMAIL_TO" name="emailTo"/>
+			<return-property column="O_EMAIL_SUBJECT" name="emailSubject"/>
+		 	<return-property column="O_EMAIL_DETAIL" name="emailDetail"/>
+		 	<return-property column="V_CLOSE_LABEL" name="closeBtnLabel"/>
+			<return-property column="V_OK_LABEL" name="okBtnLabel"/>
+			<return-property column="V_CANCEL_LABEL" name="cancelBtnLabel"/>
+			<return-property column="V_YES_LABEL" name="yesBtnLabel"/>
+			<return-property column="V_NO_LABEL" name="noBtnLabel"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_BB_PAYEE (?, :vendorId, :payeeId, :contractNo, :expenseType, :firstEffectiveDtStr, 
+									   :effectiveDtStr, :expireDtStr, :payType, :accountType, :bankCode, :bankName, :bankBranch,    
+									   :province, :accountNo, :accountName, :remark, :saveFlag, :updateBy, :bookbankPayeeId, :vendorMapPayeeId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorSaveDraft" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultSaveDraft">
+			<return-property column="O_RESULT_CODE" name="rowId"/>
+			<return-property column="O_RESULT_CODE" name="resultCode"/>
+			<return-property column="O_RESULT_TYPE" name="resultType"/>
+			<return-property column="O_RESULT_MESSAGE" name="resultMessage"/>
+			<return-property column="O_VENDOR_ID" name="resultParam"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VENDOR_SAVE_DRAFT (?, :expenseType, :company, :vendorId, :vendorCode, :vendorName1, :vendorName2, 
+									   :vendorName3, :vendorName4, :idCard, :taxId, :vendorStatus, :vendorFlowStatus, 
+									   :vendorBlockStatus, :vendorBlackListStatus, :hqFlag, :branchNo, :contractNo, :saveFlag, 
+									   :whtId, :includeVAT, :updateBy, :vendorType, :vendorIdChngeFrm, :vendorRemark, 
+									   :notPayeeFlag, :otherExpenseFlag, :validateFlag, :validateCaseId, :remarkWithoutContract, :vendorMapPayeeId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorSaveAddress" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="O_RESULT_CODE" name="resultCode"/>
+			<return-property column="O_RESULT_TYPE" name="resultType"/>
+			<return-property column="O_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VENDOR_SAVE_ADDRESS (cast(? as refcursor), :tabNo, :withHoldName, :address1, :address2, :tambol, :amphur,
+										 :province, :postCode, :contactName, :telephone, :mobileNo, :fax, :email, :vendorId,
+										 :telephoneSapFlag,  :mobileNoSapFlag, :faxSapFlag, :emailSapFlag,
+										 :tambolName, :amphurName, :pTaxFlag, :updateBy, :address3, :address4) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapBookbankSaveDraft" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_BOOKBANK_SAVE_DRAFT (?, :vendorId, :contractNo, :accountNo, :accountName, :accountType, :bankCode, 
+									   :bankName, :bankBranch, :province, :remark, :bookbankStatus, :saveFlag, :updateBy, :vendorBookbankId
+									   ,:validateFlag, :validateCaseId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapReject" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_MANAGER_REJECT(?, :param1, :param2, :param3, :param4, :param5) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapPayeeSaveDraft" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultSaveDraft">
+			<return-property column="P_RESULT_CODE" name="rowId"/>
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="resultParam"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_PAYEE_SAVE_DRAFT (?, :vendorId, :contractNo, :payeeId, :payeeName, :payeeType, :expenseType, :idCard, :taxId, 
+									   :payeeAddress1, :payeeAddress2, :tambol, :amphur, :province, :postCode, :telephone, :mobileNo,  
+									   :fax, :email, :remark, :payeeBlockStatus, :hqFlag, :branchNo, :saveFlag, :updateBy, 
+									   :vendorMapPayeeId, :expenseEffectiveDtStr, :payType, :pTaxFlag, :validateFlag, :validateCaseId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapBBPayeeSaveDraft" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultSaveDraft">
+			<return-property column="P_RESULT_CODE" name="rowId"/>
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="resultParam"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_BB_PAYEE_SAVE_DRAFT (?, :vendorId, :payeeId, :contractNo, :expenseType, :firstEffectiveDtStr, 
+									   :effectiveDtStr, :expireDtStr, :payType, :accountType, :bankCode, :bankName, :bankBranch,    
+									   :province, :accountNo, :accountName, :remark, :saveFlag, :updateBy, :bookbankPayeeId, 
+									   :vendorMapPayeeId, :bookbankStatus, :validateFlag, :validateCaseId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapAssignCntrctToVndr" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_ASSGN_CNTRCT_T_VNDR (?, :param1, :param2, :param3, :param4, :param5) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapSaveExpenseInfo" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultExpt">
+			<return-property column="O_RESULT_CODE" name="resultCode"/>
+			<return-property column="O_RESULT_TYPE" name="resultType"/>
+			<return-property column="O_RESULT_MESSAGE" name="resultMessage"/>
+			<return-property column="O_VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_EXP_WTH_CNTRT_OF_VNDR (?, :param1, :param2, :param3, :param4, :param5,
+												     :param6, :param7, :param8, :param9, :param10,
+												     :param11) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapGetVendor" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001SAPVendorSP" entity-name="sapGetVendorInfo">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="COMPANY" name="company"/>	
+			<return-property column="VENDOR_CODE" name="vendorCode"/>			
+			<return-property column="BRANCH" name="vendorBranchNo"/>			
+			<return-property column="TAX_ID" name="taxId"/>		
+			<return-property column="ROLE" name="role"/>
+			<return-property column="ROLE_TYPE" name="roleType"/>
+			<return-property column="P_RESULT" name="result"/>
+			<return-property column="P_REMARK" name="remark"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_GET_VENDOR_INFO (?, :vendorId, :vendorMapPayeeId) ]]>
+	</sql-query>
+
+	<sql-query name="semsapVendorApprove" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.MmmVendorMasterInfoSP" entity-name="sapVendorApprove">
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+            <return-property column="VENDOR_CODE" name="vendorCode"/>
+            <return-property column="VENDOR_NAME1" name="vendorName"/>
+            <return-property column="VENDOR_NAME1" name="vendorName1"/>
+            <return-property column="VENDOR_NAME2" name="vendorName2"/>
+            <return-property column="VENDOR_NAME3" name="vendorName3"/>
+            <return-property column="VENDOR_NAME4" name="vendorName4"/>
+            <return-property column="VENDOR_BRANCH" name="branch"/>
+            <return-property column="COMPANY" name="company"/>
+            <return-property column="TAX_ID" name="taxId"/>
+            <return-property column="ADDRESS1" name="street"/>
+            <return-property column="ADDRESS2" name="street2"/>
+            <return-property column="ADDRESS3" name="street3"/>
+            <return-property column="ADDRESS4" name="street4"/>
+            <return-property column="DISTRICT" name="district"/>
+            <return-property column="AMPHUR" name="amphur"/>
+            <return-property column="POST_CODE" name="postCode"/>
+            <return-property column="COUNTRY" name="country"/>
+            <return-property column="REGION" name="region"/>
+            <return-property column="TELEPHONE" name="telNo"/>
+            <return-property column="MOBILE" name="mobileNo"/>
+            <return-property column="FAX" name="faxNo"/>
+            <return-property column="EMAIL" name="email"/>
+            <return-property column="HEAD_OFFICE" name="headOffice"/>
+            <return-property column="SEARCH_TEAM" name="searchTeam"/>
+            <return-property column="PAYMENT_TERM" name="paymentTerm"/>
+            <return-property column="PAYMENT_METHOD" name="paymentMethod"/>
+            <return-property column="CHK_DOUBLE_INV" name="chkDoubleInv"/>
+            <return-property column="WHT_TYPE" name="whtType"/>
+            <return-property column="WHT_CODE" name="whtCode"/>	
+            <return-property column="RECIPIENT_TYPE" name="recipientType"/>	
+            <return-property column="ROLE" name="role"/>	
+            <return-property column="ROLE_TYPE" name="roleType"/>	
+            <return-property column="ACCOUNT_GROUP" name="accountGroup"/>
+            <return-property column="RECON_ACCT" name="reconAcct"/>	
+            <return-property column="LOEVM" name="loevm"/>
+            <return-property column="SPERR" name="sperr"/>
+            <return-property column="CONFIRM_NO_TAX" name="confirmNoTax"/>
+            <return-property column="P_RESULT" name="result"/>
+			<return-property column="P_REMARK" name="remark"/>
+			<return-property column="STKZN" name="stkzn"/>
+			<return-property column="CONNUMBER_TEL" name="consNumberTel"/>
+			<return-property column="CONNUMBER_MOBILE" name="consNumberMobile"/>
+			<return-property column="CONNUMBER_FAX" name="consNumberFax"/>
+			<return-property column="CONNUMBER_EMAIL" name="consNumberEmail"/>
+			<return-property column="UPDATE_FLAG_TEL" name="updateFlagTel"/>
+			<return-property column="UPDATE_FLAG_MOBILE" name="updateFlagMobile"/>
+			<return-property column="UPDATE_FLAG_FAX" name="updateFlagFax"/>
+			<return-property column="UPDATE_FLAG_EMAIL" name="updateFlagEmail"/>
+			<return-property column="NOT_PAYEE_FLAG" name="notPayeeFlag"/>
+			<return-property column="WHT_TYPE_2" name="whtType2"/>
+            <return-property column="WHT_CODE_2" name="whtCode2"/>	
+            <return-property column="RECIPIENT_TYPE_2" name="recipientType2"/>	
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VENDOR_APPROVE (?, :vendorId, :actionType, :result, :remark, :vendorCode, :userId, :consNumberTel,
+		:consNumberMobile, :consNumberFax, :consNumberEmail, :validateFlag, :validateCaseId, :vendorMapPayeeId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapGetMapVendor" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001VendorMasterSP" entity-name="semSapMapVendor">  
+			<return-property name="rowId" column="VENDOR_CODE" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorCodeOld" column="VENDOR_CODE_OLD" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="address" column="ADDRESS" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_GET_MAP_VENDOR(?, :vendorCode, :vendorName) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapGetContractHistory" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001ContractHistory" entity-name="semSapContractHistory">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="vendorType" column="VENDOR_TYPE" />
+			<return-property name="whtType" column="WH_FLAG" />
+			<return-property name="vatType" column="VAT_FLAG" />
+			<return-property name="bookbankNo" column="ACCOUNT_NO" />
+			<return-property name="bookbankAcc" column="ACCOUNT_NAME" />
+			<return-property name="payeeId" column="PAYEE_ID" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="payeeBookbankNo" column="BOOKBANK_PAYEE_NO" />
+			<return-property name="payeeBookbankAcc" column="BOOKBANK_PAYEE_NAME" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="vendorId" column="VENDOR_ID" />
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CONTRACT_HIST(?, :contractNo) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapGetContractPayHistory" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001ContractPayHistory" entity-name="semSapContractPayHistory">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="contractPaymentDt" column="PAY_DT" />
+			<return-property name="invoiceNo" column="INVOICE_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="period" column="PERIOD" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeId" column="PAYEE_CODE" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="paymentType" column="PAY_TYPE" />
+			<return-property name="bookbankNo" column="ACCOUNT_NO" />
+			<return-property name="checkNo" column="CHEQUE_NO" />
+			<return-property name="periodType" column="PERIOD_TYPE" />
+			<return-property name="periodY" column="PERIOD_YEAR" />
+			<return-property name="periodM" column="PERIOD_MONTH" />
+			<return-property name="periodD" column="PERIOD_DAY" />
+			<return-property name="totalPaymentAmg" column="AMOUNT" />
+			<return-property name="vat" column="VAT" />
+			<return-property name="wht" column="WHT" />
+			<return-property name="docNoCancel" column="DOC_NO_CANCEL" />
+			<return-property name="docNo" column="DOC_NO" />
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_PAY_HIST(?, :historyPage, :contractNo, :vendorId, :bookbankId, :payeeId, :bookbankPayeeId, :paymentType) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapGetMasterHistory" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001HistorySP" entity-name="semSapMasterHistory">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="contentChange" column="CHANGE_TYPE" />
+			<return-property name="contentOld" column="OLD_DATA" />
+			<return-property name="contentNew" column="NEW_DATA" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_MASTER_HIST(?, :historyPage, :contractNo, :vendorId, :bookbankId, :payeeId, :bookbankPayeeId) ]]>
+	</sql-query>
+	
+	<sql-query name="semSapClearBatch" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CLEAR_BATCH (?, :param1, :param2, :param3, :param4, :param5, :param6) ]]>
+	</sql-query>
+	
+	<sql-query name="semSapCancel" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResult">
+			<return-property column="P_RESULT_CODE" name="resultCode"/>
+			<return-property column="P_RESULT_TYPE" name="resultType"/>
+			<return-property column="P_RESULT_MESSAGE" name="resultMessage"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CANCEL (?, :param1, :param2, :param3, :param4, :param5, :param6, :param7) ]]>
+	</sql-query>
+			
+	<sql-query name="semsapSummaryVendorHist" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm001VendorSP" entity-name="vendorDetailSummary">	
+			<return-property column="ROW_ID" name="rowId"/>
+			<return-property column="EFFECTIVE_DT" name="effectiveDt"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="OLD_CONTRACT_NO" name="oldContractNo"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="CONTRACT_EFFECTIVE_DT" name="contractEffectiveDt"/>
+			<return-property column="CONTRACT_EXPIRE_DT" name="contractExpireDt"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_TYPE" name="vendorType"/>
+			<return-property column="VENDOR_NAME" name="vendorName"/>
+			<return-property column="VENDOR_ID_CARD" name="vendorIdCard"/>
+			<return-property column="VENDOR_TAX_ID" name="vendorTaxId"/>
+			<return-property column="VAT" name="vat"/>
+			<return-property column="VENDOR_BLOCK" name="vendorBlock"/>
+			<return-property column="NOT_PAYEE" name="notPayee"/>
+			<return-property column="BLACK_LIST" name="vendorBlackList"/>
+			<return-property column="VENDOR_ADDRESS" name="vendorAddress"/>
+			<return-property column="VENDOR_ACCOUNT_NO" name="vendorAccountNo"/>
+			<return-property column="VENDOR_ACCOUNT_NAME" name="vendorAccountName"/>
+			<return-property column="VENDOR_ACCOUNT_TYPE" name="vendorAccountType"/>
+			<return-property column="VENDOR_BANK_NAME" name="vendorBankName"/>
+			<return-property column="PAYEE_CODE" name="payeeCode"/>
+			<return-property column="PAYEE_TYPE" name="payeeType"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="PAYEE_ID_CARD" name="payeeIdCard"/>
+			<return-property column="PAYEE_TAX_ID" name="payeeTaxId"/>
+			<return-property column="PAYEE_ADDRESS" name="payeeAddress"/>
+			<return-property column="PAYEE_ACCOUNT_NO" name="payeeAccountNo"/>
+			<return-property column="PAYEE_ACCOUNT_NAME" name="payeeAccountName"/>
+			<return-property column="PAYEE_ACCOUNT_TYPE" name="payeeAccountType"/>
+			<return-property column="PAYEE_BANK_NAME" name="payeeBankName"/>
+			<return-property column="ACTIVE_STATUS" name="activeStatus"/>
+			<return-property column="SITE_INFO_ID" name="siteInfoId"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="VENDOR_MAP_PAYEE_ID" name="vendorMapPayeeId"/>
+			<return-property column="VENDOR_BOOKBANK_ID" name="vendorBookbankId"/>
+			<return-property column="PAYEE_MASTER_ID" name="payeeId"/>
+			<return-property column="PAYEE_BOOKBANK_ID" name="payeeBookbankId"/>
+		</return>				
+		<![CDATA[ call SEM.SEM_SAP_SUMMARY_VENDOR_HIST (?, :vendorId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorGetPayment" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001ExpenseWithContractOfVendorSP" entity-name="vendorGetPayment">
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="EFFECTIVE_DT" name="contractEffectiveDt"/>
+			<return-property column="EXPIRE_DT" name="contractExpireDt"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="PAYMENT_TYPE" name="payType"/>
+			<return-property column="COMPANY" name="company"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VENDOR_GET_PAYMENT (?, :param1, :param2, :param3) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapConfirmInfo" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001HistorySP" entity-name="confirmInfo">  
+			<return-property column="ROW_ID" name="rowId" />
+			<return-property column="UPDATE_DT" name="updateDt" />
+			<return-property column="CHANGE_TYPE" name="contentChange" />
+			<return-property column="OLD_DATA" name="contentOld" />
+			<return-property column="NEW_DATA" name="contentNew" />
+			<return-property column="EFFECTIVE_DT" name="effectiveDt" />
+			<return-property column="EXPIRE_DT" name="expireDt" />
+			<return-property column="UPDATE_BY" name="updateBy" />
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CONFIRM_INFO(?, :historyPage, :contractNo, :vendorId, :bookbankId, :payeeId, :bookbankPayeeId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorValidateBack" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultValidateBack">
+			<return-property column="RESULT" name="resultType"/>
+			<return-property column="WARNING_FLAG" name="resultCode"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_BACK_VD (?, :expenseType, :company, :vendorId, :vendorCode, :vendorName1, :vendorName2, 
+									   :vendorName3, :vendorName4, :idCard, :taxId, :vendorStatus, :vendorFlowStatus, 
+									   :vendorBlockStatus, :vendorBlackListStatus, :hqFlag, :branchNo, :contractNo, :saveFlag, 
+									   :whtId, :includeVAT, :updateBy, :vendorType, :vendorIdChngeFrm, :vendorRemark, 
+									   :notPayeeFlag, :otherExpenseFlag, :validateFlag, :validateCaseId, :remarkWithoutContract, :vendorMapPayeeId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapAddressValidateBack" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultValidateBack">
+			<return-property column="RESULT" name="resultType"/>
+			<return-property column="WARNING_FLAG" name="resultCode"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_BACK_AD (?, :tabNo, :withHoldName, :address1, :address2, :tambol, :amphur,
+										 :province, :postCode, :contactName, :telephone, :mobileNo, :fax, :email, :vendorId,
+										 :telephoneSapFlag,  :mobileNoSapFlag, :faxSapFlag, :emailSapFlag,
+										 :tambolName, :amphurName, :pTaxFlag, :updateBy, :address3, :address4) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapExpenseValidateBack" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultValidateBack">
+			<return-property column="RESULT" name="resultType"/>
+			<return-property column="WARNING_FLAG" name="resultCode"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_BACK_EP (?, :param1, :param2, :param3, :param4, :param5,
+												     :param6, :param7, :param8, :param9, :param10,
+												     :param11) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapBookbankValidateBack" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultValidateBack">
+			<return-property column="RESULT" name="resultType"/>
+			<return-property column="WARNING_FLAG" name="resultCode"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_BACK_VB (?, :vendorId, :contractNo, :accountNo, :accountName, :accountType, :bankCode, 
+									   :bankName, :bankBranch, :province, :remark, :bookbankStatus, :saveFlag, :updateBy, :vendorBookbankId
+									   ,:validateFlag, :validateCaseId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapPayeeValidateBack" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultValidateBack">
+			<return-property column="RESULT" name="resultType"/>
+			<return-property column="WARNING_FLAG" name="resultCode"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_BACK_PY (?, :vendorId, :contractNo, :payeeId, :payeeName, :payeeType, :expenseType, :idCard, :taxId, 
+									   :payeeAddress1, :payeeAddress2, :tambol, :amphur, :province, :postCode, :telephone, :mobileNo,  
+									   :fax, :email, :remark, :payeeBlockStatus, :hqFlag, :branchNo, :saveFlag, :updateBy, 
+									   :vendorMapPayeeId, :expenseEffectiveDtStr, :payType, :pTaxFlag, :validateFlag, :validateCaseId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapBBPayeeValidateBack" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.ItemResultSP" entity-name="returnResultValidateBack">
+			<return-property column="RESULT" name="resultType"/>
+			<return-property column="WARNING_FLAG" name="resultCode"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_VALIDATE_BACK_PB (?, :vendorId, :payeeId, :contractNo, :expenseType, :firstEffectiveDtStr, 
+									   :effectiveDtStr, :expireDtStr, :payType, :accountType, :bankCode, :bankName, :bankBranch,    
+									   :province, :accountNo, :accountName, :remark, :saveFlag, :updateBy, :bookbankPayeeId, 
+									   :vendorMapPayeeId, :bookbankStatus, :validateFlag, :validateCaseId) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorBookbankCheckBBGsb" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001BookbankSP" entity-name="vendorBookbankCheckBBGsb">
+			<return-property column="RESULT" name="result"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CHECK_BB_GSB (?, :bankCode) ]]>
+	</sql-query>
+</hibernate-mapping>

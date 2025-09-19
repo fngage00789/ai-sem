@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class entity-name="srchVerCond" name="th.co.ais.domain.el.ELVerifyCondSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="electricId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="siteElectricId" type="java.lang.String"/>
+		<property name="electricUseType" type="java.lang.String"/>
+		<property name="electricUseTypeDesc" type="java.lang.String"/>
+		<property name="electricOwnerType" type="java.lang.String"/>
+		<property name="electricOwnerTypeDesc" type="java.lang.String"/>
+		<property name="takeAllAmt" type="java.math.BigDecimal"/>
+		<property name="takeAllPeriodType" type="java.lang.String"/>
+		<property name="unitPriceAmt" type="java.math.BigDecimal"/>
+		<property name="noUnitPriceFlag" type="java.lang.String"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="vatTypeDesc" type="java.lang.String"/>
+		<property name="payPeriodType" type="java.lang.String"/>
+		<property name="payPeriodTypeDesc" type="java.lang.String"/>
+		<property name="effectiveDt" type="java.sql.Date"/>
+		<property name="expireDt" type="java.sql.Date"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="payPeriod" type="java.lang.Integer"/>
+		<property name="periodYear" type="java.math.BigDecimal"/>
+		<property name="periodMonth" type="java.math.BigDecimal"/>
+		<property name="periodDay" type="java.math.BigDecimal"/>
+		<property name="whtType" type="java.lang.String"/>
+		<property name="whtTypeName" type="java.lang.String"/>
+		<property name="serviceName" type="java.lang.String"/>
+		<property name="siteInfoElectriCondId" type="java.lang.String"/>
+		<property name="verFlag" type="java.lang.String"/>
+	</class>
+	
+	<class entity-name="srchVerDtl" name="th.co.ais.domain.el.ELVerifyCondSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="electricDetailId" type="java.lang.String"/>
+		<property name="electricId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="meterId" type="java.lang.String"/>
+		<property name="electricUseType" type="java.lang.String"/>
+		<property name="electricOwnerType" type="java.lang.String"/>
+		<property name="electricOwnerTypeDesc" type="java.lang.String"/>
+		<property name="periodAmt" type="java.math.BigDecimal"/>
+		<property name="takeAllAmt" type="java.math.BigDecimal"/>
+		<property name="periodType" type="java.lang.String"/>
+		<property name="payPeriodType" type="java.lang.String"/>
+		<property name="payPeriodTypeDesc" type="java.lang.String"/>
+		<property name="takeAllPeriodType" type="java.lang.String"/>
+		<property name="unitPriceAmt" type="java.math.BigDecimal"/>
+		<property name="noUnitPriceFlag" type="java.lang.String"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="vatTypeDesc" type="java.lang.String"/>
+		<property name="vatRate" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="payeeCode" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String"/>
+		<property name="effectiveDt" type="java.sql.Date"/>
+		<property name="expireDt" type="java.sql.Date"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="vendorMasterId" type="java.lang.String"/>
+		<property name="payeeMasterId" type="java.lang.String"/>
+		<property name="bankAccNo" type="java.lang.String"/>
+		<property name="bankName" type="java.lang.String"/>
+		<property name="periodStartDt" type="java.sql.Date"/>
+		<property name="periodEndDt" type="java.sql.Date"/>
+		<property name="totPeriodNo" type="java.math.BigDecimal"/>
+		<property name="periodYear" type="java.math.BigDecimal"/>
+		<property name="periodMonth" type="java.math.BigDecimal"/>
+		<property name="periodDay" type="java.math.BigDecimal"/>
+		<property name="whtType" type="java.lang.String"/>
+		<property name="whtTypeName" type="java.lang.String"/>
+		<property name="whtRate" type="java.lang.String"/>
+		<property name="electricCalCode" type="java.lang.String"/>
+		<property name="electricCalDesc" type="java.lang.String"/>
+		<property name="serviceId" type="java.lang.String"/>
+		<property name="serviceName" type="java.lang.String"/>
+	</class>
+	
+	<class entity-name="srchVerHist" name="th.co.ais.domain.el.ELVerifyCondSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="electricDetailId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="electricId" type="java.lang.String"/>
+		<property name="meterId" type="java.lang.String"/>
+		<property name="electricUseType" type="java.lang.String"/>
+		<property name="electricOwnerType" type="java.lang.String"/>
+		<property name="electricOwnerTypeDesc" type="java.lang.String"/>
+		<property name="periodAmt" type="java.math.BigDecimal"/>
+		<property name="takeAllAmt" type="java.math.BigDecimal"/>
+		<property name="periodType" type="java.lang.String"/>
+		<property name="takeAllPeriodType" type="java.lang.String"/>
+		<property name="unitPriceAmt" type="java.math.BigDecimal"/>
+		<property name="noUnitPriceFlag" type="java.lang.String"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="vatRate" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="payeeCode" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String"/>
+		<property name="effectiveDt" type="java.sql.Date"/>
+		<property name="expireDt" type="java.sql.Date"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="electricCalCode" type="java.lang.String"/>
+		<property name="electricCalDesc" type="java.lang.String"/>
+		<property name="serviceId" type="java.lang.String"/>
+		<property name="serviceName" type="java.lang.String"/>
+					
+	</class>
+	
+	<class entity-name="listPaymentPreriod" name="th.co.ais.domain.el.ELVerifyCondSP">
+		<id name="paymentId" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="payeeCode" type="java.lang.String"/>
+		<property name="payAmt" type="java.math.BigDecimal"/>
+		<property name="whtType" type="java.lang.String"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="pElectricPayType" type="java.lang.String"/>
+		<property name="meterId" type="java.lang.String"/>
+		<property name="service" type="java.lang.String"/>
+		<property name="pUnitPrice" type="java.math.BigDecimal"/>
+		<property name="termOfPaymentDt" type="java.sql.Date"/>
+		<property name="fromTermOfPaymentDt" type="java.sql.Date"/>
+		<property name="toTermOfPaymentDt" type="java.sql.Date"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String"/>
+		<property name="periodNo" type="java.lang.String"/>
+		<property name="excludeVatAmt" type="java.math.BigDecimal"/>
+		<property name="vatAmt" type="java.math.BigDecimal"/>
+		<property name="includeVatAmt" type="java.math.BigDecimal"/>
+		<property name="paymentStatusDesc" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="pKwh" type="java.math.BigDecimal"/>
+		<property name="lKwh" type="java.math.BigDecimal"/>
+		<property name="totalKwh" type="java.math.BigDecimal"/>
+	</class>
+	
+	<class entity-name="mel001Cal" name="th.co.ais.domain.el.ELVerifyCondSP">
+		<id name="totPeriodNo" type="java.math.BigDecimal"/>
+		<property name="periodAmt" type="java.math.BigDecimal"/>
+	</class>
+	
+	<class entity-name="mel001SrchPayee" name="th.co.ais.domain.el.ELVerifyCondSP">
+		<id name="payeeMasterId" type="java.lang.String"/>
+		<property name="payeeCode" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String"/>
+	</class>
+	
+	<class entity-name="mel001InsertDetail" name="th.co.ais.domain.el.ELVerifyCondSP">
+		<id name="result" type="java.lang.String"/>
+		<property name="message" type="java.lang.String"/>
+	</class>
+	
+	<class entity-name="mel001ListMeter" name="th.co.ais.domain.el.ELVerifyCondSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="meterInfoId" type="java.lang.String"/>
+		<property name="meterId" type="java.lang.String"/>
+	</class>
+	
+	<class entity-name="SpAdjustPrivate" name="th.co.ais.domain.el.ELVerifyCondSP">
+		<id name="remark" type="java.lang.String"/>
+	</class>
+	<class entity-name="privateVerifyObj" name="th.co.ais.domain.el.ELVerifyCondSP">
+		<id name="result" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.el.Mel014UpdatePeriod" entity-name="mel014UpdPeriodObj">
+		<id name="pResult" type="java.lang.String"/>
+	</class>
+	
+	
+	<sql-query name="srchVerCond" callable="true" >
+		<return class="th.co.ais.domain.el.ELVerifyCondSP" entity-name="srchVerCond">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="electricId" column="ELECTRIC_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="siteElectricId" column="SITE_ELECTRIC_ID" />
+			<return-property name="electricUseType" column="ELECTRIC_USE_TYPE" />
+			<return-property name="electricUseTypeDesc" column="ELECTRIC_USE_TYPE_DESC" />
+			<return-property name="electricOwnerType" column="ELECTRIC_OWNER_TYPE" />
+			<return-property name="electricOwnerTypeDesc" column="ELECTRIC_OWNER_TYPE_DESC" />		
+			<return-property name="takeAllAmt" column="TAKE_ALL_AMT" />
+			<return-property name="takeAllPeriodType" column="TAKE_ALL_PERIOD_TYPE" />
+			<return-property name="unitPriceAmt" column="UNIT_PRICE_AMT" />
+			<return-property name="noUnitPriceFlag" column="NO_UNIT_PRICE_FLAG" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatTypeDesc" column="VAT_TYPE_DESC" />
+			<return-property name="payPeriodType" column="PAY_PERIOD_TYPE" />
+			<return-property name="payPeriodTypeDesc" column="PAY_PERIOD_TYPE_DESC" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="payPeriod" column="PAY_PERIOD" />
+			<return-property name="periodYear" column="PERIOD_YEAR" />
+			<return-property name="periodMonth" column="PERIOD_MONTH" />
+			<return-property name="periodDay" column="PERIOD_DAYS" />
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="whtTypeName" column="WHT_TYPE_DESC" />
+			<return-property name="serviceName" column="SERVICE_NAME" />
+			<return-property name="siteInfoElectriCondId" column="site_info_electric_cond_id" />
+			<return-property name="verFlag" column="VER_FLAG"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_SRCH_VER_COND(? ,:electricId) ]]>
+	</sql-query>
+	
+	<sql-query name="srchVerDtl" callable="true" >
+		<return class="th.co.ais.domain.el.ELVerifyCondSP" entity-name="srchVerDtl">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="electricDetailId" column="ELECTRIC_DETAIL_ID" />
+			<return-property name="electricId" column="ELECTRIC_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="meterId" column="METER_ID" />
+			<return-property name="electricUseType" column="ELECTRIC_USE_TYPE" />
+			<return-property name="electricOwnerType" column="ELECTRIC_OWNER_TYPE" />
+			<return-property name="electricOwnerTypeDesc" column="ELECTRIC_OWNER_TYPE_DESC" />
+			<return-property name="periodAmt" column="PERIOD_AMT" />
+			<return-property name="takeAllAmt" column="TAKE_ALL_AMT" />
+			<return-property name="periodType" column="P_PERIOD_TYPE" />
+			<return-property name="payPeriodType" column="P_PAY_PERIOD_TYPE" />
+			<return-property name="payPeriodTypeDesc" column="P_PAY_PERIOD_TYPE_DESC" />
+			<return-property name="takeAllPeriodType" column="TAKE_ALL_PERIOD_TYPE" />
+			<return-property name="unitPriceAmt" column="UNIT_PRICE_AMT" />
+			<return-property name="noUnitPriceFlag" column="NO_UNIT_PRICE_FLAG" />
+			<return-property name="vatType" column="P_VAT_TYPE" />
+			<return-property name="vatTypeDesc" column="P_VAT_TYPE_DESC" />
+			<return-property name="vatRate" column="P_VAT_RATE" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeCode" column="PAYEE_CODE" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID"/>
+			<return-property name="payeeMasterId" column="PAYEE_MASTER_ID"/>
+			<return-property name="bankAccNo" column="BANK_ACC_NO"/>
+			<return-property name="bankName" column="BANK_NAME"/>
+			<return-property name="periodStartDt" column="PERIOD_START_DT"/>
+			<return-property name="periodEndDt" column="PERIOD_END_DT"/>
+			<return-property name="totPeriodNo" column="TOT_PERIOD_NO"/>
+			<return-property name="periodYear" column="PERIOD_YEAR"/>
+			<return-property name="periodMonth" column="PERIOD_MONTH"/>
+			<return-property name="periodDay" column="PERIOD_DAY"/>
+			<return-property name="whtType" column="P_WHT_TYPE" />
+			<return-property name="whtTypeName" column="P_WHT_TYPE_DESC" />
+			<return-property name="whtRate" column="P_WHT_RATE" />
+			<return-property name="electricCalCode" column="electric_cal_code" />
+			<return-property name="electricCalDesc" column="electric_cal_desc" />
+			<return-property name="serviceId" column="service_id" />
+			<return-property name="serviceName" column="service_name" />
+			
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_SRCH_VER_DTL(? ,:electricId) ]]>
+	</sql-query>
+	
+	<sql-query name="srchVerHist" callable="true" >
+		<return class="th.co.ais.domain.el.ELVerifyCondSP" entity-name="srchVerHist">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="electricDetailId" column="ELECTRIC_DETAIL_ID" />
+			<return-property name="electricId" column="ELECTRIC_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="meterId" column="METER_ID" />
+			<return-property name="electricUseType" column="ELECTRIC_USE_TYPE" />
+			<return-property name="electricOwnerType" column="ELECTRIC_OWNER_TYPE" />
+			<return-property name="electricOwnerTypeDesc" column="ELECTRIC_OWNER_TYPE_DESC" />
+			<return-property name="periodAmt" column="PERIOD_AMT" />
+			<return-property name="takeAllAmt" column="TAKE_ALL_AMT" />
+			<return-property name="periodType" column="P_PERIOD_TYPE" />
+			<return-property name="takeAllPeriodType" column="TAKE_ALL_PERIOD_TYPE" />
+			<return-property name="unitPriceAmt" column="UNIT_PRICE_AMT" />
+			<return-property name="noUnitPriceFlag" column="NO_UNIT_PRICE_FLAG" />
+			<return-property name="vatType" column="P_VAT_TYPE" />
+			<return-property name="vatRate" column="P_VAT_RATE" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeCode" column="PAYEE_CODE" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DATE" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="electricCalCode" column="electric_cal_code" />
+			<return-property name="electricCalDesc" column="electric_cal_desc" />
+			<return-property name="serviceId" column="service_id" />
+			<return-property name="serviceName" column="service_name" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_SRCH_VER_HIST(? ,:electricId) ]]>
+	</sql-query>
+	
+	<sql-query name="mel001Cal" callable="true" >
+		<return class="th.co.ais.domain.el.ELVerifyCondSP" entity-name="mel001Cal">
+			<return-property name="totPeriodNo" column="P_TOT_PERIOD_NO" />
+			<return-property name="periodAmt" column="P_PERIOD_AMT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_EL_CAL(? ,:takeAllAmt ,:takeAllPeriodType ,:payPeriod ,:payPeriodType ,:periodYear ,:periodMonth ,:periodDay) ]]>
+	</sql-query>
+	
+	<sql-query name="mel001SrchPayee" callable="true" >
+		<return class="th.co.ais.domain.el.ELVerifyCondSP" entity-name="mel001SrchPayee">
+			<return-property name="payeeMasterId" column="PAYEE_MASTER_ID" />
+			<return-property name="payeeCode" column="PAYEE_CODE" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_SRCH_PAYEE(? ,:vendorMasterId ,:contractNo ,:expenseType) ]]>
+	</sql-query>
+	
+	<sql-query name="mel001InsertDetail" callable="true" >
+		<return class="th.co.ais.domain.el.ELVerifyCondSP" entity-name="mel001InsertDetail">
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="message" column="P_MESSAGE_CODE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_EL001_INSERT_DETAIL(? ,:mode ,:electricId ,:electricDetailId ,:periodStartDt ,:periodEndDt
+												,:periodAmt ,:takeAllPeriodType ,:whtType ,:whtRate ,:vatType 
+												,:vatRate ,:payPeriodType ,:payPeriod ,:vendorMasterId ,:payeeMasterId 
+												,:remark ,:user ,:serviceId ,:totPeriodNo ,:periodYear 
+												,:periodMonth ,:periodDay,:electricCalCode,:siteInfoElectriCondId
+												,:unitPriceAmtTemp, :NoUnitPriceFlag) ]]>
+	</sql-query>
+	
+	<sql-query name="mel001ListMeter" callable="true" >
+		<return class="th.co.ais.domain.el.ELVerifyCondSP" entity-name="mel001ListMeter">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="meterInfoId" column="METER_INFO_ID" />
+			<return-property name="meterId" column="METER_ID" />
+		</return>
+		<![CDATA[ call SEM.sem_sp_mel001_list_meter(? ,:electricId) ]]>
+	</sql-query>
+	
+	<sql-query name="el001ListPaymentPeriod" callable="true" >
+		<return class="th.co.ais.domain.el.ELVerifyCondSP" entity-name="listPaymentPreriod">
+			<return-property name="paymentId" column="PAYMENT_ID" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />	
+			<return-property name="payeeCode" column="PAYEE_CODE" />
+			<return-property name="payAmt" column="PAY_AMT" />	
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="vatType" column="VAT_TYPE" />				
+			<return-property name="pElectricPayType" column="P_ELECTRIC_PAY_TYPE" />
+			<return-property name="meterId" column="METER_ID" />
+			<return-property name="service" column="SERVICE_NAME" />
+			<return-property name="pUnitPrice" column="P_UNIT_PRICE" />
+			<return-property name="termOfPaymentDt" column="TERM_OF_PAYMENT_DT" />
+			<return-property name="fromTermOfPaymentDt" column="FROM_TERM_OF_PAYMENT_DT" />
+			<return-property name="toTermOfPaymentDt" column="TO_TERM_OF_PAYMENT_DT" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="periodNo" column="PERIOD_NO" />
+			<return-property name="excludeVatAmt" column="EXCLUDE_VAT_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="includeVatAmt" column="INCLUDE_VAT_AMT" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="remark" column="REMARK" />
+			
+			<return-property name="pKwh" column="P_KWH"/>
+			<return-property name="lKwh" column="L_KWH"/>
+			<return-property name="totalKwh" column="KWH_TOTAL"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_LIST_PAYMENT(? ,:electricId, :meterId) ]]>
+	</sql-query>
+	
+	<sql-query name="mel006SpAdjustPrivate" callable="true" >
+		<return class="th.co.ais.domain.el.ELVerifyCondSP" entity-name="SpAdjustPrivate">
+			<return-property name="remark" column="REMARK" />
+		</return>
+		<![CDATA[ call SEM_PG_EL_VALIDATE_PAYMENT_SP_ADJUST_PRIVATE(:electricId, :paymentId) ]]>
+	</sql-query>
+		
+	<sql-query name="mel014PrivateVerify" callable="true" >
+		<return class="th.co.ais.domain.el.ELVerifyCondSP" entity-name="privateVerifyObj">
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_EL_VERIFY(?, :electricId) ]]>
+	</sql-query>
+	
+	<sql-query name="mel014UpdPeriod" callable="true">
+		<return class="th.co.ais.domain.el.Mel014UpdatePeriod" entity-name="mel014UpdPeriodObj">
+			<return-property name="pResult" column="P_RESULT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_UPD_PERIOD(?, :paymentId, :period, :userId) ]]>
+	</sql-query>
+</hibernate-mapping>

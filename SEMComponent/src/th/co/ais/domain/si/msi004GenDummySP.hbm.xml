@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<!-- GEN DUMMY OLD -->
+	<class name="th.co.ais.domain.si.Msi004GenDummy" entity-name="genDummyOld">
+		<id name="pResult" type="java.lang.String"/>
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	<!-- GEN DUMMY -->
+    <class name="th.co.ais.domain.si.SiteInfoSP" entity-name="genDummy">
+        <id name="pResult" type="java.lang.String"/>
+        <property name="pRemark" type="java.lang.String"/>
+    </class>
+	<!-- SEARCH DUMMY -->
+	<class name="th.co.ais.domain.si.SiteInfoSP" entity-name="srchDummy">
+        <id name="rowId" type="java.lang.String"/>
+        <property name="siteInfoId" type="java.lang.String"/>
+        <property name="company" type="java.lang.String"/>
+        <property name="region" type="java.lang.String"/>
+        <property name="contractNo" type="java.lang.String"/>
+        <property name="siteName" type="java.lang.String"/>
+        <property name="locationId" type="java.lang.String"/>
+        <property name="locationCode" type="java.lang.String"/>
+        <property name="effDate" type="java.util.Date"></property>
+        <property name="expDate" type="java.util.Date"></property>
+        <property name="siteStatus" type="java.lang.String"/>
+        <property name="siteType" type="java.lang.String"></property>
+        <property name="networkStatus" type="java.lang.String"></property>
+    </class>
+    <!-- SEARCH DUMMY DTL -->
+    <class name="th.co.ais.domain.si.SiteInfoSP" entity-name="srchDummyDtl">
+        <id name="rowId" type="java.lang.String"/>
+        <property name="contractNo" type="java.lang.String"/>
+        <property name="company" type="java.lang.String"/>
+        <property name="region" type="java.lang.String"/>
+        <property name="siteName" type="java.lang.String"/>
+        <property name="fristEffDT" type="java.util.Date"/>
+        <property name="effDate" type="java.util.Date"/>
+        <property name="expDate" type="java.util.Date"/>
+        <property name="chkNoExpireFlag" type="java.lang.String"/>
+        <property name="ageYear" type="java.lang.Integer"/>
+        <property name="ageMonth" type="java.lang.Integer"/>
+        <property name="ageDay" type="java.lang.Integer"/>
+        <property name="siteType" type="java.lang.String"/>
+        <property name="dummyFlag" type="java.lang.String"/>
+        <property name="siteStatus" type="java.lang.String"/>
+        <property name="terminateDate" type="java.lang.String"/>
+        <property name="chkPendingStatus" type="java.lang.String"/>
+        <property name="pendingDate" type="java.util.Date"/>
+        <property name="siteInfoStatus" type="java.lang.String"/>
+        <property name="remark" type="java.lang.String"/>
+        <property name="placeType" type="java.lang.String"/>
+        <property name="siteHouseNo" type="java.lang.String"/>
+        <property name="siteBuilding" type="java.lang.String"/>
+        <property name="siteFloor" type="java.lang.String"/>
+        <property name="siteRoomNo" type="java.lang.String"/>
+        <property name="siteStreet" type="java.lang.String"/>
+        <property name="siteTambon" type="java.lang.String"/>
+        <property name="siteAmphurId" type="java.lang.String"/>
+        <property name="siteProvinceId" type="java.lang.String"/>
+        <property name="sitePostCode" type="java.lang.String"/>
+        <property name="deckAreaType" type="java.lang.String"/>
+        <property name="deckArea" type="java.math.BigDecimal"/>
+        <property name="buildingAreaType" type="java.lang.String"/>
+        <property name="buildingArea" type="java.math.BigDecimal"/>
+        <property name="roomArea" type="java.math.BigDecimal"/>
+        <property name="landAreaUnitType" type="java.lang.String"/>
+        <property name="landArea" type="java.math.BigDecimal"/>
+        <property name="rightHouseNo" type="java.lang.String"/>
+        <property name="rightBuilding" type="java.lang.String"/>
+        <property name="rightFloor" type="java.lang.String"/>
+        <property name="rightRoomNo" type="java.lang.String"/>
+        <property name="rightStreet" type="java.lang.String"/>
+        <property name="rightTambon" type="java.lang.String"/>
+        <property name="rightAmphur" type="java.lang.String"/>
+        <property name="rightProvince" type="java.lang.String"/>
+        <property name="rightPostCode" type="java.lang.String"/>
+        <property name="elRemark" type="java.lang.String"/>
+        <property name="electricOwnerType" type="java.lang.String"/>
+        <property name="multiElectricTypeFlag" type="java.lang.String"/>
+        <property name="electricType1" type="java.lang.String"/>
+        <property name="electricType2" type="java.lang.String"/>
+        <property name="electricType3" type="java.lang.String"/>
+        <property name="electricType4" type="java.lang.String"/>
+        <property name="fromContractNo" type="java.lang.String"/>
+        <property name="fromSiteInfoId" type="java.lang.String"/>
+        <property name="takeAllAmt" type="java.math.BigDecimal"/>
+        <property name="unitPriceAmt" type="java.math.BigDecimal"/>
+        <property name="takeAllPeriodType" type="java.lang.String"/>
+        <property name="vatType" type="java.lang.String"/>
+        <property name="payPeriodType" type="java.lang.String"/>
+        <property name="payPeriod" type="java.lang.Integer"/>
+        <property name="noUnitPriceFlag" type="java.lang.String"/>
+        <property name="siteStatusName" type="java.lang.String"/>
+        <property name="transferDummy" type="java.lang.String"/>
+    </class>    
+    <!-- SAVE DUMMY -->
+    <class name="th.co.ais.domain.si.SiteInfoSP" entity-name="saveDummy">
+        <id name="pResult" type="java.lang.String"/>
+        <property name="pRemark" type="java.lang.String"/>
+    </class>
+    <!-- TRANSFER DUMMY -->
+    <class name="th.co.ais.domain.si.SiteInfoSP" entity-name="transferDummy">
+        <id name="pResult" type="java.lang.String"/>
+        <property name="pRemark" type="java.lang.String"/>
+    </class>
+    <!-- DELETE DUMMY -->
+    <class name="th.co.ais.domain.si.SiteInfoSP" entity-name="deleteDummy">
+        <id name="pResult" type="java.lang.String"/>
+        <property name="pRemark" type="java.lang.String"/>
+    </class>
+    <!-- DELETE DUMMY -->
+    <class name="th.co.ais.domain.si.SiteInfoSP" entity-name="chkLoc">
+        <id name="pResult" type="java.lang.String"/>
+        <property name="pRemark" type="java.lang.String"/>
+        <property name="contractNo" type="java.lang.String"/>
+    </class>
+	<!-- << classes declarement -->
+    
+    <!-- ============================================================================== -->
+    <!-- ============================================================================== -->
+    
+    <!-- >> queries declarement -->
+    <!-- GEN DUMMY OLD -->
+	<sql-query name="msi004GenDummy" callable="true">
+		<return class="th.co.ais.domain.si.Msi004GenDummy" entity-name="genDummyOld">
+			<return-property name="pResult" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+			<!-- <return-property name="pDocNo" column="v_DOC_NO" /> -->
+			<!-- <return-property name="pSiteApproveId" column="v_SITE_APPROVE_ID" /> -->
+			<!-- <return-property name="pSiteInfoId" column="v_SITE_INFO_ID" /> -->
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_GEN_DUMMY  (?, :company, :locationId, :user) ]]>
+	</sql-query>
+	<!-- GEN DUMMY -->
+    <sql-query name="mel011GenDummy" callable="true">
+        <return class="th.co.ais.domain.si.SiteInfoSP" entity-name="genDummy">
+            <return-property name="pResult" column="P_RESULT" />
+            <return-property name="pRemark" column="P_REMARK" />
+        </return>
+        <![CDATA[ call SEM.SEM_SP_MEL011_GEN_DUMMY  (?, :company, :region, :locationId, :userId) ]]>
+    </sql-query>
+	<!-- SEARCH DUMMY -->
+	<sql-query name="mel011SrchDummy" callable="true">
+        <return class="th.co.ais.domain.si.SiteInfoSP" entity-name="srchDummy">
+            <return-property name="rowId" column="ROW_ID" />
+            <return-property name="siteInfoId" column="SITE_INFO_ID" />
+            <return-property name="company" column="COMPANY" />
+            <return-property name="region" column="REGION" />
+            <return-property name="contractNo" column="CONTRACT_NO" />
+            <return-property name="siteName" column="SITE_NAME" />
+            <return-property name="locationId" column="LOCATION_ID" />
+            <return-property name="locationCode" column="LOCATION_CODE" />
+            <return-property name="effDate" column="EFFECTIVE_DT" />
+            <return-property name="expDate" column="EXPIRE_DT" />
+            <return-property name="siteStatus" column="SITE_STATUS_NAME" />
+            <return-property name="siteType" column="SITE_TYPE" />
+            <return-property name="networkStatus" column="NETWORK_STATUS" />
+        </return>
+        <![CDATA[ call SEM.SEM_SP_MEL011_SRCH  (?, :company, :region, :locationId, :locationCode, :siteName, :siteStatus,
+         :contractNo, :effDateFrom, :effDateTo, :expDateFrom, :expDateTo, :noExpireFlag) ]]>
+    </sql-query>
+    <!-- SEARCH DUMMY DTL -->
+    <sql-query name="mel011SrchDummyDtl" callable="true">
+        <return class="th.co.ais.domain.si.SiteInfoSP" entity-name="srchDummyDtl">
+            <return-property name="rowId" column="SITE_INFO_ID" />
+            <return-property name="contractNo" column="CONTRACT_NO" />
+            <return-property name="company" column="COMPANY" />
+            <return-property name="region" column="REGION" />
+            <return-property name="siteName" column="SITE_NAME" />
+            <return-property name="fristEffDT" column="FIRST_EFFECTIVE_DT" />
+            <return-property name="effDate" column="EFFECTIVE_DT" />
+            <return-property name="expDate" column="EXPIRE_DT" />
+            <return-property name="chkNoExpireFlag" column="NO_EXPIRE_FLAG" />
+            <return-property name="ageYear" column="AGE_YEAR" />
+            <return-property name="ageMonth" column="AGE_MONTH" />
+            <return-property name="ageDay" column="AGE_DAY" />
+            <return-property name="siteType" column="SITE_TYPE" />
+            <return-property name="dummyFlag" column="DUMMY_FLAG" />
+            <return-property name="siteStatus" column="SITE_STATUS" />
+            <return-property name="siteStatusName" column="SITE_STATUS_NAME" />
+            <return-property name="terminateDate" column="TERMINATE_DT" />
+            <return-property name="chkPendingStatus" column="PENDING_STATUS" />
+            <return-property name="pendingDate" column="PENDING_DT" />
+            <return-property name="siteInfoStatus" column="SITE_INFO_STATUS" />
+            <return-property name="remark" column="REMARK" />
+            <return-property name="placeType" column="PLACE_TYPE" />
+            <return-property name="siteHouseNo" column="SITE_HOUSE_NO" />
+            <return-property name="siteBuilding" column="SITE_BUILDING" />
+            <return-property name="siteFloor" column="SITE_FLOOR" />
+            <return-property name="siteRoomNo" column="SITE_ROOM_NO" />
+            <return-property name="siteStreet" column="SITE_STREET" />
+            <return-property name="siteTambon" column="SITE_TAMBON" />
+            <return-property name="siteAmphurId" column="SITE_AMPHUR_ID" />
+            <return-property name="siteProvinceId" column="SITE_PROVINCE_ID" />
+            <return-property name="sitePostCode" column="SITE_POSTCODE" />
+            <return-property name="deckAreaType" column="DECK_AREA_TYPE" />
+            <return-property name="deckArea" column="DECK_AREA" />
+            <return-property name="buildingAreaType" column="BUILDING_AREA_TYPE" />
+            <return-property name="buildingArea" column="BUILDING_AREA" />
+            <return-property name="roomArea" column="ROOM_AREA" />
+            <return-property name="landAreaUnitType" column="LAND_AREA_UNIT_TYPE" />
+            <return-property name="landArea" column="LAND_AREA" />
+            <return-property name="rightHouseNo" column="RIGHT_HOUSE_NO" />
+            <return-property name="rightBuilding" column="RIGHT_BUILDING" />
+            <return-property name="rightFloor" column="RIGHT_FLOOR" />
+            <return-property name="rightRoomNo" column="RIGHT_ROOM_NO" />
+            <return-property name="rightStreet" column="RIGHT_STREET" />
+            <return-property name="rightTambon" column="RIGHT_TAMBON" />
+            <return-property name="rightAmphur" column="RIGHT_AMPHUR" />
+            <return-property name="rightProvince" column="RIGHT_PROVINCE" />
+            <return-property name="rightPostCode" column="RIGHT_POSTCODE" />
+            <return-property name="elRemark" column="EL_REMARK" />
+            <return-property name="electricOwnerType" column="ELECTRIC_OWNER_TYPE" />
+            <return-property name="multiElectricTypeFlag" column="MULTI_ELECTRIC_TYPE_FLAG" />
+            <return-property name="electricType1" column="ELECTRIC_TYPE_1" />
+            <return-property name="electricType2" column="ELECTRIC_TYPE_2" />
+            <return-property name="electricType3" column="ELECTRIC_TYPE_3" />
+            <return-property name="electricType4" column="ELECTRIC_TYPE_4" />
+            <return-property name="fromContractNo" column="FROM_CONTRACT_NO" />
+            <return-property name="fromSiteInfoId" column="FROM_SITE_INFO_ID" />
+            <return-property name="takeAllAmt" column="TAKE_ALL_AMT" />
+            <return-property name="unitPriceAmt" column="UNIT_PRICE_AMT" />
+            <return-property name="takeAllPeriodType" column="TAKE_ALL_PERIOD_TYPE" />
+            <return-property name="vatType" column="VAT_TYPE" />
+            <return-property name="payPeriodType" column="PAY_PERIOD_TYPE" />
+            <return-property name="payPeriod" column="PAY_PERIOD" />
+            <return-property name="noUnitPriceFlag" column="NO_UNIT_PRICE_FLAG" />
+            <return-property name="transferDummy" column="transfer_dummy" />
+            
+        </return>
+        <![CDATA[ call SEM.SEM_SP_MEL011_SRCH_DTL  (?, :siteInfoId) ]]>
+    </sql-query>
+    <!-- SAVE DUMMY -->
+    <sql-query name="mel011SaveDummy" callable="true">
+        <return class="th.co.ais.domain.si.SiteInfoSP" entity-name="saveDummy">
+            <return-property name="pResult" column="P_RESULT" />
+            <return-property name="pRemark" column="P_REMARK" />
+        </return>
+        <![CDATA[ call SEM.SEM_SP_MEL011_SAVE (?, :rowId, :siteName, :siteType, :contractNo, :fristEffDT, :effDate, :expDate, :noExpireFlag, :ageYear,
+          :ageMonth, :ageDay, :siteStatus, :pendingStatus, :pendingDate, :terminateDate, :remark,
+          :locationId, :placeType, :siteHouseNo, :siteBuilding, :siteFloor, :siteRoomNo, :siteStreet,
+          :siteTambon, :siteAmphurId, :siteProvinceId, :sitePostCode, :deckAreaType, :deckArea,
+          :buildingAreaType, :buildingArea, :roomAreaType, :roomArea, :landAreaType, :landAreaUnitType,
+          :landArea, :rightHouseNo, :rightBuilding, :rightFloor, :rightRoomNo, :rightStreet,
+          :rightTambon, :rightAmphur, :rightProvince, :rightPostCode, :fromSiteInfoId, :fromContractNo,
+          :elRemark, :electricOwnerType, :takeAllAmt, :takeAllPeriodType, :unitPriceAmt, :vatType,
+          :payPeriodType, :payPeriod, :multiElectricTypeFlag, :electricType1, :electricType2,
+          :electricType3, :electricType4, :noUnitPriceFlag, :userId) ]]>
+    </sql-query> 
+    <!-- TRANSFER DUMMY -->
+    <sql-query name="mel011TransferDummy" callable="true">
+        <return class="th.co.ais.domain.si.SiteInfoSP" entity-name="transferDummy">
+            <return-property name="pResult" column="P_RESULT" />
+            <return-property name="pRemark" column="P_REMARK" />
+        </return>
+        <![CDATA[ call SEM_SP_MEL011_TRANSFER (?, :rowId, :contractNo, :transferSiteInfoId, :transferContNo, :userId) ]]>
+    </sql-query>
+    
+    <sql-query name="mcp001TransferDummy" callable="true">
+        <return class="th.co.ais.domain.si.SiteInfoSP" entity-name="transferDummy">
+            <return-property name="pResult" column="P_RESULT" />
+            <return-property name="pRemark" column="P_REMARK" />
+        </return>
+        <![CDATA[ call SEM.SEM_SP_MCP001_TRANSFER (?, :rowId, :contractNo, :transferSiteInfoId, :transferContNo, :userId) ]]>
+    </sql-query>
+    <!-- DELETE DUMMY -->
+    <sql-query name="mel011DeleteDummy" callable="true">
+        <return class="th.co.ais.domain.si.SiteInfoSP" entity-name="deleteDummy">
+            <return-property name="pResult" column="P_RESULT" />
+            <return-property name="pRemark" column="P_REMARK" />
+        </return>
+        <![CDATA[ call SEM_SP_MEL011_DEL (?, :siteInfoId, :userId) ]]>
+    </sql-query>
+    <!-- Check LocationId Befor gen DUMMY -->
+    <sql-query name="mel011ChkLoc" callable="true">
+        <return class="th.co.ais.domain.si.SiteInfoSP" entity-name="chkLoc">
+            <return-property name="pResult" column="P_RESULT" />
+            <return-property name="pRemark" column="P_REMARK" />
+            <return-property name="contractNo" column="P_CONTRACT_NO" />
+        </return>
+        <![CDATA[ call SEM_SP_MEL011_CHK_LOC (?, :locationId) ]]>
+    </sql-query>
+    
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>
+					<!-- IP 251's Path -->					
+<!--					   file:E:\\sem-workspace\\SEMComponent\\src\\th\\co\\ais\\resource\\SEMConfig.properties -->
+					<!-- IP 232's (New Server) Path -->					
+<!--					   file:D:\\project\\sem\\SEMComponent\\src\\th\\co\\ais\\resource\\SEMConfig.properties-->
+					<!-- IP Linux Server's Path -->
+<!--                    file:/jboss/SEMConfig.properties-->					
+					<!-- UAT's Path -->
+<!--					file:/jboss/9_SEM_5.1.0/server/default/deploy/SEMConfig/SEMConfig.properties -->
+				
+					<!-- Mr.JOHN's Path -->
+<!-- 					file:D:\\Java\\workspace\\sem\\20110314\\SEMComponent\\src\\th\\co\\ais\\resource\\SEMConfig.properties  -->
+					<!-- ONG's Path -->					
+					 <!-- file:D:\\Projects\\AIS\\SEM\\config\\SEMConfig.properties -->
+<!-- 					 file:D:\\Workspaces\\SEM\\Repo\\sem\\SEMComponent\\src\\th\\co\\ais\\resource\\SEMConfig.properties -->
+					<!-- MING Path -->
+<!--					file:D:\\project\\sem\\SEMComponent\\src\\th\\co\\ais\\resource\\SEMConfig.properties -->
+                    <!--file:C:\\Users\\007034\\Desktop\\SEM\\Repo\\sem\\SEMComponent\\src\\th\\co\\ais\\resource\\SEMConfig.properties-->
+					<!-- Local Path -->
+					 <!-- file:C:\\Users\\malov\\Documents\\SEM-Migration-Scancode\\SEMComponent\\src\\th\\co\\ais\\resource\\SEMConfig.properties --> 
+
+					<!-- PRD's Path -->
+ 					<!-- file:/datacamp/SEM/SEMConfig/SEMConfig.properties -->
+ 					
+					<!-- STG Postgresql-->
+					<!-- file:/datacamp/SEM/resources/SEMConfigOraExit/SEMConfig.properties -->
+					
+					<!-- Dev -->
+					file:D:\\SEMCODE\\SEM-Migration\\data\\SEM\\resources\\SEMConfig\\SEMConfig.properties
+					
+				</value>
+			</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders">
+			<value>true</value>
+		</property>
+	</bean>
+</beans>

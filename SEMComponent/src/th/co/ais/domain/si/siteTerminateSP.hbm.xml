@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SiteTerminateSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="docNo" type="java.lang.String"/>
+		<property name="docDate" type="java.util.Date"/>
+		<property name="reqOfficer" type="java.lang.String"/>
+		<property name="title" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationName" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="querySearchSiteTerminate" callable="true">
+		<return class="th.co.ais.domain.si.SiteTerminateSP">
+			<return-property name="rowId" column="SITE_TERMINATE_ID" />
+			<return-property name="docNo" column="DOC_NO" />
+			<return-property name="docDate" column="DOC_DT" />
+			<return-property name="reqOfficer" column="REQ_OFFICER" />
+			<return-property name="title" column="TITLE" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationName" column="LOCATION_NAME" />
+			<return-property name="region" column="REGION" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI003_SRCH (?, :docNo, :contractNo, :reqOfficer, :company, :title, :docDateFrom, :docDateTo, :locationId, :locationName, :region) ]]>
+	</sql-query>
+</hibernate-mapping>

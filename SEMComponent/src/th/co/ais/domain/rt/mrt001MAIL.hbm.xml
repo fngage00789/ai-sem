@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.EMAILModel">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="email_from" type="java.lang.String"/>
+		<property name="email_to" type="java.lang.String"/>
+		<property name="v_Subject" type="java.lang.String"/>
+		<property name="v_Message" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="mrt003MAIL" callable="true">
+		<return class="th.co.ais.domain.rt.EMAILModel">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="email_from" column="EMAIL_FROM" />
+			<return-property name="email_to" column="EMAIL_TO" />
+			<return-property name="v_Subject" column="V_SUBJECT" />
+			<return-property name="v_Message" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM_SP_MRT003_MAIL(?, :v_type, :row_ID, :userId) ]]>
+	</sql-query>
+	
+	<sql-query name="msa001MAIL" callable="true">
+		<return class="th.co.ais.domain.rt.EMAILModel">
+			<return-property name="rowId" column="SITE_APP_ID" />
+			<return-property name="email_from" column="EMAIL_FROM" />
+			<return-property name="email_to" column="EMAIL_TO" />
+			<return-property name="v_Subject" column="V_SUBJECT" />
+			<return-property name="v_Message" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSA001_MAIL(?, :v_type, :row_ID, :userId, :batchFlag) ]]>
+	</sql-query>
+	
+	<sql-query name="mel009MAIL" callable="true">
+		<return class="th.co.ais.domain.rt.EMAILModel">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="email_from" column="EMAIL_FROM" />
+			<return-property name="email_to" column="EMAIL_TO" />
+			<return-property name="v_Subject" column="V_SUBJECT" />
+			<return-property name="v_Message" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL009_MAIL(?, :v_type, :row_ID, :userId) ]]>
+	</sql-query>
+	
+	<sql-query name="mrt007MAIL" callable="true">
+		<return class="th.co.ais.domain.rt.EMAILModel">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="email_from" column="EMAIL_FROM" />
+			<return-property name="email_to" column="EMAIL_TO" />
+			<return-property name="v_Subject" column="V_SUBJECT" />
+			<return-property name="v_Message" column="V_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT007_MAIL(?, :v_type, :row_ID, :userId) ]]>
+	</sql-query>
+</hibernate-mapping>

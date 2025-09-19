@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.cp">
+ <class name="th.co.ais.domain.cp.ProxyConstructionPermissionUploadFile" entity-name="ProxyCpListUploadFile" > 
+ 	<id name="rowId" type="java.lang.String" />
+ 	<property name="company" type="java.lang.String" ></property>
+ 	<property name="fileType" type="java.lang.String" ></property>
+ 	<property name="fileName" type="java.lang.String" ></property>
+ 	<property name="recordTotal" type="java.lang.String" ></property>
+ 	<property name="recordSuccess" type="java.lang.String" ></property>
+ 	<property name="print" type="java.lang.String" ></property>
+ 	<property name="waitPrint" type="java.lang.String" ></property>
+ 	<property name="recordfail" type="java.lang.String" ></property>
+ 	<property name="uploadBy" type="java.lang.String" ></property>
+ 	<property name="uploadDt" type="java.util.Date" ></property>
+ </class>
+ 
+   <class name="th.co.ais.domain.cp.ProxyConstructionPermissionUploadFile"  entity-name="ProxyCpDeleteUploadFile">
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ </class>
+ 
+ 
+ <sql-query name="mcp002SearchUploadFile" callable="true">
+ 	<return class="th.co.ais.domain.cp.ProxyConstructionPermissionUploadFile" entity-name="ProxyCpListUploadFile" >
+ 		<return-property name="rowId" column="cp_import_proxy_log_id"></return-property>
+ 		<return-property name="company" column="company"></return-property>
+ 		<return-property name="fileType" column="file_type"></return-property>
+ 		<return-property name="fileName" column="file_name"></return-property>
+ 		<return-property name="recordTotal" column="total_record"></return-property>
+ 		<return-property name="recordSuccess" column="success_record"></return-property>
+ 		<return-property name="print" column="print_record"></return-property>
+ 		<return-property name="waitPrint" column="wait_print"></return-property>
+ 		<return-property name="recordfail" column="failed_record"></return-property>
+ 		<return-property name="uploadBy" column="import_file_by"></return-property>
+ 		<return-property name="uploadDt" column="import_file_dt"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MCP002_PROXY_SRCH(?, :company, :region , :uploadFileDtFrom, :uploadFileDtTo, :fileName)]]>
+ </sql-query>
+ 
+ <sql-query name="mcp002DeleteUploadFile" callable="true">
+ 	<return class="th.co.ais.domain.cp.ProxyConstructionPermissionUploadFile" entity-name="ProxyCpDeleteUploadFile" >
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[call SEM.sem_sp_mcp002_proxy_del(?, :rowId, :user)]]>
+ </sql-query>
+ </hibernate-mapping>

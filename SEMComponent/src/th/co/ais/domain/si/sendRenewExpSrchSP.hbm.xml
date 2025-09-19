@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SendRenewExpSrchSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="firstEffDt" type="java.sql.Date"/>
+		<property name="effDt" type="java.sql.Date"/>
+		<property name="expDt" type="java.sql.Date"/>
+		<property name="rentAmt" type="java.lang.Double"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="locationCode" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="sendRenewType" type="java.lang.String"/>
+		<property name="siteStatus" type="java.lang.String"/>
+		<property name="flowStatus" type="java.lang.String"/>
+		<property name="siteAds" type="java.lang.String"/>
+	</class>
+	<sql-query name="querySearchSendRenewExp" callable="true">
+		<return class="th.co.ais.domain.si.SendRenewExpSrchSP">
+			<return-property name="rowId" column="SITE_INFO_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="firstEffDt" column="FIRST_EFFECTIVE_DT" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expDt" column="EXPIRE_DT" />
+			<return-property name="rentAmt" column="RENT_AMT" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="locationCode" column="LOCATION_CODE" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="sendRenewType" column="SEND_RENEW_TYPE" />
+			<return-property column="SITE_STATUS" name="siteStatus"/>
+   			<return-property column="FLOW_STATUS" name="flowStatus"/>
+   			<return-property column="SITE_ADDR" name="siteAds"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI005_SRCH_EXP(?, :contractNo, :company, :contractStartDt, :contractEndDt, :contractNoEndFlag, :contractEndMonth, :locationId, :locationCode, :siteName, :region, :sendRenewType, :siteType, :expireDtFrom, :expireDtTo) ]]>
+	</sql-query>
+</hibernate-mapping>

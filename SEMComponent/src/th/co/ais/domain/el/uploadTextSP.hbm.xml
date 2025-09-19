@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.UploadTextSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="seqNo" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="oldContractNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="region" type="java.lang.String"/>
+		<property name="meterId" type="java.lang.String"/>
+		<property name="locationId" type="java.lang.String"/>
+		<property name="areaCode" type="java.lang.String"/>
+		<property name="areaName" type="java.lang.String"/>
+		<property name="meterRate" type="java.lang.String"/>
+		<property name="meterType" type="java.lang.String"/>
+		<property name="kwhTotal" type="java.lang.String"/>
+		<property name="billperiodPDt" type="java.util.Date"/>
+		<property name="invVatAmt" type="java.lang.String"/>
+		<property name="invAmt" type="java.lang.String"/>
+		<property name="sysAmt" type="java.lang.String"/>
+		<property name="diffAmt" type="java.lang.String"/>
+		<property name="paidStatus" type="java.lang.String"/>
+		<property name="ownerGroup" type="java.lang.String"/>
+		<property name="ownerGroupName" type="java.lang.String"/>
+		<property name="month1M" type="java.lang.String"/>
+		<property name="kwh1M" type="java.lang.String"/>
+		<property name="amount1M" type="java.lang.String"/>
+		<property name="unit1M" type="java.lang.String"/>
+		<property name="kwhAvg1M" type="java.lang.String"/>
+		<property name="amountAvg1M" type="java.lang.String"/>
+		<property name="unitAvg1M" type="java.lang.String"/>
+		<property name="month3M" type="java.lang.String"/>
+		<property name="kwh3M" type="java.lang.String"/>
+		<property name="amount3M" type="java.lang.String"/>
+		<property name="unit3M" type="java.lang.String"/>
+		<property name="kwhAvg3M" type="java.lang.String"/>
+		<property name="amountAvg3M" type="java.lang.String"/>
+		<property name="unitAvg3M" type="java.lang.String"/>
+		<property name="month6M" type="java.lang.String"/>
+		<property name="kwh6M" type="java.lang.String"/>
+		<property name="amount6M" type="java.lang.String"/>
+		<property name="unit6M" type="java.lang.String"/>
+		<property name="kwhAvg6M" type="java.lang.String"/>
+		<property name="amountAvg6M" type="java.lang.String"/>
+		<property name="unitAvg6M" type="java.lang.String"/>
+		<property name="month12M" type="java.lang.String"/>
+		<property name="kwh12M" type="java.lang.String"/>
+		<property name="amount12M" type="java.lang.String"/>
+		<property name="unit12M" type="java.lang.String"/>
+		<property name="kwhAvg12M" type="java.lang.String"/>
+		<property name="amountAvg12M" type="java.lang.String"/>
+		<property name="unitAvg12M" type="java.lang.String"/>
+		<property name="errorCode" type="java.lang.String"/>
+		<property name="billPeriodFromPDt" type="java.util.Date"/>
+		<property name="effDate" type="java.util.Date"/>
+		<property name="expDate" type="java.util.Date"/>
+		<property name="siteStats2" type="java.lang.String"/>
+		<property name="networkStatus" type="java.lang.String"/>
+		<property name="meterStatus" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="uploadSuccessText" callable="true">
+		<return class="th.co.ais.domain.el.UploadTextSP">  
+			<return-property name="rowId" column="SEM_EL_IMPORT_DATA_DETAIL_ID"/>
+			<return-property name="seqNo" column="SEQ_NO"/>
+			<return-property name="contractNo" column="CONTRACT_NO"/>
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO"/>
+			<return-property name="siteName" column="SITE_NAME"/>
+			<return-property name="region" column="REGION"/>
+			<return-property name="meterId" column="METER_ID"/>
+			<return-property name="locationId" column="LOCATION_ID"/>
+			<return-property name="areaCode" column="AREA_CODE"/>
+			<return-property name="areaName" column="AREA_NAME"/>
+			<return-property name="meterRate" column="METER_RATE"/>
+			<return-property name="meterType" column="METER_TYPE"/>
+			<return-property name="kwhTotal" column="KWH_TOTAL"/>
+			<return-property name="billperiodPDt" column="BILLPERIOD_PDT"/>
+			<return-property name="invVatAmt" column="INV_VAT_AMT"/>
+			<return-property name="invAmt" column="INV_AMT"/>
+			<return-property name="sysAmt" column="SYS_AMT"/>
+			<return-property name="diffAmt" column="DIFF_AMT"/>
+			<return-property name="paidStatus" column="DUP_PAID_FLAG"/>
+			<return-property name="ownerGroup" column="OWNER_GROUP"/>
+			<return-property name="ownerGroupName" column="OWNER_GROUP_NAME"/>
+			<return-property name="month1M" column="MONTH_1M"/>
+			<return-property name="kwh1M" column="KWH_1M"/>
+			<return-property name="amount1M" column="AMOUNT_1M"/>
+			<return-property name="unit1M" column="UNIT_1M"/>
+			<return-property name="kwhAvg1M" column="KWH_AVG_1M"/>
+			<return-property name="amountAvg1M" column="AMOUNT_AVG_1M"/>
+			<return-property name="unitAvg1M" column="UNIT_AVG_1M"/>
+			<return-property name="month3M" column="MONTH_3M"/>
+			<return-property name="kwh3M" column="KWH_3M"/>
+			<return-property name="amount3M" column="AMOUNT_3M"/>
+			<return-property name="unit3M" column="UNIT_3M"/>
+			<return-property name="kwhAvg3M" column="KWH_AVG_3M"/>
+			<return-property name="amountAvg3M" column="AMOUNT_AVG_3M"/>
+			<return-property name="unitAvg3M" column="UNIT_AVG_3M"/>		
+			<return-property name="month6M" column="MONTH_6M"/>
+			<return-property name="kwh6M" column="KWH_6M"/>
+			<return-property name="amount6M" column="AMOUNT_6M"/>
+			<return-property name="unit6M" column="UNIT_6M"/>
+			<return-property name="kwhAvg6M" column="KWH_AVG_6M"/>
+			<return-property name="amountAvg6M" column="AMOUNT_AVG_6M"/>
+			<return-property name="unitAvg6M" column="UNIT_AVG_6M"/>
+			<return-property name="month12M" column="MONTH_12M"/>
+			<return-property name="kwh12M" column="KWH_12M"/>
+			<return-property name="amount12M" column="AMOUNT_12M"/>
+			<return-property name="unit12M" column="UNIT_12M"/>
+			<return-property name="kwhAvg12M" column="KWH_AVG_12M"/>
+			<return-property name="amountAvg12M" column="AMOUNT_AVG_12M"/>
+			<return-property name="unitAvg12M" column="UNIT_AVG_12M"/>
+			<return-property name="errorCode" column="ERROR_CODE"/>		
+			<return-property name="billPeriodFromPDt" column="BILLPERIOD_FRDT"/>
+			<return-property name="effDate" column="EFFECTIVE_DT"/>
+			<return-property name="expDate" column="EXPIRE_DT"/>
+			<return-property name="siteStats2" column="SITE_STATUS_DISPLAY"/>
+			<return-property name="networkStatus" column="NETWORK_STATUS_DISPLAY"/>
+			<return-property name="meterStatus" column="METER_STATUS"/>
+		</return>
+	<![CDATA[ call SEM_EL_UPLOAD_TEXT_SUCCESS(?, :elImportTranId, :recordStatus, :errorCode, :region, :paidStatus, :invNo, :contractNo, :clearingFlag, :meterId, :month, :type, :percentGrowth) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+	<class name="th.co.ais.domain.pt.Mpt004Chk">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="message" type="java.lang.String"/>
+		<property name="pTaxPayType" type="java.lang.String"/>
+		<property name="pTaxPayTypeDesc" type="java.lang.String" />
+		<property name="payGovtFlag" type="java.lang.String" />
+		<property name="paymentStatus" type="java.lang.String" />
+		<property name="paymentStatusDesc" type="java.lang.String" />
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="estmAmt" type="java.lang.Double" />
+		<property name="pTaxAmt" type="java.lang.Double" />
+		<property name="payeeId" type="java.lang.String" />
+		<property name="paymentType" type="java.lang.String" />
+		<property name="paymentMethod" type="java.lang.String" />
+		<property name="bankName" type="java.lang.String" />
+		<property name="bankAccNo" type="java.lang.String" />
+	</class>
+	<sql-query name="spMpt004Chk" callable="true">
+		<return class="th.co.ais.domain.pt.Mpt004Chk">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="message" column="P_REMARK" />
+			<return-property name="pTaxPayType" column="PTAX_PAY_TYPE" />
+			<return-property name="pTaxPayTypeDesc" column="PTAX_PAY_TYPE_DESC" />
+			<return-property name="payGovtFlag" column="PAY_GOVT_FLAG" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="estmAmt" column="ESTM_AMT" />
+			<return-property name="pTaxAmt" column="PTAX_AMT" />
+			<return-property name="payeeId" column="PAYEE_ID" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="bankAccNo" column="BANK_ACC_NO" />
+		</return>
+		<![CDATA[ call SEM_SP_MPT004_CHK(?, :contractNo, :pTaxYear, :expenseType, :periodNo, :monthFrom, :monthTo, :docType, :docNo, :pTaxPaymentId) ]]>
+	</sql-query>
+</hibernate-mapping>

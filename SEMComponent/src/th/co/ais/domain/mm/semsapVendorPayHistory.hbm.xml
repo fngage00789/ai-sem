@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.mm">
+	<!-- JAVA CLASSes -->
+	<class name="Mmm001VendorPayHistSP" entity-name="vendorRentalPayHist">
+		<id name="rowId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentGroupNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="effDt" type="java.sql.Date"/>
+			<property generated="never" lazy="false" update="false" name="expDt" type="java.sql.Date"/>
+			<property generated="never" lazy="false" update="false" name="dueDt" type="java.sql.Date"/>
+			<property generated="never" lazy="false" update="false" name="periodNo" type="java.lang.Integer"/>
+			<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expenseTypeDesc" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String" />
+			<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String" />
+			<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String" />
+			<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String" />
+			<property generated="never" lazy="false" update="false" name="payPeriodType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="periodY" type="java.lang.Integer"/>
+			<property generated="never" lazy="false" update="false" name="periodM" type="java.lang.Integer"/>
+			<property generated="never" lazy="false" update="false" name="periodD" type="java.lang.Integer"/>
+			<property generated="never" lazy="false" update="false" name="dueAmt" type="java.lang.Double"/>
+			<property generated="never" lazy="false" update="false" name="vatAmt" type="java.lang.Double"/>
+			<property generated="never" lazy="false" update="false" name="whtRate" type="java.lang.Double"/>
+			<property generated="never" lazy="false" update="false" name="whtAmt" type="java.lang.Double"/>
+			<property generated="never" lazy="false" update="false" name="chqAmt" type="java.lang.Double"/>
+			<property generated="never" lazy="false" update="false" name="siteStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="networkStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expApprove" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentRequestDt" type="java.sql.Date"/>
+			<property generated="never" lazy="false" update="false" name="paymentStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="chqDt" type="java.sql.Date"/>
+			<property generated="never" lazy="false" update="false" name="chqReceiveDt" type="java.sql.Date"/>
+			<property generated="never" lazy="false" update="false" name="transferDt" type="java.sql.Date"/>
+			<property generated="never" lazy="false" update="false" name="depositAmt" type="java.lang.Double"/>
+			<property generated="never" lazy="false" update="false" name="pettyAmt" type="java.lang.Double"/>
+			<property generated="never" lazy="false" update="false" name="totalAmt" type="java.lang.Double"/>
+			<property generated="never" lazy="false" update="false" name="bankAccNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentDocno" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="whtType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentTypeDesc" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentStatusDesc" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorMasterId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentMethod" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="whtTypeDesc" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="siteInfoId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="excAmt" type="java.lang.Double"/>
+			<property generated="never" lazy="false" update="false" name="paymentBatchNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="oldContractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="oldSiteInfoId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="statusPay" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="docSettingDebt" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="docCuttingDebt" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="docCancel" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payPeriod" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="remarkVerify" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="remarkPending" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="remarkOther" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="reqType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="rentalDetailId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="rcptPayCutAmount" type="java.lang.Double" />
+			<property generated="never" lazy="false" update="false" name="sendInfoStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="pmsStatus" type="java.lang.String"/>
+	</class>
+	
+	<class name="Mmm001VendorPayHistSP" entity-name="vendorELPayHist">
+		<id name="rowId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="vendorId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="batchNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="doc68" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="doc92" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="createDate" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="oldContractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="company" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="effDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="expDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="siteStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="siteStatusShow" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="netWorkStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="netWorkStatusShow" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="expenseTypeShow" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentStatusShow" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="docType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="docTypeShow" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="docNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="docDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payAmt" type="java.math.BigDecimal"/>
+			<property generated="never" lazy="false" update="false" name="vatType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="excludeVatAmt" type="java.math.BigDecimal"/>
+			<property generated="never" lazy="false" update="false" name="vatElAmt" type="java.math.BigDecimal"/>
+			<property generated="never" lazy="false" update="false" name="includeVatAmt" type="java.math.BigDecimal"/>
+			<property generated="never" lazy="false" update="false" name="whtElAmt" type="java.math.BigDecimal"/>
+			<property generated="never" lazy="false" update="false" name="chqElAmt" type="java.math.BigDecimal"/>
+			<property generated="never" lazy="false" update="false" name="paymentType" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentTypeShow" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentMethod" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="paymentMethodShow" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="bankAccount" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="chqPostingDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="chqReceivedDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="transferDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="rejectReason" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="chqNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="chqClearingDt" type="java.util.Date"/>
+			<property generated="never" lazy="false" update="false" name="doc69" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="payment_channel" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="collectiveDbNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="rcptPayCutAmount" type="java.lang.Double" />
+			<property generated="never" lazy="false" update="false" name="paymentId" type="java.lang.String"/>
+			<property generated="never" lazy="false" update="false" name="sendInfoStatus" type="java.lang.String"/>
+	</class>
+	<class name="Mmm001VendorPayHistSP" entity-name="vendorCTPayHist">
+  		 <id name="rowId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="siteContructId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="siteApproveId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="reqId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="siteInfoId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="locationId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="siteConstructStatus" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="siteConstructStatusName" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="supplierName" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="conPermissionDocNo" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="conBuildDocNo" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="constructType" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="constructTypeName" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="constructStatus" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="constructStatusName" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="conBillNo" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="conBillPayStatus" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="conBillPayStatusName" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="companyCri" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="siteStatusName" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="flowStatus" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="docNo" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="totSendDocNo" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="totRefDocNo" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="siteAmphurId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="siteProvinceId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="editableFlag" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="migrateFlag" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="contractId" type="java.lang.String"/>
+		  <property generated="never" lazy="false" update="false" name="terminateFlag" type="java.lang.String"/>
+ 	</class>
+ 	<class name="Mmm001VendorPayHistSP" entity-name="vendorPTPayHist">
+		<id name="rowId" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="paymentGroupNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="pTaxYear" type="java.lang.Integer" />
+		<property generated="never" lazy="false" update="false" name="paymentStatus" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="periodNo" type="java.lang.Integer" />
+		<property generated="never" lazy="false" update="false" name="expenseType" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="payeeId" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="excAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="whtAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="vatAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="chqAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="diffAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="paymentType" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="bankName" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="bankAccNo" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="chqDt" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="chqReceiveDt" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="transferDt" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="exportFlag" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="exportDt" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="docType" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="doc68" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="doc92" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentDocNo" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="siteName" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="region" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="siteInfoId" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="docTypeDesc" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="docNo" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="docDt" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="paymentTypeDesc" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentMethod" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="batchNo" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="rcptPayCutAmount" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="sendInfoStatus" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentStatusId" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="diffRemark" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="doc69" type="java.lang.String" />
+	</class>
+	<class name="Mmm001VendorPayHistSP" entity-name="vendorIRPayHist">
+		<id name="rowId" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentDocNo" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentGroupNo" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="docType" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="docTypeDesc" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="networkType" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="networkTypeDesc" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="company" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="transferType" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="transferTypeDesc" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="policyType" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="policyTypeDesc" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="policyNo" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="contractNo" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="vendorCode" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="vendorName" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="payeeName" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="dueDtFrom" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="excAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="vatAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="whtAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="dutyAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="totalPayAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="totalAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="diffAmt" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="invoiceNo" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentDt" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="paymentStatus" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentStatusDesc" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentType" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentTypeDesc" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentMethod" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="paymentMethodDesc" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="chqDt" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="chqReceiveDt" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="transferDt" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="updateBy" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="updateDt" type="java.sql.Date" />
+		<property generated="never" lazy="false" update="false" name="batchNo" type="java.lang.String" />
+		<property generated="never" lazy="false" update="false" name="rcptPayCutAmount" type="java.lang.Double" />
+		<property generated="never" lazy="false" update="false" name="doc92" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="remark" type="java.lang.String"/>
+		<property generated="never" lazy="false" update="false" name="sendInfoStatus" type="java.lang.String"/>
+	</class>
+ 	
+ 	
+	
+	<!-- SQLs >>> -->
+	<sql-query name="semsapVendorRentalPayHist" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001VendorPayHistSP" entity-name="vendorRentalPayHist">
+			<return-property name="rowId" column="RENTAL_PAYMENT_ID" />
+			<return-property name="paymentGroupNo" column="PAYMENT_GROUP_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expDt" column="EXPIRE_DT" />
+			<return-property name="dueDt" column="DUE_DT" />
+			<return-property name="periodNo" column="PERIOD_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeId" column="PAYEE_ID" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="payPeriodType" column="PAY_PERIOD_TYPE" />
+			<return-property name="periodY" column="PAY_PERIOD_Y" />
+			<return-property name="periodM" column="PAY_PERIOD_M" />
+			<return-property name="periodD" column="PAY_PERIOD_D" />
+			<return-property name="dueAmt" column="DUE_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="chqAmt" column="CHQ_AMT" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="expStatus" column="EXPIRE_STATUS" />
+			<return-property name="expApprove" column="EXPIRE_APPROVE" />
+			<return-property name="paymentRequestDt" column="PAYMENT_REQUEST_DT" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="depositAmt" column="DEPOSIT_AMT" />
+			<return-property name="pettyAmt" column="PETTY_AMT" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="bankAccNo" column="BANK_ACC_NO" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="paymentDocno" column="PAYMENT_DOC_NO" />
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="expenseTypeDesc" column="EXPENSE_TYPE_DESC" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="whtTypeDesc" column="WHT_TYPE_DESC" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="paymentBatchNo" column="PAYMENT_BATCH_NO" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="oldSiteInfoId" column="OLD_SITE_INFO_ID" />
+			<return-property name="statusPay" column="STATUS_PAY" />
+			<return-property name="docSettingDebt" column="DOC_SETTING_DEBT" />
+			<return-property name="docCuttingDebt" column="DOC_CUTTING_DEBT" />
+			<return-property name="docCancel" column="DOC_CANCEL" />
+			<return-property name="payPeriod" column="PAY_PERIOD" />
+			<return-property name="remarkVerify" column="REMARK_VERIFY" />
+			<return-property name="remarkPending" column="REMARK_PENDING" />
+			<return-property name="remarkOther" column="REMARK_OTH" />
+			<return-property name="reqType" column="REQ_TYPE" />
+			<return-property name="rentalDetailId" column="RENTAL_DETAIL_ID" />
+			<return-property name="rcptPayCutAmount" column="RECEIPT_PAYCUT_AMOUNT" />
+			<return-property name="sendInfoStatus" column="SEND_FLAG" />
+			<return-property name="pmsStatus" column="PMS_STATUS" />
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_RT_PAY_HIST (?, :vendorId, :bookbankId, :payeeId, :bookbankPayeeId, :userLogin) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorELPayHist" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001VendorPayHistSP" entity-name="vendorELPayHist">
+			<return-property name="rowId" column="PAYMENT_ID"/>
+			<return-property name="contractNo" column="CONTRACT_NO"/>
+			<return-property name="vendorId" column="VENDOR_ID"/>
+			<return-property name="batchNo" column="BATCH_NO"/>
+			<return-property name="doc68" column="DOC_68"/>
+			<return-property name="doc92" column="DOC_92"/>
+			<return-property name="createDate" column="CREATE_DT"/>
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO"/>
+			<return-property name="company" column="COMPANY"/>
+			<return-property name="siteName" column="SITE_NAME"/>
+			<return-property name="effDt" column="EFFECTIVE_DT"/>
+			<return-property name="expDt" column="EXPIRE_DT"/>
+			<return-property name="siteStatus" column="SITE_STATUS"/>
+			<return-property name="siteStatusShow" column="SITE_STATUS_NAME"/>
+			<return-property name="netWorkStatus" column="NETWORK_STATUS"/>
+			<return-property name="netWorkStatusShow" column="NETWORK_STATUS_NAME"/>
+			<return-property name="expenseType" column="EXPENSE_TYPE"/>
+			<return-property name="expenseTypeShow" column="EXPENSE_TYPE_NAME"/>
+			<return-property name="paymentStatus" column="PAYMENT_STATUS"/>
+			<return-property name="paymentStatusShow" column="PAYMENT_STATUS_NAME"/>
+			<return-property name="docType" column="DOC_TYPE"/>
+			<return-property name="docTypeShow" column="DOC_TYPE_NAME"/>
+			<return-property name="docNo" column="DOC_NO"/>
+			<return-property name="docDt" column="DOC_DT"/>
+			<return-property name="vendorName" column="VENDOR_NAME"/>
+			<return-property name="payeeId" column="PAYEE_ID"/>
+			<return-property name="payeeName" column="PAYEE_NAME"/>
+			<return-property name="payAmt" column="PAY_AMT"/>
+			<return-property name="vatType" column="VAT_TYPE"/>
+			<return-property name="excludeVatAmt" column="EXCLUDE_VAT_AMT"/>
+			<return-property name="vatElAmt" column="VAT_AMT"/>
+			<return-property name="includeVatAmt" column="INCLUDE_VAT_AMT"/>
+			<return-property name="whtElAmt" column="WHT_AMT"/>
+			<return-property name="chqElAmt" column="CHQ_AMT"/>
+			<return-property name="paymentType" column="PAYMENT_TYPE"/>
+			<return-property name="paymentTypeShow" column="PAYMENT_TYPE_NAME"/>
+			<return-property name="paymentMethod" column="PAYMENT_METHOD"/>
+			<return-property name="paymentMethodShow" column="PAYMENT_METHOD_NAME"/>
+			<return-property name="bankName" column="BANK_NAME"/>
+			<return-property name="bankAccount" column="BANK_ACCOUNT"/>
+			<return-property name="chqPostingDt" column="CHQ_POSTING_DT"/>
+			<return-property name="chqReceivedDt" column="CHQ_RECEIVED_DT"/>
+			<return-property name="transferDt" column="TRANSFER_DT"/>
+			<return-property name="remark" column="REMARK"/>
+			<return-property name="rejectReason" column="REJECT_REASON"/>
+			<return-property name="chqNo" column="CHQ_NO"/>
+			<return-property name="chqClearingDt" column="CHQ_CLEARING_DT"/>
+			<return-property name="doc69" column="DOC_CANCEL"/>
+			<return-property name="payment_channel" column="PAYMENT_CHANNEL"/>
+			<return-property name="collectiveDbNo" column="COLLECTIVE_DB_NO"/>
+			<return-property name="rcptPayCutAmount" column="RECEIPT_PAYCUT_AMOUNT" />
+			<return-property name="paymentId" column="TRANS_PAYMENT_ID" />
+			<return-property name="sendInfoStatus" column="SEND_FLAG"/>
+		</return>
+	<![CDATA[ call SEM_SAP_EL_PAY_HIST(?, :vendorId, :bookbankId, :payeeId, :bookbankPayeeId, :userLogin) ]]>
+	</sql-query>
+	
+	<sql-query name="semsapVendorCTPayHist" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001VendorPayHistSP" entity-name="vendorCTPayHist">
+			 <return-property column="SITE_CONSTRUCT_ID" name="rowId"/>
+			   <return-property column="SITE_CONSTRUCT_ID" name="siteContructId"/>
+			   <return-property column="SITE_APPROVE_ID" name="siteApproveId"/>
+			   <return-property column="REQ_TYPE" name="reqId"/>
+			   <return-property column="SITE_INFO_ID" name="siteInfoId"/>
+			   <return-property column="CONTRACT_NO" name="contractNo"/>
+			   <return-property column="SITE_NAME" name="siteName"/>
+			   <return-property column="LOCATION_ID" name="locationId"/>
+			   <return-property column="SITE_CONSTRUCT_STATUS" name="siteConstructStatus"/>
+			   <return-property column="SITE_CONSTRUCT_STATUS_NAME" name="siteConstructStatusName"/>
+			   <return-property column="SUPPLIER_NAME" name="supplierName"/>
+			   <return-property column="CON_PERMISSION_DOC_NO" name="conPermissionDocNo"/>
+			   <return-property column="CON_BUILD_DOC_NO" name="conBuildDocNo"/>
+			   <return-property column="CONSTRUCT_TYPE" name="constructType"/>
+			   <return-property column="CONSTRUCT_TYPE_NAME" name="constructTypeName"/>
+			   <return-property column="CONSTRUCT_STATUS" name="constructStatus"/>
+			   <return-property column="CONSTRUCT_STATUS_NAME" name="constructStatusName"/>
+			   <return-property column="CON_BILL_NO" name="conBillNo"/>
+			   <return-property column="CON_BILL_PAY_STATUS" name="conBillPayStatus"/>
+			   <return-property column="CON_PAYMENT_STATUS_NAME" name="conBillPayStatusName"/>
+			   <return-property column="COMPANY" name="companyCri"/>
+			   <return-property column="SITE_STATUS_NAME" name="siteStatusName"/>
+			   <return-property column="FLOW_STATUS" name="flowStatus"/>
+			   <return-property column="DOC_NO" name="docNo"/>
+			   <return-property column="TOT_SEND_DOC_NO" name="totSendDocNo"/>
+			   <return-property column="TOT_REF_DOC_NO" name="totRefDocNo"/>
+			   <return-property column="SITE_AMPHUR_ID" name="siteAmphurId"/>
+			   <return-property column="SITE_PROVINCE_ID" name="siteProvinceId"/>
+			   <return-property column="EDIT_FLAG" name="editableFlag"/>
+			   <return-property column="MIGRATE_FLAG" name="migrateFlag"/>
+			   <return-property column="CONTRACT_ID" name="contractId"/>
+			   <return-property column="TERMINATE_STATUS" name="terminateFlag"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_CT_PAY_HIST(?, :vendorId, :bookbankId, :payeeId, :bookbankPayeeId, :userLogin) ]]>
+	</sql-query>
+	<sql-query name="semsapVendorPTPayHist" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001VendorPayHistSP" entity-name="vendorPTPayHist">
+			<return-property name="rowId" column="PTAX_PAYMENT_ID" />
+			<return-property name="paymentGroupNo" column="PAYMENT_GROUP_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="pTaxYear" column="PTAX_YEAR" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="periodNo" column="PERIOD_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeId" column="PAYEE_ID" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="chqAmt" column="CHQ_AMT" />
+			<return-property name="diffAmt" column="DIFF_AMT" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="bankAccNo" column="PAYEE_BANK_ACC_NO" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="exportFlag" column="EXPORT_FLAG" />
+			<return-property name="exportDt" column="EXPORT_DATE" />
+			<return-property name="docType" column="DOC_TYPE" />
+			<return-property name="doc68" column="DOC_68" />
+			<return-property name="doc92" column="DOC_92" />
+			<return-property name="paymentDocNo" column="PAYMENT_DOC_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="region" column="REGION" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="docTypeDesc" column="DOC_TYPE_DESC" />
+			<return-property name="docNo" column="DOC_NO" />
+			<return-property name="docDt" column="DOC_DT" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="batchNo" column="PAYMENT_BATCH_NO" />
+			<return-property name="rcptPayCutAmount" column="RECEIPT_PAYCUT_AMOUNT" />
+			<return-property name="sendInfoStatus" column="SEND_FLAG" />
+			<return-property name="paymentStatusId" column="PAYMENT_STATUS_ID" />
+			<return-property name="diffRemark" column="DIFF_REMARK" />
+			<return-property name="doc69" column="DOC_69" />
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_PT_PAY_HIST(?, :vendorId, :bookbankId, :payeeId, :bookbankPayeeId, :userLogin) ]]>
+	</sql-query>
+	<sql-query name="semsapVendorIRPayHist" callable="true">
+		<return class="th.co.ais.domain.mm.Mmm001VendorPayHistSP" entity-name="vendorIRPayHist">  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="paymentDocNo" column="PAYMENT_DOC_NO" />
+			<return-property name="paymentGroupNo" column="PAYMENT_GROUP_NO" />
+			<return-property name="docType" column="DOC_TYPE" />
+			<return-property name="docTypeDesc" column="DOC_TYPE_DESC" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="transferType" column="TRANSFER_TYPE" />
+			<return-property name="transferTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="policyType" column="POLICY_TYPE" />
+			<return-property name="policyTypeDesc" column="POLICY_TYPE_DESC" />
+			<return-property name="policyNo" column="POLICY_NO" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="dueDtFrom" column="DUE_DT" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="dutyAmt" column="DUTY_AMT" />
+			<return-property name="totalPayAmt" column="TOTAL_PAY_AMT" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="diffAmt" column="DIFF_AMT" />
+			<return-property name="invoiceNo" column="INVOICE_NO" />
+			<return-property name="paymentDt" column="PAYMENT_DT" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="paymentMethodDesc" column="PAYMENT_METHOD_DESC" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_REVEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+			<return-property name="batchNo" column="PAYMENT_BATCH_NO" />
+			<return-property name="rcptPayCutAmount" column="RECEIPT_PAYCUT_AMOUNT" />
+			<return-property name="doc92" column="DOC_92"/>
+			<return-property name="remark" column="REMARK"/>
+			<return-property name="sendInfoStatus" column="SEND_FLAG" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SAP_IR_PAY_HIST(?, :vendorId, :bookbankId, :payeeId, :bookbankPayeeId, :userLogin) ]]>
+	</sql-query>
+</hibernate-mapping>

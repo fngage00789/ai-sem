@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.co.Mco003SaveBorrow">
+		<id name="result" type="java.lang.String" />
+		<property name="message" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMco003SaveBorrow" callable="true">
+		<return class="th.co.ais.domain.co.Mco003SaveBorrow">
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="message" column="L_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO003_SAVE_BORROW(?, :borrowContractId, :borrowName, :borrowDt, :borrowOfficer, :borrowForType, :remarkBorrowFor, 
+		:docApproveFlag, :docContractFlag, :docContractDetail, :docOtherFlag, :remarkDocOther, :cannotBorrowFlag, :remarkCannotBorrow, 
+		:currentUser, :contractType, :status)]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.mm">
+
+	<!-- JAVA CLASSes -->
+	<class name="Mmm002ContractSP" entity-name="semsapSearch">
+		<id name="rowId" type="java.lang.String"/>
+			
+			<property generated="never" lazy="false" name="actionType" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="contractNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="expenseType" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="vendorId" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="vendorCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="vendorName" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="idCard" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="taxId" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="siteName" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="locationId" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="locationCode" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="locationName" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="vendorStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="vendorFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="bankName" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="accountNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="accountName" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="accountStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="accountFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeeId" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeeNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeeName" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeeStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeeFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeeBankName" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeeAccountNo" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeeAccountName" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeeAccountStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeeAccountFlowStatus" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="vendorBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="bookbankBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payeebatch"/>
+			<property generated="never" lazy="false" name="bookbankPayeeBatch" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="payType" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="remark" type="java.lang.String"/>
+			<property generated="never" lazy="false" name="createBy" type="java.lang.String"/>
+		
+	</class>
+	
+	<!-- SQLs >>> -->
+	<sql-query name="semsapMmm002Search" callable="true">
+		<return alias="" class="th.co.ais.domain.mm.Mmm002ContractSP" entity-name="semsapSearch">
+			<return-property column="VENDOR_CODE" name="rowId"/>
+			
+			<return-property column="ACTION_TYPE" name="actionType"/>
+			<return-property column="CONTRACT_NO" name="contractNo"/>
+			<return-property column="EXPENSE_TYPE" name="expenseType"/>
+			<return-property column="VENDOR_ID" name="vendorId"/>
+			<return-property column="VENDOR_CODE" name="vendorCode"/>
+			<return-property column="VENDOR_NAME" name="vendorName"/>
+			<return-property column="ID_CARD" name="idCard"/>
+			<return-property column="TAX_ID" name="taxId"/>
+			<return-property column="SITE_NAME" name="siteName"/>
+			<return-property column="LOCATION_ID" name="locationId"/>
+			<return-property column="LOCATION_CODE" name="locationCode"/>
+			<return-property column="LOCATION_NAME" name="locationName"/>
+			<return-property column="VENDOR_STATUS" name="vendorStatus"/>
+			<return-property column="VENDOR_FLOW_STATUS" name="vendorFlowStatus"/>
+			<return-property column="VENDOR_BLOCK" name="vendorBlock"/>
+			<return-property column="BANK_NAME" name="bankName"/>
+			<return-property column="ACCOUNT_NO" name="accountNo"/>
+			<return-property column="ACCOUNT_NAME" name="accountName"/>
+			<return-property column="ACCOUNT_STATUS" name="accountStatus"/>
+			<return-property column="ACCOUNT_FLOW_STATUS" name="accountFlowStatus"/>
+			<return-property column="PAYEE_ID" name="payeeId"/>
+			<return-property column="PAYEE_NO" name="payeeNo"/>
+			<return-property column="PAYEE_NAME" name="payeeName"/>
+			<return-property column="PAYEE_STATUS" name="payeeStatus"/>
+			<return-property column="PAYEE_FLOW_STATUS" name="payeeFlowStatus"/>
+			<return-property column="PAYEE_BANK_NAME" name="payeeBankName"/>
+			<return-property column="PAYEE_ACCOUNT_NO" name="payeeAccountNo"/>
+			<return-property column="PAYEE_ACCOUNT_NAME" name="payeeAccountName"/>
+			<return-property column="PAYEE_ACCOUNT_STATUS" name="payeeAccountStatus"/>
+			<return-property column="PAYEE_ACCOUNT_FLOW_STATUS" name="payeeAccountFlowStatus"/>
+			<return-property column="VENDOR_BATCH" name="vendorBatch"/>
+			<return-property column="BOOKBANK_BATCH" name="bookbankBatch"/>
+			<return-property column="PAYEE_BATCH" name="payeebatch"/>
+			<return-property column="BOOKBANK_PAYEE_BATCH" name="bookbankPayeeBatch"/>
+			<return-property column="PAY_TYPE" name="payType"/>
+			<return-property column="REMARK" name="remark"/>
+			<return-property column="CREATE_BY" name="createBy"/>
+			
+		</return>
+		<![CDATA[ call SEM.SEM_SAP_SP_VENDOR_SEARCH (?, :company, :region, :contractType, :pico, :vendorCode, :vendorName, :idCard, :taxId, 
+											 :contractNo, :siteName, :locationId, :locationCode, :bankName, :bankBranch, :accountNo, :accountName, :payeeCode, :expenseType, :vendorStatus, 
+											 :vendorFlowStatus, :bookbankStatus, :bookbankFlowStatus, :payeeId, :payeeStatus, :payeeFlowStatus, 
+											 :bookbankPayeeStatus, :bookbankPayeeFlowStatus, :createBy) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

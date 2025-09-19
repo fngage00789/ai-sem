@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001SrchVendor">
+		<id name="vendorMasterId" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String" />
+		<property name="payeeCode" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String" />
+	</class>
+	<sql-query name="spMrt001SrchVendor" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001SrchVendor">
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeCode" column="PAYEE_CODE" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_SRCH_VENDOR(?, :expenseType, :contractNo) ]]>
+	</sql-query>
+</hibernate-mapping>

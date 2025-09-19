@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SEMRRT012" pageWidth="800" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="PARAM_COMPANY" class="java.lang.String"/>
+	<parameter name="PARAM_BG_NO" class="java.lang.String"/>
+	<parameter name="PARAM_BANK" class="java.lang.String"/>
+	<parameter name="PARAM_CONTRACT_NO" class="java.lang.String"/>
+	<parameter name="PARAM_VENDOR_CODE" class="java.lang.String"/>
+	<parameter name="PARAM_LOCATION_CODE" class="java.lang.String"/>
+	<parameter name="PARAM_REGION" class="java.lang.String"/>
+	<parameter name="PARAM_EXPENSE_TYPE" class="java.lang.String"/>
+	<parameter name="PARAM_CONTRACT_STATUS" class="java.lang.String"/>
+	<parameter name="PARAM_NETWORK_STATUS" class="java.lang.String"/>
+	<parameter name="PARAM_DEPOSIT_DT_FROM" class="java.util.Date"/>
+	<parameter name="PARAM_DEPOSIT_DT_TO" class="java.util.Date"/>
+	<parameter name="PARAM_DEPOSIT_STATUS" class="java.lang.String"/>
+	<parameter name="PARAM_HEADER_NAME" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_YEAR" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_TYPE" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:\\Work\\SEM\\RPT\\SEMRRT012\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_DEPOSIT_TYPE" class="java.lang.String"/>
+	<parameter name="PARAM_USERNAME" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_EXPENSE_TYPE" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_CONTRACT_STATUS" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_NETWORK_STATUS" class="java.lang.String"/>
+	<parameter name="PARAM_DISPLAY_BANK" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM TABLE (SEM_PG_RRT012.GET_DATA_DEPOSIT_TYPE(
+$P{PARAM_DEPOSIT_TYPE}
+))]]>
+	</queryString>
+	<field name="DEPOSIT_TYPE" class="java.lang.String"/>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<group name="BG" isStartNewPage="true">
+		<groupExpression><![CDATA[$P{PARAM_DEPOSIT_TYPE}]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<group name="CASH" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{DEPOSIT_TYPE}]]></groupExpression>
+		<groupHeader>
+			<band height="10" splitType="Stretch">
+				<subreport isUsingCache="true">
+					<reportElement key="subreport-3" mode="Transparent" x="0" y="0" width="760" height="10">
+						<printWhenExpression><![CDATA[new Boolean($F{DEPOSIT_TYPE}!= null && ($F{DEPOSIT_TYPE}.equals("01")) ? true : false)]]></printWhenExpression>
+					</reportElement>
+					<subreportParameter name="PARAM_VENDOR_CODE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_VENDOR_CODE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_LOCATION_CODE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_LOCATION_CODE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_BANK">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_BANK}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_CONTRACT_STATUS">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_CONTRACT_STATUS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_REGION">
+						<subreportParameterExpression><![CDATA[$P{PARAM_REGION}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_TYPE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_TYPE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_BG_NO">
+						<subreportParameterExpression><![CDATA[$P{PARAM_BG_NO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DEPOSIT_DT_FROM">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DEPOSIT_DT_FROM}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DEPOSIT_TYPE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DEPOSIT_TYPE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_HEADER_NAME">
+						<subreportParameterExpression><![CDATA[$P{PARAM_HEADER_NAME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_CONTRACT_NO">
+						<subreportParameterExpression><![CDATA[$P{PARAM_CONTRACT_NO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_USERNAME">
+						<subreportParameterExpression><![CDATA[$P{PARAM_USERNAME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_BANK">
+						<subreportParameterExpression><![CDATA[$P{PARAM_BANK}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_YEAR">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_YEAR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_COMPANY">
+						<subreportParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_NETWORK_STATUS">
+						<subreportParameterExpression><![CDATA[$P{PARAM_NETWORK_STATUS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_NETWORK_STATUS">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_NETWORK_STATUS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_EXPENSE_TYPE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_EXPENSE_TYPE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DEPOSIT_DT_TO">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DEPOSIT_DT_TO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_CONTRACT_STATUS">
+						<subreportParameterExpression><![CDATA[$P{PARAM_CONTRACT_STATUS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DEPOSIT_STATUS">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DEPOSIT_STATUS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_EXPENSE_TYPE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_EXPENSE_TYPE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() + "SEMRRT012_1.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="10" splitType="Stretch">
+				<subreport isUsingCache="true">
+					<reportElement key="subreport-2" mode="Transparent" x="0" y="0" width="760" height="10">
+						<printWhenExpression><![CDATA[new Boolean($F{DEPOSIT_TYPE}!= null && ($F{DEPOSIT_TYPE}.equals("02")) ? true : false)]]></printWhenExpression>
+					</reportElement>
+					<subreportParameter name="PARAM_VENDOR_CODE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_CONTRACT_NO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_LOCATION_CODE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_LOCATION_CODE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_BANK">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_BANK}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_CONTRACT_STATUS">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_CONTRACT_STATUS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_REGION">
+						<subreportParameterExpression><![CDATA[$P{PARAM_REGION}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_TYPE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_TYPE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_BG_NO">
+						<subreportParameterExpression><![CDATA[$P{PARAM_BG_NO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DEPOSIT_DT_FROM">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DEPOSIT_DT_FROM}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DEPOSIT_TYPE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DEPOSIT_TYPE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_HEADER_NAME">
+						<subreportParameterExpression><![CDATA[$P{PARAM_HEADER_NAME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_CONTRACT_NO">
+						<subreportParameterExpression><![CDATA[$P{PARAM_CONTRACT_NO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_USERNAME">
+						<subreportParameterExpression><![CDATA[$P{PARAM_USERNAME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_BANK">
+						<subreportParameterExpression><![CDATA[$P{PARAM_BANK}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_YEAR">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_YEAR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_COMPANY">
+						<subreportParameterExpression><![CDATA[$P{PARAM_COMPANY}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_NETWORK_STATUS">
+						<subreportParameterExpression><![CDATA[$P{PARAM_NETWORK_STATUS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_EXPENSE_TYPE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_EXPENSE_TYPE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_NETWORK_STATUS">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_NETWORK_STATUS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DEPOSIT_DT_TO">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DEPOSIT_DT_TO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_CONTRACT_STATUS">
+						<subreportParameterExpression><![CDATA[$P{PARAM_CONTRACT_STATUS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DEPOSIT_STATUS">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DEPOSIT_STATUS}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_DISPLAY_EXPENSE_TYPE">
+						<subreportParameterExpression><![CDATA[$P{PARAM_DISPLAY_EXPENSE_TYPE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() + "SEMRRT012_2.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

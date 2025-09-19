@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_21" class="java.beans.XMLDecoder"> 
+ <object class="th.co.ais.web.bean.SsoBean"> 
+  <void property="clientIpAddress"> 
+   <string>null</string> 
+  </void> 
+  <void property="dc"> 
+   <string>50063214</string> 
+  </void> 
+  <void property="employee"> 
+   <object class="th.co.ais.domain.gm.Employee"> 
+    <void property="buildingCode"> 
+     <string>PHP</string> 
+    </void> 
+    <void property="companyCode"> 
+     <string>AIS</string> 
+    </void> 
+    <void property="costCenter"> 
+     <string>0000043128</string> 
+    </void> 
+    <void property="email"> 
+     <string>praditps@ais.co.th</string> 
+    </void> 
+    <void property="employeeGroup"> 
+     <string>1</string> 
+    </void> 
+    <void property="employeeType"> 
+     <string>PS</string> 
+    </void> 
+    <void property="engName"> 
+     <string>PRADITPHONG</string> 
+    </void> 
+    <void property="engSurname"> 
+     <string>SOIPETCH</string> 
+    </void> 
+    <void property="floor"> 
+     <string>9</string> 
+    </void> 
+    <void property="orgDesc"> 
+     <string>CRMS&amp;Engineering Support Project Manager</string> 
+    </void> 
+    <void property="orgId"> 
+     <string>50040156</string> 
+    </void> 
+    <void property="pin"> 
+     <string>00022538</string> 
+    </void> 
+    <void property="positionId"> 
+     <string>50065276</string> 
+    </void> 
+    <void property="positionName"> 
+     <string>Project Manager</string> 
+    </void> 
+    <void property="recDateTime"> 
+     <string>2009-05-28 22:10:10</string> 
+    </void> 
+    <void property="status"> 
+     <string>3</string> 
+    </void> 
+    <void property="telNo"> 
+     <string>4341</string> 
+    </void> 
+    <void property="thaiName"> 
+     <string>ประดิษฐพงษ์</string> 
+    </void> 
+    <void property="thaiSurname"> 
+     <string>สร้อยเพชร</string> 
+    </void> 
+    <void property="userStamp"> 
+     <string>praditps</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="fn"> 
+   <string>PRADITPHONG</string> 
+  </void> 
+  <void property="gl"> 
+   <string></string> 
+  </void> 
+  <void property="groupId"> 
+   <string>174</string> 
+  </void> 
+  <void property="host"> 
+   <string>https://employeeservices.ais.co.th/EmployeeService/</string> 
+  </void> 
+  <void property="lc"> 
+   <string></string> 
+  </void> 
+  <void property="ln"> 
+   <string>SOIPETCH</string> 
+  </void> 
+  <void property="pt"> 
+   <string>CRMS &amp; Engineering Support Resource Mgr.</string> 
+  </void> 
+  <void property="rid"> 
+   <string>1</string> 
+  </void> 
+  <void property="rn"> 
+   <string>IPD</string> 
+  </void> 
+  <void property="sc"> 
+   <string></string> 
+  </void> 
+  <void property="sid"> 
+   <string>216</string> 
+  </void> 
+  <void property="sn"> 
+   <string>SM002</string> 
+  </void> 
+  <void property="ssoCompCodes"> 
+   <object class="java.util.HashMap"/> 
+  </void> 
+  <void property="ssoProgCodes"> 
+   <object class="java.util.HashMap"/> 
+  </void> 
+  <void property="subModuleId"> 
+   <string>216</string> 
+  </void> 
+  <void property="template"> 
+   <string>template01</string> 
+  </void> 
+  <void property="theme"> 
+   <string>theme01</string> 
+  </void> 
+  <void property="token"> 
+   <string>RbyxNGNK56CbnLQFLZ2vyTdJQfmQB3y9GCHf2YPN2KKVzztYw9kN!-849838618!1292143914578,praditps,174,216,null</string> 
+  </void> 
+  <void property="tokenId"> 
+   <string>RbyxNGNK56CbnLQFLZ2vyTdJQfmQB3y9GCHf2YPN2KKVzztYw9kN!-849838618!1292143914578</string> 
+  </void> 
+  <void property="userName"> 
+   <string>praditps</string> 
+  </void> 
+ </object> 
+</java> 

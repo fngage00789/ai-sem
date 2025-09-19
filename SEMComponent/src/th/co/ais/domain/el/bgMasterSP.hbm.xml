@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.ElBgMasterSP">
+		<id name="bgMasterId" type="java.lang.String"/>
+		<property name="bgNo" type="java.lang.String"/>
+		<property name="bgAmt" type="java.math.BigDecimal"/>
+		<property name="bankName" type="java.lang.String"/>
+		<property name="bgStartDt" type="java.sql.Date"/>
+		<property name="bgEndDt" type="java.sql.Date"/>
+		<property name="totalSiteMeter" type="java.math.BigDecimal"/>
+		<property name="totalSiteBg" type="java.math.BigDecimal"/>
+		<property name="totalSiteAdd" type="java.math.BigDecimal"/>
+		<property name="totalSiteRemain" type="java.math.BigDecimal"/>
+					
+	</class>
+	<sql-query name="querySearchBg" callable="true">
+		<return class="th.co.ais.domain.el.ElBgMasterSP">
+			<return-property name="bgMasterId" column="BG_MASTER_ID"/>
+			<return-property name="bgNo" column="BG_NO" />
+			<return-property name="bgAmt" column="BG_AMT" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="bgStartDt" column="BG_START_DT" />
+			<return-property name="bgEndDt" column="BG_END_DT" />
+			<return-property name="totalSiteMeter" column="TOTAL_SITE_METER" />
+			<return-property name="totalSiteBg" column="TOTAL_SITE_BG" />
+			<return-property name="totalSiteAdd" column="TOTAL_SITE_ADD" />
+			<return-property name="totalSiteRemain" column="TOTAL_SITE_REMAIN" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MEL001_SRCH_BG(? ,:company ,:electricUseType ,:receiveDt) ]]>
+	</sql-query>
+</hibernate-mapping>

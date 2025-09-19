@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	<class name="th.co.ais.domain.ir.Mir011Srch" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="networkType" type="java.lang.String" />
+		<property name="networkTypeDesc" type="java.lang.String" />
+		<property name="company" type="java.lang.String" />
+		<property name="transferType" type="java.lang.String" />
+		<property name="transferTypeDesc" type="java.lang.String" />
+		<property name="policyType" type="java.lang.String" />
+		<property name="policyTypeDesc" type="java.lang.String" />
+		<property name="policyNo" type="java.lang.String" />
+		<property name="vendorCode" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="excAmt" type="java.lang.Double" />
+		<property name="vatAmt" type="java.lang.Double" />
+		<property name="whtAmt" type="java.lang.Double" />
+		<property name="dutyAmt" type="java.lang.Double" />
+		<property name="totalPayAmt" type="java.lang.Double" />
+		<property name="totalAmt" type="java.lang.Double" />
+		<property name="diffAmt" type="java.lang.Double" />
+		<property name="invoiceNo" type="java.lang.String" />
+		<property name="doc_68" type="java.lang.String" />
+		<property name="doc_92" type="java.lang.String" />
+		<property name="paymentDt" type="java.sql.Date" />
+		<property name="paymentStatus" type="java.lang.String" />
+		<property name="paymentStatusDesc" type="java.lang.String" />
+		<property name="paymentType" type="java.lang.String" />
+		<property name="paymentTypeDesc" type="java.lang.String" />
+		<property name="paymentMethod" type="java.lang.String" />
+		<property name="paymentMethodDesc" type="java.lang.String" />
+		<property name="chqDt" type="java.sql.Date" />
+		<property name="chqReceiveDt" type="java.sql.Date" />
+		<property name="transferDt" type="java.sql.Date" />
+		<property name="updateBy" type="java.lang.String" />
+		<property name="updateDt" type="java.sql.Date" />
+
+	</class>
+	
+	<sql-query name="mir011Sch" callable="true" >
+		<return class="th.co.ais.domain.ir.Mir011Srch" >  
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="networkType" column="NETWORK_TYPE" />
+			<return-property name="networkTypeDesc" column="NETWORK_TYPE_DESC" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="transferType" column="TRANSFER_TYPE" />
+			<return-property name="transferTypeDesc" column="TRANSFER_TYPE_DESC" />
+			<return-property name="policyType" column="POLICY_TYPE" />
+			<return-property name="policyTypeDesc" column="POLICY_TYPE_DESC" />
+			<return-property name="policyNo" column="POLICY_NO" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="dutyAmt" column="DUTY_AMT" />
+			<return-property name="totalPayAmt" column="TOTAL_PAY_AMT" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="diffAmt" column="DIFF_AMT" />
+			<return-property name="invoiceNo" column="INVOICE_NO" />
+			<return-property name="doc_68" column="DOC_68" />
+			<return-property name="doc_92" column="DOC_92" />
+			<return-property name="paymentDt" column="PAYMENT_DT" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="paymentMethod" column="PAYMENT_METHOD" />
+			<return-property name="paymentMethodDesc" column="PAYMENT_METHOD_DESC" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_REVEIVE_DT" />
+			<return-property name="transferDt" column="TRANSFER_DT" />
+			<return-property name="updateBy" column="UPDATE_BY" />
+			<return-property name="updateDt" column="UPDATE_DT" />
+
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MIR011_SRCH(?, :company, :networkType, :transferType, :policyType, :policyNo, 
+		 							   :contractNo, :batchNo, :paymentStatus, :invoiceNo, :doc_92, 
+		 							   :dateType, :fromDt, :toDt) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

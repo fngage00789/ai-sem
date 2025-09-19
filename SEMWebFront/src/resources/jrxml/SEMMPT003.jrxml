@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="semmpt003" pageWidth="1241" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1241" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="0.5131581182307067"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="PARAM_ID" class="java.lang.String"/>
+	<parameter name="P_CONTRACT" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT * FROM TABLE(SEM_PG_RPT003_EXP.GET_DATA($P{PARAM_ID}))]]>
+	</queryString>
+	<field name="ROW_ID" class="java.lang.String"/>
+	<field name="CONTRACT_NO" class="java.lang.String"/>
+	<field name="PTAX_YEAR" class="java.lang.String"/>
+	<field name="COMPANY" class="java.lang.String"/>
+	<field name="ADDRESS" class="java.lang.String"/>
+	<field name="STREET" class="java.lang.String"/>
+	<field name="DISTRICT" class="java.lang.String"/>
+	<field name="AMPHUR" class="java.lang.String"/>
+	<field name="PROVINCE" class="java.lang.String"/>
+	<field name="SITE_DISTRICT" class="java.lang.String"/>
+	<field name="SITE_AMPHUR" class="java.lang.String"/>
+	<field name="SITE_PROVINCE" class="java.lang.String"/>
+	<field name="PTAX_NAME" class="java.lang.String"/>
+	<field name="USED_YEAR" class="java.lang.String"/>
+	<field name="CONTRACT_NAME" class="java.lang.String"/>
+	<field name="CONTRACT_ADDRESS" class="java.lang.String"/>
+	<field name="JAN_AMT" class="java.math.BigDecimal"/>
+	<field name="JAN_DECI" class="java.math.BigDecimal"/>
+	<field name="FEB_AMT" class="java.math.BigDecimal"/>
+	<field name="FEB_DECI" class="java.math.BigDecimal"/>
+	<field name="MAR_AMT" class="java.math.BigDecimal"/>
+	<field name="MAR_DECI" class="java.math.BigDecimal"/>
+	<field name="APR_AMT" class="java.math.BigDecimal"/>
+	<field name="APR_DECI" class="java.math.BigDecimal"/>
+	<field name="MAY_AMT" class="java.math.BigDecimal"/>
+	<field name="MAY_DECI" class="java.math.BigDecimal"/>
+	<field name="JUN_AMT" class="java.math.BigDecimal"/>
+	<field name="JUN_DECI" class="java.math.BigDecimal"/>
+	<field name="JUL_AMT" class="java.math.BigDecimal"/>
+	<field name="JUL_DECI" class="java.math.BigDecimal"/>
+	<field name="AUG_AMT" class="java.math.BigDecimal"/>
+	<field name="AUG_DECI" class="java.math.BigDecimal"/>
+	<field name="SEP_AMT" class="java.math.BigDecimal"/>
+	<field name="SEP_DECI" class="java.math.BigDecimal"/>
+	<field name="OCT_AMT" class="java.math.BigDecimal"/>
+	<field name="OCT_DECI" class="java.math.BigDecimal"/>
+	<field name="NOV_AMT" class="java.math.BigDecimal"/>
+	<field name="NOV_DECI" class="java.math.BigDecimal"/>
+	<field name="DEC_AMT" class="java.math.BigDecimal"/>
+	<field name="DEC_DECI" class="java.math.BigDecimal"/>
+	<field name="TOTAL_AMT" class="java.math.BigDecimal"/>
+	<field name="TOTAL_DECI" class="java.math.BigDecimal"/>
+	<field name="PTAX_AMT" class="java.math.BigDecimal"/>
+	<field name="PTAX_DECI" class="java.math.BigDecimal"/>
+	<field name="TRANSFER_MESSAGE" class="java.lang.String"/>
+	<field name="REMARK" class="java.lang.String"/>
+	<field name="CONTACT_NAME" class="java.lang.String"/>
+	<variable name="CONTRACT_NO" class="java.lang.String">
+		<variableExpression><![CDATA[$F{CONTRACT_NO}]]></variableExpression>
+	</variable>
+	<variable name="CONTRACT_ROW_NUMBER" class="java.lang.Integer" resetType="Group" resetGroup="CONTRACT_GROUP" calculation="Count">
+		<variableExpression><![CDATA[$F{CONTRACT_NO}]]></variableExpression>
+	</variable>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<group name="CONTRACT_GROUP" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{CONTRACT_NO}]]></groupExpression>
+		<groupHeader>
+			<band height="20" splitType="Stretch">
+				<subreport isUsingCache="true">
+					<reportElement key="subreport" isPrintRepeatedValues="false" x="0" y="0" width="1241" height="20" printWhenGroupChanges="CONTRACT_GROUP"/>
+					<subreportParameter name="P_CONTRACT">
+						<subreportParameterExpression><![CDATA[$F{CONTRACT_NO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_ID">
+						<subreportParameterExpression><![CDATA[$P{PARAM_ID}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath() +"SEMMPT003_1.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="20" splitType="Stretch">
+				<subreport isUsingCache="true">
+					<reportElement key="subreport" isPrintRepeatedValues="false" x="0" y="0" width="1241" height="20" printWhenGroupChanges="CONTRACT_GROUP"/>
+					<subreportParameter name="P_CONTRACT">
+						<subreportParameterExpression><![CDATA[$F{CONTRACT_NO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_ID">
+						<subreportParameterExpression><![CDATA[$P{PARAM_ID}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath()+"SEMMPT003_4.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="SUB_CONTRACT_GROUP">
+		<groupExpression><![CDATA[$V{CONTRACT_ROW_NUMBER}]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="20" splitType="Stretch">
+				<printWhenExpression><![CDATA[new Boolean($V{CONTRACT_ROW_NUMBER} == 1)]]></printWhenExpression>
+				<subreport isUsingCache="true">
+					<reportElement key="subreport" isPrintRepeatedValues="false" mode="Opaque" x="0" y="0" width="1241" height="20" printWhenGroupChanges="CONTRACT_GROUP">
+						<printWhenExpression><![CDATA[new Boolean($V{CONTRACT_ROW_NUMBER} == 1)]]></printWhenExpression>
+					</reportElement>
+					<subreportParameter name="P_CONTRACT">
+						<subreportParameterExpression><![CDATA[$F{CONTRACT_NO}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="PARAM_ID">
+						<subreportParameterExpression><![CDATA[$P{PARAM_ID}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath()+"SEMMPT003_3.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<subreport isUsingCache="true">
+				<reportElement key="subreport" isPrintRepeatedValues="false" x="0" y="0" width="1241" height="20" isPrintInFirstWholeBand="true" printWhenGroupChanges="CONTRACT_GROUP">
+					<printWhenExpression><![CDATA[new Boolean($V{CONTRACT_ROW_NUMBER} == 1)]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="PARAM_CONTRACT_NO">
+					<subreportParameterExpression><![CDATA[$F{CONTRACT_NO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_USED_YEAR">
+					<subreportParameterExpression><![CDATA[$F{USED_YEAR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_CONTRACT_ADDRESS">
+					<subreportParameterExpression><![CDATA[$F{CONTRACT_ADDRESS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_ID">
+					<subreportParameterExpression><![CDATA[$P{PARAM_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="PARAM_CONTRACT_NAME">
+					<subreportParameterExpression><![CDATA[$F{CONTRACT_NAME}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$V{ReportUtil}.getJasperSubReportPath()+"SEMMPT003_2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

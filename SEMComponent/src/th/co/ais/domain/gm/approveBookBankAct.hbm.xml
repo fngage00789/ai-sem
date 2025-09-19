@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.gm">
+	<class name="th.co.ais.domain.gm.ApproveBookBankAct" entity-name="queryApproveBookBankAct">
+		<id name="resultMsg" type="java.lang.String" />
+		<property name="pRemark" type="java.lang.String"/>
+		<property name="fileName" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.gm.ApproveBookBankAct" entity-name="mct003CheckApproveBookBank">
+		<id name="resultMsg" type="java.lang.String" />
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.gm.ApproveBookBankAct" entity-name="checkSapBookBankApprove">
+		<id name="resultMsg" type="java.lang.String" />
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	<class name="th.co.ais.domain.gm.ApproveBookBankAct" entity-name="approveSapBookBankAct">
+		<id name="resultMsg" type="java.lang.String" />
+		<property name="pRemark" type="java.lang.String"/>
+	</class>
+	<!-- << classes declarement -->
+    
+    <!-- ============================================================================== -->
+    <!-- ============================================================================== -->
+    
+    <!-- >> queries declarement -->
+    
+	<sql-query name="queryApproveBookBankAct" callable="true">
+		<return class="th.co.ais.domain.gm.ApproveBookBankAct" entity-name="queryApproveBookBankAct">  
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+			<return-property name="fileName" column="FILE_NAME" />
+		</return>
+		 <![CDATA[ call SEM_SP_MCT003_ACT(?, :actionType, :vendorMapPayeeId, :remark, :userId) ]]>
+	</sql-query>
+	<sql-query name="mct003CheckApproveBookBank" callable="true">
+		<return class="th.co.ais.domain.gm.ApproveBookBankAct" entity-name="mct003CheckApproveBookBank">  
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="pRemark" column="P_REMARK" />
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MCT003_CHK(?, :actionType, :vendorMapPayeeId, :remark, :userId) ]]>
+	</sql-query>
+	<sql-query name="mct003CheckSapApproveBookBank" callable="true">
+		<return class="th.co.ais.domain.gm.ApproveBookBankAct" entity-name="checkSapBookBankApprove">  
+				<return-property name="resultMsg" column="P_RESULT" />
+				<return-property name="pRemark" column="P_REMARK" />
+		</return>
+			 <![CDATA[ call SEM_SAP_BOOKBANK_APP_CHK(?, :actionType, :vendorMapPayeeId, :remark, :userId) ]]>
+	</sql-query>
+	<sql-query name="querySapApproveBookBankAct" callable="true">
+		<return class="th.co.ais.domain.gm.ApproveBookBankAct" entity-name="approveSapBookBankAct">  
+				<return-property name="resultMsg" column="P_RESULT" />
+				<return-property name="pRemark" column="P_REMARK" />
+		</return>
+			 <![CDATA[ call SEM_SAP_BOOKBANK_APP(?, :actionType, :vendorMapPayeeId, :remark, :userId, :sapStatus, :sapMsg) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

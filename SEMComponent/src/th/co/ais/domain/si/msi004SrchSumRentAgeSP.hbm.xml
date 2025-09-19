@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.Msi004SrchSumRentAgeSP">
+		<id name="rowId"  type="java.lang.String"/>
+		<property name="ageRentAmt" type="java.lang.Double"/>
+		<property name="ageServiceAmt" type="java.lang.Double"/>
+		<property name="ageRentServiceAmt" type="java.lang.Double"/>
+		
+	</class>
+	<sql-query name="msi004SrchSumRentAge" callable="true">
+		<return class="th.co.ais.domain.si.Msi004SrchSumRentAgeSP">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="ageRentAmt" column="AGE_RENT_AMT" />
+			<return-property name="ageServiceAmt" column="AGE_SERVICE_AMT" />
+			<return-property name="ageRentServiceAmt" column="AGE_RENT_SERVICE_AMT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH_SUM_RENT_A (?, :siteInfoId, cast(:ageYear as numeric), cast(:ageMonth as numeric), cast(:ageDay as numeric)) ]]>
+	</sql-query>
+</hibernate-mapping>

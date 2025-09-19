@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.cp">
+
+ 
+ <class name="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="ProxyCpAddElPermissionFileSup">
+ 	
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ <class name="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="DeleteByRowProxyCpPermissionFile">
+ 	
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+  <class name="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="ProxyCpPermissionFile">
+	<id name="rowId" type="java.lang.String"/>
+	<property name="company" type="java.lang.String" ></property>
+	<property name="lineNo" type="java.lang.String" ></property>
+	<property name="contractNo" type="java.lang.String" ></property>
+ 	<property name="locationId" type="java.lang.String" ></property>
+ 	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="subCon" type="java.lang.String" ></property>
+ 	<property name="subConCode" type="java.lang.String" ></property>
+ 	<property name="typeAttenna" type="java.lang.String" ></property>
+ 	<property name="hightAttenna" type="java.lang.String" ></property>
+ 	<property name="department" type="java.lang.String" ></property>
+ 	<property name="subDtStr" type="java.lang.String" ></property>
+ 	<property name="printDtStr" type="java.lang.String" ></property>
+ 	<property name="printSeq" type="java.lang.String" ></property>
+ 	<property name="printFlag" type="java.lang.String" ></property>
+ 	<property name="address" type="java.lang.String" ></property>
+ 	<property name="tumbon" type="java.lang.String" ></property>
+ 	<property name="amphur" type="java.lang.String" ></property>
+ 	<property name="province" type="java.lang.String" ></property>
+ 	<property name="ctStartDtStr" type="java.lang.String" ></property>
+ 	<property name="ctFinishDtStr" type="java.lang.String" ></property>
+ 	<property name="areaType" type="java.lang.String" ></property>
+ 	<property name="status" type="java.lang.String" ></property>
+ 	<property name="region" type="java.lang.String" ></property>
+ 	<property name="locationCode" type="java.lang.String" ></property>
+ 	<property name="errMsg" type="java.lang.String" ></property>
+ 	<property name="siteCode" type="java.lang.String" ></property>
+ 	<property name="remark" type="java.lang.String" ></property>
+ </class>
+ 
+   <class name="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="ProxyCpPermissionFileDtl">
+	<id name="rowId" type="java.lang.String"/>
+	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="address" type="java.lang.String" ></property>
+ 	<property name="tumbon" type="java.lang.String" ></property>
+ 	<property name="amphur" type="java.lang.String" ></property>
+ 	<property name="province" type="java.lang.String" ></property>
+ 	<property name="postCode" type="java.lang.String" ></property>
+ 	<property name="typeAttenna" type="java.lang.String" ></property>
+ 	<property name="hightAttenna" type="java.lang.String" ></property>
+ 	<property name="subConCode" type="java.lang.String" ></property>
+ 	<property name="subCon" type="java.lang.String" ></property>
+ 	<property name="departmentCode" type="java.lang.String" ></property>
+ 	<property name="department" type="java.lang.String" ></property>
+ 	<property name="remark" type="java.lang.String" ></property>
+ </class>
+ 
+   <class name="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="ProxyCpUpdatePermissionFile">
+	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+  <sql-query name="mcp002AddElPermissionFile" callable="true">
+ 	<return class="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="ProxyCpAddElPermissionFileSup">
+ 	
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MCP002_PROXY_IMP(?, :lineNo, :region, :company, :locationId, :locationCode, :siteName, :province, :typeAttenna, :hightAttenna, :department, :subDtStr, :subCon , :contractNo, :siteCode, :fileName, :user)]]>
+ </sql-query>
+  <sql-query name="mcp002AddFileName" callable="true">
+ 	<return class="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="ProxyCpAddElPermissionFileSup">
+ 	
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MCP002_PROXY_IMP_LOG(?, :company, :fileName, :user)]]>
+ </sql-query>
+ 
+ 
+ <sql-query name="mcp002SearchProxyPermissionWarrantCaseSuccess" callable="true">
+ 	<return class="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="ProxyCpPermissionFile">
+ 		<return-property name="rowId" column="CP_IMPORT_PROXY_DATA_ID"></return-property>
+ 		<return-property name="lineNo" column="LINE_NO"></return-property>
+ 		<return-property name="locationId" column="LOCATION_ID"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="subCon" column="Sub"></return-property>
+ 		<return-property name="subConCode" column="SUB_CON_CODE"></return-property>
+ 		<return-property name="typeAttenna" column="ARTHENA_TYPE"></return-property>
+ 		<return-property name="hightAttenna" column="ARTHENA_HEIGHT"></return-property>
+ 		<return-property name="department" column="LOCAL_GOVERNMENT"></return-property>
+ 		<return-property name="subDtStr" column="SUB_DT"></return-property>
+ 		<return-property name="printDtStr" column="PRINT_DT"></return-property>
+ 		<return-property name="printSeq" column="PRINT_NO"></return-property>
+ 		<return-property name="printFlag" column="PRINT_FLAG"></return-property>
+ 		<return-property name="company" column="COMPANY"></return-property>
+ 		<return-property name="contractNo" column="CONTRACT_NO"></return-property>
+ 		<return-property name="address" column="SITE_HOUSE_NO"></return-property>
+ 		<return-property name="tumbon" column="SITE_TUMBOL"></return-property>
+ 		<return-property name="amphur" column="AMPHUR_NAME"></return-property>
+ 		<return-property name="province" column="PROVINCE_NAME"></return-property>
+ 		<return-property name="ctStartDtStr" column="EFFECTIVE_DT"></return-property>
+ 		<return-property name="ctFinishDtStr" column="EXPIRE_DT"></return-property>
+ 		<return-property name="areaType" column="PLACE_TYPE"></return-property>
+ 		<return-property name="status" column="IMPORT_STATUS"></return-property>
+ 		<return-property name="region" column="REGION"></return-property>
+ 		<return-property name="siteCode" column="SITE_CODE"></return-property>
+ 		<return-property name="locationCode" column="LOCATION_CODE"></return-property>
+ 		<return-property name="errMsg" column="MESSAGE"></return-property>
+ 		<return-property name="remark" column="REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[call SEM_SP_MCP002_PROXY_LIST(?, :logId, :status)]]>
+ 	</sql-query>
+ 
+ 
+ 	<sql-query name="mcp002SearchForEdit" callable="true">
+ 	<return class="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="ProxyCpPermissionFileDtl">
+ 	<return-property name="rowId" column="CP_IMPORT_PROXY_DATA_ID"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="address" column="SITE_HOUSE_NO"></return-property>
+ 		<return-property name="tumbon" column="SITE_TUMBOL"></return-property>
+ 		<return-property name="amphur" column="SITE_AMPHUR_ID"></return-property>
+ 		<return-property name="province" column="SITE_PROVINCE_ID"></return-property>
+ 		<return-property name="postCode" column="SITE_POSTCODE"></return-property>
+ 		<return-property name="typeAttenna" column="ARTHENA_TYPE"></return-property>
+ 		<return-property name="hightAttenna" column="ARTHENA_HEIGHT"></return-property>
+ 		<return-property name="subConCode" column="SUB_CON_CODE"></return-property>
+ 		<return-property name="subCon" column="SUB"></return-property>
+ 		<return-property name="departmentCode" column="LOCAL_GOV_CODE"></return-property>
+ 		<return-property name="department" column="LOCAL_GOVERNMENT"></return-property>
+ 		<return-property name="remark" column="REMARK"></return-property>
+ 	
+ 	</return>
+ 	<![CDATA[call SEM_SP_MCP002_PROXY_LIST_DTL(?, :rowId)]]>
+ 	</sql-query>
+ 	
+ 	<sql-query name="mcp002UpdateElPermissionWarrant" callable="true">
+ 	<return class="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="ProxyCpUpdatePermissionFile">
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM_SP_MCP002_PROXY_DTL_UPD(?, :rowId, :siteName, :address, :tumbon, :amphur, :province, :postCode, :typeAttenna, :hightAttenna, :subCon, :department, :user)]]>
+ 	</sql-query>
+ 	
+ 	
+ 	<sql-query name="mcp002DeleteByRowUploadFile" callable="true">
+ 	<return class="th.co.ais.domain.cp.ProxyConStructionUploadElPermistionWarrant" entity-name="DeleteByRowProxyCpPermissionFile">
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MCP002_PROXY_DTL_DEL(?, :rowId, :user)]]>
+ 	</sql-query>
+ </hibernate-mapping>
+ 
+ 

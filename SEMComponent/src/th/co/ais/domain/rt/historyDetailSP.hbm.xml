@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.HistoryDetailSP">
+		<id name="siteChangeId" type="java.lang.String"/>
+		<property name="docNo" type="java.lang.String"/>
+		<property name="siteChangeCode" type="java.lang.String"/>
+		<property name="siteChangeDesc" type="java.lang.String"/>
+		<property name="detail" type="java.lang.String"/>
+	</class>				
+	<sql-query name="historyDetail" callable="true">
+		<return class="th.co.ais.domain.rt.HistoryDetailSP">
+			<return-property name="siteChangeId" column="SITE_CHANGE_ID" />
+			<return-property name="docNo" column="DOC_NO" />
+			<return-property name="siteChangeCode" column="SITE_CHANGE_CODE" />
+			<return-property name="siteChangeDesc" column="SITE_CHANGE_DESC" />
+			<return-property name="detail" column="DETAIL" />
+		</return>
+		<![CDATA[ call SEM_SP_MSI004_CHANGE(?, :siteinfoId) ]]>
+	</sql-query>
+</hibernate-mapping>

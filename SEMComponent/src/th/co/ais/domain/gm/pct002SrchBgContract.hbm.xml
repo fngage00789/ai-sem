@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.gm">
+	<class name="th.co.ais.domain.gm.Pct002SrchBgContract">
+		<id name="dpstDetailId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="effectiveDt" type="java.util.Date"/>
+		<property name="expireDt" type="java.util.Date"/>
+		<property name="rentalMasterId" type="java.lang.String"/>
+		<property name="dpstCondType" type="java.lang.String"/>
+		<property name="dpstType" type="java.lang.String"/>
+		<property name="vendorMasterId" type="java.lang.String"/>
+		<property name="electricId" type="java.lang.String"/>
+		<property name="dpstSpecialFlag" type="java.lang.String"/>
+		<property name="areaCode" type="java.lang.String"/>
+		<property name="areaName" type="java.lang.String"/>
+		<property name="masterId" type="java.lang.String"/>
+		<property name="bgNo" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+	</class>
+	<sql-query name="queryPopupContractSearchPCT002" callable="true">
+		<return class="th.co.ais.domain.gm.Pct002SrchBgContract">
+			<return-property name="dpstDetailId" column="DEPOSIT_DETAIL_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="rentalMasterId" column="RENTAL_MASTER_ID"/>
+			<return-property name="dpstCondType" column="DEPOSIT_COND_TYPE"/>
+			<return-property name="dpstType" column="DEPOSIT_TYPE"/>
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID"/>
+			<return-property name="electricId" column="ELECTRIC_ID"/>
+			<return-property name="dpstSpecialFlag" column="DEPOSIT_SPECIAL_FLAG"/>
+			<return-property name="areaCode" column="AREA_CODE"/>
+			<return-property name="areaName" column="AREA_NAME"/>
+			<return-property name="masterId" column="METER_ID"/>
+			<return-property name="bgNo" column="BG_NO"/>
+			<return-property name="siteInfoId" column="SITE_INFO_ID"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_PCT002_SRCH_BG_CONTRACT (?, :contractNo, :siteName, :company, :expenseType) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

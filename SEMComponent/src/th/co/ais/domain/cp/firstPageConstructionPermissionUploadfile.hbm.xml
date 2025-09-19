@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.cp">
+
+
+ <class name="th.co.ais.domain.cp.FirstPageProxyConstructionPermissionUploadFile" entity-name="ProxyCpListUploadFileFirst" > 
+ 	<id name="rowId" type="java.lang.String"/>
+	<property name="company" type="java.lang.String" ></property>
+	<property name="contractNo" type="java.lang.String" ></property>
+ 	<property name="locationId" type="java.lang.String" ></property>
+ 	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="subCon" type="java.lang.String" ></property>
+ 	<property name="subConCode" type="java.lang.String" ></property>
+ 	<property name="typeAttenna" type="java.lang.String" ></property>
+ 	<property name="hightAttenna" type="java.lang.String" ></property>
+ 	<property name="department" type="java.lang.String" ></property>
+ 	<property name="subDt" type="java.util.Date" ></property>
+ 	<property name="printDt" type="java.util.Date" ></property>
+ 	<property name="printSeq" type="java.lang.String" ></property>
+ 	<property name="printFlag" type="java.lang.String" ></property>
+ 	<property name="address" type="java.lang.String" ></property>
+ 	<property name="tumbon" type="java.lang.String" ></property>
+ 	<property name="amphur" type="java.lang.String" ></property>
+ 	<property name="province" type="java.lang.String" ></property>
+ 	<property name="ctStartDt" type="java.util.Date" ></property>
+ 	<property name="ctFinishDt" type="java.util.Date" ></property>
+ 	<property name="areaType" type="java.lang.String" ></property>
+ 	<property name="status" type="java.lang.String" ></property>
+ 	<property name="errMsg" type="java.lang.String" ></property>
+ 	<property name="fileName" type="java.lang.String" ></property>
+ 	<property name="importFileDt" type="java.util.Date" ></property>
+ 	<property name="supplier" type="java.lang.String" ></property>
+ 	<property name="statusContract" type="java.lang.String" ></property>
+ </class>
+ 
+  
+ <sql-query name="mcp002SearchUploadFileFirstPage" callable="true">
+ 	<return class="th.co.ais.domain.cp.FirstPageProxyConstructionPermissionUploadFile" entity-name="ProxyCpListUploadFileFirst" >
+ 		<return-property name="rowId" column="CP_IMPORT_PROXY_DATA_ID"></return-property>
+ 		<return-property name="company" column="COMPANY"></return-property>
+ 		<return-property name="contractNo" column="CONTRACT_NO"></return-property>
+ 		<return-property name="locationId" column="LOCATION_ID"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="ctStartDt" column="EFFECTIVE_DT"></return-property>
+ 		<return-property name="ctFinishDt" column="Expire_Dt"></return-property>
+ 		<return-property name="areaType" column="PLACE_TYPE"></return-property>
+ 		<return-property name="address" column="SITE_HOUSE_NO"></return-property>
+ 		<return-property name="tumbon" column="SITE_TUMBOL"></return-property>
+ 		<return-property name="amphur" column="AMPHUR_NAME"></return-property>
+ 		<return-property name="province" column="PROVINCE_NAME"></return-property>
+ 		<return-property name="subConCode" column="SUP_CODE"></return-property>
+ 		<return-property name="subCon" column="SUPLIER"></return-property>
+ 		<return-property name="typeAttenna" column="ARTHENA_TYPE"></return-property>
+ 		<return-property name="hightAttenna" column="ARTHENA_HEIGHT"></return-property>
+ 		<return-property name="department" column="LOCAL_GOVERNMENT"></return-property>
+ 		<return-property name="subDt" column="SUB_DT"></return-property>
+ 		<return-property name="printDt" column="PRINT_DT"></return-property>
+ 		<return-property name="printSeq" column="PRINT_NO"></return-property>
+ 		<return-property name="printFlag" column="PRINT_FLAG"></return-property>
+ 		<return-property name="status" column="IMPORT_STATUS"></return-property>
+ 		<return-property name="errMsg" column="MESSAGE"></return-property>
+ 		<return-property name="fileName" column="FILE_NAME"></return-property>
+ 		<return-property name="importFileDt" column="IMPORT_FILE_DT"></return-property>
+ 		<return-property name="supplier" column="SUPPLIER"></return-property>
+ 		<return-property name="statusContract" column="Contract_Status"></return-property>
+ 		
+ 		
+ 	</return>
+ 	<![CDATA[call SEM.SEM_SP_MCP002_PROXY_SRCH_F(?, :company, :contractNo , :siteName , :region, :province, :locationId , :locationCode, :typeUseElectric, :reqType, :supplier, :uploadFileDtFrom, :uploadFileDtTo, :fileName, :flagPrint)]]>
+ </sql-query>
+ 
+ 
+  </hibernate-mapping>

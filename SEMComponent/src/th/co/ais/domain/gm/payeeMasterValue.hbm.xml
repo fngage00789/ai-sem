@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.gm">
+	
+	<class name="th.co.ais.domain.gm.PayeeMasterSP" entity-name="checkPayeeMaster" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="idCard" type="java.lang.String" />
+		<property name="taxId" type="java.lang.String" />
+		<property name="address" type="java.lang.String" />
+	</class>
+	
+	<class name="th.co.ais.domain.gm.PayeeMasterSP" entity-name="updateMCT001" >
+		<id name="statusResult" type="java.lang.String" />
+	</class>
+	
+	<sql-query name="queryCheckPayeeMasterExisted" callable="true" >
+		<return class="th.co.ais.domain.gm.PayeeMasterSP" entity-name="checkPayeeMaster">  
+			<return-property name="rowId" column="PAYEE_MASTER_ID" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="idCard" column="ID_CARD" />
+			<return-property name="taxId" column="TAX_ID" />
+			<return-property name="address" column="ADDRESS" />
+		</return>
+	<![CDATA[ call SEM.SEM_SP_MCT001_CHK_P(?, :payeeName, :idCard, :taxId13) ]]>
+	</sql-query>
+	
+	
+	<sql-query name="updateCT001" callable="true" >
+		<return class="th.co.ais.domain.gm.PayeeMasterSP" entity-name="updateMCT001">  
+			<return-property name="statusResult" column="P_RESULT" />
+		</return>
+	<![CDATA[ call SEM.SEM_SP_MCT001_ACT(?, :vendorMapPayeeId, :userId) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

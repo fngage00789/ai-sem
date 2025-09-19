@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.cp">
+	<class name="th.co.ais.domain.cp.Mcp001CanclePay">
+		<id name="chkStatus" type="java.lang.String"/>
+		<property name="message" type="java.lang.String"/>
+	</class> 
+	<sql-query name="spMcp001CanclePay" callable="true">
+	<return class="th.co.ais.domain.cp.Mcp001CanclePay">
+		<return-property name="chkStatus" column="STATUS" />
+		<return-property name="message" column="MESSAGE" />
+	 </return>
+	 <![CDATA[call SEM_SP_MCP001_CANCEL_PAY(?, :rowId)]]>
+	</sql-query>
+</hibernate-mapping>

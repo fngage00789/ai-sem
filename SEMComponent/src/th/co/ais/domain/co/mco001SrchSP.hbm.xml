@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco001SrchSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="docNo" type="java.lang.String"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="reqType" type="java.lang.String"/>
+		<property name="reqTypeName" type="java.lang.String"/>
+		<property name="title" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="effDate" type="java.util.Date"/>
+		<property name="expDate" type="java.util.Date"/>
+		<property name="lessorName" type="java.lang.String"/>
+		<property name="outDate" type="java.util.Date"/>
+		<property name="contractStatusName" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="dutyPayStatusName" type="java.lang.String"/>
+		<property name="totSendStatusName" type="java.lang.String"/>
+		<property name="legalPassOutDate" type="java.util.Date"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="flowStatus" type="java.lang.String"/>
+		<property name="siteStatusName" type="java.lang.String"/>
+		<property name="region" type="java.lang.String" />
+		<property name="checkDocStatusName" type="java.lang.String" />
+		<property name="oldContractNo" type="java.lang.String" />
+		<property name="oldSiteInfoId" type="java.lang.String" />
+		<property name="batchNo" type="java.lang.String" />
+		<property name="borrowStatus" type="java.lang.String" />
+		<property name="reqTypeName2" type="java.lang.String" />
+		<property name="locationId" type="java.lang.String" />
+		<property name="dutyAmt" type="java.lang.Double" />
+		<property name="receivePerson" type="java.lang.String" />
+		<property name="createPersonName" type="java.lang.String" />
+		<property name="siteApprovePersonName" type="java.lang.String" />
+		<property name="d1" type="java.util.Date" />
+		<property name="d2" type="java.util.Date" />
+		<property name="d3" type="java.util.Date" />
+		<property name="d4" type="java.util.Date" />
+		<property name="d5" type="java.util.Date" />
+		<property name="d6" type="java.util.Date" />
+		<property name="d7" type="java.util.Date" />
+		<property name="d8" type="java.util.Date" />
+		<property name="d9" type="java.util.Date" />
+		<property name="picoFlag" type="java.lang.String" />
+		<property name="siteAppId" type="java.lang.String" />
+		<property name="placeType" type="java.lang.String" />
+		<property name="placeTypeRemark" type="java.lang.String" />
+		<property name="partiesType" type="java.lang.String" />
+		<property name="partiesTypeRemark" type="java.lang.String" />
+		<property name="docApproveId" type="java.lang.String" />
+		</class>
+	<sql-query name="mco001Srch" callable="true">
+		<return class="th.co.ais.domain.co.Mco001SrchSP">
+			<return-property name="rowId" column="CONTRACT_ID"/>
+			<return-property name="siteInfoId" column="SITE_INFO_ID"/>
+			<return-property name="docNo" column="DOC_NO"/>
+			<return-property name="siteName" column="SITE_NAME"/>
+			<return-property name="reqType" column="REQ_TYPE"/>
+			<return-property name="reqTypeName" column="REQ_TYPE_NAME"/>
+			<return-property name="title" column="TITLE"/>
+			<return-property name="contractNo" column="CONTRACT_NO"/>
+			<return-property name="effDate" column="EFFECTIVE_DT"/>
+			<return-property name="expDate" column="EXPIRE_DT"/>
+			<return-property name="lessorName" column="LESSOR_NAME"/>
+			<return-property name="outDate" column="OUT_DT"/>
+			<return-property name="contractStatusName" column="CONTRACT_STATUS_NAME"/>
+			<return-property name="remark" column="REMARK"/>
+			<return-property name="dutyPayStatusName" column="DUTY_PAY_STATUS_NAME"/>
+			<return-property name="totSendStatusName" column="TOT_SEND_STATUS_NAME"/>
+			<return-property name="legalPassOutDate" column="LEGAL_PASS_OUT_DT"/>
+			<return-property name="company" column="COMPANY"/>
+			<return-property name="flowStatus" column="FLOW_STATUS" />
+			<return-property name="siteStatusName" column="SITE_STATUS_NAME" />	
+			<return-property name="region" column="REGION"/>
+			<return-property name="checkDocStatusName" column="CHECK_DOC_STATUS_NAME"/>
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO"/>
+			<return-property name="oldSiteInfoId" column="OLD_SITE_INFO_ID"/>
+			<return-property name="batchNo" column="BATCH_NO"/>
+			<return-property name="borrowStatus" column="BORROW_STATUS"/>
+			<return-property name="reqTypeName2" column="REQ_TYPE_NAME2"/>
+			<return-property name="locationId" column="LOCATION_ID"/>
+			<return-property name="dutyAmt" column="DUTY_AMT"/>
+			<return-property name="receivePerson" column="RECEIVE_PERSON_NAME"/>
+			<return-property name="createPersonName" column="CREATE_PERSON_NAME"/>
+			<return-property name="siteApprovePersonName" column="SITE_APPROVE_PERSON_NAME"/>
+			<return-property name="d1" column="D1"/>
+			<return-property name="d2" column="D2"/>
+			<return-property name="d3" column="D3"/>
+			<return-property name="d4" column="D4"/>
+			<return-property name="d5" column="D5"/>
+			<return-property name="d6" column="D6"/>
+			<return-property name="d7" column="D7"/>
+			<return-property name="d8" column="D8"/>
+			<return-property name="d9" column="D9"/>
+			<return-property name="picoFlag" column="PICO_FLAG"/>
+			<return-property name="siteAppId" column="SITE_APP_ID"/>
+			<return-property name="placeType" column="PLACE_TYPE"/>
+			<return-property name="placeTypeRemark" column="PLACE_TYPE_REMARK"/>
+			<return-property name="partiesType" column="PARTIES_TYPE"/>
+			<return-property name="partiesTypeRemark" column="PARTIES_TYPE_REMARK"/>
+			<return-property name="docApproveId" column="DOC_APPROVE_ID"/>
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO001_SRCH (?, :company, :region, :docNo, :reqType, :title, :contractNo,
+		:siteName, :effDateFrom, :effDateTo, :expDateFrom, :expDateTo, :noExpireFlag, :lessorName, :locationId,
+		:contractStatus, :checkDocStatus, :dutyPayStatus, :totSendStatus, :currentFlag, :batchNo, :strParam)]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001CheckDate">
+		<id name="result" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMrt001CheckDate" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001CheckDate">
+			<return-property name="result" column="P_RESULT" />
+			<return-property name="remark" column="P_REMARK" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_CHECK_DATE(?, :expenseType, :rentalMasterId, :periodStartDt, :periodEndDt, :vendorMasterId, :currentId) ]]>
+	</sql-query>
+</hibernate-mapping>

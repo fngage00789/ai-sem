@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.ac">
+	<class name="th.co.ais.domain.ac.Mac001Srch">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="paymentGroupNo" type="java.lang.String"/>
+		<property name="paymentDocNo" type="java.lang.String"/>
+		<property name="expenseType" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="siteStatus" type="java.lang.String" />
+		<property name="networkStatus" type="java.lang.String" />
+		<property name="pmsStatus" type="java.lang.String" />
+		<property name="jobDay" type="java.lang.Integer" />
+		<property name="paymentStatus" type="java.lang.String" />
+		<property name="chqDt" type="java.sql.Date" />
+		<property name="chqReceiveDt" type="java.sql.Date" />
+		<property name="siteInfoId" type="java.lang.String" />
+		<property name="paymentStatusDesc" type="java.lang.String" />
+		<property name="periodNo" type="java.lang.String" />
+		<property name="periodStartDt" type="java.sql.Date" />
+		<property name="periodEndDt" type="java.sql.Date" />
+		<property name="preContractNo" type="java.lang.String" />
+		<property name="preSiteInfoId" type="java.lang.String" />
+		<property name="fileName" type="java.lang.String" />
+		<property name="totalAmt" type="java.lang.Double" />
+		<property name="invoiceNo" type="java.lang.String" />
+		<property name="payAmt" type="java.lang.Double" />
+		<property name="reqType" type="java.lang.String" />
+		
+		<property name="chequeAmt" type="java.lang.Double" />
+		<property name="whtAmt" type="java.lang.Double" />
+		<property name="expenseDesc" type="java.lang.String" />
+	</class>
+	<sql-query name="spMac001Srch" callable="true">
+		<return class="th.co.ais.domain.ac.Mac001Srch">
+			<return-property name="rowId" column="TRANS_PAYMENT_ID" />
+			<return-property name="paymentGroupNo" column="PAYMENT_GROUP_NO" />
+			<return-property name="paymentDocNo" column="PAYMENT_DOC_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="siteStatus" column="SITE_STATUS" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="pmsStatus" column="PMS_STATUS" />
+			<return-property name="jobDay" column="JOB_DAY" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="chqDt" column="CHQ_DT" />
+			<return-property name="chqReceiveDt" column="CHQ_RECEIVE_DT" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="periodNo" column="PERIOD_NO" />
+			<return-property name="periodStartDt" column="PERIOD_START_DT" />
+			<return-property name="periodEndDt" column="PERIOD_END_DT" />
+			<return-property name="preContractNo" column="PRE_CONTRACT_NO" />
+			<return-property name="preSiteInfoId" column="PRE_SITE_INFO_ID" />
+			<return-property name="paymentStatusDesc" column="PAYMENT_STATUS_DESC" />
+			<return-property name="fileName" column="FILE_NAME" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="payAmt" column="PAY_AMT" />
+			<return-property name="invoiceNo" column="DOC_NO" />
+			<return-property name="reqType" column="REQ_TYPE" />
+			
+			<return-property name="chequeAmt" column="CHEQUE_AMOUNT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="expenseDesc" column="EXPENSE_DESC" />
+		</return>
+		<![CDATA[ call SEM_SP_MAC001_SRCH(?, :company, :siteStatus, :moduleType, :expenseType, :paymentStatus, :paymentType,
+		                          :paymentDtFrom, :paymentDtTo, :chqReceiveDtFrom, :chqReceiveDtTo, :transferDtFrom,
+		                          :transferDtTo, :contractNo, :policyNo, :paymentDocType, :paymentDocNo, :vendorCode,
+		                          :vendorName, :siteName, :paymentBatchNo, :paymentDocnoSrch) ]]>
+	</sql-query>
+</hibernate-mapping>

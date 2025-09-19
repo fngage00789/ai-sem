@@ -1,0 +1,16 @@
+<converter-pool defaultGroup="remoteConverters"
+				officeConverterClass="com.docmosis.document.converter.RemoteConverterGateway">
+	
+	<!-- DEV SERVER's PATH -->
+<!-- 	<group name="embeddedConverters" -->
+<!-- 		   officeConverterClass="com.docmosis.converter.openoffice.LocalOpenOfficeConverter"> -->
+<!-- 		<instance path="soffice.exe" /> -->
+<!-- 	</group> -->
+	
+	<!-- UAT & PROC SERVER's PATH -->
+	<group name="remoteConverters" description="converter group using only remote converters">
+   		<instance hostname="localhost" port="2100"/>
+	</group>
+	
+</converter-pool>
+ 

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001SrchDpstDetail">
+		<id name="depositDetailId" type="java.lang.String"/>
+		<property name="rentalMasterId" type="java.lang.String"/>
+		<property name="company" type="java.lang.String"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="expenseTypeName" type="java.lang.String"/>
+		<property name="depositType" type="java.lang.String"/>
+		<property name="depositTypeName" type="java.lang.String"/>
+		<property name="remark" type="java.lang.String"/>
+		<property name="vatType" type="java.lang.String"/>
+		<property name="vatTypeName" type="java.lang.String"/>
+		<property name="vatRate" type="java.lang.String"/>
+		<property name="vatAmt" type="java.lang.String"/>
+		<property name="depositExcAmt" type="java.lang.Double"/>
+		<property name="depositIncAmt" type="java.lang.Double"/>
+		<property name="periodYear" type="java.lang.String"/>
+		<property name="periodMonth" type="java.lang.String"/>
+		<property name="depositAmt" type="java.lang.Double"/>
+		<property name="vendorMasterId" type="java.lang.String"/>
+		<property name="vendorCode" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="payeeMasterId" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String"/>
+		<property name="bgMasterId" type="java.lang.String"/>
+		<property name="bgNo" type="java.lang.String"/>
+		<property name="periodStDt" type="java.sql.Date"/>
+		<property name="periodEndDt" type="java.sql.Date"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="effectiveDt" type="java.sql.Date"/>
+		<property name="expireDt" type="java.sql.Date"/>
+		<property name="siteName" type="java.lang.String"/>
+		<property name="lessorAddress" type="java.lang.String"/>
+		<property name="siteAddress" type="java.lang.String"/>
+		<property name="dpstVerifyAmt" type="java.lang.String"/>
+		<property name="siteInfoId" type="java.lang.String"/>
+		<property name="dpstStatus" type="java.lang.String"/>
+		<property name="whtType" type="java.lang.String"/>
+		<property name="whtTypeName" type="java.lang.String"/>
+		<property name="whtRate" type="java.lang.Double"/>
+		<property name="whtAmt" type="java.lang.Double"/>
+	</class>
+	<sql-query name="spMrt001SrchDpstDetail" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001SrchDpstDetail">
+			<return-property name="depositDetailId" column="DEPOSIT_DETAIL_ID" />
+			<return-property name="rentalMasterId" column="RENTAL_MASTER_ID" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="expenseTypeName" column="EXPENSE_TYPE_NAME" />
+			<return-property name="depositType" column="DEPOSIT_TYPE" />
+			<return-property name="depositTypeName" column="DEPOSIT_TYPE_NAME" />
+			<return-property name="remark" column="REMARK" />
+			<return-property name="vatType" column="VAT_TYPE" />
+			<return-property name="vatTypeName" column="VAT_TYPE_NAME" />
+			<return-property name="vatRate" column="VAT_RATE" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="depositExcAmt" column="DEPOSIT_EXC_AMT" />
+			<return-property name="depositIncAmt" column="DEPOSIT_INC_AMT" />
+			<return-property name="periodYear" column="PERIOD_YEAR" />
+			<return-property name="periodMonth" column="PERIOD_MONTH" />
+			<return-property name="depositAmt" column="DEPOSIT_AMT" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="vendorCode" column="VENDOR_CODE" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="payeeMasterId" column="PAYEE_MASTER_ID" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="bgMasterId" column="BG_MASTER_ID" />
+			<return-property name="bgNo" column="BG_NO" />
+			<return-property name="periodStDt" column="PERIOD_START_DT" />
+			<return-property name="periodEndDt" column="PERIOD_END_DT" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="effectiveDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="lessorAddress" column="LESSOR_ADDRESS" />
+			<return-property name="siteAddress" column="SITE_ADDRESS" />
+			<return-property name="dpstVerifyAmt" column="DEPOSIT_VERIFY_AMT" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID"/>
+			<return-property name="dpstStatus" column="DEPOSIT_STATUS" />
+			<return-property name="whtType" column="WHT_TYPE" />
+			<return-property name="whtTypeName" column="WHT_TYPE_NAME" />
+			<return-property name="whtRate" column="WHT_RATE" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_SRCH_DPST_DETAIL(?, :rentalMasterId) ]]>
+	</sql-query>
+</hibernate-mapping>

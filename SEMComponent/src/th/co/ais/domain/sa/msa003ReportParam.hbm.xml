@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.sa">
+    <class name="th.co.ais.domain.sa.Msa003ReportParam">
+        <id name="rowId" type="java.lang.String"/>
+        <property name="siteAppId" type="java.lang.String" update="false"/>
+            <property name="contractId" type="java.lang.String" update="false"/>
+            <property name="contractTime" type="java.math.BigDecimal" update="false" />
+            <property name="contractTimeSeq" type="java.math.BigDecimal" update="false" />
+            <property name="contractNo" type="java.lang.String" update="false" />
+            <property name="reqType" type="java.lang.String" update="false" />
+            <property name="reqDocType" type="java.lang.String" update="false" />
+            <property name="title" type="java.lang.String" update="false" />
+            <property name="reqOfficer" type="java.lang.String" update="false" />
+            <property name="reqOfficerManual" type="java.lang.String" update="false" />
+            <property name="company" type="java.lang.String" update="false" />
+            <property name="region" type="java.lang.String" update="false" />
+            <property name="docNo" type="java.lang.String" update="false" />
+            <property name="docDt" type="java.util.Date" update="false" />
+            <property name="docStatus" type="java.lang.String" update="false" />
+            <property name="needLegApprove" type="java.lang.String" update="false" />
+            <property name="rentAreaAmtMemo" type="java.lang.String" update="false" />
+            <property name="rentSetupAmtMemo" type="java.lang.String" update="false" />
+            <property name="rentServiceAmtMemo" type="java.lang.String" update="false" />
+            <property name="rentOtherAmtMemo" type="java.lang.String" update="false" />
+            <property name="rentAMT" type="java.math.BigDecimal" update="false" />
+            <property name="rentServiceAmt" type="java.math.BigDecimal" update="false" />
+    </class>
+    <sql-query name="queryMsa003ReportParam" callable="true">
+        <return class="th.co.ais.domain.sa.Msa003ReportParam">
+            <return-property name="rowId" column="SITE_APP_ID" />
+            <return-property name="siteAppId" column="SITE_APP_ID" />
+            <return-property name="contractId" column="CONTRACT_ID" />
+            <return-property name="contractTime" column="CONTRACT_TIME" />
+            <return-property name="contractTimeSeq" column="CONTRACT_TIME_SEQ" />
+            <return-property name="contractNo" column="CONTRACT_NO" />
+            <return-property name="reqType" column="REQ_TYPE" />
+            <return-property name="reqDocType" column="REQ_DOC_TYPE" />
+            <return-property name="title" column="TITLE" />
+            <return-property name="reqOfficer" column="REQ_OFFICER" />
+            <return-property name="reqOfficerManual" column="REQ_OFFICER_MANUAL" />
+            <return-property name="company" column="COMPANY" />
+            <return-property name="region" column="REGION" />
+            <return-property name="docNo" column="DOC_NO" />
+            <return-property name="docDt" column="DOC_DT" />
+            <return-property name="docStatus" column="DOC_STATUS" />
+            <return-property name="needLegApprove" column="NEED_LEGAL_APPROVE" />
+            <return-property name="rentAreaAmtMemo" column="RENT_AREA_AMT_MEMO" />
+            <return-property name="rentSetupAmtMemo" column="RENT_SETUP_AMT_MEMO" />
+            <return-property name="rentServiceAmtMemo" column="RENT_SERVICE_AMT_MEMO" />
+            <return-property name="rentOtherAmtMemo" column="RENT_OTHER_AMT_MEMO" />
+            <return-property name="rentAMT" column="RENT_AMT" />
+            <return-property name="rentServiceAmt" column="RENT_SERVICE_AMT" />
+        </return>
+        <![CDATA[ call SEM_PG_MSA003_SEARCH_FOR_PRINT (?, :rowId )]]>
+    </sql-query>
+</hibernate-mapping>

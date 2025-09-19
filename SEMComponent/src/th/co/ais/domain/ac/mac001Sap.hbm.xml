@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.ac">
+	<class name="th.co.ais.domain.ac.Mac001Sap">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="drcr" type="java.lang.String"/>
+		<property name="accNo" type="java.lang.String"/>
+		<property name="specialGl" type="java.lang.String"/>
+		<property name="accDesc" type="java.lang.String"/>
+		<property name="costCenter" type="java.lang.String"/>
+		<property name="wbsNo" type="java.lang.String"/>
+		<property name="amount" type="java.lang.Double"/>
+		<property name="taxCode" type="java.lang.String"/>
+		<property name="taxBase" type="java.lang.Double"/>
+		<property name="whtCode" type="java.lang.String"/>
+		<property name="whtBase" type="java.lang.Double"/>
+		<property name="whtAmt" type="java.lang.Double"/>
+		<property name="lineItemText" type="java.lang.String"/>
+		<property name="expenseDesc" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMac001Sap" callable="true">
+		<return class="th.co.ais.domain.ac.Mac001Sap">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="drcr" column="DRCR" />
+			<return-property name="accNo" column="ACC_NO" />
+			<return-property name="specialGl" column="SPECIAL_GL" />
+			<return-property name="accDesc" column="ACC_DESC" />
+			<return-property name="costCenter" column="COST_CENTER" />
+			<return-property name="wbsNo" column="WBS_NO" />
+			<return-property name="amount" column="AMOUNT" />
+			<return-property name="taxCode" column="TAX_CODE" />
+			<return-property name="taxBase" column="TAX_BASE" />
+			<return-property name="whtCode" column="WHT_CODE" />
+			<return-property name="whtBase" column="WHT_BASE" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="lineItemText" column="LINE_ITEN_TEXT" />
+			<return-property name="expenseDesc" column="EXPENSE_DESC" />
+			
+		</return>
+		<![CDATA[ call SEM_SP_MAC001_SAP(?, :transPaymentId) ]]>
+	</sql-query>
+</hibernate-mapping>

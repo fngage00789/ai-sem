@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.gm">
+	<class name="CT001SrchMSP" >
+		<id name="rowId" type="java.lang.String" />
+		<property name="vendorMasterId" type="java.lang.String" />
+		<property name="payeeMasterId" type="java.lang.String" />
+		<property name="bankAccNo" type="java.lang.String" />
+		<property name="payeeName" type="java.lang.String" />
+		<property name="contractNo" type="java.lang.String" />
+		<property name="expenseType" type="java.lang.String" />
+		<property name="expenseTypeDesc" type="java.lang.String" />
+		<property name="paymentType" type="java.lang.String" />
+		<property name="paymentTypeDesc" type="java.lang.String" />
+		<property name="paymentEffDt" type="java.util.Date" />
+		<property name="payeeStatus" type="java.lang.String" />
+		<property name="payeeStatusDesc" type="java.lang.String" />
+		<property name="bookBankStatus" type="java.lang.String" />
+		<property name="bookBankStatusDesc" type="java.lang.String" />
+		<property name="effDt" type="java.util.Date" />
+		<property name="expireDt" type="java.util.Date" />
+		<property name="vendorBookBankId" type="java.lang.String" />
+		<property name="bankAccType" type="java.lang.String" />
+		<property name="bankAccName" type="java.lang.String" />
+		<property name="bankCode" type="java.lang.String" />
+		<property name="bankName" type="java.lang.String" />
+		<property name="bankBranch" type="java.lang.String" />
+		<property name="bankProvince" type="java.lang.String" />
+		<property name="bookBankRemark" type="java.lang.String" />
+		<property name="strPaymentEffDt" type="java.lang.String" />
+		<property name="vendorName" type="java.lang.String" />
+		<property name="vendorStatusDesc" type="java.lang.String" />
+		<property name="payeeBankAccNo" type="java.lang.String" />
+		<property name="payeeBookBankStatusDesc" type="java.lang.String" />
+		<property name="color" type="java.lang.String" />
+	</class>
+	<sql-query name="queryCT001SrchMSP" callable="true">
+		<return class="th.co.ais.domain.gm.CT001SrchMSP">  
+			<return-property name="rowId" column="VENDOR_MAP_PAYEE_ID" />
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID" />
+			<return-property name="payeeMasterId" column="PAYEE_MASTER_ID" />
+			<return-property name="bankAccNo" column="BANK_ACC_NO" />
+			<return-property name="payeeName" column="PAYEE_NAME" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="expenseTypeDesc" column="EXPENSE_TYPE_DESC" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="paymentTypeDesc" column="PAYMENT_TYPE_DESC" />
+			<return-property name="paymentEffDt" column="PAYMENT_EFFECTIVE_DT" />
+			<return-property name="payeeStatus" column="PAYEE_STATUS" />
+			<return-property name="payeeStatusDesc" column="PAYEE_STATUS_DESC" />
+			<return-property name="bookBankStatus" column="BOOKBANK_STATUS" />
+			<return-property name="bookBankStatusDesc" column="BOOKBANK_STATUS_DESC" />
+			<return-property name="effDt" column="EFFECTIVE_DT" />
+			<return-property name="expireDt" column="EXPIRE_DT" />
+			<return-property name="vendorBookBankId" column="VENDOR_BOOKBANK_ID" />
+			<return-property name="bankAccType" column="BANK_ACC_TYPE" />
+			<return-property name="bankAccName" column="BANK_ACC_NAME" />
+			<return-property name="bankCode" column="BANK_CODE" />
+			<return-property name="bankName" column="BANK_NAME" />
+			<return-property name="bankBranch" column="BANK_BRANCH" />
+			<return-property name="bankProvince" column="BANK_PROVINCE" />
+			<return-property name="bookBankRemark" column="BOOKBANK_REMARK" />
+			<return-property name="strPaymentEffDt" column="PAYMENT_EFFECTIVE_DT" />
+			<return-property name="vendorName" column="VENDOR_NAME" />
+			<return-property name="vendorStatusDesc" column="VENDOR_STATUS_DESC" />
+			<return-property name="payeeBankAccNo" column="PAYEE_BANK_ACC_NO" />
+			<return-property name="payeeBookBankStatusDesc" column="PAYEE_BOOKBANK_STATUS_DESC" />
+			<return-property name="color" column="COLOR" />
+		</return>
+	    <![CDATA[ call SEM.SEM_SP_MCT001_SRCH_M(?, :vendorMasterId) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

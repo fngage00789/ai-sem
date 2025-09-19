@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.ElSOGetVendorId" entity-name="elGetVendorIdSP">
+		<id name="keyElectrictId" type="java.lang.String"/>
+		<property name="valVendorId" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="elGetVendorId" callable="true">
+		<return class="th.co.ais.domain.el.ElSOGetVendorId" entity-name="elGetVendorIdSP">  
+			<return-property name="keyElectrictId" column="ELECTRIC_ID"/>
+			<return-property name="valVendorId" column="VENDOR_ID"/>
+		</return>
+	<![CDATA[ call SEM_EL_GET_VENDOR_ID_FEE(?, :stringElectrictId) ]]>
+	</sql-query>
+	
+</hibernate-mapping>

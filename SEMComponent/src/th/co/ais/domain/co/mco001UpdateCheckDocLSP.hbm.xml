@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.co">
+	<class name="th.co.ais.domain.co.Mco001UpdateCheckDocLSP" entity-name="updateCheckDocL">
+		<id name="resultMsg" type="java.lang.String"/>
+		
+	</class>
+	<class name="th.co.ais.domain.sa.SiteAppSP" entity-name="updateDocL">
+		<id name="resultMsg" type="java.lang.String"/>
+		<property name="message" type="java.lang.String" update="false"/>
+		
+	</class>
+	<sql-query name="mco001UpdateCheckDocL" callable="true">
+		<return class="th.co.ais.domain.co.Mco001UpdateCheckDocLSP" entity-name="updateCheckDocL">
+			<return-property name="resultMsg" column="P_RESULT" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO001_UPD_CHECK_DOC_L (?, :siteInfoId, :currentUser, :pOption)]]>
+	</sql-query>
+	
+	<sql-query name="mco001UpdateDocLegal" callable="true">
+		<return class="th.co.ais.domain.sa.SiteAppSP" entity-name="updateDocL">
+			<return-property name="resultMsg" column="P_RESULT" />
+			<return-property name="message" column="P_MESSAGE" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MCO001_UPD_DOC_LEGAL (?, :docApproveId, :siteAppId, :placeType, :placeTypeRemark, :partiesType, :partiesTypeRemark, :strDataList, :userId)]]>
+	</sql-query>
+</hibernate-mapping>

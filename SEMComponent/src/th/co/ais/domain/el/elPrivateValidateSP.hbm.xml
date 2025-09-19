@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.ElPrivateValidateSP" entity-name="elValidate">
+		<id name="result" type="java.lang.String" />
+		<property name="remark" type="java.lang.String" />
+	</class>
+		
+	<sql-query name="elPrivateValidate" callable="true">
+		<return class="th.co.ais.domain.el.ElPrivateValidateSP" entity-name="elValidate">  
+			<return-property name="result" column="P_RESULT"/>
+			<return-property name="remark" column="P_REMARK"/>
+		</return>
+	<![CDATA[ call SEM_SP_MEL006_PRIVATE_VALIDATE(?, :contractNo, :meterId, :fromTermPayment, :toTermPayment, :pKwh, :lKwh, :kwhTotal, :unit, :amtNew) ]]>
+	</sql-query>
+</hibernate-mapping>

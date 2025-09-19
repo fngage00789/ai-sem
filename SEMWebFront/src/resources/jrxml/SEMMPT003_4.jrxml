@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="semmpt003" pageWidth="1241" pageHeight="2147483647" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1241" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="0.9090909090909127"/>
+	<property name="ireport.x" value="365"/>
+	<property name="ireport.y" value="425"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<variable name="ReportUtil" class="th.co.ais.rpt.util.JasperUtil" resetType="None">
+		<initialValueExpression><![CDATA[new th.co.ais.rpt.util.JasperUtil()]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="760" splitType="Stretch">
+			<textField>
+				<reportElement key="staticText" x="916" y="38" width="325" height="21"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["โรงเรือนหรือสิ่งปลูกสร้างอย่างอื่น  ๆ  ทั้งสิ้นที่ให้เช่าที่"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText" x="0" y="0" width="561" height="38"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="AngsanaUPC" size="30" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[บันทึก]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="0" width="57" height="38"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="0" width="57" height="38"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="676" y="0" width="565" height="38"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="AngsanaUPC" size="30" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[คำอธิบาย]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="38" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="86" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="134" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="182" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="230" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="278" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="326" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="374" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="422" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="470" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="518" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="566" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="614" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="662" width="561" height="48"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="0" y="710" width="561" height="36"/>
+				<box>
+					<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="38" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="38" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="86" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="86" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="134" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="134" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="182" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="182" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="230" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="230" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="374" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="374" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="422" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="470" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="278" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="326" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="278" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="422" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="326" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="470" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="614" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="614" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="662" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="518" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="566" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="518" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="662" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="566" width="57" height="48"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="619" y="710" width="57" height="36"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="562" y="710" width="57" height="36"/>
+				<textElement textAlignment="Center">
+					<font fontName="AngsanaUPC" size="16"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="staticText" x="676" y="38" width="240" height="21"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="17" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["๕.  ทรัพย์สินที่ต้องแจ้งรายการในแบบพิมพ์นี้คือ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText" x="676" y="59" width="565" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="15" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       ทำการค้าขาย ที่ไว้สินค้า ที่ประกอบการอุตสาหกรรม ที่ให้ญาติ พ่อแม่ หรือผู้อื่นอาศัย และที่ใช้กิจการอื่น ๆ ในปี"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-1" x="676" y="79" width="565" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       ที่เพิ่งล่วงแล้วเว้นแต่หลังใดที่อยู่ในลักษณะยกเว้นตามมาตรา ๙  แห่งพระราชบัญญัติภาษีโรงเรือนและที่"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-2" x="676" y="99" width="565" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       ดิน พ.ศ. ๒๔๗๕ หรือมาตรา ๓ แห่งพระราชบัญญัติภาษีโรงเรือนและที่ดินแก้ไขเพิ่มเติม พ.ศ. ๒๔๗๕"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-3" x="676" y="119" width="565" height="6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="staticText-4" x="676" y="125" width="338" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["๖.  โรงเรือนหรือสิ่งปลูกสร้างที่ต้องแจ้งรายการตั้งอยู่ในท้องที่เขตเทศบาล"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-5" x="676" y="146" width="565" height="20"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="15" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       ให้ยื่นแบบแจ้งรายการต่อพนักงานเจ้าหน้าที่ประจำเทศบาล  หรือองค์การบริหารส่วนตำบลนั้น  ภายในกำหนด"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-6" x="676" y="166" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="15" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["      ประกาศและผู้รับประเมินควรไปยื่นด้วยตนเอง  เพื่อจะต้องชี้แจงเพิ่มเติมตามที่พนักงานเจ้าหน้าที่ต้องการทราบ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-7" x="676" y="192" width="150" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="17" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["๗.  ช่องอัตราค่าเช่าเดือนละ "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-8" x="676" y="213" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       จากโรงเรือนหรือสิ่งปลูกสร้างอย่างอื่น ๆ กับที่ดินซึ่งใช้ต่อเนื่องรวมทั้งส่วนควบ  (ไม่รวมเงินค่าอื่น  ๆ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-9" x="676" y="233" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       ที่เรียกเก็บตามคำอธิบายข้อ ๑๑)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-10" x="676" y="259" width="88" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="17" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["๘.  ค่าของสินค้า "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-11" x="676" y="280" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       หรือไว้สินค้าของท่านเอง"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-12" x="797" y="306" width="444" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["โรงเรือนหลังใดได้ติดตั้งส่วนควบที่สำคัญ   มีลักษณะเป็นเครื่องจักรกลไก   เครื่อง"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-13" x="676" y="327" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       กระทำหรือเครื่องกำเนิดสินค้าเพื่อใช้ดำเนินการอุตสาหกรรม เช่น    โรงเลื่อย     โรงสี    ฯลฯ    ให้กรอก"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-14" x="676" y="347" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       จำนวนเงินคำนวณเป็นค่าของส่วนควบนั้น ๆ ไว้"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-15" x="676" y="373" width="135" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="17" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["๑๐. การลดหย่อนค่ารายปี"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-16" x="676" y="394" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       ตามมาตรา  ๑๑   ( ค่ารายปี หมายความว่า  จำนวนเงิน   ซึ่งทรัพย์สินนั้น ๆ สมควรจะให้เช่าได้ในปีหนึ่ง ๆ )"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-17" x="676" y="414" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="15" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       เพราะถูกทำลาย   รื้อถอน  ปลูกสร้างใหม่หรือติดตั้งส่วนควบ  หรือขอลดเงินค่ารายปี   เพราะว่าง    หรือซ่อมแซม"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-18" x="676" y="186" width="565" height="6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-19" x="676" y="253" width="565" height="6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-20" x="676" y="300" width="565" height="6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-21" x="676" y="367" width="565" height="6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="staticText-22" x="676" y="434" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       ส่วนสำคัญ   หรือต้องการขอลดค่ารายปี  หรือค่าภาษี  ด้วยเหตุใด ๆ  ก็ดี  ให้กรอกรายการที่ขอลดในช่องนี้"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-23" x="676" y="454" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="15" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       และต้องส่งหลักฐานประกอบคำร้องมาพร้อมกับบัญชีนี้    ถ้าไม่มีหลักฐานมาให้เพียงพอ    พนักงานเจ้าหน้าที่อาจ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-24" x="676" y="474" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       ไม่พิจารณาลดให้เลยก็ได้ (เฉพาะโรงเรือนหรือสิ่งปลูกสร้างอย่างอื่น ๆ ซึ่งเก็บของอยู่เอง หรือให้ผู้แทนอยู่"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-25" x="676" y="494" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       เฝ้ารักษา    และซึ่งมิได้ใช้เป็นที่ไว้สินค้าหรือประกอบการอุตสาหกรรม    ได้รับการยกเว้นตามมาตรา   ๓"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-26" x="676" y="514" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       แห่งพระราชบัญญัติภาษีโรงเรือน และที่ดินแก้ไขเพิ่มเติม พ.ศ. ๒๔๗๕)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-27" x="676" y="540" width="180" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["๑๑. รายได้อย่างอื่น ในปีที่เพิ่งล่วงแล้ว "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-28" x="676" y="534" width="565" height="6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="staticText-29" x="676" y="561" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       ผู้อื่น  นอกจากค่าเช่าปกติ  เช่นเงินกินเปล่า  (แป๊ะเจี๊ยะ) ค่าภาษี  ค่าประกันไฟ  ค่าน้ำประปา  ค่าแรงไฟฟ้า"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-30" x="676" y="581" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       ค่าตั้งส้วม ค่าธรรมเนียมในการทำสัญญา ค่าเช่าที่ดิน ค่าเช่า เครื่องเรือน หรือของใช้อื่น ๆ  เป็นจำนวนเงิน"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-31" x="676" y="601" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       เท่าใด และมีกำหนดต้องเสียอย่างใด ให้กรอกไว้ในช่องรายการเงินอื่นใด ที่เรียกเก็บจากผู้เช่าฯ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-32" x="676" y="627" width="250" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="17" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["๑๒. คำว่า “โรงเรือนและสิ่งปลูกสร้างอย่างอื่น ๆ” "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-33" x="676" y="621" width="565" height="6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="staticText-34" x="676" y="648" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["        ต่อเนื่องกับโรงเรือนและสิ่งปลูกสร้างนั้น ๆ อันต้องเสียภาษีตามความในภาค ๑  แห่งพระราชบัญญัติภาษี"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-35" x="676" y="668" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["        โรงเรือนและที่ดิน พ.ศ. ๒๔๗๕"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-36" x="676" y="694" width="355" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="17" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["๑๓. คำว่า “ที่ดินซึ่งใช้ต่อเนื่องกับโรงเรือนและสิ่งปลูกสร้างอย่างอื่น ๆ”"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-37" x="676" y="688" width="565" height="6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="staticText-38" x="676" y="715" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="15" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       โรงเรือน  หรือสิ่งปลูกสร้างอย่างอื่น ๆ และบริเวณต่อเนื่องกัน  (สนาม  สระน้ำ   ที่ว่าง)  ซึ่งปกติใช้ไปด้วยกันกับ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-39" x="676" y="735" width="565" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["       โรงเรือนหรือสิ่งปลูกสร้างนั้น ๆ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-4" x="1014" y="125" width="227" height="21"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="15" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["  หรือองค์การบริหารส่วนตำบลใด"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-7" x="826" y="192" width="415" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="15" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ให้กรอกจำนวนเงินที่มีสัญญาหรือตกลงเรียกเก็บเป็นค่าเช่าในปีที่เพิ่งล่วงแล้ว"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-10" x="764" y="259" width="477" height="21"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ให้กรอกจำนวนเงินซึ่งเป็นค่าของสินค้าทั้งหมดที่เหลือเก็บอยู่ในโรงเรือนที่ท่านทำการค้า"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-12" x="676" y="306" width="121" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="17" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["๙.   ค่าของเครื่องจักรกล"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-15" x="811" y="373" width="430" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["โรงเรือนหรือสิ่งปลูกสร้างอย่างอื่น ห้อง หรือหลังใด ได้รับการลดหย่อนค่ารายปี"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-27" x="856" y="540" width="385" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="15" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["ท่านได้สัญญาหรือตกลงเรียกเก็บเงินอย่างอื่นจากผู้เช่า    หรือให้เช่าจ่ายให้"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-36" x="1031" y="694" width="210" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["  หมายความว่าที่ดินซึ่งปลูกสร้าง"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-32" x="926" y="627" width="315" height="21"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["คือโรงเรือนและสิ่งปลูกสร้างอย่างอื่น  รวมทั้งที่ดินที่ใช้"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-39" x="0" y="746" width="676" height="9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="AngsanaUPC" size="16" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

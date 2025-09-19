@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.cp">
+	<class name="th.co.ais.domain.cp.ConstructionPermissionGenDocNoSearchSP">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="genDocNo" type="java.lang.String"/>
+	</class> 
+	<sql-query name="spMcp001GenDocNo" callable="true">
+	<return class="th.co.ais.domain.cp.ConstructionPermissionGenDocNoSearchSP">
+		<return-property name="rowId" column="GEN_DOC_NO" />
+		<return-property name="genDocNo" column="GEN_DOC_NO" />
+	 </return>
+	 <![CDATA[call SEM.SEM_SP_MCP001_GEN_DOC_NO(?)]]>
+	</sql-query>
+</hibernate-mapping>

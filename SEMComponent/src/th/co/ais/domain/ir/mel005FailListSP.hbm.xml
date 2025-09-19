@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.ir">
+	
+	<class name="th.co.ais.domain.ir.MEL005FailListSP" entity-name="failList">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="errMsgDesc" type="java.lang.String"/>
+		<property name="countAll" type="java.lang.String"/>
+		<property name="countClose" type="java.lang.String"/>
+		<property name="countNonClose" type="java.lang.String"/>
+	</class>
+	<sql-query name="searchFailList" callable="true">
+		<return class="th.co.ais.domain.ir.MEL005FailListSP" entity-name="failList">
+			<return-property name="rowId" column="ROW_ID"/> 
+			<return-property name="errMsgDesc" column="ERROR_MESSAGE"/>
+			<return-property name="countAll" column="COUNT_ALL"/>
+			<return-property name="countClose" column="COUNT_CLOSE"/>
+			<return-property name="countNonClose" column="COUNT_NON_CLOSE"/>
+		</return>
+		 <![CDATA[ call SEM.SEM_SP_MEL005_FAIL_LIST(?, :rowId) ]]>
+	</sql-query>
+</hibernate-mapping>
+
+

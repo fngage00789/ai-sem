@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+	<class name="th.co.ais.domain.el.VendorSP" entity-name="vendorPayee">
+		<id name="vendorMapPayeeId" type="java.lang.String"/>
+		<property name="vendorMasterId" type="java.lang.String"/>
+		<property name="vendorId" type="java.lang.String"/>
+		<property name="vendorName" type="java.lang.String"/>
+		<property name="vendorStatus" type="java.lang.String"/>
+		<property name="vendorBookBankStatus" type="java.lang.String"/>
+		<property name="payeeMasterId" type="java.lang.String"/>
+		<property name="payeeCode" type="java.lang.String"/>
+		<property name="payeeName" type="java.lang.String"/>
+		<property name="payeeStatus" type="java.lang.String"/>
+		<property name="payeeBookBankStatus" type="java.lang.String"/>
+		<property name="paymentType" type="java.lang.String"/>
+		<property name="bankCode" type="java.lang.String"/>
+		<property name="bankName" type="java.lang.String"/>
+		<property name="bankBranch" type="java.lang.String"/>
+		<property name="bankAccNo" type="java.lang.String"/>
+		<property name="bankAccName" type="java.lang.String"/>
+	</class>
+	
+	<sql-query name="detailVendorPayee" callable="true">
+		<return class="th.co.ais.domain.el.VendorSP" entity-name="vendorPayee">  
+			<return-property name="vendorMapPayeeId" column="VENDOR_MAP_PAYEE_ID"/>
+			<return-property name="vendorMasterId" column="VENDOR_MASTER_ID"/>
+			<return-property name="vendorId" column="VENDOR_CODE"/>
+			<return-property name="vendorName" column="VENDOR_NAME"/>
+			<return-property name="vendorStatus" column="VENDOR_STATUS"/>
+			<return-property name="vendorBookBankStatus" column="VENDOR_BOOKBANK_STATUS"/>
+			<return-property name="payeeMasterId" column="PAYEE_MASTER_ID"/>
+			<return-property name="payeeCode" column="PAYEE_CODE"/>
+			<return-property name="payeeName" column="PAYEE_NAME"/>
+			<return-property name="payeeStatus" column="PAYEE_STATUS"/>
+			<return-property name="payeeBookBankStatus" column="PAYEE_BOOKBANK_STATUS"/>
+			<return-property name="paymentType" column="PAYMENT_TYPE"/>
+			<return-property name="bankCode" column="BANK_CODE"/>
+			<return-property name="bankName" column="BANK_NAME"/>
+			<return-property name="bankBranch" column="BANK_BRANCH"/>
+			<return-property name="bankAccNo" column="BANK_ACC_NO"/>
+			<return-property name="bankAccName" column="BANK_ACC_NAME"/>
+		</return>
+	<![CDATA[ call SEM_PG_EL_VENDOR_PAYEE_SP_GET_DETAIL_VENDOR_PAYEE(?, :contractNo, :expenseType, :vendorId, :paymentType, :page) ]]>
+	</sql-query>
+	
+</hibernate-mapping>
+
+

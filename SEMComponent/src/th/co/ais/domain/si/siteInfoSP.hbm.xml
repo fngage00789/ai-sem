@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.si">
+	<class name="th.co.ais.domain.si.SiteInfoSP" entity-name="searchSiteInfo">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="docNo" type="java.lang.String"/>
+		<property name="reqType" type="java.lang.String"/>
+		<property name="reqTypeName" type="java.lang.String"/>
+		<property name="title" type="java.lang.String"/>
+		<property name="assignContractNo" type="java.lang.String"/>
+		<property name="assignSiteInfoId" type="java.lang.String"/>
+		<property name="legalApproveStatus" type="java.lang.String"/>
+		<property name="siteType" type="java.lang.String"/>
+		<property name="siteTypeName" type="java.lang.String"/>
+		<property name="siteInfoStatus" type="java.lang.String"/>
+		<property name="siteInfoStatusName" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"></property>
+		<property name="effDate" type="java.util.Date"></property>
+		<property name="expDate" type="java.util.Date"></property>
+		<property name="lessorName" type="java.lang.String"></property>
+		<property name="siteStatus" type="java.lang.String"></property>
+		<property name="networkStatus" type="java.lang.String"></property>
+		<property name="docApproveId" type="java.lang.String"></property>
+		<property name="siteInfoId" type="java.lang.String"></property>
+		<property name="company" type="java.lang.String"></property>
+		<property name="region" type="java.lang.String"></property>
+		<property name="docApproveType" type="java.lang.String"></property>
+		<property name="siteName" type="java.lang.String"></property>
+		<property name="editableFlag" type="java.lang.String"></property>
+		<property name="flowStatus" type="java.lang.String"></property>
+		<property name="locationId" type="java.lang.String"></property>
+		<property name="viewSiteInfoId" type="java.lang.String"></property>
+		<property name="oldContractNo" type="java.lang.String"></property>
+		<property name="oldSiteInfoId" type="java.lang.String"></property>
+		<property name="batchNo" type="java.lang.String"></property>
+		<property name="borrowStatus" type="java.lang.String"></property>
+		<property name="siteAppId" type="java.lang.String"></property>
+	</class>
+	<sql-query name="querySearchSiteInfo" callable="true">
+		<return class="th.co.ais.domain.si.SiteInfoSP" entity-name="searchSiteInfo">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="docNo" column="DOC_NO" />
+			<return-property name="reqType" column="REQ_TYPE" />
+			<return-property name="reqTypeName" column="REQ_TYPE_NAME" />
+			<return-property name="title" column="TITLE" />
+			<return-property name="assignContractNo" column="ASSIGN_CONTRACT_NO" />
+			<return-property name="assignSiteInfoId" column="ASSIGN_SITE_INFO_ID" />
+			<return-property name="legalApproveStatus" column="LEGAL_APPROVE_STATUS_NAME" />
+			<return-property name="siteType" column="SITE_TYPE" />
+			<return-property name="siteTypeName" column="SITE_TYPE_NAME" />
+			<return-property name="siteInfoStatus" column="SITE_INFO_STATUS" />
+			<return-property name="siteInfoStatusName" column="SITE_INFO_STATUS_NAME" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="effDate" column="EFFECTIVE_DT" />
+			<return-property name="expDate" column="EXPIRE_DT" />
+			<return-property name="lessorName" column="LESSOR_NAME" />
+			<return-property name="siteStatus" column="SITE_STATUS_NAME" />
+			<return-property name="networkStatus" column="NETWORK_STATUS" />
+			<return-property name="docApproveId" column="DOC_APPROVE_ID" />
+			<return-property name="siteInfoId" column="SITE_INFO_ID" />
+			<return-property name="company" column="COMPANY" />
+			<return-property name="region" column="REGION" />
+			<return-property name="docApproveType" column="DOC_APPROVE_TYPE" />
+			<return-property name="siteName" column="SITE_NAME" />
+			<return-property name="editableFlag" column="EDITABLE_FLAG" />
+			<return-property name="flowStatus" column="FLOW_STATUS" />
+			<return-property name="locationId" column="LOCATION_ID" />
+			<return-property name="viewSiteInfoId" column="VIEW_SITE_INFO_ID" />
+			<return-property name="oldContractNo" column="OLD_CONTRACT_NO" />
+			<return-property name="oldSiteInfoId" column="OLD_SITE_INFO_ID" />
+			<return-property name="batchNo" column="BATCH_NO" />
+			<return-property name="borrowStatus" column="BORROW_STATUS" />
+			<return-property name="siteAppId" column="SITE_APP_ID" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MSI004_SRCH  (?, :docNo, :company, :region, :reqType, :title, :assignContractNo,
+		 :legalApproveStatus, :locationId, :locationCode, :locationName, :siteType, :siteInfoStatus, :siteStatus,
+		 :contractNo, :pendingStatus,  :expireStatus,  :effDateFrom, :effDateTo, :expDateFrom, :expDateTo,
+		 :noExpireFlag, :lessorName, :currentFlag, :batchNo, :houseNo, :tambol, :amphur, :province, :strParam) ]]>
+	</sql-query>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.pt">
+	<class name="th.co.ais.domain.pt.Mpt002SrchHist">
+		<id name="rowId" type="java.lang.String"/>
+		<property name="contractNo" type="java.lang.String"/>
+		<property name="pTaxYear" type="java.lang.Integer"/>
+		<property name="estimateBy" type="java.lang.String"/>
+		<property name="estimateDt" type="java.sql.Date"/>
+		<property name="payGovtFlag" type="java.lang.String"/>
+		<property name="paymentStatus" type="java.lang.String"/>
+		<property name="periodNo" type="java.lang.Integer"/>
+		<property name="expenseType" type="java.lang.String"/>
+		<property name="paymentType" type="java.lang.String"/>
+		<property name="excAmt" type="java.lang.Double"/>
+		<property name="whtAmt" type="java.lang.Double"/>
+		<property name="vatAmt" type="java.lang.Double"/>
+		<property name="totalAmt" type="java.lang.Double"/>
+		<property name="paymentBy" type="java.lang.String"/>
+		<property name="paymentDt" type="java.sql.Date"/>
+		<property name="paymentDocNo" type="java.lang.String"/>
+		<property name="doc68" type="java.lang.String"/>
+		<property name="doc92" type="java.lang.String"/>
+		
+	</class>
+	<sql-query name="spMpt002SrchHist" callable="true">
+		<return class="th.co.ais.domain.pt.Mpt002SrchHist">
+			<return-property name="rowId" column="ROW_ID" />
+			<return-property name="contractNo" column="CONTRACT_NO" />
+			<return-property name="pTaxYear" column="PTAX_YEAR" />
+			<return-property name="estimateBy" column="ESTIMATE_BY" />
+			<return-property name="estimateDt" column="ESTIMATE_DT" />
+			<return-property name="payGovtFlag" column="PAY_GOVT_FLAG" />
+			<return-property name="paymentStatus" column="PAYMENT_STATUS" />
+			<return-property name="periodNo" column="PERIOD_NO" />
+			<return-property name="expenseType" column="EXPENSE_TYPE" />
+			<return-property name="paymentType" column="PAYMENT_TYPE" />
+			<return-property name="excAmt" column="EXC_AMT" />
+			<return-property name="whtAmt" column="WHT_AMT" />
+			<return-property name="vatAmt" column="VAT_AMT" />
+			<return-property name="totalAmt" column="TOTAL_AMT" />
+			<return-property name="paymentBy" column="PAYMENT_BY" />
+			<return-property name="paymentDt" column="PAYMENT_DT" />
+			<return-property name="paymentDocNo" column="PAYMENT_DOC_NO" />
+			<return-property name="doc68" column="DOC_68" />
+			<return-property name="doc92" column="DOC_92" />
+			
+		</return>
+		<![CDATA[ call SEM_SP_MPT002_SRCH_HIST(?, :contractNo) ]]>
+	</sql-query>
+</hibernate-mapping>

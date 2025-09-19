@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="th.co.ais.domain.el">
+
+ 
+ <class name="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="ProxyAddElPermissionFile">
+ 	
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+  
+ <class name="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="Gendummy">
+ 	
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+  <class name="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="DeleteByRowProxyPermissionFile">
+ 	
+ 	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+ <class name="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="ProxyPermissionFile">
+	<id name="rowId" type="java.lang.String"/>
+ 	<property name="contractNo" type="java.lang.String" ></property>
+ 	<property name="lineNo" type="java.lang.String" ></property>
+ 	<property name="company" type="java.lang.String" ></property>
+ 	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="locationId" type="java.lang.String" ></property>
+ 	<property name="address" type="java.lang.String" ></property>
+ 	<property name="tumbon" type="java.lang.String" ></property>
+ 	<property name="amphur" type="java.lang.String" ></property>
+ 	<property name="province" type="java.lang.String" ></property>
+ 	<property name="ctStartDt" type="java.util.Date" ></property>
+ 	<property name="ctFinishDt" type="java.util.Date" ></property>
+ 	<property name="areaType" type="java.lang.String" ></property>
+ 	<property name="electricType" type="java.lang.String" ></property>
+ 	<property name="printFlag" type="java.lang.String" ></property>
+ 	<property name="status" type="java.lang.String" ></property>
+ 	<property name="locationCode" type="java.lang.String" ></property>
+ 	<property name="SubDtStr" type="java.lang.String" ></property>
+ 	<property name="subCon" type="java.lang.String" ></property>
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	<property name="phase" type="java.lang.String" ></property>
+ 	<property name="siteCode" type="java.lang.String" ></property>
+ 	<property name="errMsg" type="java.lang.String" ></property>
+ </class>
+ 
+  <class name="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="ProxyPermissionFileDtl">
+	<id name="rowId" type="java.lang.String"/>
+	<property name="siteName" type="java.lang.String" ></property>
+ 	<property name="address" type="java.lang.String" ></property>
+ 	<property name="tumbon" type="java.lang.String" ></property>
+ 	<property name="amphur" type="java.lang.String" ></property>
+ 	<property name="province" type="java.lang.String" ></property>
+ 	<property name="postCode" type="java.lang.String" ></property>
+ 	<property name="phase" type="java.lang.String" ></property>
+ 	<property name="subCon" type="java.lang.String" ></property>
+ 	<property name="subConCode" type="java.lang.String" ></property>
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	<property name="electricType" type="java.lang.String" ></property>
+ </class>
+ 
+ 
+  <class name="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="ProxyUpdatePermissionFile">
+	<id name="result" type="java.lang.String" />
+ 	<property name="remark" type="java.lang.String" ></property>
+ 	
+ </class>
+ 
+ <sql-query name="mel013AddElPermissionFile" callable="true">
+ 	<return class="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="ProxyAddElPermissionFile">
+ 	
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL013_PROXY_IMP(?, :lineNo, :locationId, :locationCode, :siteName, :province, :company, :electricType, :subDtStr, :subCon, :remark, :phase, :siteCode, :contractNo, :user, :fileName) ]]>
+ </sql-query>
+ 
+ <sql-query name="mel013AddFileName" callable="true">
+ 	<return class="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="ProxyAddElPermissionFile">
+ 	
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL013_PROXY_IMP_LOG(?, :company, :user, :fileName, :warranType) ]]>
+ </sql-query>
+ 
+ <sql-query name="mel013SearchProxyElPermissionWarrantCaseSuccess" callable="true">
+ 	<return class="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="ProxyPermissionFile">
+ 		<return-property name="rowId" column="EL_IMPORT_PROXY_DATA_ID"></return-property>
+ 		<return-property name="lineNo" column="LINE_NO"></return-property>
+ 		<return-property name="contractNo" column="CONTRACT_NO"></return-property>
+ 		<return-property name="company" column="COMPANY"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="locationId" column="LOCATION_ID"></return-property>
+ 		<return-property name="address" column="SITE_HOUSE_NO"></return-property>
+ 		<return-property name="tumbon" column="SITE_TUMBOL"></return-property>
+ 		<return-property name="amphur" column="AMPHUR_NAME"></return-property>
+ 		<return-property name="province" column="PROVINCE_NAME"></return-property>
+ 		<return-property name="ctStartDt" column="EFFECTIVE_DT"></return-property>
+ 		<return-property name="ctFinishDt" column="EXPIRE_DT"></return-property>
+ 		<return-property name="areaType" column="PLACE_TYPE"></return-property>
+ 		<return-property name="electricType" column="ELECTRIC_TYPE"></return-property>
+ 		<return-property name="printFlag" column="PRINT_FLAG"></return-property>
+ 		<return-property name="status" column="STATUS"></return-property>
+ 		<return-property name="locationCode" column="LOCATION_CODE"></return-property>
+ 		<return-property name="SubDtStr" column="SUB_DT"></return-property>
+ 		<return-property name="subCon" column="SUB_CONTRACTOR"></return-property>
+ 		<return-property name="remark" column="REMARK"></return-property>
+ 		<return-property name="phase" column="PHASE"></return-property>
+ 		<return-property name="siteCode" column="SITE_CODE"></return-property>
+ 		<return-property name="errMsg" column="MESSAGE"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL013_PROXY_LIST(?, :logId, :status) ]]>
+ 	</sql-query>
+ 	
+ 	
+ 	<sql-query name="mel013SearchForEdit" callable="true">
+ 	<return class="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="ProxyPermissionFileDtl">
+ 	<return-property name="rowId" column="EL_IMPORT_PROXY_DATA_ID"></return-property>
+ 		<return-property name="siteName" column="SITE_NAME"></return-property>
+ 		<return-property name="address" column="SITE_HOUSE_NO"></return-property>
+ 		<return-property name="tumbon" column="SITE_TUMBOL"></return-property>
+ 		<return-property name="amphur" column="SITE_AMPHUR_ID"></return-property>
+ 		<return-property name="province" column="SITE_PROVINCE_ID"></return-property>
+ 		<return-property name="postCode" column="SITE_POSTCODE"></return-property>
+ 		<return-property name="phase" column="PHASE"></return-property>
+ 		<return-property name="subCon" column="SUB_CONTRACTOR"></return-property>
+ 		<return-property name="subConCode" column="SUB_CONTRACTOR_CODE"></return-property>
+ 		<return-property name="remark" column="REMARK"></return-property>
+ 		<return-property name="electricType" column="ELECTRIC_TYPE"></return-property>
+ 		
+ 		
+ 	
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL013_PROXY_LIST_DTL(?, :rowId) ]]>
+ 	</sql-query>
+  
+  	<sql-query name="mel013UpdateElPermissionWarrant" callable="true">
+ 	<return class="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="ProxyUpdatePermissionFile">
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL013_PROXY_DTL_UPD(?, :rowId, :siteName, :address, :tumbon, :amphur, :province, :postCode, :subConCode, :subCon, :phase, :remark, :user, :electricType) ]]>
+ 	</sql-query>
+ 	
+ 	<sql-query name="mel013DeleteByRowUploadFile" callable="true">
+ 	<return class="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="DeleteByRowProxyPermissionFile">
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 	</return>
+ 	<![CDATA[ call SEM.SEM_SP_MEL013_PROXY_DTL_DEL(?, :rowId ,:user) ]]>
+ 	</sql-query>
+ 	
+ 	
+ 	<sql-query name="mel013GenDummy" callable="true">
+ 	<return class="th.co.ais.domain.el.ProxyUploadElPermistionWarrant" entity-name="Gendummy">
+ 	
+ 		
+ 		<return-property name="result" column="P_RESULT"></return-property>
+ 		<return-property name="remark" column="P_REMARK"></return-property>
+ 		
+ 	</return>
+ 	<![CDATA[ call SEM_SP_MEL013_GEN_DUMMY(?, :rowId, :user) ]]>
+ </sql-query>
+ </hibernate-mapping>

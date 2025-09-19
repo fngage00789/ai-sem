@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="th.co.ais.domain.rt">
+	<class name="th.co.ais.domain.rt.Mrt001BookBank">
+		<id name="bankAccNo" type="java.lang.String"/>
+		<property name="bankName" type="java.lang.String"/>
+	</class>
+	<sql-query name="spMrt001BookBank" callable="true">
+		<return class="th.co.ais.domain.rt.Mrt001BookBank">
+			<return-property name="bankAccNo" column="BANK_ACC_NO" />
+			<return-property name="bankName" column="BANK_NAME" />
+		</return>
+		<![CDATA[ call SEM.SEM_SP_MRT001_BOOKBANK(?, :vendorMasterId, :payeeMasterId, :mode) ]]>
+	</sql-query>
+</hibernate-mapping>
