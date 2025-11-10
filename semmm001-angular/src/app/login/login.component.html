@@ -1,0 +1,50 @@
+<section class="login-card">
+  <header class="login-header">
+    <h2>Welcome back</h2>
+    <p>Sign in with your SEMMM001 credentials to continue.</p>
+  </header>
+
+  <form [formGroup]="loginForm" (ngSubmit)="submit()" novalidate>
+    <label class="field">
+      <span>Username</span>
+      <input
+        type="text"
+        formControlName="username"
+        autocomplete="username"
+        placeholder="Enter your user ID"
+        [class.invalid]="usernameInvalid"
+      />
+      <small *ngIf="usernameInvalid">A username is required.</small>
+    </label>
+
+    <label class="field">
+      <span>Password</span>
+      <div class="password-input">
+        <input
+          [type]="revealPassword() ? 'text' : 'password'"
+          formControlName="password"
+          autocomplete="current-password"
+          placeholder="Enter your password"
+          [class.invalid]="passwordInvalid"
+        />
+        <button type="button" class="reveal" (click)="toggleReveal()" aria-label="Toggle password visibility">
+          {{ revealPassword() ? 'Hide' : 'Show' }}
+        </button>
+      </div>
+      <small *ngIf="passwordInvalid">Password must be at least 6 characters.</small>
+    </label>
+
+    <label class="remember">
+      <input type="checkbox" formControlName="rememberMe" />
+      <span>Keep me signed in</span>
+    </label>
+
+    <button class="submit" type="submit">Sign in</button>
+
+    <p *ngIf="errorMessage()" class="error-message">{{ errorMessage() }}</p>
+  </form>
+
+  <footer class="login-footer">
+    <small>Need help? Contact the SEM support desk.</small>
+  </footer>
+</section>
