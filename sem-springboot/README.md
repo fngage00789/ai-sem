@@ -7,7 +7,7 @@ This module provides a standalone Spring Boot 2.7 service that exposes a RESTful
 - Runs independently of JBoss / WildFly.
 - Uses standard `application.properties` to configure the JDBC datasource.
 - Includes a sample `UserAccount` entity, repository, and controller with CRUD-style endpoints.
-- Ships with both PostgreSQL (production) and H2 (in-memory) drivers on the classpath.
+- Bundles the PostgreSQL driver for production use and an embedded PostgreSQL test harness (no H2 fallback).
 
 ## Running Locally
 
@@ -30,6 +30,12 @@ This module provides a standalone Spring Boot 2.7 service that exposes a RESTful
    - `GET http://localhost:8080/api/users` — list all user accounts.
    - `GET http://localhost:8080/api/users/{username}` — fetch a single user by username.
    - `POST http://localhost:8080/api/users` — create a new user (send JSON body with `username`, `displayName`, and `email`).
+
+## Testing with PostgreSQL
+
+Automated tests boot an embedded PostgreSQL instance using Zonky's test harness so that repository and controller flows exercise
+the same dialect you use in production. Running `mvn test` will download the embedded binary, start it on a random local port, and
+tear it down automatically when the suite finishes.
 
 ## Database Schema
 
